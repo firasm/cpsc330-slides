@@ -4,10 +4,10 @@ project:
   resources:
     - "*.html"
 website: 
-  title: "CPSC 330 Section 102 Slides"
+  title: "CPSC 330 Section 103 Slides"
   page-navigation: true
   navbar:
-    title: "CPSC 330 Section 102"
+    title: "CPSC 330 Section 103"
     background: light
     left:
       - href: index.qmd
