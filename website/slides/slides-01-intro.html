@@ -628,17 +628,17 @@
 <li>When you open a Jupyter notebook in one of these apps, the document is “live”, meaning you can run the code.</li>
 </ul>
 <p>For example:</p>
-<div id="20b5431c" class="cell" data-execution_count="2">
+<div id="af1fa40b" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a><span class="dv">1</span> <span class="op">+</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="38">
+<div class="cell-output cell-output-display" data-execution_count="2">
 <pre><code>2</code></pre>
 </div>
 </div>
-<div id="4e84e700" class="cell" data-execution_count="3">
+<div id="9f9fb62b" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a></a>x <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]</span>
 <span id="cb3-2"><a></a>x[<span class="dv">0</span>] <span class="op">=</span> <span class="dv">9999</span></span>
 <span id="cb3-3"><a></a>x</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="39">
+<div class="cell-output cell-output-display" data-execution_count="3">
 <pre><code>[9999, 2, 3]</code></pre>
 </div>
 </div>
@@ -662,7 +662,7 @@
 <li>A “finalized” version will be pushed to <a href="https://github.com/UBC-CS/cpsc330-2024W1">GitHub</a> and the <a href="https://ubc-cs.github.io/cpsc330-2024W1/README.html">Jupyter book</a> right before each class.</li>
 <li>Each instructor will have slightly adapted versions of notes to present slides during lectures.<br>
 </li>
-<li>You will find the link to these slides in our repository: https://github.com/UBC-CS/cpsc330-2024W1/tree/main/lectures/102-Varada-lectures</li>
+<li>You will find the link to these slides in our repository: https://github.com/UBC-CS/cpsc330-2024W1/tree/main/lectures/103-Firas-lectures</li>
 </ul>
 </section>
 <section id="grades" class="slide level2 center">
@@ -741,7 +741,7 @@
 <ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">Code</a></li><li><a href="#tabset-1-2">Output</a></li></ul>
 <div class="tab-content">
 <div id="tabset-1-1">
-<div id="09aa1cfc" class="cell" data-execution_count="4">
+<div id="c4c94f1b" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a></a>sms_df <span class="op">=</span> pd.read_csv(DATA_DIR <span class="op">+</span> <span class="st">"spam.csv"</span>, encoding<span class="op">=</span><span class="st">"latin-1"</span>)</span>
 <span id="cb5-2"><a></a>sms_df <span class="op">=</span> sms_df.drop(columns <span class="op">=</span> [<span class="st">"Unnamed: 2"</span>, <span class="st">"Unnamed: 3"</span>, <span class="st">"Unnamed: 4"</span>])</span>
 <span id="cb5-3"><a></a>sms_df <span class="op">=</span> sms_df.rename(columns<span class="op">=</span>{<span class="st">"v1"</span>: <span class="st">"target"</span>, <span class="st">"v2"</span>: <span class="st">"sms"</span>})</span>
@@ -750,8 +750,8 @@
 </div>
 <div id="tabset-1-2">
 <div class="scroll-container" style="overflow-y: scroll; height: 400px;">
-<div id="ae728d8c" class="cell" data-execution_count="5">
-<div class="cell-output cell-output-display" data-execution_count="41">
+<div id="df332584" class="cell" data-execution_count="5">
+<div class="cell-output cell-output-display" data-execution_count="5">
 <table class="dataframe caption-top" data-quarto-postprocess="true" data-border="1">
 <thead>
 <tr class="header" style="text-align: right;">
@@ -809,7 +809,7 @@
 <ul>
 <li>There are several packages that help us perform machine learning.</li>
 </ul>
-<div id="c11e80b9" class="cell" data-execution_count="6">
+<div id="c7f3c560" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a></a>X_train, y_train <span class="op">=</span> train_df[<span class="st">"sms"</span>], train_df[<span class="st">"target"</span>]</span>
 <span id="cb6-2"><a></a>X_test, y_test <span class="op">=</span> test_df[<span class="st">"sms"</span>], test_df[<span class="st">"target"</span>]</span>
 <span id="cb6-3"><a></a>clf <span class="op">=</span> make_pipeline(CountVectorizer(max_features<span class="op">=</span><span class="dv">5000</span>), LogisticRegression(max_iter<span class="op">=</span><span class="dv">5000</span>))</span>
@@ -821,8 +821,8 @@
 <ul>
 <li>Now use the trained model to predict targets of unseen messages:</li>
 </ul>
-<div id="aa8d699d" class="cell" data-execution_count="7">
-<div class="cell-output cell-output-display" data-execution_count="43">
+<div id="3f04db48" class="cell" data-execution_count="7">
+<div class="cell-output cell-output-display" data-execution_count="7">
 <div>
 <style scoped="">
     .dataframe tbody tr th:only-of-type {
@@ -872,42 +872,42 @@
 <section id="predicting-on-unseen-data" class="slide level2 smaller center">
 <h2>Predicting on unseen data</h2>
 <p><strong>The model is accurately predicting labels for the unseen text messages above!</strong></p>
-<div id="b2b39145" class="cell" data-execution_count="8">
-<div class="cell-output cell-output-display" data-execution_count="44">
+<div id="0c69eeb1" class="cell" data-execution_count="8">
+<div class="cell-output cell-output-display" data-execution_count="8">
 <style type="text/css">
-#T_3e9d1_row0_col0, #T_3e9d1_row0_col1, #T_3e9d1_row1_col0, #T_3e9d1_row1_col1, #T_3e9d1_row2_col0, #T_3e9d1_row2_col1, #T_3e9d1_row3_col0, #T_3e9d1_row3_col1 {
+#T_357bb_row0_col0, #T_357bb_row0_col1, #T_357bb_row1_col0, #T_357bb_row1_col1, #T_357bb_row2_col0, #T_357bb_row2_col1, #T_357bb_row3_col0, #T_357bb_row3_col1 {
   text-align: left;
 }
 </style>
 
-<table id="T_3e9d1" class="caption-top" data-quarto-postprocess="true">
+<table id="T_357bb" class="caption-top" data-quarto-postprocess="true">
 <thead>
 <tr class="header">
 <th class="blank level0" data-quarto-table-cell-role="th">&nbsp;</th>
-<th id="T_3e9d1_level0_col0" class="col_heading level0 col0" data-quarto-table-cell-role="th">sms</th>
-<th id="T_3e9d1_level0_col1" class="col_heading level0 col1" data-quarto-table-cell-role="th">spam_predictions</th>
+<th id="T_357bb_level0_col0" class="col_heading level0 col0" data-quarto-table-cell-role="th">sms</th>
+<th id="T_357bb_level0_col1" class="col_heading level0 col1" data-quarto-table-cell-role="th">spam_predictions</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td id="T_3e9d1_level0_row0" class="row_heading level0 row0" data-quarto-table-cell-role="th">3245</td>
-<td id="T_3e9d1_row0_col0" class="data row0 col0">Funny fact Nobody teaches volcanoes 2 erupt, tsunamis 2 arise, hurricanes 2 sway aroundn no 1 teaches hw 2 choose a wife Natural disasters just happens</td>
-<td id="T_3e9d1_row0_col1" class="data row0 col1">ham</td>
+<td id="T_357bb_level0_row0" class="row_heading level0 row0" data-quarto-table-cell-role="th">3245</td>
+<td id="T_357bb_row0_col0" class="data row0 col0">Funny fact Nobody teaches volcanoes 2 erupt, tsunamis 2 arise, hurricanes 2 sway aroundn no 1 teaches hw 2 choose a wife Natural disasters just happens</td>
+<td id="T_357bb_row0_col1" class="data row0 col1">ham</td>
 </tr>
 <tr class="even">
-<td id="T_3e9d1_level0_row1" class="row_heading level0 row1" data-quarto-table-cell-role="th">944</td>
-<td id="T_3e9d1_row1_col0" class="data row1 col0">I sent my scores to sophas and i had to do secondary application for a few schools. I think if you are thinking of applying, do a research on cost also. Contact joke ogunrinde, her school is one me the less expensive ones</td>
-<td id="T_3e9d1_row1_col1" class="data row1 col1">ham</td>
+<td id="T_357bb_level0_row1" class="row_heading level0 row1" data-quarto-table-cell-role="th">944</td>
+<td id="T_357bb_row1_col0" class="data row1 col0">I sent my scores to sophas and i had to do secondary application for a few schools. I think if you are thinking of applying, do a research on cost also. Contact joke ogunrinde, her school is one me the less expensive ones</td>
+<td id="T_357bb_row1_col1" class="data row1 col1">ham</td>
 </tr>
 <tr class="odd">
-<td id="T_3e9d1_level0_row2" class="row_heading level0 row2" data-quarto-table-cell-role="th">1044</td>
-<td id="T_3e9d1_row2_col0" class="data row2 col0">We know someone who you know that fancies you. Call 09058097218 to find out who. POBox 6, LS15HB 150p</td>
-<td id="T_3e9d1_row2_col1" class="data row2 col1">spam</td>
+<td id="T_357bb_level0_row2" class="row_heading level0 row2" data-quarto-table-cell-role="th">1044</td>
+<td id="T_357bb_row2_col0" class="data row2 col0">We know someone who you know that fancies you. Call 09058097218 to find out who. POBox 6, LS15HB 150p</td>
+<td id="T_357bb_row2_col1" class="data row2 col1">spam</td>
 </tr>
 <tr class="even">
-<td id="T_3e9d1_level0_row3" class="row_heading level0 row3" data-quarto-table-cell-role="th">2484</td>
-<td id="T_3e9d1_row3_col0" class="data row3 col0">Only if you promise your getting out as SOON as you can. And you'll text me in the morning to let me know you made it in ok.</td>
-<td id="T_3e9d1_row3_col1" class="data row3 col1">ham</td>
+<td id="T_357bb_level0_row3" class="row_heading level0 row3" data-quarto-table-cell-role="th">2484</td>
+<td id="T_357bb_row3_col0" class="data row3 col0">Only if you promise your getting out as SOON as you can. And you'll text me in the morning to let me know you made it in ok.</td>
+<td id="T_357bb_row3_col1" class="data row3 col1">ham</td>
 </tr>
 </tbody>
 </table>
@@ -1003,414 +1003,6 @@ A field of study that gives computers the ability to learn without being explici
 <li>Would it be useful to know how confident the model is about the predictions rather than just a yes or a no?</li>
 </ul>
 <p>It’s great to think about these questions right now. But Eva has to be patient. By the end of this course you’ll know answers to many of these questions!</p>
-</section>
-<section id="example-predicting-labels-of-a-given-image" class="slide level2 center">
-<h2>Example: Predicting labels of a given image</h2>
-<ul>
-<li>We can also use machine learning to predict labels of given images using a technique called <strong>transfer learning</strong>.</li>
-</ul>
-<div class="scroll-container" style="overflow-y: scroll; height: 400px;">
-<div id="69563ea3" class="cell" data-execution_count="9">
-<div class="cell-output cell-output-display">
-<div>
-<figure>
-<p><img data-src="slides-01-intro_files/figure-revealjs/cell-10-output-1.png" width="578" height="427"></p>
-</figure>
-</div>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>                         Class  Probability score
-                     tiger cat              0.636
-              tabby, tabby cat              0.174
-Pembroke, Pembroke Welsh corgi              0.081
-               lynx, catamount              0.011
---------------------------------------------------------------</code></pre>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<figure>
-<p><img data-src="slides-01-intro_files/figure-revealjs/cell-10-output-3.png" width="354" height="427"></p>
-</figure>
-</div>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>                                     Class  Probability score
-         cheetah, chetah, Acinonyx jubatus              0.994
-                  leopard, Panthera pardus              0.005
-jaguar, panther, Panthera onca, Felis onca              0.001
-       snow leopard, ounce, Panthera uncia              0.000
---------------------------------------------------------------</code></pre>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<figure>
-<p><img data-src="slides-01-intro_files/figure-revealjs/cell-10-output-5.png" width="329" height="427"></p>
-</figure>
-</div>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>                                   Class  Probability score
-                                 macaque              0.885
-patas, hussar monkey, Erythrocebus patas              0.062
-      proboscis monkey, Nasalis larvatus              0.015
-                       titi, titi monkey              0.010
---------------------------------------------------------------</code></pre>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<figure>
-<p><img data-src="slides-01-intro_files/figure-revealjs/cell-10-output-7.png" width="315" height="427"></p>
-</figure>
-</div>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>                        Class  Probability score
-Walker hound, Walker foxhound              0.582
-             English foxhound              0.144
-                       beagle              0.068
-                  EntleBucher              0.059
---------------------------------------------------------------</code></pre>
-</div>
-</div>
-</div>
-</section>
-<section id="example-predicting-housing-prices" class="slide level2 center">
-<h2>Example: Predicting housing prices</h2>
-<p>Suppose we want to predict housing prices given a number of attributes associated with houses. The target here is <strong>continuous</strong> and not <strong>discrete</strong>.</p>
-<div id="d53933d8" class="cell" data-execution_count="10">
-<div class="cell-output cell-output-display" data-execution_count="46">
-<table class="dataframe caption-top" data-quarto-postprocess="true" data-border="1">
-<thead>
-<tr class="header" style="text-align: right;">
-<th data-quarto-table-cell-role="th">target</th>
-<th data-quarto-table-cell-role="th">bedrooms</th>
-<th data-quarto-table-cell-role="th">bathrooms</th>
-<th data-quarto-table-cell-role="th">sqft_living</th>
-<th data-quarto-table-cell-role="th">sqft_lot</th>
-<th data-quarto-table-cell-role="th">floors</th>
-<th data-quarto-table-cell-role="th">waterfront</th>
-<th data-quarto-table-cell-role="th">view</th>
-<th data-quarto-table-cell-role="th">condition</th>
-<th data-quarto-table-cell-role="th">grade</th>
-<th data-quarto-table-cell-role="th">sqft_above</th>
-<th data-quarto-table-cell-role="th">sqft_basement</th>
-<th data-quarto-table-cell-role="th">yr_built</th>
-<th data-quarto-table-cell-role="th">yr_renovated</th>
-<th data-quarto-table-cell-role="th">zipcode</th>
-<th data-quarto-table-cell-role="th">lat</th>
-<th data-quarto-table-cell-role="th">long</th>
-<th data-quarto-table-cell-role="th">sqft_living15</th>
-<th data-quarto-table-cell-role="th">sqft_lot15</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>509000.0</td>
-<td>2</td>
-<td>1.50</td>
-<td>1930</td>
-<td>3521</td>
-<td>2.0</td>
-<td>0</td>
-<td>0</td>
-<td>3</td>
-<td>8</td>
-<td>1930</td>
-<td>0</td>
-<td>1989</td>
-<td>0</td>
-<td>98007</td>
-<td>47.6092</td>
-<td>-122.146</td>
-<td>1840</td>
-<td>3576</td>
-</tr>
-<tr class="even">
-<td>675000.0</td>
-<td>5</td>
-<td>2.75</td>
-<td>2570</td>
-<td>12906</td>
-<td>2.0</td>
-<td>0</td>
-<td>0</td>
-<td>3</td>
-<td>8</td>
-<td>2570</td>
-<td>0</td>
-<td>1987</td>
-<td>0</td>
-<td>98075</td>
-<td>47.5814</td>
-<td>-122.050</td>
-<td>2580</td>
-<td>12927</td>
-</tr>
-<tr class="odd">
-<td>420000.0</td>
-<td>3</td>
-<td>1.00</td>
-<td>1150</td>
-<td>5120</td>
-<td>1.0</td>
-<td>0</td>
-<td>0</td>
-<td>4</td>
-<td>6</td>
-<td>800</td>
-<td>350</td>
-<td>1946</td>
-<td>0</td>
-<td>98116</td>
-<td>47.5588</td>
-<td>-122.392</td>
-<td>1220</td>
-<td>5120</td>
-</tr>
-<tr class="even">
-<td>680000.0</td>
-<td>8</td>
-<td>2.75</td>
-<td>2530</td>
-<td>4800</td>
-<td>2.0</td>
-<td>0</td>
-<td>0</td>
-<td>4</td>
-<td>7</td>
-<td>1390</td>
-<td>1140</td>
-<td>1901</td>
-<td>0</td>
-<td>98112</td>
-<td>47.6241</td>
-<td>-122.305</td>
-<td>1540</td>
-<td>4800</td>
-</tr>
-<tr class="odd">
-<td>357823.0</td>
-<td>3</td>
-<td>1.50</td>
-<td>1240</td>
-<td>9196</td>
-<td>1.0</td>
-<td>0</td>
-<td>0</td>
-<td>3</td>
-<td>8</td>
-<td>1240</td>
-<td>0</td>
-<td>1968</td>
-<td>0</td>
-<td>98072</td>
-<td>47.7562</td>
-<td>-122.094</td>
-<td>1690</td>
-<td>10800</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</section>
-<section id="example-building-a-regression-model" class="slide level2 center">
-<h2>Example: Building a regression model</h2>
-<div id="ac8325fe" class="cell" data-execution_count="11">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a></a><span class="im">from</span> lightgbm.sklearn <span class="im">import</span> LGBMRegressor</span>
-<span id="cb11-2"><a></a></span>
-<span id="cb11-3"><a></a>X_train, y_train <span class="op">=</span> train_df.drop(columns<span class="op">=</span> [<span class="st">"target"</span>]), train_df[<span class="st">"target"</span>]</span>
-<span id="cb11-4"><a></a>X_test, y_test <span class="op">=</span> test_df.drop(columns<span class="op">=</span> [<span class="st">"target"</span>]), train_df[<span class="st">"target"</span>]</span>
-<span id="cb11-5"><a></a></span>
-<span id="cb11-6"><a></a>model <span class="op">=</span> LGBMRegressor()</span>
-<span id="cb11-7"><a></a>model.fit(X_train, y_train)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[LightGBM] [Info] Auto-choosing row-wise multi-threading, the overhead of testing was 0.000944 seconds.
-You can set `force_row_wise=true` to remove the overhead.
-And if memory is not enough, you can set `force_col_wise=true`.
-[LightGBM] [Info] Total Bins 2333
-[LightGBM] [Info] Number of data points in the train set: 17290, number of used features: 18
-[LightGBM] [Info] Start training from score 539762.702545</code></pre>
-</div>
-</div>
-</section>
-<section id="example-predicting-prices-of-unseen-houses" class="slide level2 center">
-<h2>Example: Predicting prices of unseen houses</h2>
-<div id="d1bb313e" class="cell" data-execution_count="12">
-<div class="cell-output cell-output-display" data-execution_count="48">
-<table class="dataframe caption-top" data-quarto-postprocess="true" data-border="1">
-<thead>
-<tr class="header" style="text-align: right;">
-<th data-quarto-table-cell-role="th">Predicted_target</th>
-<th data-quarto-table-cell-role="th">bedrooms</th>
-<th data-quarto-table-cell-role="th">bathrooms</th>
-<th data-quarto-table-cell-role="th">sqft_living</th>
-<th data-quarto-table-cell-role="th">sqft_lot</th>
-<th data-quarto-table-cell-role="th">floors</th>
-<th data-quarto-table-cell-role="th">waterfront</th>
-<th data-quarto-table-cell-role="th">view</th>
-<th data-quarto-table-cell-role="th">condition</th>
-<th data-quarto-table-cell-role="th">grade</th>
-<th data-quarto-table-cell-role="th">sqft_above</th>
-<th data-quarto-table-cell-role="th">sqft_basement</th>
-<th data-quarto-table-cell-role="th">yr_built</th>
-<th data-quarto-table-cell-role="th">yr_renovated</th>
-<th data-quarto-table-cell-role="th">zipcode</th>
-<th data-quarto-table-cell-role="th">lat</th>
-<th data-quarto-table-cell-role="th">long</th>
-<th data-quarto-table-cell-role="th">sqft_living15</th>
-<th data-quarto-table-cell-role="th">sqft_lot15</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>345831.740542</td>
-<td>4</td>
-<td>2.25</td>
-<td>2130</td>
-<td>8078</td>
-<td>1.0</td>
-<td>0</td>
-<td>0</td>
-<td>4</td>
-<td>7</td>
-<td>1380</td>
-<td>750</td>
-<td>1977</td>
-<td>0</td>
-<td>98055</td>
-<td>47.4482</td>
-<td>-122.209</td>
-<td>2300</td>
-<td>8112</td>
-</tr>
-<tr class="even">
-<td>601042.018745</td>
-<td>3</td>
-<td>2.50</td>
-<td>2210</td>
-<td>7620</td>
-<td>2.0</td>
-<td>0</td>
-<td>0</td>
-<td>3</td>
-<td>8</td>
-<td>2210</td>
-<td>0</td>
-<td>1994</td>
-<td>0</td>
-<td>98052</td>
-<td>47.6938</td>
-<td>-122.130</td>
-<td>1920</td>
-<td>7440</td>
-</tr>
-<tr class="odd">
-<td>311310.186024</td>
-<td>4</td>
-<td>1.50</td>
-<td>1800</td>
-<td>9576</td>
-<td>1.0</td>
-<td>0</td>
-<td>0</td>
-<td>4</td>
-<td>7</td>
-<td>1800</td>
-<td>0</td>
-<td>1977</td>
-<td>0</td>
-<td>98045</td>
-<td>47.4664</td>
-<td>-121.747</td>
-<td>1370</td>
-<td>9576</td>
-</tr>
-<tr class="even">
-<td>597555.592401</td>
-<td>3</td>
-<td>2.50</td>
-<td>1580</td>
-<td>1321</td>
-<td>2.0</td>
-<td>0</td>
-<td>2</td>
-<td>3</td>
-<td>8</td>
-<td>1080</td>
-<td>500</td>
-<td>2014</td>
-<td>0</td>
-<td>98107</td>
-<td>47.6688</td>
-<td>-122.402</td>
-<td>1530</td>
-<td>1357</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<p>We are predicting continuous values here as apposed to discrete values in <code>spam</code> vs.&nbsp;<code>ham</code> example.</p>
-</section>
-<section id="machine-learning-workflow" class="slide level2 center">
-<h2>Machine learning workflow</h2>
-<p>Supervised machine learning is quite flexible; it can be used on a variety of problems and different kinds of data. Here is a typical workflow of a supervised machine learning systems.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="img/ml-workflow.png" class="quarto-figure quarto-figure-center" width="700"></p>
-</figure>
-</div>
-<!-- <img src="img/ml-workflow.png" height="800" width="800">  -->
-<p>We will build machine learning pipelines in this course, focusing on some of the steps above.</p>
-<p><br><br></p>
-</section>
-<section id="questions-for-you" class="slide level2 center">
-<h2>❓❓ Questions for you</h2>
-<p>iClicker cloud join link: https://join.iclicker.com/VYFJ</p>
-</section>
-<section id="select-all-of-the-following-statements-which-are-true-iclicker" class="slide level2 center">
-<h2>Select all of the following statements which are <strong>True</strong> (iClicker)</h2>
-<ul>
-<li><ol type="A">
-<li>Predicting spam is an example of machine learning.</li>
-</ol></li>
-<li><ol start="2" type="A">
-<li>Predicting housing prices is not an example of machine learning.</li>
-</ol></li>
-<li><ol start="3" type="A">
-<li>For problems such as spelling correction, translation, face recognition, spam identification, if you are a domain expert, it’s usually faster and scalable to come up with a robust set of rules manually rather than building a machine learning model.</li>
-</ol></li>
-<li><ol start="4" type="A">
-<li>If you are asked to write a program to find all prime numbers up to a limit, it is better to implement one of the algorithms for doing so rather than using machine learning.</li>
-</ol></li>
-<li><ol start="5" type="A">
-<li>Google News is likely be using machine learning to organize news. <br><br><br><br></li>
-</ol></li>
-</ul>
-</section>
-<section id="surveys" class="slide level2 center">
-<h2>Surveys</h2>
-<ul>
-<li>Please complete the “Getting to know you” survey on <a href="">Canvas</a>.</li>
-<li>Also, please complete the anonymous restaurant survey on Qualtrics <a href="https://ubc.ca1.qualtrics.com/jfe/form/SV_73VuZiuwM1eDVrw">here</a>.
-<ul>
-<li>We will try to analyze this data set in the coming weeks.</li>
-</ul></li>
-</ul>
-</section>
-<section id="checklist-for-you-before-the-next-class" class="slide level2 center">
-<h2>Checklist for you before the next class</h2>
-<ul class="task-list">
-<li><label><input type="checkbox">Are you able to access course <a href="https://canvas.ubc.ca/courses/149122">Canvas</a> shell?</label></li>
-<li><label><input type="checkbox">Are you able to access <a href="https://piazza.com/ubc.ca/winterterm12024/cpsc_v3301011021032024w1">course Piazza</a>?</label></li>
-<li><label><input type="checkbox">Are you able to access <a href="https://www.gradescope.ca/courses/18608">Gradescope</a>? (If not, refer to the <a href="https://lthub.ubc.ca/guides/gradescope-student-guide/">Gradescope Student Guide</a>.)</label></li>
-<li><label><input type="checkbox">Are you able to access <a href="https://join.iclicker.com/VYFJ">iClicker Cloud</a> for this course?</label></li>
-<li><label><input type="checkbox">Did you follow the setup instructions <a href="https://ubc-cs.github.io/cpsc330-2024W1/docs/setup.html">here</a> to create a course conda environment on your computer?</label></li>
-<li><label><input type="checkbox">Did you complete the “Getting to know you” survey on Canvas?</label></li>
-<li><label><input type="checkbox">Did you complete the anonymous <a href="https://ubc.ca1.qualtrics.com/jfe/form/SV_73VuZiuwM1eDVrw">restaurant survey on Qualtrics</a>?</label></li>
-<li><label><input type="checkbox">Are you almost finished or at least started with homework 1?</label></li>
-</ul>
 
 <div class="quarto-auto-generated-content">
 <p><img src="img/UBC-CS-logo.png" class="slide-logo"></p>
