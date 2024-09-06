@@ -7,6 +7,69 @@
     "text": "Welcome to CPSC330! Here, you’ll find slides for CPSC 330 Section 103. These slides are based on the notes present here.\n\nClass times 🕘 5 pm to 6:20 pm\nWhere? 📍 West Mall Swing Space (SWNG) - 222, 2175 West Mall, Vancouver, BC V6T 1Z4"
   },
   {
+    "objectID": "slides-01-contd.html#example-predicting-labels-of-a-given-image",
+    "href": "slides-01-contd.html#example-predicting-labels-of-a-given-image",
+    "title": "Lecture 1: Introduction to CPSC 330 (continued)",
+    "section": "Example: Predicting labels of a given image",
+    "text": "Example: Predicting labels of a given image\n\nWe can also use machine learning to predict labels of given images using a technique called transfer learning.\n\n\n\n\n\n\n\n\n\n\n\n                         Class  Probability score\n                     tiger cat              0.636\n              tabby, tabby cat              0.174\nPembroke, Pembroke Welsh corgi              0.081\n               lynx, catamount              0.011\n--------------------------------------------------------------\n\n\n\n\n\n\n\n\n\n                                     Class  Probability score\n         cheetah, chetah, Acinonyx jubatus              0.994\n                  leopard, Panthera pardus              0.005\njaguar, panther, Panthera onca, Felis onca              0.001\n       snow leopard, ounce, Panthera uncia              0.000\n--------------------------------------------------------------\n\n\n\n\n\n\n\n\n\n                                   Class  Probability score\n                                 macaque              0.885\npatas, hussar monkey, Erythrocebus patas              0.062\n      proboscis monkey, Nasalis larvatus              0.015\n                       titi, titi monkey              0.010\n--------------------------------------------------------------\n\n\n\n\n\n\n\n\n\n                        Class  Probability score\nWalker hound, Walker foxhound              0.582\n             English foxhound              0.144\n                       beagle              0.068\n                  EntleBucher              0.059\n--------------------------------------------------------------"
+  },
+  {
+    "objectID": "slides-01-contd.html#example-predicting-housing-prices",
+    "href": "slides-01-contd.html#example-predicting-housing-prices",
+    "title": "Lecture 1: Introduction to CPSC 330 (continued)",
+    "section": "Example: Predicting housing prices",
+    "text": "Example: Predicting housing prices\nSuppose we want to predict housing prices given a number of attributes associated with houses. The target here is continuous and not discrete.\n\n\n\n\n\ntarget\nbedrooms\nbathrooms\nsqft_living\nsqft_lot\nfloors\nwaterfront\nview\ncondition\ngrade\nsqft_above\nsqft_basement\nyr_built\nyr_renovated\nzipcode\nlat\nlong\nsqft_living15\nsqft_lot15\n\n\n\n\n509000.0\n2\n1.50\n1930\n3521\n2.0\n0\n0\n3\n8\n1930\n0\n1989\n0\n98007\n47.6092\n-122.146\n1840\n3576\n\n\n675000.0\n5\n2.75\n2570\n12906\n2.0\n0\n0\n3\n8\n2570\n0\n1987\n0\n98075\n47.5814\n-122.050\n2580\n12927\n\n\n420000.0\n3\n1.00\n1150\n5120\n1.0\n0\n0\n4\n6\n800\n350\n1946\n0\n98116\n47.5588\n-122.392\n1220\n5120\n\n\n680000.0\n8\n2.75\n2530\n4800\n2.0\n0\n0\n4\n7\n1390\n1140\n1901\n0\n98112\n47.6241\n-122.305\n1540\n4800\n\n\n357823.0\n3\n1.50\n1240\n9196\n1.0\n0\n0\n3\n8\n1240\n0\n1968\n0\n98072\n47.7562\n-122.094\n1690\n10800"
+  },
+  {
+    "objectID": "slides-01-contd.html#example-building-a-regression-model",
+    "href": "slides-01-contd.html#example-building-a-regression-model",
+    "title": "Lecture 1: Introduction to CPSC 330 (continued)",
+    "section": "Example: Building a regression model",
+    "text": "Example: Building a regression model\n\nfrom lightgbm.sklearn import LGBMRegressor\n\nX_train, y_train = train_df.drop(columns= [\"target\"]), train_df[\"target\"]\nX_test, y_test = test_df.drop(columns= [\"target\"]), train_df[\"target\"]\n\nmodel = LGBMRegressor()\nmodel.fit(X_train, y_train);\n\n[LightGBM] [Info] Auto-choosing row-wise multi-threading, the overhead of testing was 0.000761 seconds.\nYou can set `force_row_wise=true` to remove the overhead.\nAnd if memory is not enough, you can set `force_col_wise=true`.\n[LightGBM] [Info] Total Bins 2333\n[LightGBM] [Info] Number of data points in the train set: 17290, number of used features: 18\n[LightGBM] [Info] Start training from score 539762.702545"
+  },
+  {
+    "objectID": "slides-01-contd.html#example-predicting-prices-of-unseen-houses",
+    "href": "slides-01-contd.html#example-predicting-prices-of-unseen-houses",
+    "title": "Lecture 1: Introduction to CPSC 330 (continued)",
+    "section": "Example: Predicting prices of unseen houses",
+    "text": "Example: Predicting prices of unseen houses\n\n\n\n\n\nPredicted_target\nbedrooms\nbathrooms\nsqft_living\nsqft_lot\nfloors\nwaterfront\nview\ncondition\ngrade\nsqft_above\nsqft_basement\nyr_built\nyr_renovated\nzipcode\nlat\nlong\nsqft_living15\nsqft_lot15\n\n\n\n\n345831.740542\n4\n2.25\n2130\n8078\n1.0\n0\n0\n4\n7\n1380\n750\n1977\n0\n98055\n47.4482\n-122.209\n2300\n8112\n\n\n601042.018745\n3\n2.50\n2210\n7620\n2.0\n0\n0\n3\n8\n2210\n0\n1994\n0\n98052\n47.6938\n-122.130\n1920\n7440\n\n\n311310.186024\n4\n1.50\n1800\n9576\n1.0\n0\n0\n4\n7\n1800\n0\n1977\n0\n98045\n47.4664\n-121.747\n1370\n9576\n\n\n597555.592401\n3\n2.50\n1580\n1321\n2.0\n0\n2\n3\n8\n1080\n500\n2014\n0\n98107\n47.6688\n-122.402\n1530\n1357\n\n\n\n\n\nWe are predicting continuous values here as apposed to discrete values in spam vs. ham example."
+  },
+  {
+    "objectID": "slides-01-contd.html#machine-learning-workflow",
+    "href": "slides-01-contd.html#machine-learning-workflow",
+    "title": "Lecture 1: Introduction to CPSC 330 (continued)",
+    "section": "Machine learning workflow",
+    "text": "Machine learning workflow\nSupervised machine learning is quite flexible; it can be used on a variety of problems and different kinds of data. Here is a typical workflow of a supervised machine learning systems.\n\n\n\n\n\n\nWe will build machine learning pipelines in this course, focusing on some of the steps above."
+  },
+  {
+    "objectID": "slides-01-contd.html#questions-for-you",
+    "href": "slides-01-contd.html#questions-for-you",
+    "title": "Lecture 1: Introduction to CPSC 330 (continued)",
+    "section": "❓❓ Questions for you",
+    "text": "❓❓ Questions for you\niClicker cloud join link: https://join.iclicker.com/VYFJ"
+  },
+  {
+    "objectID": "slides-01-contd.html#select-all-of-the-following-statements-which-are-true-iclicker",
+    "href": "slides-01-contd.html#select-all-of-the-following-statements-which-are-true-iclicker",
+    "title": "Lecture 1: Introduction to CPSC 330 (continued)",
+    "section": "Select all of the following statements which are True (iClicker)",
+    "text": "Select all of the following statements which are True (iClicker)\n\nPredicting spam is an example of machine learning.\nPredicting housing prices is not an example of machine learning.\nFor problems such as spelling correction, translation, face recognition, spam identification, if you are a domain expert, it’s usually faster and scalable to come up with a robust set of rules manually rather than building a machine learning model.\nIf you are asked to write a program to find all prime numbers up to a limit, it is better to implement one of the algorithms for doing so rather than using machine learning.\nGoogle News is likely be using machine learning to organize news."
+  },
+  {
+    "objectID": "slides-01-contd.html#surveys",
+    "href": "slides-01-contd.html#surveys",
+    "title": "Lecture 1: Introduction to CPSC 330 (continued)",
+    "section": "Surveys",
+    "text": "Surveys\n\nPlease complete the “Getting to know you” survey on Canvas.\nAlso, please complete the anonymous restaurant survey on Qualtrics here.\n\nWe will try to analyze this data set in the coming weeks."
+  },
+  {
+    "objectID": "slides-01-contd.html#checklist-for-you-before-the-next-class",
+    "href": "slides-01-contd.html#checklist-for-you-before-the-next-class",
+    "title": "Lecture 1: Introduction to CPSC 330 (continued)",
+    "section": "Checklist for you before the next class",
+    "text": "Checklist for you before the next class\n\nAre you able to access course Canvas shell?\nAre you able to access course Piazza?\nAre you able to access Gradescope? (If not, refer to the Gradescope Student Guide.)\nAre you able to access iClicker Cloud for this course?\nDid you follow the setup instructions here to create a course conda environment on your computer?\nDid you complete the “Getting to know you” survey on Canvas?\nDid you complete the anonymous restaurant survey on Qualtrics?\nAre you almost finished or at least started with homework 1?"
+  },
+  {
     "objectID": "slides-01-intro.html#introductions",
     "href": "slides-01-intro.html#introductions",
     "title": "Lecture 1: Introduction to CPSC 330",
@@ -221,7 +284,7 @@
     "href": "slides-01-intro.html#lecture-notes",
     "title": "Lecture 1: Introduction to CPSC 330",
     "section": "Lecture notes",
-    "text": "Lecture notes\n\nAll the lectures from last year are available here.\nWe cannot promise anything will stay the same from last year to this year, so read them in advance at your own risk.\nA “finalized” version will be pushed to GitHub and the Jupyter book right before each class.\nEach instructor will have slightly adapted versions of notes to present slides during lectures.\n\nYou will find the link to these slides in our repository: https://github.com/UBC-CS/cpsc330-2024W1/tree/main/lectures/102-Varada-lectures",
+    "text": "Lecture notes\n\nAll the lectures from last year are available here.\nWe cannot promise anything will stay the same from last year to this year, so read them in advance at your own risk.\nA “finalized” version will be pushed to GitHub and the Jupyter book right before each class.\nEach instructor will have slightly adapted versions of notes to present slides during lectures.\n\nYou will find the link to these slides in our repository: https://github.com/UBC-CS/cpsc330-2024W1/tree/main/lectures/103-Firas-lectures",
     "crumbs": [
       "Lecture 1: Introduction to CPSC 330"
     ]
@@ -417,100 +480,10 @@
     ]
   },
   {
-    "objectID": "slides-01-intro.html#example-predicting-labels-of-a-given-image",
-    "href": "slides-01-intro.html#example-predicting-labels-of-a-given-image",
-    "title": "Lecture 1: Introduction to CPSC 330",
-    "section": "Example: Predicting labels of a given image",
-    "text": "Example: Predicting labels of a given image\n\nWe can also use machine learning to predict labels of given images using a technique called transfer learning.\n\n\n\n\n\n\n\n\n\n\n\n                         Class  Probability score\n                     tiger cat              0.636\n              tabby, tabby cat              0.174\nPembroke, Pembroke Welsh corgi              0.081\n               lynx, catamount              0.011\n--------------------------------------------------------------\n\n\n\n\n\n\n\n\n\n                                     Class  Probability score\n         cheetah, chetah, Acinonyx jubatus              0.994\n                  leopard, Panthera pardus              0.005\njaguar, panther, Panthera onca, Felis onca              0.001\n       snow leopard, ounce, Panthera uncia              0.000\n--------------------------------------------------------------\n\n\n\n\n\n\n\n\n\n                                   Class  Probability score\n                                 macaque              0.885\npatas, hussar monkey, Erythrocebus patas              0.062\n      proboscis monkey, Nasalis larvatus              0.015\n                       titi, titi monkey              0.010\n--------------------------------------------------------------\n\n\n\n\n\n\n\n\n\n                        Class  Probability score\nWalker hound, Walker foxhound              0.582\n             English foxhound              0.144\n                       beagle              0.068\n                  EntleBucher              0.059\n--------------------------------------------------------------",
-    "crumbs": [
-      "Lecture 1: Introduction to CPSC 330"
-    ]
-  },
-  {
-    "objectID": "slides-01-intro.html#example-predicting-housing-prices",
-    "href": "slides-01-intro.html#example-predicting-housing-prices",
-    "title": "Lecture 1: Introduction to CPSC 330",
-    "section": "Example: Predicting housing prices",
-    "text": "Example: Predicting housing prices\nSuppose we want to predict housing prices given a number of attributes associated with houses. The target here is continuous and not discrete.\n\n\n\n\n\ntarget\nbedrooms\nbathrooms\nsqft_living\nsqft_lot\nfloors\nwaterfront\nview\ncondition\ngrade\nsqft_above\nsqft_basement\nyr_built\nyr_renovated\nzipcode\nlat\nlong\nsqft_living15\nsqft_lot15\n\n\n\n\n509000.0\n2\n1.50\n1930\n3521\n2.0\n0\n0\n3\n8\n1930\n0\n1989\n0\n98007\n47.6092\n-122.146\n1840\n3576\n\n\n675000.0\n5\n2.75\n2570\n12906\n2.0\n0\n0\n3\n8\n2570\n0\n1987\n0\n98075\n47.5814\n-122.050\n2580\n12927\n\n\n420000.0\n3\n1.00\n1150\n5120\n1.0\n0\n0\n4\n6\n800\n350\n1946\n0\n98116\n47.5588\n-122.392\n1220\n5120\n\n\n680000.0\n8\n2.75\n2530\n4800\n2.0\n0\n0\n4\n7\n1390\n1140\n1901\n0\n98112\n47.6241\n-122.305\n1540\n4800\n\n\n357823.0\n3\n1.50\n1240\n9196\n1.0\n0\n0\n3\n8\n1240\n0\n1968\n0\n98072\n47.7562\n-122.094\n1690\n10800",
-    "crumbs": [
-      "Lecture 1: Introduction to CPSC 330"
-    ]
-  },
-  {
-    "objectID": "slides-01-intro.html#example-building-a-regression-model",
-    "href": "slides-01-intro.html#example-building-a-regression-model",
-    "title": "Lecture 1: Introduction to CPSC 330",
-    "section": "Example: Building a regression model",
-    "text": "Example: Building a regression model\n\nfrom lightgbm.sklearn import LGBMRegressor\n\nX_train, y_train = train_df.drop(columns= [\"target\"]), train_df[\"target\"]\nX_test, y_test = test_df.drop(columns= [\"target\"]), train_df[\"target\"]\n\nmodel = LGBMRegressor()\nmodel.fit(X_train, y_train);\n\n[LightGBM] [Info] Auto-choosing row-wise multi-threading, the overhead of testing was 0.000944 seconds.\nYou can set `force_row_wise=true` to remove the overhead.\nAnd if memory is not enough, you can set `force_col_wise=true`.\n[LightGBM] [Info] Total Bins 2333\n[LightGBM] [Info] Number of data points in the train set: 17290, number of used features: 18\n[LightGBM] [Info] Start training from score 539762.702545",
-    "crumbs": [
-      "Lecture 1: Introduction to CPSC 330"
-    ]
-  },
-  {
-    "objectID": "slides-01-intro.html#example-predicting-prices-of-unseen-houses",
-    "href": "slides-01-intro.html#example-predicting-prices-of-unseen-houses",
-    "title": "Lecture 1: Introduction to CPSC 330",
-    "section": "Example: Predicting prices of unseen houses",
-    "text": "Example: Predicting prices of unseen houses\n\n\n\n\n\nPredicted_target\nbedrooms\nbathrooms\nsqft_living\nsqft_lot\nfloors\nwaterfront\nview\ncondition\ngrade\nsqft_above\nsqft_basement\nyr_built\nyr_renovated\nzipcode\nlat\nlong\nsqft_living15\nsqft_lot15\n\n\n\n\n345831.740542\n4\n2.25\n2130\n8078\n1.0\n0\n0\n4\n7\n1380\n750\n1977\n0\n98055\n47.4482\n-122.209\n2300\n8112\n\n\n601042.018745\n3\n2.50\n2210\n7620\n2.0\n0\n0\n3\n8\n2210\n0\n1994\n0\n98052\n47.6938\n-122.130\n1920\n7440\n\n\n311310.186024\n4\n1.50\n1800\n9576\n1.0\n0\n0\n4\n7\n1800\n0\n1977\n0\n98045\n47.4664\n-121.747\n1370\n9576\n\n\n597555.592401\n3\n2.50\n1580\n1321\n2.0\n0\n2\n3\n8\n1080\n500\n2014\n0\n98107\n47.6688\n-122.402\n1530\n1357\n\n\n\n\n\nWe are predicting continuous values here as apposed to discrete values in spam vs. ham example.",
-    "crumbs": [
-      "Lecture 1: Introduction to CPSC 330"
-    ]
-  },
-  {
-    "objectID": "slides-01-intro.html#machine-learning-workflow",
-    "href": "slides-01-intro.html#machine-learning-workflow",
-    "title": "Lecture 1: Introduction to CPSC 330",
-    "section": "Machine learning workflow",
-    "text": "Machine learning workflow\nSupervised machine learning is quite flexible; it can be used on a variety of problems and different kinds of data. Here is a typical workflow of a supervised machine learning systems.\n\n\n\n\n\n\nWe will build machine learning pipelines in this course, focusing on some of the steps above.",
-    "crumbs": [
-      "Lecture 1: Introduction to CPSC 330"
-    ]
-  },
-  {
-    "objectID": "slides-01-intro.html#questions-for-you",
-    "href": "slides-01-intro.html#questions-for-you",
-    "title": "Lecture 1: Introduction to CPSC 330",
-    "section": "❓❓ Questions for you",
-    "text": "❓❓ Questions for you\niClicker cloud join link: https://join.iclicker.com/VYFJ",
-    "crumbs": [
-      "Lecture 1: Introduction to CPSC 330"
-    ]
-  },
-  {
-    "objectID": "slides-01-intro.html#select-all-of-the-following-statements-which-are-true-iclicker",
-    "href": "slides-01-intro.html#select-all-of-the-following-statements-which-are-true-iclicker",
-    "title": "Lecture 1: Introduction to CPSC 330",
-    "section": "Select all of the following statements which are True (iClicker)",
-    "text": "Select all of the following statements which are True (iClicker)\n\n\nPredicting spam is an example of machine learning.\n\n\nPredicting housing prices is not an example of machine learning.\n\n\nFor problems such as spelling correction, translation, face recognition, spam identification, if you are a domain expert, it’s usually faster and scalable to come up with a robust set of rules manually rather than building a machine learning model.\n\n\nIf you are asked to write a program to find all prime numbers up to a limit, it is better to implement one of the algorithms for doing so rather than using machine learning.\n\n\nGoogle News is likely be using machine learning to organize news.",
-    "crumbs": [
-      "Lecture 1: Introduction to CPSC 330"
-    ]
-  },
-  {
-    "objectID": "slides-01-intro.html#surveys",
-    "href": "slides-01-intro.html#surveys",
-    "title": "Lecture 1: Introduction to CPSC 330",
-    "section": "Surveys",
-    "text": "Surveys\n\nPlease complete the “Getting to know you” survey on Canvas.\nAlso, please complete the anonymous restaurant survey on Qualtrics here.\n\nWe will try to analyze this data set in the coming weeks.",
-    "crumbs": [
-      "Lecture 1: Introduction to CPSC 330"
-    ]
-  },
-  {
-    "objectID": "slides-01-intro.html#checklist-for-you-before-the-next-class",
-    "href": "slides-01-intro.html#checklist-for-you-before-the-next-class",
-    "title": "Lecture 1: Introduction to CPSC 330",
-    "section": "Checklist for you before the next class",
-    "text": "Checklist for you before the next class\n\nAre you able to access course Canvas shell?\nAre you able to access course Piazza?\nAre you able to access Gradescope? (If not, refer to the Gradescope Student Guide.)\nAre you able to access iClicker Cloud for this course?\nDid you follow the setup instructions here to create a course conda environment on your computer?\nDid you complete the “Getting to know you” survey on Canvas?\nDid you complete the anonymous restaurant survey on Qualtrics?\nAre you almost finished or at least started with homework 1?",
-    "crumbs": [
-      "Lecture 1: Introduction to CPSC 330"
-    ]
-  },
-  {
     "objectID": "slides.html",
     "href": "slides.html",
     "title": "Overview",
     "section": "",
-    "text": "Title\n\n\nDescription\n\n\n\n\n\n\nLecture 1: Introduction to CPSC 330\n\n\nWhat is machine learning, types of machine learning, learning to navigate through the course materials, getting familiar with the course policies\n\n\n\n\n\nNo matching items"
+    "text": "Title\n\n\nDescription\n\n\n\n\n\n\nLecture 1: Introduction to CPSC 330 (continued)\n\n\nWhat is machine learning, types of machine learning, learning to navigate through the course materials, getting familiar with the course policies\n\n\n\n\nLecture 1: Introduction to CPSC 330\n\n\nWhat is machine learning, types of machine learning, learning to navigate through the course materials, getting familiar with the course policies\n\n\n\n\n\nNo matching items"
   }
 ]
