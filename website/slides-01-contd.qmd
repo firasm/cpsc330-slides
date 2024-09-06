@@ -1,0 +1,139 @@
+---
+title: 'Lecture 1: Introduction to CPSC 330 (continued)'
+description: Introduction to ML and CPSC 330
+description-short: 'What is machine learning, types of machine learning, learning to navigate through the course materials, getting familiar with the course policies'
+format:
+  revealjs:
+    slide-number: true
+    smaller: true
+    center: true
+    logo: img/UBC-CS-logo.png
+    resources:
+      - data/
+      - img/
+---
+
+```{python}
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+import os
+import sys
+sys.path.append(os.path.join(os.path.abspath("."), "code"))
+from IPython.display import HTML, display
+from sklearn.feature_extraction.text import CountVectorizer
+from sklearn.linear_model import LogisticRegression
+from sklearn.model_selection import train_test_split
+from sklearn.pipeline import make_pipeline
+
+plt.rcParams["font.size"] = 16
+pd.set_option("display.max_colwidth", 200)
+
+DATA_DIR = 'data/' 
+```
+
+## Example: Predicting labels of a given image 
+
+- We can also use machine learning to predict labels of given images using a technique called **transfer learning**. 
+
+::: {.scroll-container style="overflow-y: scroll; height: 400px;"}
+
+```{python}
+import img_classify
+from PIL import Image
+import glob
+import matplotlib.pyplot as plt
+# Predict topn labels and their associated probabilities for unseen images
+images = glob.glob(DATA_DIR + "test_images/*.*")
+class_labels_file = DATA_DIR + 'imagenet_classes.txt'
+for img_path in images:
+    img = Image.open(img_path).convert('RGB')
+    img.load()
+    plt.imshow(img)
+    plt.show();    
+    df = img_classify.classify_image(img_path, class_labels_file)
+    print(df.to_string(index=False))
+    print("--------------------------------------------------------------")
+```
+
+:::
+
+## Example: Predicting housing prices
+
+Suppose we want to predict housing prices given a number of attributes associated with houses. The target here is **continuous** and not **discrete**. 
+
+```{python}
+df = pd.read_csv( DATA_DIR + "kc_house_data.csv")
+df = df.drop(columns = ["id", "date"])
+df.rename(columns={"price": "target"}, inplace=True)
+train_df, test_df = train_test_split(df, test_size=0.2, random_state=4)
+HTML(train_df.head().to_html(index=False))
+```
+
+## Example: Building a regression model
+
+```{python}
+#| echo: true
+from lightgbm.sklearn import LGBMRegressor
+
+X_train, y_train = train_df.drop(columns= ["target"]), train_df["target"]
+X_test, y_test = test_df.drop(columns= ["target"]), train_df["target"]
+
+model = LGBMRegressor()
+model.fit(X_train, y_train);
+```
+
+## Example: Predicting prices of unseen houses
+
+```{python}
+pred_df = pd.DataFrame(
+    # {"Predicted target": model.predict(X_test[0:4]).tolist(), "Actual price": y_test[0:4].tolist()}
+    {"Predicted_target": model.predict(X_test[0:4]).tolist()}
+)
+df_concat = pd.concat([pred_df, X_test[0:4].reset_index(drop=True)], axis=1)
+HTML(df_concat.to_html(index=False))
+```
+
+We are predicting continuous values here as apposed to discrete values in `spam` vs. `ham` example. 
+
+## Machine learning workflow 
+
+Supervised machine learning is quite flexible; it can be used on a variety of problems and different kinds of data. Here is a typical workflow of a supervised machine learning systems.  
+
+![](img/ml-workflow.png){.nostretch fig-align="center" width="700px"}
+
+<!-- <img src="img/ml-workflow.png" height="800" width="800">  -->
+
+We will build machine learning pipelines in this course, focusing on some of the steps above. 
+
+<br><br>
+
+## ❓❓ Questions for you
+
+iClicker cloud join link: https://join.iclicker.com/VYFJ
+
+## Select all of the following statements which are **True** (iClicker)
+
+A) Predicting spam is an example of machine learning. 
+B) Predicting housing prices is not an example of machine learning. 
+C) For problems such as spelling correction, translation, face recognition, spam identification, if you are a domain expert, it's usually faster and scalable to come up with a robust set of rules manually rather than building a machine learning model. 
+D) If you are asked to write a program to find all prime numbers up to  a limit, it is better to implement one of the algorithms for doing so rather than using machine learning. 
+E) Google News is likely be using machine learning to organize news. 
+<br><br><br><br>
+
+## Surveys
+
+- Please complete the "Getting to know you" survey on [Canvas]().
+- Also, please complete the anonymous restaurant survey on Qualtrics [here](https://ubc.ca1.qualtrics.com/jfe/form/SV_73VuZiuwM1eDVrw).
+  - We will try to analyze this data set in the coming weeks. 
+
+## Checklist for you before the next class
+
+- [ ] Are you able to access course [Canvas](https://canvas.ubc.ca/courses/149122) shell? 
+- [ ] Are you able to access [course Piazza](https://piazza.com/ubc.ca/winterterm12024/cpsc_v3301011021032024w1)?
+- [ ] Are you able to access [Gradescope](https://canvas.ubc.ca/courses/149122/external_tools/53542?display=borderless)? (If not, refer to the [Gradescope Student Guide](https://lthub.ubc.ca/guides/gradescope-student-guide/).)
+- [ ] Are you able to access [iClicker Cloud](https://join.iclicker.com/VYFJ) for this course?
+- [ ] Did you follow the setup instructions [here](https://ubc-cs.github.io/cpsc330-2024W1/docs/setup.html) to create a course conda environment on your computer?
+- [ ] Did you complete the "Getting to know you" survey on Canvas?
+- [ ] Did you complete the anonymous [restaurant survey on Qualtrics](https://ubc.ca1.qualtrics.com/jfe/form/SV_73VuZiuwM1eDVrw)?
+- [ ] Are you almost finished or at least started with homework 1?

@@ -206,7 +206,15 @@ Description
 </tr>
 </thead>
 <tbody class="list">
-<tr data-index="0" data-listing-file-modified-sort="1725578726933" data-listing-reading-time-sort="14" data-listing-word-count-sort="2630" data-listing-title-sort="Lecture 1: Introduction to CPSC 330" data-listing-filename-sort="slides-01-intro.qmd">
+<tr data-index="0" data-listing-file-modified-sort="1725592402432" data-listing-reading-time-sort="3" data-listing-word-count-sort="567" data-listing-title-sort="Lecture 1: Introduction to CPSC 330 (continued)" data-listing-filename-sort="slides-01-contd.qmd">
+<td>
+<a href="./slides-01-contd.html" class="title listing-title">Lecture 1: Introduction to CPSC 330 (continued)</a>
+</td>
+<td>
+<span class="listing-description-short">What is machine learning, types of machine learning, learning to navigate through the course materials, getting familiar with the course policies</span>
+</td>
+</tr>
+<tr data-index="1" data-listing-file-modified-sort="1725592098940" data-listing-reading-time-sort="14" data-listing-word-count-sort="2630" data-listing-title-sort="Lecture 1: Introduction to CPSC 330" data-listing-filename-sort="slides-01-intro.qmd">
 <td>
 <a href="./slides-01-intro.html" class="title listing-title">Lecture 1: Introduction to CPSC 330</a>
 </td>
@@ -312,7 +320,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/firasm\.github\.io\/cpsc330-slides\/");
+      var filterRegex = new RegExp('/' + window.location.host + '/');
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
