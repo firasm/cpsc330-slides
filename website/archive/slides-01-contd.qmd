@@ -32,6 +32,7 @@ pd.set_option("display.max_colwidth", 200)
 DATA_DIR = 'data/' 
 ```
 
+<!--
 ## Example: Predicting labels of a given image 
 
 - We can also use machine learning to predict labels of given images using a technique called **transfer learning**. 
@@ -56,9 +57,10 @@ for img_path in images:
     print("--------------------------------------------------------------")
 ```
 
-:::
+::: -->
 
-## Example: Predicting housing prices
+
+## Example: Predicting housing prices (Setup)
 
 Suppose we want to predict housing prices given a number of attributes associated with houses. The target here is **continuous** and not **discrete**. 
 
@@ -70,7 +72,7 @@ train_df, test_df = train_test_split(df, test_size=0.2, random_state=4)
 HTML(train_df.head().to_html(index=False))
 ```
 
-## Example: Building a regression model
+## Example: Predicting housing prices (Building a regression model)
 
 ```{python}
 #| echo: true
@@ -83,7 +85,7 @@ model = LGBMRegressor()
 model.fit(X_train, y_train);
 ```
 
-## Example: Predicting prices of unseen houses
+## Example: Predicting housing prices (Predicting prices of unseen houses)
 
 ```{python}
 pred_df = pd.DataFrame(
@@ -107,19 +109,6 @@ Supervised machine learning is quite flexible; it can be used on a variety of pr
 We will build machine learning pipelines in this course, focusing on some of the steps above. 
 
 <br><br>
-
-## ❓❓ Questions for you
-
-iClicker cloud join link: https://join.iclicker.com/VYFJ
-
-## Select all of the following statements which are **True** (iClicker)
-
-A) Predicting spam is an example of machine learning. 
-B) Predicting housing prices is not an example of machine learning. 
-C) For problems such as spelling correction, translation, face recognition, spam identification, if you are a domain expert, it's usually faster and scalable to come up with a robust set of rules manually rather than building a machine learning model. 
-D) If you are asked to write a program to find all prime numbers up to  a limit, it is better to implement one of the algorithms for doing so rather than using machine learning. 
-E) Google News is likely be using machine learning to organize news. 
-<br><br><br><br>
 
 ## Surveys
 
