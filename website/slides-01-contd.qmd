@@ -127,7 +127,7 @@ E) Google News is likely be using machine learning to organize news.
 - Also, please complete the anonymous restaurant survey on Qualtrics [here](https://ubc.ca1.qualtrics.com/jfe/form/SV_73VuZiuwM1eDVrw).
   - We will try to analyze this data set in the coming weeks. 
 
-## Checklist for you before the next class
+## Checklist for you in the first week
 
 - [ ] Are you able to access course [Canvas](https://canvas.ubc.ca/courses/149122) shell? 
 - [ ] Are you able to access [course Piazza](https://piazza.com/ubc.ca/winterterm12024/cpsc_v3301011021032024w1)?
