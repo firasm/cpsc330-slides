@@ -215,7 +215,7 @@ plot_tree_decision_boundary_and_tree(
 
 ## iClicker 2.2: Supervised vs unsupervised
 
-Clicker cloud join link: https://join.iclicker.com/VYFJ
+Clicker cloud join link: [https://join.iclicker.com/VYFJ](https://join.iclicker.com/VYFJ)
 
 Select all of the following statements which are examples of supervised machine learning
 
@@ -227,7 +227,7 @@ Select all of the following statements which are examples of supervised machine 
 
 ## iClicker 2.3: Classification vs. Regression
 
-Clicker cloud join link: https://join.iclicker.com/VYFJ
+Clicker cloud join link: [https://join.iclicker.com/VYFJ](https://join.iclicker.com/VYFJ)
  
 Select all of the following statements which are examples of regression problems
 
@@ -239,7 +239,7 @@ Select all of the following statements which are examples of regression problems
 
 ## iClicker 2.5: Baselines and Decision trees
 
-iClicker cloud join link: https://join.iclicker.com/VYFJ
+iClicker cloud join link: [https://join.iclicker.com/VYFJ](https://join.iclicker.com/VYFJ)
 
 Select all of the following statements which are TRUE.
 
@@ -249,5 +249,4 @@ Select all of the following statements which are TRUE.
 - (D) The prediction in a decision tree works by routing the example from the root to the leaf.
 
 
-## HW2 Worksheet portion 
-
+## HW2 Worksheet portion
