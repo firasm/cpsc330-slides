@@ -41,4 +41,3 @@ def classify_image(image_path, class_labels_file, topn=4):
          'Probability score': [np.round(probabilities[0, idx].item(),3) for idx in indices[0][:topn]]}
     df = pd.DataFrame(d, columns = ['Class','Probability score'])
     return df
-    
