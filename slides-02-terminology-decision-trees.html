@@ -10,7 +10,7 @@
 <link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.5.57">
 
-  <title>CPSC 330 Section 103 Slides – Lecture 1: Introduction to CPSC 330 (continued)</title>
+  <title>CPSC 330 Section 103 Slides – Lecture 2: Terminology, Baselines, Decision Trees</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -393,386 +393,28 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Lecture 1: Introduction to CPSC 330 (continued)</h1>
+  <h1 class="title">Lecture 2: Terminology, Baselines, Decision Trees</h1>
 
 <div class="quarto-title-authors">
 </div>
 
 </section>
-<section id="example-predicting-labels-of-a-given-image" class="slide level2 center">
-<h2>Example: Predicting labels of a given image</h2>
+<section id="announcements" class="slide level2 center">
+<h2>Announcements</h2>
 <ul>
-<li>We can also use machine learning to predict labels of given images using a technique called <strong>transfer learning</strong>.</li>
+<li>Things due this week
+<ul>
+<li>Homework 1 (hw1): Due Sept 10 11:59pm</li>
+</ul></li>
+<li>Homework 2 (hw2) has been released (Due: Sept 16, 11:59pm)
+<ul>
+<li>There is some autograding in this homework.</li>
+</ul></li>
+<li>You can find the tentative due dates for all deliverables <a href="https://ubc-cs.github.io/cpsc330-2024W1/README.html#deliverable-due-dates-tentative">here</a>.</li>
+<li>Please monitor Piazza (especially pinned posts and instructor posts) for announcements.</li>
+<li>I’ll assume that you’ve watched the pre-lecture videos.</li>
 </ul>
-<div class="scroll-container" style="overflow-y: scroll; height: 400px;">
-<div id="d8350e65" class="cell" data-execution_count="2">
-<div class="cell-output cell-output-display">
-<div>
-<figure>
-<p><img data-src="slides-01-contd_files/figure-revealjs/cell-3-output-1.png" width="578" height="427"></p>
-</figure>
-</div>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>                         Class  Probability score
-                     tiger cat              0.636
-              tabby, tabby cat              0.174
-Pembroke, Pembroke Welsh corgi              0.081
-               lynx, catamount              0.011
---------------------------------------------------------------</code></pre>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<figure>
-<p><img data-src="slides-01-contd_files/figure-revealjs/cell-3-output-3.png" width="354" height="427"></p>
-</figure>
-</div>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>                                     Class  Probability score
-         cheetah, chetah, Acinonyx jubatus              0.994
-                  leopard, Panthera pardus              0.005
-jaguar, panther, Panthera onca, Felis onca              0.001
-       snow leopard, ounce, Panthera uncia              0.000
---------------------------------------------------------------</code></pre>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<figure>
-<p><img data-src="slides-01-contd_files/figure-revealjs/cell-3-output-5.png" width="329" height="427"></p>
-</figure>
-</div>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>                                   Class  Probability score
-                                 macaque              0.885
-patas, hussar monkey, Erythrocebus patas              0.062
-      proboscis monkey, Nasalis larvatus              0.015
-                       titi, titi monkey              0.010
---------------------------------------------------------------</code></pre>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<figure>
-<p><img data-src="slides-01-contd_files/figure-revealjs/cell-3-output-7.png" width="315" height="427"></p>
-</figure>
-</div>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>                        Class  Probability score
-Walker hound, Walker foxhound              0.582
-             English foxhound              0.144
-                       beagle              0.068
-                  EntleBucher              0.059
---------------------------------------------------------------</code></pre>
-</div>
-</div>
-</div>
-</section>
-<section id="example-predicting-housing-prices" class="slide level2 center">
-<h2>Example: Predicting housing prices</h2>
-<p>Suppose we want to predict housing prices given a number of attributes associated with houses. The target here is <strong>continuous</strong> and not <strong>discrete</strong>.</p>
-<div id="66942ce0" class="cell" data-execution_count="3">
-<div class="cell-output cell-output-display" data-execution_count="8">
-<table class="dataframe caption-top" data-quarto-postprocess="true" data-border="1">
-<thead>
-<tr class="header" style="text-align: right;">
-<th data-quarto-table-cell-role="th">target</th>
-<th data-quarto-table-cell-role="th">bedrooms</th>
-<th data-quarto-table-cell-role="th">bathrooms</th>
-<th data-quarto-table-cell-role="th">sqft_living</th>
-<th data-quarto-table-cell-role="th">sqft_lot</th>
-<th data-quarto-table-cell-role="th">floors</th>
-<th data-quarto-table-cell-role="th">waterfront</th>
-<th data-quarto-table-cell-role="th">view</th>
-<th data-quarto-table-cell-role="th">condition</th>
-<th data-quarto-table-cell-role="th">grade</th>
-<th data-quarto-table-cell-role="th">sqft_above</th>
-<th data-quarto-table-cell-role="th">sqft_basement</th>
-<th data-quarto-table-cell-role="th">yr_built</th>
-<th data-quarto-table-cell-role="th">yr_renovated</th>
-<th data-quarto-table-cell-role="th">zipcode</th>
-<th data-quarto-table-cell-role="th">lat</th>
-<th data-quarto-table-cell-role="th">long</th>
-<th data-quarto-table-cell-role="th">sqft_living15</th>
-<th data-quarto-table-cell-role="th">sqft_lot15</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>509000.0</td>
-<td>2</td>
-<td>1.50</td>
-<td>1930</td>
-<td>3521</td>
-<td>2.0</td>
-<td>0</td>
-<td>0</td>
-<td>3</td>
-<td>8</td>
-<td>1930</td>
-<td>0</td>
-<td>1989</td>
-<td>0</td>
-<td>98007</td>
-<td>47.6092</td>
-<td>-122.146</td>
-<td>1840</td>
-<td>3576</td>
-</tr>
-<tr class="even">
-<td>675000.0</td>
-<td>5</td>
-<td>2.75</td>
-<td>2570</td>
-<td>12906</td>
-<td>2.0</td>
-<td>0</td>
-<td>0</td>
-<td>3</td>
-<td>8</td>
-<td>2570</td>
-<td>0</td>
-<td>1987</td>
-<td>0</td>
-<td>98075</td>
-<td>47.5814</td>
-<td>-122.050</td>
-<td>2580</td>
-<td>12927</td>
-</tr>
-<tr class="odd">
-<td>420000.0</td>
-<td>3</td>
-<td>1.00</td>
-<td>1150</td>
-<td>5120</td>
-<td>1.0</td>
-<td>0</td>
-<td>0</td>
-<td>4</td>
-<td>6</td>
-<td>800</td>
-<td>350</td>
-<td>1946</td>
-<td>0</td>
-<td>98116</td>
-<td>47.5588</td>
-<td>-122.392</td>
-<td>1220</td>
-<td>5120</td>
-</tr>
-<tr class="even">
-<td>680000.0</td>
-<td>8</td>
-<td>2.75</td>
-<td>2530</td>
-<td>4800</td>
-<td>2.0</td>
-<td>0</td>
-<td>0</td>
-<td>4</td>
-<td>7</td>
-<td>1390</td>
-<td>1140</td>
-<td>1901</td>
-<td>0</td>
-<td>98112</td>
-<td>47.6241</td>
-<td>-122.305</td>
-<td>1540</td>
-<td>4800</td>
-</tr>
-<tr class="odd">
-<td>357823.0</td>
-<td>3</td>
-<td>1.50</td>
-<td>1240</td>
-<td>9196</td>
-<td>1.0</td>
-<td>0</td>
-<td>0</td>
-<td>3</td>
-<td>8</td>
-<td>1240</td>
-<td>0</td>
-<td>1968</td>
-<td>0</td>
-<td>98072</td>
-<td>47.7562</td>
-<td>-122.094</td>
-<td>1690</td>
-<td>10800</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</section>
-<section id="example-building-a-regression-model" class="slide level2 center">
-<h2>Example: Building a regression model</h2>
-<div id="e2c49fd7" class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a></a><span class="im">from</span> lightgbm.sklearn <span class="im">import</span> LGBMRegressor</span>
-<span id="cb5-2"><a></a></span>
-<span id="cb5-3"><a></a>X_train, y_train <span class="op">=</span> train_df.drop(columns<span class="op">=</span> [<span class="st">"target"</span>]), train_df[<span class="st">"target"</span>]</span>
-<span id="cb5-4"><a></a>X_test, y_test <span class="op">=</span> test_df.drop(columns<span class="op">=</span> [<span class="st">"target"</span>]), train_df[<span class="st">"target"</span>]</span>
-<span id="cb5-5"><a></a></span>
-<span id="cb5-6"><a></a>model <span class="op">=</span> LGBMRegressor()</span>
-<span id="cb5-7"><a></a>model.fit(X_train, y_train)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[LightGBM] [Info] Auto-choosing row-wise multi-threading, the overhead of testing was 0.000609 seconds.
-You can set `force_row_wise=true` to remove the overhead.
-And if memory is not enough, you can set `force_col_wise=true`.
-[LightGBM] [Info] Total Bins 2333
-[LightGBM] [Info] Number of data points in the train set: 17290, number of used features: 18
-[LightGBM] [Info] Start training from score 539762.702545</code></pre>
-</div>
-</div>
-</section>
-<section id="example-predicting-prices-of-unseen-houses" class="slide level2 center">
-<h2>Example: Predicting prices of unseen houses</h2>
-<div id="cd68e4ee" class="cell" data-execution_count="5">
-<div class="cell-output cell-output-display" data-execution_count="10">
-<table class="dataframe caption-top" data-quarto-postprocess="true" data-border="1">
-<thead>
-<tr class="header" style="text-align: right;">
-<th data-quarto-table-cell-role="th">Predicted_target</th>
-<th data-quarto-table-cell-role="th">bedrooms</th>
-<th data-quarto-table-cell-role="th">bathrooms</th>
-<th data-quarto-table-cell-role="th">sqft_living</th>
-<th data-quarto-table-cell-role="th">sqft_lot</th>
-<th data-quarto-table-cell-role="th">floors</th>
-<th data-quarto-table-cell-role="th">waterfront</th>
-<th data-quarto-table-cell-role="th">view</th>
-<th data-quarto-table-cell-role="th">condition</th>
-<th data-quarto-table-cell-role="th">grade</th>
-<th data-quarto-table-cell-role="th">sqft_above</th>
-<th data-quarto-table-cell-role="th">sqft_basement</th>
-<th data-quarto-table-cell-role="th">yr_built</th>
-<th data-quarto-table-cell-role="th">yr_renovated</th>
-<th data-quarto-table-cell-role="th">zipcode</th>
-<th data-quarto-table-cell-role="th">lat</th>
-<th data-quarto-table-cell-role="th">long</th>
-<th data-quarto-table-cell-role="th">sqft_living15</th>
-<th data-quarto-table-cell-role="th">sqft_lot15</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>345831.740542</td>
-<td>4</td>
-<td>2.25</td>
-<td>2130</td>
-<td>8078</td>
-<td>1.0</td>
-<td>0</td>
-<td>0</td>
-<td>4</td>
-<td>7</td>
-<td>1380</td>
-<td>750</td>
-<td>1977</td>
-<td>0</td>
-<td>98055</td>
-<td>47.4482</td>
-<td>-122.209</td>
-<td>2300</td>
-<td>8112</td>
-</tr>
-<tr class="even">
-<td>601042.018745</td>
-<td>3</td>
-<td>2.50</td>
-<td>2210</td>
-<td>7620</td>
-<td>2.0</td>
-<td>0</td>
-<td>0</td>
-<td>3</td>
-<td>8</td>
-<td>2210</td>
-<td>0</td>
-<td>1994</td>
-<td>0</td>
-<td>98052</td>
-<td>47.6938</td>
-<td>-122.130</td>
-<td>1920</td>
-<td>7440</td>
-</tr>
-<tr class="odd">
-<td>311310.186024</td>
-<td>4</td>
-<td>1.50</td>
-<td>1800</td>
-<td>9576</td>
-<td>1.0</td>
-<td>0</td>
-<td>0</td>
-<td>4</td>
-<td>7</td>
-<td>1800</td>
-<td>0</td>
-<td>1977</td>
-<td>0</td>
-<td>98045</td>
-<td>47.4664</td>
-<td>-121.747</td>
-<td>1370</td>
-<td>9576</td>
-</tr>
-<tr class="even">
-<td>597555.592401</td>
-<td>3</td>
-<td>2.50</td>
-<td>1580</td>
-<td>1321</td>
-<td>2.0</td>
-<td>0</td>
-<td>2</td>
-<td>3</td>
-<td>8</td>
-<td>1080</td>
-<td>500</td>
-<td>2014</td>
-<td>0</td>
-<td>98107</td>
-<td>47.6688</td>
-<td>-122.402</td>
-<td>1530</td>
-<td>1357</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<p>We are predicting continuous values here as apposed to discrete values in <code>spam</code> vs.&nbsp;<code>ham</code> example.</p>
-</section>
-<section id="machine-learning-workflow" class="slide level2 center">
-<h2>Machine learning workflow</h2>
-<p>Supervised machine learning is quite flexible; it can be used on a variety of problems and different kinds of data. Here is a typical workflow of a supervised machine learning systems.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="img/ml-workflow.png" class="quarto-figure quarto-figure-center" width="700"></p>
-</figure>
-</div>
-<!-- <img src="img/ml-workflow.png" height="800" width="800">  -->
-<p>We will build machine learning pipelines in this course, focusing on some of the steps above.</p>
 <p><br><br></p>
-</section>
-<section id="questions-for-you" class="slide level2 center">
-<h2>❓❓ Questions for you</h2>
-<p>iClicker cloud join link: https://join.iclicker.com/VYFJ</p>
-</section>
-<section id="select-all-of-the-following-statements-which-are-true-iclicker" class="slide level2 center">
-<h2>Select all of the following statements which are <strong>True</strong> (iClicker)</h2>
-<ol type="A">
-<li>Predicting spam is an example of machine learning.</li>
-<li>Predicting housing prices is not an example of machine learning.</li>
-<li>For problems such as spelling correction, translation, face recognition, spam identification, if you are a domain expert, it’s usually faster and scalable to come up with a robust set of rules manually rather than building a machine learning model.</li>
-<li>If you are asked to write a program to find all prime numbers up to a limit, it is better to implement one of the algorithms for doing so rather than using machine learning.</li>
-<li>Google News is likely be using machine learning to organize news. <br><br><br><br></li>
-</ol>
 </section>
 <section id="surveys" class="slide level2 center">
 <h2>Surveys</h2>
@@ -783,6 +425,17 @@ And if memory is not enough, you can set `force_col_wise=true`.
 <li>We will try to analyze this data set in the coming weeks.</li>
 </ul></li>
 </ul>
+</section>
+<section id="gradescope" class="slide level2 center">
+<h2>Gradescope</h2>
+<p>Make sure you can submit your assignment before the hw1 due date!</p>
+<p>It is not <strong>required</strong> for you to work in a GitHub repository, but we <em>highly encourage you to do this</em>!</p>
+<p><strong>For students on the waitlist</strong>: Gradescope Entry code is <strong>MRZX7Z</strong>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="img/gradescope.png" class="quarto-figure quarto-figure-center" width="700"></p>
+</figure>
+</div>
 </section>
 <section id="checklist-for-you-in-the-first-week" class="slide level2 center">
 <h2>Checklist for you in the first week</h2>
@@ -796,6 +449,724 @@ And if memory is not enough, you can set `force_col_wise=true`.
 <li><label><input type="checkbox">Did you complete the anonymous <a href="https://ubc.ca1.qualtrics.com/jfe/form/SV_73VuZiuwM1eDVrw">restaurant survey on Qualtrics</a>?</label></li>
 <li><label><input type="checkbox">Are you almost finished or at least started with homework 1?</label></li>
 </ul>
+</section>
+<section id="suggested-workflow-for-working-with-jupyter-notebooks" class="slide level2 center">
+<h2>Suggested Workflow for working with Jupyter Notebooks</h2>
+<ul>
+<li>Create a folder on your computer that will have all the CPSC 330 repos:
+<ul>
+<li><code>~/School/Year3/CPSC330/</code> &lt;– Consider this your CPSC parent folder</li>
+</ul></li>
+<li>Create subfolders for: <code>hw</code>, <code>class</code>, <code>practice</code></li>
+<li>In the <code>hw</code> folder, you will then clone <code>hw1</code>, <code>hw2</code>, <code>hw3</code>, etc…</li>
+<li>In the <code>class</code> folder, you will clone the <code>CPSC330-2024W1</code> repo which contains all the class jupyter notebooks
+<ul>
+<li>Do <strong>not</strong> make any changes to files in this directory/repo, you will have trouble when you pull stuff during each class.</li>
+<li>If you did make changes, you can reset to the last commit and DESTROY any changes you made (be careful with this command) using: <code>git reset --hard</code></li>
+</ul></li>
+<li>In the <code>practice</code> folder, you can <strong>copy</strong> any notebooks (<code>.ipynb</code>) and files (like data/*.csv) you want to try running locally and experiment</li>
+</ul>
+</section>
+<section id="recap-machine-learning-workflow" class="slide level2 center">
+<h2>Recap: Machine learning workflow</h2>
+<p>Supervised machine learning is quite flexible; it can be used on a variety of problems and different kinds of data. Here is a typical workflow of a supervised machine learning systems.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="img/ml-workflow.png" class="quarto-figure quarto-figure-center" width="700"></p>
+</figure>
+</div>
+<!-- <img src="img/ml-workflow.png" height="800" width="800">  -->
+<p>We will build machine learning pipelines in this course, focusing on some of the steps above.</p>
+</section>
+<section id="recap-what-is-ml" class="slide level2 center">
+<h2>Recap: What is ML?</h2>
+<ul>
+<li>ML uses data to build models that find patterns, make predictions, or generate content.</li>
+<li>It helps computers learn from data to make decisions.</li>
+<li>No one model works for every situation.</li>
+</ul>
+</section>
+<section id="recap-supervised-learning" class="slide level2 center">
+<h2>Recap: Supervised learning</h2>
+<ul>
+<li>We wish to find a model function <span class="math inline">\(f\)</span> that relates <span class="math inline">\(X\)</span> to <span class="math inline">\(y\)</span>.</li>
+<li>We use the model function to predict targets of new examples.</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="img/sup-learning.png" class="quarto-figure quarto-figure-center" width="700"></p>
+</figure>
+</div>
+<p>In the first part of this course, we’ll focus on supervised machine learning.</p>
+</section>
+<section id="iclicker-2.1-terminology" class="slide level2 center">
+<h2>iClicker 2.1: Terminology</h2>
+<p>iClicker cloud join link: <a href="https://join.iclicker.com/VYFJ">https://join.iclicker.com/VYFJ</a></p>
+</section>
+<section id="select-all-of-the-following-statements-which-are-true-iclicker" class="slide level2 center">
+<h2>Select all of the following statements which are <strong>True</strong> (iClicker)</h2>
+<ol type="A">
+<li>Predicting spam is an example of machine learning.</li>
+<li>Predicting housing prices is not an example of machine learning.</li>
+<li>For problems such as spelling correction, translation, face recognition, spam identification, if you are a domain expert, it’s usually faster and scalable to come up with a robust set of rules manually rather than building a machine learning model.</li>
+<li>If you are asked to write a program to find all prime numbers up to a limit, it is better to implement one of the algorithms for doing so rather than using machine learning.</li>
+<li>Google News is likely be using machine learning to organize news. <br><br><br><br></li>
+</ol>
+</section>
+<section id="iclicker-2.2-supervised-vs-unsupervised" class="slide level2 center">
+<h2>iClicker 2.2: Supervised vs unsupervised</h2>
+<p>Clicker cloud join link: <a href="https://join.iclicker.com/VYFJ">https://join.iclicker.com/VYFJ</a></p>
+<p>Select all of the following statements which are examples of supervised machine learning</p>
+<ul>
+<li><ol type="A">
+<li>Finding groups of similar properties in a real estate data set.</li>
+</ol></li>
+<li><ol start="2" type="A">
+<li>Predicting whether someone will have a heart attack or not on the basis of demographic, diet, and clinical measurement.</li>
+</ol></li>
+<li><ol start="3" type="A">
+<li>Grouping articles on different topics from different news sources (something like the Google News app).</li>
+</ol></li>
+<li><ol start="4" type="A">
+<li>Detecting credit card fraud based on examples of fraudulent and non-fraudulent transactions.</li>
+</ol></li>
+<li><ol start="5" type="A">
+<li>Given some measure of employee performance, identify the key factors which are likely to influence their performance.</li>
+</ol></li>
+</ul>
+</section>
+<section id="iclicker-2.3-classification-vs.-regression" class="slide level2 center">
+<h2>iClicker 2.3: Classification vs.&nbsp;Regression</h2>
+<p>Clicker cloud join link: <a href="https://join.iclicker.com/VYFJ">https://join.iclicker.com/VYFJ</a></p>
+<p>Select all of the following statements which are examples of regression problems</p>
+<ul>
+<li><ol type="A">
+<li>Predicting the price of a house based on features such as number of bedrooms and the year built.</li>
+</ol></li>
+<li><ol start="2" type="A">
+<li>Predicting if a house will sell or not based on features like the price of the house, number of rooms, etc.</li>
+</ol></li>
+<li><ol start="3" type="A">
+<li>Predicting percentage grade in CPSC 330 based on past grades.</li>
+</ol></li>
+<li><ol start="4" type="A">
+<li>Predicting whether you should bicycle tomorrow or not based on the weather forecast.</li>
+</ol></li>
+<li><ol start="5" type="A">
+<li>Predicting appropriate thermostat temperature based on the wind speed and the number of people in a room.</li>
+</ol></li>
+</ul>
+</section>
+<section id="ml-framework-in-cpsc-330" class="slide level2 center">
+<h2>ML Framework in CPSC 330</h2>
+<ul>
+<li>There are many frameworks to do do machine learning.</li>
+<li>We’ll mainly be using <a href="https://scikit-learn.org/stable/"><code>scikit-learn</code> framework</a>.</li>
+</ul>
+<div id="95472e48" class="cell" data-execution_count="2">
+<div class="cell-output cell-output-display" data-execution_count="2">
+
+        <iframe width="1000" height="650" src="https://scikit-learn.org" frameborder="0" allowfullscreen=""></iframe>
+        
+</div>
+</div>
+</section>
+<section id="running-example" class="slide level2 center">
+<h2>Running example</h2>
+<p>Imagine you’re in the fortunate situation where, after graduating, you have a few job offers and need to decide which one to choose. You want to pick the job that will likely make you the happiest. To help with your decision, you collect data from like-minded people. Here are the first few rows of this toy dataset.</p>
+<div id="fe117810" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a>toy_happiness_df <span class="op">=</span> pd.read_csv(DATA_DIR <span class="op">+</span> <span class="st">'toy_job_happiness.csv'</span>)</span>
+<span id="cb1-2"><a></a>toy_happiness_df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="3">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+
+<table class="dataframe caption-top" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header" style="text-align: right;">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">supportive_colleagues</th>
+<th data-quarto-table-cell-role="th">salary</th>
+<th data-quarto-table-cell-role="th">free_coffee</th>
+<th data-quarto-table-cell-role="th">boss_vegan</th>
+<th data-quarto-table-cell-role="th">happy?</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>0</td>
+<td>70000</td>
+<td>0</td>
+<td>1</td>
+<td>Unhappy</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>1</td>
+<td>60000</td>
+<td>0</td>
+<td>0</td>
+<td>Unhappy</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>1</td>
+<td>80000</td>
+<td>1</td>
+<td>0</td>
+<td>Happy</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>1</td>
+<td>110000</td>
+<td>0</td>
+<td>1</td>
+<td>Happy</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>1</td>
+<td>120000</td>
+<td>1</td>
+<td>0</td>
+<td>Happy</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">5</td>
+<td>1</td>
+<td>150000</td>
+<td>1</td>
+<td>1</td>
+<td>Happy</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">6</td>
+<td>0</td>
+<td>150000</td>
+<td>1</td>
+<td>0</td>
+<td>Unhappy</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</section>
+<section>
+<section id="terminology" class="title-slide slide level1 center">
+<h1>Terminology</h1>
+
+</section>
+<section id="features-target-example" class="slide level2 center">
+<h2>Features, target, example</h2>
+<ul>
+<li>What are the <strong>features</strong> <span class="math inline">\(X\)</span>?
+<ul>
+<li>features = inputs = predictors = explanatory variables = regressors = independent variables = covariates</li>
+</ul></li>
+<li>What’s the target <span class="math inline">\(y\)</span>?
+<ul>
+<li>target = output = outcome = response variable = dependent variable = labels</li>
+</ul></li>
+<li>Can you think of other relevant features for this problem?</li>
+<li>What is an example?</li>
+</ul>
+</section>
+<section id="classification-vs.-regression" class="slide level2 center">
+<h2>Classification vs.&nbsp;Regression</h2>
+<ul>
+<li>Is this a <strong>classification</strong> problem or a <strong>regression</strong> problem?</li>
+</ul>
+<div id="6ef38d8b" class="cell" data-execution_count="4">
+<div class="cell-output cell-output-display" data-execution_count="4">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+
+<table class="dataframe caption-top" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header" style="text-align: right;">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">supportive_colleagues</th>
+<th data-quarto-table-cell-role="th">salary</th>
+<th data-quarto-table-cell-role="th">free_coffee</th>
+<th data-quarto-table-cell-role="th">boss_vegan</th>
+<th data-quarto-table-cell-role="th">happy?</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>0</td>
+<td>70000</td>
+<td>0</td>
+<td>1</td>
+<td>Unhappy</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>1</td>
+<td>60000</td>
+<td>0</td>
+<td>0</td>
+<td>Unhappy</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>1</td>
+<td>80000</td>
+<td>1</td>
+<td>0</td>
+<td>Happy</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>1</td>
+<td>110000</td>
+<td>0</td>
+<td>1</td>
+<td>Happy</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>1</td>
+<td>120000</td>
+<td>1</td>
+<td>0</td>
+<td>Happy</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">5</td>
+<td>1</td>
+<td>150000</td>
+<td>1</td>
+<td>1</td>
+<td>Happy</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">6</td>
+<td>0</td>
+<td>150000</td>
+<td>1</td>
+<td>0</td>
+<td>Unhappy</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</section>
+<section id="prediction-vs.-inference" class="slide level2 center">
+<h2>Prediction vs.&nbsp;Inference</h2>
+<ul>
+<li><strong>Inference</strong> is using the model to understand the relationship between the features and the target
+<ul>
+<li>Why certain factors influence happiness?</li>
+</ul></li>
+<li><strong>Prediction</strong> is using the model to predict the target value for new examples based on learned patterns.</li>
+<li>Of course these goals are related, and in many situations we need both.</li>
+</ul>
+</section>
+<section id="training" class="slide level2 center">
+<h2>Training</h2>
+<ul>
+<li>In supervised ML, the goal is to learn a function that maps input features (<span class="math inline">\(X\)</span>) to a target (<span class="math inline">\(y\)</span>).</li>
+<li>The relationship between <span class="math inline">\(X\)</span> and <span class="math inline">\(y\)</span> is often complex, making it difficult to define mathematically.</li>
+<li>We use algorithms to approximate this complex relationship between <span class="math inline">\(X\)</span> and <span class="math inline">\(y\)</span>.</li>
+<li><strong>Training</strong> is the process of applying an algorithm to learn the best function (or model) that maps <span class="math inline">\(X\)</span> to <span class="math inline">\(y\)</span>.</li>
+<li>In this course, I’ll help you develop an intuition for how these models work and demonstrate how to use them in a machine learning pipeline.</li>
+</ul>
+</section>
+<section id="separating-x-and-y" class="slide level2 center">
+<h2>Separating <span class="math inline">\(X\)</span> and <span class="math inline">\(y\)</span></h2>
+<ul>
+<li>In order to train a model we need to separate <span class="math inline">\(X\)</span> and <span class="math inline">\(y\)</span> from the dataframe.</li>
+</ul>
+<div id="d044ee08" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a></a>X <span class="op">=</span> toy_happiness_df.drop(columns<span class="op">=</span>[<span class="st">"happy?"</span>]) <span class="co"># Extract the feature set by removing the target column "happy?"</span></span>
+<span id="cb2-2"><a></a>y <span class="op">=</span> toy_happiness_df[<span class="st">"happy?"</span>] <span class="co"># Extract the target variable "happy?"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="baseline" class="slide level2 center">
+<h2>Baseline</h2>
+<ul>
+<li>Let’s try a simplest algorithm of predicting the most popular target!</li>
+</ul>
+<div id="b8cdc308" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a></a><span class="im">from</span> sklearn.dummy <span class="im">import</span> DummyClassifier</span>
+<span id="cb3-2"><a></a><span class="co"># Initialize the DummyClassifier to always predict the most frequent class</span></span>
+<span id="cb3-3"><a></a>model <span class="op">=</span> DummyClassifier(strategy<span class="op">=</span><span class="st">"most_frequent"</span>)</span>
+<span id="cb3-4"><a></a><span class="co"># Train the model on the feature set X and target variable y</span></span>
+<span id="cb3-5"><a></a>model.fit(X, y)</span>
+<span id="cb3-6"><a></a><span class="co"># Add the predicted values as a new column in the dataframe</span></span>
+<span id="cb3-7"><a></a>toy_happiness_df[<span class="st">'dummy_predictions'</span>] <span class="op">=</span> model.predict(X)</span>
+<span id="cb3-8"><a></a><span class="co"># Show the dataframe</span></span>
+<span id="cb3-9"><a></a>toy_happiness_df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="6">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+
+<table class="dataframe caption-top" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header" style="text-align: right;">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">supportive_colleagues</th>
+<th data-quarto-table-cell-role="th">salary</th>
+<th data-quarto-table-cell-role="th">free_coffee</th>
+<th data-quarto-table-cell-role="th">boss_vegan</th>
+<th data-quarto-table-cell-role="th">happy?</th>
+<th data-quarto-table-cell-role="th">dummy_predictions</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>0</td>
+<td>70000</td>
+<td>0</td>
+<td>1</td>
+<td>Unhappy</td>
+<td>Happy</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>1</td>
+<td>60000</td>
+<td>0</td>
+<td>0</td>
+<td>Unhappy</td>
+<td>Happy</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>1</td>
+<td>80000</td>
+<td>1</td>
+<td>0</td>
+<td>Happy</td>
+<td>Happy</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>1</td>
+<td>110000</td>
+<td>0</td>
+<td>1</td>
+<td>Happy</td>
+<td>Happy</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>1</td>
+<td>120000</td>
+<td>1</td>
+<td>0</td>
+<td>Happy</td>
+<td>Happy</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">5</td>
+<td>1</td>
+<td>150000</td>
+<td>1</td>
+<td>1</td>
+<td>Happy</td>
+<td>Happy</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">6</td>
+<td>0</td>
+<td>150000</td>
+<td>1</td>
+<td>0</td>
+<td>Unhappy</td>
+<td>Happy</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</section></section>
+<section>
+<section id="decision-trees" class="title-slide slide level1 center">
+<h1>Decision trees</h1>
+
+</section>
+<section id="pre-intuition" class="slide level2 center">
+<h2>Pre-Intuition</h2>
+<p>Let’s play <a href="https://en.wikipedia.org/wiki/Twenty_questions">20 questions</a>! You can ask me up to 20 Yes/No questions to figure out the answer. <br> <br></p>
+<h3 id="im-thinking-of-a-person---who-is-it">I’m thinking of a person - who is it ?</h3>
+</section>
+<section id="intuition" class="slide level2 center">
+<h2>Intuition</h2>
+<ul>
+<li>Decision trees find the “best” way to split data to make predictions.</li>
+<li>Each split is based on a question, like ‘Are the colleagues supportive?’</li>
+<li>The goal is to group data by similar outcomes at each step.</li>
+<li>Now, let’s see a decision tree using sklearn.</li>
+</ul>
+</section>
+<section id="decision-tree-with-sklearn" class="slide level2 center">
+<h2>Decision tree with <code>sklearn</code></h2>
+<p>Let’s train a simple decision tree on our toy dataset.</p>
+<div id="d4a46372" class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a></a><span class="im">from</span> sklearn.tree <span class="im">import</span> DecisionTreeClassifier <span class="co"># import the classifier</span></span>
+<span id="cb4-2"><a></a><span class="im">from</span> sklearn.tree <span class="im">import</span> plot_tree</span>
+<span id="cb4-3"><a></a></span>
+<span id="cb4-4"><a></a>model <span class="op">=</span> DecisionTreeClassifier(max_depth<span class="op">=</span><span class="dv">2</span>, random_state<span class="op">=</span><span class="dv">1</span>) <span class="co"># Create a class object</span></span>
+<span id="cb4-5"><a></a>model.fit(X, y)</span>
+<span id="cb4-6"><a></a>plot_tree(model, filled<span class="op">=</span><span class="va">True</span>, feature_names <span class="op">=</span> X.columns, class_names<span class="op">=</span>[<span class="st">"Happy"</span>, <span class="st">"Unhappy"</span>], </span>
+<span id="cb4-7"><a></a>          impurity <span class="op">=</span> <span class="va">False</span>, fontsize<span class="op">=</span><span class="dv">12</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure>
+<p><img data-src="slides-02-terminology-decision-trees_files/figure-revealjs/cell-8-output-1.png" width="763" height="389"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="prediction" class="slide level2 center">
+<h2>Prediction</h2>
+<ul>
+<li>Given a new example, how does a decision tree predict the class of this example?<br>
+</li>
+<li>What would be the prediction for the example below using the tree above?
+<ul>
+<li>supportive_colleagues = 1, salary = 60000, coffee_machine = 0, vegan_boss = 1,</li>
+</ul></li>
+</ul>
+<div id="1696de38" class="cell" data-execution_count="8">
+<div class="cell-output cell-output-display">
+<div>
+<figure>
+<p><img data-src="slides-02-terminology-decision-trees_files/figure-revealjs/cell-9-output-1.png" width="763" height="389"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="prediction-with-sklearn" class="slide level2 center">
+<h2>Prediction with <code>sklearn</code></h2>
+<ul>
+<li>What would be the prediction for the example below using the tree above?
+<ul>
+<li>supportive_colleagues = 1, salary = 60000, coffee_machine = 0, vegan_boss = 1,</li>
+</ul></li>
+</ul>
+<div id="78c0fd75" class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a></a>test_example <span class="op">=</span> [[<span class="dv">1</span>, <span class="dv">60000</span>, <span class="dv">0</span>, <span class="dv">1</span>]]</span>
+<span id="cb5-2"><a></a><span class="bu">print</span>(<span class="st">"Model prediction: "</span>, model.predict(test_example))</span>
+<span id="cb5-3"><a></a>plot_tree(model, filled<span class="op">=</span><span class="va">True</span>, feature_names <span class="op">=</span> X.columns, class_names <span class="op">=</span> [<span class="st">"Happy"</span>, <span class="st">"Unhappy"</span>], impurity <span class="op">=</span> <span class="va">False</span>, fontsize<span class="op">=</span><span class="dv">9</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Model prediction:  ['Unhappy']</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure>
+<p><img data-src="slides-02-terminology-decision-trees_files/figure-revealjs/cell-10-output-2.png" width="763" height="389"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="training-high-level" class="slide level2 center">
+<h2>Training (high level)</h2>
+<ul>
+<li>How many possible questions could we ask in this context?</li>
+</ul>
+<div id="beb03256" class="cell" data-execution_count="10">
+<div class="cell-output cell-output-display" data-execution_count="10">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+
+<table class="dataframe caption-top" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header" style="text-align: right;">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">supportive_colleagues</th>
+<th data-quarto-table-cell-role="th">salary</th>
+<th data-quarto-table-cell-role="th">free_coffee</th>
+<th data-quarto-table-cell-role="th">boss_vegan</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>0</td>
+<td>70000</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>1</td>
+<td>60000</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>1</td>
+<td>80000</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>1</td>
+<td>110000</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>1</td>
+<td>120000</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">5</td>
+<td>1</td>
+<td>150000</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">6</td>
+<td>0</td>
+<td>150000</td>
+<td>1</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</section>
+<section id="training-high-level-1" class="slide level2 center">
+<h2>Training (high level)</h2>
+<ul>
+<li>Decision tree learning is a search process to find the “best” tree among many possible ones.</li>
+<li>We evaluate questions using measures like <strong>information gain</strong> or the <strong>Gini index</strong> to find the most effective split.</li>
+<li>At each step, we aim to split the data into groups with more certainty in their outcomes.</li>
+</ul>
+</section>
+<section id="parameters-vs.-hyperparameters" class="slide level2 center">
+<h2>Parameters vs.&nbsp;Hyperparameters</h2>
+<ul>
+<li>Parameters
+<ul>
+<li>The questions (features and thresholds) used to split the data at each node.</li>
+<li>Example: salary &lt;= 75000 at the root node<br>
+</li>
+</ul></li>
+<li>Hyperparameters
+<ul>
+<li>Settings that control tree growth, like <code>max_depth</code>, which limits how deep the tree can go.</li>
+</ul></li>
+</ul>
+</section>
+<section id="decision-boundary-with-max_depth1" class="slide level2 center">
+<h2>Decision boundary with <code>max_depth=1</code></h2>
+<div id="6138c27f" class="cell" data-execution_count="11">
+<div class="cell-output cell-output-display">
+<div>
+<figure>
+<p><img data-src="slides-02-terminology-decision-trees_files/figure-revealjs/cell-12-output-1.png" width="1236" height="517"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="decision-boundary-with-max_depth2" class="slide level2 center">
+<h2>Decision boundary with <code>max_depth=2</code></h2>
+<div id="0cea1a7a" class="cell" data-execution_count="12">
+<div class="cell-output cell-output-display">
+<div>
+<figure>
+<p><img data-src="slides-02-terminology-decision-trees_files/figure-revealjs/cell-13-output-1.png" width="1236" height="517"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="iclicker-2.5-baselines-and-decision-trees" class="slide level2 center">
+<h2>iClicker 2.5: Baselines and Decision trees</h2>
+<p>iClicker cloud join link: <a href="https://join.iclicker.com/VYFJ">https://join.iclicker.com/VYFJ</a></p>
+<p>Select all of the following statements which are TRUE.</p>
+<ul>
+<li><ol type="A">
+<li>Change in features (i.e., binarizing features above) would change DummyClassifier predictions.</li>
+</ol></li>
+<li><ol start="2" type="A">
+<li>predict takes only X as argument whereas fit and score take both X and y as arguments.</li>
+</ol></li>
+<li><ol start="3" type="A">
+<li>For the decision tree algorithm to work, the feature values must be binary.</li>
+</ol></li>
+<li><ol start="4" type="A">
+<li>The prediction in a decision tree works by routing the example from the root to the leaf.</li>
+</ol></li>
+</ul>
 
 <div class="quarto-auto-generated-content">
 <p><img src="img/UBC-CS-logo.png" class="slide-logo"></p>
@@ -803,7 +1174,7 @@ And if memory is not enough, you can set `force_col_wise=true`.
 
 </div>
 </div>
-</section>
+</section></section>
     </div>
   </div>
 
@@ -1103,7 +1474,7 @@ And if memory is not enough, you can set `force_col_wise=true`.
       }
         var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
         var mailtoRegex = new RegExp(/^mailto:/);
-          var filterRegex = new RegExp('/' + window.location.host + '/');
+          var filterRegex = new RegExp("https:\/\/firasm\.github\.io\/cpsc330-slides\/");
         var isInternal = (href) => {
             return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
         }
