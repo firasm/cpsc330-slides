@@ -99,6 +99,4 @@ If you really don't want to create a repo,
 
 - Navigate to the `cpsc330-2024W1` repo
 - run `git pull` to pull the latest files in the course repo
-- Look for the demo file here: `lectures/102-Firas-lectures/class_demos/`. 
-
-# [Class demo](https://github.com/UBC-CS/cpsc330-2024W1/blob/main/lectures/102-Varada-lectures/class_demos/demo_03-ml-fundamentals.ipynb)
+- Look for the demo file here: `lectures/102-Firas-lectures/class_demos/`.
