@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Overview – CPSC 330 Section 103 Slides</title>
+<title>Welcome – CPSC 330 Section 103 Slides</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -68,65 +66,7 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-schedule .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-title','listing-description-short',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
-      
-      searchColumns: ["listing-title","listing-author"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-schedule'] = new List('listing-schedule', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 </head>
 
@@ -148,11 +88,11 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html"> 
+    <a class="nav-link active" href="./index.html" aria-current="page"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./slides.html" aria-current="page"> 
+    <a class="nav-link" href="./slides.html"> 
 <span class="menu-text">Slides</span></a>
   </li>  
 </ul>
@@ -172,7 +112,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Overview</h1>
+<h1 class="title">Welcome</h1>
 </div>
 
 
@@ -189,69 +129,17 @@ window.Quarto = {
 </header>
 
 
+<p>Welcome to CPSC330! Here, you’ll find slides for CPSC 330 Section 103. These slides are based on the notes present <a href="https://ubc-cs.github.io/cpsc330-2024W1/README.html">here</a>.</p>
+<ul>
+<li><p><strong>Class times</strong> 🕘 5 pm to 6:20 pm</p></li>
+<li><p><strong>Where?</strong> 📍 <a href="https://learningspaces.ubc.ca/classrooms/swng-222">West Mall Swing Space (SWNG) - 222</a>, 2175 West Mall, Vancouver, BC V6T 1Z4</p></li>
+</ul>
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2603.713167158482!2d-123.25696742249725!3d49.26288232215483!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54867349fa14bda7%3A0x6cf2b19f9efcc3bc!2sUBC%20West%20Mall%20Swing%20Space%20(SWNG)%20-%202nd%20Floor%20Concourse!5e0!3m2!1sen!2sca!4v1725300934712!5m2!1sen!2sca" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+</iframe>
 
 
 
-
-<div class="quarto-listing quarto-listing-container-table" id="listing-schedule">
-<table class="quarto-listing-table table">
-<thead>
-<tr>
-<th>
-Title
-</th>
-<th>
-Description
-</th>
-</tr>
-</thead>
-<tbody class="list">
-<tr data-index="0" data-listing-file-modified-sort="1726008423748" data-listing-reading-time-sort="11" data-listing-word-count-sort="2083" data-listing-title-sort="Lecture 1: Introduction to CPSC 330" data-listing-filename-sort="slides-01-intro.qmd">
-<td>
-<a href="./slides-01-intro.html" class="title listing-title">Lecture 1: Introduction to CPSC 330</a>
-</td>
-<td>
-<span class="listing-description-short">What is machine learning, types of machine learning, learning to navigate through the course materials, getting familiar with the course policies</span>
-</td>
-</tr>
-<tr data-index="1" data-listing-file-modified-sort="1726013067660" data-listing-reading-time-sort="10" data-listing-word-count-sort="1821" data-listing-title-sort="Lecture 2: Terminology, Baselines, Decision Trees" data-listing-filename-sort="slides-02-terminology-decision-trees.qmd">
-<td>
-<a href="./slides-02-terminology-decision-trees.html" class="title listing-title">Lecture 2: Terminology, Baselines, Decision Trees</a>
-</td>
-<td>
-<span class="listing-description-short">Supervised machine learning terminology: Features, target, examples, training, parameters and hyperparameters, Decision boundary, classification vs.&nbsp;regression, inference vs.&nbsp;prediction, accuracy vs.&nbsp;error, baselines, intuition of decision trees</span>
-</td>
-</tr>
-<tr data-index="2" data-listing-file-modified-sort="1726614746446" data-listing-reading-time-sort="3" data-listing-word-count-sort="422" data-listing-title-sort="Lecture 3: ML fundamentals" data-listing-filename-sort="slides-03-ml-fundamentals.qmd">
-<td>
-<a href="./slides-03-ml-fundamentals.html" class="title listing-title">Lecture 3: ML fundamentals</a>
-</td>
-<td>
-<span class="listing-description-short">generalization, data splitting, overfitting, underfitting, the fundamental tradeoff, the golden rule</span>
-</td>
-</tr>
-<tr data-index="3" data-listing-file-modified-sort="1726770895679" data-listing-reading-time-sort="4" data-listing-word-count-sort="721" data-listing-title-sort="Lecture 4: $k$-nearest neighbours and SVM RBFs" data-listing-filename-sort="slides-04-kNNs-SVM-RBF.qmd">
-<td>
-<a href="./slides-04-kNNs-SVM-RBF.html" class="title listing-title">Lecture 4: <span class="math inline">\(k\)</span>-nearest neighbours and SVM RBFs</a>
-</td>
-<td>
-<span class="listing-description-short">introduction to KNNs, hyperparameter <code>n_neighbours</code> or <span class="math inline">\(k\)</span>, <code>C</code> and <code>gamma</code> hyperparameters of SVM RBF, decision boundaries with different values of hyperparameters.</span>
-</td>
-</tr>
-<tr data-index="4" data-listing-file-modified-sort="1726790587734" data-listing-reading-time-sort="9" data-listing-word-count-sort="1776" data-listing-title-sort="Lecture 5: Preprocessing and sklearn pipelines" data-listing-filename-sort="slides-05-preprocessing-pipelines.qmd">
-<td>
-<a href="./slides-05-preprocessing-pipelines.html" class="title listing-title">Lecture 5: Preprocessing and sklearn pipelines</a>
-</td>
-<td>
-<span class="listing-description-short">Pre-processing, Transformations, and pipelines.</span>
-</td>
-</tr>
-</tbody>
-</table>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -344,7 +232,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp('/' + window.location.host + '/');
+      var filterRegex = new RegExp("https:\/\/firasm\.github\.io\/cpsc330-slides\/");
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }

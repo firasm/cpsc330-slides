@@ -127,7 +127,7 @@ Select all of the following statements which are TRUE.
 Let's take a break!
 
 ![](img/eva-coffee.png){fig-align="center"}
-
+/
 
 
 ## Preprocessing motivation: example 
