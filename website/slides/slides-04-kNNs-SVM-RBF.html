@@ -1312,55 +1312,6 @@ margin-right: 0; }
 <li>Strengths: simple and intuitive, can learn complex decision boundaries</li>
 <li>Challenges: Sensitive to the choice of distance metric and <strong>scaling</strong> (coming up).</li>
 </ul>
-</section>
-<section id="curse-of-dimensionality" class="slide level2 center">
-<h2>Curse of dimensionality</h2>
-<ul>
-<li>As dimensionality increases, the volume of the space increases exponentially, making the data sparse.</li>
-<li>Distance metrics lose meaning
-<ul>
-<li>Accidental similarity swamps out meaningful similarity</li>
-<li>All points become almost equidistant.</li>
-</ul></li>
-<li>Overfitting becomes likely: Harder to generalize with high-dimensional data.</li>
-<li>How to deal with this?
-<ul>
-<li>Dimensionality reduction (PCA) (not covered in this course)</li>
-<li>Feature selection techniques.</li>
-</ul></li>
-</ul>
-</section>
-<section id="svms-with-rbf-kernel" class="slide level2 center">
-<h2>SVMs with RBF kernel</h2>
-<ul>
-<li>RBF Kernel: Radial Basis Function, a way to transform data into higher dimensions implicitly.</li>
-<li>Strengths
-<ul>
-<li>Effective in high-dimensional and sparse data</li>
-<li>Good performance on non-linear problems.</li>
-</ul></li>
-<li>Hyperparameters:
-<ul>
-<li>C$: Regularization parameter (trade-off between correct classification of training examples and maximization of the decision margin).</li>
-<li><span class="math inline">\(\gamma\)</span>: Defines how far the influence of a single training example reaches.</li>
-</ul></li>
-</ul>
-</section>
-<section id="intuition-of-c-and-gamma-in-svm-rbf" class="slide level2 center">
-<h2>Intuition of <code>C</code> and <code>gamma</code> in SVM RBF</h2>
-<ul>
-<li><code>C</code> (Regularization): Controls the trade-off between perfect training accuracy and having a simpler decision boundary.
-<ul>
-<li>High C: Strict, complex boundary (overfitting risk).</li>
-<li>Low C: More errors allowed, smoother boundary (generalizes better).</li>
-</ul></li>
-<li><code>Gamma</code> (Kernel Width): Controls the influence of individual data points.
-<ul>
-<li>High Gamma: Points have local impact, complex boundary.</li>
-<li>Low Gamma: Points affect broader areas, smoother boundary.</li>
-</ul></li>
-<li>Key trade-off: Proper balance between <code>C</code> and <code>gamma</code> is crucial for avoiding overfitting or underfitting.</li>
-</ul>
 <!-- # [Class demo](https://github.com/UBC-CS/cpsc330-2024W1/blob/main/lectures/102-Varada-lectures/class_demos/demo_04-kNNs-SVMs.ipynb) -->
 
 <div class="quarto-auto-generated-content">
