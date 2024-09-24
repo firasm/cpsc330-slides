@@ -1,6 +1,6 @@
 ---
 title: 'Lecture 5: Preprocessing and sklearn pipelines'
-description: Supervised Machine Learning Fundamentals
+description: "Preprocessing motivation, Common transformations in `sklearn`, `sklearn` transformers vs. Estimators, The golden rule in the feature transformations, `sklearn` pipelines"
 description-short: 'Pre-processing, Transformations, and pipelines.'
 format:
   revealjs:
