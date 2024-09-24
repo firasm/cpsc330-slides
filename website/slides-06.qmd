@@ -24,7 +24,7 @@ format:
 
 ## Quick Correction on Exercise 5.3
 
-> I got accidentally said *only D is true*, but **B** is also true!
+> I accidentally said *only D is true*, but **B** is also true!
 
 Select all of the following statements which are TRUE.
 
