@@ -1336,6 +1336,21 @@ margin-right: 0; }
 </tr>
 </tbody>
 </table>
+<aside class="notes">
+<p>Interpretability (output easy to understand): - DT is very interpretable - KNN is moderately interpretable - SVM-RBF not interpretable at all</p>
+<p>Non-linearity: - DT Handle non-linearity, but boundaries are boxy - KNN can identify non-linear boundaries - SVM-RBF is a great choice for non-linearity</p>
+<p>Scalability: - DT is very scalable, fast and can be done on large datasets - KNN is <em>not scalable</em>, because the distance needs to be calculated - SVM-RB is scalable, optimization is complicated so will be expensive</p>
+<style type="text/css">
+span.MJX_Assistive_MathML {
+position:absolute!important;
+clip: rect(1px, 1px, 1px, 1px);
+padding: 1px 0 0 0!important;
+border: 0!important;
+height: 1px!important;
+width: 1px!important;
+overflow: hidden!important;
+display:block!important;
+}</style></aside>
 </section>
 <section id="recap-2" class="slide level2 center">
 <h2>Recap</h2>
@@ -1387,6 +1402,23 @@ margin-right: 0; }
 </tr>
 </tbody>
 </table>
+<aside class="notes">
+<p>Sensitivity to Outliers - DT has some sensitivity to outliers (based on where the splits happen) - KNN is distance based, not that sensitive to outliers, but depends on the number of neighbours - SVM-RBF robust to outliers</p>
+<p>Memory Usage - DT is is very memory efficient, stores the model not the data - KNN uses a lot of memory, all data sets stored in memory - SVM-RBF is reasonably memory efficient, stores only support vectors</p>
+<p>Training Time - DT training time is higher than KNN - KNN is 0, all points are stored - SVM-RBF much lower compared to KNN and DT</p>
+<p>Prediction Time - DT, also very efficient at predicting - KNN is high, all the work happens here - SVM-RBF, very efficient at predicting</p>
+<p>Multiclass Support - DT, multi-class is fine - KNN, multi-class is fine - SVM-RBF, bit complicated</p>
+<style type="text/css">
+span.MJX_Assistive_MathML {
+position:absolute!important;
+clip: rect(1px, 1px, 1px, 1px);
+padding: 1px 0 0 0!important;
+border: 0!important;
+height: 1px!important;
+width: 1px!important;
+overflow: hidden!important;
+display:block!important;
+}</style></aside>
 </section>
 <section id="iclicker-exercise-5.1" class="slide level2 center">
 <h2>(iClicker) Exercise 5.1</h2>
@@ -1446,6 +1478,22 @@ margin-right: 0; }
 <li>We have to be careful of the order we put each transformation and model in a pipeline.</li>
 </ol></li>
 </ul>
+<aside class="notes">
+<p>A: False; It doesn’t make sense to apply one hot encoding to numeric features, and it doesn’t make sense to apply standard scalar to categorical features. Sequence doesn’t make sense, we need column transformers</p>
+<p>B: True; can do this as long as the estimator is the last step</p>
+<p>C: False</p>
+<p>D: True;</p>
+<style type="text/css">
+span.MJX_Assistive_MathML {
+position:absolute!important;
+clip: rect(1px, 1px, 1px, 1px);
+padding: 1px 0 0 0!important;
+border: 0!important;
+height: 1px!important;
+width: 1px!important;
+overflow: hidden!important;
+display:block!important;
+}</style></aside>
 </section>
 <section id="break" class="slide level2 center">
 <h2>Break</h2>

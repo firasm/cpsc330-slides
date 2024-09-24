@@ -517,14 +517,14 @@
     "href": "slides-05-preprocessing-pipelines.html#recap-1",
     "title": "Lecture 5: Preprocessing and sklearn pipelines",
     "section": "Recap",
-    "text": "Recap\n\n\n\n\n\n\n\n\n\nAspect\nDecision Trees\nK-Nearest Neighbors (KNN)\nSupport Vector Machines (SVM) with RBF Kernel\n\n\n\n\nMain hyperparameters\nMax depth, min samples split\nNumber of neighbors (\\(k\\))\nC (regularization), Gamma (RBF kernel width)\n\n\nInterpretability\n\n\n\n\n\nHandling of Non-linearity\n\n\n\n\n\nScalability"
+    "text": "Recap\n\n\n\n\n\n\n\n\n\nAspect\nDecision Trees\nK-Nearest Neighbors (KNN)\nSupport Vector Machines (SVM) with RBF Kernel\n\n\n\n\nMain hyperparameters\nMax depth, min samples split\nNumber of neighbors (\\(k\\))\nC (regularization), Gamma (RBF kernel width)\n\n\nInterpretability\n\n\n\n\n\nHandling of Non-linearity\n\n\n\n\n\nScalability\n\n\n\n\n\n\n\nInterpretability (output easy to understand): - DT is very interpretable - KNN is moderately interpretable - SVM-RBF not interpretable at all\nNon-linearity: - DT Handle non-linearity, but boundaries are boxy - KNN can identify non-linear boundaries - SVM-RBF is a great choice for non-linearity\nScalability: - DT is very scalable, fast and can be done on large datasets - KNN is not scalable, because the distance needs to be calculated - SVM-RB is scalable, optimization is complicated so will be expensive"
   },
   {
     "objectID": "slides-05-preprocessing-pipelines.html#recap-2",
     "href": "slides-05-preprocessing-pipelines.html#recap-2",
     "title": "Lecture 5: Preprocessing and sklearn pipelines",
     "section": "Recap",
-    "text": "Recap\n\n\n\n\n\n\n\n\n\nAspect\nDecision Trees\nK-Nearest Neighbors (KNN)\nSupport Vector Machines (SVM) with RBF Kernel\n\n\n\n\nSensitivity to Outliers\n\n\n\n\n\nMemory Usage\n\n\n\n\n\nTraining Time\n\n\n\n\n\nPrediction Time\n\n\n\n\n\nMulticlass support"
+    "text": "Recap\n\n\n\n\n\n\n\n\n\nAspect\nDecision Trees\nK-Nearest Neighbors (KNN)\nSupport Vector Machines (SVM) with RBF Kernel\n\n\n\n\nSensitivity to Outliers\n\n\n\n\n\nMemory Usage\n\n\n\n\n\nTraining Time\n\n\n\n\n\nPrediction Time\n\n\n\n\n\nMulticlass support\n\n\n\n\n\n\n\nSensitivity to Outliers - DT has some sensitivity to outliers (based on where the splits happen) - KNN is distance based, not that sensitive to outliers, but depends on the number of neighbours - SVM-RBF robust to outliers\nMemory Usage - DT is is very memory efficient, stores the model not the data - KNN uses a lot of memory, all data sets stored in memory - SVM-RBF is reasonably memory efficient, stores only support vectors\nTraining Time - DT training time is higher than KNN - KNN is 0, all points are stored - SVM-RBF much lower compared to KNN and DT\nPrediction Time - DT, also very efficient at predicting - KNN is high, all the work happens here - SVM-RBF, very efficient at predicting\nMulticlass Support - DT, multi-class is fine - KNN, multi-class is fine - SVM-RBF, bit complicated"
   },
   {
     "objectID": "slides-05-preprocessing-pipelines.html#iclicker-exercise-5.1",
@@ -545,7 +545,7 @@
     "href": "slides-05-preprocessing-pipelines.html#iclicker-exercise-5.3",
     "title": "Lecture 5: Preprocessing and sklearn pipelines",
     "section": "(iClicker) Exercise 5.3",
-    "text": "(iClicker) Exercise 5.3\niClicker cloud join link: https://join.iclicker.com/VYFJ\nSelect all of the following statements which are TRUE.\n\n\nYou can have scaling of numeric features, one-hot encoding of categorical features, and scikit-learn estimator within a single pipeline.\n\n\nOnce you have a scikit-learn pipeline object with an estimator as the last step, you can call fit, predict, and score on it.\n\n\nYou can carry out data splitting within scikit-learn pipeline.\n\n\nWe have to be careful of the order we put each transformation and model in a pipeline."
+    "text": "(iClicker) Exercise 5.3\niClicker cloud join link: https://join.iclicker.com/VYFJ\nSelect all of the following statements which are TRUE.\n\n\nYou can have scaling of numeric features, one-hot encoding of categorical features, and scikit-learn estimator within a single pipeline.\n\n\nOnce you have a scikit-learn pipeline object with an estimator as the last step, you can call fit, predict, and score on it.\n\n\nYou can carry out data splitting within scikit-learn pipeline.\n\n\nWe have to be careful of the order we put each transformation and model in a pipeline.\n\n\n\nA: False; It doesn’t make sense to apply one hot encoding to numeric features, and it doesn’t make sense to apply standard scalar to categorical features. Sequence doesn’t make sense, we need column transformers\nB: True; can do this as long as the estimator is the last step\nC: False\nD: True;"
   },
   {
     "objectID": "slides-05-preprocessing-pipelines.html#break",
