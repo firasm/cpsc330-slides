@@ -181,7 +181,19 @@ pipe_knn = make_pipeline(StandardScaler(), KNeighborsClassifier())
 cross_val_score(pipe_knn, X_train_toy, y_train_toy) 
 ```
 
-# [Class demo](https://github.com/UBC-CS/cpsc330-2024W1/blob/main/lectures/102-Varada-lectures/class_demos/demo_05-06-preprocessing.ipynb)
+## Group Work: Class Demo & Live Coding
+
+For this demo, each student should [click this link](https://github.com/new?template_name=lecture6_demo&template_owner=ubc-cpsc330) to create a new repo in their accounts, then clone that repo locally to follow along with the demo from today.
+
+<br>
+<br>
+<br>
+
+If you really don't want to create a repo,
+
+- Navigate to the `cpsc330-2024W1` repo
+- run `git pull` to pull the latest files in the course repo
+- Look for the demo file here: `lectures/102-Firas-lectures/class_demos/`.
 
 ## `sklearn`'s `ColumnTransformer` 
 
@@ -286,9 +298,6 @@ text_pipeline = make_pipeline(
     SVC()
 )
 ```
-
-# [Class demo](https://github.com/ubc-cpsc330/lecture6_demo)
-
 
 <!-- 
 ## (iClicker) Exercise 6.2
