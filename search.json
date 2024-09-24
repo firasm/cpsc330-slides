@@ -1,68 +1,5 @@
 [
   {
-    "objectID": "slides.html",
-    "href": "slides.html",
-    "title": "Overview",
-    "section": "",
-    "text": "Title\n\n\nDescription\n\n\n\n\n\n\nLecture 1: Introduction to CPSC 330\n\n\nWhat is machine learning, types of machine learning, learning to navigate through the course materials, getting familiar with the course policies\n\n\n\n\nLecture 2: Terminology, Baselines, Decision Trees\n\n\nSupervised machine learning terminology: Features, target, examples, training, parameters and hyperparameters, Decision boundary, classification vs. regression, inference vs. prediction, accuracy vs. error, baselines, intuition of decision trees\n\n\n\n\nLecture 3: ML fundamentals\n\n\ngeneralization, data splitting, overfitting, underfitting, the fundamental tradeoff, the golden rule\n\n\n\n\nLecture 4: \\(k\\)-nearest neighbours and SVM RBFs\n\n\nintroduction to KNNs, hyperparameter n_neighbours or \\(k\\), C and gamma hyperparameters of SVM RBF, decision boundaries with different values of hyperparameters.\n\n\n\n\nLecture 5: Preprocessing and sklearn pipelines\n\n\nPre-processing, Transformations, and pipelines.\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "slides-03-ml-fundamentals.html#announcements",
-    "href": "slides-03-ml-fundamentals.html#announcements",
-    "title": "Lecture 3: ML fundamentals",
-    "section": "Announcements",
-    "text": "Announcements\n\nHomework 2 (hw2) has been released (Due: Sept 16, 11:59pm)\n\nYou are welcome to broadly discuss it with your classmates but final answers and submissions must be your own.\nGroup submissions are not allowed for this assignment.\n\nAdvice on keeping up with the material\n\nPractice!\nMake sure you run the lecture notes on your laptop and experiment with the code.\nStart early on homework assignments.\n\nIf you are still on the waitlist, it’s your responsibility to keep up with the material and submit assignments.\nLast day to drop without a W standing: Sept 16, 2023"
-  },
-  {
-    "objectID": "slides-03-ml-fundamentals.html#recap",
-    "href": "slides-03-ml-fundamentals.html#recap",
-    "title": "Lecture 3: ML fundamentals",
-    "section": "Recap",
-    "text": "Recap\n\nImportance of generalization in supervised machine learning\nData splitting as a way to approximate generalization error\nTrain, test, validation, deployment data\nOverfitting, underfitting, the fundamental tradeoff, and the golden rule.\nCross-validation"
-  },
-  {
-    "objectID": "slides-03-ml-fundamentals.html#recap-1",
-    "href": "slides-03-ml-fundamentals.html#recap-1",
-    "title": "Lecture 3: ML fundamentals",
-    "section": "Recap",
-    "text": "Recap\nA typical sequence of steps to train supervised machine learning models\n\ntraining the model on the train split\ntuning hyperparamters using the validation split\nchecking the generalization performance on the test split"
-  },
-  {
-    "objectID": "slides-03-ml-fundamentals.html#iclicker-3.1",
-    "href": "slides-03-ml-fundamentals.html#iclicker-3.1",
-    "title": "Lecture 3: ML fundamentals",
-    "section": "iClicker 3.1",
-    "text": "iClicker 3.1\nClicker cloud join link: https://join.iclicker.com/VYFJ\nSelect all of the following statements which are TRUE.\n\n\nA decision tree model with no depth (the default max_depth in sklearn) is likely to perform very well on the deployment data.\n\n\nData splitting helps us assess how well our model would generalize.\n\n\nDeployment data is only scored once.\n\n\nValidation data could be used for hyperparameter optimization.\n\n\nIt’s recommended that data be shuffled before splitting it into train and test sets."
-  },
-  {
-    "objectID": "slides-03-ml-fundamentals.html#additional-resource",
-    "href": "slides-03-ml-fundamentals.html#additional-resource",
-    "title": "Lecture 3: ML fundamentals",
-    "section": "Additional Resource",
-    "text": "Additional Resource\n\n\n\n        \n        \n\n\nReference: MLU-Explain - Data Splitting"
-  },
-  {
-    "objectID": "slides-03-ml-fundamentals.html#iclicker-3.2",
-    "href": "slides-03-ml-fundamentals.html#iclicker-3.2",
-    "title": "Lecture 3: ML fundamentals",
-    "section": "iClicker 3.2",
-    "text": "iClicker 3.2\nClicker cloud join link: https://join.iclicker.com/VYFJ\nSelect all of the following statements which are TRUE.\n\n\\(k\\)-fold cross-validation calls fit \\(k\\) times\nWe use cross-validation to get a more robust estimate of model performance.\nIf the mean train accuracy is much higher than the mean cross-validation accuracy it’s likely to be a case of overfitting.\nThe fundamental tradeoff of ML states that as training error goes down, validation error goes up.\nA decision stump on a complicated classification problem is likely to underfit."
-  },
-  {
-    "objectID": "slides-03-ml-fundamentals.html#additional-resource-1",
-    "href": "slides-03-ml-fundamentals.html#additional-resource-1",
-    "title": "Lecture 3: ML fundamentals",
-    "section": "Additional Resource",
-    "text": "Additional Resource\n\n\n\n        \n        \n\n\nReference: MLU-Explain - Cross Validation"
-  },
-  {
-    "objectID": "slides-03-ml-fundamentals.html#group-work-class-demo-live-coding",
-    "href": "slides-03-ml-fundamentals.html#group-work-class-demo-live-coding",
-    "title": "Lecture 3: ML fundamentals",
-    "section": "Group Work: Class Demo & Live Coding",
-    "text": "Group Work: Class Demo & Live Coding\nFor this demo, each student should click this link to create a new repo in their accounts, then clone that repo locally to follow along with the demo from today.\n  \nIf you really don’t want to create a repo,\n\nNavigate to the cpsc330-2024W1 repo\nrun git pull to pull the latest files in the course repo\nLook for the demo file here: lectures/102-Firas-lectures/class_demos/."
-  },
-  {
     "objectID": "slides-04-kNNs-SVM-RBF.html#announcements",
     "href": "slides-04-kNNs-SVM-RBF.html#announcements",
     "title": "Lecture 4: \\(k\\)-nearest neighbours and SVM RBFs",
@@ -159,6 +96,69 @@
     "title": "Lecture 4: \\(k\\)-nearest neighbours and SVM RBFs",
     "section": "\\(k\\)-nearest neighbours",
     "text": "\\(k\\)-nearest neighbours\n\nClassifies an object based on the majority label among its \\(k\\) closest neighbors.\nMain hyperparameter: \\(k\\) or n_neighbors in sklearn\nDistance Metrics: Euclidean\nStrengths: simple and intuitive, can learn complex decision boundaries\nChallenges: Sensitive to the choice of distance metric and scaling (coming up)."
+  },
+  {
+    "objectID": "slides-03-ml-fundamentals.html#announcements",
+    "href": "slides-03-ml-fundamentals.html#announcements",
+    "title": "Lecture 3: ML fundamentals",
+    "section": "Announcements",
+    "text": "Announcements\n\nHomework 2 (hw2) has been released (Due: Sept 16, 11:59pm)\n\nYou are welcome to broadly discuss it with your classmates but final answers and submissions must be your own.\nGroup submissions are not allowed for this assignment.\n\nAdvice on keeping up with the material\n\nPractice!\nMake sure you run the lecture notes on your laptop and experiment with the code.\nStart early on homework assignments.\n\nIf you are still on the waitlist, it’s your responsibility to keep up with the material and submit assignments.\nLast day to drop without a W standing: Sept 16, 2023"
+  },
+  {
+    "objectID": "slides-03-ml-fundamentals.html#recap",
+    "href": "slides-03-ml-fundamentals.html#recap",
+    "title": "Lecture 3: ML fundamentals",
+    "section": "Recap",
+    "text": "Recap\n\nImportance of generalization in supervised machine learning\nData splitting as a way to approximate generalization error\nTrain, test, validation, deployment data\nOverfitting, underfitting, the fundamental tradeoff, and the golden rule.\nCross-validation"
+  },
+  {
+    "objectID": "slides-03-ml-fundamentals.html#recap-1",
+    "href": "slides-03-ml-fundamentals.html#recap-1",
+    "title": "Lecture 3: ML fundamentals",
+    "section": "Recap",
+    "text": "Recap\nA typical sequence of steps to train supervised machine learning models\n\ntraining the model on the train split\ntuning hyperparamters using the validation split\nchecking the generalization performance on the test split"
+  },
+  {
+    "objectID": "slides-03-ml-fundamentals.html#iclicker-3.1",
+    "href": "slides-03-ml-fundamentals.html#iclicker-3.1",
+    "title": "Lecture 3: ML fundamentals",
+    "section": "iClicker 3.1",
+    "text": "iClicker 3.1\nClicker cloud join link: https://join.iclicker.com/VYFJ\nSelect all of the following statements which are TRUE.\n\n\nA decision tree model with no depth (the default max_depth in sklearn) is likely to perform very well on the deployment data.\n\n\nData splitting helps us assess how well our model would generalize.\n\n\nDeployment data is only scored once.\n\n\nValidation data could be used for hyperparameter optimization.\n\n\nIt’s recommended that data be shuffled before splitting it into train and test sets."
+  },
+  {
+    "objectID": "slides-03-ml-fundamentals.html#additional-resource",
+    "href": "slides-03-ml-fundamentals.html#additional-resource",
+    "title": "Lecture 3: ML fundamentals",
+    "section": "Additional Resource",
+    "text": "Additional Resource\n\n\n\n        \n        \n\n\nReference: MLU-Explain - Data Splitting"
+  },
+  {
+    "objectID": "slides-03-ml-fundamentals.html#iclicker-3.2",
+    "href": "slides-03-ml-fundamentals.html#iclicker-3.2",
+    "title": "Lecture 3: ML fundamentals",
+    "section": "iClicker 3.2",
+    "text": "iClicker 3.2\nClicker cloud join link: https://join.iclicker.com/VYFJ\nSelect all of the following statements which are TRUE.\n\n\\(k\\)-fold cross-validation calls fit \\(k\\) times\nWe use cross-validation to get a more robust estimate of model performance.\nIf the mean train accuracy is much higher than the mean cross-validation accuracy it’s likely to be a case of overfitting.\nThe fundamental tradeoff of ML states that as training error goes down, validation error goes up.\nA decision stump on a complicated classification problem is likely to underfit."
+  },
+  {
+    "objectID": "slides-03-ml-fundamentals.html#additional-resource-1",
+    "href": "slides-03-ml-fundamentals.html#additional-resource-1",
+    "title": "Lecture 3: ML fundamentals",
+    "section": "Additional Resource",
+    "text": "Additional Resource\n\n\n\n        \n        \n\n\nReference: MLU-Explain - Cross Validation"
+  },
+  {
+    "objectID": "slides-03-ml-fundamentals.html#group-work-class-demo-live-coding",
+    "href": "slides-03-ml-fundamentals.html#group-work-class-demo-live-coding",
+    "title": "Lecture 3: ML fundamentals",
+    "section": "Group Work: Class Demo & Live Coding",
+    "text": "Group Work: Class Demo & Live Coding\nFor this demo, each student should click this link to create a new repo in their accounts, then clone that repo locally to follow along with the demo from today.\n  \nIf you really don’t want to create a repo,\n\nNavigate to the cpsc330-2024W1 repo\nrun git pull to pull the latest files in the course repo\nLook for the demo file here: lectures/102-Firas-lectures/class_demos/."
+  },
+  {
+    "objectID": "slides.html",
+    "href": "slides.html",
+    "title": "Overview",
+    "section": "",
+    "text": "Title\n\n\nDescription\n\n\n\n\n\n\nLecture 1: Introduction to CPSC 330\n\n\nWhat is machine learning, types of machine learning, learning to navigate through the course materials, getting familiar with the course policies\n\n\n\n\nLecture 2: Terminology, Baselines, Decision Trees\n\n\nSupervised machine learning terminology: Features, target, examples, training, parameters and hyperparameters, Decision boundary, classification vs. regression, inference vs. prediction, accuracy vs. error, baselines, intuition of decision trees\n\n\n\n\nLecture 3: ML fundamentals\n\n\ngeneralization, data splitting, overfitting, underfitting, the fundamental tradeoff, the golden rule\n\n\n\n\nLecture 4: \\(k\\)-nearest neighbours and SVM RBFs\n\n\nintroduction to KNNs, hyperparameter n_neighbours or \\(k\\), C and gamma hyperparameters of SVM RBF, decision boundaries with different values of hyperparameters.\n\n\n\n\nLecture 5: Preprocessing and sklearn pipelines\n\n\nPre-processing, Transformations, and pipelines.\n\n\n\n\nLecture 6: Column transformer and text features\n\n\nPreprocessing and sklearn pipelines\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "slides-02-terminology-decision-trees.html#announcements",
@@ -471,158 +471,172 @@
     ]
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Welcome",
-    "section": "",
-    "text": "Welcome to CPSC330! Here, you’ll find slides for CPSC 330 Section 103. These slides are based on the notes present here.\n\nClass times 🕘 5 pm to 6:20 pm\nWhere? 📍 West Mall Swing Space (SWNG) - 222, 2175 West Mall, Vancouver, BC V6T 1Z4"
-  },
-  {
-    "objectID": "slides-05-preprocessing-pipelines.html#announcements",
-    "href": "slides-05-preprocessing-pipelines.html#announcements",
-    "title": "Lecture 5: Preprocessing and sklearn pipelines",
+    "objectID": "slides-06.html#announcements",
+    "href": "slides-06.html#announcements",
+    "title": "Lecture 6: Column transformer and text features",
     "section": "Announcements",
-    "text": "Announcements\n\nHW1 grades have been posted.\nHomework 1 solutions have been posted on Canvas under Files tab. Please do not share them with anyone or do not post them anywhere."
+    "text": "Announcements\n\nLecture recordings for the first two weeks have been made available - See Piazza.\nMy Office Hours\nHW3 is due next week Tuesday, Oct 1st, 11:59 pm.\n\nYou can work in pairs for this assignment."
   },
   {
-    "objectID": "slides-05-preprocessing-pipelines.html#curse-of-dimensionality",
-    "href": "slides-05-preprocessing-pipelines.html#curse-of-dimensionality",
-    "title": "Lecture 5: Preprocessing and sklearn pipelines",
-    "section": "Curse of dimensionality",
-    "text": "Curse of dimensionality\n\nAs dimensionality increases, the volume of the space increases exponentially, making the data sparse.\nDistance metrics lose meaning\n\nAccidental similarity swamps out meaningful similarity\nAll points become almost equidistant.\n\nOverfitting becomes likely: Harder to generalize with high-dimensional data.\nHow to deal with this?\n\nDimensionality reduction (PCA) (not covered in this course)\nFeature selection techniques."
+    "objectID": "slides-06.html#quick-correction-on-exercise-5.3",
+    "href": "slides-06.html#quick-correction-on-exercise-5.3",
+    "title": "Lecture 6: Column transformer and text features",
+    "section": "Quick Correction on Exercise 5.3",
+    "text": "Quick Correction on Exercise 5.3\n\nI got accidentally said only D is true, but B is also true!\n\nSelect all of the following statements which are TRUE.\n\n\nYou can have scaling of numeric features, one-hot encoding of categorical features, and scikit-learn estimator within a single pipeline.\n\n\nOnce you have a scikit-learn pipeline object with an estimator as the last step, you can call fit, predict, and score on it.\n\n\nYou can carry out data splitting within scikit-learn pipeline.\n\n\nWe have to be careful of the order we put each transformation and model in a pipeline."
   },
   {
-    "objectID": "slides-05-preprocessing-pipelines.html#svms-with-rbf-kernel",
-    "href": "slides-05-preprocessing-pipelines.html#svms-with-rbf-kernel",
-    "title": "Lecture 5: Preprocessing and sklearn pipelines",
-    "section": "SVMs with RBF kernel",
-    "text": "SVMs with RBF kernel\n\nRBF Kernel: Radial Basis Function, a way to transform data into higher dimensions implicitly.\nStrengths\n\nEffective in high-dimensional and sparse data\nGood performance on non-linear problems.\n\nHyperparameters:\n\nC$: Regularization parameter (trade-off between correct classification of training examples and maximization of the decision margin).\n\\(\\gamma\\): Defines how far the influence of a single training example reaches."
+    "objectID": "slides-06.html#data",
+    "href": "slides-06.html#data",
+    "title": "Lecture 6: Column transformer and text features",
+    "section": "Data",
+    "text": "Data\n\nX, y = make_blobs(n_samples=100, centers=3, random_state=12, cluster_std=5) # make synthetic data\nX_train_toy, X_test_toy, y_train_toy, y_test_toy = train_test_split(\n    X, y, random_state=5, test_size=0.4) # split it into training and test sets\n# Visualize the training data\nplt.scatter(X_train_toy[:, 0], X_train_toy[:, 1], label=\"Training set\", s=60)\nplt.scatter(\n    X_test_toy[:, 0], X_test_toy[:, 1], color=mglearn.cm2(1), label=\"Test set\", s=60\n)\nplt.legend(loc=\"upper right\")"
   },
   {
-    "objectID": "slides-05-preprocessing-pipelines.html#intuition-of-c-and-gamma-in-svm-rbf",
-    "href": "slides-05-preprocessing-pipelines.html#intuition-of-c-and-gamma-in-svm-rbf",
-    "title": "Lecture 5: Preprocessing and sklearn pipelines",
-    "section": "Intuition of C and gamma in SVM RBF",
-    "text": "Intuition of C and gamma in SVM RBF\n\nC (Regularization): Controls the trade-off between perfect training accuracy and having a simpler decision boundary.\n\nHigh C: Strict, complex boundary (overfitting risk).\nLow C: More errors allowed, smoother boundary (generalizes better).\n\nGamma (Kernel Width): Controls the influence of individual data points.\n\nHigh Gamma: Points have local impact, complex boundary.\nLow Gamma: Points affect broader areas, smoother boundary.\n\nKey trade-off: Proper balance between C and gamma is crucial for avoiding overfitting or underfitting."
+    "objectID": "slides-06.html#bad-ml-1",
+    "href": "slides-06.html#bad-ml-1",
+    "title": "Lecture 6: Column transformer and text features",
+    "section": "❌ Bad ML 1",
+    "text": "❌ Bad ML 1\n\nWhat’s wrong with the approach below?\n\n\nscaler = StandardScaler() # Creating a scalert object \nscaler.fit(X_train_toy) # Calling fit on the training data \ntrain_scaled = scaler.transform(\n    X_train_toy\n)  # Transforming the training data using the scaler fit on training data\n\nscaler = StandardScaler()  # Creating a separate object for scaling test data\nscaler.fit(X_test_toy)  # Calling fit on the test data\ntest_scaled = scaler.transform(\n    X_test_toy\n)  # Transforming the test data using the scaler fit on test data\n\nknn = KNeighborsClassifier()\nknn.fit(train_scaled, y_train_toy)\nprint(f\"Training score: {knn.score(train_scaled, y_train_toy):.2f}\")\nprint(f\"Test score: {knn.score(test_scaled, y_test_toy):.2f}\") # misleading scores\n\nTraining score: 0.63\nTest score: 0.60"
   },
   {
-    "objectID": "slides-05-preprocessing-pipelines.html#recap",
-    "href": "slides-05-preprocessing-pipelines.html#recap",
-    "title": "Lecture 5: Preprocessing and sklearn pipelines",
-    "section": "Recap",
-    "text": "Recap\n\nDecision trees: Split data into subsets based on feature values to create decision rules\n\\(k\\)-NNs: Classify based on the majority vote from k nearest neighbors\nSVM RBFs: Create a boundary using an RBF kernel to separate classes"
+    "objectID": "slides-06.html#scaling-train-and-test-data-separately",
+    "href": "slides-06.html#scaling-train-and-test-data-separately",
+    "title": "Lecture 6: Column transformer and text features",
+    "section": "Scaling train and test data separately",
+    "text": "Scaling train and test data separately"
   },
   {
-    "objectID": "slides-05-preprocessing-pipelines.html#recap-1",
-    "href": "slides-05-preprocessing-pipelines.html#recap-1",
-    "title": "Lecture 5: Preprocessing and sklearn pipelines",
-    "section": "Recap",
-    "text": "Recap\n\n\n\n\n\n\n\n\n\nAspect\nDecision Trees\nK-Nearest Neighbors (KNN)\nSupport Vector Machines (SVM) with RBF Kernel\n\n\n\n\nMain hyperparameters\nMax depth, min samples split\nNumber of neighbors (\\(k\\))\nC (regularization), Gamma (RBF kernel width)\n\n\nInterpretability\n\n\n\n\n\nHandling of Non-linearity\n\n\n\n\n\nScalability\n\n\n\n\n\n\n\nInterpretability (output easy to understand): - DT is very interpretable - KNN is moderately interpretable - SVM-RBF not interpretable at all\nNon-linearity: - DT Handle non-linearity, but boundaries are boxy - KNN can identify non-linear boundaries - SVM-RBF is a great choice for non-linearity\nScalability: - DT is very scalable, fast and can be done on large datasets - KNN is not scalable, because the distance needs to be calculated - SVM-RB is scalable, optimization is complicated so will be expensive"
+    "objectID": "slides-06.html#bad-ml-2",
+    "href": "slides-06.html#bad-ml-2",
+    "title": "Lecture 6: Column transformer and text features",
+    "section": "❌ Bad ML 2",
+    "text": "❌ Bad ML 2\n\nWhat’s wrong with the approach below?\n\n\n# join the train and test sets back together\nXX = np.vstack((X_train_toy, X_test_toy))\n\nscaler = StandardScaler()\nscaler.fit(XX)\nXX_scaled = scaler.transform(XX)\n\nXX_train = XX_scaled[:X_train_toy.shape[0]]\nXX_test = XX_scaled[X_train_toy.shape[0]:]\n\nknn = KNeighborsClassifier()\nknn.fit(XX_train, y_train_toy)\nprint(f\"Training score: {knn.score(XX_train, y_train_toy):.2f}\")  # Misleading score\nprint(f\"Test score: {knn.score(XX_test, y_test_toy):.2f}\")  # Misleading score\n\nTraining score: 0.63\nTest score: 0.55"
   },
   {
-    "objectID": "slides-05-preprocessing-pipelines.html#recap-2",
-    "href": "slides-05-preprocessing-pipelines.html#recap-2",
-    "title": "Lecture 5: Preprocessing and sklearn pipelines",
-    "section": "Recap",
-    "text": "Recap\n\n\n\n\n\n\n\n\n\nAspect\nDecision Trees\nK-Nearest Neighbors (KNN)\nSupport Vector Machines (SVM) with RBF Kernel\n\n\n\n\nSensitivity to Outliers\n\n\n\n\n\nMemory Usage\n\n\n\n\n\nTraining Time\n\n\n\n\n\nPrediction Time\n\n\n\n\n\nMulticlass support\n\n\n\n\n\n\n\nSensitivity to Outliers - DT has some sensitivity to outliers (based on where the splits happen) - KNN is distance based, not that sensitive to outliers, but depends on the number of neighbours - SVM-RBF robust to outliers\nMemory Usage - DT is is very memory efficient, stores the model not the data - KNN uses a lot of memory, all data sets stored in memory - SVM-RBF is reasonably memory efficient, stores only support vectors\nTraining Time - DT training time is higher than KNN - KNN is 0, all points are stored - SVM-RBF much lower compared to KNN and DT\nPrediction Time - DT, also very efficient at predicting - KNN is high, all the work happens here - SVM-RBF, very efficient at predicting\nMulticlass Support - DT, multi-class is fine - KNN, multi-class is fine - SVM-RBF, bit complicated"
+    "objectID": "slides-06.html#bad-ml-3",
+    "href": "slides-06.html#bad-ml-3",
+    "title": "Lecture 6: Column transformer and text features",
+    "section": "❌ Bad ML 3",
+    "text": "❌ Bad ML 3\n\nWhat’s wrong with the approach below?\n\n\nknn = KNeighborsClassifier()\n\nscaler = StandardScaler()\nscaler.fit(X_train_toy)\nX_train_scaled = scaler.transform(X_train_toy)\nX_test_scaled = scaler.transform(X_test_toy)\ncross_val_score(knn, X_train_scaled, y_train_toy)\n\narray([0.25      , 0.5       , 0.58333333, 0.58333333, 0.41666667])\n\n\n\nSpeaker notes go here."
   },
   {
-    "objectID": "slides-05-preprocessing-pipelines.html#iclicker-exercise-5.1",
-    "href": "slides-05-preprocessing-pipelines.html#iclicker-exercise-5.1",
-    "title": "Lecture 5: Preprocessing and sklearn pipelines",
-    "section": "(iClicker) Exercise 5.1",
-    "text": "(iClicker) Exercise 5.1\niClicker cloud join link: https://join.iclicker.com/VYFJ\nTake a guess: In your machine learning project, how much time will you typically spend on data preparation and transformation?\n\n\n~80% of the project time\n\n\n~20% of the project time\n\n\n~50% of the project time\n\n\nNone. Most of the time will be spent on model building\n\n\nThe question is adapted from here."
+    "objectID": "slides-06.html#improper-preprocessing",
+    "href": "slides-06.html#improper-preprocessing",
+    "title": "Lecture 6: Column transformer and text features",
+    "section": "Improper preprocessing",
+    "text": "Improper preprocessing"
   },
   {
-    "objectID": "slides-05-preprocessing-pipelines.html#iclicker-exercise-5.2",
-    "href": "slides-05-preprocessing-pipelines.html#iclicker-exercise-5.2",
-    "title": "Lecture 5: Preprocessing and sklearn pipelines",
-    "section": "(iClicker) Exercise 5.2",
-    "text": "(iClicker) Exercise 5.2\niClicker cloud join link: https://join.iclicker.com/VYFJ\nSelect all of the following statements which are TRUE.\n\n\nStandardScaler ensures a fixed range (i.e., minimum and maximum values) for the features.\n\n\nStandardScaler calculates mean and standard deviation for each feature separately.\n\n\nIn general, it’s a good idea to apply scaling on numeric features before training \\(k\\)-NN or SVM RBF models.\n\n\nThe transformed feature values might be hard to interpret for humans.\n\n\nAfter applying SimpleImputer The transformed data has a different shape than the original data."
+    "objectID": "slides-06.html#proper-preprocessing",
+    "href": "slides-06.html#proper-preprocessing",
+    "title": "Lecture 6: Column transformer and text features",
+    "section": "Proper preprocessing",
+    "text": "Proper preprocessing"
   },
   {
-    "objectID": "slides-05-preprocessing-pipelines.html#iclicker-exercise-5.3",
-    "href": "slides-05-preprocessing-pipelines.html#iclicker-exercise-5.3",
-    "title": "Lecture 5: Preprocessing and sklearn pipelines",
-    "section": "(iClicker) Exercise 5.3",
-    "text": "(iClicker) Exercise 5.3\niClicker cloud join link: https://join.iclicker.com/VYFJ\nSelect all of the following statements which are TRUE.\n\n\nYou can have scaling of numeric features, one-hot encoding of categorical features, and scikit-learn estimator within a single pipeline.\n\n\nOnce you have a scikit-learn pipeline object with an estimator as the last step, you can call fit, predict, and score on it.\n\n\nYou can carry out data splitting within scikit-learn pipeline.\n\n\nWe have to be careful of the order we put each transformation and model in a pipeline.\n\n\n\nA: False; It doesn’t make sense to apply one hot encoding to numeric features, and it doesn’t make sense to apply standard scalar to categorical features. Sequence doesn’t make sense, we need column transformers\nB: True; can do this as long as the estimator is the last step\nC: False\nD: True;"
+    "objectID": "slides-06.html#recap-sklearn-pipelines",
+    "href": "slides-06.html#recap-sklearn-pipelines",
+    "title": "Lecture 6: Column transformer and text features",
+    "section": "Recap: sklearn Pipelines",
+    "text": "Recap: sklearn Pipelines\n\nPipeline is a way to chain multiple steps (e.g., preprocessing + model fitting) into a single workflow.\nSimplify the code and improves readability.\nReduce the risk of data leakage by ensuring proper transformation of the training and test sets.\nAutomatically apply transformations in sequence.\nExample:\n\nChaining a StandardScaler with a KNeighborsClassifier model.\n\n\n\nfrom sklearn.pipeline import make_pipeline\n\npipe_knn = make_pipeline(StandardScaler(), KNeighborsClassifier())\n\n# Correct way to do cross validation without breaking the golden rule. \ncross_val_score(pipe_knn, X_train_toy, y_train_toy) \n\narray([0.25      , 0.5       , 0.5       , 0.58333333, 0.41666667])"
   },
   {
-    "objectID": "slides-05-preprocessing-pipelines.html#break",
-    "href": "slides-05-preprocessing-pipelines.html#break",
-    "title": "Lecture 5: Preprocessing and sklearn pipelines",
-    "section": "Break",
-    "text": "Break\nLet’s take a break!\n /"
+    "objectID": "slides-06.html#sklearns-columntransformer",
+    "href": "slides-06.html#sklearns-columntransformer",
+    "title": "Lecture 6: Column transformer and text features",
+    "section": "sklearn’s ColumnTransformer",
+    "text": "sklearn’s ColumnTransformer\n\nUse ColumnTransformer to build all our transformations together into one object\n\n\n\nUse a column transformer with sklearn pipelines."
   },
   {
-    "objectID": "slides-05-preprocessing-pipelines.html#preprocessing-motivation-example",
-    "href": "slides-05-preprocessing-pipelines.html#preprocessing-motivation-example",
-    "title": "Lecture 5: Preprocessing and sklearn pipelines",
-    "section": "Preprocessing motivation: example",
-    "text": "Preprocessing motivation: example\nYou’re trying to find a suitable date based on:\n\nAge (closer to yours is better).\nNumber of Facebook Friends (closer to your social circle is ideal)."
+    "objectID": "slides-06.html#iclicker-exercise-6.1",
+    "href": "slides-06.html#iclicker-exercise-6.1",
+    "title": "Lecture 6: Column transformer and text features",
+    "section": "(iClicker) Exercise 6.1",
+    "text": "(iClicker) Exercise 6.1\niClicker cloud join link: https://join.iclicker.com/VYFJ\nSelect all of the following statements which are TRUE.\n\n\nYou could carry out cross-validation by passing a ColumnTransformer object to cross_validate.\n\n\nAfter applying column transformer, the order of the columns in the transformed data has to be the same as the order of the columns in the original data.\n\n\nAfter applying a column transformer, the transformed data is always going to be of different shape than the original data.\n\n\nWhen you call fit_transform on a ColumnTransformer object, you get a numpy ndarray."
   },
   {
-    "objectID": "slides-05-preprocessing-pipelines.html#preprocessing-motivation-example-1",
-    "href": "slides-05-preprocessing-pipelines.html#preprocessing-motivation-example-1",
-    "title": "Lecture 5: Preprocessing and sklearn pipelines",
-    "section": "Preprocessing motivation: example",
-    "text": "Preprocessing motivation: example\n\nYou are 30 years old and have 250 Facebook friends.\n\n\n\n\n\n\n\n\n\n\n\nPerson\nAge\n#FB Friends\nEuclidean Distance Calculation\nDistance\n\n\n\n\nA\n25\n400\n√(5² + 150²)\n150.08\n\n\nB\n27\n300\n√(3² + 50²)\n50.09\n\n\nC\n30\n500\n√(0² + 250²)\n250.00\n\n\nD\n60\n250\n√(30² + 0²)\n30.00\n\n\n\nBased on the distances, the two nearest neighbors (2-NN) are:\n\nPerson D (Distance: 30.00)\nPerson B (Distance: 50.09)\n\nWhat’s the problem here?"
+    "objectID": "slides-06.html#remarks-on-preprocessing",
+    "href": "slides-06.html#remarks-on-preprocessing",
+    "title": "Lecture 6: Column transformer and text features",
+    "section": "Remarks on preprocessing",
+    "text": "Remarks on preprocessing\n\nThere is no one-size-fits-all solution in data preprocessing, and decisions often involve a degree of subjectivity.\n\nExploratory data analysis and domain knowledge inform these decisions\n\nAlways consider the specific goals of your project when deciding how to encode features."
   },
   {
-    "objectID": "slides-05-preprocessing-pipelines.html#imputation-fill-the-gaps",
-    "href": "slides-05-preprocessing-pipelines.html#imputation-fill-the-gaps",
-    "title": "Lecture 5: Preprocessing and sklearn pipelines",
-    "section": "Imputation: Fill the gaps! (🟩 🟧 🟦)",
-    "text": "Imputation: Fill the gaps! (🟩 🟧 🟦)\nFill in missing data using a chosen strategy:\n\nMean: Replace missing values with the average of the available data.\nMedian: Use the middle value.\nMost Frequent: Use the most common value (mode).\nKNN Imputation: Fill based on similar neighbors.\n\nExample:\nFill in missing values like filling empty seats in a classroom with the average student.\nfrom sklearn.impute import SimpleImputer\nimputer = SimpleImputer(strategy='mean')\nX_imputed = imputer.fit_transform(X)"
+    "objectID": "slides-06.html#alternative-methods-for-scaling",
+    "href": "slides-06.html#alternative-methods-for-scaling",
+    "title": "Lecture 6: Column transformer and text features",
+    "section": "Alternative methods for scaling",
+    "text": "Alternative methods for scaling\n\nStandardScaler\n\nGood choice when the column follows a normal distribution or a distribution somewhat like a normal distribution.\n\nMinMaxScaler: Transform each feature to a desired range. Appropriate when\n\nGood choice for features such as human age, where there is a fixed range of values and the feature is uniformly distributed across the range\n\nNormalizer: Works on rows rather than columns. Normalize examples individually to unit norm.\n\nGood choice for frequency-type data\n\nLog scaling\n\nGood choice for features such as ratings per movies (power law distribution; a few movies have lots of ratings but most movies have very few ratings)\n\n…"
   },
   {
-    "objectID": "slides-05-preprocessing-pipelines.html#scaling-everything-to-the-same-range",
-    "href": "slides-05-preprocessing-pipelines.html#scaling-everything-to-the-same-range",
-    "title": "Lecture 5: Preprocessing and sklearn pipelines",
-    "section": "Scaling: Everything to the same range! (📉 📈)",
-    "text": "Scaling: Everything to the same range! (📉 📈)\nEnsure all features have a comparable range.\n\nStandardScaler: Mean = 0, Standard Deviation = 1.\nMinMaxScaler: Scales features to a [0, 1] range.\nRobustScaler: Scales features using median and quantiles.\n\nExample:\nRescaling everyone’s height to make basketball players and gymnasts comparable.\nfrom sklearn.preprocessing import StandardScaler\nscaler = StandardScaler()\nX_scaled = scaler.fit_transform(X)"
+    "objectID": "slides-06.html#ordinal-encoding-vs.-one-hot-encoding",
+    "href": "slides-06.html#ordinal-encoding-vs.-one-hot-encoding",
+    "title": "Lecture 6: Column transformer and text features",
+    "section": "Ordinal encoding vs. One-hot encoding",
+    "text": "Ordinal encoding vs. One-hot encoding\n\nOrdinal Encoding: Encodes categorical features as an integer array.\nOne-hot Encoding: Creates binary columns for each category’s presence.\nSometimes how we encode a specific feature depends upon the context."
   },
   {
-    "objectID": "slides-05-preprocessing-pipelines.html#one-hot-encoding-1-0-0",
-    "href": "slides-05-preprocessing-pipelines.html#one-hot-encoding-1-0-0",
-    "title": "Lecture 5: Preprocessing and sklearn pipelines",
-    "section": "One-Hot encoding: 🍎 → 1️⃣ 0️⃣ 0️⃣",
-    "text": "One-Hot encoding: 🍎 → 1️⃣ 0️⃣ 0️⃣\nConvert categorical features into binary columns.\n\nCreates new binary columns for each category.\nUseful for handling categorical data in machine learning models.\n\nExample:\nTurn “Apple, Banana, Orange” into binary columns:\n\n\n\nFruit\n🍎\n🍌\n🍊\n\n\n\n\nApple 🍎\n1\n0\n0\n\n\nBanana 🍌\n0\n1\n0\n\n\nOrange 🍊\n0\n0\n1\n\n\n\nfrom sklearn.preprocessing import OneHotEncoder\nencoder = OneHotEncoder()\nX_encoded = encoder.fit_transform(X)"
+    "objectID": "slides-06.html#ordinal-encoding-vs.-one-hot-encoding-1",
+    "href": "slides-06.html#ordinal-encoding-vs.-one-hot-encoding-1",
+    "title": "Lecture 6: Column transformer and text features",
+    "section": "Ordinal encoding vs. One-hot encoding",
+    "text": "Ordinal encoding vs. One-hot encoding\n\nConsider weather feature and its four categories: Sunny (☀️), Cloudy (🌥️), Rainy (⛈️), Snowy (❄️)\nWhich encoding would you use in each of the following scenarios?\n\nPredicting traffic volume\nPredicting severity of weather-related road incidents"
   },
   {
-    "objectID": "slides-05-preprocessing-pipelines.html#ordinal-encoding-ranking-matters-1",
-    "href": "slides-05-preprocessing-pipelines.html#ordinal-encoding-ranking-matters-1",
-    "title": "Lecture 5: Preprocessing and sklearn pipelines",
-    "section": "Ordinal encoding: Ranking matters! (⭐️⭐️⭐️⭐️⭐️ → 1️⃣)",
-    "text": "Ordinal encoding: Ranking matters! (⭐️⭐️⭐️⭐️⭐️ → 1️⃣)\nConvert categories into integer values that have a meaningful order.\n\nAssign integers based on order or rank.\nUseful when there is an inherent ranking in the data.\n\nExample:\nTurn “Poor, Average, Good” into 1, 2, 3:\n\n\n\nRating\nOrdinal\n\n\n\n\nPoor\n1\n\n\nAverage\n2\n\n\nGood\n3\n\n\n\nfrom sklearn.preprocessing import OrdinalEncoder\nencoder = OrdinalEncoder()\nX_ordinal = encoder.fit_transform(X)"
+    "objectID": "slides-06.html#ordinal-encoding-vs.-one-hot-encoding-2",
+    "href": "slides-06.html#ordinal-encoding-vs.-one-hot-encoding-2",
+    "title": "Lecture 6: Column transformer and text features",
+    "section": "Ordinal encoding vs. One-hot encoding",
+    "text": "Ordinal encoding vs. One-hot encoding\n\nConsider weather feature and its four categories: Sunny (☀️), Cloudy (🌥️), Rainy (⛈️), Snowy (❄️)\nPredicting traffic volume: Using one-hot encoding would make sense here because the impact of different weather conditions on traffic volume does not necessarily follow a clear order and different weather conditions could have very distinct effects.\nPredicting severity of weather-related road incidents: An ordinal encoding might be more appropriate if you define your weather categories from least to most severe as this could correlate directly with the likelihood or severity of incidents."
   },
   {
-    "objectID": "slides-05-preprocessing-pipelines.html#transformers",
-    "href": "slides-05-preprocessing-pipelines.html#transformers",
-    "title": "Lecture 5: Preprocessing and sklearn pipelines",
-    "section": "Transformers",
-    "text": "Transformers\n\nAre used to transform or preprocess data.\nImplement the fit and transform methods.\n\nfit(X): Learns parameters from the data.\ntransform(X): Applies the learned transformation to the data.\n\nExamples:\n\nImputation (SimpleImputer): Fills missing values.\nScaling (StandardScaler): Standardizes features."
+    "objectID": "slides-06.html#handle_unknown-ignore-of-onehotencoder",
+    "href": "slides-06.html#handle_unknown-ignore-of-onehotencoder",
+    "title": "Lecture 6: Column transformer and text features",
+    "section": "handle_unknown = \"ignore\" of OneHotEncoder",
+    "text": "handle_unknown = \"ignore\" of OneHotEncoder\n\nUse handle_unknown='ignore' with OneHotEncoder to safely ignore unseen categories during transform.\nIn each of the following scenarios, identify whether it’s a reasonable strategy or not.\n\nExample 1: Suppose you are building a model to predict customer behavior (e.g., purchase likelihood) based on features like location, device_type, and product_category. During training, you have observed a set of categories for product_category, but in the future, new product categories might be added.\nExample 2: You’re building a model to predict disease diagnosis based on symptoms, where each symptom is categorized (e.g., fever, headache, nausea)."
   },
   {
-    "objectID": "slides-05-preprocessing-pipelines.html#estimators",
-    "href": "slides-05-preprocessing-pipelines.html#estimators",
-    "title": "Lecture 5: Preprocessing and sklearn pipelines",
-    "section": "Estimators",
-    "text": "Estimators\n\nUsed to make predictions.\nImplement fit and predict methods.\n\nfit(X, y): Learns from labeled data.\npredict(X): Makes predictions on new data.\n\nExamples: DecisionTreeClassifier, SVC, KNeighborsClassifier\n\nfrom sklearn.tree import DecisionTreeClassifier\ntree_clf = DecisionTreeClassifier()"
+    "objectID": "slides-06.html#handle_unknown-ignore-of-onehotencoder-1",
+    "href": "slides-06.html#handle_unknown-ignore-of-onehotencoder-1",
+    "title": "Lecture 6: Column transformer and text features",
+    "section": "handle_unknown = \"ignore\" of OneHotEncoder",
+    "text": "handle_unknown = \"ignore\" of OneHotEncoder\n\nReasonable use: When unseen categories are less likely to impact the model’s prediction accuracy (e.g., product categories in e-commerce), and you prefer to avoid breaking the model.\nNot-so-reasonable use: When unseen categories could provide critical new information that could significantly alter predictions (e.g., in medical diagnostics), ignoring them could result in a poor or dangerous outcome."
   },
   {
-    "objectID": "slides-05-preprocessing-pipelines.html#the-golden-rule-in-feature-transformations",
-    "href": "slides-05-preprocessing-pipelines.html#the-golden-rule-in-feature-transformations",
-    "title": "Lecture 5: Preprocessing and sklearn pipelines",
-    "section": "The golden rule in feature transformations",
-    "text": "The golden rule in feature transformations\n\nNever transform the entire dataset at once!\nWhy? It leads to data leakage — using information from the test set in your training process, which can artificially inflate model performance.\nFit transformers like scalers and imputers on the training set only.\nApply the transformations to both the training and test sets separately.\n\nExample:\nfrom sklearn.preprocessing import StandardScaler\nscaler = StandardScaler()\nX_train_scaled = scaler.fit_transform(X_train)\nX_test_scaled = scaler.transform(X_test)"
+    "objectID": "slides-06.html#dropif_binary-argument-of-onehotencoder",
+    "href": "slides-06.html#dropif_binary-argument-of-onehotencoder",
+    "title": "Lecture 6: Column transformer and text features",
+    "section": "drop=\"if_binary\" argument of OneHotEncoder",
+    "text": "drop=\"if_binary\" argument of OneHotEncoder\n\ndrop=‘if_binary’ argument in OneHotEncoder:\nReduces redundancy by dropping one of the columns if the feature is binary."
   },
   {
-    "objectID": "slides-05-preprocessing-pipelines.html#sklearn-pipelines",
-    "href": "slides-05-preprocessing-pipelines.html#sklearn-pipelines",
-    "title": "Lecture 5: Preprocessing and sklearn pipelines",
-    "section": "sklearn Pipelines",
-    "text": "sklearn Pipelines\n\nPipeline is a way to chain multiple steps (e.g., preprocessing + model fitting) into a single workflow.\nSimplify the code and improves readability.\nReduce the risk of data leakage by ensuring proper transformation of the training and test sets.\nAutomatically apply transformations in sequence.\n\nExample:\nChaining a StandardScaler with a KNeighborsClassifier model.\nfrom sklearn.pipeline import make_pipeline\nfrom sklearn.preprocessing import StandardScaler\nfrom sklearn.neighbors import KNeighborsClassifier\n\npipeline = make_pipeline(StandardScaler(), KNeighborsClassifier())\n\npipeline.fit(X_train, y_train)\ny_pred = pipeline.predict(X_test)"
+    "objectID": "slides-06.html#categorical-variables-with-too-many-categories",
+    "href": "slides-06.html#categorical-variables-with-too-many-categories",
+    "title": "Lecture 6: Column transformer and text features",
+    "section": "Categorical variables with too many categories",
+    "text": "Categorical variables with too many categories\n\nStrategies for categorical variables with too many categories:\n\nDimensionality reduction techniques\nBucketing categories into ‘others’\nClustering or grouping categories manually\nOnly considering top-N categories\n…"
+  },
+  {
+    "objectID": "slides-06.html#dealing-with-text-features",
+    "href": "slides-06.html#dealing-with-text-features",
+    "title": "Lecture 6: Column transformer and text features",
+    "section": "Dealing with text features",
+    "text": "Dealing with text features\n\nPreprocessing text to fit into machine learning models using text vectorization.\nBag of words representation"
+  },
+  {
+    "objectID": "slides-06.html#sklearn-countvectorizer",
+    "href": "slides-06.html#sklearn-countvectorizer",
+    "title": "Lecture 6: Column transformer and text features",
+    "section": "sklearn CountVectorizer",
+    "text": "sklearn CountVectorizer\n\nUse scikit-learn’s CountVectorizer to encode text data\nCountVectorizer: Transforms text into a matrix of token counts\nImportant parameters:\n\nmax_features: Control the number of features used in the model\nmax_df, min_df: Control document frequency thresholds\nngram_range: Defines the range of n-grams to be extracted\nstop_words: Enables the removal of common words that are typically uninformative in most applications, such as “and”, “the”, etc."
+  },
+  {
+    "objectID": "slides-06.html#incorporating-text-features-in-a-machine-learning-pipeline",
+    "href": "slides-06.html#incorporating-text-features-in-a-machine-learning-pipeline",
+    "title": "Lecture 6: Column transformer and text features",
+    "section": "Incorporating text features in a machine learning pipeline",
+    "text": "Incorporating text features in a machine learning pipeline\nfrom sklearn.feature_extraction.text import CountVectorizer\nfrom sklearn.svm import SVC\nfrom sklearn.pipeline import make_pipeline\n\ntext_pipeline = make_pipeline(\n    CountVectorizer(),\n    SVC()\n)"
   },
   {
     "objectID": "slides-01-intro.html#introductions",
@@ -1033,5 +1047,159 @@
     "crumbs": [
       "Lecture 1: Introduction to CPSC 330"
     ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Welcome",
+    "section": "",
+    "text": "Welcome to CPSC330! Here, you’ll find slides for CPSC 330 Section 103. These slides are based on the notes present here.\n\nClass times 🕘 5 pm to 6:20 pm\nWhere? 📍 West Mall Swing Space (SWNG) - 222, 2175 West Mall, Vancouver, BC V6T 1Z4"
+  },
+  {
+    "objectID": "slides-05-preprocessing-pipelines.html#announcements",
+    "href": "slides-05-preprocessing-pipelines.html#announcements",
+    "title": "Lecture 5: Preprocessing and sklearn pipelines",
+    "section": "Announcements",
+    "text": "Announcements\n\nHW1 grades have been posted.\nHomework 1 solutions have been posted on Canvas under Files tab. Please do not share them with anyone or do not post them anywhere."
+  },
+  {
+    "objectID": "slides-05-preprocessing-pipelines.html#curse-of-dimensionality",
+    "href": "slides-05-preprocessing-pipelines.html#curse-of-dimensionality",
+    "title": "Lecture 5: Preprocessing and sklearn pipelines",
+    "section": "Curse of dimensionality",
+    "text": "Curse of dimensionality\n\nAs dimensionality increases, the volume of the space increases exponentially, making the data sparse.\nDistance metrics lose meaning\n\nAccidental similarity swamps out meaningful similarity\nAll points become almost equidistant.\n\nOverfitting becomes likely: Harder to generalize with high-dimensional data.\nHow to deal with this?\n\nDimensionality reduction (PCA) (not covered in this course)\nFeature selection techniques."
+  },
+  {
+    "objectID": "slides-05-preprocessing-pipelines.html#svms-with-rbf-kernel",
+    "href": "slides-05-preprocessing-pipelines.html#svms-with-rbf-kernel",
+    "title": "Lecture 5: Preprocessing and sklearn pipelines",
+    "section": "SVMs with RBF kernel",
+    "text": "SVMs with RBF kernel\n\nRBF Kernel: Radial Basis Function, a way to transform data into higher dimensions implicitly.\nStrengths\n\nEffective in high-dimensional and sparse data\nGood performance on non-linear problems.\n\nHyperparameters:\n\nC$: Regularization parameter (trade-off between correct classification of training examples and maximization of the decision margin).\n\\(\\gamma\\): Defines how far the influence of a single training example reaches."
+  },
+  {
+    "objectID": "slides-05-preprocessing-pipelines.html#intuition-of-c-and-gamma-in-svm-rbf",
+    "href": "slides-05-preprocessing-pipelines.html#intuition-of-c-and-gamma-in-svm-rbf",
+    "title": "Lecture 5: Preprocessing and sklearn pipelines",
+    "section": "Intuition of C and gamma in SVM RBF",
+    "text": "Intuition of C and gamma in SVM RBF\n\nC (Regularization): Controls the trade-off between perfect training accuracy and having a simpler decision boundary.\n\nHigh C: Strict, complex boundary (overfitting risk).\nLow C: More errors allowed, smoother boundary (generalizes better).\n\nGamma (Kernel Width): Controls the influence of individual data points.\n\nHigh Gamma: Points have local impact, complex boundary.\nLow Gamma: Points affect broader areas, smoother boundary.\n\nKey trade-off: Proper balance between C and gamma is crucial for avoiding overfitting or underfitting."
+  },
+  {
+    "objectID": "slides-05-preprocessing-pipelines.html#recap",
+    "href": "slides-05-preprocessing-pipelines.html#recap",
+    "title": "Lecture 5: Preprocessing and sklearn pipelines",
+    "section": "Recap",
+    "text": "Recap\n\nDecision trees: Split data into subsets based on feature values to create decision rules\n\\(k\\)-NNs: Classify based on the majority vote from k nearest neighbors\nSVM RBFs: Create a boundary using an RBF kernel to separate classes"
+  },
+  {
+    "objectID": "slides-05-preprocessing-pipelines.html#recap-1",
+    "href": "slides-05-preprocessing-pipelines.html#recap-1",
+    "title": "Lecture 5: Preprocessing and sklearn pipelines",
+    "section": "Recap",
+    "text": "Recap\n\n\n\n\n\n\n\n\n\nAspect\nDecision Trees\nK-Nearest Neighbors (KNN)\nSupport Vector Machines (SVM) with RBF Kernel\n\n\n\n\nMain hyperparameters\nMax depth, min samples split\nNumber of neighbors (\\(k\\))\nC (regularization), Gamma (RBF kernel width)\n\n\nInterpretability\n\n\n\n\n\nHandling of Non-linearity\n\n\n\n\n\nScalability\n\n\n\n\n\n\n\nInterpretability (output easy to understand): - DT is very interpretable - KNN is moderately interpretable - SVM-RBF not interpretable at all\nNon-linearity: - DT Handle non-linearity, but boundaries are boxy - KNN can identify non-linear boundaries - SVM-RBF is a great choice for non-linearity\nScalability: - DT is very scalable, fast and can be done on large datasets - KNN is not scalable, because the distance needs to be calculated - SVM-RB is scalable, optimization is complicated so will be expensive"
+  },
+  {
+    "objectID": "slides-05-preprocessing-pipelines.html#recap-2",
+    "href": "slides-05-preprocessing-pipelines.html#recap-2",
+    "title": "Lecture 5: Preprocessing and sklearn pipelines",
+    "section": "Recap",
+    "text": "Recap\n\n\n\n\n\n\n\n\n\nAspect\nDecision Trees\nK-Nearest Neighbors (KNN)\nSupport Vector Machines (SVM) with RBF Kernel\n\n\n\n\nSensitivity to Outliers\n\n\n\n\n\nMemory Usage\n\n\n\n\n\nTraining Time\n\n\n\n\n\nPrediction Time\n\n\n\n\n\nMulticlass support\n\n\n\n\n\n\n\nSensitivity to Outliers - DT has some sensitivity to outliers (based on where the splits happen) - KNN is distance based, not that sensitive to outliers, but depends on the number of neighbours - SVM-RBF robust to outliers\nMemory Usage - DT is is very memory efficient, stores the model not the data - KNN uses a lot of memory, all data sets stored in memory - SVM-RBF is reasonably memory efficient, stores only support vectors\nTraining Time - DT training time is higher than KNN - KNN is 0, all points are stored - SVM-RBF much lower compared to KNN and DT\nPrediction Time - DT, also very efficient at predicting - KNN is high, all the work happens here - SVM-RBF, very efficient at predicting\nMulticlass Support - DT, multi-class is fine - KNN, multi-class is fine - SVM-RBF, bit complicated"
+  },
+  {
+    "objectID": "slides-05-preprocessing-pipelines.html#iclicker-exercise-5.1",
+    "href": "slides-05-preprocessing-pipelines.html#iclicker-exercise-5.1",
+    "title": "Lecture 5: Preprocessing and sklearn pipelines",
+    "section": "(iClicker) Exercise 5.1",
+    "text": "(iClicker) Exercise 5.1\niClicker cloud join link: https://join.iclicker.com/VYFJ\nTake a guess: In your machine learning project, how much time will you typically spend on data preparation and transformation?\n\n\n~80% of the project time\n\n\n~20% of the project time\n\n\n~50% of the project time\n\n\nNone. Most of the time will be spent on model building\n\n\nThe question is adapted from here."
+  },
+  {
+    "objectID": "slides-05-preprocessing-pipelines.html#iclicker-exercise-5.2",
+    "href": "slides-05-preprocessing-pipelines.html#iclicker-exercise-5.2",
+    "title": "Lecture 5: Preprocessing and sklearn pipelines",
+    "section": "(iClicker) Exercise 5.2",
+    "text": "(iClicker) Exercise 5.2\niClicker cloud join link: https://join.iclicker.com/VYFJ\nSelect all of the following statements which are TRUE.\n\n\nStandardScaler ensures a fixed range (i.e., minimum and maximum values) for the features.\n\n\nStandardScaler calculates mean and standard deviation for each feature separately.\n\n\nIn general, it’s a good idea to apply scaling on numeric features before training \\(k\\)-NN or SVM RBF models.\n\n\nThe transformed feature values might be hard to interpret for humans.\n\n\nAfter applying SimpleImputer The transformed data has a different shape than the original data."
+  },
+  {
+    "objectID": "slides-05-preprocessing-pipelines.html#iclicker-exercise-5.3",
+    "href": "slides-05-preprocessing-pipelines.html#iclicker-exercise-5.3",
+    "title": "Lecture 5: Preprocessing and sklearn pipelines",
+    "section": "(iClicker) Exercise 5.3",
+    "text": "(iClicker) Exercise 5.3\niClicker cloud join link: https://join.iclicker.com/VYFJ\nSelect all of the following statements which are TRUE.\n\n\nYou can have scaling of numeric features, one-hot encoding of categorical features, and scikit-learn estimator within a single pipeline.\n\n\nOnce you have a scikit-learn pipeline object with an estimator as the last step, you can call fit, predict, and score on it.\n\n\nYou can carry out data splitting within scikit-learn pipeline.\n\n\nWe have to be careful of the order we put each transformation and model in a pipeline.\n\n\n\nA: False; It doesn’t make sense to apply one hot encoding to numeric features, and it doesn’t make sense to apply standard scalar to categorical features. Sequence doesn’t make sense, we need column transformers\nB: True; can do this as long as the estimator is the last step\nC: False\nD: True;"
+  },
+  {
+    "objectID": "slides-05-preprocessing-pipelines.html#break",
+    "href": "slides-05-preprocessing-pipelines.html#break",
+    "title": "Lecture 5: Preprocessing and sklearn pipelines",
+    "section": "Break",
+    "text": "Break\nLet’s take a break!\n /"
+  },
+  {
+    "objectID": "slides-05-preprocessing-pipelines.html#preprocessing-motivation-example",
+    "href": "slides-05-preprocessing-pipelines.html#preprocessing-motivation-example",
+    "title": "Lecture 5: Preprocessing and sklearn pipelines",
+    "section": "Preprocessing motivation: example",
+    "text": "Preprocessing motivation: example\nYou’re trying to find a suitable date based on:\n\nAge (closer to yours is better).\nNumber of Facebook Friends (closer to your social circle is ideal)."
+  },
+  {
+    "objectID": "slides-05-preprocessing-pipelines.html#preprocessing-motivation-example-1",
+    "href": "slides-05-preprocessing-pipelines.html#preprocessing-motivation-example-1",
+    "title": "Lecture 5: Preprocessing and sklearn pipelines",
+    "section": "Preprocessing motivation: example",
+    "text": "Preprocessing motivation: example\n\nYou are 30 years old and have 250 Facebook friends.\n\n\n\n\n\n\n\n\n\n\n\nPerson\nAge\n#FB Friends\nEuclidean Distance Calculation\nDistance\n\n\n\n\nA\n25\n400\n√(5² + 150²)\n150.08\n\n\nB\n27\n300\n√(3² + 50²)\n50.09\n\n\nC\n30\n500\n√(0² + 250²)\n250.00\n\n\nD\n60\n250\n√(30² + 0²)\n30.00\n\n\n\nBased on the distances, the two nearest neighbors (2-NN) are:\n\nPerson D (Distance: 30.00)\nPerson B (Distance: 50.09)\n\nWhat’s the problem here?"
+  },
+  {
+    "objectID": "slides-05-preprocessing-pipelines.html#imputation-fill-the-gaps",
+    "href": "slides-05-preprocessing-pipelines.html#imputation-fill-the-gaps",
+    "title": "Lecture 5: Preprocessing and sklearn pipelines",
+    "section": "Imputation: Fill the gaps! (🟩 🟧 🟦)",
+    "text": "Imputation: Fill the gaps! (🟩 🟧 🟦)\nFill in missing data using a chosen strategy:\n\nMean: Replace missing values with the average of the available data.\nMedian: Use the middle value.\nMost Frequent: Use the most common value (mode).\nKNN Imputation: Fill based on similar neighbors.\n\nExample:\nFill in missing values like filling empty seats in a classroom with the average student.\nfrom sklearn.impute import SimpleImputer\nimputer = SimpleImputer(strategy='mean')\nX_imputed = imputer.fit_transform(X)"
+  },
+  {
+    "objectID": "slides-05-preprocessing-pipelines.html#scaling-everything-to-the-same-range",
+    "href": "slides-05-preprocessing-pipelines.html#scaling-everything-to-the-same-range",
+    "title": "Lecture 5: Preprocessing and sklearn pipelines",
+    "section": "Scaling: Everything to the same range! (📉 📈)",
+    "text": "Scaling: Everything to the same range! (📉 📈)\nEnsure all features have a comparable range.\n\nStandardScaler: Mean = 0, Standard Deviation = 1.\nMinMaxScaler: Scales features to a [0, 1] range.\nRobustScaler: Scales features using median and quantiles.\n\nExample:\nRescaling everyone’s height to make basketball players and gymnasts comparable.\nfrom sklearn.preprocessing import StandardScaler\nscaler = StandardScaler()\nX_scaled = scaler.fit_transform(X)"
+  },
+  {
+    "objectID": "slides-05-preprocessing-pipelines.html#one-hot-encoding-1-0-0",
+    "href": "slides-05-preprocessing-pipelines.html#one-hot-encoding-1-0-0",
+    "title": "Lecture 5: Preprocessing and sklearn pipelines",
+    "section": "One-Hot encoding: 🍎 → 1️⃣ 0️⃣ 0️⃣",
+    "text": "One-Hot encoding: 🍎 → 1️⃣ 0️⃣ 0️⃣\nConvert categorical features into binary columns.\n\nCreates new binary columns for each category.\nUseful for handling categorical data in machine learning models.\n\nExample:\nTurn “Apple, Banana, Orange” into binary columns:\n\n\n\nFruit\n🍎\n🍌\n🍊\n\n\n\n\nApple 🍎\n1\n0\n0\n\n\nBanana 🍌\n0\n1\n0\n\n\nOrange 🍊\n0\n0\n1\n\n\n\nfrom sklearn.preprocessing import OneHotEncoder\nencoder = OneHotEncoder()\nX_encoded = encoder.fit_transform(X)"
+  },
+  {
+    "objectID": "slides-05-preprocessing-pipelines.html#ordinal-encoding-ranking-matters-1",
+    "href": "slides-05-preprocessing-pipelines.html#ordinal-encoding-ranking-matters-1",
+    "title": "Lecture 5: Preprocessing and sklearn pipelines",
+    "section": "Ordinal encoding: Ranking matters! (⭐️⭐️⭐️⭐️⭐️ → 1️⃣)",
+    "text": "Ordinal encoding: Ranking matters! (⭐️⭐️⭐️⭐️⭐️ → 1️⃣)\nConvert categories into integer values that have a meaningful order.\n\nAssign integers based on order or rank.\nUseful when there is an inherent ranking in the data.\n\nExample:\nTurn “Poor, Average, Good” into 1, 2, 3:\n\n\n\nRating\nOrdinal\n\n\n\n\nPoor\n1\n\n\nAverage\n2\n\n\nGood\n3\n\n\n\nfrom sklearn.preprocessing import OrdinalEncoder\nencoder = OrdinalEncoder()\nX_ordinal = encoder.fit_transform(X)"
+  },
+  {
+    "objectID": "slides-05-preprocessing-pipelines.html#transformers",
+    "href": "slides-05-preprocessing-pipelines.html#transformers",
+    "title": "Lecture 5: Preprocessing and sklearn pipelines",
+    "section": "Transformers",
+    "text": "Transformers\n\nAre used to transform or preprocess data.\nImplement the fit and transform methods.\n\nfit(X): Learns parameters from the data.\ntransform(X): Applies the learned transformation to the data.\n\nExamples:\n\nImputation (SimpleImputer): Fills missing values.\nScaling (StandardScaler): Standardizes features."
+  },
+  {
+    "objectID": "slides-05-preprocessing-pipelines.html#estimators",
+    "href": "slides-05-preprocessing-pipelines.html#estimators",
+    "title": "Lecture 5: Preprocessing and sklearn pipelines",
+    "section": "Estimators",
+    "text": "Estimators\n\nUsed to make predictions.\nImplement fit and predict methods.\n\nfit(X, y): Learns from labeled data.\npredict(X): Makes predictions on new data.\n\nExamples: DecisionTreeClassifier, SVC, KNeighborsClassifier\n\nfrom sklearn.tree import DecisionTreeClassifier\ntree_clf = DecisionTreeClassifier()"
+  },
+  {
+    "objectID": "slides-05-preprocessing-pipelines.html#the-golden-rule-in-feature-transformations",
+    "href": "slides-05-preprocessing-pipelines.html#the-golden-rule-in-feature-transformations",
+    "title": "Lecture 5: Preprocessing and sklearn pipelines",
+    "section": "The golden rule in feature transformations",
+    "text": "The golden rule in feature transformations\n\nNever transform the entire dataset at once!\nWhy? It leads to data leakage — using information from the test set in your training process, which can artificially inflate model performance.\nFit transformers like scalers and imputers on the training set only.\nApply the transformations to both the training and test sets separately.\n\nExample:\nfrom sklearn.preprocessing import StandardScaler\nscaler = StandardScaler()\nX_train_scaled = scaler.fit_transform(X_train)\nX_test_scaled = scaler.transform(X_test)"
+  },
+  {
+    "objectID": "slides-05-preprocessing-pipelines.html#sklearn-pipelines",
+    "href": "slides-05-preprocessing-pipelines.html#sklearn-pipelines",
+    "title": "Lecture 5: Preprocessing and sklearn pipelines",
+    "section": "sklearn Pipelines",
+    "text": "sklearn Pipelines\n\nPipeline is a way to chain multiple steps (e.g., preprocessing + model fitting) into a single workflow.\nSimplify the code and improves readability.\nReduce the risk of data leakage by ensuring proper transformation of the training and test sets.\nAutomatically apply transformations in sequence.\n\nExample:\nChaining a StandardScaler with a KNeighborsClassifier model.\nfrom sklearn.pipeline import make_pipeline\nfrom sklearn.preprocessing import StandardScaler\nfrom sklearn.neighbors import KNeighborsClassifier\n\npipeline = make_pipeline(StandardScaler(), KNeighborsClassifier())\n\npipeline.fit(X_train, y_train)\ny_pred = pipeline.predict(X_test)"
   }
 ]
