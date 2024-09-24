@@ -1478,6 +1478,22 @@ display:block!important;
 <li>We have to be careful of the order we put each transformation and model in a pipeline.</li>
 </ol></li>
 </ul>
+<aside class="notes">
+<p>A: False; It doesn’t make sense to apply one hot encoding to numeric features, and it doesn’t make sense to apply standard scalar to categorical features. Sequence doesn’t make sense, we need column transformers</p>
+<p>B: True; can do this as long as the estimator is the last step</p>
+<p>C: False</p>
+<p>D: True;</p>
+<style type="text/css">
+span.MJX_Assistive_MathML {
+position:absolute!important;
+clip: rect(1px, 1px, 1px, 1px);
+padding: 1px 0 0 0!important;
+border: 0!important;
+height: 1px!important;
+width: 1px!important;
+overflow: hidden!important;
+display:block!important;
+}</style></aside>
 </section>
 <section id="break" class="slide level2 center">
 <h2>Break</h2>
@@ -2910,7 +2926,7 @@ window.QuartoSupport = function () {
       }
         var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
         var mailtoRegex = new RegExp(/^mailto:/);
-          var filterRegex = new RegExp('/' + window.location.host + '/');
+          var filterRegex = new RegExp("https:\/\/firasm\.github\.io\/cpsc330-slides\/");
         var isInternal = (href) => {
             return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
         }
