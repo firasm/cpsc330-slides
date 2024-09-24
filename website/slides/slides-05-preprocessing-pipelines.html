@@ -1336,6 +1336,21 @@ margin-right: 0; }
 </tr>
 </tbody>
 </table>
+<aside class="notes">
+<p>Interpretability (output easy to understand): - DT is very interpretable - KNN is moderately interpretable - SVM-RBF not interpretable at all</p>
+<p>Non-linearity: - DT Handle non-linearity, but boundaries are boxy - KNN can identify non-linear boundaries - SVM-RBF is a great choice for non-linearity</p>
+<p>Scalability: - DT is very scalable, fast and can be done on large datasets - KNN is <em>not scalable</em>, because the distance needs to be calculated - SVM-RB is scalable, optimization is complicated so will be expensive</p>
+<style type="text/css">
+span.MJX_Assistive_MathML {
+position:absolute!important;
+clip: rect(1px, 1px, 1px, 1px);
+padding: 1px 0 0 0!important;
+border: 0!important;
+height: 1px!important;
+width: 1px!important;
+overflow: hidden!important;
+display:block!important;
+}</style></aside>
 </section>
 <section id="recap-2" class="slide level2 center">
 <h2>Recap</h2>
@@ -1387,6 +1402,23 @@ margin-right: 0; }
 </tr>
 </tbody>
 </table>
+<aside class="notes">
+<p>Sensitivity to Outliers - DT has some sensitivity to outliers (based on where the splits happen) - KNN is distance based, not that sensitive to outliers, but depends on the number of neighbours - SVM-RBF robust to outliers</p>
+<p>Memory Usage - DT is is very memory efficient, stores the model not the data - KNN uses a lot of memory, all data sets stored in memory - SVM-RBF is reasonably memory efficient, stores only support vectors</p>
+<p>Training Time - DT training time is higher than KNN - KNN is 0, all points are stored - SVM-RBF much lower compared to KNN and DT</p>
+<p>Prediction Time - DT, also very efficient at predicting - KNN is high, all the work happens here - SVM-RBF, very efficient at predicting</p>
+<p>Multiclass Support - DT, multi-class is fine - KNN, multi-class is fine - SVM-RBF, bit complicated</p>
+<style type="text/css">
+span.MJX_Assistive_MathML {
+position:absolute!important;
+clip: rect(1px, 1px, 1px, 1px);
+padding: 1px 0 0 0!important;
+border: 0!important;
+height: 1px!important;
+width: 1px!important;
+overflow: hidden!important;
+display:block!important;
+}</style></aside>
 </section>
 <section id="iclicker-exercise-5.1" class="slide level2 center">
 <h2>(iClicker) Exercise 5.1</h2>
@@ -2878,7 +2910,7 @@ window.QuartoSupport = function () {
       }
         var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
         var mailtoRegex = new RegExp(/^mailto:/);
-          var filterRegex = new RegExp("https:\/\/firasm\.github\.io\/cpsc330-slides\/");
+          var filterRegex = new RegExp('/' + window.location.host + '/');
         var isInternal = (href) => {
             return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
         }

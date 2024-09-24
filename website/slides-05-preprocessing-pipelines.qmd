@@ -73,6 +73,22 @@ Three slides left over from last class:
 | **Handling of Non-linearity**  |  |  | 
 | **Scalability**                |  |  | 
 
+::: {.notes}
+Interpretability (output easy to understand):
+    - DT is very interpretable
+    - KNN is moderately interpretable
+    - SVM-RBF not interpretable at all
+
+Non-linearity:
+    - DT Handle non-linearity, but boundaries are boxy
+    - KNN can identify non-linear boundaries
+    - SVM-RBF is a great choice for non-linearity
+
+Scalability:
+    - DT is very scalable, fast and can be done on large datasets
+    - KNN is *not scalable*, because the distance needs to be calculated 
+    - SVM-RB is scalable, optimization is complicated so will be expensive
+:::
 
 ## Recap
 
@@ -84,7 +100,32 @@ Three slides left over from last class:
 | **Prediction Time**            |  |  | 
 | **Multiclass support**         |  |  | 
 
+::: {.notes}
+Sensitivity to Outliers
+    - DT has some sensitivity to outliers (based on where the splits happen)
+    - KNN is distance based, not that sensitive to outliers, but depends on the number of neighbours
+    - SVM-RBF robust to outliers
 
+Memory Usage
+    - DT is is very memory efficient, stores the model not the data
+    - KNN uses a lot of memory, all data sets stored in memory
+    - SVM-RBF is reasonably memory efficient, stores only support vectors
+
+Training Time
+    - DT training time is higher than KNN
+    - KNN is 0, all points are stored
+    - SVM-RBF much lower compared to KNN and DT
+
+Prediction Time
+    - DT, also very efficient at predicting
+    - KNN is high, all the work happens here
+    - SVM-RBF, very efficient at predicting
+
+Multiclass Support
+    - DT, multi-class is fine
+    - KNN, multi-class is fine
+    - SVM-RBF, bit complicated
+:::
 
 ## (iClicker) Exercise 5.1
 iClicker cloud join link: **https://join.iclicker.com/VYFJ**
@@ -121,6 +162,18 @@ Select all of the following statements which are TRUE.
 - (B) Once you have a scikit-learn pipeline object with an estimator as the last step, you can call fit, predict, and score on it.
 - (C) You can carry out data splitting within scikit-learn pipeline.
 - (D) We have to be careful of the order we put each transformation and model in a pipeline.
+
+::: {.notes}
+A: False; It doesn't make sense to apply one hot encoding to numeric features, and it doesn't make sense to apply standard scalar to categorical features. Sequence doesn't make sense, we need column transformers
+
+B: True; can do this as long as the estimator is the last step
+
+C: False
+
+D: True; 
+
+:::
+
 
 ## Break
 
