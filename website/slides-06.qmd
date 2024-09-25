@@ -214,7 +214,7 @@ If you really don't want to create a repo,
 - (D) When you call `fit_transform` on a `ColumnTransformer` object, you get a numpy ndarray.
 
 ::: {.notes}
-## iClicker 6.1
+iClicker 6.1
 
 A. False, column transfer to pipeline. There is no estimator attached to ColumnTransfer
 
