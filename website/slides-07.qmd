@@ -1,0 +1,401 @@
+---
+title: "Lecture 7: Linear models"
+author: "Firas Moosvi (Slides adapted from Varada Kolhatkar)"
+description: "Linear regression, logistic regression"
+description-short: "Linear regression, logistic regression, prediction probabilities, sigmoid, interpretation of coefficients"
+format:
+  revealjs:
+    embed-resources: true
+    slide-number: true
+    smaller: true
+    center: true
+    logo: img/UBC-CS-logo.png
+    resources:
+      - data/
+      - img/  
+---
+
+## Announcements 
+
+- Remember Monday September 30th is a holiday, National Day for Truth and Reconciliation
+    - I encourage you to spend some reflecting on the Indigenous peoples of Canada. I invite you to [explore the Beyond 94 project which tracks the progress of the 94 calls to action.](https://www.cbc.ca/newsinteractives/beyond-94)
+
+![](img/beyond94.png){.nostretch fig-align="center" width="600px"}
+
+## Announcements
+
+- HW3 is due next week Tuesday, Oct 1st, 11:59 pm. 
+    - You can work in pairs for this assignment. 
+
+# Finishing up slides from last class
+
+# More preprocessing
+
+## Remarks on preprocessing 
+- There is no one-size-fits-all solution in data preprocessing, and decisions often involve a degree of subjectivity. 
+  - Exploratory data analysis and domain knowledge inform these decisions
+- Always consider the specific goals of your project when deciding how to encode features. 
+
+
+## Alternative methods for scaling (Reference)
+- [StandardScaler](https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.StandardScaler.html)
+  - Good choice when the column follows a normal distribution or a distribution somewhat like a normal distribution.
+- [MinMaxScaler](https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.MinMaxScaler.html): Transform each feature to a desired range. Appropriate when 
+  - Good choice for features such as human age, where there is a fixed range of values and the feature is uniformly distributed across the range
+- [Normalizer](https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.Normalizer.html): Works on rows rather than columns. Normalize examples individually to unit norm.
+  - Good choice for frequency-type data 
+- [Log scaling](https://scikit-learn.org/stable/modules/preprocessing.html#custom-transformers)
+  - Good choice for features such as ratings per movies (power law distribution; a few movies have lots of ratings but most movies have very few ratings) 
+- ...
+
+## Ordinal encoding vs. One-hot encoding
+
+- Ordinal Encoding: Encodes categorical features as an integer array.
+- One-hot Encoding: Creates binary columns for each category’s presence.
+- Sometimes how we encode a specific feature depends upon the context.  
+
+## Ordinal encoding vs. One-hot encoding (Reference)
+- Consider **weather** feature and its four categories: Sunny (☀️), Cloudy (🌥️), Rainy (⛈️), Snowy (❄️)
+- Which encoding would you use in each of the following scenarios? 
+  - **Predicting traffic volume** 
+  - **Predicting severity of weather-related road incidents** 
+
+## Ordinal encoding vs. One-hot encoding (Reference)
+- Consider **weather** feature and its four categories: Sunny (☀️), Cloudy (🌥️), Rainy (⛈️), Snowy (❄️)
+- **Predicting traffic volume:** Using one-hot encoding would make sense here because the impact of different weather conditions on traffic volume does not necessarily follow a clear order and different weather conditions could have very distinct effects.
+- **Predicting severity of weather-related road incidents:** An ordinal encoding might be more appropriate if you define your weather categories from least to most severe as this could correlate directly with the likelihood or severity of incidents.
+
+## `handle_unknown = "ignore"` of `OneHotEncoder` 
+- Use `handle_unknown='ignore'` with `OneHotEncoder` to safely ignore unseen categories during transform.
+
+::: {.callout-note}
+
+## Question for you to consider in your Group
+How would you determine whether it is reasonable or not to set
+
+`handle_unknown = "ignore"`?
+:::
+
+## `handle_unknown = "ignore"` of `OneHotEncoder` 
+- Example 1: Suppose you are building a model to predict customer behavior (e.g., purchase likelihood) based on features like `location`, `device_type`, and `product_category`. During training, you have observed a set of categories for `product_category`, but in the future, new product categories might be added.
+
+<br>
+
+- Example 2: You’re building a model to predict disease diagnosis based on symptoms, where each symptom is categorized (e.g., fever, headache, nausea).
+
+## `handle_unknown = "ignore"` of `OneHotEncoder` 
+- Reasonable use: When unseen categories are less likely to impact the model's prediction accuracy (e.g., product categories in e-commerce), and you prefer to avoid breaking the model.
+- Not-so-reasonable use: When unseen categories could provide critical new information that could significantly alter predictions (e.g., in medical diagnostics), ignoring them could result in a poor or dangerous outcome.
+
+## `drop="if_binary"` argument of OneHotEncoder (Reference)
+
+- drop='if_binary' argument in OneHotEncoder:
+- Reduces redundancy by dropping one of the columns if the feature is binary.
+
+## Categorical variables with too many categories
+- Strategies for categorical variables with too many categories:
+    - Dimensionality reduction techniques
+    - Bucketing categories into ‘others’
+    - Clustering or grouping categories manually 
+    - Only considering top-N categories 
+    - ...
+
+## Dealing with text features 
+- Preprocessing text to fit into machine learning models using text vectorization.
+- Bag of words representation 
+![](img/bag-of-words.png)
+
+## `sklearn` `CountVectorizer`
+- Use `scikit-learn`’s `CountVectorizer` to encode text data
+- `CountVectorizer`: Transforms text into a matrix of token counts
+- Important parameters:
+  - `max_features`: Control the number of features used in the model 
+  - `max_df`, `min_df`: Control document frequency thresholds
+  - `ngram_range`: Defines the range of n-grams to be extracted
+  - `stop_words`: Enables the removal of common words that are typically uninformative in most applications, such as “and”, “the”, etc.
+
+## Incorporating text features in a machine learning pipeline
+```python
+from sklearn.feature_extraction.text import CountVectorizer
+from sklearn.svm import SVC
+from sklearn.pipeline import make_pipeline
+
+text_pipeline = make_pipeline(
+    CountVectorizer(),
+    SVC()
+)
+```
+
+## (iClicker) Exercise 6.2
+**iClicker cloud join link: [https://join.iclicker.com/VYFJ](https://join.iclicker.com/VYFJ)**
+
+Select all of the following statements which are TRUE.
+
+- (A) `handle_unknown="ignore"` would treat all unknown categories equally.
+- (B) As you increase the value for `max_features` hyperparameter of `CountVectorizer` the training score is likely to go up.
+- (C) Suppose you are encoding text data using `CountVectorizer`. If you encounter a word in the validation or the test split that's not available in the training data, we'll get an error.
+- (D) In the code below, inside `cross_validate`, each fold might have slightly different number of features (columns) in the fold.
+
+```python
+pipe = (CountVectorizer(), SVC())
+cross_validate(pipe, X_train, y_train)
+```
+
+------------------------------------------------
+
+
+
+```{python}
+import os
+import sys
+
+import matplotlib.pyplot as plt
+import numpy as np
+import pandas as pd
+
+sys.path.append(os.path.join(os.path.abspath("."), "code"))
+from plotting_functions import *
+from utils import *
+from sklearn.compose import ColumnTransformer, make_column_transformer
+from sklearn.impute import SimpleImputer
+from sklearn.model_selection import cross_val_score, cross_validate, train_test_split
+from sklearn.neighbors import KNeighborsClassifier
+from sklearn.pipeline import Pipeline, make_pipeline
+from sklearn.preprocessing import OneHotEncoder, OrdinalEncoder, StandardScaler
+from sklearn.svm import SVC
+from sklearn.datasets import make_blobs, make_classification
+```
+
+## Recap: Dealing with text features 
+- Preprocessing text to fit into machine learning models using text vectorization.
+- Bag of words representation 
+![](img/bag-of-words.png)
+
+## Recap: `sklearn` `CountVectorizer`
+- Use `scikit-learn`’s `CountVectorizer` to encode text data
+- `CountVectorizer`: Transforms text into a matrix of token counts
+- Important parameters:
+  - `max_features`: Control the number of features used in the model 
+  - `max_df`, `min_df`: Control document frequency thresholds
+  - `ngram_range`: Defines the range of n-grams to be extracted
+  - `stop_words`: Enables the removal of common words that are typically uninformative in most applications, such as “and”, “the”, etc.
+
+## Recap: Incorporating text features in a machine learning pipeline
+```python
+from sklearn.feature_extraction.text import CountVectorizer
+from sklearn.svm import SVC
+from sklearn.pipeline import make_pipeline
+
+text_pipeline = make_pipeline(
+    CountVectorizer(),
+    SVC()
+)
+```
+
+## (iClicker) Exercise 6.2
+iClicker cloud join link: **https://join.iclicker.com/VYFJ**
+
+Select all of the following statements which are TRUE.
+
+- (A) `handle_unknown="ignore"` would treat all unknown categories equally.
+- (B) As you increase the value for `max_features` hyperparameter of `CountVectorizer` the training score is likely to go up.
+- (C) Suppose you are encoding text data using `CountVectorizer`. If you encounter a word in the validation or the test split that's not available in the training data, we'll get an error.
+- (D) In the code below, inside `cross_validate`, each fold might have slightly different number of features (columns) in the fold.
+
+```python
+pipe = (CountVectorizer(), SVC())
+cross_validate(pipe, X_train, y_train)
+```
+
+## Linear models 
+
+:::: {.columns}
+
+:::{.column width="45%"}
+- Linear models make an assumption that the relationship between `X` and `y` is linear. 
+- In this case, with only one feature, our model is a straight line.
+- What do we need to represent a line?
+  - Slope ($w_1$): Determines the angle of the line.
+  - Y-intercept ($w_0$): Where the line crosses the y-axis.
+
+:::
+
+
+::: {.column width="55%"}
+```{python}
+import matplotlib.pyplot as plt
+import numpy as np
+# Data
+hours_studied = [0.5, 1.0, 2.0, 2.0, 3.5, 4.0, 5.5, 6.0]
+grades = [25, 35, 70, 40, 60, 55, 75, 80]
+
+# Convert data to numpy arrays and reshape for model fitting
+X = np.array(hours_studied).reshape(-1, 1)
+y = np.array(grades)
+
+from sklearn.linear_model import LinearRegression
+# Fit a linear regression model
+model = LinearRegression()
+model.fit(X, y)
+
+# Generate predictions for plotting the regression line
+X_range = np.linspace(X.min(), X.max(), 100).reshape(-1, 1)
+y_pred = model.predict(X_range)
+
+# Plotting the data points and the regression line
+plt.figure(figsize=(8, 4))
+plt.scatter(X, y, color='green', edgecolors='black', s=130, label='Data Points')
+plt.plot(X_range, y_pred, color='blue', linewidth=2, label='Regression Line')
+plt.xlabel('# hours studied')
+plt.ylabel('% grade in Quiz 2')
+plt.title('Linear Models: Prediction')
+plt.legend()
+plt.grid(True)
+plt.show()
+```
+- Making predictions
+  - $\hat{y} = w_1 \times \text{# hours studied} + w_0$
+
+:::
+
+::::
+
+## `Ridge` vs. `LinearRegression`
+- Ordinary linear regression is sensitive to **multicolinearity** and overfitting
+- Multicolinearity: Overlapping and redundant features. Most of the real-world datasets have colinear features.   
+- Linear regression may produce large and unstable coefficients in such cases. 
+- `Ridge` adds a parameter to control the complexity of a model. Finds a line that balances fit and prevents overly large coefficients.
+
+## When to use what?
+- `LinearRegression`
+  - When interpretability is key, and no multicollinearity exists
+- `Ridge` 
+  - When you have **multicollinearity** (highly correlated features).
+  - When you want to prevent **overfitting** in linear models.
+  - When **model stability** is important.
+- **In this course, we'll use `Ridge`.**
+
+## Logistic regression 
+- Suppose your target is binary: pass or fail 
+- Logistic regression is used for such binary classification tasks.  
+- Logistic regression predicts a probability that the given example belongs to a particular class.
+- It uses **Sigmoid function** to map any real-valued input into a value between 0 and 1, representing the probability of a specific outcome.
+- A threshold (usually 0.5) is applied to the predicted probability to decide the final class label.  
+
+## Logistic regression: Decision boundary 
+
+:::: {.columns}
+
+:::{.column width="60%"}
+
+```{python}
+import matplotlib.pyplot as plt
+import numpy as np
+from sklearn.linear_model import LogisticRegression
+
+# Data
+hours_studied = [0.5, 1.0, 2.0, 2.0, 3.5, 4.0, 5.5, 6.0]
+grades = ['fail', 'fail', 'pass', 'fail', 'pass', 'fail', 'pass', 'pass']
+
+# Converting target variable to binary (0: fail, 1: pass)
+grades_binary = [1 if grade == 'pass' else 0 for grade in grades]
+
+# Reshape the data to fit the model
+X = np.array(hours_studied).reshape(-1, 1)
+y = np.array(grades_binary)
+
+# Fit logistic regression model
+model = LogisticRegression()
+model.fit(X, y)
+
+# Generate a range of hours studied for prediction
+X_test = np.linspace(min(hours_studied), max(hours_studied), 100).reshape(-1, 1)
+
+# Predict probabilities
+probabilities = model.predict_proba(X_test)[:, 1]
+
+# Find decision boundary (where probability = 0.5)
+decision_boundary = X_test[np.isclose(probabilities, 0.5, atol=0.01)][0]
+
+# Plotting
+plt.figure(figsize=(8, 5))
+plt.scatter(hours_studied, y, color='red', label='0=Fail, 1=Pass')
+plt.plot(X_test, probabilities, label='Prediction Probability', color='blue')
+plt.axvline(x=decision_boundary, ymin=0, ymax=0.5, color='green', linestyle='--')
+plt.hlines(y=0.5, xmin=min(hours_studied), xmax=decision_boundary, color='green', linestyle='--')
+plt.xlabel('Hours Studied')
+plt.ylabel('Probability of Passing')
+plt.title('Logistic Regression Prediction Probabilities')
+plt.legend(loc="best", fontsize="small")
+plt.grid(True)
+plt.show()
+```
+:::
+:::{.column width="40%"}
+- The decision boundary is the point on the x-axis where the corresponding predicted probability on the y-axis is 0.5. 
+:::
+
+::::
+
+## Parametric vs. non-Parametric models (high-level)
+- Imagine you are training a logistic regression model. For each of the following scenarios, identify how many parameters (weights and biases) will be learned.
+- Scenario 1: 100 features and 1,000 examples
+- Scenario 2: 100 features and 1 million examples
+
+## Parametric vs. non-Parametric models (high-level)
+:::: {.columns}
+
+:::{.column width="50%"}
+#### Parametric
+- Examples: Logistic regression, linear regression, linear SVM  
+- Models with a fixed number of parameters, regardless of the dataset size
+- Simple, computationally efficient, less prone to overfitting
+- Less flexible, may not capture complex relationships
+:::
+
+:::{.column width="50%"}
+#### Non parametric
+- Examples: KNN, SVM RBF, Decision tree with no specific depth specified 
+- Models where the number of parameters grows with the dataset size. They do not assume a fixed form for the functions being learned. 
+- Flexible, can adapt to complex patterns
+- Computationally expensive, risk of overfitting with noisy data
+:::
+
+
+::::
+
+## (iClicker) Exercise 7.1
+
+**iClicker cloud join link: [https://join.iclicker.com/VYFJ](https://join.iclicker.com/VYFJ)**
+
+Select all of the following statements which are TRUE.
+
+- (A) Increasing the hyperparameter alpha of Ridge is likely to decrease model complexity.
+- (B) Ridge can be used with datasets that have multiple features.
+- (C) With Ridge, we learn one coefficient per training example.
+- (D) If you train a linear regression model on a 2-dimensional problem (2 features), the model will learn 3 parameters: one for each feature and one for the bias term.
+
+## (iClicker) Exercise 7.2
+
+**iClicker cloud join link: [https://join.iclicker.com/VYFJ](https://join.iclicker.com/VYFJ)**
+
+Select all of the following statements which are TRUE.
+
+- (A) Increasing logistic regression’s `C` hyperparameter increases model complexity.
+- (B) The raw output score can be used to calculate the probability score for a given prediction.
+- (C) For linear classifier trained on $d$ features, the decision boundary is a $d-1$-dimensional hyperparlane.
+- (D) A linear model is likely to be uncertain about the data points close to the decision boundary.
+
+## Group Work: Class Demo & Live Coding
+
+For this demo, each student should [click this link](https://github.com/new?template_name=lecture7_demo&template_owner=ubc-cpsc330) to create a new repo in their accounts, then clone that repo locally to follow along with the demo from today.
+
+<br>
+<br>
+<br>
+
+If you really don't want to create a repo,
+
+- Navigate to the `cpsc330-2024W1` repo
+- run `git pull` to pull the latest files in the course repo
+- Look for the demo file [here](https://github.com/orgs/ubc-cpsc330/repositories)

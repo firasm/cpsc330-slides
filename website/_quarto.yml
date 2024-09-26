@@ -17,14 +17,15 @@ website:
   sidebar:
     - id: slides
       contents:
-        - slides-01-intro.qmd
-        - slides-01-contd.qmd
-        - slides-02-terminology-decision-trees.qmd
+        - slides-*.qmd
 format:
   html:
-    theme: [zephyr]
+    theme: 
+      - zephyr
+      - styles.scss
     toc: false
     lightbox: true
+    css: styles.css
           
 editor:
   render-on-save: true

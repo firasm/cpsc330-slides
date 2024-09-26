@@ -1,6 +1,7 @@
 ---
 title: 'Lecture 2: Terminology, Baselines, Decision Trees'
 description: Terminology, decision Trees
+author: "Firas Moosvi (Slides adapted from Varada Kolhatkar)"
 description-short: 'Supervised machine learning terminology: Features, target, examples, training, parameters and hyperparameters, Decision boundary, classification vs. regression, inference vs. prediction, accuracy vs. error, baselines, intuition of decision trees'
 format:
   revealjs:

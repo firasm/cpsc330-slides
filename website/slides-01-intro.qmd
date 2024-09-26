@@ -1,5 +1,6 @@
 ---
 title: 'Lecture 1: Introduction to CPSC 330'
+author: "Firas Moosvi (Slides adapted from Varada Kolhatkar)"
 description: Introduction to ML and CPSC 330
 description-short: 'What is machine learning, types of machine learning, learning to navigate through the course materials, getting familiar with the course policies'
 format:

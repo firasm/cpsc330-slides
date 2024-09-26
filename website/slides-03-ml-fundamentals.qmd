@@ -1,5 +1,6 @@
 ---
 title: 'Lecture 3: ML fundamentals'
+author: "Firas Moosvi (Slides adapted from Varada Kolhatkar)"
 description: Supervised Machine Learning Fundamentals
 description-short: 'generalization, data splitting, overfitting, underfitting, the fundamental tradeoff, the golden rule'
 format:
