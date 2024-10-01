@@ -230,13 +230,14 @@ Select all of the following statements which are TRUE.
 
 # Looking Ahead
 
-## Group Work:Invention Activity
+## Group Work: Invention Activity
 
 So far we have looked only at `score` as a metric for evaluating our metrics.
 
 What else could be used as a possible metric? Think of what else might be important for machine learning practioners and stakeholders?
 
-In your group, brainstorm 4 options
+In your group, brainstorm 4 alternative options:
+
 - 
 - 
 - 
