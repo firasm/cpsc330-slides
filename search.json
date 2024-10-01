@@ -95,7 +95,7 @@
     "href": "slides-08.html#random-search-example",
     "title": "CPSC 330 Lecture 8: Hyperparameter Optimization",
     "section": "Random search example",
-    "text": "Random search example\n\nfrom sklearn.model_selection import RandomizedSearchCV\nfrom scipy.stats import randint\n\npipe_svc = make_pipeline(CountVectorizer(), SVC())\n\nparam_dist = {\n    \"countvectorizer__max_features\": randint(100, 2000), \n    \"svc__C\": uniform(0.1, 1e4),  # loguniform(1e-3, 1e3),\n    \"svc__gamma\": loguniform(1e-5, 1e3),\n}\nrandom_search = RandomizedSearchCV(pipe_svm,                                    \n                  param_distributions = param_dist, \n                  n_iter=10, \n                  n_jobs=-1, \n                  return_train_score=True)\n\n# Carry out the search\nrandom_search.fit(X_train, y_train)\nrandom_search.best_score_\n\n0.9840448713739022"
+    "text": "Random search example\n\nfrom sklearn.model_selection import RandomizedSearchCV\nfrom scipy.stats import randint\n\npipe_svc = make_pipeline(CountVectorizer(), SVC())\n\nparam_dist = {\n    \"countvectorizer__max_features\": randint(100, 2000), \n    \"svc__C\": uniform(0.1, 1e4),  # loguniform(1e-3, 1e3),\n    \"svc__gamma\": loguniform(1e-5, 1e3),\n}\nrandom_search = RandomizedSearchCV(pipe_svm,                                    \n                  param_distributions = param_dist, \n                  n_iter=10, \n                  n_jobs=-1, \n                  return_train_score=True)\n\n# Carry out the search\nrandom_search.fit(X_train, y_train)\nrandom_search.best_score_\n\n0.9812518532227668"
   },
   {
     "objectID": "slides-08.html#optimization-bias",
@@ -133,18 +133,11 @@
     "text": "Questions for class discussion\n\nSuppose you have 10 hyperparameters, each with 4 possible values. If you run GridSearchCV with this parameter grid, how many experiments will be carried out?\nSuppose you have 10 hyperparameters and each takes 4 values. If you run RandomizedSearchCV with this parameter grid with n_iter=20, how many cross-validation experiments will be carried out?"
   },
   {
-    "objectID": "slides-08.html#group-workinvention-activity",
-    "href": "slides-08.html#group-workinvention-activity",
+    "objectID": "slides-08.html#group-work-invention-activity",
+    "href": "slides-08.html#group-work-invention-activity",
     "title": "CPSC 330 Lecture 8: Hyperparameter Optimization",
-    "section": "Group Work:Invention Activity",
-    "text": "Group Work:Invention Activity\nSo far we have looked only at score as a metric for evaluating our metrics.\nWhat else could be used as a possible metric? Think of what else might be important for machine learning practioners and stakeholders?"
-  },
-  {
-    "objectID": "slides-08.html#in-your-group-brainstorm-4-options",
-    "href": "slides-08.html#in-your-group-brainstorm-4-options",
-    "title": "CPSC 330 Lecture 8: Hyperparameter Optimization",
-    "section": "In your group, brainstorm 4 options",
-    "text": "In your group, brainstorm 4 options"
+    "section": "Group Work: Invention Activity",
+    "text": "Group Work: Invention Activity\nSo far we have looked only at score as a metric for evaluating our metrics.\nWhat else could be used as a possible metric? Think of what else might be important for machine learning practioners and stakeholders?\nIn your group, brainstorm 4 alternative options:"
   },
   {
     "objectID": "slides-05-preprocessing-pipelines.html#announcements",
