@@ -1103,7 +1103,7 @@
     "href": "slides.html",
     "title": "Overview",
     "section": "",
-    "text": "Title\n\n\nDescription\n\n\n\n\n\n\nLecture 1: Introduction to CPSC 330\n\n\nWhat is machine learning, types of machine learning, learning to navigate through the course materials, getting familiar with the course policies\n\n\n\n\nLecture 2: Terminology, Baselines, Decision Trees\n\n\nSupervised machine learning terminology: Features, target, examples, training, parameters and hyperparameters, Decision boundary, classification vs. regression, inference vs. prediction, accuracy vs. error, baselines, intuition of decision trees\n\n\n\n\nLecture 3: ML fundamentals\n\n\ngeneralization, data splitting, overfitting, underfitting, the fundamental tradeoff, the golden rule\n\n\n\n\nLecture 4: \\(k\\)-nearest neighbours and SVM RBFs\n\n\nintroduction to KNNs, hyperparameter n_neighbours or \\(k\\), C and gamma hyperparameters of SVM RBF, decision boundaries with different values of hyperparameters.\n\n\n\n\nLecture 5: Preprocessing and sklearn pipelines\n\n\nPre-processing, Transformations, and pipelines.\n\n\n\n\nLecture 6: Column transformer and text features\n\n\nPreprocessing and sklearn pipelines\n\n\n\n\nLecture 7: Linear models\n\n\nLinear regression, logistic regression, prediction probabilities, sigmoid, interpretation of coefficients\n\n\n\n\nCPSC 330 Lecture 8: Hyperparameter Optimization\n\n\nLinear regression, logistic regression, prediction probabilities, sigmoid, interpretation of coefficients\n\n\n\n\n\nNo matching items"
+    "text": "Title\n\n\nDescription\n\n\n\n\n\n\nLecture 1: Introduction to CPSC 330\n\n\nWhat is machine learning, types of machine learning, learning to navigate through the course materials, getting familiar with the course policies\n\n\n\n\nLecture 2: Terminology, Baselines, Decision Trees\n\n\nSupervised machine learning terminology: Features, target, examples, training, parameters and hyperparameters, Decision boundary, classification vs. regression, inference vs. prediction, accuracy vs. error, baselines, intuition of decision trees\n\n\n\n\nLecture 3: ML fundamentals\n\n\ngeneralization, data splitting, overfitting, underfitting, the fundamental tradeoff, the golden rule\n\n\n\n\nLecture 4: \\(k\\)-nearest neighbours and SVM RBFs\n\n\nintroduction to KNNs, hyperparameter n_neighbours or \\(k\\), C and gamma hyperparameters of SVM RBF, decision boundaries with different values of hyperparameters.\n\n\n\n\nLecture 5: Preprocessing and sklearn pipelines\n\n\nPre-processing, Transformations, and pipelines.\n\n\n\n\nLecture 6: Column transformer and text features\n\n\nPreprocessing and sklearn pipelines\n\n\n\n\nLecture 7: Linear models\n\n\nLinear regression, logistic regression, prediction probabilities, sigmoid, interpretation of coefficients\n\n\n\n\nCPSC 330 Lecture 8: Hyperparameter Optimization\n\n\nLinear regression, logistic regression, prediction probabilities, sigmoid, interpretation of coefficients\n\n\n\n\nCPSC 330 Lecture 9: Classification Metrics\n\n\nconfusion metrics, precision, recall, f1-score, PR curves, AP score, ROC curve, ROC AUC, class imbalance\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "slides-03-ml-fundamentals.html#announcements",
@@ -1258,5 +1258,110 @@
     "title": "Lecture 4: \\(k\\)-nearest neighbours and SVM RBFs",
     "section": "\\(k\\)-nearest neighbours",
     "text": "\\(k\\)-nearest neighbours\n\nClassifies an object based on the majority label among its \\(k\\) closest neighbors.\nMain hyperparameter: \\(k\\) or n_neighbors in sklearn\nDistance Metrics: Euclidean\nStrengths: simple and intuitive, can learn complex decision boundaries\nChallenges: Sensitive to the choice of distance metric and scaling (coming up)."
+  },
+  {
+    "objectID": "slides-09.html#announcements",
+    "href": "slides-09.html#announcements",
+    "title": "CPSC 330 Lecture 9: Classification Metrics",
+    "section": "Announcements",
+    "text": "Announcements\n\nImportant information about midterm 1 released on this Piazza post\nPractice Midterm will be released today!\n\nWe hope to give you a sense of the exam format, types of questions, and to get you more familiar with the PrairieLearn interface. They do NOT encompass all the topics we’ve discussed nor reflect the actual number of questions on the actual midterm.\nIt will have a limit of 50-mins so you can get used to how the system will behave in the CBTF BUT the practice midterm has NOT been designed to be completed in 50 minutes!\nYou will be able to do the practice midterm multiple times for practice (but the practice MT questions are not randomized)\nAs promised, documentation for numpy, pandas, scipy, and sklearn is provided to you as the first question.\n\nHW4 has been released. Due next week Monday.\nHW5 will be released next week Tuesday. It’s a project-type assignment and you get till Oct 28th to work on it."
+  },
+  {
+    "objectID": "slides-09.html#ml-workflow",
+    "href": "slides-09.html#ml-workflow",
+    "title": "CPSC 330 Lecture 9: Classification Metrics",
+    "section": "ML workflow",
+    "text": "ML workflow"
+  },
+  {
+    "objectID": "slides-09.html#classification-metrics",
+    "href": "slides-09.html#classification-metrics",
+    "title": "CPSC 330 Lecture 9: Classification Metrics",
+    "section": "Classification Metrics",
+    "text": "Classification Metrics\nAt the end of last class we talked about some of the problems with “accuracy”, and we brainstormed some possible alternatives, and saw that there are tonnes of options.\nToday, let’s sift through the noise and develop some intuition about why we need classification metrics, and how some of them are used."
+  },
+  {
+    "objectID": "slides-09.html#confusion-matrix-questions",
+    "href": "slides-09.html#confusion-matrix-questions",
+    "title": "CPSC 330 Lecture 9: Classification Metrics",
+    "section": "Confusion matrix questions",
+    "text": "Confusion matrix questions\nImagine a spam filter model where emails classified as spam are labeled 1 and non-spam emails are labeled 0. If a spam email is incorrectly classified as non-spam, what is this error called?\n\n\nA false positive\n\n\nA true positive\n\n\nA false negative\n\n\nA true negative"
+  },
+  {
+    "objectID": "slides-09.html#confusion-matrix-questions-1",
+    "href": "slides-09.html#confusion-matrix-questions-1",
+    "title": "CPSC 330 Lecture 9: Classification Metrics",
+    "section": "Confusion matrix questions",
+    "text": "Confusion matrix questions\nIn an intrusion detection system, intrusions are identified as 1 and non-intrusive activities as 0. If the system fails to identify an actual intrusion, wrongly categorizing it as non-intrusive, what is this type of error called?\n\n\nA false positive\n\n\nA true positive\n\n\nA false negative\n\n\nA true negative"
+  },
+  {
+    "objectID": "slides-09.html#confusion-matrix-questions-2",
+    "href": "slides-09.html#confusion-matrix-questions-2",
+    "title": "CPSC 330 Lecture 9: Classification Metrics",
+    "section": "Confusion matrix questions",
+    "text": "Confusion matrix questions\nIn a medical test for a disease, diseased states are labeled as 1 and healthy states as 0. If a healthy patient is incorrectly diagnosed with the disease, what is this error known as?\n\n\nA false positive\n\n\nA true positive\n\n\nA false negative\n\n\nA true negative"
+  },
+  {
+    "objectID": "slides-09.html#iclicker-exercise-9.1",
+    "href": "slides-09.html#iclicker-exercise-9.1",
+    "title": "CPSC 330 Lecture 9: Classification Metrics",
+    "section": "iClicker Exercise 9.1",
+    "text": "iClicker Exercise 9.1\niClicker cloud join link: https://join.iclicker.com/VYFJ\nSelect all of the following statements which are TRUE.\n\n\nIn medical diagnosis, false positives are more damaging than false negatives (assume “positive” means the person has a disease, “negative” means they don’t).\n\n\nIn spam classification, false positives are more damaging than false negatives (assume “positive” means the email is spam, “negative” means they it’s not).\n\n\nIf method A gets a higher accuracy than method B, that means its precision is also higher.\n\n\nIf method A gets a higher accuracy than method B, that means its recall is also higher."
+  },
+  {
+    "objectID": "slides-09.html#counter-examples",
+    "href": "slides-09.html#counter-examples",
+    "title": "CPSC 330 Lecture 9: Classification Metrics",
+    "section": "Counter examples",
+    "text": "Counter examples\nMethod A - higher accuracy but lower precision\n\n\n\nNegative\nPositive\n\n\n\n\n90\n5\n\n\n5\n0\n\n\n\nMethod B - lower accuracy but higher precision\n\n\n\nNegative\nPositive\n\n\n\n\n80\n15\n\n\n0\n5"
+  },
+  {
+    "objectID": "slides-09.html#thresholding-exercise-9.2",
+    "href": "slides-09.html#thresholding-exercise-9.2",
+    "title": "CPSC 330 Lecture 9: Classification Metrics",
+    "section": "Thresholding Exercise 9.2",
+    "text": "Thresholding Exercise 9.2\niClicker cloud join link: https://join.iclicker.com/VYFJ\nSelect all of the following statements which are TRUE.\n\n\nIf we increase the classification threshold, both true and false positives are likely to decrease.\n\n\nIf we increase the classification threshold, both true and false negatives are likely to decrease.\n\n\nLowering the classification threshold generally increases the model’s recall.\n\n\n\nRaising the classification threshold can improve the precision of the model if it effectively reduces the number of false positives without significantly affecting true positives."
+  },
+  {
+    "objectID": "slides-09.html#roc-auc-questions",
+    "href": "slides-09.html#roc-auc-questions",
+    "title": "CPSC 330 Lecture 9: Classification Metrics",
+    "section": "ROC AUC questions",
+    "text": "ROC AUC questions\nConsider the points A, B, and C in the following diagram, each representing a threshold. Which threshold would you pick in each scenario?\n\n\n\n\n\n\nIf false positives (false alarms) are highly costly\n\n\nIf false positives are cheap and false negatives (missed true positives) highly costly\n\n\nIf the costs are roughly equivalent\n\n\n\nSource"
+  },
+  {
+    "objectID": "slides-09.html#example-from-statquest",
+    "href": "slides-09.html#example-from-statquest",
+    "title": "CPSC 330 Lecture 9: Classification Metrics",
+    "section": "Example from StatQuest!",
+    "text": "Example from StatQuest!\nLet’s first walk through this example through StatQuest with obese mice and classifying them using Logistic Regression:\n\nSource: StatQuest"
+  },
+  {
+    "objectID": "slides-09.html#activity-1-create-confusion-matrix",
+    "href": "slides-09.html#activity-1-create-confusion-matrix",
+    "title": "CPSC 330 Lecture 9: Classification Metrics",
+    "section": "Activity 1: Create Confusion Matrix",
+    "text": "Activity 1: Create Confusion Matrix\n\nSource: StatQuest"
+  },
+  {
+    "objectID": "slides-09.html#activity-2-calculate-precision-and-recall",
+    "href": "slides-09.html#activity-2-calculate-precision-and-recall",
+    "title": "CPSC 330 Lecture 9: Classification Metrics",
+    "section": "Activity 2: Calculate Precision and Recall",
+    "text": "Activity 2: Calculate Precision and Recall\n\nRecall (aka Sensitivity in biomedical literature)\n\nTP/(TP+FN)\n\nPrecision\n\nTP/(TP+FP)\n\nSpecificity\n\nTN/(TN+FP)"
+  },
+  {
+    "objectID": "slides-09.html#activity-2-calculate-precision-recall-specificity",
+    "href": "slides-09.html#activity-2-calculate-precision-recall-specificity",
+    "title": "CPSC 330 Lecture 9: Classification Metrics",
+    "section": "Activity 2: Calculate Precision, Recall, Specificity",
+    "text": "Activity 2: Calculate Precision, Recall, Specificity\n\nRecall (aka Sensitivity in biomedical literature)\n\nTP/(TP+FN)\n\nPrecision\n\nTP/(TP+FP)\n\nSpecificity\n\nTN/(TN+FP)"
+  },
+  {
+    "objectID": "slides-09.html#break",
+    "href": "slides-09.html#break",
+    "title": "CPSC 330 Lecture 9: Classification Metrics",
+    "section": "Break!",
+    "text": "Break!\nLet’s take a 10 minute break."
   }
 ]
