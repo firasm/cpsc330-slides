@@ -171,3 +171,9 @@ Consider the points A, B, and C in the following diagram, each representing a th
 ::::
 
 [Source](https://developers.google.com/machine-learning/crash-course/classification/roc-and-auc)
+
+## Next Class: Dr. Giulia Toti !
+
+I'll be covering CPSC 430 for that prof, so Dr. Toti will be covering my section.
+
+Have fun!
