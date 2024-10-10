@@ -483,6 +483,97 @@
     "text": "iClicker 2.5: Baselines and Decision trees\niClicker cloud join link: https://join.iclicker.com/VYFJ\nSelect all of the following statements which are TRUE.\n\n\nChange in features (i.e., binarizing features above) would change DummyClassifier predictions.\n\n\npredict takes only X as argument whereas fit and score take both X and y as arguments.\n\n\nFor the decision tree algorithm to work, the feature values must be binary.\n\n\nThe prediction in a decision tree works by routing the example from the root to the leaf."
   },
   {
+    "objectID": "slides-06.html#announcements",
+    "href": "slides-06.html#announcements",
+    "title": "Lecture 6: Column transformer and text features",
+    "section": "Announcements",
+    "text": "Announcements\n\nLecture recordings for the first two weeks have been made available - See Piazza.\nMy Office Hours\nHW3 is due next week Tuesday, Oct 1st, 11:59 pm.\n\nYou can work in pairs for this assignment."
+  },
+  {
+    "objectID": "slides-06.html#quick-correction-on-exercise-5.3",
+    "href": "slides-06.html#quick-correction-on-exercise-5.3",
+    "title": "Lecture 6: Column transformer and text features",
+    "section": "Quick Correction on Exercise 5.3",
+    "text": "Quick Correction on Exercise 5.3\n\nI accidentally said only D is true, but B is also true!\n\nSelect all of the following statements which are TRUE.\n\n\nYou can have scaling of numeric features, one-hot encoding of categorical features, and scikit-learn estimator within a single pipeline.\n\n\nOnce you have a scikit-learn pipeline object with an estimator as the last step, you can call fit, predict, and score on it.\n\n\nYou can carry out data splitting within scikit-learn pipeline.\n\n\nWe have to be careful of the order we put each transformation and model in a pipeline."
+  },
+  {
+    "objectID": "slides-06.html#data",
+    "href": "slides-06.html#data",
+    "title": "Lecture 6: Column transformer and text features",
+    "section": "Data",
+    "text": "Data\n\nX, y = make_blobs(n_samples=100, centers=3, random_state=12, cluster_std=5) # make synthetic data\nX_train_toy, X_test_toy, y_train_toy, y_test_toy = train_test_split(\n    X, y, random_state=5, test_size=0.4) # split it into training and test sets\n# Visualize the training data\nplt.scatter(X_train_toy[:, 0], X_train_toy[:, 1], label=\"Training set\", s=60)\nplt.scatter(\n    X_test_toy[:, 0], X_test_toy[:, 1], color=mglearn.cm2(1), label=\"Test set\", s=60\n)\nplt.legend(loc=\"upper right\")"
+  },
+  {
+    "objectID": "slides-06.html#bad-ml-1",
+    "href": "slides-06.html#bad-ml-1",
+    "title": "Lecture 6: Column transformer and text features",
+    "section": "❌ Bad ML 1",
+    "text": "❌ Bad ML 1\n\nWhat’s wrong with the approach below?\n\n\nscaler = StandardScaler() # Creating a scalert object \nscaler.fit(X_train_toy) # Calling fit on the training data \ntrain_scaled = scaler.transform(\n    X_train_toy\n)  # Transforming the training data using the scaler fit on training data\n\nscaler = StandardScaler()  # Creating a separate object for scaling test data\nscaler.fit(X_test_toy)  # Calling fit on the test data\ntest_scaled = scaler.transform(\n    X_test_toy\n)  # Transforming the test data using the scaler fit on test data\n\nknn = KNeighborsClassifier()\nknn.fit(train_scaled, y_train_toy)\nprint(f\"Training score: {knn.score(train_scaled, y_train_toy):.2f}\")\nprint(f\"Test score: {knn.score(test_scaled, y_test_toy):.2f}\") # misleading scores\n\nTraining score: 0.63\nTest score: 0.60"
+  },
+  {
+    "objectID": "slides-06.html#scaling-train-and-test-data-separately",
+    "href": "slides-06.html#scaling-train-and-test-data-separately",
+    "title": "Lecture 6: Column transformer and text features",
+    "section": "Scaling train and test data separately",
+    "text": "Scaling train and test data separately"
+  },
+  {
+    "objectID": "slides-06.html#bad-ml-2",
+    "href": "slides-06.html#bad-ml-2",
+    "title": "Lecture 6: Column transformer and text features",
+    "section": "❌ Bad ML 2",
+    "text": "❌ Bad ML 2\n\nWhat’s wrong with the approach below?\n\n\n# join the train and test sets back together\nXX = np.vstack((X_train_toy, X_test_toy))\n\nscaler = StandardScaler()\nscaler.fit(XX)\nXX_scaled = scaler.transform(XX)\n\nXX_train = XX_scaled[:X_train_toy.shape[0]]\nXX_test = XX_scaled[X_train_toy.shape[0]:]\n\nknn = KNeighborsClassifier()\nknn.fit(XX_train, y_train_toy)\nprint(f\"Training score: {knn.score(XX_train, y_train_toy):.2f}\")  # Misleading score\nprint(f\"Test score: {knn.score(XX_test, y_test_toy):.2f}\")  # Misleading score\n\nTraining score: 0.63\nTest score: 0.55"
+  },
+  {
+    "objectID": "slides-06.html#bad-ml-3",
+    "href": "slides-06.html#bad-ml-3",
+    "title": "Lecture 6: Column transformer and text features",
+    "section": "❌ Bad ML 3",
+    "text": "❌ Bad ML 3\n\nWhat’s wrong with the approach below?\n\n\nknn = KNeighborsClassifier()\n\nscaler = StandardScaler()\nscaler.fit(X_train_toy)\nX_train_scaled = scaler.transform(X_train_toy)\nX_test_scaled = scaler.transform(X_test_toy)\ncross_val_score(knn, X_train_scaled, y_train_toy)\n\narray([0.25      , 0.5       , 0.58333333, 0.58333333, 0.41666667])\n\n\n\nSpeaker notes go here."
+  },
+  {
+    "objectID": "slides-06.html#improper-preprocessing",
+    "href": "slides-06.html#improper-preprocessing",
+    "title": "Lecture 6: Column transformer and text features",
+    "section": "Improper preprocessing",
+    "text": "Improper preprocessing"
+  },
+  {
+    "objectID": "slides-06.html#proper-preprocessing",
+    "href": "slides-06.html#proper-preprocessing",
+    "title": "Lecture 6: Column transformer and text features",
+    "section": "Proper preprocessing",
+    "text": "Proper preprocessing"
+  },
+  {
+    "objectID": "slides-06.html#recap-sklearn-pipelines",
+    "href": "slides-06.html#recap-sklearn-pipelines",
+    "title": "Lecture 6: Column transformer and text features",
+    "section": "Recap: sklearn Pipelines",
+    "text": "Recap: sklearn Pipelines\n\nPipeline is a way to chain multiple steps (e.g., preprocessing + model fitting) into a single workflow.\nSimplify the code and improves readability.\nReduce the risk of data leakage by ensuring proper transformation of the training and test sets.\nAutomatically apply transformations in sequence.\nExample:\n\nChaining a StandardScaler with a KNeighborsClassifier model.\n\n\n\nfrom sklearn.pipeline import make_pipeline\n\npipe_knn = make_pipeline(StandardScaler(), KNeighborsClassifier())\n\n# Correct way to do cross validation without breaking the golden rule. \ncross_val_score(pipe_knn, X_train_toy, y_train_toy) \n\narray([0.25      , 0.5       , 0.5       , 0.58333333, 0.41666667])"
+  },
+  {
+    "objectID": "slides-06.html#group-work-class-demo-live-coding",
+    "href": "slides-06.html#group-work-class-demo-live-coding",
+    "title": "Lecture 6: Column transformer and text features",
+    "section": "Group Work: Class Demo & Live Coding",
+    "text": "Group Work: Class Demo & Live Coding\nFor this demo, each student should click this link to create a new repo in their accounts, then clone that repo locally to follow along with the demo from today.\n  \nIf you really don’t want to create a repo,\n\nNavigate to the cpsc330-2024W1 repo\nrun git pull to pull the latest files in the course repo\nLook for the demo file here: lectures/102-Firas-lectures/class_demos/."
+  },
+  {
+    "objectID": "slides-06.html#sklearns-columntransformer",
+    "href": "slides-06.html#sklearns-columntransformer",
+    "title": "Lecture 6: Column transformer and text features",
+    "section": "sklearn’s ColumnTransformer",
+    "text": "sklearn’s ColumnTransformer\n\nUse ColumnTransformer to build all our transformations together into one object\n\n\n\nUse a column transformer with sklearn pipelines."
+  },
+  {
+    "objectID": "slides-06.html#iclicker-exercise-6.1",
+    "href": "slides-06.html#iclicker-exercise-6.1",
+    "title": "Lecture 6: Column transformer and text features",
+    "section": "(iClicker) Exercise 6.1",
+    "text": "(iClicker) Exercise 6.1\niClicker cloud join link: https://join.iclicker.com/VYFJ\nSelect all of the following statements which are TRUE.\n\n\nYou could carry out cross-validation by passing a ColumnTransformer object to cross_validate.\n\n\nAfter applying column transformer, the order of the columns in the transformed data has to be the same as the order of the columns in the original data.\n\n\nAfter applying a column transformer, the transformed data is always going to be of different shape than the original data.\n\n\nWhen you call fit_transform on a ColumnTransformer object, you get a numpy ndarray.\n\n\n\niClicker 6.1\nA. False, column transfer to pipeline. There is no estimator attached to ColumnTransfer\nB. False, numeric, binary, ordinal, categorical etc…Can also use this to remove columns\nC. False, often it will be different, but not always\nD. True, just an ndarray, not a data frame"
+  },
+  {
     "objectID": "slides-07.html#announcements",
     "href": "slides-07.html#announcements",
     "title": "Lecture 7: Linear models",
@@ -693,95 +784,123 @@
     "text": "Group Work: Class Demo & Live Coding\nFor this demo, each student should click this link to create a new repo in their accounts, then clone that repo locally to follow along with the demo from today.\n  \nIf you really don’t want to create a repo,\n\nNavigate to the cpsc330-2024W1 repo\nrun git pull to pull the latest files in the course repo\nLook for the demo file here"
   },
   {
-    "objectID": "slides-06.html#announcements",
-    "href": "slides-06.html#announcements",
-    "title": "Lecture 6: Column transformer and text features",
+    "objectID": "slides-11.html#announcements",
+    "href": "slides-11.html#announcements",
+    "title": "CPSC 330 Lecture 11: Midterm review",
     "section": "Announcements",
-    "text": "Announcements\n\nLecture recordings for the first two weeks have been made available - See Piazza.\nMy Office Hours\nHW3 is due next week Tuesday, Oct 1st, 11:59 pm.\n\nYou can work in pairs for this assignment."
+    "text": "Announcements\n\nMidterm next week! Important information about Midterm 1\n\nPiazza Post\nGood news for you: You will have access to our course notes in the midterm!"
   },
   {
-    "objectID": "slides-06.html#quick-correction-on-exercise-5.3",
-    "href": "slides-06.html#quick-correction-on-exercise-5.3",
-    "title": "Lecture 6: Column transformer and text features",
-    "section": "Quick Correction on Exercise 5.3",
-    "text": "Quick Correction on Exercise 5.3\n\nI accidentally said only D is true, but B is also true!\n\nSelect all of the following statements which are TRUE.\n\n\nYou can have scaling of numeric features, one-hot encoding of categorical features, and scikit-learn estimator within a single pipeline.\n\n\nOnce you have a scikit-learn pipeline object with an estimator as the last step, you can call fit, predict, and score on it.\n\n\nYou can carry out data splitting within scikit-learn pipeline.\n\n\nWe have to be careful of the order we put each transformation and model in a pipeline."
+    "objectID": "slides-11.html#what-is-machine-learning",
+    "href": "slides-11.html#what-is-machine-learning",
+    "title": "CPSC 330 Lecture 11: Midterm review",
+    "section": "What is machine learning",
+    "text": "What is machine learning\n\nML uses data to build models that identify patterns, make predictions, or generate content.\nIt enables computers to learn from data.\nNo single model is suitable for all situations."
   },
   {
-    "objectID": "slides-06.html#data",
-    "href": "slides-06.html#data",
-    "title": "Lecture 6: Column transformer and text features",
-    "section": "Data",
-    "text": "Data\n\nX, y = make_blobs(n_samples=100, centers=3, random_state=12, cluster_std=5) # make synthetic data\nX_train_toy, X_test_toy, y_train_toy, y_test_toy = train_test_split(\n    X, y, random_state=5, test_size=0.4) # split it into training and test sets\n# Visualize the training data\nplt.scatter(X_train_toy[:, 0], X_train_toy[:, 1], label=\"Training set\", s=60)\nplt.scatter(\n    X_test_toy[:, 0], X_test_toy[:, 1], color=mglearn.cm2(1), label=\"Test set\", s=60\n)\nplt.legend(loc=\"upper right\")"
+    "objectID": "slides-11.html#when-is-ml-suitable",
+    "href": "slides-11.html#when-is-ml-suitable",
+    "title": "CPSC 330 Lecture 11: Midterm review",
+    "section": "When is ML suitable?",
+    "text": "When is ML suitable?\n\nML excels when the problem involve identifying complex patterns or relationships in large datasets that are difficult for humans to discern manually.\nRule-based systems are suitable where clear and deterministic rules can be defined. Good for structured decision making.\nHuman experts are good with problems which require deep contextual understanding, ethical judgment, creative input, or emotional intelligence."
   },
   {
-    "objectID": "slides-06.html#bad-ml-1",
-    "href": "slides-06.html#bad-ml-1",
-    "title": "Lecture 6: Column transformer and text features",
-    "section": "❌ Bad ML 1",
-    "text": "❌ Bad ML 1\n\nWhat’s wrong with the approach below?\n\n\nscaler = StandardScaler() # Creating a scalert object \nscaler.fit(X_train_toy) # Calling fit on the training data \ntrain_scaled = scaler.transform(\n    X_train_toy\n)  # Transforming the training data using the scaler fit on training data\n\nscaler = StandardScaler()  # Creating a separate object for scaling test data\nscaler.fit(X_test_toy)  # Calling fit on the test data\ntest_scaled = scaler.transform(\n    X_test_toy\n)  # Transforming the test data using the scaler fit on test data\n\nknn = KNeighborsClassifier()\nknn.fit(train_scaled, y_train_toy)\nprint(f\"Training score: {knn.score(train_scaled, y_train_toy):.2f}\")\nprint(f\"Test score: {knn.score(test_scaled, y_test_toy):.2f}\") # misleading scores\n\nTraining score: 0.63\nTest score: 0.60"
+    "objectID": "slides-11.html#terminology",
+    "href": "slides-11.html#terminology",
+    "title": "CPSC 330 Lecture 11: Midterm review",
+    "section": "Terminology",
+    "text": "Terminology\n\nFeatures (X) and target (y)\nExamples\nPredictions\nAccuracy, error\nParameters and hyperparameters\nDecision boundaries"
   },
   {
-    "objectID": "slides-06.html#scaling-train-and-test-data-separately",
-    "href": "slides-06.html#scaling-train-and-test-data-separately",
-    "title": "Lecture 6: Column transformer and text features",
-    "section": "Scaling train and test data separately",
-    "text": "Scaling train and test data separately"
+    "objectID": "slides-11.html#important-concepts",
+    "href": "slides-11.html#important-concepts",
+    "title": "CPSC 330 Lecture 11: Midterm review",
+    "section": "Important concepts",
+    "text": "Important concepts\n\nWhy do we split the data? What are train/valid/test splits?\nWhat are the benefits of cross-validation?\nWhat is underfitting and overfitting?\nWhat’s the fundamental trade-off in supervised machine learning?\nWhat is the golden rule of machine learning?"
   },
   {
-    "objectID": "slides-06.html#bad-ml-2",
-    "href": "slides-06.html#bad-ml-2",
-    "title": "Lecture 6: Column transformer and text features",
-    "section": "❌ Bad ML 2",
-    "text": "❌ Bad ML 2\n\nWhat’s wrong with the approach below?\n\n\n# join the train and test sets back together\nXX = np.vstack((X_train_toy, X_test_toy))\n\nscaler = StandardScaler()\nscaler.fit(XX)\nXX_scaled = scaler.transform(XX)\n\nXX_train = XX_scaled[:X_train_toy.shape[0]]\nXX_test = XX_scaled[X_train_toy.shape[0]:]\n\nknn = KNeighborsClassifier()\nknn.fit(XX_train, y_train_toy)\nprint(f\"Training score: {knn.score(XX_train, y_train_toy):.2f}\")  # Misleading score\nprint(f\"Test score: {knn.score(XX_test, y_test_toy):.2f}\")  # Misleading score\n\nTraining score: 0.63\nTest score: 0.55"
+    "objectID": "slides-11.html#overfitting-and-underfitting",
+    "href": "slides-11.html#overfitting-and-underfitting",
+    "title": "CPSC 330 Lecture 11: Midterm review",
+    "section": "Overfitting and underfitting",
+    "text": "Overfitting and underfitting\n\n\n\nSource\n\n\nAn overfit model matches the training set so closely that it fails to make correct predictions on new unseen data.\n\nAn underfit model is too simple and does not even make good predictions on the training data"
   },
   {
-    "objectID": "slides-06.html#bad-ml-3",
-    "href": "slides-06.html#bad-ml-3",
-    "title": "Lecture 6: Column transformer and text features",
-    "section": "❌ Bad ML 3",
-    "text": "❌ Bad ML 3\n\nWhat’s wrong with the approach below?\n\n\nknn = KNeighborsClassifier()\n\nscaler = StandardScaler()\nscaler.fit(X_train_toy)\nX_train_scaled = scaler.transform(X_train_toy)\nX_test_scaled = scaler.transform(X_test_toy)\ncross_val_score(knn, X_train_scaled, y_train_toy)\n\narray([0.25      , 0.5       , 0.58333333, 0.58333333, 0.41666667])\n\n\n\nSpeaker notes go here."
+    "objectID": "slides-11.html#the-fundamental-tradeoff",
+    "href": "slides-11.html#the-fundamental-tradeoff",
+    "title": "CPSC 330 Lecture 11: Midterm review",
+    "section": "The fundamental tradeoff",
+    "text": "The fundamental tradeoff\n\n\n\n\n\n\n\n\n\nAs you increase the model complexity, training score tends to go up and the gap between train and validation scores tends to go up.\n\nHow to pick a model?"
   },
   {
-    "objectID": "slides-06.html#improper-preprocessing",
-    "href": "slides-06.html#improper-preprocessing",
-    "title": "Lecture 6: Column transformer and text features",
-    "section": "Improper preprocessing",
-    "text": "Improper preprocessing"
+    "objectID": "slides-11.html#supervised-models-we-have-seen",
+    "href": "slides-11.html#supervised-models-we-have-seen",
+    "title": "CPSC 330 Lecture 11: Midterm review",
+    "section": "Supervised models we have seen",
+    "text": "Supervised models we have seen\n\nDecision trees: Split data into subsets based on feature values to create decision rules\n\\(k\\)-NNs: Classify based on the majority vote from \\(k\\) nearest neighbors\nSVM RBFs: Create a boundary using an RBF kernel to separate classes\nLinear models: Assumption that the relationship between X and y is linear"
   },
   {
-    "objectID": "slides-06.html#proper-preprocessing",
-    "href": "slides-06.html#proper-preprocessing",
-    "title": "Lecture 6: Column transformer and text features",
-    "section": "Proper preprocessing",
-    "text": "Proper preprocessing"
+    "objectID": "slides-11.html#comparison-of-models",
+    "href": "slides-11.html#comparison-of-models",
+    "title": "CPSC 330 Lecture 11: Midterm review",
+    "section": "Comparison of models",
+    "text": "Comparison of models\n\n\n\n\n\n\n\n\n\nModel\nParameters and hyperparameters\nStrengths\nWeaknesses\n\n\n\n\nDecision Trees\n\n\n\n\n\nKNNs\n\n\n\n\n\nSVM RBF\n\n\n\n\n\nLinear models"
   },
   {
-    "objectID": "slides-06.html#recap-sklearn-pipelines",
-    "href": "slides-06.html#recap-sklearn-pipelines",
-    "title": "Lecture 6: Column transformer and text features",
-    "section": "Recap: sklearn Pipelines",
-    "text": "Recap: sklearn Pipelines\n\nPipeline is a way to chain multiple steps (e.g., preprocessing + model fitting) into a single workflow.\nSimplify the code and improves readability.\nReduce the risk of data leakage by ensuring proper transformation of the training and test sets.\nAutomatically apply transformations in sequence.\nExample:\n\nChaining a StandardScaler with a KNeighborsClassifier model.\n\n\n\nfrom sklearn.pipeline import make_pipeline\n\npipe_knn = make_pipeline(StandardScaler(), KNeighborsClassifier())\n\n# Correct way to do cross validation without breaking the golden rule. \ncross_val_score(pipe_knn, X_train_toy, y_train_toy) \n\narray([0.25      , 0.5       , 0.5       , 0.58333333, 0.41666667])"
+    "objectID": "slides-11.html#sklearn-transformers",
+    "href": "slides-11.html#sklearn-transformers",
+    "title": "CPSC 330 Lecture 11: Midterm review",
+    "section": "sklearn Transformers",
+    "text": "sklearn Transformers\n\n\n\n\n\n\n\n\nTransformer\nHyperparameters\nWhen to use?\n\n\n\n\nSimpleImputer\n\n\n\n\nStandardScaler\n\n\n\n\nOneHotEncoder\n\n\n\n\nOrdinalEncoder\n\n\n\n\nCountVectorizer\n\n\n\n\nTransformedTargetRegressor"
   },
   {
-    "objectID": "slides-06.html#group-work-class-demo-live-coding",
-    "href": "slides-06.html#group-work-class-demo-live-coding",
-    "title": "Lecture 6: Column transformer and text features",
-    "section": "Group Work: Class Demo & Live Coding",
-    "text": "Group Work: Class Demo & Live Coding\nFor this demo, each student should click this link to create a new repo in their accounts, then clone that repo locally to follow along with the demo from today.\n  \nIf you really don’t want to create a repo,\n\nNavigate to the cpsc330-2024W1 repo\nrun git pull to pull the latest files in the course repo\nLook for the demo file here: lectures/102-Firas-lectures/class_demos/."
+    "objectID": "slides-11.html#features",
+    "href": "slides-11.html#features",
+    "title": "CPSC 330 Lecture 11: Midterm review",
+    "section": "Features",
+    "text": "Features\n\nUsing features that are directly related to the target can cause data leakage.\n\nExample: If you’re building a model to predict the churn rate of customers in a subscription service (churned or not churned) and you are using a feature like “account deactivation date”.\n\n\nIf a feature essentially gives away the answer, the model might perform exceptionally well during training but fail to generalize to new, unseen data."
   },
   {
-    "objectID": "slides-06.html#sklearns-columntransformer",
-    "href": "slides-06.html#sklearns-columntransformer",
-    "title": "Lecture 6: Column transformer and text features",
-    "section": "sklearn’s ColumnTransformer",
-    "text": "sklearn’s ColumnTransformer\n\nUse ColumnTransformer to build all our transformations together into one object\n\n\n\nUse a column transformer with sklearn pipelines."
+    "objectID": "slides-11.html#preprocessing",
+    "href": "slides-11.html#preprocessing",
+    "title": "CPSC 330 Lecture 11: Midterm review",
+    "section": "Preprocessing",
+    "text": "Preprocessing\n\nIncorporating information from the validation or test data during the preprocessing phase (e.g., scaling based on the distribution of the entire dataset instead of just the training set) can also lead to leakage. This can happen if the transformations applied to the training data are influenced by the whole dataset, thus indirectly feeding information about the test set into the model during training."
   },
   {
-    "objectID": "slides-06.html#iclicker-exercise-6.1",
-    "href": "slides-06.html#iclicker-exercise-6.1",
-    "title": "Lecture 6: Column transformer and text features",
-    "section": "(iClicker) Exercise 6.1",
-    "text": "(iClicker) Exercise 6.1\niClicker cloud join link: https://join.iclicker.com/VYFJ\nSelect all of the following statements which are TRUE.\n\n\nYou could carry out cross-validation by passing a ColumnTransformer object to cross_validate.\n\n\nAfter applying column transformer, the order of the columns in the transformed data has to be the same as the order of the columns in the original data.\n\n\nAfter applying a column transformer, the transformed data is always going to be of different shape than the original data.\n\n\nWhen you call fit_transform on a ColumnTransformer object, you get a numpy ndarray.\n\n\n\niClicker 6.1\nA. False, column transfer to pipeline. There is no estimator attached to ColumnTransfer\nB. False, numeric, binary, ordinal, categorical etc…Can also use this to remove columns\nC. False, often it will be different, but not always\nD. True, just an ndarray, not a data frame"
+    "objectID": "slides-11.html#pipelines",
+    "href": "slides-11.html#pipelines",
+    "title": "CPSC 330 Lecture 11: Midterm review",
+    "section": "Pipelines",
+    "text": "Pipelines\n\nPipeline is a way to chain multiple steps (e.g., preprocessing + model fitting) into a single workflow.\nSimplify the code and improves readability.\nReduce the risk of data leakage by ensuring proper transformation of the training and test sets.\nAutomatically apply transformations in sequence."
+  },
+  {
+    "objectID": "slides-11.html#column-transformers",
+    "href": "slides-11.html#column-transformers",
+    "title": "CPSC 330 Lecture 11: Midterm review",
+    "section": "Column Transformers",
+    "text": "Column Transformers\n\nIn what scenarios do we use column transformers?\n\nDifferent transformations for different types of columns (e.g., scaling numerical data, encoding categorical data).\n\nHandle datasets with heterogeneous data types effectively."
+  },
+  {
+    "objectID": "slides-11.html#hyperparameter-optimization",
+    "href": "slides-11.html#hyperparameter-optimization",
+    "title": "CPSC 330 Lecture 11: Midterm review",
+    "section": "Hyperparameter Optimization",
+    "text": "Hyperparameter Optimization\n\n\n\n\n\n\n\n\nMethod\nStrengths/Weaknesses\nWhen to use?\n\n\n\n\nNested for loops\n\n\n\n\nGrid search\n\n\n\n\nRandom search"
+  },
+  {
+    "objectID": "slides-11.html#classification-metrics",
+    "href": "slides-11.html#classification-metrics",
+    "title": "CPSC 330 Lecture 11: Midterm review",
+    "section": "Classification Metrics",
+    "text": "Classification Metrics\n\n\n\n\n\n\n\n\nMetric\nHow to generate/calculate?\nWhen to use?\n\n\n\n\nAccuracy\n\n\n\n\nPrecision\n\n\n\n\nRecall\n\n\n\n\nF1-score\n\n\n\n\nAP score\n\n\n\n\nAUC"
+  },
+  {
+    "objectID": "slides-11.html#regression-metrics",
+    "href": "slides-11.html#regression-metrics",
+    "title": "CPSC 330 Lecture 11: Midterm review",
+    "section": "Regression Metrics",
+    "text": "Regression Metrics\n\n\n\n\n\n\n\n\nMetric\nHow to generate/calculate?\nWhen to use?\n\n\n\n\nMSE\n\n\n\n\nRMSE\n\n\n\n\nr2 score\n\n\n\n\nMAPE"
   },
   {
     "objectID": "slides-01-intro.html#introductions",
@@ -1363,124 +1482,5 @@
     "title": "CPSC 330 Lecture 8: Hyperparameter Optimization",
     "section": "Group Work: Invention Activity",
     "text": "Group Work: Invention Activity\nSo far we have looked only at score as a metric for evaluating our metrics.\nWhat else could be used as a possible metric? Think of what else might be important for machine learning practioners and stakeholders?\nIn your group, brainstorm 4 alternative options:"
-  },
-  {
-    "objectID": "slides-11.html#announcements",
-    "href": "slides-11.html#announcements",
-    "title": "CPSC 330 Lecture 11: Midterm review",
-    "section": "Announcements",
-    "text": "Announcements\n\nMidterm next week! Important information about Midterm 1\n\nPiazza Post\nGood news for you: You will have access to our course notes in the midterm!"
-  },
-  {
-    "objectID": "slides-11.html#what-is-machine-learning",
-    "href": "slides-11.html#what-is-machine-learning",
-    "title": "CPSC 330 Lecture 11: Midterm review",
-    "section": "What is machine learning",
-    "text": "What is machine learning\n\nML uses data to build models that identify patterns, make predictions, or generate content.\nIt enables computers to learn from data.\nNo single model is suitable for all situations."
-  },
-  {
-    "objectID": "slides-11.html#when-is-ml-suitable",
-    "href": "slides-11.html#when-is-ml-suitable",
-    "title": "CPSC 330 Lecture 11: Midterm review",
-    "section": "When is ML suitable?",
-    "text": "When is ML suitable?\n\nML excels when the problem involve identifying complex patterns or relationships in large datasets that are difficult for humans to discern manually.\nRule-based systems are suitable where clear and deterministic rules can be defined. Good for structured decision making.\nHuman experts are good with problems which require deep contextual understanding, ethical judgment, creative input, or emotional intelligence."
-  },
-  {
-    "objectID": "slides-11.html#terminology",
-    "href": "slides-11.html#terminology",
-    "title": "CPSC 330 Lecture 11: Midterm review",
-    "section": "Terminology",
-    "text": "Terminology\n\nFeatures (X) and target (y)\nExamples\nPredictions\nAccuracy, error\nParameters and hyperparameters\nDecision boundaries"
-  },
-  {
-    "objectID": "slides-11.html#important-concepts",
-    "href": "slides-11.html#important-concepts",
-    "title": "CPSC 330 Lecture 11: Midterm review",
-    "section": "Important concepts",
-    "text": "Important concepts\n\nWhy do we split the data? What are train/valid/test splits?\nWhat are the benefits of cross-validation?\nWhat is underfitting and overfitting?\nWhat’s the fundamental trade-off in supervised machine learning?\nWhat is the golden rule of machine learning?"
-  },
-  {
-    "objectID": "slides-11.html#overfitting-and-underfitting",
-    "href": "slides-11.html#overfitting-and-underfitting",
-    "title": "CPSC 330 Lecture 11: Midterm review",
-    "section": "Overfitting and underfitting",
-    "text": "Overfitting and underfitting\n\n\n\nSource\n\n\nAn overfit model matches the training set so closely that it fails to make correct predictions on new unseen data.\n\nAn underfit model is too simple and does not even make good predictions on the training data"
-  },
-  {
-    "objectID": "slides-11.html#the-fundamental-tradeoff",
-    "href": "slides-11.html#the-fundamental-tradeoff",
-    "title": "CPSC 330 Lecture 11: Midterm review",
-    "section": "The fundamental tradeoff",
-    "text": "The fundamental tradeoff\n\n\n\n\n\n\n\n\n\nAs you increase the model complexity, training score tends to go up and the gap between train and validation scores tends to go up.\n\nHow to pick a model?"
-  },
-  {
-    "objectID": "slides-11.html#supervised-models-we-have-seen",
-    "href": "slides-11.html#supervised-models-we-have-seen",
-    "title": "CPSC 330 Lecture 11: Midterm review",
-    "section": "Supervised models we have seen",
-    "text": "Supervised models we have seen\n\nDecision trees: Split data into subsets based on feature values to create decision rules\n\\(k\\)-NNs: Classify based on the majority vote from \\(k\\) nearest neighbors\nSVM RBFs: Create a boundary using an RBF kernel to separate classes\nLinear models: Assumption that the relationship between X and y is linear"
-  },
-  {
-    "objectID": "slides-11.html#comparison-of-models",
-    "href": "slides-11.html#comparison-of-models",
-    "title": "CPSC 330 Lecture 11: Midterm review",
-    "section": "Comparison of models",
-    "text": "Comparison of models\n\n\n\n\n\n\n\n\n\nModel\nParameters and hyperparameters\nStrengths\nWeaknesses\n\n\n\n\nDecision Trees\n\n\n\n\n\nKNNs\n\n\n\n\n\nSVM RBF\n\n\n\n\n\nLinear models"
-  },
-  {
-    "objectID": "slides-11.html#sklearn-transformers",
-    "href": "slides-11.html#sklearn-transformers",
-    "title": "CPSC 330 Lecture 11: Midterm review",
-    "section": "sklearn Transformers",
-    "text": "sklearn Transformers\n\n\n\n\n\n\n\n\nTransformer\nHyperparameters\nWhen to use?\n\n\n\n\nSimpleImputer\n\n\n\n\nStandardScaler\n\n\n\n\nOneHotEncoder\n\n\n\n\nOrdinalEncoder\n\n\n\n\nCountVectorizer\n\n\n\n\nTransformedTargetRegressor"
-  },
-  {
-    "objectID": "slides-11.html#features",
-    "href": "slides-11.html#features",
-    "title": "CPSC 330 Lecture 11: Midterm review",
-    "section": "Features",
-    "text": "Features\n\nUsing features that are directly related to the target can cause data leakage.\n\nExample: If you’re building a model to predict the churn rate of customers in a subscription service (churned or not churned) and you are using a feature like “account deactivation date”.\n\n\nIf a feature essentially gives away the answer, the model might perform exceptionally well during training but fail to generalize to new, unseen data."
-  },
-  {
-    "objectID": "slides-11.html#preprocessing",
-    "href": "slides-11.html#preprocessing",
-    "title": "CPSC 330 Lecture 11: Midterm review",
-    "section": "Preprocessing",
-    "text": "Preprocessing\n\nIncorporating information from the validation or test data during the preprocessing phase (e.g., scaling based on the distribution of the entire dataset instead of just the training set) can also lead to leakage. This can happen if the transformations applied to the training data are influenced by the whole dataset, thus indirectly feeding information about the test set into the model during training."
-  },
-  {
-    "objectID": "slides-11.html#pipelines",
-    "href": "slides-11.html#pipelines",
-    "title": "CPSC 330 Lecture 11: Midterm review",
-    "section": "Pipelines",
-    "text": "Pipelines\n\nPipeline is a way to chain multiple steps (e.g., preprocessing + model fitting) into a single workflow.\nSimplify the code and improves readability.\nReduce the risk of data leakage by ensuring proper transformation of the training and test sets.\nAutomatically apply transformations in sequence."
-  },
-  {
-    "objectID": "slides-11.html#column-transformers",
-    "href": "slides-11.html#column-transformers",
-    "title": "CPSC 330 Lecture 11: Midterm review",
-    "section": "Column Transformers",
-    "text": "Column Transformers\n\nIn what scenarios do we use column transformers?\n\nDifferent transformations for different types of columns (e.g., scaling numerical data, encoding categorical data).\n\nHandle datasets with heterogeneous data types effectively."
-  },
-  {
-    "objectID": "slides-11.html#hyperparameter-optimization",
-    "href": "slides-11.html#hyperparameter-optimization",
-    "title": "CPSC 330 Lecture 11: Midterm review",
-    "section": "Hyperparameter Optimization",
-    "text": "Hyperparameter Optimization\n\n\n\n\n\n\n\n\nMethod\nStrengths/Weaknesses\nWhen to use?\n\n\n\n\nNested for loops\n\n\n\n\nGrid search\n\n\n\n\nRandom search"
-  },
-  {
-    "objectID": "slides-11.html#classification-metrics",
-    "href": "slides-11.html#classification-metrics",
-    "title": "CPSC 330 Lecture 11: Midterm review",
-    "section": "Classification Metrics",
-    "text": "Classification Metrics\n\n\n\n\n\n\n\n\nMetric\nHow to generate/calculate?\nWhen to use?\n\n\n\n\nAccuracy\n\n\n\n\nPrecision\n\n\n\n\nRecall\n\n\n\n\nF1-score\n\n\n\n\nAP score\n\n\n\n\nAUC"
-  },
-  {
-    "objectID": "slides-11.html#regression-metrics",
-    "href": "slides-11.html#regression-metrics",
-    "title": "CPSC 330 Lecture 11: Midterm review",
-    "section": "Regression Metrics",
-    "text": "Regression Metrics\n\n\n\n\n\n\n\n\nMetric\nHow to generate/calculate?\nWhen to use?\n\n\n\n\nMSE\n\n\n\n\nRMSE\n\n\n\n\nr2 score\n\n\n\n\nMAPE"
   }
 ]

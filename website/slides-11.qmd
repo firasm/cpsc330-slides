@@ -90,12 +90,12 @@ editor:
 - Linear models: Assumption that the relationship between `X` and `y` is linear 
 
 ## Comparison of models 
-| **Model**        | Parameters and hyperparameters | **Strengths**  | **Weaknesses**     |
+| **Model**        | Parameters  | Hyperparameters | **Strengths**  | **Weaknesses**     |
 |------------------|--------------------------------|---------------------------|---------------------------|
-| **Decision Trees**               |  |  |  |
-| **KNNs**              |  |  |  |
-| **SVM RBF**            |  |  |  |
-| **Linear models**         |  |  | | 
+| **Decision Trees**               | | |  |  |
+| **KNNs**              | | |  |  |
+| **SVM RBF**            | | |  |  |
+| **Linear models**         | | |  | | 
 
 
 # Transformers 
@@ -160,3 +160,20 @@ editor:
 | RMSE              |  |  | 
 | r2 score          |  |  | 
 | MAPE         |  |  | 
+
+
+## Group Work: Class Demo & Live Coding (if time permits)
+
+This is mostly on regression metrics though it may serve as a good review of everything.
+
+For this demo, each student should [click this link](https://github.com/new?template_name=lecture11_demo&template_owner=ubc-cpsc330) to create a new repo in their accounts, then clone that repo locally to follow along with the demo from today.
+
+<br>
+<br>
+<br>
+
+If you really don't want to create a repo,
+
+- Navigate to the `cpsc330-2024W1` repo
+- run `git pull` to pull the latest files in the course repo
+- Look for the demo file [here](https://github.com/orgs/ubc-cpsc330/repositories)
