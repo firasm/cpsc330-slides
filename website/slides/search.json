@@ -844,7 +844,7 @@
     "href": "slides-11.html#comparison-of-models",
     "title": "CPSC 330 Lecture 11: Midterm review",
     "section": "Comparison of models",
-    "text": "Comparison of models\n\n\n\n\n\n\n\n\n\nModel\nParameters and hyperparameters\nStrengths\nWeaknesses\n\n\n\n\nDecision Trees\n\n\n\n\n\nKNNs\n\n\n\n\n\nSVM RBF\n\n\n\n\n\nLinear models"
+    "text": "Comparison of models\n\n\n\n\n\n\n\n\n\nModel\nParameters\nHyperparameters\nStrengths\n\n\n\n\nDecision Trees\n\n\n\n\n\nKNNs\n\n\n\n\n\nSVM RBF\n\n\n\n\n\nLinear models"
   },
   {
     "objectID": "slides-11.html#sklearn-transformers",
@@ -901,6 +901,13 @@
     "title": "CPSC 330 Lecture 11: Midterm review",
     "section": "Regression Metrics",
     "text": "Regression Metrics\n\n\n\n\n\n\n\n\nMetric\nHow to generate/calculate?\nWhen to use?\n\n\n\n\nMSE\n\n\n\n\nRMSE\n\n\n\n\nr2 score\n\n\n\n\nMAPE"
+  },
+  {
+    "objectID": "slides-11.html#group-work-class-demo-live-coding-if-time-permits",
+    "href": "slides-11.html#group-work-class-demo-live-coding-if-time-permits",
+    "title": "CPSC 330 Lecture 11: Midterm review",
+    "section": "Group Work: Class Demo & Live Coding (if time permits)",
+    "text": "Group Work: Class Demo & Live Coding (if time permits)\nThis is mostly on regression metrics though it may serve as a good review of everything.\nFor this demo, each student should click this link to create a new repo in their accounts, then clone that repo locally to follow along with the demo from today.\n  \nIf you really don’t want to create a repo,\n\nNavigate to the cpsc330-2024W1 repo\nrun git pull to pull the latest files in the course repo\nLook for the demo file here"
   },
   {
     "objectID": "slides-01-intro.html#introductions",
