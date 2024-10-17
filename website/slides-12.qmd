@@ -1,0 +1,40 @@
+---
+title: 'CPSC 330 Lecture 12: Ensembles'
+description: Ensembles
+
+format:
+  revealjs:
+    embed-resources: true
+    slide-number: true
+    smaller: true
+    center: true
+    logo: img/UBC-CS-logo.png
+    resources:
+      - data/
+      - img/  
+
+editor:
+  render-on-save: true
+---
+
+## Announcements 
+
+- Midterm is being graded this week - we hope to have the results for you soon.
+
+## Ensembles
+
+Today, we will do a class of live coding and going through the Jupyter Notebook to get back into the swing of things.
+
+## Group Work: Class Demo & Live Coding (if time permits)
+
+For this demo, each student should [click this link](https://github.com/new?template_name=lecture12_demo&template_owner=ubc-cpsc330) to create a new repo in their accounts, then clone that repo locally to follow along with the demo from today.
+
+<br>
+<br>
+<br>
+
+If you really don't want to create a repo,
+
+- Navigate to the `cpsc330-2024W1` repo
+- run `git pull` to pull the latest files in the course repo
+- Look for the demo file [here](https://github.com/orgs/ubc-cpsc330/repositories)
