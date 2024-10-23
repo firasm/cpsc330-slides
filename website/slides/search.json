@@ -263,7 +263,7 @@
     "href": "slides.html",
     "title": "Overview",
     "section": "",
-    "text": "Title\n\n\nDescription\n\n\n\n\n\n\nLecture 1: Introduction to CPSC 330\n\n\nWhat is machine learning, types of machine learning, learning to navigate through the course materials, getting familiar with the course policies\n\n\n\n\nLecture 2: Terminology, Baselines, Decision Trees\n\n\nSupervised machine learning terminology: Features, target, examples, training, parameters and hyperparameters, Decision boundary, classification vs. regression, inference vs. prediction, accuracy vs. error, baselines, intuition of decision trees\n\n\n\n\nLecture 3: ML fundamentals\n\n\ngeneralization, data splitting, overfitting, underfitting, the fundamental tradeoff, the golden rule\n\n\n\n\nLecture 4: \\(k\\)-nearest neighbours and SVM RBFs\n\n\nintroduction to KNNs, hyperparameter n_neighbours or \\(k\\), C and gamma hyperparameters of SVM RBF, decision boundaries with different values of hyperparameters.\n\n\n\n\nLecture 5: Preprocessing and sklearn pipelines\n\n\nPre-processing, Transformations, and pipelines.\n\n\n\n\nLecture 6: Column transformer and text features\n\n\nPreprocessing and sklearn pipelines\n\n\n\n\nLecture 7: Linear models\n\n\nLinear regression, logistic regression, prediction probabilities, sigmoid, interpretation of coefficients\n\n\n\n\nCPSC 330 Lecture 8: Hyperparameter Optimization\n\n\nLinear regression, logistic regression, prediction probabilities, sigmoid, interpretation of coefficients\n\n\n\n\nCPSC 330 Lecture 9: Classification Metrics\n\n\nconfusion metrics, precision, recall, f1-score, PR curves, AP score, ROC curve, ROC AUC, class imbalance\n\n\n\n\nCPSC 330 Lecture 11: Midterm review\n\n\n \n\n\n\n\nCPSC 330 Lecture 12: Ensembles\n\n\n \n\n\n\n\n\nNo matching items"
+    "text": "Title\n\n\nDescription\n\n\n\n\n\n\nLecture 1: Introduction to CPSC 330\n\n\nWhat is machine learning, types of machine learning, learning to navigate through the course materials, getting familiar with the course policies\n\n\n\n\nLecture 2: Terminology, Baselines, Decision Trees\n\n\nSupervised machine learning terminology: Features, target, examples, training, parameters and hyperparameters, Decision boundary, classification vs. regression, inference vs. prediction, accuracy vs. error, baselines, intuition of decision trees\n\n\n\n\nLecture 3: ML fundamentals\n\n\ngeneralization, data splitting, overfitting, underfitting, the fundamental tradeoff, the golden rule\n\n\n\n\nLecture 4: \\(k\\)-nearest neighbours and SVM RBFs\n\n\nintroduction to KNNs, hyperparameter n_neighbours or \\(k\\), C and gamma hyperparameters of SVM RBF, decision boundaries with different values of hyperparameters.\n\n\n\n\nLecture 5: Preprocessing and sklearn pipelines\n\n\nPre-processing, Transformations, and pipelines.\n\n\n\n\nLecture 6: Column transformer and text features\n\n\nPreprocessing and sklearn pipelines\n\n\n\n\nLecture 7: Linear models\n\n\nLinear regression, logistic regression, prediction probabilities, sigmoid, interpretation of coefficients\n\n\n\n\nCPSC 330 Lecture 8: Hyperparameter Optimization\n\n\nLinear regression, logistic regression, prediction probabilities, sigmoid, interpretation of coefficients\n\n\n\n\nCPSC 330 Lecture 9: Classification Metrics\n\n\nconfusion metrics, precision, recall, f1-score, PR curves, AP score, ROC curve, ROC AUC, class imbalance\n\n\n\n\nCPSC 330 Lecture 11: Midterm review\n\n\n \n\n\n\n\nCPSC 330 Lecture 12: Ensembles\n\n\n \n\n\n\n\nCPSC 330 Lecture 13: Feature importances\n\n\n \n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "slides-02-terminology-decision-trees.html#announcements",
@@ -712,6 +712,62 @@
     "title": "Lecture 7: Linear models",
     "section": "Group Work: Class Demo & Live Coding",
     "text": "Group Work: Class Demo & Live Coding\nFor this demo, each student should click this link to create a new repo in their accounts, then clone that repo locally to follow along with the demo from today.\n  \nIf you really don’t want to create a repo,\n\nNavigate to the cpsc330-2024W1 repo\nrun git pull to pull the latest files in the course repo\nLook for the demo file here"
+  },
+  {
+    "objectID": "slides-13.html#announcements",
+    "href": "slides-13.html#announcements",
+    "title": "CPSC 330 Lecture 13: Feature importances",
+    "section": "Announcements",
+    "text": "Announcements\n\nHW4 grades are released\nHW5 is due next week Monday. Make use of office hours and tutorials this week."
+  },
+  {
+    "objectID": "slides-13.html#scenario-1-which-model-would-you-pick",
+    "href": "slides-13.html#scenario-1-which-model-would-you-pick",
+    "title": "CPSC 330 Lecture 13: Feature importances",
+    "section": "Scenario 1: Which model would you pick",
+    "text": "Scenario 1: Which model would you pick\nPredicting whether a patient is likely to develop diabetes based on features such as age, blood pressure, glucose levels, and BMI. You have two models:\n\nLGBM which results in 0.9 f1 score\nLogistic regression which results in 0.84 f1 score\n\nWhich model would you pick? Why?"
+  },
+  {
+    "objectID": "slides-13.html#scenario-2",
+    "href": "slides-13.html#scenario-2",
+    "title": "CPSC 330 Lecture 13: Feature importances",
+    "section": "Scenario 2",
+    "text": "Scenario 2\nPredicting whether a user will purchase a product next based on their browsing history, previous purchases, and click behavior. You have two models:\n\nLGBM which results in 0.9 F1 score\nLogistic regression which results in 0.84 F1 score\n\nWhich model would you pick? Why?"
+  },
+  {
+    "objectID": "slides-13.html#transparency",
+    "href": "slides-13.html#transparency",
+    "title": "CPSC 330 Lecture 13: Feature importances",
+    "section": "Transparency",
+    "text": "Transparency\n\nIn many domains understanding the relationship between features and predictions is critical for trust and regulatory compliance.\n\nFeature importances\n\nHow does the output depend upon the input?\nHow do the predictions change as a function of a particular feature?"
+  },
+  {
+    "objectID": "slides-13.html#correlations",
+    "href": "slides-13.html#correlations",
+    "title": "CPSC 330 Lecture 13: Feature importances",
+    "section": "Correlations",
+    "text": "Correlations\n\n\n\n\n\nWhat are some limitations of correlations?"
+  },
+  {
+    "objectID": "slides-13.html#interepreting-coefficients",
+    "href": "slides-13.html#interepreting-coefficients",
+    "title": "CPSC 330 Lecture 13: Feature importances",
+    "section": "Interepreting coefficients",
+    "text": "Interepreting coefficients\n\nLinear models are interpretable because you get coefficients associated with different features.\nEach coefficient represents the estimated impact of a feature on the target variable, assuming all other features are held constant.\nIn a Ridge model,\n\nA positive coefficient indicates that as the feature’s value increases, the predicted value also increases.\n\nA negative coefficient indicates that an increase in the feature’s value leads to a decrease in the predicted value."
+  },
+  {
+    "objectID": "slides-13.html#interepreting-coefficients-1",
+    "href": "slides-13.html#interepreting-coefficients-1",
+    "title": "CPSC 330 Lecture 13: Feature importances",
+    "section": "Interepreting coefficients",
+    "text": "Interepreting coefficients\n\nWhen we have different types of preprocessed features, what challenges you might face in interpreting them?\n\nOrdinally encoded features\nOne-hot encoded features\nScaled numeric features"
+  },
+  {
+    "objectID": "slides-13.html#group-work-class-demo-live-coding-if-time-permits",
+    "href": "slides-13.html#group-work-class-demo-live-coding-if-time-permits",
+    "title": "CPSC 330 Lecture 13: Feature importances",
+    "section": "Group Work: Class Demo & Live Coding (if time permits)",
+    "text": "Group Work: Class Demo & Live Coding (if time permits)\nFor this demo, each student should click this link to create a new repo in their accounts, then clone that repo locally to follow along with the demo from today.\n  \nIf you really don’t want to create a repo,\n\nNavigate to the cpsc330-2024W1 repo\nrun git pull to pull the latest files in the course repo\nLook for the demo file here"
   },
   {
     "objectID": "slides-06.html#announcements",

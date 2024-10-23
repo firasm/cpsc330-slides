@@ -7,8 +7,6 @@ format:
         html-math-method: plain
         slide-number: true
         slide-level: 2
-        theme:
-          - slides.scss
         center: true
         logo: img/UBC-CS-logo.png
         resources:

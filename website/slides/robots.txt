@@ -1,1 +1,0 @@
-Sitemap: https://firasm.github.io/cpsc330-slides/sitemap.xml
