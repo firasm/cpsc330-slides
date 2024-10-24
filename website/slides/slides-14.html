@@ -336,12 +336,18 @@
 <h2>Announcements</h2>
 <ul>
 <li>HW5 is due next week Monday. Make use of office hours and tutorials this week.</li>
+<li>CPSC 330 final exam window (in the CBTF) will be Dec.&nbsp;17-19</li>
+<li>Midterm 1 results will be out tonight (as soon as I get home!)
+<ul>
+<li>Viewing sessions (in the CBTF) will be next week</li>
+</ul></li>
 </ul>
 </section>
-<section>
-<section id="feature-engineering-motivation" class="title-slide slide level1 center">
-<h1>Feature engineering motivation</h1>
-
+<section id="continue-with-lecture-13-demo" class="slide level2 center">
+<h2>Continue with Lecture 13 demo</h2>
+<ul>
+<li>SHAP!</li>
+</ul>
 </section>
 <section id="iclicker-exercise-14.0" class="slide level2 center">
 <h2>iClicker Exercise 14.0</h2>
@@ -352,6 +358,11 @@
 <li>Most recent deep neural network model</li>
 <li>Most recent optimization algorithm</li>
 </ol>
+</section>
+<section>
+<section id="feature-engineering-motivation" class="title-slide slide level1 center">
+<h1>Feature engineering motivation</h1>
+
 </section>
 <section id="discussion-question" class="slide level2 center">
 <h2>Discussion question</h2>
@@ -430,34 +441,43 @@ Coming up with features is difficult, time-consuming, requires expert knowledge.
 <ul>
 <li>Standardization</li>
 </ul></li>
-<li>For regression-based methods like linear regression, we want targets to have a linear dependency on features. # <a href="https://github.com/UBC-CS/cpsc330-2024W1/blob/main/lectures/102-Varada-lectures/class_demos/demo_12-feature-importances.ipynb">Class demo</a></li>
+<li>For regression-based methods like linear regression, we want targets to have a linear dependency on features.</li>
 </ul></li>
 </ul>
 </section>
-<section id="domain-specific-transformations" class="slide level2 center">
-<h2>Domain-specific transformations</h2>
-<p>In some domains there are natural transformations to do: - Spectrograms (sound data) - Wavelets (image data) - Convolutions</p>
-
-<img data-src="img/spectogram.png" class="r-stretch"><p><a href="https://en.wikipedia.org/wiki/Spectrogram">Source</a></p>
-</section>
-<section id="demo-of-feature-engineering-and-selection" class="slide level2 center">
-<h2><a href="https://github.com/UBC-CS/cpsc330-2024W1/blob/main/lectures/102-Varada-lectures/class_demos/demo_14-feature-engineering-selection.ipynb">Demo of feature engineering and selection</a></h2>
-</section>
-<section id="iclicker-exercise-14.1" class="slide level2 center">
-<h2>(iClicker) Exercise 14.1</h2>
-<p><strong>iClicker cloud join link: <a href="https://join.iclicker.com/VYFJ">https://join.iclicker.com/VYFJ</a></strong></p>
-<p><strong>Select all of the following statements which are TRUE.</strong></p>
+<section id="motivating-feature-engineering" class="slide level2 center">
+<h2>Motivating Feature Engineering</h2>
+<p>Questions:</p>
 <ul>
-<li><ol type="A">
-<li>Simple association-based feature selection approaches do not take into account the interaction between features.</li>
-</ol></li>
-<li><ol start="2" type="A">
-<li>You can carry out feature selection using linear models by pruning the features which have very small weights (i.e., coefficients less than a threshold).</li>
-</ol></li>
-<li><ol start="3" type="A">
-<li>The order of features removed given by <code>rfe.ranking_</code> is the same as the order of original feature importances given by the model.</li>
-</ol></li>
+<li>What are two possible ways we could “engineer” features?
+<ul>
+<li>Think broadly and philosophically rathern than an implementation…</li>
+</ul></li>
 </ul>
+<!-- 
+## [Demo of feature engineering and selection](https://github.com/UBC-CS/cpsc330-2024W1/blob/main/lectures/102-Varada-lectures/class_demos/demo_14-feature-engineering-selection.ipynb)
+
+## Domain-specific transformations
+
+In some domains there are natural transformations to do:
+- Spectrograms (sound data)
+- Wavelets (image data)
+- Convolutions 
+
+![](img/spectogram.png)
+
+[Source](https://en.wikipedia.org/wiki/Spectrogram) 
+
+
+## (iClicker) Exercise 14.1 
+
+**iClicker cloud join link: [https://join.iclicker.com/VYFJ](https://join.iclicker.com/VYFJ)**
+
+**Select all of the following statements which are TRUE.**
+
+- (A) Simple association-based feature selection approaches do not take into account the interaction between features.
+- (B) You can carry out feature selection using linear models by pruning the features which have very small weights (i.e., coefficients less than a threshold).
+- (C) The order of features removed given by `rfe.ranking_` is the same as the order of original feature importances given by the model.   -->
 
 <div class="quarto-auto-generated-content">
 <p><img src="img/UBC-CS-logo.png" class="slide-logo"></p>
@@ -746,7 +766,7 @@ Coming up with features is difficult, time-consuming, requires expert knowledge.
       }
         var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
         var mailtoRegex = new RegExp(/^mailto:/);
-          var filterRegex = new RegExp('/' + window.location.host + '/');
+          var filterRegex = new RegExp("https:\/\/firasm\.github\.io\/cpsc330-slides\/");
         var isInternal = (href) => {
             return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
         }

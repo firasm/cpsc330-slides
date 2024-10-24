@@ -270,7 +270,14 @@
     "href": "slides-14.html#announcements",
     "title": "CPSC 330 Lecture 14: Feature Engineering and Selection",
     "section": "Announcements",
-    "text": "Announcements\n\nHW5 is due next week Monday. Make use of office hours and tutorials this week."
+    "text": "Announcements\n\nHW5 is due next week Monday. Make use of office hours and tutorials this week.\nCPSC 330 final exam window (in the CBTF) will be Dec. 17-19\nMidterm 1 results will be out tonight (as soon as I get home!)\n\nViewing sessions (in the CBTF) will be next week"
+  },
+  {
+    "objectID": "slides-14.html#continue-with-lecture-13-demo",
+    "href": "slides-14.html#continue-with-lecture-13-demo",
+    "title": "CPSC 330 Lecture 14: Feature Engineering and Selection",
+    "section": "Continue with Lecture 13 demo",
+    "text": "Continue with Lecture 13 demo\n\nSHAP!"
   },
   {
     "objectID": "slides-14.html#iclicker-exercise-14.0",
@@ -333,14 +340,14 @@
     "href": "slides-14.html#the-best-features-may-be-dependent-on-the-model-you-use",
     "title": "CPSC 330 Lecture 14: Feature Engineering and Selection",
     "section": "The best features may be dependent on the model you use",
-    "text": "The best features may be dependent on the model you use\n\nExamples:\n\nFor counting-based methods like decision trees separate relevant groups of variable values\n\nDiscretization makes sense\n\nFor distance-based methods like KNN, we want different class labels to be “far”.\n\nStandardization\n\nFor regression-based methods like linear regression, we want targets to have a linear dependency on features. # Class demo"
+    "text": "The best features may be dependent on the model you use\n\nExamples:\n\nFor counting-based methods like decision trees separate relevant groups of variable values\n\nDiscretization makes sense\n\nFor distance-based methods like KNN, we want different class labels to be “far”.\n\nStandardization\n\nFor regression-based methods like linear regression, we want targets to have a linear dependency on features."
   },
   {
-    "objectID": "slides-14.html#domain-specific-transformations",
-    "href": "slides-14.html#domain-specific-transformations",
+    "objectID": "slides-14.html#motivating-feature-engineering",
+    "href": "slides-14.html#motivating-feature-engineering",
     "title": "CPSC 330 Lecture 14: Feature Engineering and Selection",
-    "section": "Domain-specific transformations",
-    "text": "Domain-specific transformations\nIn some domains there are natural transformations to do: - Spectrograms (sound data) - Wavelets (image data) - Convolutions\n\nSource"
+    "section": "Motivating Feature Engineering",
+    "text": "Motivating Feature Engineering\nQuestions:\n\nWhat are two possible ways we could “engineer” features?\n\nThink broadly and philosophically rathern than an implementation…"
   },
   {
     "objectID": "slides-11.html#announcements",
@@ -1643,19 +1650,5 @@
     "title": "CPSC 330 Lecture 8: Hyperparameter Optimization",
     "section": "Group Work: Invention Activity",
     "text": "Group Work: Invention Activity\nSo far we have looked only at score as a metric for evaluating our metrics.\nWhat else could be used as a possible metric? Think of what else might be important for machine learning practioners and stakeholders?\nIn your group, brainstorm 4 alternative options:"
-  },
-  {
-    "objectID": "slides-14.html#demo-of-feature-engineering-and-selection",
-    "href": "slides-14.html#demo-of-feature-engineering-and-selection",
-    "title": "CPSC 330 Lecture 14: Feature Engineering and Selection",
-    "section": "Demo of feature engineering and selection",
-    "text": "Demo of feature engineering and selection"
-  },
-  {
-    "objectID": "slides-14.html#iclicker-exercise-14.1",
-    "href": "slides-14.html#iclicker-exercise-14.1",
-    "title": "CPSC 330 Lecture 14: Feature Engineering and Selection",
-    "section": "(iClicker) Exercise 14.1",
-    "text": "(iClicker) Exercise 14.1\niClicker cloud join link: https://join.iclicker.com/VYFJ\nSelect all of the following statements which are TRUE.\n\n\nSimple association-based feature selection approaches do not take into account the interaction between features.\n\n\nYou can carry out feature selection using linear models by pruning the features which have very small weights (i.e., coefficients less than a threshold).\n\n\nThe order of features removed given by rfe.ranking_ is the same as the order of original feature importances given by the model."
   }
 ]

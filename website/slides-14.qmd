@@ -30,6 +30,10 @@ editor:
 
 - SHAP!
 
+## Break
+
+Let's take a 10-min break
+
 ## iClicker Exercise 14.0
 
 **iClicker cloud join link: [https://join.iclicker.com/VYFJ](https://join.iclicker.com/VYFJ)**
@@ -58,16 +62,17 @@ Upon analyzing the data, you notice a pattern: flights tend to be delayed more o
 ## Activity: Measuring quality of the data 
 - Discuss some attributes of good- and bad-quality data
 
-
 ## What is feature engineering?  
+
+<blockquote>
+<b>Feature engineering</b> is the process of transforming raw data into features that better represent the underlying problem to the predictive models, resulting in improved model accuracy on unseen data.<br> 
+- [Jason Brownlee](https://machinelearningmastery.com)
+</blockquote> 
+
 
 - Better features: more flexibility, higher score, we can get by with simple and more interpretable models. 
 - If your features, i.e., representation is bad, whatever fancier model you build is not going to help.
 
-<blockquote>
-<b>Feature engineering</b> is the process of transforming raw data into features that better represent the underlying problem to the predictive models, resulting in improved model accuracy on unseen data.<br> 
-- Jason Brownlee    
-</blockquote> 
 
 ## Some quotes on feature engineering 
 
