@@ -280,6 +280,13 @@
     "text": "Continue with Lecture 13 demo\n\nSHAP!"
   },
   {
+    "objectID": "slides-14.html#break",
+    "href": "slides-14.html#break",
+    "title": "CPSC 330 Lecture 14: Feature Engineering and Selection",
+    "section": "Break",
+    "text": "Break\nLet’s take a 10-min break"
+  },
+  {
     "objectID": "slides-14.html#iclicker-exercise-14.0",
     "href": "slides-14.html#iclicker-exercise-14.0",
     "title": "CPSC 330 Lecture 14: Feature Engineering and Selection",
@@ -312,7 +319,7 @@
     "href": "slides-14.html#what-is-feature-engineering",
     "title": "CPSC 330 Lecture 14: Feature Engineering and Selection",
     "section": "What is feature engineering?",
-    "text": "What is feature engineering?\n\nBetter features: more flexibility, higher score, we can get by with simple and more interpretable models.\nIf your features, i.e., representation is bad, whatever fancier model you build is not going to help.\n\n\nFeature engineering is the process of transforming raw data into features that better represent the underlying problem to the predictive models, resulting in improved model accuracy on unseen data. - Jason Brownlee"
+    "text": "What is feature engineering?\n\nFeature engineering is the process of transforming raw data into features that better represent the underlying problem to the predictive models, resulting in improved model accuracy on unseen data. - Jason Brownlee\n\n\nBetter features: more flexibility, higher score, we can get by with simple and more interpretable models.\nIf your features, i.e., representation is bad, whatever fancier model you build is not going to help."
   },
   {
     "objectID": "slides-14.html#some-quotes-on-feature-engineering",
