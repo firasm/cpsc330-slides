@@ -2,62 +2,66 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://firasm.github.io/cpsc330-slides/slides-01-intro.html</loc>
-    <lastmod>2024-10-24T23:40:28.702Z</lastmod>
+    <lastmod>2024-10-29T23:36:22.673Z</lastmod>
   </url>
   <url>
     <loc>https://firasm.github.io/cpsc330-slides/slides-04-kNNs-SVM-RBF.html</loc>
-    <lastmod>2024-10-24T23:40:28.702Z</lastmod>
+    <lastmod>2024-10-29T23:36:22.677Z</lastmod>
   </url>
   <url>
     <loc>https://firasm.github.io/cpsc330-slides/index.html</loc>
-    <lastmod>2024-10-24T23:40:28.702Z</lastmod>
-  </url>
-  <url>
-    <loc>https://firasm.github.io/cpsc330-slides/slides-11.html</loc>
-    <lastmod>2024-10-24T23:40:28.706Z</lastmod>
-  </url>
-  <url>
-    <loc>https://firasm.github.io/cpsc330-slides/slides-03-ml-fundamentals.html</loc>
-    <lastmod>2024-10-24T23:40:28.702Z</lastmod>
-  </url>
-  <url>
-    <loc>https://firasm.github.io/cpsc330-slides/slides.html</loc>
-    <lastmod>2024-10-24T23:40:28.706Z</lastmod>
-  </url>
-  <url>
-    <loc>https://firasm.github.io/cpsc330-slides/slides-07.html</loc>
-    <lastmod>2024-10-24T23:40:28.706Z</lastmod>
-  </url>
-  <url>
-    <loc>https://firasm.github.io/cpsc330-slides/slides-02-terminology-decision-trees.html</loc>
-    <lastmod>2024-10-24T23:40:28.702Z</lastmod>
-  </url>
-  <url>
-    <loc>https://firasm.github.io/cpsc330-slides/slides-13.html</loc>
-    <lastmod>2024-10-24T23:40:28.706Z</lastmod>
-  </url>
-  <url>
-    <loc>https://firasm.github.io/cpsc330-slides/slides-06.html</loc>
-    <lastmod>2024-10-24T23:40:28.702Z</lastmod>
-  </url>
-  <url>
-    <loc>https://firasm.github.io/cpsc330-slides/slides-14.html</loc>
-    <lastmod>2024-10-24T23:40:28.706Z</lastmod>
-  </url>
-  <url>
-    <loc>https://firasm.github.io/cpsc330-slides/slides-05-preprocessing-pipelines.html</loc>
-    <lastmod>2024-10-24T23:40:28.702Z</lastmod>
+    <lastmod>2024-10-29T23:36:22.673Z</lastmod>
   </url>
   <url>
     <loc>https://firasm.github.io/cpsc330-slides/slides-12.html</loc>
-    <lastmod>2024-10-24T23:40:28.706Z</lastmod>
+    <lastmod>2024-10-29T23:36:22.681Z</lastmod>
+  </url>
+  <url>
+    <loc>https://firasm.github.io/cpsc330-slides/slides-05-preprocessing-pipelines.html</loc>
+    <lastmod>2024-10-29T23:36:22.677Z</lastmod>
+  </url>
+  <url>
+    <loc>https://firasm.github.io/cpsc330-slides/slides-14.html</loc>
+    <lastmod>2024-10-29T23:36:22.681Z</lastmod>
+  </url>
+  <url>
+    <loc>https://firasm.github.io/cpsc330-slides/slides-06.html</loc>
+    <lastmod>2024-10-29T23:36:22.677Z</lastmod>
+  </url>
+  <url>
+    <loc>https://firasm.github.io/cpsc330-slides/slides-13.html</loc>
+    <lastmod>2024-10-29T23:36:22.681Z</lastmod>
+  </url>
+  <url>
+    <loc>https://firasm.github.io/cpsc330-slides/slides-02-terminology-decision-trees.html</loc>
+    <lastmod>2024-10-29T23:36:22.673Z</lastmod>
+  </url>
+  <url>
+    <loc>https://firasm.github.io/cpsc330-slides/slides-07.html</loc>
+    <lastmod>2024-10-29T23:36:22.681Z</lastmod>
+  </url>
+  <url>
+    <loc>https://firasm.github.io/cpsc330-slides/slides.html</loc>
+    <lastmod>2024-10-29T23:36:22.681Z</lastmod>
+  </url>
+  <url>
+    <loc>https://firasm.github.io/cpsc330-slides/slides-03-ml-fundamentals.html</loc>
+    <lastmod>2024-10-29T23:36:22.677Z</lastmod>
+  </url>
+  <url>
+    <loc>https://firasm.github.io/cpsc330-slides/slides-11.html</loc>
+    <lastmod>2024-10-29T23:36:22.681Z</lastmod>
+  </url>
+  <url>
+    <loc>https://firasm.github.io/cpsc330-slides/slides-15.html</loc>
+    <lastmod>2024-10-29T23:36:22.681Z</lastmod>
   </url>
   <url>
     <loc>https://firasm.github.io/cpsc330-slides/slides-08.html</loc>
-    <lastmod>2024-10-24T23:40:28.706Z</lastmod>
+    <lastmod>2024-10-29T23:36:22.681Z</lastmod>
   </url>
   <url>
     <loc>https://firasm.github.io/cpsc330-slides/slides-09.html</loc>
-    <lastmod>2024-10-24T23:40:28.706Z</lastmod>
+    <lastmod>2024-10-29T23:36:22.681Z</lastmod>
   </url>
 </urlset>
