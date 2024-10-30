@@ -27,7 +27,7 @@ editor:
 
 Last class we distinguished between Model-based selection and recursive feature feature elimination (RFE).
 
-Let's chat a bit more about [Recursive Feature Elimination with Cross-validation](https://ubc.ca.panopto.com/Panopto/Pages/Viewer.aspx?id=50425d4f-276b-47fe-8d6e-b1e001140067).
+Let's chat a bit more about [Recursive Feature Elimination with Cross-validation](https://ubc-cs.github.io/cpsc330-2024W1/lectures/notes/14_feature-engineering-selection.html#recursive-feature-elimination-rfe).
 
 ## Pause and Reflect 
 
