@@ -1568,11 +1568,11 @@
     "text": "K-Means: failure case 3\n\nIt assumes that all directions are equally important for each cluster and fails to identify non-spherical clusters."
   },
   {
-    "objectID": "slides-16.html#dbscan",
-    "href": "slides-16.html#dbscan",
+    "objectID": "slides-16.html#dbscan-1",
+    "href": "slides-16.html#dbscan-1",
     "title": "CPSC 330 Lecture 16: DBSCAN, Hierarchical Clustering",
     "section": "DBSCAN",
-    "text": "DBSCAN\n\nDensity-Based Spatial Clustering of Applications with Noise\nA density-based clustering algorithm\n\n\nX, y = make_moons(n_samples=200, noise=0.08, random_state=42)\ndbscan = DBSCAN(eps=0.2)\ndbscan.fit(X)\nplot_original_clustered(X, dbscan, dbscan.labels_)"
+    "text": "DBSCAN\n\nX, y = make_moons(n_samples=200, noise=0.08, random_state=42)\ndbscan = DBSCAN(eps=0.2)\ndbscan.fit(X)\nplot_original_clustered(X, dbscan, dbscan.labels_)"
   },
   {
     "objectID": "slides-16.html#how-does-it-work",
@@ -1603,32 +1603,32 @@
     "text": "DBSCAN: failure cases\n\nLet’s consider this dataset with three clusters of varying densities.\n\nK-Means performs better compared to DBSCAN. But it has the benefit of knowing the value of K in advance.\n\n\n\n[ 0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15]"
   },
   {
-    "objectID": "slides-16.html#hierarchical-clustering",
-    "href": "slides-16.html#hierarchical-clustering",
+    "objectID": "slides-16.html#break",
+    "href": "slides-16.html#break",
     "title": "CPSC 330 Lecture 16: DBSCAN, Hierarchical Clustering",
-    "section": "Hierarchical clustering",
-    "text": "Hierarchical clustering"
+    "section": "Break",
+    "text": "Break\nLet’s take a 10-min break!"
   },
   {
     "objectID": "slides-16.html#dendrogram",
     "href": "slides-16.html#dendrogram",
     "title": "CPSC 330 Lecture 16: DBSCAN, Hierarchical Clustering",
     "section": "Dendrogram",
-    "text": "Dendrogram\nDefinition: visual representation of a tree, in particular, the hierarchical representation of data"
+    "text": "Dendrogram\nDefinition: visual representation of a tree, in particular, the hierarchical representation of data…\n\nSource"
   },
   {
-    "objectID": "slides-16.html#interpreting-dendrograms",
-    "href": "slides-16.html#interpreting-dendrograms",
+    "objectID": "slides-16.html#example-languages",
+    "href": "slides-16.html#example-languages",
     "title": "CPSC 330 Lecture 16: DBSCAN, Hierarchical Clustering",
-    "section": "Interpreting Dendrograms",
-    "text": "Interpreting Dendrograms\n\nSource"
+    "section": "Example: Languages",
+    "text": "Example: Languages\n\nSource"
   },
   {
-    "objectID": "slides-16.html#example-from-outside-machine-learning",
-    "href": "slides-16.html#example-from-outside-machine-learning",
+    "objectID": "slides-16.html#hierarchical-clustering",
+    "href": "slides-16.html#hierarchical-clustering",
     "title": "CPSC 330 Lecture 16: DBSCAN, Hierarchical Clustering",
-    "section": "Example from outside Machine Learning",
-    "text": "Example from outside Machine Learning\n\nSource"
+    "section": "Hierarchical clustering",
+    "text": "Hierarchical clustering"
   },
   {
     "objectID": "slides-16.html#flat-clusters",
@@ -1944,12 +1944,5 @@
     "title": "CPSC 330 Lecture 8: Hyperparameter Optimization",
     "section": "Group Work: Invention Activity",
     "text": "Group Work: Invention Activity\nSo far we have looked only at score as a metric for evaluating our metrics.\nWhat else could be used as a possible metric? Think of what else might be important for machine learning practioners and stakeholders?\nIn your group, brainstorm 4 alternative options:"
-  },
-  {
-    "objectID": "slides-16.html#dbscan-1",
-    "href": "slides-16.html#dbscan-1",
-    "title": "CPSC 330 Lecture 16: DBSCAN, Hierarchical Clustering",
-    "section": "DBSCAN",
-    "text": "DBSCAN\n\nX, y = make_moons(n_samples=200, noise=0.08, random_state=42)\ndbscan = DBSCAN(eps=0.2)\ndbscan.fit(X)\nplot_original_clustered(X, dbscan, dbscan.labels_)"
   }
 ]

@@ -406,7 +406,7 @@
 <li>heads up: you will need to install many packages (welcome to real-life ML!)</li>
 </ul></li>
 </ul>
-<div id="0df73c1c" class="cell" data-execution_count="1">
+<div id="e4a1326c" class="cell" data-execution_count="1">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -477,7 +477,7 @@
 <ul>
 <li>K-Means performs poorly if the clusters have more complex shapes (e.g., two moons data below).</li>
 </ul>
-<div id="909ddfc3" class="cell" data-execution_count="2">
+<div id="f42079ec" class="cell" data-execution_count="2">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -492,7 +492,7 @@
 <ul>
 <li>Again, K-Means is unable to capture complex cluster shapes.</li>
 </ul>
-<div id="42e699d0" class="cell" data-execution_count="3">
+<div id="00157024" class="cell" data-execution_count="3">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -507,7 +507,7 @@
 <ul>
 <li>It assumes that all directions are equally important for each cluster and fails to identify non-spherical clusters.</li>
 </ul>
-<div id="e535c766" class="cell" data-execution_count="4">
+<div id="c090ea9b" class="cell" data-execution_count="4">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -532,7 +532,7 @@
 </section>
 <section id="dbscan-1" class="slide level2 center">
 <h2>DBSCAN</h2>
-<div id="42be6c73" class="cell" data-execution_count="5">
+<div id="1c547144" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a>X, y <span class="op">=</span> make_moons(n_samples<span class="op">=</span><span class="dv">200</span>, noise<span class="op">=</span><span class="fl">0.08</span>, random_state<span class="op">=</span><span class="dv">42</span>)</span>
 <span id="cb1-2"><a></a>dbscan <span class="op">=</span> DBSCAN(eps<span class="op">=</span><span class="fl">0.2</span>)</span>
 <span id="cb1-3"><a></a>dbscan.fit(X)</span>
@@ -573,7 +573,7 @@
 </li>
 <li>K-Means performs better compared to DBSCAN. But it has the benefit of knowing the value of <span class="math inline"><em>K</em></span> in advance.</li>
 </ul>
-<div id="863c2414" class="cell" data-execution_count="6">
+<div id="f8be5d75" class="cell" data-execution_count="6">
 <div class="cell-output cell-output-stdout">
 <pre><code>[ 0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15]</code></pre>
 </div>
@@ -586,9 +586,24 @@
 </div>
 </div>
 </section>
+<section id="break" class="slide level2 center">
+<h2>Break</h2>
+<p>Let’s take a 10-min break!</p>
+</section>
+<section id="dendrogram" class="slide level2 center">
+<h2>Dendrogram</h2>
+<p>Definition: visual representation of a tree, in particular, the hierarchical representation of data…</p>
+
+<img data-src="img/reading_dendrogram.png" class="r-stretch"><p><a href="https://www.displayr.com/what-is-dendrogram/">Source</a></p>
+</section>
+<section id="example-languages" class="slide level2 center">
+<h2>Example: Languages</h2>
+
+<img data-src="img/dendrogram_languages.jpg" class="r-stretch"><p><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC5325856/">Source</a></p>
+</section>
 <section id="hierarchical-clustering" class="slide level2 center">
 <h2>Hierarchical clustering</h2>
-<div id="04ff5cab" class="cell" data-execution_count="7">
+<div id="09f504c3" class="cell" data-execution_count="7">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -598,27 +613,13 @@
 </div>
 </div>
 </section>
-<section id="dendrogram" class="slide level2 center">
-<h2>Dendrogram</h2>
-<p>Definition: visual representation of a tree, in particular, the hierarchical representation of data</p>
-</section>
-<section id="interpreting-dendrograms" class="slide level2 center">
-<h2>Interpreting Dendrograms</h2>
-
-<img data-src="img/reading_dendrogram.png" class="r-stretch"><p><a href="https://www.displayr.com/what-is-dendrogram/">Source</a></p>
-</section>
-<section id="example-from-outside-machine-learning" class="slide level2 center">
-<h2>Example from outside Machine Learning</h2>
-
-<img data-src="img/DBSCAN_search.gif" class="r-stretch"><p><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC5325856/">Source</a></p>
-</section>
 <section id="flat-clusters" class="slide level2 center">
 <h2>Flat clusters</h2>
 <ul>
 <li>This is good but how can we get cluster labels from a dendrogram?</li>
 <li>We can bring the clustering to a “flat” format use <code>fcluster</code></li>
 </ul>
-<div id="8402ea25" class="cell" data-execution_count="8">
+<div id="6ac87c37" class="cell" data-execution_count="8">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -986,7 +987,7 @@
       }
         var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
         var mailtoRegex = new RegExp(/^mailto:/);
-          var filterRegex = new RegExp('/' + window.location.host + '/');
+          var filterRegex = new RegExp("https:\/\/firasm\.github\.io\/cpsc330-slides\/");
         var isInternal = (href) => {
             return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
         }
