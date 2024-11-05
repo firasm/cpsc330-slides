@@ -900,7 +900,7 @@
     "href": "slides.html",
     "title": "Overview",
     "section": "",
-    "text": "Title\n\n\nDescription\n\n\n\n\n\n\nLecture 1: Introduction to CPSC 330\n\n\nWhat is machine learning, types of machine learning, learning to navigate through the course materials, getting familiar with the course policies\n\n\n\n\nLecture 2: Terminology, Baselines, Decision Trees\n\n\nSupervised machine learning terminology: Features, target, examples, training, parameters and hyperparameters, Decision boundary, classification vs. regression, inference vs. prediction, accuracy vs. error, baselines, intuition of decision trees\n\n\n\n\nLecture 3: ML fundamentals\n\n\ngeneralization, data splitting, overfitting, underfitting, the fundamental tradeoff, the golden rule\n\n\n\n\nLecture 4: \\(k\\)-nearest neighbours and SVM RBFs\n\n\nintroduction to KNNs, hyperparameter n_neighbours or \\(k\\), C and gamma hyperparameters of SVM RBF, decision boundaries with different values of hyperparameters.\n\n\n\n\nLecture 5: Preprocessing and sklearn pipelines\n\n\nPre-processing, Transformations, and pipelines.\n\n\n\n\nLecture 6: Column transformer and text features\n\n\nPreprocessing and sklearn pipelines\n\n\n\n\nLecture 7: Linear models\n\n\nLinear regression, logistic regression, prediction probabilities, sigmoid, interpretation of coefficients\n\n\n\n\nCPSC 330 Lecture 8: Hyperparameter Optimization\n\n\nLinear regression, logistic regression, prediction probabilities, sigmoid, interpretation of coefficients\n\n\n\n\nCPSC 330 Lecture 9: Classification Metrics\n\n\nconfusion metrics, precision, recall, f1-score, PR curves, AP score, ROC curve, ROC AUC, class imbalance\n\n\n\n\nCPSC 330 Lecture 11: Midterm review\n\n\n \n\n\n\n\nCPSC 330 Lecture 12: Ensembles\n\n\n \n\n\n\n\nCPSC 330 Lecture 13: Feature importances\n\n\n \n\n\n\n\nCPSC 330 Lecture 14: Feature Engineering and Selection\n\n\n \n\n\n\n\nCPSC 330 Lecture 15: K-Means\n\n\n \n\n\n\n\nCPSC 330 Lecture 16: DBSCAN, Hierarchical Clustering\n\n\n \n\n\n\n\n\nNo matching items"
+    "text": "Title\n\n\nDescription\n\n\n\n\n\n\nLecture 1: Introduction to CPSC 330\n\n\nWhat is machine learning, types of machine learning, learning to navigate through the course materials, getting familiar with the course policies\n\n\n\n\nLecture 2: Terminology, Baselines, Decision Trees\n\n\nSupervised machine learning terminology: Features, target, examples, training, parameters and hyperparameters, Decision boundary, classification vs. regression, inference vs. prediction, accuracy vs. error, baselines, intuition of decision trees\n\n\n\n\nLecture 3: ML fundamentals\n\n\ngeneralization, data splitting, overfitting, underfitting, the fundamental tradeoff, the golden rule\n\n\n\n\nLecture 4: \\(k\\)-nearest neighbours and SVM RBFs\n\n\nintroduction to KNNs, hyperparameter n_neighbours or \\(k\\), C and gamma hyperparameters of SVM RBF, decision boundaries with different values of hyperparameters.\n\n\n\n\nLecture 5: Preprocessing and sklearn pipelines\n\n\nPre-processing, Transformations, and pipelines.\n\n\n\n\nLecture 6: Column transformer and text features\n\n\nPreprocessing and sklearn pipelines\n\n\n\n\nLecture 7: Linear models\n\n\nLinear regression, logistic regression, prediction probabilities, sigmoid, interpretation of coefficients\n\n\n\n\nCPSC 330 Lecture 8: Hyperparameter Optimization\n\n\nLinear regression, logistic regression, prediction probabilities, sigmoid, interpretation of coefficients\n\n\n\n\nCPSC 330 Lecture 9: Classification Metrics\n\n\nconfusion metrics, precision, recall, f1-score, PR curves, AP score, ROC curve, ROC AUC, class imbalance\n\n\n\n\nCPSC 330 Lecture 11: Midterm review\n\n\n \n\n\n\n\nCPSC 330 Lecture 12: Ensembles\n\n\n \n\n\n\n\nCPSC 330 Lecture 13: Feature importances\n\n\n \n\n\n\n\nCPSC 330 Lecture 14: Feature Engineering and Selection\n\n\n \n\n\n\n\nCPSC 330 Lecture 15: K-Means\n\n\n \n\n\n\n\nCPSC 330 Lecture 16: DBSCAN, Hierarchical Clustering\n\n\n \n\n\n\n\nCPSC 330 Lecture 17: Recommender Systems\n\n\n \n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "slides-07.html#announcements",
@@ -1111,6 +1111,69 @@
     "title": "Lecture 7: Linear models",
     "section": "Group Work: Class Demo & Live Coding",
     "text": "Group Work: Class Demo & Live Coding\nFor this demo, each student should click this link to create a new repo in their accounts, then clone that repo locally to follow along with the demo from today.\n  \nIf you really don’t want to create a repo,\n\nNavigate to the cpsc330-2024W1 repo\nrun git pull to pull the latest files in the course repo\nLook for the demo file here"
+  },
+  {
+    "objectID": "slides-17.html#announcements",
+    "href": "slides-17.html#announcements",
+    "title": "CPSC 330 Lecture 17: Recommender Systems",
+    "section": "Announcements",
+    "text": "Announcements\n\nHW6 is due next week Wednesday.\n\nMax group size on this assignment is 4 people\nComputationally intensive (welcome to real-life ML!)\nheads up: you will need to install many packages (welcome to real-life ML!)\n\nNo classes or OH during the Midterm Break!\n\nThursday Nov 14 class is cancelled\n\nMidterm 2 is next week (Nov 14/15)\nReminder: Please double check your Midterm 2 CBTF booking!"
+  },
+  {
+    "objectID": "slides-17.html#rest-of-cpsc-330",
+    "href": "slides-17.html#rest-of-cpsc-330",
+    "title": "CPSC 330 Lecture 17: Recommender Systems",
+    "section": "Rest of CPSC 330",
+    "text": "Rest of CPSC 330\nWe started CPSC 330 with Machine Learning fundamentals, Supervised Learning models, Unsupervised Learning models, more complex fundamentals like feature engineering and feature selection\nWe are now ready to try and solve different types of problems! - Today: Recommender Systems - Next class: Text Data and Topic Modelling - After: Images and Computer vision, Time Series Data, etc…"
+  },
+  {
+    "objectID": "slides-17.html#iclicker-17.0",
+    "href": "slides-17.html#iclicker-17.0",
+    "title": "CPSC 330 Lecture 17: Recommender Systems",
+    "section": "iClicker 17.0",
+    "text": "iClicker 17.0\nWhat percentage of the total watch time on YouTube do you think comes from reccomendations?\n\n\n20%\n\n\n50%\n\n\n70%\n\n\n95%\n\n\nSource: MIT Technology Review"
+  },
+  {
+    "objectID": "slides-17.html#what-is-a-recommender-system",
+    "href": "slides-17.html#what-is-a-recommender-system",
+    "title": "CPSC 330 Lecture 17: Recommender Systems",
+    "section": "What is a Recommender System?",
+    "text": "What is a Recommender System?\nA recommender or a recommendation system recommends a particular product or service to users they are likely to consume."
+  },
+  {
+    "objectID": "slides-17.html#examples-of-recommender-systems",
+    "href": "slides-17.html#examples-of-recommender-systems",
+    "title": "CPSC 330 Lecture 17: Recommender Systems",
+    "section": "Examples of Recommender Systems",
+    "text": "Examples of Recommender Systems\n\nAmazon\nNetflix\nTinder\nFacebook\netc…\n\nWhat should be shown to the user so they buy more products/spend more time on the app/etc…"
+  },
+  {
+    "objectID": "slides-17.html#ethics-of-recommender-systems",
+    "href": "slides-17.html#ethics-of-recommender-systems",
+    "title": "CPSC 330 Lecture 17: Recommender Systems",
+    "section": "Ethics of Recommender Systems",
+    "text": "Ethics of Recommender Systems\nWe should be very mindful of the drawbacks of relying on recommender systems.\nWhat are some ethical considersations of recommender systems?"
+  },
+  {
+    "objectID": "slides-17.html#notebook-for-lecture-17",
+    "href": "slides-17.html#notebook-for-lecture-17",
+    "title": "CPSC 330 Lecture 17: Recommender Systems",
+    "section": "Notebook for Lecture 17",
+    "text": "Notebook for Lecture 17\nYou can follow along here!"
+  },
+  {
+    "objectID": "slides-17.html#break",
+    "href": "slides-17.html#break",
+    "title": "CPSC 330 Lecture 17: Recommender Systems",
+    "section": "Break",
+    "text": "Break\nLet’s take a 10 min break"
+  },
+  {
+    "objectID": "slides-17.html#iclicker-exercise-17.1",
+    "href": "slides-17.html#iclicker-exercise-17.1",
+    "title": "CPSC 330 Lecture 17: Recommender Systems",
+    "section": "iClicker Exercise 17.1",
+    "text": "iClicker Exercise 17.1\nSelect all of the following statements which are True (iClicker)\n\n\nIn content-based filtering we leverage available item features in addition to similarity between users.\n\n\nIn content-based filtering you represent each user in terms of known features of items.\n\n\nIn the set up of content-based filtering we discussed, if you have a new movie, you would have problems predicting ratings for that movie.\n\n\nIn content-based filtering if a user has a number of ratings in the training utility matrix but does not have any ratings in the validation utility matrix then we won’t be able to calculate RMSE for the validation utility matrix."
   },
   {
     "objectID": "slides-02-terminology-decision-trees.html#announcements",
