@@ -1,0 +1,89 @@
+---
+title: 'CPSC 330 Lecture 17: Recommender Systems'
+description: "Recommender systems with a focus on content-based recommenders."
+format:
+    revealjs:
+        html-math-method: plain
+        slide-number: true
+        slide-level: 2
+        theme:
+          - slides.scss
+        center: true
+        logo: img/UBC-CS-logo.png
+        resources:
+          - data/
+          - img/
+
+editor:
+  render-on-save: true
+---
+
+## Announcements 
+
+- HW6 is due next week Wednesday. 
+    - Max group size on this assignment is 4 people
+    - Computationally intensive (welcome to real-life ML!)
+    - heads up: you will need to install many packages  (welcome to real-life ML!)
+- No classes or OH during the Midterm Break!
+    - Thursday Nov 14 class is cancelled
+- Midterm 2 is next week (Nov 14/15)
+- Reminder: Please double check your Midterm 2 CBTF booking!
+
+## Rest of CPSC 330
+
+We started CPSC 330 with Machine Learning fundamentals, Supervised Learning models, Unsupervised Learning models, more complex fundamentals like feature engineering and feature selection
+
+We are now ready to try and solve different types of problems!
+    - Today: Recommender Systems
+    - Next class: Text Data and Topic Modelling
+    - After: Images and Computer vision, Time Series Data, etc...
+
+## iClicker 17.0
+
+What percentage of the total watch time on YouTube do you think comes from reccomendations?
+
+- (A) 20%
+- (B) 50%
+- (C) 70%
+- (D) 95%
+
+[Source: MIT Technology Review](https://www.technologyreview.com/2022/09/20/1059709/youtube-algorithm-recommendations/)
+
+## What is a Recommender System?
+
+A recommender or a recommendation system recommends a particular product or service to users they are likely to consume.
+
+![](img/recommendation_system.png)
+
+## Examples of Recommender Systems
+
+- Amazon
+- Netflix
+- Tinder
+- Facebook
+- etc...
+
+What should be shown to the user so they buy more products/spend more time on the app/etc...
+
+## Ethics of Recommender Systems
+
+We should be very mindful of the drawbacks of relying on recommender systems.
+
+**What are some ethical considersations of recommender systems?**
+
+## Notebook for Lecture 17
+
+[You can follow along here](https://ubc-cs.github.io/cpsc330-2024W1/lectures/notes/17_recommender-systems.html)!
+
+## Break
+
+Let's take a 10 min break
+
+## iClicker Exercise 17.1 
+
+**Select all of the following statements which are True (iClicker)**
+
+- (A) In content-based filtering we leverage available item features in addition to similarity between users.
+- (B) In content-based filtering you represent each user in terms of known features of items.
+- (C) In the set up of content-based filtering we discussed, if you have a new movie, you would have problems predicting ratings for that movie.
+- (D) In content-based filtering if a user has a number of ratings in the training utility matrix but does not have any ratings in the validation utility matrix then we won’t be able to calculate RMSE for the validation utility matrix.
