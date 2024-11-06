@@ -1117,7 +1117,7 @@
     "href": "slides-17.html#announcements",
     "title": "CPSC 330 Lecture 17: Recommender Systems",
     "section": "Announcements",
-    "text": "Announcements\n\nHW6 is due next week Wednesday.\n\nMax group size on this assignment is 4 people\nComputationally intensive (welcome to real-life ML!)\nheads up: you will need to install many packages (welcome to real-life ML!)\n\nNo classes or OH during the Midterm Break!\n\nThursday Nov 14 class is cancelled\n\nMidterm 2 is next week (Nov 14/15)\nReminder: Please double check your Midterm 2 CBTF booking!"
+    "text": "Announcements\n\nHW6 is due this Wednesday.\n\nMax group size on this assignment is 4 people\nComputationally intensive (welcome to real-life ML!)\nheads up: you will need to install many packages (welcome to real-life ML!)\n\nNo classes or OH during the Midterm Break!\n\nThursday Nov 14 class is cancelled\n\nMidterm 2 is next week (Nov 14/15)\nReminder: Please double check your Midterm 2 CBTF booking!"
   },
   {
     "objectID": "slides-17.html#rest-of-cpsc-330",
@@ -1153,6 +1153,13 @@
     "title": "CPSC 330 Lecture 17: Recommender Systems",
     "section": "Ethics of Recommender Systems",
     "text": "Ethics of Recommender Systems\nWe should be very mindful of the drawbacks of relying on recommender systems.\nWhat are some ethical considersations of recommender systems?"
+  },
+  {
+    "objectID": "slides-17.html#what-comprises-a-recommender-system",
+    "href": "slides-17.html#what-comprises-a-recommender-system",
+    "title": "CPSC 330 Lecture 17: Recommender Systems",
+    "section": "What comprises a recommender system?",
+    "text": "What comprises a recommender system?\nWhat does the problem formulation look like?\nWhat tools would/should we use to create a recommender system?"
   },
   {
     "objectID": "slides-17.html#notebook-for-lecture-17",
