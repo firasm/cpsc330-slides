@@ -1712,7 +1712,7 @@
     "href": "slides-17.html#iclicker-exercise-17.1",
     "title": "CPSC 330 Lecture 17: Recommender Systems",
     "section": "iClicker Exercise 17.1",
-    "text": "iClicker Exercise 17.1\nSelect all of the following statements which are True (iClicker)\n\n\nIn content-based filtering we leverage available item features in addition to similarity between users.\n\n\nIn content-based filtering you represent each user in terms of known features of items.\n\n\nIn the set up of content-based filtering we discussed, if you have a new movie, you would have problems predicting ratings for that movie.\n\n\nIn content-based filtering if a user has a number of ratings in the training utility matrix but does not have any ratings in the validation utility matrix then we won’t be able to calculate RMSE for the validation utility matrix."
+    "text": "iClicker Exercise 17.1\nSelect all of the following statements which are True (iClicker)\n\n\nIn the context of recommendation systems, the shapes of validation utility matrix and train utility matrix are the same.\n\n\nRMSE perfectly captures what we want to measure in the context of recommendation systems.\n\n\nIt would be reasonable to impute missing values in the utility matrix by taking the average of the ratings given to an item by similar users.\n\n\nIn KNN type imputation, if a user has not rated any items yet, a reasonable strategy would be recommending them the most popular item."
   },
   {
     "objectID": "index.html",

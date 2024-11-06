@@ -20,7 +20,7 @@ editor:
 
 ## Announcements 
 
-- HW6 is due next week Wednesday. 
+- HW6 is due this Wednesday. 
     - Max group size on this assignment is 4 people
     - Computationally intensive (welcome to real-life ML!)
     - heads up: you will need to install many packages  (welcome to real-life ML!)
@@ -35,9 +35,9 @@ We started CPSC 330 with Machine Learning fundamentals, Supervised Learning mode
 
 
 We are now ready to try and solve different types of problems!
-    - Today: Recommender Systems
-    - Next class: Text Data and Topic Modelling
-    - After: Images and Computer vision, Time Series Data, etc...
+- Today: Recommender Systems
+- Next class: Text Data and Topic Modelling
+- After: Images and Computer vision, Time Series Data, etc...
 
 ## iClicker 17.0
 
