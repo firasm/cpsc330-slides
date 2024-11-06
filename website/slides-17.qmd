@@ -72,6 +72,12 @@ We should be very mindful of the drawbacks of relying on recommender systems.
 
 **What are some ethical considersations of recommender systems?**
 
+## What comprises a recommender system?
+
+What does the problem formulation look like?
+
+What tools would/should we use to create a recommender system?
+
 ## Notebook for Lecture 17
 
 [You can follow along here](https://ubc-cs.github.io/cpsc330-2024W1/lectures/notes/17_recommender-systems.html)!
