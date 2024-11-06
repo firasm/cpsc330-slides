@@ -33,6 +33,7 @@ editor:
 
 We started CPSC 330 with Machine Learning fundamentals, Supervised Learning models, Unsupervised Learning models, more complex fundamentals like feature engineering and feature selection
 
+
 We are now ready to try and solve different types of problems!
     - Today: Recommender Systems
     - Next class: Text Data and Topic Modelling
@@ -83,7 +84,7 @@ Let's take a 10 min break
 
 **Select all of the following statements which are True (iClicker)**
 
-- (A) In content-based filtering we leverage available item features in addition to similarity between users.
-- (B) In content-based filtering you represent each user in terms of known features of items.
-- (C) In the set up of content-based filtering we discussed, if you have a new movie, you would have problems predicting ratings for that movie.
-- (D) In content-based filtering if a user has a number of ratings in the training utility matrix but does not have any ratings in the validation utility matrix then we won’t be able to calculate RMSE for the validation utility matrix.
+- (A) In the context of recommendation systems, the shapes of validation utility matrix and train utility matrix are the same.
+- (B) RMSE perfectly captures what we want to measure in the context of recommendation systems.
+- (C) It would be reasonable to impute missing values in the utility matrix by taking the average of the ratings given to an item by similar users.
+- (D) In KNN type imputation, if a user has not rated any items yet, a reasonable strategy would be recommending them the most popular item.
