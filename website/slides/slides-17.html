@@ -335,7 +335,7 @@
 <section id="announcements" class="slide level2 center">
 <h2>Announcements</h2>
 <ul>
-<li>HW6 is due next week Wednesday.
+<li>HW6 is due this Wednesday.
 <ul>
 <li>Max group size on this assignment is 4 people</li>
 <li>Computationally intensive (welcome to real-life ML!)</li>
@@ -393,6 +393,11 @@
 <h2>Ethics of Recommender Systems</h2>
 <p>We should be very mindful of the drawbacks of relying on recommender systems.</p>
 <p><strong>What are some ethical considersations of recommender systems?</strong></p>
+</section>
+<section id="what-comprises-a-recommender-system" class="slide level2 center">
+<h2>What comprises a recommender system?</h2>
+<p>What does the problem formulation look like?</p>
+<p>What tools would/should we use to create a recommender system?</p>
 </section>
 <section id="notebook-for-lecture-17" class="slide level2 center">
 <h2>Notebook for Lecture 17</h2>
@@ -707,7 +712,7 @@
       }
         var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
         var mailtoRegex = new RegExp(/^mailto:/);
-          var filterRegex = new RegExp("https:\/\/firasm\.github\.io\/cpsc330-slides\/");
+          var filterRegex = new RegExp('/' + window.location.host + '/');
         var isInternal = (href) => {
             return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
         }
