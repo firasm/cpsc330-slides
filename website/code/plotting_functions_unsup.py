@@ -39,10 +39,10 @@ from plotly.offline import download_plotlyjs, init_notebook_mode, plot, iplot
 data = np.random.rand(4, 4)
 fig, (ax1, ax2) = plt.subplots(2)
 ax1.imshow(data)
-a= ax1.set_title("Default colormap")
+ax1.set_title("Default colormap")
 plt.rc('image', cmap='viridis')
 ax2.imshow(data)
-b =ax2.set_title("Set default colormap")
+ax2.set_title("Set default colormap")
 colors = ['xkcd:azure', 'yellowgreen', 'tomato', 'teal', 'indigo', 'aqua', 'orangered', 'orchid', 'black', 'xkcd:turquoise', 'xkcd:violet', 'aquamarine', 'chocolate', 'darkgreen', 'sienna', 'pink', 'lightblue', 'yellow', 'lavender', 'wheat', 'linen']
 
 ####################################

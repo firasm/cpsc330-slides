@@ -28,8 +28,7 @@ def plot_tree_decision_boundary(
 
 
 def plot_tree_decision_boundary_and_tree(
-    model, X, y, height=6, width=16, fontsize = 9, x_label="x-axis", y_label="y-axis", eps=None, 
-    class_names = ["A+", "not A+"]
+    model, X, y, height=6, width=16, fontsize = 9, x_label="x-axis", y_label="y-axis", eps=None, class_names = ["A+", "not A+"]
 ):
     fig, ax = plt.subplots(
         1,
