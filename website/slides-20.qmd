@@ -1,0 +1,41 @@
+---
+title: "CPSC 330 Lecture 20: Time series"
+author: "Firas Moosvi"
+format: 
+    revealjs:
+      embed-resources: true
+      slide-number: true
+      smaller: true
+      center: true
+      logo: img/UBC-CS-logo.png
+      resources:
+        - data/
+        - img/        
+---
+
+
+## Announcements
+
+- No new announcements today!
+
+## Motivation
+
+- **Time series** is a collection of data points indexed in time order. 
+- Time series is everywhere:
+    - Physical sciences (e.g., weather forecasting)  
+    - Economics, finance (e.g., stocks, market trends)
+    - Engineering (e.g., energy consumption)
+    - Social sciences 
+    - Sports analytics
+
+## Applying existing methods
+
+What are some challenges we might have with time series data?
+
+## Dataset
+
+We'll be starting with the [CitiBike dataset](https://ride.citibikenyc.com/system-data) today
+![](img/citibike.png)
+
+# [Class demo](https://github.com/new?template_name=lecture20_demo&template_owner=ubc-cpsc330) 
+
