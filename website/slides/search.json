@@ -791,6 +791,13 @@
     "text": "🤔 Eva’s questions\n\n\nAt this point, Eva is wondering about many questions.\n\nHow are we exactly “learning” whether a message is spam and ham?\nAre we expected to get correct predictions for all possible messages? How does it predict the label for a message it has not seen before?\n\nWhat if the model mis-labels an unseen example? For instance, what if the model incorrectly predicts a non-spam as a spam? What would be the consequences?\nHow do we measure the success or failure of spam identification?\nIf you want to use this model in the wild, how do you know how reliable it is?\n\nWould it be useful to know how confident the model is about the predictions rather than just a yes or a no?\n\nIt’s great to think about these questions right now. But Eva has to be patient. By the end of this course you’ll know answers to many of these questions!"
   },
   {
+    "objectID": "slides-01-intro.html#looking-ahead-to-next-class",
+    "href": "slides-01-intro.html#looking-ahead-to-next-class",
+    "title": "Lecture 1: Introduction to CPSC 330",
+    "section": "Looking ahead to next class",
+    "text": "Looking ahead to next class\nIt is very important that you watch the assigned pre-lecture videos before class!"
+  },
+  {
     "objectID": "slides-15.html#announcements",
     "href": "slides-15.html#announcements",
     "title": "CPSC 330 Lecture 15: K-Means",
