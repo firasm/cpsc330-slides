@@ -581,11 +581,11 @@
     "text": "About this course"
   },
   {
-    "objectID": "slides-01-intro.html#qr-code-of-cpsc-330-website",
-    "href": "slides-01-intro.html#qr-code-of-cpsc-330-website",
+    "objectID": "slides-01-intro.html#cpsc-330-website",
+    "href": "slides-01-intro.html#cpsc-330-website",
     "title": "Lecture 1: Introduction to CPSC 330",
-    "section": "QR code of CPSC 330 website",
-    "text": "QR code of CPSC 330 website\n\nCourse Jupyter book: https://ubc-cs.github.io/cpsc330-2024W1\nCourse GitHub repository: https://github.com/UBC-CS/cpsc330-2024W1\n\n\n\n\n\n\n\n\n\n\n\n\nImportant\n\n\nCourse website: https://ubc-cs.github.io/cpsc330-2024W1 is the most important link.\nPlease read everything on there!\nYou can find the source code for everything we do here: https://ubc-cs.github.io/cpsc330-2024W1.\n\n\n\n\n\n\n\n\n\nImportant\n\n\nMake sure you go through the syllabus thoroughly and complete the syllabus quiz before Monday, Sept 19th at 11:59pm."
+    "section": "CPSC 330 website",
+    "text": "CPSC 330 website\n\nCourse Jupyter book: https://ubc-cs.github.io/cpsc330-2025S1\nCourse GitHub repository: https://github.com/UBC-CS/cpsc330-2025S1\n\n\n\n\n\n\n\nImportant\n\n\nCourse website: https://ubc-cs.github.io/cpsc330-2025S1 is the most important link. You can access the course website from Canvas.\n\nPlease read everything on there!\nYou can find the source code for everything we do here: https://ubc-cs.github.io/cpsc330-2025S1.\n\n\n\n\n\n\n\n\n\nImportant\n\n\nMake sure you go through the syllabus thoroughly and complete the syllabus quiz before Friday’s class!"
   },
   {
     "objectID": "slides-01-intro.html#asking-questions-during-class",
@@ -599,49 +599,35 @@
     "href": "slides-01-intro.html#registration-waitlist-and-prerequisites",
     "title": "Lecture 1: Introduction to CPSC 330",
     "section": "Registration, waitlist and prerequisites",
-    "text": "Registration, waitlist and prerequisites\n\n\n\n\n\n\nImportant\n\n\nPlease go through this document carefully before contacting your instructors about these issues. Even then, we are very unlikely to be able to help with registration, waitlist or prerequisite issues.\n\n\n\n\nIf you are on waitlist and if you’d like to try your chances, you should be able to access Canvas and Piazza.\n\nIf you’re unable to make it this time, there will be two sections of this course offered next semester and then again in the summer."
+    "text": "Registration, waitlist and prerequisites\n\n\n\n\n\n\nImportant\n\n\nPlease go through this document carefully before contacting your instructors about these issues. Even then, we are very unlikely to be able to help with registration, waitlist or prerequisite issues.\n\n\n\n\nIf you are on waitlist and if you’d like to try your chances, you should be able to access Canvas and Ed Discussion.\n\nIf you’re unable to make it this time, there will be multiple sections of this course offered next semester and then again in the spring."
   },
   {
     "objectID": "slides-01-intro.html#lecture-format",
     "href": "slides-01-intro.html#lecture-format",
     "title": "Lecture 1: Introduction to CPSC 330",
     "section": "Lecture format",
-    "text": "Lecture format\n\nIn person lectures T/Th.\nSometimes there will be videos to watch before lecture. You will find the list of pre-watch videos in the schedule on the course webpage.\nWe will also try to work on some questions and exercises together during the class.\nAll materials will be posted in this GitHub repository.\nWeekly tutorials will be office hour format run by the TAs and are completely optional.\n\nYou do not need to be registered in a tutorial.\nYou can attend whatever tutorials or office hours your want, regardless of in which/whether you’re registered."
+    "text": "Lecture format\n\nIn person lectures M,W,F from 10 AM to 1 PM.\nThere will be videos to watch before every lecture. You will find the list of pre-watch videos in the schedule on the course webpage.\nWe will also try to work on some questions and exercises together during the class.\nAll materials will be posted in this GitHub repository.  \n\nYou may attend any tutorials or office hours your want, regardless of in which/whether you’re registered."
   },
   {
     "objectID": "slides-01-intro.html#home-work-assignments",
     "href": "slides-01-intro.html#home-work-assignments",
     "title": "Lecture 1: Introduction to CPSC 330",
     "section": "Home work assignments",
-    "text": "Home work assignments\n\nFirst homework assignment is due this coming Tuesday, September 10, midnight. This is a relatively straightforward assignment on Python. If you struggle with this assignment then that could be a sign that you will struggle later on in the course.\n\nYou must do the first two homework assignments on your own."
+    "text": "Home work assignments\n\nFirst homework assignment is due Friday May 16th, at 6 PM. This is a relatively straightforward assignment on Python. If you struggle with this assignment then that could be a sign that you will struggle later on in the course.\n\nYou must do the first two homework assignments on your own."
   },
   {
     "objectID": "slides-01-intro.html#exams",
     "href": "slides-01-intro.html#exams",
     "title": "Lecture 1: Introduction to CPSC 330",
     "section": "Exams",
-    "text": "Exams\n\nWe’ll have two self-scheduled midterms and one final in Computer-based Testing Facility (CBTF)."
-  },
-  {
-    "objectID": "slides-01-intro.html#course-calendar",
-    "href": "slides-01-intro.html#course-calendar",
-    "title": "Lecture 1: Introduction to CPSC 330",
-    "section": "Course calendar",
-    "text": "Course calendar\nHere is our course Calendar. Make sure you check it on a regular basis:\nhttps://htmlpreview.github.io/?https://github.com/UBC-CS/cpsc330-2024W1/blob/main/docs/calendar.html"
+    "text": "Exams\n\nWe’ll have two self-scheduled midterms over a few day window and one final exam in Computer-based Testing Facility (CBTF)."
   },
   {
     "objectID": "slides-01-intro.html#course-structure",
     "href": "slides-01-intro.html#course-structure",
     "title": "Lecture 1: Introduction to CPSC 330",
     "section": "Course structure",
-    "text": "Course structure\n\nIntroduction\n\nWeek 1\n\nPart I: ML fundamentals, preprocessing, midterm 1\n\nWeeks 2, 3, 4, 5, 6, 7, 8\n\nPart II: Unsupervised learning, transfer learning, common special cases, midterm 1\n\nWeeks 8, 9, 10, 11, 12\n\nPart III: Communication and ethics\n\nML skills are not beneficial if you can’t use them responsibly and communicate your results. In this module we’ll talk about these aspects.\nWeeks 13, 14"
-  },
-  {
-    "objectID": "slides-01-intro.html#code-of-conduct",
-    "href": "slides-01-intro.html#code-of-conduct",
-    "title": "Lecture 1: Introduction to CPSC 330",
-    "section": "Code of conduct",
-    "text": "Code of conduct\n\nOur main forum for getting help will be Piazza.\n\n\n\n\n\n\n\nImportant\n\n\nPlease read this entire document about asking for help. TLDR: Be nice."
+    "text": "Course structure\n\nPart I: Introduction, ML fundamentals, preprocessing, midterm 1\nPart II: Unsupervised learning, transfer learning, common special cases, midterm 1\nPart III: Communication and ethics\n\nML skills are not beneficial if you can’t use them responsibly and communicate your results. In this module we’ll talk about these aspects. ## Code of conduct\n\nOur main forum for getting help will be Ed Discussion.\n\n\n\n\n\n\n\nImportant\n\n\nPlease read this entire document about asking for help. TLDR: Be nice."
   },
   {
     "objectID": "slides-01-intro.html#homework-format-jupyter-lab-notebooks",
@@ -711,7 +697,7 @@
     "href": "slides-01-intro.html#cpsc-330-vs.-340",
     "title": "Lecture 1: Introduction to CPSC 330",
     "section": "CPSC 330 vs. 340",
-    "text": "CPSC 330 vs. 340\nRead https://github.com/UBC-CS/cpsc330-2024W1/blob/main/docs/330_vs_340.md which explains the difference between two courses.\nTLDR:\n\n340: how do ML models work?\n330: how do I use ML models?\nCPSC 340 has many prerequisites.\nCPSC 340 goes deeper but has a more narrow scope.\nI think CPSC 330 will be more useful if you just plan to apply basic ML."
+    "text": "CPSC 330 vs. 340\nRead https://ubc-cs.github.io/cpsc330-2025S1/docs/330_vs_340.html which explains the difference between two courses.\nTLDR:\n\n340: how do ML models work?\n330: how do I use ML models?\nCPSC 340 has many prerequisites.\nCPSC 340 goes deeper but has a more narrow scope.\nI think CPSC 330 will be more useful if you just plan to apply basic ML."
   },
   {
     "objectID": "slides-01-intro.html#what-is-machine-learning-ml",
@@ -725,7 +711,7 @@
     "href": "slides-01-intro.html#spam-prediction",
     "title": "Lecture 1: Introduction to CPSC 330",
     "section": "Spam prediction",
-    "text": "Spam prediction\n\nSuppose you are given some data with labeled spam and non-spam messages\n\n\nCodeOutput\n\n\n\nsms_df = pd.read_csv(DATA_DIR + \"spam.csv\", encoding=\"latin-1\")\nsms_df = sms_df.drop(columns = [\"Unnamed: 2\", \"Unnamed: 3\", \"Unnamed: 4\"])\nsms_df = sms_df.rename(columns={\"v1\": \"target\", \"v2\": \"sms\"})\ntrain_df, test_df = train_test_split(sms_df, test_size=0.10, random_state=42)\n\n\n\n\n\n\n\n\n\ntarget\nsms\n\n\n\n\nspam\nLookAtMe!: Thanks for your purchase of a video clip from LookAtMe!, you've been charged 35p. Think you can do better? Why not send a video in a MMSto 32323.\n\n\nham\nAight, I'll hit you up when I get some cash\n\n\nham\nDon no da:)whats you plan?\n\n\nham\nGoing to take your babe out ?\n\n\nham\nNo need lar. Jus testing e phone card. Dunno network not gd i thk. Me waiting 4 my sis 2 finish bathing so i can bathe. Dun disturb u liao u cleaning ur room."
+    "text": "Spam prediction\n\nSuppose you are given some data with labelled spam and non-spam messages\n\n\nCodeOutput\n\n\n\nsms_df = pd.read_csv(DATA_DIR + \"spam.csv\", encoding=\"latin-1\")\nsms_df = sms_df.drop(columns = [\"Unnamed: 2\", \"Unnamed: 3\", \"Unnamed: 4\"])\nsms_df = sms_df.rename(columns={\"v1\": \"target\", \"v2\": \"sms\"})\ntrain_df, test_df = train_test_split(sms_df, test_size=0.10, random_state=42)\n\n\n\n\n\n\n\n\n\ntarget\nsms\n\n\n\n\nspam\nLookAtMe!: Thanks for your purchase of a video clip from LookAtMe!, you've been charged 35p. Think you can do better? Why not send a video in a MMSto 32323.\n\n\nham\nAight, I'll hit you up when I get some cash\n\n\nham\nDon no da:)whats you plan?\n\n\nham\nGoing to take your babe out ?\n\n\nham\nNo need lar. Jus testing e phone card. Dunno network not gd i thk. Me waiting 4 my sis 2 finish bathing so i can bathe. Dun disturb u liao u cleaning ur room."
   },
   {
     "objectID": "slides-01-intro.html#traditional-programming-vs.-ml",
@@ -2034,21 +2020,21 @@
     "href": "slides-19.html#introduction-to-neural-networks",
     "title": "CPSC 330 Lecture 19: Introduction to deep learning and computer vision",
     "section": "Introduction to neural networks",
-    "text": "Introduction to neural networks\n\n\n\nNeural networks can be viewed a generalization of linear models where we apply a series of transformations.\nHere is graphical representation of a logistic regression model.\nWe have 4 features: x[0], x[1], x[2], x[3]\n\n\n\n\n\n\ncluster_0\n\ninputs\n\n\ncluster_2\n\noutput\n\n\n\nx[0]\n\nx[0]\n\n\n\ny\n\ny\n\n\n\nx[0]-&gt;y\n\n\nw[0]\n\n\n\nx[1]\n\nx[1]\n\n\n\nx[1]-&gt;y\n\n\nw[1]\n\n\n\nx[2]\n\nx[2]\n\n\n\nx[2]-&gt;y\n\n\nw[2]\n\n\n\nx[3]\n\nx[3]\n\n\n\nx[3]-&gt;y\n\n\nw[3]"
+    "text": "Introduction to neural networks\n\n\n\nNeural networks can be viewed a generalization of linear models where we apply a series of transformations.\nHere is graphical representation of a logistic regression model.\nWe have 4 features: x[0], x[1], x[2], x[3]"
   },
   {
     "objectID": "slides-19.html#adding-a-layer-of-transformations",
     "href": "slides-19.html#adding-a-layer-of-transformations",
     "title": "CPSC 330 Lecture 19: Introduction to deep learning and computer vision",
     "section": "Adding a layer of transformations",
-    "text": "Adding a layer of transformations\n\n\n\nBelow we are adding one “layer” of transformations in between features and the target.\nWe are repeating the the process of computing the weighted sum multiple times.\n\nThe hidden units (e.g., h[1], h[2], …) represent the intermediate processing steps.\n\n\n\n\n\n\ncluster_0\n\ninputs\n\n\ncluster_1\n\nhidden layer\n\n\ncluster_2\n\noutput\n\n\n\nx[0]\n\nx[0]\n\n\n\nh0\n\nh[0]\n\n\n\nx[0]-&gt;h0\n\n\n\n\n\nh1\n\nh[1]\n\n\n\nx[0]-&gt;h1\n\n\n\n\n\nh2\n\nh[2]\n\n\n\nx[0]-&gt;h2\n\n\n\n\n\nx[1]\n\nx[1]\n\n\n\nx[1]-&gt;h0\n\n\n\n\n\nx[1]-&gt;h1\n\n\n\n\n\nx[1]-&gt;h2\n\n\n\n\n\nx[2]\n\nx[2]\n\n\n\nx[2]-&gt;h0\n\n\n\n\n\nx[2]-&gt;h1\n\n\n\n\n\nx[2]-&gt;h2\n\n\n\n\n\nx[3]\n\nx[3]\n\n\n\nx[3]-&gt;h0\n\n\n\n\n\nx[3]-&gt;h1\n\n\n\n\n\nx[3]-&gt;h2\n\n\n\n\n\ny\n\ny\n\n\n\nh0-&gt;y\n\n\n\n\n\nh1-&gt;y\n\n\n\n\n\nh2-&gt;y"
+    "text": "Adding a layer of transformations\n\n\n\nBelow we are adding one “layer” of transformations in between features and the target.\nWe are repeating the the process of computing the weighted sum multiple times.\n\nThe hidden units (e.g., h[1], h[2], …) represent the intermediate processing steps."
   },
   {
     "objectID": "slides-19.html#one-more-layer-of-transformations",
     "href": "slides-19.html#one-more-layer-of-transformations",
     "title": "CPSC 330 Lecture 19: Introduction to deep learning and computer vision",
     "section": "One more layer of transformations",
-    "text": "One more layer of transformations\n\n\n\nNow we are adding one more layer of transformations.\n\n\n\n\n\n\ncluster_0\n\ninputs\n\n\ncluster_1\n\nhidden layer 1\n\n\ncluster_2\n\nhidden layer 2\n\n\ncluster_3\n\noutput\n\n\n\nx[0]\n\nx[0]\n\n\n\nh1[0]\n\nh1[0]\n\n\n\nx[0]-&gt;h1[0]\n\n\n\n\n\nh1[1]\n\nh1[1]\n\n\n\nx[0]-&gt;h1[1]\n\n\n\n\n\nh1[2]\n\nh1[2]\n\n\n\nx[0]-&gt;h1[2]\n\n\n\n\n\nx[1]\n\nx[1]\n\n\n\nx[1]-&gt;h1[0]\n\n\n\n\n\nx[1]-&gt;h1[1]\n\n\n\n\n\nx[1]-&gt;h1[2]\n\n\n\n\n\nx[2]\n\nx[2]\n\n\n\nx[2]-&gt;h1[0]\n\n\n\n\n\nx[2]-&gt;h1[1]\n\n\n\n\n\nx[2]-&gt;h1[2]\n\n\n\n\n\nx[3]\n\nx[3]\n\n\n\nx[3]-&gt;h1[0]\n\n\n\n\n\nx[3]-&gt;h1[1]\n\n\n\n\n\nx[3]-&gt;h1[2]\n\n\n\n\n\nh2[0]\n\nh2[0]\n\n\n\nh1[0]-&gt;h2[0]\n\n\n\n\n\nh2[1]\n\nh2[1]\n\n\n\nh1[0]-&gt;h2[1]\n\n\n\n\n\nh2[2]\n\nh2[2]\n\n\n\nh1[0]-&gt;h2[2]\n\n\n\n\n\nh1[1]-&gt;h2[0]\n\n\n\n\n\nh1[1]-&gt;h2[1]\n\n\n\n\n\nh1[1]-&gt;h2[2]\n\n\n\n\n\nh1[2]-&gt;h2[0]\n\n\n\n\n\nh1[2]-&gt;h2[1]\n\n\n\n\n\nh1[2]-&gt;h2[2]\n\n\n\n\n\ny\n\ny\n\n\n\nh2[0]-&gt;y\n\n\n\n\n\nh2[1]-&gt;y\n\n\n\n\n\nh2[2]-&gt;y"
+    "text": "One more layer of transformations\n\n\n\nNow we are adding one more layer of transformations."
   },
   {
     "objectID": "slides-19.html#neural-networks-1",

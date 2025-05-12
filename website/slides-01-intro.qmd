@@ -164,7 +164,7 @@ Please go through [this document](https://ubc-cs.github.io/cpsc330-2025S1/syllab
 
 ## Exams 
 
-- We'll have two self-scheduled midterms and one final in Computer-based Testing Facility (CBTF). 
+- We'll have two self-scheduled midterms over a few day window and one final exam in Computer-based Testing Facility (CBTF). 
 
 <!-- 
 ## Course calendar
@@ -420,3 +420,7 @@ At this point, Eva is wondering about many questions.
 - Would it be useful to know how confident the model is about the predictions rather than just a yes or a no?
 
 It's great to think about these questions right now. But Eva has to be patient. By the end of this course you'll know answers to many of these questions!
+
+## Looking ahead to next class
+
+It is *very* important that you watch the assigned pre-lecture videos before class!
