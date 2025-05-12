@@ -114,23 +114,23 @@ From this lecture, you will be able to
 
 ## About this course
 
-## QR code of CPSC 330 website
+## CPSC 330 website
 
-- Course Jupyter book: https://ubc-cs.github.io/cpsc330-2024W1
-- Course GitHub repository: https://github.com/UBC-CS/cpsc330-2024W1
-
-![](img/CPSC330-QR-code.png){.nostretch fig-align="center" width="500px"}
+- Course Jupyter book: https://ubc-cs.github.io/cpsc330-2025S1
+- Course GitHub repository: https://github.com/UBC-CS/cpsc330-2025S1
 
 ::: {.callout-important}
-Course website: [https://ubc-cs.github.io/cpsc330-2024W1](https://ubc-cs.github.io/cpsc330-2024W1) is the most important link. 
+Course website: [https://ubc-cs.github.io/cpsc330-2025S1](https://ubc-cs.github.io/cpsc330-2025S1) is the most important link. You can access the course website from Canvas.
+
+![](img/canvas.png)
 
 Please read everything on there!
 
-You can find the source code for everything we do here: https://ubc-cs.github.io/cpsc330-2024W1.
+You can find the source code for everything we do here: https://ubc-cs.github.io/cpsc330-2025S1.
 :::
 
 ::: {.callout-important}
-Make sure you go through the syllabus thoroughly and complete the syllabus quiz before Monday, Sept 19th at 11:59pm. 
+Make sure you go through the syllabus thoroughly and complete the syllabus quiz before Friday's class! 
 :::
 
 ## Asking questions during class
@@ -139,61 +139,55 @@ You are welcome to ask questions by raising your hand!
 
 If you would prefer to write notes and ask questions later, you are more than welcome to do that also! Use Piazza.
 
-
 ## Registration, waitlist and prerequisites
 
 ::: {.callout-important}
-Please go through [this document](https://github.com/UBC-CS/cpsc330-2024W1/blob/master/docs/course_info.md#registration) carefully before contacting your instructors about these issues. Even then, we are very unlikely to be able to help with registration, waitlist or prerequisite issues.
+Please go through [this document](https://ubc-cs.github.io/cpsc330-2025S1/syllabus.html#registration) carefully before contacting your instructors about these issues. Even then, we are very unlikely to be able to help with registration, waitlist or prerequisite issues.
 :::
 
-- If you are on waitlist and if you'd like to try your chances, you should be able to access [Canvas](https://canvas.ubc.ca/courses/149122) and Piazza.  
-- If you're unable to make it this time, there will be two sections of this course offered next semester and then again in the summer.
+- If you are on waitlist and if you'd like to try your chances, you should be able to access [Canvas](https://canvas.ubc.ca/courses/165412) and Ed Discussion.  
+- If you're unable to make it this time, there will be multiple sections of this course offered next semester and then again in the spring.
 
 ## Lecture format
 
-- In person lectures T/Th.
-- Sometimes there will be videos to watch before lecture. You will find the list of pre-watch videos in the schedule on the course webpage.
+- In person lectures M,W,F from 10 AM to 1 PM.
+- There will be videos to watch before every lecture. You will find the list of pre-watch videos in the schedule on the course webpage.
 - We will also try to work on some questions and exercises together during the class. 
 - All materials will be posted in this GitHub repository. 
-- Weekly tutorials will be **office hour format** run by the TAs and are **completely optional**.
-  - You do not need to be registered in a tutorial.
-  - You can attend whatever tutorials or office hours your want, regardless of in which/whether you're registered.
+<!-- - Weekly tutorials will be **office hour format** run by the TAs and are **completely optional**. -->
+  <!-- - You do not need to be registered in a tutorial. -->
+  - You may attend any tutorials or office hours your want, regardless of in which/whether you're registered.
 
 ## Home work assignments
-- First homework assignment is due **this coming Tuesday**, September 10, midnight. This is a relatively straightforward assignment on Python. If you struggle with this assignment then that could be a sign that you will struggle later on in the course.    
+- First homework assignment is due **Friday May 16th**, at 6 PM. This is a relatively straightforward assignment on Python. If you struggle with this assignment then that could be a sign that you will struggle later on in the course.    
 - You must do the first two homework assignments on your own.
 
 ## Exams 
 
 - We'll have two self-scheduled midterms and one final in Computer-based Testing Facility (CBTF). 
 
+<!-- 
 ## Course calendar
 
 Here is our course Calendar. Make sure you check it on a regular basis: 
 
 [https://htmlpreview.github.io/?https://github.com/UBC-CS/cpsc330-2024W1/blob/main/docs/calendar.html](https://htmlpreview.github.io/?https://github.com/UBC-CS/cpsc330-2024W1/blob/main/docs/calendar.html)
+ -->
 
 ## Course structure
 
-- Introduction
-  - Week 1 
-- Part I: ML fundamentals, preprocessing, midterm 1
-  - Weeks 2, 3, 4, 5, 6, 7, 8
+- Part I: Introduction, ML fundamentals, preprocessing, midterm 1
 - Part II: Unsupervised learning, transfer learning, common special cases, midterm 1
-  - Weeks 8, 9, 10, 11, 12
 - Part III: Communication and ethics
   - ML skills are not beneficial if you can't use them responsibly and communicate your results. In this module we'll talk about these aspects. 
-  - Weeks 13, 14
-
 ## Code of conduct
 
-- Our main forum for getting help will be [Piazza](https://piazza.com/ubc.ca/winterterm12024/cpsc_v3301011021032024w1).
+- Our main forum for getting help will be [Ed Discussion](https://edstem.org/us/join/rNVu2p).
 
 ::: {.callout-important}
-Please read [this entire document about asking for help](https://github.com/UBC-CS/cpsc330-2024W1/blob/main/docs/asking_for_help.md).
+Please read [this entire document about asking for help](https://ubc-cs.github.io/cpsc330-2025S1/docs/asking_for_help.html).
 **TLDR:** Be nice.
 :::
-
 
 ## Homework format: Jupyter lab notebooks
 
@@ -231,17 +225,17 @@ x
 
 ## Lecture notes
 
-- All the lectures from last year are [available here](https://ubc-cs.github.io/cpsc330-2023W1/README.html).
+- All the lectures from last year are [available here](https://ubc-cs.github.io/cpsc330-2024W2).
 - We cannot promise anything will stay the same from last year to this year, so read them in advance at your own risk.
-- A "finalized" version will be pushed to [GitHub](https://github.com/UBC-CS/cpsc330-2024W1) and the [Jupyter book](https://ubc-cs.github.io/cpsc330-2024W1/README.html) right before each class.
+- A "finalized" version will be pushed to [GitHub](https://github.com/UBC-CS/cpsc330-2025S1) and the [Jupyter book](https://ubc-cs.github.io/cpsc330-2025S1) right before each class.
 - Each instructor will have slightly adapted versions of notes to present slides during lectures.  
 - You will find the link to these slides in our repository: 
 https://github.com/UBC-CS/cpsc330-2024W1/tree/main/lectures/103-Firas-lectures
 
 ## Grades
 
-- The grading breakdown is [here](https://github.com/UBC-CS/cpsc330-2024W1/blob/main/syllabus.md#grading-scheme). 
-- The policy on challenging grades is [here](https://github.com/UBC-CS/cpsc330-2024W1/blob/main/docs/grades.md).
+- The grading breakdown is [here](https://ubc-cs.github.io/cpsc330-2025S1/syllabus.html#grading-scheme). 
+- The policy on challenging grades is [here](https://ubc-cs.github.io/cpsc330-2025S1/docs/grades.html#reasonable-grading-concerns).
 
 ## Setting up your computer for the course 
 
@@ -280,8 +274,7 @@ but you can find some useful Python resources [here](https://github.com/UBC-CS/c
 
 ## CPSC 330 vs. 340
 
-Read [https://github.com/UBC-CS/cpsc330-2024W1/blob/main/docs/330_vs_340.md](https://github.com/UBC-CS/cpsc330-2024W1/blob/main/docs/330_vs_340.md)
-which explains the difference between two courses.  
+Read [https://ubc-cs.github.io/cpsc330-2025S1/docs/330_vs_340.html](https://ubc-cs.github.io/cpsc330-2025S1/docs 330_vs_340.html) which explains the difference between two courses.  
 
 **TLDR:**
 
@@ -296,7 +289,7 @@ which explains the difference between two courses.
 
 ## Spam prediction 
 
-- Suppose you are given some data with labeled spam and non-spam messages 
+- Suppose you are given some data with labelled spam and non-spam messages 
 
 ::: panel-tabset
 ## Code
