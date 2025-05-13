@@ -27,7 +27,7 @@ editor:
 
 Last class we distinguished between Model-based selection and recursive feature feature elimination (RFE).
 
-Let's chat a bit more about [Recursive Feature Elimination with Cross-validation](https://ubc-cs.github.io/cpsc330-2024W1/lectures/notes/14_feature-engineering-selection.html#recursive-feature-elimination-rfe).
+Let's chat a bit more about [Recursive Feature Elimination with Cross-validation](https://ubc-cs.github.io/cpsc330-2025S1/lectures/notes/14_feature-engineering-selection.html#recursive-feature-elimination-rfe).
 
 ## Pause and Reflect 
 
@@ -184,6 +184,6 @@ Select all of the following statements which are **True**
 
 
 <!-- 
-# [Class demo](https://github.com/UBC-CS/cpsc330-2024W1/blob/main/lectures/102-Varada-lectures/class_demos/demo_15-k-means.ipynb)
+# [Class demo](https://github.com/UBC-CS/cpsc330-2025S1/blob/main/lectures/102-Varada-lectures/class_demos/demo_15-k-means.ipynb)
  -->
 s

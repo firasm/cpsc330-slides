@@ -207,7 +207,7 @@
 <li>heads up: you will need to install many packages (welcome to real-life ML!)</li>
 </ul></li>
 </ul>
-<div id="e4a1326c" class="cell" data-execution_count="1">
+<div id="45e21323" class="cell" data-execution_count="1">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -219,7 +219,7 @@
 </section>
 <section id="super-cool-demo" class="slide level2 center">
 <h2>Super cool Demo!</h2>
-<p><a href="https://github.com/UBC-CS/cpsc330-2024W1/blob/main/lectures/102-Varada-lectures/class_demos/demo_15-k-means.ipynb">You can download and checkout the Demo here</a>.</p>
+<p><a href="https://github.com/UBC-CS/cpsc330-2025S1/blob/main/lectures/102-Varada-lectures/class_demos/demo_15-k-means.ipynb">You can download and checkout the Demo here</a>.</p>
 <p>All credit to Dr.&nbsp;Varada Kolhatkar for putting this together!</p>
 </section>
 <section id="recap-iclicker-exercise-15.3" class="slide level2 smaller center">
@@ -278,7 +278,7 @@
 <ul>
 <li>K-Means performs poorly if the clusters have more complex shapes (e.g., two moons data below).</li>
 </ul>
-<div id="f42079ec" class="cell" data-execution_count="2">
+<div id="e5141e3f" class="cell" data-execution_count="2">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -293,7 +293,7 @@
 <ul>
 <li>Again, K-Means is unable to capture complex cluster shapes.</li>
 </ul>
-<div id="00157024" class="cell" data-execution_count="3">
+<div id="b7fc151c" class="cell" data-execution_count="3">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -308,7 +308,7 @@
 <ul>
 <li>It assumes that all directions are equally important for each cluster and fails to identify non-spherical clusters.</li>
 </ul>
-<div id="c090ea9b" class="cell" data-execution_count="4">
+<div id="ca2a90af" class="cell" data-execution_count="4">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -333,7 +333,7 @@
 </section>
 <section id="dbscan-1" class="slide level2 center">
 <h2>DBSCAN</h2>
-<div id="1c547144" class="cell" data-execution_count="5">
+<div id="558fe8e2" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a>X, y <span class="op">=</span> make_moons(n_samples<span class="op">=</span><span class="dv">200</span>, noise<span class="op">=</span><span class="fl">0.08</span>, random_state<span class="op">=</span><span class="dv">42</span>)</span>
 <span id="cb1-2"><a></a>dbscan <span class="op">=</span> DBSCAN(eps<span class="op">=</span><span class="fl">0.2</span>)</span>
 <span id="cb1-3"><a></a>dbscan.fit(X)</span>
@@ -374,7 +374,7 @@
 </li>
 <li>K-Means performs better compared to DBSCAN. But it has the benefit of knowing the value of <span class="math inline"><em>K</em></span> in advance.</li>
 </ul>
-<div id="f8be5d75" class="cell" data-execution_count="6">
+<div id="614e734f" class="cell" data-execution_count="6">
 <div class="cell-output cell-output-stdout">
 <pre><code>[ 0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15]</code></pre>
 </div>
@@ -404,7 +404,7 @@
 </section>
 <section id="hierarchical-clustering" class="slide level2 center">
 <h2>Hierarchical clustering</h2>
-<div id="09f504c3" class="cell" data-execution_count="7">
+<div id="9aa1c9d5" class="cell" data-execution_count="7">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -420,7 +420,7 @@
 <li>This is good but how can we get cluster labels from a dendrogram?</li>
 <li>We can bring the clustering to a “flat” format use <code>fcluster</code></li>
 </ul>
-<div id="6ac87c37" class="cell" data-execution_count="8">
+<div id="1c65640a" class="cell" data-execution_count="8">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -498,7 +498,7 @@
 </tbody>
 </table>
 <!-- 
-# [Class demo](https://github.com/UBC-CS/cpsc330-2024W1/blob/main/lectures/102-Varada-lectures/class_demos/demo_16-dbscan-hierarchical.ipynb) 
+# [Class demo](https://github.com/UBC-CS/cpsc330-2025S1/blob/main/lectures/102-Varada-lectures/class_demos/demo_16-dbscan-hierarchical.ipynb) 
 -->
 
 
@@ -787,7 +787,7 @@
       }
         var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
         var mailtoRegex = new RegExp(/^mailto:/);
-          var filterRegex = new RegExp("https:\/\/firasm\.github\.io\/cpsc330-slides\/");
+          var filterRegex = new RegExp('/' + window.location.host + '/');
         var isInternal = (href) => {
             return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
         }

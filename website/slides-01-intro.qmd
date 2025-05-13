@@ -171,7 +171,7 @@ Please go through [this document](https://ubc-cs.github.io/cpsc330-2025S1/syllab
 
 Here is our course Calendar. Make sure you check it on a regular basis: 
 
-[https://htmlpreview.github.io/?https://github.com/UBC-CS/cpsc330-2024W1/blob/main/docs/calendar.html](https://htmlpreview.github.io/?https://github.com/UBC-CS/cpsc330-2024W1/blob/main/docs/calendar.html)
+[https://htmlpreview.github.io/?https://github.com/UBC-CS/cpsc330-2025S1/blob/main/docs/calendar.html](https://htmlpreview.github.io/?https://github.com/UBC-CS/cpsc330-2025S1/blob/main/docs/calendar.html)
  -->
 
 ## Course structure
@@ -219,7 +219,7 @@ x
 ## More about Jupyter lab
 
 - By default, Jupyter prints out the result of the last line of code, so you don't need as many `print` statements.
-- In addition to the "live" notebooks, Jupyter notebooks can be statically rendered in the web browser, e.g. [this](https://github.com/UBC-CS/cpsc330-2024W1/blob/main/lectures/01_intro.ipynb).
+- In addition to the "live" notebooks, Jupyter notebooks can be statically rendered in the web browser, e.g. [this](https://github.com/UBC-CS/cpsc330-2025S1/blob/main/lectures/01_intro.ipynb).
   - This can be convenient for quick read-only access, without needing to launch the Jupyter notebook/lab application.
   - But you need to launch the app properly to interact with the notebooks.
 
@@ -230,7 +230,7 @@ x
 - A "finalized" version will be pushed to [GitHub](https://github.com/UBC-CS/cpsc330-2025S1) and the [Jupyter book](https://ubc-cs.github.io/cpsc330-2025S1) right before each class.
 - Each instructor will have slightly adapted versions of notes to present slides during lectures.  
 - You will find the link to these slides in our repository: 
-https://github.com/UBC-CS/cpsc330-2024W1/tree/main/lectures/103-Firas-lectures
+https://github.com/UBC-CS/cpsc330-2025S1/tree/main/lectures/103-Firas-lectures
 
 ## Grades
 
@@ -248,7 +248,7 @@ In this course, we will primarily be using `Python` , `git`, `GitHub`, `Canvas`,
 
 ## Course `conda` environment
 
-- Follow the setup instructions [here](https://ubc-cs.github.io/cpsc330-2024W1/docs/setup.html) to create a course `conda` environment on your computer. 
+- Follow the setup instructions [here](https://ubc-cs.github.io/cpsc330-2025S1/docs/setup.html) to create a course `conda` environment on your computer. 
 - If you do not have your computer with you, you can partner up with someone and set up your own computer later.
 
 ## Python requirements/resources
@@ -267,7 +267,7 @@ Homework 1 is all about Python.
 
 :::{.callout-note}
 We do not have time to teach all the Python we need 
-but you can find some useful Python resources [here](https://github.com/UBC-CS/cpsc330-2024W1/blob/main/docs/resources.md).  
+but you can find some useful Python resources [here](https://github.com/UBC-CS/cpsc330-2025S1/blob/main/docs/resources.md).  
 :::
 
 <br><br>

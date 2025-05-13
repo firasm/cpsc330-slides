@@ -1161,7 +1161,7 @@ Firas Moosvi (Slides adapted from Varada Kolhatkar)
 <li>Strengths: simple and intuitive, can learn complex decision boundaries</li>
 <li>Challenges: Sensitive to the choice of distance metric and <strong>scaling</strong> (coming up).</li>
 </ul>
-<!-- # [Class demo](https://github.com/UBC-CS/cpsc330-2024W1/blob/main/lectures/102-Varada-lectures/class_demos/demo_04-kNNs-SVMs.ipynb) -->
+<!-- # [Class demo](https://github.com/UBC-CS/cpsc330-2025S1/blob/main/lectures/102-Varada-lectures/class_demos/demo_04-kNNs-SVMs.ipynb) -->
 
 
 </section>
@@ -2415,7 +2415,7 @@ window.QuartoSupport = function () {
       }
         var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
         var mailtoRegex = new RegExp(/^mailto:/);
-          var filterRegex = new RegExp("https:\/\/firasm\.github\.io\/cpsc330-slides\/");
+          var filterRegex = new RegExp('/' + window.location.host + '/');
         var isInternal = (href) => {
             return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
         }

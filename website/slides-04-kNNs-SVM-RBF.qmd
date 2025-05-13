@@ -127,4 +127,4 @@ Let's take a break!
 - Strengths: simple and intuitive, can learn complex decision boundaries
 - Challenges: Sensitive to the choice of distance metric and **scaling** (coming up).
 
-<!-- # [Class demo](https://github.com/UBC-CS/cpsc330-2024W1/blob/main/lectures/102-Varada-lectures/class_demos/demo_04-kNNs-SVMs.ipynb) -->
+<!-- # [Class demo](https://github.com/UBC-CS/cpsc330-2025S1/blob/main/lectures/102-Varada-lectures/class_demos/demo_04-kNNs-SVMs.ipynb) -->

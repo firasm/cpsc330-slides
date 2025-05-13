@@ -80,7 +80,7 @@ What tools would/should we use to create a recommender system?
 
 ## Notebook for Lecture 17
 
-[You can follow along here](https://ubc-cs.github.io/cpsc330-2024W1/lectures/notes/17_recommender-systems.html)!
+[You can follow along here](https://ubc-cs.github.io/cpsc330-2025S1/lectures/notes/17_recommender-systems.html)!
 
 ## Break
 

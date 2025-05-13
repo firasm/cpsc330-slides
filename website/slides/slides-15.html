@@ -143,7 +143,7 @@
 <section id="finishing-up-feature-selection" class="slide level2 center">
 <h2>Finishing up Feature Selection</h2>
 <p>Last class we distinguished between Model-based selection and recursive feature feature elimination (RFE).</p>
-<p>Let’s chat a bit more about <a href="https://ubc-cs.github.io/cpsc330-2024W1/lectures/notes/14_feature-engineering-selection.html#recursive-feature-elimination-rfe">Recursive Feature Elimination with Cross-validation</a>.</p>
+<p>Let’s chat a bit more about <a href="https://ubc-cs.github.io/cpsc330-2025S1/lectures/notes/14_feature-engineering-selection.html#recursive-feature-elimination-rfe">Recursive Feature Elimination with Cross-validation</a>.</p>
 </section>
 <section id="pause-and-reflect" class="slide level2 center">
 <h2>Pause and Reflect</h2>
@@ -368,7 +368,7 @@
 </ol></li>
 </ul>
 <!-- 
-# [Class demo](https://github.com/UBC-CS/cpsc330-2024W1/blob/main/lectures/102-Varada-lectures/class_demos/demo_15-k-means.ipynb)
+# [Class demo](https://github.com/UBC-CS/cpsc330-2025S1/blob/main/lectures/102-Varada-lectures/class_demos/demo_15-k-means.ipynb)
  -->
 <p>s</p>
 
@@ -658,7 +658,7 @@
       }
         var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
         var mailtoRegex = new RegExp(/^mailto:/);
-          var filterRegex = new RegExp("https:\/\/firasm\.github\.io\/cpsc330-slides\/");
+          var filterRegex = new RegExp('/' + window.location.host + '/');
         var isInternal = (href) => {
             return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
         }

@@ -63,7 +63,7 @@ pd.set_option("display.max_colwidth", 0)
 
 ## Super cool Demo! 
 
-[You can download and checkout the Demo here](https://github.com/UBC-CS/cpsc330-2024W1/blob/main/lectures/102-Varada-lectures/class_demos/demo_15-k-means.ipynb).
+[You can download and checkout the Demo here](https://github.com/UBC-CS/cpsc330-2025S1/blob/main/lectures/102-Varada-lectures/class_demos/demo_15-k-means.ipynb).
 
 All credit to Dr. Varada Kolhatkar for putting this together!
 
@@ -230,5 +230,5 @@ plot_dendrogram_clusters(X, linkage_array, hier_labels1, title="flattened with m
 
 
 <!-- 
-# [Class demo](https://github.com/UBC-CS/cpsc330-2024W1/blob/main/lectures/102-Varada-lectures/class_demos/demo_16-dbscan-hierarchical.ipynb) 
+# [Class demo](https://github.com/UBC-CS/cpsc330-2025S1/blob/main/lectures/102-Varada-lectures/class_demos/demo_16-dbscan-hierarchical.ipynb) 
 -->

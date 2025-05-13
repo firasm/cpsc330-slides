@@ -38,10 +38,11 @@ DATA_DIR = 'data/'
 ## Announcements 
 
 - Things due this week 
-    - Homework 1 (hw1): Due Sept 10 11:59pm 
-- Homework 2 (hw2) has been released (Due: Sept 16, 11:59pm)
-    - There is some autograding in this homework. 
-- You can find the tentative due dates for all deliverables [here](https://ubc-cs.github.io/cpsc330-2024W1/README.html#deliverable-due-dates-tentative).
+    - Homework 1 (hw1): Due May 16 17:59
+<!-- - Homework 2 (hw2) has been released (Due: Sept 16, 11:59pm)
+    - There is some autograding in this homework.
+-->
+- You can find the tentative due dates for all deliverables [here](https://ubc-cs.github.io/cpsc330-2025S1/README.html#deliverable-due-dates-tentative).
 - Please monitor Piazza (especially pinned posts and instructor posts) for announcements. 
 - I'll assume that you've watched the pre-lecture videos.
 
@@ -67,10 +68,10 @@ It is not **required** for you to work in a GitHub repository, but we *highly en
 ## Checklist for you in the first week
 
 - [ ] Are you able to access course [Canvas](https://canvas.ubc.ca/courses/149122) shell? 
-- [ ] Are you able to access [course Piazza](https://piazza.com/ubc.ca/winterterm12024/cpsc_v3301011021032024w1)?
+- [ ] Are you able to access [course Piazza](https://piazza.com/ubc.ca/winterterm12024/cpsc_v3301011021032024S1)?
 - [ ] Are you able to access [Gradescope](https://canvas.ubc.ca/courses/149122/external_tools/53542?display=borderless)? (If not, refer to the [Gradescope Student Guide](https://lthub.ubc.ca/guides/gradescope-student-guide/).)
 - [ ] Are you able to access [iClicker Cloud](https://join.iclicker.com/VYFJ) for this course?
-- [ ] Did you follow the setup instructions [here](https://ubc-cs.github.io/cpsc330-2024W1/docs/setup.html) to create a course conda environment on your computer?
+- [ ] Did you follow the setup instructions [here](https://ubc-cs.github.io/cpsc330-2025S1/docs/setup.html) to create a course conda environment on your computer?
 - [ ] Did you complete the "Getting to know you" survey on Canvas?
 - [ ] Did you complete the anonymous [restaurant survey on Qualtrics](https://ubc.ca1.qualtrics.com/jfe/form/SV_73VuZiuwM1eDVrw)?
 - [ ] Are you almost finished or at least started with homework 1?
@@ -81,7 +82,7 @@ It is not **required** for you to work in a GitHub repository, but we *highly en
   - `~/School/Year3/CPSC330/` <-- Consider this your CPSC parent folder
 - Create subfolders for: `hw`, `class`, `practice`
 - In the `hw` folder, you will then clone `hw1`, `hw2`, `hw3`, etc...
-- In the `class` folder, you will clone the `CPSC330-2024W1` repo which contains all the class jupyter notebooks
+- In the `class` folder, you will clone the `cpsc330-2025S1` repo which contains all the class jupyter notebooks
   - Do **not** make any changes to files in this directory/repo, you will have trouble when you pull stuff during each class.
   - If you did make changes, you can reset to the last commit and DESTROY any changes you made (be careful with this command) using: `git reset --hard`
 - In the `practice` folder, you can **copy** any notebooks (`.ipynb`) and files (like data/*.csv) you want to try running locally and experiment

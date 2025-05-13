@@ -191,7 +191,7 @@ For this demo, each student should [click this link](https://github.com/new?temp
 
 If you really don't want to create a repo,
 
-- Navigate to the `cpsc330-2024W1` repo
+- Navigate to the `cpsc330-2025S1` repo
 - run `git pull` to pull the latest files in the course repo
 - Look for the demo file here: `lectures/102-Firas-lectures/class_demos/`.
 

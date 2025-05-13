@@ -130,7 +130,7 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Welcome to CPSC330! Here, you’ll find slides for CPSC 330 Section 103. These slides are based on the notes present <a href="https://ubc-cs.github.io/cpsc330-2024W1/README.html">here</a>.</p>
+<p>Welcome to CPSC330! Here, you’ll find slides for CPSC 330 Section 103. These slides are based on the notes present <a href="https://ubc-cs.github.io/cpsc330-2025S1/README.html">here</a>.</p>
 <ul>
 <li><p><strong>Class times</strong> 🕘 5 pm to 6:20 pm</p></li>
 <li><p><strong>Where?</strong> 📍 <a href="https://learningspaces.ubc.ca/classrooms/swng-222">West Mall Swing Space (SWNG) - 222</a>, 2175 West Mall, Vancouver, BC V6T 1Z4</p></li>
@@ -231,7 +231,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/firasm\.github\.io\/cpsc330-slides\/");
+      var filterRegex = new RegExp('/' + window.location.host + '/');
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }

@@ -117,7 +117,7 @@ Questions:
     - Think broadly and philosophically rathern than an implementation...
 
 <!-- 
-## [Demo of feature engineering and selection](https://github.com/UBC-CS/cpsc330-2024W1/blob/main/lectures/102-Varada-lectures/class_demos/demo_14-feature-engineering-selection.ipynb)
+## [Demo of feature engineering and selection](https://github.com/UBC-CS/cpsc330-2025S1/blob/main/lectures/102-Varada-lectures/class_demos/demo_14-feature-engineering-selection.ipynb)
 
 ## Domain-specific transformations
 

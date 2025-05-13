@@ -655,7 +655,7 @@
     "href": "slides-01-intro.html#lecture-notes",
     "title": "Lecture 1: Introduction to CPSC 330",
     "section": "Lecture notes",
-    "text": "Lecture notes\n\nAll the lectures from last year are available here.\nWe cannot promise anything will stay the same from last year to this year, so read them in advance at your own risk.\nA “finalized” version will be pushed to GitHub and the Jupyter book right before each class.\nEach instructor will have slightly adapted versions of notes to present slides during lectures.\n\nYou will find the link to these slides in our repository: https://github.com/UBC-CS/cpsc330-2024W1/tree/main/lectures/103-Firas-lectures"
+    "text": "Lecture notes\n\nAll the lectures from last year are available here.\nWe cannot promise anything will stay the same from last year to this year, so read them in advance at your own risk.\nA “finalized” version will be pushed to GitHub and the Jupyter book right before each class.\nEach instructor will have slightly adapted versions of notes to present slides during lectures.\n\nYou will find the link to these slides in our repository: https://github.com/UBC-CS/cpsc330-2025S1/tree/main/lectures/103-Firas-lectures"
   },
   {
     "objectID": "slides-01-intro.html#grades",
@@ -1068,7 +1068,7 @@
     "href": "slides-11.html#group-work-class-demo-live-coding-if-time-permits",
     "title": "CPSC 330 Lecture 11: Midterm review",
     "section": "Group Work: Class Demo & Live Coding (if time permits)",
-    "text": "Group Work: Class Demo & Live Coding (if time permits)\nThis is mostly on regression metrics though it may serve as a good review of everything.\nFor this demo, each student should click this link to create a new repo in their accounts, then clone that repo locally to follow along with the demo from today.\n  \nIf you really don’t want to create a repo,\n\nNavigate to the cpsc330-2024W1 repo\nrun git pull to pull the latest files in the course repo\nLook for the demo file here"
+    "text": "Group Work: Class Demo & Live Coding (if time permits)\nThis is mostly on regression metrics though it may serve as a good review of everything.\nFor this demo, each student should click this link to create a new repo in their accounts, then clone that repo locally to follow along with the demo from today.\n  \nIf you really don’t want to create a repo,\n\nNavigate to the cpsc330-2025S1 repo\nrun git pull to pull the latest files in the course repo\nLook for the demo file here"
   },
   {
     "objectID": "slides-06.html#announcements",
@@ -1145,7 +1145,7 @@
     "href": "slides-06.html#group-work-class-demo-live-coding",
     "title": "Lecture 6: Column transformer and text features",
     "section": "Group Work: Class Demo & Live Coding",
-    "text": "Group Work: Class Demo & Live Coding\nFor this demo, each student should click this link to create a new repo in their accounts, then clone that repo locally to follow along with the demo from today.\n  \nIf you really don’t want to create a repo,\n\nNavigate to the cpsc330-2024W1 repo\nrun git pull to pull the latest files in the course repo\nLook for the demo file here: lectures/102-Firas-lectures/class_demos/."
+    "text": "Group Work: Class Demo & Live Coding\nFor this demo, each student should click this link to create a new repo in their accounts, then clone that repo locally to follow along with the demo from today.\n  \nIf you really don’t want to create a repo,\n\nNavigate to the cpsc330-2025S1 repo\nrun git pull to pull the latest files in the course repo\nLook for the demo file here: lectures/102-Firas-lectures/class_demos/."
   },
   {
     "objectID": "slides-06.html#sklearns-columntransformer",
@@ -1215,7 +1215,7 @@
     "href": "slides-13.html#group-work-class-demo-live-coding-if-time-permits",
     "title": "CPSC 330 Lecture 13: Feature importances",
     "section": "Group Work: Class Demo & Live Coding (if time permits)",
-    "text": "Group Work: Class Demo & Live Coding (if time permits)\nFor this demo, each student should click this link to create a new repo in their accounts, then clone that repo locally to follow along with the demo from today.\n  \nIf you really don’t want to create a repo,\n\nNavigate to the cpsc330-2024W1 repo\nrun git pull to pull the latest files in the course repo\nLook for the demo file here"
+    "text": "Group Work: Class Demo & Live Coding (if time permits)\nFor this demo, each student should click this link to create a new repo in their accounts, then clone that repo locally to follow along with the demo from today.\n  \nIf you really don’t want to create a repo,\n\nNavigate to the cpsc330-2025S1 repo\nrun git pull to pull the latest files in the course repo\nLook for the demo file here"
   },
   {
     "objectID": "slides-07.html#announcements",
@@ -1425,7 +1425,7 @@
     "href": "slides-07.html#group-work-class-demo-live-coding",
     "title": "Lecture 7: Linear models",
     "section": "Group Work: Class Demo & Live Coding",
-    "text": "Group Work: Class Demo & Live Coding\nFor this demo, each student should click this link to create a new repo in their accounts, then clone that repo locally to follow along with the demo from today.\n  \nIf you really don’t want to create a repo,\n\nNavigate to the cpsc330-2024W1 repo\nrun git pull to pull the latest files in the course repo\nLook for the demo file here"
+    "text": "Group Work: Class Demo & Live Coding\nFor this demo, each student should click this link to create a new repo in their accounts, then clone that repo locally to follow along with the demo from today.\n  \nIf you really don’t want to create a repo,\n\nNavigate to the cpsc330-2025S1 repo\nrun git pull to pull the latest files in the course repo\nLook for the demo file here"
   },
   {
     "objectID": "slides-12.html#announcements",
@@ -1446,14 +1446,14 @@
     "href": "slides-12.html#group-work-class-demo-live-coding-if-time-permits",
     "title": "CPSC 330 Lecture 12: Ensembles",
     "section": "Group Work: Class Demo & Live Coding (if time permits)",
-    "text": "Group Work: Class Demo & Live Coding (if time permits)\nFor this demo, each student should click this link to create a new repo in their accounts, then clone that repo locally to follow along with the demo from today.\n  \nIf you really don’t want to create a repo,\n\nNavigate to the cpsc330-2024W1 repo\nrun git pull to pull the latest files in the course repo\nLook for the demo file here"
+    "text": "Group Work: Class Demo & Live Coding (if time permits)\nFor this demo, each student should click this link to create a new repo in their accounts, then clone that repo locally to follow along with the demo from today.\n  \nIf you really don’t want to create a repo,\n\nNavigate to the cpsc330-2025S1 repo\nrun git pull to pull the latest files in the course repo\nLook for the demo file here"
   },
   {
     "objectID": "slides-02-terminology-decision-trees.html#announcements",
     "href": "slides-02-terminology-decision-trees.html#announcements",
     "title": "Lecture 2: Terminology, Baselines, Decision Trees",
     "section": "Announcements",
-    "text": "Announcements\n\nThings due this week\n\nHomework 1 (hw1): Due Sept 10 11:59pm\n\nHomework 2 (hw2) has been released (Due: Sept 16, 11:59pm)\n\nThere is some autograding in this homework.\n\nYou can find the tentative due dates for all deliverables here.\nPlease monitor Piazza (especially pinned posts and instructor posts) for announcements.\nI’ll assume that you’ve watched the pre-lecture videos."
+    "text": "Announcements\n\nThings due this week\n\nHomework 1 (hw1): Due May 16 17:59 \n\nYou can find the tentative due dates for all deliverables here.\nPlease monitor Piazza (especially pinned posts and instructor posts) for announcements.\nI’ll assume that you’ve watched the pre-lecture videos."
   },
   {
     "objectID": "slides-02-terminology-decision-trees.html#surveys",
@@ -1481,7 +1481,7 @@
     "href": "slides-02-terminology-decision-trees.html#suggested-workflow-for-working-with-jupyter-notebooks",
     "title": "Lecture 2: Terminology, Baselines, Decision Trees",
     "section": "Suggested Workflow for working with Jupyter Notebooks",
-    "text": "Suggested Workflow for working with Jupyter Notebooks\n\nCreate a folder on your computer that will have all the CPSC 330 repos:\n\n~/School/Year3/CPSC330/ &lt;– Consider this your CPSC parent folder\n\nCreate subfolders for: hw, class, practice\nIn the hw folder, you will then clone hw1, hw2, hw3, etc…\nIn the class folder, you will clone the CPSC330-2024W1 repo which contains all the class jupyter notebooks\n\nDo not make any changes to files in this directory/repo, you will have trouble when you pull stuff during each class.\nIf you did make changes, you can reset to the last commit and DESTROY any changes you made (be careful with this command) using: git reset --hard\n\nIn the practice folder, you can copy any notebooks (.ipynb) and files (like data/*.csv) you want to try running locally and experiment"
+    "text": "Suggested Workflow for working with Jupyter Notebooks\n\nCreate a folder on your computer that will have all the CPSC 330 repos:\n\n~/School/Year3/CPSC330/ &lt;– Consider this your CPSC parent folder\n\nCreate subfolders for: hw, class, practice\nIn the hw folder, you will then clone hw1, hw2, hw3, etc…\nIn the class folder, you will clone the cpsc330-2025S1 repo which contains all the class jupyter notebooks\n\nDo not make any changes to files in this directory/repo, you will have trouble when you pull stuff during each class.\nIf you did make changes, you can reset to the last commit and DESTROY any changes you made (be careful with this command) using: git reset --hard\n\nIn the practice folder, you can copy any notebooks (.ipynb) and files (like data/*.csv) you want to try running locally and experiment"
   },
   {
     "objectID": "slides-02-terminology-decision-trees.html#recap-machine-learning-workflow",
@@ -1957,7 +1957,7 @@
     "href": "slides-03-ml-fundamentals.html#group-work-class-demo-live-coding",
     "title": "Lecture 3: ML fundamentals",
     "section": "Group Work: Class Demo & Live Coding",
-    "text": "Group Work: Class Demo & Live Coding\nFor this demo, each student should click this link to create a new repo in their accounts, then clone that repo locally to follow along with the demo from today.\n  \nIf you really don’t want to create a repo,\n\nNavigate to the cpsc330-2024W1 repo\nrun git pull to pull the latest files in the course repo\nLook for the demo file here: lectures/102-Firas-lectures/class_demos/."
+    "text": "Group Work: Class Demo & Live Coding\nFor this demo, each student should click this link to create a new repo in their accounts, then clone that repo locally to follow along with the demo from today.\n  \nIf you really don’t want to create a repo,\n\nNavigate to the cpsc330-2025S1 repo\nrun git pull to pull the latest files in the course repo\nLook for the demo file here: lectures/102-Firas-lectures/class_demos/."
   },
   {
     "objectID": "slides-19.html#announcements",
@@ -2209,7 +2209,7 @@
     "href": "slides-19.html#object-detection-using-yolo",
     "title": "CPSC 330 Lecture 19: Introduction to deep learning and computer vision",
     "section": "Object detection using YOLO",
-    "text": "Object detection using YOLO\n\n\nLet’s try this out using a pre-trained model.\n\nfrom ultralytics import YOLO\nmodel = YOLO(\"yolov8n.pt\")  # pretrained YOLOv8n model\n\nyolo_input = \"data/yolo_test/3356700488_183566145b.jpg\"\nyolo_result = \"data/yolo_result.jpg\"\n# Run batched inference on a list of images\nresult = model(yolo_input)  # return a list of Results objects\nresult[0].save(filename=yolo_result)\n\n\nimage 1/1 /Users/firasm/Sync/Teaching/2024_2025/2024W1/cpsc330/cpsc330-slides/website/data/yolo_test/3356700488_183566145b.jpg: 512x640 4 persons, 2 cars, 1 stop sign, 100.0ms\nSpeed: 2.6ms preprocess, 100.0ms inference, 3.9ms postprocess per image at shape (1, 3, 512, 640)\n\n\n'data/yolo_result.jpg'"
+    "text": "Object detection using YOLO\n\n\nLet’s try this out using a pre-trained model.\n\nfrom ultralytics import YOLO\nmodel = YOLO(\"yolov8n.pt\")  # pretrained YOLOv8n model\n\nyolo_input = \"data/yolo_test/3356700488_183566145b.jpg\"\nyolo_result = \"data/yolo_result.jpg\"\n# Run batched inference on a list of images\nresult = model(yolo_input)  # return a list of Results objects\nresult[0].save(filename=yolo_result)\n\n\nimage 1/1 /Users/firasm/Sync/Teaching/2024_2025/2024S1/cpsc330/cpsc330-slides/website/data/yolo_test/3356700488_183566145b.jpg: 512x640 4 persons, 2 cars, 1 stop sign, 100.0ms\nSpeed: 2.6ms preprocess, 100.0ms inference, 3.9ms postprocess per image at shape (1, 3, 512, 640)\n\n\n'data/yolo_result.jpg'"
   },
   {
     "objectID": "slides-19.html#object-detection-output",

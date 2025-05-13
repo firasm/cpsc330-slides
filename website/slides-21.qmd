@@ -19,5 +19,5 @@ format:
   - Almost there! Hang in there 😊
 - Midterm 2 grading is almost done. 
 
-# [Class demo](https://github.com/UBC-CS/cpsc330-2024W1/blob/main/lectures/102-Varada-lectures/class_demos/demo_21-survival-analysis.ipynb) 
+# [Class demo](https://github.com/UBC-CS/cpsc330-2025S1/blob/main/lectures/102-Varada-lectures/class_demos/demo_21-survival-analysis.ipynb) 
 
