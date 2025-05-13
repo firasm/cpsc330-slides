@@ -204,7 +204,7 @@ If you really don't want to create a repo,
 - Use a column transformer with sklearn pipelines. 
 
 ## (iClicker) Exercise 6.1
-**iClicker cloud join link: [https://join.iclicker.com/VYFJ](https://join.iclicker.com/VYFJ)**
+**iClicker cloud join link: [https://join.iclicker.com/YJHS](https://join.iclicker.com/YJHS)**
 
 **Select all of the following statements which are TRUE.**
 

@@ -129,7 +129,7 @@ Multiclass Support
 :::
 
 ## (iClicker) Exercise 5.1
-iClicker cloud join link: **https://join.iclicker.com/VYFJ**
+iClicker cloud join link: **https://join.iclicker.com/YJHS**
 
 Take a guess: In your machine learning project, how much time will you typically spend on data preparation and transformation?
 
@@ -142,7 +142,7 @@ The question is adapted from [here](https://developers.google.com/machine-learni
 
 
 ## (iClicker) Exercise 5.2
-iClicker cloud join link: **https://join.iclicker.com/VYFJ**
+iClicker cloud join link: **https://join.iclicker.com/YJHS**
 
 Select all of the following statements which are TRUE.
 
@@ -155,7 +155,7 @@ After applying SimpleImputer The transformed data has a different shape than the
 
 
 ## (iClicker) Exercise 5.3
-iClicker cloud join link: **https://join.iclicker.com/VYFJ**
+iClicker cloud join link: **https://join.iclicker.com/YJHS**
 
 Select all of the following statements which are TRUE.
 

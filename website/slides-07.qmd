@@ -127,7 +127,7 @@ text_pipeline = make_pipeline(
 ```
 
 ## (iClicker) Exercise 6.2
-**iClicker cloud join link: [https://join.iclicker.com/VYFJ](https://join.iclicker.com/VYFJ)**
+**iClicker cloud join link: [https://join.iclicker.com/YJHS](https://join.iclicker.com/YJHS)**
 
 Select all of the following statements which are TRUE.
 
@@ -193,7 +193,7 @@ text_pipeline = make_pipeline(
 ```
 
 ## (iClicker) Exercise 6.2
-iClicker cloud join link: **https://join.iclicker.com/VYFJ**
+iClicker cloud join link: **https://join.iclicker.com/YJHS**
 
 Select all of the following statements which are TRUE.
 
@@ -366,7 +366,7 @@ plt.show()
 
 ## (iClicker) Exercise 7.1
 
-**iClicker cloud join link: [https://join.iclicker.com/VYFJ](https://join.iclicker.com/VYFJ)**
+**iClicker cloud join link: [https://join.iclicker.com/YJHS](https://join.iclicker.com/YJHS)**
 
 Select all of the following statements which are TRUE.
 
@@ -377,7 +377,7 @@ Select all of the following statements which are TRUE.
 
 ## (iClicker) Exercise 7.2
 
-**iClicker cloud join link: [https://join.iclicker.com/VYFJ](https://join.iclicker.com/VYFJ)**
+**iClicker cloud join link: [https://join.iclicker.com/YJHS](https://join.iclicker.com/YJHS)**
 
 Select all of the following statements which are TRUE.
 

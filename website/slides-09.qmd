@@ -114,7 +114,7 @@ In a medical test for a disease, diseased states are labeled as 1 and healthy st
 
 ## iClicker Exercise 9.1
 
-**iClicker cloud join link: [https://join.iclicker.com/VYFJ](https://join.iclicker.com/VYFJ)**
+**iClicker cloud join link: [https://join.iclicker.com/YJHS](https://join.iclicker.com/YJHS)**
 
 **Select all of the following statements which are TRUE.**
 
@@ -142,7 +142,7 @@ Method B - lower accuracy but higher precision
 
 ## Thresholding Exercise 9.2
 
-**iClicker cloud join link: [https://join.iclicker.com/VYFJ](https://join.iclicker.com/VYFJ)**
+**iClicker cloud join link: [https://join.iclicker.com/YJHS](https://join.iclicker.com/YJHS)**
 
 **Select all of the following statements which are TRUE.**
 

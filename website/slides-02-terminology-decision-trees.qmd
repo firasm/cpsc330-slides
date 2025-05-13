@@ -42,35 +42,38 @@ DATA_DIR = 'data/'
 <!-- - Homework 2 (hw2) has been released (Due: Sept 16, 11:59pm)
     - There is some autograding in this homework.
 -->
-- You can find the tentative due dates for all deliverables [here](https://ubc-cs.github.io/cpsc330-2025S1/README.html#deliverable-due-dates-tentative).
-- Please monitor Piazza (especially pinned posts and instructor posts) for announcements. 
+- You can find the tentative due dates for all deliverables [here](https://ubc-cs.github.io/cpsc330-2025S1/docs/schedule.html#deliverable-due-dates-tentative).
+- Please monitor Ed Discussion (especially pinned posts and instructor posts) for announcements. 
 - I'll assume that you've watched the pre-lecture videos.
 
 <br><br>
 
 ## Surveys
 
-- Please complete the "Getting to know you" survey on [Canvas]().
-- Also, please complete the anonymous restaurant survey on Qualtrics [here](https://ubc.ca1.qualtrics.com/jfe/form/SV_73VuZiuwM1eDVrw).
-  - We will try to analyze this data set in the coming weeks.
+<!-- - Please complete the "Getting to know you" survey on [Canvas](). -->
+- Please complete the anonymous restaurant survey on Qualtrics [here](https://ubc.ca1.qualtrics.com/jfe/form/SV_73VuZiuwM1eDVrw).
+- We will try to analyze this data set in the coming weeks.
 
 ## Gradescope
 
 Make sure you can submit your assignment before the hw1 due date!
 
-It is not **required** for you to work in a GitHub repository, but we *highly encourage you to do this*!
+It is **required** for you to work in a GitHub repository, please maintain your GitHub repo up-to-date.
 
-**For students on the waitlist**: Gradescope Entry code is **MRZX7Z**.
+**For students on the waitlist**: Gradescope Entry code is **9KK5ZR**.
 
 ![](img/gradescope){.nostretch fig-align="center" width="700px"}
 
+## Demo: Submit hw1 on Gradescope
+
+We are going to practice submitting HW1 on Gradescope so you all do it at least once!
 
 ## Checklist for you in the first week
 
-- [ ] Are you able to access course [Canvas](https://canvas.ubc.ca/courses/149122) shell? 
-- [ ] Are you able to access [course Piazza](https://piazza.com/ubc.ca/winterterm12024/cpsc_v3301011021032024S1)?
-- [ ] Are you able to access [Gradescope](https://canvas.ubc.ca/courses/149122/external_tools/53542?display=borderless)? (If not, refer to the [Gradescope Student Guide](https://lthub.ubc.ca/guides/gradescope-student-guide/).)
-- [ ] Are you able to access [iClicker Cloud](https://join.iclicker.com/VYFJ) for this course?
+- [ ] Are you able to access course [Canvas](https://canvas.ubc.ca/courses/165412) shell? 
+- [ ] Are you able to access [course forum: Ed Discussion](https://edstem.org/us/join/rNVu2p)?
+- [ ] Are you able to access [Gradescope](https://canvas.ubc.ca/courses/165412/external_tools/58730?display=borderless)? (If not, refer to the [Gradescope Student Guide](https://lthub.ubc.ca/guides/gradescope-student-guide/).)
+- [ ] Are you able to access [iClicker Cloud](https://join.iclicker.com/YJHS) for this course?
 - [ ] Did you follow the setup instructions [here](https://ubc-cs.github.io/cpsc330-2025S1/docs/setup.html) to create a course conda environment on your computer?
 - [ ] Did you complete the "Getting to know you" survey on Canvas?
 - [ ] Did you complete the anonymous [restaurant survey on Qualtrics](https://ubc.ca1.qualtrics.com/jfe/form/SV_73VuZiuwM1eDVrw)?
@@ -114,7 +117,7 @@ In the first part of this course, we'll focus on supervised machine learning.
 
 ## iClicker 2.1: Terminology
 
-iClicker cloud join link: [https://join.iclicker.com/VYFJ](https://join.iclicker.com/VYFJ)
+iClicker cloud join link: [https://join.iclicker.com/YJHS](https://join.iclicker.com/YJHS)
 
 ## Select all of the following statements which are **True** (iClicker)
 
@@ -127,7 +130,7 @@ E) Google News is likely be using machine learning to organize news.
 
 ## iClicker 2.2: Supervised vs unsupervised
 
-Clicker cloud join link: [https://join.iclicker.com/VYFJ](https://join.iclicker.com/VYFJ)
+Clicker cloud join link: [https://join.iclicker.com/YJHS](https://join.iclicker.com/YJHS)
 
 Select all of the following statements which are examples of supervised machine learning
 
@@ -139,7 +142,7 @@ Select all of the following statements which are examples of supervised machine 
 
 ## iClicker 2.3: Classification vs. Regression
 
-Clicker cloud join link: [https://join.iclicker.com/VYFJ](https://join.iclicker.com/VYFJ)
+Clicker cloud join link: [https://join.iclicker.com/YJHS](https://join.iclicker.com/YJHS)
  
 Select all of the following statements which are examples of regression problems
 
@@ -320,7 +323,7 @@ plot_tree_decision_boundary_and_tree(
 
 ## iClicker 2.5: Baselines and Decision trees
 
-iClicker cloud join link: [https://join.iclicker.com/VYFJ](https://join.iclicker.com/VYFJ)
+iClicker cloud join link: [https://join.iclicker.com/YJHS](https://join.iclicker.com/YJHS)
 
 Select all of the following statements which are TRUE.
 

@@ -25,7 +25,7 @@ format:
   - Start early on homework assignments.
 
 - If you are still on the waitlist, it’s your responsibility to keep up with the material and submit assignments.
-- Last day to drop without a W standing: **Sept 16, 2023**
+- Last day to drop without a W standing: **May 16, 2025**
 
 ## Recap
 
@@ -45,7 +45,7 @@ A typical sequence of steps to train supervised machine learning models
 
 ## iClicker 3.1
 
-Clicker cloud join link: [https://join.iclicker.com/VYFJ](https://join.iclicker.com/VYFJ)
+Clicker cloud join link: [https://join.iclicker.com/YJHS](https://join.iclicker.com/YJHS)
 
 Select all of the following statements which are TRUE.
 
@@ -68,7 +68,7 @@ Reference: [MLU-Explain - Data Splitting](https://mlu-explain.github.io/train-te
 
 ## iClicker 3.2
 
-Clicker cloud join link: [https://join.iclicker.com/VYFJ](https://join.iclicker.com/VYFJ)
+Clicker cloud join link: [https://join.iclicker.com/YJHS](https://join.iclicker.com/YJHS)
 
 Select all of the following statements which are TRUE.
 
