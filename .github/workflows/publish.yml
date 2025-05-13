@@ -11,6 +11,18 @@ jobs:
     permissions:
       contents: write
     steps:
+
+      - name: Setup Python
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13' 
+
+      - name: Install Python and pip
+        run: sudo apt-get install python3-pip
+
+      - name: Install Python packages
+        run: pip install nbformat nbclient
+      
       - name: Check out repository
         uses: actions/checkout@v4
 
