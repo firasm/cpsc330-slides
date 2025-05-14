@@ -11,6 +11,8 @@ jobs:
     permissions:
       contents: write
     steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
 
       - name: Setup Python
         uses: actions/setup-python@v5
@@ -29,9 +31,6 @@ jobs:
       - name: Install dependencies
         run: |
           pip install -r requirements.txt
-      
-      - name: Check out repository
-        uses: actions/checkout@v4
 
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
