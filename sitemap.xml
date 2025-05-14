@@ -1,95 +1,95 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://firasm.github.io/cpsc330-slides/slides-19.html</loc>
-    <lastmod>2025-05-14T07:59:55.141Z</lastmod>
-  </url>
-  <url>
-    <loc>https://firasm.github.io/cpsc330-slides/slides-14.html</loc>
-    <lastmod>2025-05-14T07:59:55.140Z</lastmod>
-  </url>
-  <url>
-    <loc>https://firasm.github.io/cpsc330-slides/slides-21.html</loc>
-    <lastmod>2025-05-14T07:59:55.141Z</lastmod>
-  </url>
-  <url>
-    <loc>https://firasm.github.io/cpsc330-slides/slides-16.html</loc>
-    <lastmod>2025-05-14T07:59:55.140Z</lastmod>
+    <loc>https://firasm.github.io/cpsc330-slides/slides-01-intro.html</loc>
+    <lastmod>2025-05-14T18:46:14.802Z</lastmod>
   </url>
   <url>
     <loc>https://firasm.github.io/cpsc330-slides/slides-05-preprocessing-pipelines.html</loc>
-    <lastmod>2025-05-14T07:59:55.137Z</lastmod>
+    <lastmod>2025-05-14T18:46:14.805Z</lastmod>
   </url>
   <url>
     <loc>https://firasm.github.io/cpsc330-slides/slides-12.html</loc>
-    <lastmod>2025-05-14T07:59:55.140Z</lastmod>
-  </url>
-  <url>
-    <loc>https://firasm.github.io/cpsc330-slides/slides-06.html</loc>
-    <lastmod>2025-05-14T07:59:55.137Z</lastmod>
-  </url>
-  <url>
-    <loc>https://firasm.github.io/cpsc330-slides/slides-20.html</loc>
-    <lastmod>2025-05-14T07:59:55.141Z</lastmod>
-  </url>
-  <url>
-    <loc>https://firasm.github.io/cpsc330-slides/slides-15.html</loc>
-    <lastmod>2025-05-14T07:59:55.140Z</lastmod>
-  </url>
-  <url>
-    <loc>https://firasm.github.io/cpsc330-slides/slides-18.html</loc>
-    <lastmod>2025-05-14T07:59:55.141Z</lastmod>
-  </url>
-  <url>
-    <loc>https://firasm.github.io/cpsc330-slides/slides-01-intro.html</loc>
-    <lastmod>2025-05-14T07:59:55.134Z</lastmod>
-  </url>
-  <url>
-    <loc>https://firasm.github.io/cpsc330-slides/slides-11.html</loc>
-    <lastmod>2025-05-14T07:59:55.140Z</lastmod>
-  </url>
-  <url>
-    <loc>https://firasm.github.io/cpsc330-slides/slides-13.html</loc>
-    <lastmod>2025-05-14T07:59:55.140Z</lastmod>
-  </url>
-  <url>
-    <loc>https://firasm.github.io/cpsc330-slides/slides-08.html</loc>
-    <lastmod>2025-05-14T07:59:55.140Z</lastmod>
-  </url>
-  <url>
-    <loc>https://firasm.github.io/cpsc330-slides/slides-17.html</loc>
-    <lastmod>2025-05-14T07:59:55.140Z</lastmod>
+    <lastmod>2025-05-14T18:46:14.808Z</lastmod>
   </url>
   <url>
     <loc>https://firasm.github.io/cpsc330-slides/slides-02-terminology-decision-trees.html</loc>
-    <lastmod>2025-05-14T07:59:55.134Z</lastmod>
+    <lastmod>2025-05-14T18:46:14.802Z</lastmod>
   </url>
   <url>
-    <loc>https://firasm.github.io/cpsc330-slides/slides-07.html</loc>
-    <lastmod>2025-05-14T07:59:55.139Z</lastmod>
-  </url>
-  <url>
-    <loc>https://firasm.github.io/cpsc330-slides/slides.html</loc>
-    <lastmod>2025-05-14T07:59:55.141Z</lastmod>
-  </url>
-  <url>
-    <loc>https://firasm.github.io/cpsc330-slides/slides-04-kNNs-SVM-RBF.html</loc>
-    <lastmod>2025-05-14T07:59:55.137Z</lastmod>
-  </url>
-  <url>
-    <loc>https://firasm.github.io/cpsc330-slides/slides-09.html</loc>
-    <lastmod>2025-05-14T07:59:55.140Z</lastmod>
-  </url>
-  <url>
-    <loc>https://firasm.github.io/cpsc330-slides/index.html</loc>
-    <lastmod>2025-05-14T07:59:55.134Z</lastmod>
+    <loc>https://firasm.github.io/cpsc330-slides/slides-11.html</loc>
+    <lastmod>2025-05-14T18:46:14.808Z</lastmod>
   </url>
   <url>
     <loc>https://firasm.github.io/cpsc330-slides/slides-03-ml-fundamentals.html</loc>
-    <lastmod>2025-05-14T07:59:55.137Z</lastmod>
+    <lastmod>2025-05-14T18:46:14.805Z</lastmod>
+  </url>
+  <url>
+    <loc>https://firasm.github.io/cpsc330-slides/slides-06.html</loc>
+    <lastmod>2025-05-14T18:46:14.805Z</lastmod>
+  </url>
+  <url>
+    <loc>https://firasm.github.io/cpsc330-slides/slides-08.html</loc>
+    <lastmod>2025-05-14T18:46:14.808Z</lastmod>
   </url>
   <url>
     <loc>https://firasm.github.io/cpsc330-slides/slides-24.html</loc>
-    <lastmod>2025-05-14T07:59:55.141Z</lastmod>
+    <lastmod>2025-05-14T18:46:14.809Z</lastmod>
+  </url>
+  <url>
+    <loc>https://firasm.github.io/cpsc330-slides/slides-04-kNNs-SVM-RBF.html</loc>
+    <lastmod>2025-05-14T18:46:14.805Z</lastmod>
+  </url>
+  <url>
+    <loc>https://firasm.github.io/cpsc330-slides/slides-16.html</loc>
+    <lastmod>2025-05-14T18:46:14.808Z</lastmod>
+  </url>
+  <url>
+    <loc>https://firasm.github.io/cpsc330-slides/slides-07.html</loc>
+    <lastmod>2025-05-14T18:46:14.807Z</lastmod>
+  </url>
+  <url>
+    <loc>https://firasm.github.io/cpsc330-slides/slides-21.html</loc>
+    <lastmod>2025-05-14T18:46:14.809Z</lastmod>
+  </url>
+  <url>
+    <loc>https://firasm.github.io/cpsc330-slides/slides-13.html</loc>
+    <lastmod>2025-05-14T18:46:14.808Z</lastmod>
+  </url>
+  <url>
+    <loc>https://firasm.github.io/cpsc330-slides/slides-17.html</loc>
+    <lastmod>2025-05-14T18:46:14.808Z</lastmod>
+  </url>
+  <url>
+    <loc>https://firasm.github.io/cpsc330-slides/slides-19.html</loc>
+    <lastmod>2025-05-14T18:46:14.809Z</lastmod>
+  </url>
+  <url>
+    <loc>https://firasm.github.io/cpsc330-slides/slides-14.html</loc>
+    <lastmod>2025-05-14T18:46:14.808Z</lastmod>
+  </url>
+  <url>
+    <loc>https://firasm.github.io/cpsc330-slides/index.html</loc>
+    <lastmod>2025-05-14T18:46:14.802Z</lastmod>
+  </url>
+  <url>
+    <loc>https://firasm.github.io/cpsc330-slides/slides-18.html</loc>
+    <lastmod>2025-05-14T18:46:14.808Z</lastmod>
+  </url>
+  <url>
+    <loc>https://firasm.github.io/cpsc330-slides/slides.html</loc>
+    <lastmod>2025-05-14T18:46:14.809Z</lastmod>
+  </url>
+  <url>
+    <loc>https://firasm.github.io/cpsc330-slides/slides-15.html</loc>
+    <lastmod>2025-05-14T18:46:14.808Z</lastmod>
+  </url>
+  <url>
+    <loc>https://firasm.github.io/cpsc330-slides/slides-20.html</loc>
+    <lastmod>2025-05-14T18:46:14.809Z</lastmod>
+  </url>
+  <url>
+    <loc>https://firasm.github.io/cpsc330-slides/slides-09.html</loc>
+    <lastmod>2025-05-14T18:46:14.808Z</lastmod>
   </url>
 </urlset>
