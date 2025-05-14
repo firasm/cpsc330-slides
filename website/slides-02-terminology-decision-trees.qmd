@@ -152,7 +152,6 @@ Select all of the following statements which are examples of regression problems
 - (D) Predicting whether you should bicycle tomorrow or not based on the weather forecast.
 - (E) Predicting appropriate thermostat temperature based on the wind speed and the number of people in a room.
 
-
 ## ML Framework in CPSC 330
 
 - There are many frameworks to do do machine learning. 
@@ -231,9 +230,15 @@ toy_happiness_df['dummy_predictions'] = model.predict(X)
 toy_happiness_df
 ```
 
+## Break
+
+Let's take a break!
+
+![](img/eva-coffee.png){fig-align="center"}
+
 # Decision trees
 
-## Pre-Intuition
+## Activity: 20 Questions
 
 Let's play [20 questions](https://en.wikipedia.org/wiki/Twenty_questions)!
 You can ask me up to 20 Yes/No questions to figure out the answer.
@@ -331,3 +336,20 @@ Select all of the following statements which are TRUE.
 - (B) predict takes only X as argument whereas fit and score take both X and y as arguments.
 - (C) For the decision tree algorithm to work, the feature values must be binary.
 - (D) The prediction in a decision tree works by routing the example from the root to the leaf.
+
+## Break
+
+Let's take a break!
+
+![](img/eva-coffee.png){fig-align="center"}
+
+## Group Work: Class Demo & Live Coding
+
+In some of the classes, we will do a bit of live coding to get your used to practical machine learning.
+You are **highly encouraged** to follow along - we won't usually finish _everything_ in the demo, but it should be a significant portion that you can finish off after class.
+
+For this demo, each student should [click this link](https://github.com/new?template_name=lecture2_demo&template_owner=ubc-cpsc330) to create a new repo in their accounts, then clone that repo locally to follow along with the demo from today.
+
+<br>
+<br>
+<br>
