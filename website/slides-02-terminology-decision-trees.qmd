@@ -348,7 +348,7 @@ Let's take a break!
 In some of the classes, we will do a bit of live coding to get your used to practical machine learning.
 You are **highly encouraged** to follow along - we won't usually finish _everything_ in the demo, but it should be a significant portion that you can finish off after class.
 
-For this demo, each student should [click this link](https://github.com/new?template_name=lecture2_demo&template_owner=ubc-cpsc330) to create a new repo in their accounts, then clone that repo locally to follow along with the demo from today.
+For this demo, each student should [click this link](https://github.com/new?template_name=lecture02_demo&template_owner=ubc-cpsc330) to create a new repo in their accounts, then clone that repo locally to follow along with the demo from today.
 
 <br>
 <br>
