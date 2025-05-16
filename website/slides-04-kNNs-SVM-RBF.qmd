@@ -15,23 +15,14 @@ format:
       - img/  
 ---
 
-## Announcements 
+<!-- ## Announcements 
 
-- My office hours are Wednesdays from 1:30 - 2:30 PM in ICCS 253.
+
 - hw2 was due yesterday.
-- Syllabus quiz due date is September 19th, 11:59 pm. 
 - Homework 3 (hw3) has been released (Due: Oct 1st, 11:59 pm)
   - You can work in pairs for this assignment. 
 - If you were on the waitlist, you should know your enrollment status now. Attendance in tutorials is not mandatory; they are optional and will follow an office-hour format. You are free to attend any tutorial session of your choice.
-- The lecture notes within these notebooks align with the content presented in the videos. Even though we do not cover all the content from these notebooks during lectures, it’s your responsibility to go through them on your own.
-
-## Class 3 Demo Continued
-
-For the first 15-20 mins, we'll try to finish off the demo from Lecture 3.
-
-You can [find the demo repo here](https://github.com/ubc-cpsc330/lecture3_demo), though you have probably created a repo already locally from Thursday.
-
-**You can find the [finished version of the repo in my demo account after class](https://github.com/demofiras/class3_demo).**
+- The lecture notes within these notebooks align with the content presented in the videos. Even though we do not cover all the content from these notebooks during lectures, it’s your responsibility to go through them on your own. -->
 
 ## Pod Work: Discuss these questions
 
@@ -86,13 +77,6 @@ How might one address the issue of **underfitting** in a machine learning model.
 
 [Source](https://developers.google.com/machine-learning/crash-course/overfitting/overfitting)
 
-## Break
-
-Let's take a break!
-
-![](img/eva-coffee.png){fig-align="center"}
-
-
 ## iClicker 4.1
 
 **iClicker cloud join link: [https://join.iclicker.com/YJHS](https://join.iclicker.com/YJHS)**
@@ -115,6 +99,12 @@ Let's take a break!
 - (B) In sklearn’s SVC classifier, large values of `gamma` tend to result in higher training score but probably lower validation score. 
 - (C) If we increase both `gamma` and `C`, we can't be certain if the model becomes more complex or less complex.
 
+## Break
+
+Let's take a break!
+
+![](img/eva-coffee.png){fig-align="center"}
+
 
 ## Similarity-based algorithms 
 - Use similarity or distance metrics to predict targets.
@@ -126,5 +116,34 @@ Let's take a break!
 - Distance Metrics: Euclidean
 - Strengths: simple and intuitive, can learn complex decision boundaries
 - Challenges: Sensitive to the choice of distance metric and **scaling** (coming up).
+
+## Curse of dimensionality
+
+- As dimensionality increases, the volume of the space increases exponentially, making the data sparse.
+- Distance metrics lose meaning
+    - Accidental similarity swamps out meaningful similarity
+    - All points become almost equidistant.
+- Overfitting becomes likely: Harder to generalize with high-dimensional data.
+- How to deal with this? 
+    - Dimensionality reduction (PCA) (not covered in this course)
+    - Feature selection techniques.
+
+## SVMs with RBF kernel 
+- RBF Kernel: Radial Basis Function, a way to transform data into higher dimensions implicitly.
+- Strengths 
+    - Effective in high-dimensional and sparse data
+    - Good performance on non-linear problems.
+- Hyperparameters:
+    - C$: Regularization parameter (trade-off between correct classification of training examples and maximization of the decision margin).
+	- $\gamma$: Defines how far the influence of a single training example reaches.
+
+## Intuition of `C` and `gamma` in SVM RBF
+- `C` (Regularization): Controls the trade-off between perfect training accuracy and having a simpler decision boundary. 
+    - High C: Strict, complex boundary (overfitting risk).
+    - Low C: More errors allowed, smoother boundary (generalizes better).
+- `Gamma` (Kernel Width): Controls the influence of individual data points.
+	- High Gamma: Points have local impact, complex boundary.
+	- Low Gamma: Points affect broader areas, smoother boundary.
+- Key trade-off: Proper balance between `C` and `gamma` is crucial for avoiding overfitting or underfitting.
 
 <!-- # [Class demo](https://github.com/UBC-CS/cpsc330-2025S1/blob/main/lectures/102-Varada-lectures/class_demos/demo_04-kNNs-SVMs.ipynb) -->

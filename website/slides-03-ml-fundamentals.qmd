@@ -14,9 +14,11 @@ format:
       - img/
 ---
 
-## Announcements 
+## Announcements
 
-- Homework 2 (hw2) has been released (Due: Sept 16, 11:59pm)
+- Remember, my office hours are MWF from 1:00 - 1:30 PM in DMP 310 (after class)
+
+- Homework 2 (hw2) was released on Wednesday, it is due May 20, 10:00 pm
   - You are welcome to broadly discuss it with your classmates but final answers and submissions must be your own.
   - Group submissions are not allowed for this assignment.
 - Advice on keeping up with the material
@@ -24,8 +26,18 @@ format:
   - Make sure you run the lecture notes on your laptop and experiment with the code. 
   - Start early on homework assignments.
 
-- If you are still on the waitlist, it’s your responsibility to keep up with the material and submit assignments.
-- Last day to drop without a W standing: **May 16, 2025**
+- If you are still on the waitlist, it’s your responsibility to keep up with the material and submit assignments!
+- Last day to drop without a W standing is today: **May 16, 2025**
+
+## Dropping lowest homework (Update)
+
+- CPSC 330 has 9 homework assignments that are all an integral part of your learning
+- To account for illnesses, other commitments, and to preserve your mental health, there has long been a policy of dropping your lowest HW score.
+- After some analysis from the data from previous terms (Learning Analytics!), there is a slight modification to this policy:
+
+> **With the exception of HW5,** we will drop your lowest homework grade - all students must complete HW5.
+
+- This is to encourage all students to complete HW5! It's important!
 
 ## Recap
 
@@ -65,7 +77,6 @@ IPython.display.IFrame(width=1000, height=650, src=url)
 
 Reference: [MLU-Explain - Data Splitting](https://mlu-explain.github.io/train-test-validation/)
 
-
 ## iClicker 3.2
 
 Clicker cloud join link: [https://join.iclicker.com/YJHS](https://join.iclicker.com/YJHS)
@@ -88,16 +99,16 @@ IPython.display.IFrame(width=1000, height=650, src=url)
 
 Reference: [MLU-Explain - Cross Validation](https://mlu-explain.github.io/cross-validation/)
 
+## Break
+
+Let's take a break!
+
+![](img/eva-coffee.png){fig-align="center"}
+
 ## Group Work: Class Demo & Live Coding
 
-For this demo, each student should [click this link](https://github.com/new?template_name=lecture3_demo&template_owner=ubc-cpsc330) to create a new repo in their accounts, then clone that repo locally to follow along with the demo from today.
+For this demo, each student should [click this link](https://github.com/new?template_name=lecture03_demo&template_owner=ubc-cpsc330) to create a new repo in their accounts, then clone that repo locally to follow along with the demo from today.
 
 <br>
 <br>
 <br>
-
-If you really don't want to create a repo,
-
-- Navigate to the `cpsc330-2025S1` repo
-- run `git pull` to pull the latest files in the course repo
-- Look for the demo file here: `lectures/102-Firas-lectures/class_demos/`.
