@@ -134,8 +134,8 @@ Let's take a break!
     - Effective in high-dimensional and sparse data
     - Good performance on non-linear problems.
 - Hyperparameters:
-    - C$: Regularization parameter (trade-off between correct classification of training examples and maximization of the decision margin).
-	- $\gamma$: Defines how far the influence of a single training example reaches.
+    - $C$: Regularization parameter (trade-off between correct classification of training examples and maximization of the decision margin).
+	- $\gamma$ (Gamma): Defines how far the influence of a single training example reaches.
 
 ## Intuition of `C` and `gamma` in SVM RBF
 - `C` (Regularization): Controls the trade-off between perfect training accuracy and having a simpler decision boundary. 
