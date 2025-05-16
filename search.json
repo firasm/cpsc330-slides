@@ -284,28 +284,7 @@
     "href": "slides-05-preprocessing-pipelines.html#announcements",
     "title": "Lecture 5: Preprocessing and sklearn pipelines",
     "section": "Announcements",
-    "text": "Announcements\n\nHW1 grades have been posted.\nHomework 1 solutions have been posted on Canvas under Files tab. Please do not share them with anyone or do not post them anywhere."
-  },
-  {
-    "objectID": "slides-05-preprocessing-pipelines.html#curse-of-dimensionality",
-    "href": "slides-05-preprocessing-pipelines.html#curse-of-dimensionality",
-    "title": "Lecture 5: Preprocessing and sklearn pipelines",
-    "section": "Curse of dimensionality",
-    "text": "Curse of dimensionality\n\nAs dimensionality increases, the volume of the space increases exponentially, making the data sparse.\nDistance metrics lose meaning\n\nAccidental similarity swamps out meaningful similarity\nAll points become almost equidistant.\n\nOverfitting becomes likely: Harder to generalize with high-dimensional data.\nHow to deal with this?\n\nDimensionality reduction (PCA) (not covered in this course)\nFeature selection techniques."
-  },
-  {
-    "objectID": "slides-05-preprocessing-pipelines.html#svms-with-rbf-kernel",
-    "href": "slides-05-preprocessing-pipelines.html#svms-with-rbf-kernel",
-    "title": "Lecture 5: Preprocessing and sklearn pipelines",
-    "section": "SVMs with RBF kernel",
-    "text": "SVMs with RBF kernel\n\nRBF Kernel: Radial Basis Function, a way to transform data into higher dimensions implicitly.\nStrengths\n\nEffective in high-dimensional and sparse data\nGood performance on non-linear problems.\n\nHyperparameters:\n\nC$: Regularization parameter (trade-off between correct classification of training examples and maximization of the decision margin).\n\\(\\gamma\\): Defines how far the influence of a single training example reaches."
-  },
-  {
-    "objectID": "slides-05-preprocessing-pipelines.html#intuition-of-c-and-gamma-in-svm-rbf",
-    "href": "slides-05-preprocessing-pipelines.html#intuition-of-c-and-gamma-in-svm-rbf",
-    "title": "Lecture 5: Preprocessing and sklearn pipelines",
-    "section": "Intuition of C and gamma in SVM RBF",
-    "text": "Intuition of C and gamma in SVM RBF\n\nC (Regularization): Controls the trade-off between perfect training accuracy and having a simpler decision boundary.\n\nHigh C: Strict, complex boundary (overfitting risk).\nLow C: More errors allowed, smoother boundary (generalizes better).\n\nGamma (Kernel Width): Controls the influence of individual data points.\n\nHigh Gamma: Points have local impact, complex boundary.\nLow Gamma: Points affect broader areas, smoother boundary.\n\nKey trade-off: Proper balance between C and gamma is crucial for avoiding overfitting or underfitting."
+    "text": "Announcements"
   },
   {
     "objectID": "slides-05-preprocessing-pipelines.html#recap",
@@ -823,7 +802,14 @@
     "href": "slides-03-ml-fundamentals.html#announcements",
     "title": "Lecture 3: ML fundamentals",
     "section": "Announcements",
-    "text": "Announcements\n\nHomework 2 (hw2) has been released (Due: Sept 16, 11:59pm)\n\nYou are welcome to broadly discuss it with your classmates but final answers and submissions must be your own.\nGroup submissions are not allowed for this assignment.\n\nAdvice on keeping up with the material\n\nPractice!\nMake sure you run the lecture notes on your laptop and experiment with the code.\nStart early on homework assignments.\n\nIf you are still on the waitlist, it’s your responsibility to keep up with the material and submit assignments.\nLast day to drop without a W standing: May 16, 2025"
+    "text": "Announcements\n\nRemember, my office hours are MWF from 1:00 - 1:30 PM in DMP 310 (after class)\nHomework 2 (hw2) was released on Wednesday, it is due May 20, 10:00 pm\n\nYou are welcome to broadly discuss it with your classmates but final answers and submissions must be your own.\nGroup submissions are not allowed for this assignment.\n\nAdvice on keeping up with the material\n\nPractice!\nMake sure you run the lecture notes on your laptop and experiment with the code.\nStart early on homework assignments.\n\nIf you are still on the waitlist, it’s your responsibility to keep up with the material and submit assignments!\nLast day to drop without a W standing is today: May 16, 2025"
+  },
+  {
+    "objectID": "slides-03-ml-fundamentals.html#dropping-lowest-homework-update",
+    "href": "slides-03-ml-fundamentals.html#dropping-lowest-homework-update",
+    "title": "Lecture 3: ML fundamentals",
+    "section": "Dropping lowest homework (Update)",
+    "text": "Dropping lowest homework (Update)\n\nCPSC 330 has 9 homework assignments that are all an integral part of your learning\nTo account for illnesses, other commitments, and to preserve your mental health, there has long been a policy of dropping your lowest HW score.\nAfter some analysis from the data from previous terms (Learning Analytics!), there is a slight modification to this policy:\n\n\nWith the exception of HW5, we will drop your lowest homework grade - all students must complete HW5.\n\n\nThis is to encourage all students to complete HW5! It’s important!"
   },
   {
     "objectID": "slides-03-ml-fundamentals.html#recap",
@@ -868,11 +854,18 @@
     "text": "Additional Resource\n\n\n\n        \n        \n\n\nReference: MLU-Explain - Cross Validation"
   },
   {
+    "objectID": "slides-03-ml-fundamentals.html#break",
+    "href": "slides-03-ml-fundamentals.html#break",
+    "title": "Lecture 3: ML fundamentals",
+    "section": "Break",
+    "text": "Break\nLet’s take a break!"
+  },
+  {
     "objectID": "slides-03-ml-fundamentals.html#group-work-class-demo-live-coding",
     "href": "slides-03-ml-fundamentals.html#group-work-class-demo-live-coding",
     "title": "Lecture 3: ML fundamentals",
     "section": "Group Work: Class Demo & Live Coding",
-    "text": "Group Work: Class Demo & Live Coding\nFor this demo, each student should click this link to create a new repo in their accounts, then clone that repo locally to follow along with the demo from today.\n  \nIf you really don’t want to create a repo,\n\nNavigate to the cpsc330-2025S1 repo\nrun git pull to pull the latest files in the course repo\nLook for the demo file here: lectures/102-Firas-lectures/class_demos/."
+    "text": "Group Work: Class Demo & Live Coding\nFor this demo, each student should click this link to create a new repo in their accounts, then clone that repo locally to follow along with the demo from today."
   },
   {
     "objectID": "slides-06.html#announcements",
@@ -1061,7 +1054,7 @@
     "href": "slides-08.html#random-search-example",
     "title": "CPSC 330 Lecture 8: Hyperparameter Optimization",
     "section": "Random search example",
-    "text": "Random search example\n\nfrom sklearn.model_selection import RandomizedSearchCV\nfrom scipy.stats import randint\n\npipe_svc = make_pipeline(CountVectorizer(), SVC())\n\nparam_dist = {\n    \"countvectorizer__max_features\": randint(100, 2000), \n    \"svc__C\": uniform(0.1, 1e4),  # loguniform(1e-3, 1e3),\n    \"svc__gamma\": loguniform(1e-5, 1e3),\n}\nrandom_search = RandomizedSearchCV(pipe_svm,                                    \n                  param_distributions = param_dist, \n                  n_iter=10, \n                  n_jobs=-1, \n                  return_train_score=True)\n\n# Carry out the search\nrandom_search.fit(X_train, y_train)\nrandom_search.best_score_\n\nnp.float64(0.9832470651916505)"
+    "text": "Random search example\n\nfrom sklearn.model_selection import RandomizedSearchCV\nfrom scipy.stats import randint\n\npipe_svc = make_pipeline(CountVectorizer(), SVC())\n\nparam_dist = {\n    \"countvectorizer__max_features\": randint(100, 2000), \n    \"svc__C\": uniform(0.1, 1e4),  # loguniform(1e-3, 1e3),\n    \"svc__gamma\": loguniform(1e-5, 1e3),\n}\nrandom_search = RandomizedSearchCV(pipe_svm,                                    \n                  param_distributions = param_dist, \n                  n_iter=10, \n                  n_jobs=-1, \n                  return_train_score=True)\n\n# Carry out the search\nrandom_search.fit(X_train, y_train)\nrandom_search.best_score_\n\nnp.float64(0.9828476645910571)"
   },
   {
     "objectID": "slides-08.html#optimization-bias",
@@ -1211,20 +1204,6 @@
     "text": "Conclusion & farewell\nThat’s all, folks. We made it! Good luck on your final exam! When you get a chance, please let me know what worked for you and what didn’t work for you in this course."
   },
   {
-    "objectID": "slides-04-kNNs-SVM-RBF.html#announcements",
-    "href": "slides-04-kNNs-SVM-RBF.html#announcements",
-    "title": "Lecture 4: \\(k\\)-nearest neighbours and SVM RBFs",
-    "section": "Announcements",
-    "text": "Announcements\n\nMy office hours are Wednesdays from 1:30 - 2:30 PM in ICCS 253.\nhw2 was due yesterday.\nSyllabus quiz due date is September 19th, 11:59 pm.\nHomework 3 (hw3) has been released (Due: Oct 1st, 11:59 pm)\n\nYou can work in pairs for this assignment.\n\nIf you were on the waitlist, you should know your enrollment status now. Attendance in tutorials is not mandatory; they are optional and will follow an office-hour format. You are free to attend any tutorial session of your choice.\nThe lecture notes within these notebooks align with the content presented in the videos. Even though we do not cover all the content from these notebooks during lectures, it’s your responsibility to go through them on your own."
-  },
-  {
-    "objectID": "slides-04-kNNs-SVM-RBF.html#class-3-demo-continued",
-    "href": "slides-04-kNNs-SVM-RBF.html#class-3-demo-continued",
-    "title": "Lecture 4: \\(k\\)-nearest neighbours and SVM RBFs",
-    "section": "Class 3 Demo Continued",
-    "text": "Class 3 Demo Continued\nFor the first 15-20 mins, we’ll try to finish off the demo from Lecture 3.\nYou can find the demo repo here, though you have probably created a repo already locally from Thursday.\nYou can find the finished version of the repo in my demo account after class."
-  },
-  {
     "objectID": "slides-04-kNNs-SVM-RBF.html#pod-work-discuss-these-questions",
     "href": "slides-04-kNNs-SVM-RBF.html#pod-work-discuss-these-questions",
     "title": "Lecture 4: \\(k\\)-nearest neighbours and SVM RBFs",
@@ -1274,13 +1253,6 @@
     "text": "Overfitting and underfitting\n\nSource"
   },
   {
-    "objectID": "slides-04-kNNs-SVM-RBF.html#break",
-    "href": "slides-04-kNNs-SVM-RBF.html#break",
-    "title": "Lecture 4: \\(k\\)-nearest neighbours and SVM RBFs",
-    "section": "Break",
-    "text": "Break\nLet’s take a break!"
-  },
-  {
     "objectID": "slides-04-kNNs-SVM-RBF.html#iclicker-4.1",
     "href": "slides-04-kNNs-SVM-RBF.html#iclicker-4.1",
     "title": "Lecture 4: \\(k\\)-nearest neighbours and SVM RBFs",
@@ -1295,6 +1267,13 @@
     "text": "iClicker 4.2\niClicker cloud join link: https://join.iclicker.com/YJHS\nSelect all of the following statements which are TRUE.\n\n\n\\(k\\)-NN may perform poorly in high-dimensional space (say, d &gt; 1000).\n\n\nIn sklearn’s SVC classifier, large values of gamma tend to result in higher training score but probably lower validation score.\n\n\nIf we increase both gamma and C, we can’t be certain if the model becomes more complex or less complex."
   },
   {
+    "objectID": "slides-04-kNNs-SVM-RBF.html#break",
+    "href": "slides-04-kNNs-SVM-RBF.html#break",
+    "title": "Lecture 4: \\(k\\)-nearest neighbours and SVM RBFs",
+    "section": "Break",
+    "text": "Break\nLet’s take a break!"
+  },
+  {
     "objectID": "slides-04-kNNs-SVM-RBF.html#similarity-based-algorithms",
     "href": "slides-04-kNNs-SVM-RBF.html#similarity-based-algorithms",
     "title": "Lecture 4: \\(k\\)-nearest neighbours and SVM RBFs",
@@ -1307,6 +1286,27 @@
     "title": "Lecture 4: \\(k\\)-nearest neighbours and SVM RBFs",
     "section": "\\(k\\)-nearest neighbours",
     "text": "\\(k\\)-nearest neighbours\n\nClassifies an object based on the majority label among its \\(k\\) closest neighbors.\nMain hyperparameter: \\(k\\) or n_neighbors in sklearn\nDistance Metrics: Euclidean\nStrengths: simple and intuitive, can learn complex decision boundaries\nChallenges: Sensitive to the choice of distance metric and scaling (coming up)."
+  },
+  {
+    "objectID": "slides-04-kNNs-SVM-RBF.html#curse-of-dimensionality",
+    "href": "slides-04-kNNs-SVM-RBF.html#curse-of-dimensionality",
+    "title": "Lecture 4: \\(k\\)-nearest neighbours and SVM RBFs",
+    "section": "Curse of dimensionality",
+    "text": "Curse of dimensionality\n\nAs dimensionality increases, the volume of the space increases exponentially, making the data sparse.\nDistance metrics lose meaning\n\nAccidental similarity swamps out meaningful similarity\nAll points become almost equidistant.\n\nOverfitting becomes likely: Harder to generalize with high-dimensional data.\nHow to deal with this?\n\nDimensionality reduction (PCA) (not covered in this course)\nFeature selection techniques."
+  },
+  {
+    "objectID": "slides-04-kNNs-SVM-RBF.html#svms-with-rbf-kernel",
+    "href": "slides-04-kNNs-SVM-RBF.html#svms-with-rbf-kernel",
+    "title": "Lecture 4: \\(k\\)-nearest neighbours and SVM RBFs",
+    "section": "SVMs with RBF kernel",
+    "text": "SVMs with RBF kernel\n\nRBF Kernel: Radial Basis Function, a way to transform data into higher dimensions implicitly.\nStrengths\n\nEffective in high-dimensional and sparse data\nGood performance on non-linear problems.\n\nHyperparameters:\n\nC$: Regularization parameter (trade-off between correct classification of training examples and maximization of the decision margin).\n\\(\\gamma\\): Defines how far the influence of a single training example reaches."
+  },
+  {
+    "objectID": "slides-04-kNNs-SVM-RBF.html#intuition-of-c-and-gamma-in-svm-rbf",
+    "href": "slides-04-kNNs-SVM-RBF.html#intuition-of-c-and-gamma-in-svm-rbf",
+    "title": "Lecture 4: \\(k\\)-nearest neighbours and SVM RBFs",
+    "section": "Intuition of C and gamma in SVM RBF",
+    "text": "Intuition of C and gamma in SVM RBF\n\nC (Regularization): Controls the trade-off between perfect training accuracy and having a simpler decision boundary.\n\nHigh C: Strict, complex boundary (overfitting risk).\nLow C: More errors allowed, smoother boundary (generalizes better).\n\nGamma (Kernel Width): Controls the influence of individual data points.\n\nHigh Gamma: Points have local impact, complex boundary.\nLow Gamma: Points affect broader areas, smoother boundary.\n\nKey trade-off: Proper balance between C and gamma is crucial for avoiding overfitting or underfitting."
   },
   {
     "objectID": "slides-16.html#announcements",
@@ -2041,7 +2041,7 @@
     "href": "slides-19.html#object-detection-using-yolo",
     "title": "CPSC 330 Lecture 19: Introduction to deep learning and computer vision",
     "section": "Object detection using YOLO",
-    "text": "Object detection using YOLO\n\n\nLet’s try this out using a pre-trained model.\n\nfrom ultralytics import YOLO\nmodel = YOLO(\"yolov8n.pt\")  # pretrained YOLOv8n model\n\nyolo_input = \"data/yolo_test/3356700488_183566145b.jpg\"\nyolo_result = \"data/yolo_result.jpg\"\n# Run batched inference on a list of images\nresult = model(yolo_input)  # return a list of Results objects\nresult[0].save(filename=yolo_result)\n\nCreating new Ultralytics Settings v0.0.6 file ✅ \nView Ultralytics Settings with 'yolo settings' or at '/home/runner/.config/Ultralytics/settings.json'\nUpdate Settings with 'yolo settings key=value', i.e. 'yolo settings runs_dir=path/to/dir'. For help see https://docs.ultralytics.com/quickstart/#ultralytics-settings.\n\nimage 1/1 /home/runner/work/cpsc330-slides/cpsc330-slides/website/data/yolo_test/3356700488_183566145b.jpg: 512x640 4 persons, 2 cars, 1 stop sign, 97.8ms\nSpeed: 1.2ms preprocess, 97.8ms inference, 1.0ms postprocess per image at shape (1, 3, 512, 640)\n\n\n'data/yolo_result.jpg'"
+    "text": "Object detection using YOLO\n\n\nLet’s try this out using a pre-trained model.\n\nfrom ultralytics import YOLO\nmodel = YOLO(\"yolov8n.pt\")  # pretrained YOLOv8n model\n\nyolo_input = \"data/yolo_test/3356700488_183566145b.jpg\"\nyolo_result = \"data/yolo_result.jpg\"\n# Run batched inference on a list of images\nresult = model(yolo_input)  # return a list of Results objects\nresult[0].save(filename=yolo_result)\n\nCreating new Ultralytics Settings v0.0.6 file ✅ \nView Ultralytics Settings with 'yolo settings' or at '/home/runner/.config/Ultralytics/settings.json'\nUpdate Settings with 'yolo settings key=value', i.e. 'yolo settings runs_dir=path/to/dir'. For help see https://docs.ultralytics.com/quickstart/#ultralytics-settings.\n\nimage 1/1 /home/runner/work/cpsc330-slides/cpsc330-slides/website/data/yolo_test/3356700488_183566145b.jpg: 512x640 4 persons, 2 cars, 1 stop sign, 83.8ms\nSpeed: 1.2ms preprocess, 83.8ms inference, 0.9ms postprocess per image at shape (1, 3, 512, 640)\n\n\n'data/yolo_result.jpg'"
   },
   {
     "objectID": "slides-19.html#object-detection-output",
