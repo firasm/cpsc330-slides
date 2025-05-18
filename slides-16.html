@@ -9,7 +9,7 @@
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.7.31">
 
-  <title>CPSC 330 Slides – CPSC 330 Lecture 16: DBSCAN, Hierarchical Clustering</title>
+  <title>CPSC 330 Slides – CPSC 330 Lecture 16: Recommender Systems</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -28,72 +28,6 @@
       vertical-align: middle;
     }
     .display.math{display: block; text-align: center; margin: 0.5rem auto;}
-    /* CSS for syntax highlighting */
-    html { -webkit-text-size-adjust: 100%; }
-    pre > code.sourceCode { white-space: pre; position: relative; }
-    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-    pre > code.sourceCode > span:empty { height: 1.2em; }
-    .sourceCode { overflow: visible; }
-    code.sourceCode > span { color: inherit; text-decoration: inherit; }
-    div.sourceCode { margin: 1em 0; }
-    pre.sourceCode { margin: 0; }
-    @media screen {
-    div.sourceCode { overflow: auto; }
-    }
-    @media print {
-    pre > code.sourceCode { white-space: pre-wrap; }
-    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-    }
-    pre.numberSource code
-      { counter-reset: source-line 0; }
-    pre.numberSource code > span
-      { position: relative; left: -4em; counter-increment: source-line; }
-    pre.numberSource code > span > a:first-child::before
-      { content: counter(source-line);
-        position: relative; left: -1em; text-align: right; vertical-align: baseline;
-        border: none; display: inline-block;
-        -webkit-touch-callout: none; -webkit-user-select: none;
-        -khtml-user-select: none; -moz-user-select: none;
-        -ms-user-select: none; user-select: none;
-        padding: 0 4px; width: 4em;
-        color: #aaaaaa;
-      }
-    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-    div.sourceCode
-      { color: #003b4f; background-color: #f1f3f5; }
-    @media screen {
-    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-    }
-    code span { color: #003b4f; } /* Normal */
-    code span.al { color: #ad0000; } /* Alert */
-    code span.an { color: #5e5e5e; } /* Annotation */
-    code span.at { color: #657422; } /* Attribute */
-    code span.bn { color: #ad0000; } /* BaseN */
-    code span.bu { } /* BuiltIn */
-    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
-    code span.ch { color: #20794d; } /* Char */
-    code span.cn { color: #8f5902; } /* Constant */
-    code span.co { color: #5e5e5e; } /* Comment */
-    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
-    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
-    code span.dt { color: #ad0000; } /* DataType */
-    code span.dv { color: #ad0000; } /* DecVal */
-    code span.er { color: #ad0000; } /* Error */
-    code span.ex { } /* Extension */
-    code span.fl { color: #ad0000; } /* Float */
-    code span.fu { color: #4758ab; } /* Function */
-    code span.im { color: #00769e; } /* Import */
-    code span.in { color: #5e5e5e; } /* Information */
-    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
-    code span.op { color: #5e5e5e; } /* Operator */
-    code span.ot { color: #003b4f; } /* Other */
-    code span.pp { color: #ad0000; } /* Preprocessor */
-    code span.sc { color: #5e5e5e; } /* SpecialChar */
-    code span.ss { color: #20794d; } /* SpecialString */
-    code span.st { color: #20794d; } /* String */
-    code span.va { color: #111111; } /* Variable */
-    code span.vs { color: #20794d; } /* VerbatimString */
-    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto-f1df21e055939c7596503b43d7cb8935.css">
   <link href="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -193,317 +127,105 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">CPSC 330 Lecture 16: DBSCAN, Hierarchical Clustering</h1>
+  <h1 class="title">CPSC 330 Lecture 16: Recommender Systems</h1>
 
 <div class="quarto-title-authors">
 </div>
 
 </section>
-<section id="announcements" class="slide level2 center">
-<h2>Announcements</h2>
-<ul>
-<li>HW6 is due next week Wednesday.
-<ul>
-<li>Computationally intensive (welcome to real-life ML!)</li>
-<li>heads up: you will need to install many packages (welcome to real-life ML!)</li>
-</ul></li>
-</ul>
-<div id="45e21323" class="cell" data-execution_count="1">
-<div class="cell-output cell-output-display">
-<div>
-<figure>
-<p><img data-src="slides-16_files/figure-revealjs/cell-2-output-1.png" width="254" height="444"></p>
-</figure>
-</div>
-</div>
-</div>
+<section class="slide level2 center">
+
+<!-- 
+## Announcements 
+
+- HW6 is due this Wednesday. 
+    - Max group size on this assignment is 4 people
+    - Computationally intensive (welcome to real-life ML!)
+    - heads up: you will need to install many packages  (welcome to real-life ML!)
+- No classes or OH during the Midterm Break!
+    - Thursday Nov 14 class is cancelled
+- Midterm 2 is next week (Nov 14/15)
+- Reminder: Please double check your Midterm 2 CBTF booking!
+-->
 </section>
-<section id="super-cool-demo" class="slide level2 center">
-<h2>Super cool Demo!</h2>
-<p><a href="https://github.com/UBC-CS/cpsc330-2025S1/blob/main/lectures/102-Varada-lectures/class_demos/demo_15-k-means.ipynb">You can download and checkout the Demo here</a>.</p>
-<p>All credit to Dr.&nbsp;Varada Kolhatkar for putting this together!</p>
+<section id="rest-of-cpsc-330" class="slide level2 center">
+<h2>Rest of CPSC 330</h2>
+<p>We started CPSC 330 with Machine Learning fundamentals, Supervised Learning models, Unsupervised Learning models, more complex fundamentals like feature engineering and feature selection</p>
+<p>We are now ready to try and solve different types of problems! - Today: Recommender Systems - Next class: Text Data and Topic Modelling - After: Images and Computer vision, Time Series Data, etc…</p>
 </section>
-<section id="recap-iclicker-exercise-15.3" class="slide level2 smaller center">
-<h2>Recap: iClicker Exercise 15.3</h2>
-<p>Select all of the following statements which are <strong>True</strong></p>
+<section id="iclicker-16.0" class="slide level2 center">
+<h2>iClicker 16.0</h2>
+<p>What percentage of the total watch time on YouTube do you think comes from reccomendations?</p>
 <ul>
 <li><ol type="A">
-<li>If you train K-Means with <code>n_clusters</code>= the number of examples, the inertia value will be 0.</li>
+<li>20%</li>
 </ol></li>
 <li><ol start="2" type="A">
-<li>The elbow plot shows the tradeoff between within cluster distance and the number of clusters.</li>
+<li>50%</li>
 </ol></li>
 <li><ol start="3" type="A">
-<li>Unlike the Elbow method, the Silhouette method is not dependent on the notion of cluster centers.</li>
+<li>70%</li>
 </ol></li>
 <li><ol start="4" type="A">
-<li>The elbow plot is not a reliable method to obtain the optimal number of clusters in all cases.</li>
-</ol></li>
-<li><ol start="5" type="A">
-<li>The Silhouette scores ranges between -1 and 1 where higher scores indicates better cluster assignments.</li>
+<li>95%</li>
 </ol></li>
 </ul>
+<p><a href="https://www.technologyreview.com/2022/09/20/1059709/youtube-algorithm-recommendations/">Source: MIT Technology Review</a></p>
 </section>
-<section id="iclicker-exercise-16.1" class="slide level2 center">
-<h2>iClicker Exercise 16.1</h2>
-<p><strong>Select all of the following statements which are TRUE.</strong></p>
-<ul>
-<li><ol type="A">
-<li>Similar to K-nearest neighbours, K-Means is a non parametric model.</li>
-</ol></li>
-<li><ol start="2" type="A">
-<li>The meaning of <span class="math inline"><em>K</em></span> in K-nearest neighbours and K-Means clustering is very similar.</li>
-</ol></li>
-<li><ol start="3" type="A">
-<li>Scaling of input features is crucial in clustering.<br>
-</li>
-</ol></li>
-<li><ol start="4" type="A">
-<li>In clustering, it’s almost always a good idea to find equal-sized clusters.</li>
-</ol></li>
-</ul>
-</section>
-<section>
-<section id="limitations-of-k-means" class="title-slide slide level1 center">
-<h1>Limitations of K-means</h1>
+<section id="what-is-a-recommender-system" class="slide level2 center">
+<h2>What is a Recommender System?</h2>
+<p>A recommender or a recommendation system recommends a particular product or service to users they are likely to consume.</p>
 
-</section>
-<section id="shape-of-clusters" class="slide level2 center">
-<h2>Shape of clusters</h2>
+<img data-src="img/recommendation_system.png" class="r-stretch"></section>
+<section id="examples-of-recommender-systems" class="slide level2 center">
+<h2>Examples of Recommender Systems</h2>
 <ul>
-<li>Good for spherical clusters of more or less equal sizes <img data-src="img/kmeans_boundaries.png"></li>
+<li>Amazon</li>
+<li>Netflix</li>
+<li>Tinder</li>
+<li>Facebook</li>
+<li>etc…</li>
 </ul>
+<p>What should be shown to the user so they buy more products/spend more time on the app/etc…</p>
 </section>
-<section id="k-means-failure-case-1" class="slide level2 center">
-<h2>K-Means: failure case 1</h2>
-<ul>
-<li>K-Means performs poorly if the clusters have more complex shapes (e.g., two moons data below).</li>
-</ul>
-<div id="e5141e3f" class="cell" data-execution_count="2">
-<div class="cell-output cell-output-display">
-<div>
-<figure>
-<p><img data-src="slides-16_files/figure-revealjs/cell-3-output-1.png" width="826" height="375"></p>
-</figure>
-</div>
-</div>
-</div>
+<section id="ethics-of-recommender-systems" class="slide level2 center">
+<h2>Ethics of Recommender Systems</h2>
+<p>We should be very mindful of the drawbacks of relying on recommender systems.</p>
+<p><strong>What are some ethical considersations of recommender systems?</strong></p>
 </section>
-<section id="k-means-failure-case-2" class="slide level2 center">
-<h2>K-Means: failure case 2</h2>
-<ul>
-<li>Again, K-Means is unable to capture complex cluster shapes.</li>
-</ul>
-<div id="b7fc151c" class="cell" data-execution_count="3">
-<div class="cell-output cell-output-display">
-<div>
-<figure>
-<p><img data-src="slides-16_files/figure-revealjs/cell-4-output-1.png" width="818" height="375"></p>
-</figure>
-</div>
-</div>
-</div>
+<section id="what-comprises-a-recommender-system" class="slide level2 center">
+<h2>What comprises a recommender system?</h2>
+<p>What does the problem formulation look like?</p>
+<p>What tools would/should we use to create a recommender system?</p>
 </section>
-<section id="k-means-failure-case-3" class="slide level2 center">
-<h2>K-Means: failure case 3</h2>
-<ul>
-<li>It assumes that all directions are equally important for each cluster and fails to identify non-spherical clusters.</li>
-</ul>
-<div id="ca2a90af" class="cell" data-execution_count="4">
-<div class="cell-output cell-output-display">
-<div>
-<figure>
-<p><img data-src="slides-16_files/figure-revealjs/cell-5-output-1.png" width="807" height="375"></p>
-</figure>
-</div>
-</div>
-</div>
-</section></section>
-<section id="can-we-do-better" class="title-slide slide level1 center">
-<h1>Can we do better?</h1>
-
-</section>
-
-<section>
-<section id="dbscan" class="title-slide slide level1 center">
-<h1>DBSCAN</h1>
-<ul>
-<li><strong>D</strong>ensity-<strong>B</strong>ased <strong>S</strong>patial <strong>C</strong>lustering of <strong>A</strong>pplications with <strong>N</strong>oise</li>
-<li>A density-based clustering algorithm</li>
-</ul>
-</section>
-<section id="dbscan-1" class="slide level2 center">
-<h2>DBSCAN</h2>
-<div id="558fe8e2" class="cell" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a>X, y <span class="op">=</span> make_moons(n_samples<span class="op">=</span><span class="dv">200</span>, noise<span class="op">=</span><span class="fl">0.08</span>, random_state<span class="op">=</span><span class="dv">42</span>)</span>
-<span id="cb1-2"><a></a>dbscan <span class="op">=</span> DBSCAN(eps<span class="op">=</span><span class="fl">0.2</span>)</span>
-<span id="cb1-3"><a></a>dbscan.fit(X)</span>
-<span id="cb1-4"><a></a>plot_original_clustered(X, dbscan, dbscan.labels_)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
-<div>
-<figure>
-<p><img data-src="slides-16_files/figure-revealjs/cell-6-output-1.png" width="974" height="375"></p>
-</figure>
-</div>
-</div>
-</div>
-</section>
-<section id="how-does-it-work" class="slide level2 center">
-<h2>How does it work?</h2>
-
-<img data-src="img/DBSCAN_search.gif" class="r-stretch"></section>
-<section id="dbscan-analogy" class="slide level2 center">
-<h2>DBSCAN Analogy</h2>
-<p>Consider DBSCAN in a social context:</p>
-<ul>
-<li>Social butterflies (🦋): Core points</li>
-<li>Friends of social butterflies who are not social butterflies: Border points</li>
-<li>Lone wolves (🐺): Noise points</li>
-</ul>
-</section>
-<section id="two-main-hyperparameters" class="slide level2 center">
-<h2>Two main hyperparameters</h2>
-<ul>
-<li><code>eps</code>: determines what it means for points to be “close”</li>
-<li><code>min_samples</code>: determines the number of <strong>neighboring points</strong> we require to consider in order for a point to be part of a cluster</li>
-</ul>
-</section>
-<section id="dbscan-failure-cases" class="slide level2 center">
-<h2>DBSCAN: failure cases</h2>
-<ul>
-<li>Let’s consider this dataset with three clusters of varying densities.<br>
-</li>
-<li>K-Means performs better compared to DBSCAN. But it has the benefit of knowing the value of <span class="math inline"><em>K</em></span> in advance.</li>
-</ul>
-<div id="614e734f" class="cell" data-execution_count="6">
-<div class="cell-output cell-output-stdout">
-<pre><code>[ 0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15]</code></pre>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<figure>
-<p><img data-src="slides-16_files/figure-revealjs/cell-7-output-2.png" width="1390" height="375"></p>
-</figure>
-</div>
-</div>
-</div>
+<section id="notebook-for-lecture-17" class="slide level2 center">
+<h2>Notebook for Lecture 17</h2>
+<p><a href="https://ubc-cs.github.io/cpsc330-2025S1/lectures/notes/17_recommender-systems.html">You can follow along here</a>!</p>
 </section>
 <section id="break" class="slide level2 center">
 <h2>Break</h2>
-<p>Let’s take a 10-min break!</p>
+<p>Let’s take a 10 min break</p>
 </section>
-<section id="dendrogram" class="slide level2 center">
-<h2>Dendrogram</h2>
-<p>Definition: visual representation of a tree, in particular, the hierarchical representation of data…</p>
-
-<img data-src="img/reading_dendrogram.png" class="r-stretch"><p><a href="https://www.displayr.com/what-is-dendrogram/">Source</a></p>
-</section>
-<section id="example-languages" class="slide level2 center">
-<h2>Example: Languages</h2>
-
-<img data-src="img/dendrogram_languages.jpg" class="r-stretch"><p><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC5325856/">Source</a></p>
-</section>
-<section id="hierarchical-clustering" class="slide level2 center">
-<h2>Hierarchical clustering</h2>
-<div id="9aa1c9d5" class="cell" data-execution_count="7">
-<div class="cell-output cell-output-display">
-<div>
-<figure>
-<p><img data-src="slides-16_files/figure-revealjs/cell-8-output-1.png" width="1073" height="378"></p>
-</figure>
-</div>
-</div>
-</div>
-</section>
-<section id="flat-clusters" class="slide level2 center">
-<h2>Flat clusters</h2>
+<section id="iclicker-exercise-16.1" class="slide level2 center">
+<h2>iClicker Exercise 16.1</h2>
+<p><strong>Select all of the following statements which are True (iClicker)</strong></p>
 <ul>
-<li>This is good but how can we get cluster labels from a dendrogram?</li>
-<li>We can bring the clustering to a “flat” format use <code>fcluster</code></li>
+<li><ol type="A">
+<li>In the context of recommendation systems, the shapes of validation utility matrix and train utility matrix are the same.</li>
+</ol></li>
+<li><ol start="2" type="A">
+<li>RMSE perfectly captures what we want to measure in the context of recommendation systems.</li>
+</ol></li>
+<li><ol start="3" type="A">
+<li>It would be reasonable to impute missing values in the utility matrix by taking the average of the ratings given to an item by similar users.</li>
+</ol></li>
+<li><ol start="4" type="A">
+<li>In KNN type imputation, if a user has not rated any items yet, a reasonable strategy would be recommending them the most popular item.</li>
+</ol></li>
 </ul>
-<div id="1c65640a" class="cell" data-execution_count="8">
-<div class="cell-output cell-output-display">
-<div>
-<figure>
-<p><img data-src="slides-16_files/figure-revealjs/cell-9-output-1.png" width="948" height="378"></p>
-</figure>
-</div>
-</div>
-</div>
-</section>
-<section id="linkage-criteria" class="slide level2 smaller center">
-<h2>Linkage criteria</h2>
-<ul>
-<li>When we create a dendrogram, we need to calculate distance between clusters. How do we measure distances between clusters?</li>
-<li>The <strong>linkage criteria</strong> determines how to find similarity between clusters:</li>
-<li>Some example linkage criteria are:
-<ul>
-<li>Single linkage <span class="math inline">→</span> smallest minimal distance, leads to loose clusters</li>
-<li>Complete linkage <span class="math inline">→</span> smallest maximum distance, leads to tight clusters</li>
-<li>Average linkage <span class="math inline">→</span> smallest average distance between all pairs of points in the clusters</li>
-<li>Ward linkage <span class="math inline">→</span> smallest increase in within-cluster variance, leads to equally sized clusters</li>
-</ul></li>
-</ul>
-</section>
-<section id="activity" class="slide level2 center">
-<h2>Activity</h2>
-<ul>
-<li>Fill in the table below</li>
-</ul>
-<table class="caption-top">
-<colgroup>
-<col style="width: 12%">
-<col style="width: 29%">
-<col style="width: 28%">
-<col style="width: 29%">
-</colgroup>
-<thead>
-<tr class="header">
-<th><strong>Clustering Method</strong></th>
-<th><strong>KMeans</strong></th>
-<th><strong>DBSCAN</strong></th>
-<th><strong>Hierarchical Clustering</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>Approach</strong></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td><strong>Hyperparameters</strong></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td><strong>Shape of clusters</strong></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td><strong>Handling noise</strong></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td><strong>Examples</strong></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<!-- 
-# [Class demo](https://github.com/UBC-CS/cpsc330-2025S1/blob/main/lectures/102-Varada-lectures/class_demos/demo_16-dbscan-hierarchical.ipynb) 
--->
 
 
-</section></section>
+</section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <p><img src="img/UBC-CS-logo.png" class="slide-logo"></p>

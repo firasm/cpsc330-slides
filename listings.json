@@ -2,15 +2,16 @@
   {
     "listing": "/slides.html",
     "items": [
-      "/slides-01-intro.html",
-      "/slides-02-terminology-decision-trees.html",
-      "/slides-03-ml-fundamentals.html",
-      "/slides-04-kNNs-SVM-RBF.html",
-      "/slides-05-preprocessing-pipelines.html",
+      "/slides-01.html",
+      "/slides-02.html",
+      "/slides-03.html",
+      "/slides-04.html",
+      "/slides-05.html",
       "/slides-06.html",
       "/slides-07.html",
       "/slides-08.html",
       "/slides-09.html",
+      "/slides-10.html",
       "/slides-11.html",
       "/slides-12.html",
       "/slides-13.html",
@@ -21,8 +22,8 @@
       "/slides-18.html",
       "/slides-19.html",
       "/slides-20.html",
-      "/slides-21.html",
-      "/slides-24.html"
+      "/slides-24.html",
+      "/slides-MT1review.html"
     ]
   }
 ]
