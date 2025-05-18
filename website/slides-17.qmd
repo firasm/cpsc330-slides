@@ -1,6 +1,6 @@
 ---
-title: 'CPSC 330 Lecture 17: Recommender Systems'
-description: "Recommender systems with a focus on content-based recommenders."
+title: 'CPSC 330 Lecture 17: Natural Language Processing'
+description: "Word embedding, topic modelling, text pre-processing."
 format:
     revealjs:
         html-math-method: plain
@@ -18,79 +18,73 @@ editor:
   render-on-save: true
 ---
 
+<!-- 
 ## Announcements 
 
-- HW6 is due this Wednesday. 
-    - Max group size on this assignment is 4 people
-    - Computationally intensive (welcome to real-life ML!)
-    - heads up: you will need to install many packages  (welcome to real-life ML!)
-- No classes or OH during the Midterm Break!
-    - Thursday Nov 14 class is cancelled
 - Midterm 2 is next week (Nov 14/15)
+- More information on Midterm 2, including a practice midterm will be released later tonight
 - Reminder: Please double check your Midterm 2 CBTF booking!
+ -->
 
-## Rest of CPSC 330
+## Recap: Recommender Systems
 
-We started CPSC 330 with Machine Learning fundamentals, Supervised Learning models, Unsupervised Learning models, more complex fundamentals like feature engineering and feature selection
+**How the heck did I split the data last class!?**
 
+## Beyond Error Rate in Recommender Systems
 
-We are now ready to try and solve different types of problems!
-- Today: Recommender Systems
-- Next class: Text Data and Topic Modelling
-- After: Images and Computer vision, Time Series Data, etc...
+- If a system gives the best RMSE it doesn’t necessarily mean that it’s going to give best recommendations.
+- In recommendation systems we do not have ground truth in the sense that there is no notion of “perfect” recommendations.
+- Training your model and evaluating it offline is not ideal.
 
-## iClicker 17.0
+## Beyond Error Rate in Recommender Systems
 
-What percentage of the total watch time on YouTube do you think comes from reccomendations?
+- Other aspects such as simplicity, interpretation, code maintainability are equally (if not more) important than best validation error.
+- Winning system of Netflix Challenge was never adopted.
+    - Big mess of ensembles was not really maintainable
+- There are also other considerations:
+    - diversity
+    - freshness
+    - trust
+    - persistence
 
-- (A) 20%
-- (B) 50%
-- (C) 70%
-- (D) 95%
-
-[Source: MIT Technology Review](https://www.technologyreview.com/2022/09/20/1059709/youtube-algorithm-recommendations/)
-
-## What is a Recommender System?
-
-A recommender or a recommendation system recommends a particular product or service to users they are likely to consume.
-
-![](img/recommendation_system.png)
-
-## Examples of Recommender Systems
-
-- Amazon
-- Netflix
-- Tinder
-- Facebook
-- etc...
-
-What should be shown to the user so they buy more products/spend more time on the app/etc...
-
-## Ethics of Recommender Systems
-
-We should be very mindful of the drawbacks of relying on recommender systems.
-
-**What are some ethical considersations of recommender systems?**
-
-## What comprises a recommender system?
-
-What does the problem formulation look like?
-
-What tools would/should we use to create a recommender system?
-
-## Notebook for Lecture 17
-
-[You can follow along here](https://ubc-cs.github.io/cpsc330-2025S1/lectures/notes/17_recommender-systems.html)!
-
-## Break
-
-Let's take a 10 min break
-
-## iClicker Exercise 17.1 
+## iClicker Exercise 17.2
 
 **Select all of the following statements which are True (iClicker)**
 
-- (A) In the context of recommendation systems, the shapes of validation utility matrix and train utility matrix are the same.
-- (B) RMSE perfectly captures what we want to measure in the context of recommendation systems.
-- (C) It would be reasonable to impute missing values in the utility matrix by taking the average of the ratings given to an item by similar users.
-- (D) In KNN type imputation, if a user has not rated any items yet, a reasonable strategy would be recommending them the most popular item.
+- (A) In content-based filtering we leverage available item features in addition to similarity between users.
+- (B) In content-based filtering you represent each user in terms of known features of items.
+- (C) In the set up of content-based filtering we discussed, if you have a new movie, you would have problems predicting ratings for that movie.
+- (D) In content-based filtering if a user has a number of ratings in the training utility matrix but does not have any ratings in the validation utility matrix then we won’t be able to calculate RMSE for the validation utility matrix.
+
+# Introduction to Natural Language Processing
+
+Natural Language Processing (NLP) is a branch of machine learning focused on enabling computers to understand, interpret, and generate human language.
+
+## Motivation and Context
+
+- Do large language models, such as ChatGPT, “understand” your questions to some extent and provide useful responses?
+- What is required for a machine to “understand” language?
+- So far we have been talking about sentence or document representations.
+- Today, we’ll go one step back and talk about word representations.
+
+## Referential Ambiguity
+
+Let's start with this picture:
+
+![](img/referential_ambiguity.png)
+
+- How do we know what the `it` is referring to?
+
+- How do we tell an algorithm that? 
+
+## Activity: Context and word meaning
+
+Pair up with the person next to you and try to guess the meanings of two made-up words: `flibbertigibbet` and `groak`.
+
+![](img/flibbertigibbet.png)
+
+Attribution: Thanks to ChatGPT 4o on Wed Nov. 6, 2024!
+
+## Demo
+
+[You can follow along here](https://ubc-cs.github.io/cpsc330-2025S1/lectures/notes/18_natural-language-processing.html)!

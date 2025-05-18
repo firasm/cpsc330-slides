@@ -133,20 +133,6 @@
     "text": "Dataset\nWe’ll be starting with the CitiBike dataset today"
   },
   {
-    "objectID": "slides-04-kNNs-SVM-RBF.html#announcements",
-    "href": "slides-04-kNNs-SVM-RBF.html#announcements",
-    "title": "Lecture 4: \\(k\\)-nearest neighbours and SVM RBFs",
-    "section": "Announcements",
-    "text": "Announcements\n\nMy office hours are Wednesdays from 1:30 - 2:30 PM in ICCS 253.\nhw2 was due yesterday.\nSyllabus quiz due date is September 19th, 11:59 pm.\nHomework 3 (hw3) has been released (Due: Oct 1st, 11:59 pm)\n\nYou can work in pairs for this assignment.\n\nIf you were on the waitlist, you should know your enrollment status now. Attendance in tutorials is not mandatory; they are optional and will follow an office-hour format. You are free to attend any tutorial session of your choice.\nThe lecture notes within these notebooks align with the content presented in the videos. Even though we do not cover all the content from these notebooks during lectures, it’s your responsibility to go through them on your own."
-  },
-  {
-    "objectID": "slides-04-kNNs-SVM-RBF.html#class-3-demo-continued",
-    "href": "slides-04-kNNs-SVM-RBF.html#class-3-demo-continued",
-    "title": "Lecture 4: \\(k\\)-nearest neighbours and SVM RBFs",
-    "section": "Class 3 Demo Continued",
-    "text": "Class 3 Demo Continued\nFor the first 15-20 mins, we’ll try to finish off the demo from Lecture 3.\nYou can find the demo repo here, though you have probably created a repo already locally from Thursday.\nYou can find the finished version of the repo in my demo account after class."
-  },
-  {
     "objectID": "slides-04-kNNs-SVM-RBF.html#pod-work-discuss-these-questions",
     "href": "slides-04-kNNs-SVM-RBF.html#pod-work-discuss-these-questions",
     "title": "Lecture 4: \\(k\\)-nearest neighbours and SVM RBFs",
@@ -196,13 +182,6 @@
     "text": "Overfitting and underfitting\n\nSource"
   },
   {
-    "objectID": "slides-04-kNNs-SVM-RBF.html#break",
-    "href": "slides-04-kNNs-SVM-RBF.html#break",
-    "title": "Lecture 4: \\(k\\)-nearest neighbours and SVM RBFs",
-    "section": "Break",
-    "text": "Break\nLet’s take a break!"
-  },
-  {
     "objectID": "slides-04-kNNs-SVM-RBF.html#iclicker-4.1",
     "href": "slides-04-kNNs-SVM-RBF.html#iclicker-4.1",
     "title": "Lecture 4: \\(k\\)-nearest neighbours and SVM RBFs",
@@ -217,6 +196,13 @@
     "text": "iClicker 4.2\niClicker cloud join link: https://join.iclicker.com/YJHS\nSelect all of the following statements which are TRUE.\n\n\n\\(k\\)-NN may perform poorly in high-dimensional space (say, d &gt; 1000).\n\n\nIn sklearn’s SVC classifier, large values of gamma tend to result in higher training score but probably lower validation score.\n\n\nIf we increase both gamma and C, we can’t be certain if the model becomes more complex or less complex."
   },
   {
+    "objectID": "slides-04-kNNs-SVM-RBF.html#break",
+    "href": "slides-04-kNNs-SVM-RBF.html#break",
+    "title": "Lecture 4: \\(k\\)-nearest neighbours and SVM RBFs",
+    "section": "Break",
+    "text": "Break\nLet’s take a break!"
+  },
+  {
     "objectID": "slides-04-kNNs-SVM-RBF.html#similarity-based-algorithms",
     "href": "slides-04-kNNs-SVM-RBF.html#similarity-based-algorithms",
     "title": "Lecture 4: \\(k\\)-nearest neighbours and SVM RBFs",
@@ -229,6 +215,27 @@
     "title": "Lecture 4: \\(k\\)-nearest neighbours and SVM RBFs",
     "section": "\\(k\\)-nearest neighbours",
     "text": "\\(k\\)-nearest neighbours\n\nClassifies an object based on the majority label among its \\(k\\) closest neighbors.\nMain hyperparameter: \\(k\\) or n_neighbors in sklearn\nDistance Metrics: Euclidean\nStrengths: simple and intuitive, can learn complex decision boundaries\nChallenges: Sensitive to the choice of distance metric and scaling (coming up)."
+  },
+  {
+    "objectID": "slides-04-kNNs-SVM-RBF.html#curse-of-dimensionality",
+    "href": "slides-04-kNNs-SVM-RBF.html#curse-of-dimensionality",
+    "title": "Lecture 4: \\(k\\)-nearest neighbours and SVM RBFs",
+    "section": "Curse of dimensionality",
+    "text": "Curse of dimensionality\n\nAs dimensionality increases, the volume of the space increases exponentially, making the data sparse.\nDistance metrics lose meaning\n\nAccidental similarity swamps out meaningful similarity\nAll points become almost equidistant.\n\nOverfitting becomes likely: Harder to generalize with high-dimensional data.\nHow to deal with this?\n\nDimensionality reduction (PCA) (not covered in this course)\nFeature selection techniques."
+  },
+  {
+    "objectID": "slides-04-kNNs-SVM-RBF.html#svms-with-rbf-kernel",
+    "href": "slides-04-kNNs-SVM-RBF.html#svms-with-rbf-kernel",
+    "title": "Lecture 4: \\(k\\)-nearest neighbours and SVM RBFs",
+    "section": "SVMs with RBF kernel",
+    "text": "SVMs with RBF kernel\n\nRBF Kernel: Radial Basis Function, a way to transform data into higher dimensions implicitly.\nStrengths\n\nEffective in high-dimensional and sparse data\nGood performance on non-linear problems.\n\nHyperparameters:\n\n\\(C\\): Regularization parameter (trade-off between correct classification of training examples and maximization of the decision margin).\n\\(\\gamma\\) (Gamma): Defines how far the influence of a single training example reaches."
+  },
+  {
+    "objectID": "slides-04-kNNs-SVM-RBF.html#intuition-of-c-and-gamma-in-svm-rbf",
+    "href": "slides-04-kNNs-SVM-RBF.html#intuition-of-c-and-gamma-in-svm-rbf",
+    "title": "Lecture 4: \\(k\\)-nearest neighbours and SVM RBFs",
+    "section": "Intuition of C and gamma in SVM RBF",
+    "text": "Intuition of C and gamma in SVM RBF\n\nC (Regularization): Controls the trade-off between perfect training accuracy and having a simpler decision boundary.\n\nHigh C: Strict, complex boundary (overfitting risk).\nLow C: More errors allowed, smoother boundary (generalizes better).\n\nGamma (Kernel Width): Controls the influence of individual data points.\n\nHigh Gamma: Points have local impact, complex boundary.\nLow Gamma: Points affect broader areas, smoother boundary.\n\nKey trade-off: Proper balance between C and gamma is crucial for avoiding overfitting or underfitting."
   },
   {
     "objectID": "slides-18.html#announcements",
@@ -298,28 +305,7 @@
     "href": "slides-05-preprocessing-pipelines.html#announcements",
     "title": "Lecture 5: Preprocessing and sklearn pipelines",
     "section": "Announcements",
-    "text": "Announcements\n\nHW1 grades have been posted.\nHomework 1 solutions have been posted on Canvas under Files tab. Please do not share them with anyone or do not post them anywhere."
-  },
-  {
-    "objectID": "slides-05-preprocessing-pipelines.html#curse-of-dimensionality",
-    "href": "slides-05-preprocessing-pipelines.html#curse-of-dimensionality",
-    "title": "Lecture 5: Preprocessing and sklearn pipelines",
-    "section": "Curse of dimensionality",
-    "text": "Curse of dimensionality\n\nAs dimensionality increases, the volume of the space increases exponentially, making the data sparse.\nDistance metrics lose meaning\n\nAccidental similarity swamps out meaningful similarity\nAll points become almost equidistant.\n\nOverfitting becomes likely: Harder to generalize with high-dimensional data.\nHow to deal with this?\n\nDimensionality reduction (PCA) (not covered in this course)\nFeature selection techniques."
-  },
-  {
-    "objectID": "slides-05-preprocessing-pipelines.html#svms-with-rbf-kernel",
-    "href": "slides-05-preprocessing-pipelines.html#svms-with-rbf-kernel",
-    "title": "Lecture 5: Preprocessing and sklearn pipelines",
-    "section": "SVMs with RBF kernel",
-    "text": "SVMs with RBF kernel\n\nRBF Kernel: Radial Basis Function, a way to transform data into higher dimensions implicitly.\nStrengths\n\nEffective in high-dimensional and sparse data\nGood performance on non-linear problems.\n\nHyperparameters:\n\nC$: Regularization parameter (trade-off between correct classification of training examples and maximization of the decision margin).\n\\(\\gamma\\): Defines how far the influence of a single training example reaches."
-  },
-  {
-    "objectID": "slides-05-preprocessing-pipelines.html#intuition-of-c-and-gamma-in-svm-rbf",
-    "href": "slides-05-preprocessing-pipelines.html#intuition-of-c-and-gamma-in-svm-rbf",
-    "title": "Lecture 5: Preprocessing and sklearn pipelines",
-    "section": "Intuition of C and gamma in SVM RBF",
-    "text": "Intuition of C and gamma in SVM RBF\n\nC (Regularization): Controls the trade-off between perfect training accuracy and having a simpler decision boundary.\n\nHigh C: Strict, complex boundary (overfitting risk).\nLow C: More errors allowed, smoother boundary (generalizes better).\n\nGamma (Kernel Width): Controls the influence of individual data points.\n\nHigh Gamma: Points have local impact, complex boundary.\nLow Gamma: Points affect broader areas, smoother boundary.\n\nKey trade-off: Proper balance between C and gamma is crucial for avoiding overfitting or underfitting."
+    "text": "Announcements"
   },
   {
     "objectID": "slides-05-preprocessing-pipelines.html#recap",
@@ -445,7 +431,7 @@
     "href": "index.html",
     "title": "Welcome",
     "section": "",
-    "text": "Welcome to CPSC330! Here, you’ll find slides for CPSC 330 Section 103. These slides are based on the notes present here.\n\nClass times 🕘 5 pm to 6:20 pm\nWhere? 📍 West Mall Swing Space (SWNG) - 222, 2175 West Mall, Vancouver, BC V6T 1Z4"
+    "text": "Welcome to CPSC330! Here, you’ll find slides for CPSC 330. These slides are based on the notes present here.\n\nClass times 🕘 10 AM to 1 PM, Monday, Wednesday, Friday\nWhere? 📍 Hugh Dempster Pavillion 310, 6245 Agronomy Road, Vancouver, BC V6T 1Z4"
   },
   {
     "objectID": "slides-17.html#announcements",
@@ -947,273 +933,147 @@
   {
     "objectID": "slides-11.html#announcements",
     "href": "slides-11.html#announcements",
-    "title": "CPSC 330 Lecture 11: Midterm review",
+    "title": "CPSC 330 Midterm 1 Review",
     "section": "Announcements",
     "text": "Announcements\n\nMidterm next week! Important information about Midterm 1\n\nPiazza Post\nGood news for you: You will have access to our course notes in the midterm!"
   },
   {
     "objectID": "slides-11.html#what-is-machine-learning",
     "href": "slides-11.html#what-is-machine-learning",
-    "title": "CPSC 330 Lecture 11: Midterm review",
+    "title": "CPSC 330 Midterm 1 Review",
     "section": "What is machine learning",
     "text": "What is machine learning\n\nML uses data to build models that identify patterns, make predictions, or generate content.\nIt enables computers to learn from data.\nNo single model is suitable for all situations."
   },
   {
     "objectID": "slides-11.html#when-is-ml-suitable",
     "href": "slides-11.html#when-is-ml-suitable",
-    "title": "CPSC 330 Lecture 11: Midterm review",
+    "title": "CPSC 330 Midterm 1 Review",
     "section": "When is ML suitable?",
     "text": "When is ML suitable?\n\nML excels when the problem involve identifying complex patterns or relationships in large datasets that are difficult for humans to discern manually.\nRule-based systems are suitable where clear and deterministic rules can be defined. Good for structured decision making.\nHuman experts are good with problems which require deep contextual understanding, ethical judgment, creative input, or emotional intelligence."
   },
   {
     "objectID": "slides-11.html#terminology",
     "href": "slides-11.html#terminology",
-    "title": "CPSC 330 Lecture 11: Midterm review",
+    "title": "CPSC 330 Midterm 1 Review",
     "section": "Terminology",
     "text": "Terminology\n\nFeatures (X) and target (y)\nExamples\nPredictions\nAccuracy, error\nParameters and hyperparameters\nDecision boundaries"
   },
   {
     "objectID": "slides-11.html#important-concepts",
     "href": "slides-11.html#important-concepts",
-    "title": "CPSC 330 Lecture 11: Midterm review",
+    "title": "CPSC 330 Midterm 1 Review",
     "section": "Important concepts",
     "text": "Important concepts\n\nWhy do we split the data? What are train/valid/test splits?\nWhat are the benefits of cross-validation?\nWhat is underfitting and overfitting?\nWhat’s the fundamental trade-off in supervised machine learning?\nWhat is the golden rule of machine learning?"
   },
   {
     "objectID": "slides-11.html#overfitting-and-underfitting",
     "href": "slides-11.html#overfitting-and-underfitting",
-    "title": "CPSC 330 Lecture 11: Midterm review",
+    "title": "CPSC 330 Midterm 1 Review",
     "section": "Overfitting and underfitting",
     "text": "Overfitting and underfitting\n\n\n\nSource\n\n\nAn overfit model matches the training set so closely that it fails to make correct predictions on new unseen data.\n\nAn underfit model is too simple and does not even make good predictions on the training data"
   },
   {
     "objectID": "slides-11.html#the-fundamental-tradeoff",
     "href": "slides-11.html#the-fundamental-tradeoff",
-    "title": "CPSC 330 Lecture 11: Midterm review",
+    "title": "CPSC 330 Midterm 1 Review",
     "section": "The fundamental tradeoff",
     "text": "The fundamental tradeoff\n\n\n\n\n\n\n\n\n\nAs you increase the model complexity, training score tends to go up and the gap between train and validation scores tends to go up.\n\nHow to pick a model?"
   },
   {
     "objectID": "slides-11.html#supervised-models-we-have-seen",
     "href": "slides-11.html#supervised-models-we-have-seen",
-    "title": "CPSC 330 Lecture 11: Midterm review",
+    "title": "CPSC 330 Midterm 1 Review",
     "section": "Supervised models we have seen",
     "text": "Supervised models we have seen\n\nDecision trees: Split data into subsets based on feature values to create decision rules\n\\(k\\)-NNs: Classify based on the majority vote from \\(k\\) nearest neighbors\nSVM RBFs: Create a boundary using an RBF kernel to separate classes\nLinear models: Assumption that the relationship between X and y is linear"
   },
   {
     "objectID": "slides-11.html#comparison-of-models",
     "href": "slides-11.html#comparison-of-models",
-    "title": "CPSC 330 Lecture 11: Midterm review",
+    "title": "CPSC 330 Midterm 1 Review",
     "section": "Comparison of models",
     "text": "Comparison of models\n\n\n\n\n\n\n\n\n\nModel\nParameters\nHyperparameters\nStrengths\n\n\n\n\nDecision Trees\n\n\n\n\n\nKNNs\n\n\n\n\n\nSVM RBF\n\n\n\n\n\nLinear models"
   },
   {
     "objectID": "slides-11.html#sklearn-transformers",
     "href": "slides-11.html#sklearn-transformers",
-    "title": "CPSC 330 Lecture 11: Midterm review",
+    "title": "CPSC 330 Midterm 1 Review",
     "section": "sklearn Transformers",
     "text": "sklearn Transformers\n\n\n\n\n\n\n\n\nTransformer\nHyperparameters\nWhen to use?\n\n\n\n\nSimpleImputer\n\n\n\n\nStandardScaler\n\n\n\n\nOneHotEncoder\n\n\n\n\nOrdinalEncoder\n\n\n\n\nCountVectorizer\n\n\n\n\nTransformedTargetRegressor"
   },
   {
     "objectID": "slides-11.html#features",
     "href": "slides-11.html#features",
-    "title": "CPSC 330 Lecture 11: Midterm review",
+    "title": "CPSC 330 Midterm 1 Review",
     "section": "Features",
     "text": "Features\n\nUsing features that are directly related to the target can cause data leakage.\n\nExample: If you’re building a model to predict the churn rate of customers in a subscription service (churned or not churned) and you are using a feature like “account deactivation date”.\n\n\nIf a feature essentially gives away the answer, the model might perform exceptionally well during training but fail to generalize to new, unseen data."
   },
   {
     "objectID": "slides-11.html#preprocessing",
     "href": "slides-11.html#preprocessing",
-    "title": "CPSC 330 Lecture 11: Midterm review",
+    "title": "CPSC 330 Midterm 1 Review",
     "section": "Preprocessing",
     "text": "Preprocessing\n\nIncorporating information from the validation or test data during the preprocessing phase (e.g., scaling based on the distribution of the entire dataset instead of just the training set) can also lead to leakage. This can happen if the transformations applied to the training data are influenced by the whole dataset, thus indirectly feeding information about the test set into the model during training."
   },
   {
     "objectID": "slides-11.html#pipelines",
     "href": "slides-11.html#pipelines",
-    "title": "CPSC 330 Lecture 11: Midterm review",
+    "title": "CPSC 330 Midterm 1 Review",
     "section": "Pipelines",
     "text": "Pipelines\n\nPipeline is a way to chain multiple steps (e.g., preprocessing + model fitting) into a single workflow.\nSimplify the code and improves readability.\nReduce the risk of data leakage by ensuring proper transformation of the training and test sets.\nAutomatically apply transformations in sequence."
   },
   {
     "objectID": "slides-11.html#column-transformers",
     "href": "slides-11.html#column-transformers",
-    "title": "CPSC 330 Lecture 11: Midterm review",
+    "title": "CPSC 330 Midterm 1 Review",
     "section": "Column Transformers",
     "text": "Column Transformers\n\nIn what scenarios do we use column transformers?\n\nDifferent transformations for different types of columns (e.g., scaling numerical data, encoding categorical data).\n\nHandle datasets with heterogeneous data types effectively."
   },
   {
     "objectID": "slides-11.html#hyperparameter-optimization",
     "href": "slides-11.html#hyperparameter-optimization",
-    "title": "CPSC 330 Lecture 11: Midterm review",
+    "title": "CPSC 330 Midterm 1 Review",
     "section": "Hyperparameter Optimization",
     "text": "Hyperparameter Optimization\n\n\n\n\n\n\n\n\nMethod\nStrengths/Weaknesses\nWhen to use?\n\n\n\n\nNested for loops\n\n\n\n\nGrid search\n\n\n\n\nRandom search"
   },
   {
     "objectID": "slides-11.html#classification-metrics",
     "href": "slides-11.html#classification-metrics",
-    "title": "CPSC 330 Lecture 11: Midterm review",
+    "title": "CPSC 330 Midterm 1 Review",
     "section": "Classification Metrics",
     "text": "Classification Metrics\n\n\n\n\n\n\n\n\nMetric\nHow to generate/calculate?\nWhen to use?\n\n\n\n\nAccuracy\n\n\n\n\nPrecision\n\n\n\n\nRecall\n\n\n\n\nF1-score\n\n\n\n\nAP score\n\n\n\n\nAUC"
   },
   {
     "objectID": "slides-11.html#regression-metrics",
     "href": "slides-11.html#regression-metrics",
-    "title": "CPSC 330 Lecture 11: Midterm review",
+    "title": "CPSC 330 Midterm 1 Review",
     "section": "Regression Metrics",
     "text": "Regression Metrics\n\n\n\n\n\n\n\n\nMetric\nHow to generate/calculate?\nWhen to use?\n\n\n\n\nMSE\n\n\n\n\nRMSE\n\n\n\n\nr2 score\n\n\n\n\nMAPE"
   },
   {
     "objectID": "slides-11.html#group-work-class-demo-live-coding-if-time-permits",
     "href": "slides-11.html#group-work-class-demo-live-coding-if-time-permits",
-    "title": "CPSC 330 Lecture 11: Midterm review",
+    "title": "CPSC 330 Midterm 1 Review",
     "section": "Group Work: Class Demo & Live Coding (if time permits)",
     "text": "Group Work: Class Demo & Live Coding (if time permits)\nThis is mostly on regression metrics though it may serve as a good review of everything.\nFor this demo, each student should click this link to create a new repo in their accounts, then clone that repo locally to follow along with the demo from today.\n  \nIf you really don’t want to create a repo,\n\nNavigate to the cpsc330-2025S1 repo\nrun git pull to pull the latest files in the course repo\nLook for the demo file here"
   },
   {
-    "objectID": "slides-06.html#announcements",
-    "href": "slides-06.html#announcements",
-    "title": "Lecture 6: Column transformer and text features",
+    "objectID": "slides-12.html#announcements",
+    "href": "slides-12.html#announcements",
+    "title": "CPSC 330 Lecture 12: Ensembles",
     "section": "Announcements",
-    "text": "Announcements\n\nLecture recordings for the first two weeks have been made available - See Piazza.\nMy Office Hours\nHW3 is due next week Tuesday, Oct 1st, 11:59 pm.\n\nYou can work in pairs for this assignment."
+    "text": "Announcements\n\nMidterm is being graded this week - we hope to have the results for you soon."
   },
   {
-    "objectID": "slides-06.html#quick-correction-on-exercise-5.3",
-    "href": "slides-06.html#quick-correction-on-exercise-5.3",
-    "title": "Lecture 6: Column transformer and text features",
-    "section": "Quick Correction on Exercise 5.3",
-    "text": "Quick Correction on Exercise 5.3\n\nI accidentally said only D is true, but B is also true!\n\nSelect all of the following statements which are TRUE.\n\n\nYou can have scaling of numeric features, one-hot encoding of categorical features, and scikit-learn estimator within a single pipeline.\n\n\nOnce you have a scikit-learn pipeline object with an estimator as the last step, you can call fit, predict, and score on it.\n\n\nYou can carry out data splitting within scikit-learn pipeline.\n\n\nWe have to be careful of the order we put each transformation and model in a pipeline."
+    "objectID": "slides-12.html#ensembles",
+    "href": "slides-12.html#ensembles",
+    "title": "CPSC 330 Lecture 12: Ensembles",
+    "section": "Ensembles",
+    "text": "Ensembles\nToday, we will do a class of live coding and going through the Jupyter Notebook to get back into the swing of things."
   },
   {
-    "objectID": "slides-06.html#data",
-    "href": "slides-06.html#data",
-    "title": "Lecture 6: Column transformer and text features",
-    "section": "Data",
-    "text": "Data\n\nX, y = make_blobs(n_samples=100, centers=3, random_state=12, cluster_std=5) # make synthetic data\nX_train_toy, X_test_toy, y_train_toy, y_test_toy = train_test_split(\n    X, y, random_state=5, test_size=0.4) # split it into training and test sets\n# Visualize the training data\nplt.scatter(X_train_toy[:, 0], X_train_toy[:, 1], label=\"Training set\", s=60)\nplt.scatter(\n    X_test_toy[:, 0], X_test_toy[:, 1], color=mglearn.cm2(1), label=\"Test set\", s=60\n)\nplt.legend(loc=\"upper right\")"
-  },
-  {
-    "objectID": "slides-06.html#bad-ml-1",
-    "href": "slides-06.html#bad-ml-1",
-    "title": "Lecture 6: Column transformer and text features",
-    "section": "❌ Bad ML 1",
-    "text": "❌ Bad ML 1\n\nWhat’s wrong with the approach below?\n\n\nscaler = StandardScaler() # Creating a scalert object \nscaler.fit(X_train_toy) # Calling fit on the training data \ntrain_scaled = scaler.transform(\n    X_train_toy\n)  # Transforming the training data using the scaler fit on training data\n\nscaler = StandardScaler()  # Creating a separate object for scaling test data\nscaler.fit(X_test_toy)  # Calling fit on the test data\ntest_scaled = scaler.transform(\n    X_test_toy\n)  # Transforming the test data using the scaler fit on test data\n\nknn = KNeighborsClassifier()\nknn.fit(train_scaled, y_train_toy)\nprint(f\"Training score: {knn.score(train_scaled, y_train_toy):.2f}\")\nprint(f\"Test score: {knn.score(test_scaled, y_test_toy):.2f}\") # misleading scores\n\nTraining score: 0.63\nTest score: 0.60"
-  },
-  {
-    "objectID": "slides-06.html#scaling-train-and-test-data-separately",
-    "href": "slides-06.html#scaling-train-and-test-data-separately",
-    "title": "Lecture 6: Column transformer and text features",
-    "section": "Scaling train and test data separately",
-    "text": "Scaling train and test data separately"
-  },
-  {
-    "objectID": "slides-06.html#bad-ml-2",
-    "href": "slides-06.html#bad-ml-2",
-    "title": "Lecture 6: Column transformer and text features",
-    "section": "❌ Bad ML 2",
-    "text": "❌ Bad ML 2\n\nWhat’s wrong with the approach below?\n\n\n# join the train and test sets back together\nXX = np.vstack((X_train_toy, X_test_toy))\n\nscaler = StandardScaler()\nscaler.fit(XX)\nXX_scaled = scaler.transform(XX)\n\nXX_train = XX_scaled[:X_train_toy.shape[0]]\nXX_test = XX_scaled[X_train_toy.shape[0]:]\n\nknn = KNeighborsClassifier()\nknn.fit(XX_train, y_train_toy)\nprint(f\"Training score: {knn.score(XX_train, y_train_toy):.2f}\")  # Misleading score\nprint(f\"Test score: {knn.score(XX_test, y_test_toy):.2f}\")  # Misleading score\n\nTraining score: 0.63\nTest score: 0.55"
-  },
-  {
-    "objectID": "slides-06.html#bad-ml-3",
-    "href": "slides-06.html#bad-ml-3",
-    "title": "Lecture 6: Column transformer and text features",
-    "section": "❌ Bad ML 3",
-    "text": "❌ Bad ML 3\n\nWhat’s wrong with the approach below?\n\n\nknn = KNeighborsClassifier()\n\nscaler = StandardScaler()\nscaler.fit(X_train_toy)\nX_train_scaled = scaler.transform(X_train_toy)\nX_test_scaled = scaler.transform(X_test_toy)\ncross_val_score(knn, X_train_scaled, y_train_toy)\n\narray([0.25      , 0.5       , 0.58333333, 0.58333333, 0.41666667])\n\n\n\nSpeaker notes go here."
-  },
-  {
-    "objectID": "slides-06.html#improper-preprocessing",
-    "href": "slides-06.html#improper-preprocessing",
-    "title": "Lecture 6: Column transformer and text features",
-    "section": "Improper preprocessing",
-    "text": "Improper preprocessing"
-  },
-  {
-    "objectID": "slides-06.html#proper-preprocessing",
-    "href": "slides-06.html#proper-preprocessing",
-    "title": "Lecture 6: Column transformer and text features",
-    "section": "Proper preprocessing",
-    "text": "Proper preprocessing"
-  },
-  {
-    "objectID": "slides-06.html#recap-sklearn-pipelines",
-    "href": "slides-06.html#recap-sklearn-pipelines",
-    "title": "Lecture 6: Column transformer and text features",
-    "section": "Recap: sklearn Pipelines",
-    "text": "Recap: sklearn Pipelines\n\nPipeline is a way to chain multiple steps (e.g., preprocessing + model fitting) into a single workflow.\nSimplify the code and improves readability.\nReduce the risk of data leakage by ensuring proper transformation of the training and test sets.\nAutomatically apply transformations in sequence.\nExample:\n\nChaining a StandardScaler with a KNeighborsClassifier model.\n\n\n\nfrom sklearn.pipeline import make_pipeline\n\npipe_knn = make_pipeline(StandardScaler(), KNeighborsClassifier())\n\n# Correct way to do cross validation without breaking the golden rule. \ncross_val_score(pipe_knn, X_train_toy, y_train_toy) \n\narray([0.25      , 0.5       , 0.5       , 0.58333333, 0.41666667])"
-  },
-  {
-    "objectID": "slides-06.html#group-work-class-demo-live-coding",
-    "href": "slides-06.html#group-work-class-demo-live-coding",
-    "title": "Lecture 6: Column transformer and text features",
-    "section": "Group Work: Class Demo & Live Coding",
-    "text": "Group Work: Class Demo & Live Coding\nFor this demo, each student should click this link to create a new repo in their accounts, then clone that repo locally to follow along with the demo from today.\n  \nIf you really don’t want to create a repo,\n\nNavigate to the cpsc330-2025S1 repo\nrun git pull to pull the latest files in the course repo\nLook for the demo file here: lectures/102-Firas-lectures/class_demos/."
-  },
-  {
-    "objectID": "slides-06.html#sklearns-columntransformer",
-    "href": "slides-06.html#sklearns-columntransformer",
-    "title": "Lecture 6: Column transformer and text features",
-    "section": "sklearn’s ColumnTransformer",
-    "text": "sklearn’s ColumnTransformer\n\nUse ColumnTransformer to build all our transformations together into one object\n\n\n\nUse a column transformer with sklearn pipelines."
-  },
-  {
-    "objectID": "slides-06.html#iclicker-exercise-6.1",
-    "href": "slides-06.html#iclicker-exercise-6.1",
-    "title": "Lecture 6: Column transformer and text features",
-    "section": "(iClicker) Exercise 6.1",
-    "text": "(iClicker) Exercise 6.1\niClicker cloud join link: https://join.iclicker.com/YJHS\nSelect all of the following statements which are TRUE.\n\n\nYou could carry out cross-validation by passing a ColumnTransformer object to cross_validate.\n\n\nAfter applying column transformer, the order of the columns in the transformed data has to be the same as the order of the columns in the original data.\n\n\nAfter applying a column transformer, the transformed data is always going to be of different shape than the original data.\n\n\nWhen you call fit_transform on a ColumnTransformer object, you get a numpy ndarray.\n\n\n\niClicker 6.1\nA. False, column transfer to pipeline. There is no estimator attached to ColumnTransfer\nB. False, numeric, binary, ordinal, categorical etc…Can also use this to remove columns\nC. False, often it will be different, but not always\nD. True, just an ndarray, not a data frame"
-  },
-  {
-    "objectID": "slides-13.html#announcements",
-    "href": "slides-13.html#announcements",
-    "title": "CPSC 330 Lecture 13: Feature importances",
-    "section": "Announcements",
-    "text": "Announcements\n\nHW4 grades are released\nHW5 is due next week Monday. Make use of office hours and tutorials this week."
-  },
-  {
-    "objectID": "slides-13.html#scenario-1-which-model-would-you-pick",
-    "href": "slides-13.html#scenario-1-which-model-would-you-pick",
-    "title": "CPSC 330 Lecture 13: Feature importances",
-    "section": "Scenario 1: Which model would you pick",
-    "text": "Scenario 1: Which model would you pick\nPredicting whether a patient is likely to develop diabetes based on features such as age, blood pressure, glucose levels, and BMI. You have two models:\n\nLGBM which results in 0.9 f1 score\nLogistic regression which results in 0.84 f1 score\n\nWhich model would you pick? Why?"
-  },
-  {
-    "objectID": "slides-13.html#scenario-2",
-    "href": "slides-13.html#scenario-2",
-    "title": "CPSC 330 Lecture 13: Feature importances",
-    "section": "Scenario 2",
-    "text": "Scenario 2\nPredicting whether a user will purchase a product next based on their browsing history, previous purchases, and click behavior. You have two models:\n\nLGBM which results in 0.9 F1 score\nLogistic regression which results in 0.84 F1 score\n\nWhich model would you pick? Why?"
-  },
-  {
-    "objectID": "slides-13.html#transparency",
-    "href": "slides-13.html#transparency",
-    "title": "CPSC 330 Lecture 13: Feature importances",
-    "section": "Transparency",
-    "text": "Transparency\n\nIn many domains understanding the relationship between features and predictions is critical for trust and regulatory compliance.\n\nFeature importances\n\nHow does the output depend upon the input?\nHow do the predictions change as a function of a particular feature?"
-  },
-  {
-    "objectID": "slides-13.html#correlations",
-    "href": "slides-13.html#correlations",
-    "title": "CPSC 330 Lecture 13: Feature importances",
-    "section": "Correlations",
-    "text": "Correlations\n\n\n\n\n\nWhat are some limitations of correlations?"
-  },
-  {
-    "objectID": "slides-13.html#interepreting-coefficients",
-    "href": "slides-13.html#interepreting-coefficients",
-    "title": "CPSC 330 Lecture 13: Feature importances",
-    "section": "Interepreting coefficients",
-    "text": "Interepreting coefficients\n\nLinear models are interpretable because you get coefficients associated with different features.\nEach coefficient represents the estimated impact of a feature on the target variable, assuming all other features are held constant.\nIn a Ridge model,\n\nA positive coefficient indicates that as the feature’s value increases, the predicted value also increases.\n\nA negative coefficient indicates that an increase in the feature’s value leads to a decrease in the predicted value."
-  },
-  {
-    "objectID": "slides-13.html#interepreting-coefficients-1",
-    "href": "slides-13.html#interepreting-coefficients-1",
-    "title": "CPSC 330 Lecture 13: Feature importances",
-    "section": "Interepreting coefficients",
-    "text": "Interepreting coefficients\n\nWhen we have different types of preprocessed features, what challenges you might face in interpreting them?\n\nOrdinally encoded features\nOne-hot encoded features\nScaled numeric features"
-  },
-  {
-    "objectID": "slides-13.html#group-work-class-demo-live-coding-if-time-permits",
-    "href": "slides-13.html#group-work-class-demo-live-coding-if-time-permits",
-    "title": "CPSC 330 Lecture 13: Feature importances",
+    "objectID": "slides-12.html#group-work-class-demo-live-coding-if-time-permits",
+    "href": "slides-12.html#group-work-class-demo-live-coding-if-time-permits",
+    "title": "CPSC 330 Lecture 12: Ensembles",
     "section": "Group Work: Class Demo & Live Coding (if time permits)",
     "text": "Group Work: Class Demo & Live Coding (if time permits)\nFor this demo, each student should click this link to create a new repo in their accounts, then clone that repo locally to follow along with the demo from today.\n  \nIf you really don’t want to create a repo,\n\nNavigate to the cpsc330-2025S1 repo\nrun git pull to pull the latest files in the course repo\nLook for the demo file here"
   },
@@ -1428,53 +1288,291 @@
     "text": "Group Work: Class Demo & Live Coding\nFor this demo, each student should click this link to create a new repo in their accounts, then clone that repo locally to follow along with the demo from today.\n  \nIf you really don’t want to create a repo,\n\nNavigate to the cpsc330-2025S1 repo\nrun git pull to pull the latest files in the course repo\nLook for the demo file here"
   },
   {
-    "objectID": "slides-12.html#announcements",
-    "href": "slides-12.html#announcements",
-    "title": "CPSC 330 Lecture 12: Ensembles",
+    "objectID": "slides-13.html#announcements",
+    "href": "slides-13.html#announcements",
+    "title": "CPSC 330 Lecture 13: Feature importances",
     "section": "Announcements",
-    "text": "Announcements\n\nMidterm is being graded this week - we hope to have the results for you soon."
+    "text": "Announcements\n\nHW4 grades are released\nHW5 is due next week Monday. Make use of office hours and tutorials this week."
   },
   {
-    "objectID": "slides-12.html#ensembles",
-    "href": "slides-12.html#ensembles",
-    "title": "CPSC 330 Lecture 12: Ensembles",
-    "section": "Ensembles",
-    "text": "Ensembles\nToday, we will do a class of live coding and going through the Jupyter Notebook to get back into the swing of things."
+    "objectID": "slides-13.html#scenario-1-which-model-would-you-pick",
+    "href": "slides-13.html#scenario-1-which-model-would-you-pick",
+    "title": "CPSC 330 Lecture 13: Feature importances",
+    "section": "Scenario 1: Which model would you pick",
+    "text": "Scenario 1: Which model would you pick\nPredicting whether a patient is likely to develop diabetes based on features such as age, blood pressure, glucose levels, and BMI. You have two models:\n\nLGBM which results in 0.9 f1 score\nLogistic regression which results in 0.84 f1 score\n\nWhich model would you pick? Why?"
   },
   {
-    "objectID": "slides-12.html#group-work-class-demo-live-coding-if-time-permits",
-    "href": "slides-12.html#group-work-class-demo-live-coding-if-time-permits",
-    "title": "CPSC 330 Lecture 12: Ensembles",
+    "objectID": "slides-13.html#scenario-2",
+    "href": "slides-13.html#scenario-2",
+    "title": "CPSC 330 Lecture 13: Feature importances",
+    "section": "Scenario 2",
+    "text": "Scenario 2\nPredicting whether a user will purchase a product next based on their browsing history, previous purchases, and click behavior. You have two models:\n\nLGBM which results in 0.9 F1 score\nLogistic regression which results in 0.84 F1 score\n\nWhich model would you pick? Why?"
+  },
+  {
+    "objectID": "slides-13.html#transparency",
+    "href": "slides-13.html#transparency",
+    "title": "CPSC 330 Lecture 13: Feature importances",
+    "section": "Transparency",
+    "text": "Transparency\n\nIn many domains understanding the relationship between features and predictions is critical for trust and regulatory compliance.\n\nFeature importances\n\nHow does the output depend upon the input?\nHow do the predictions change as a function of a particular feature?"
+  },
+  {
+    "objectID": "slides-13.html#correlations",
+    "href": "slides-13.html#correlations",
+    "title": "CPSC 330 Lecture 13: Feature importances",
+    "section": "Correlations",
+    "text": "Correlations\n\n\n\n\n\nWhat are some limitations of correlations?"
+  },
+  {
+    "objectID": "slides-13.html#interepreting-coefficients",
+    "href": "slides-13.html#interepreting-coefficients",
+    "title": "CPSC 330 Lecture 13: Feature importances",
+    "section": "Interepreting coefficients",
+    "text": "Interepreting coefficients\n\nLinear models are interpretable because you get coefficients associated with different features.\nEach coefficient represents the estimated impact of a feature on the target variable, assuming all other features are held constant.\nIn a Ridge model,\n\nA positive coefficient indicates that as the feature’s value increases, the predicted value also increases.\n\nA negative coefficient indicates that an increase in the feature’s value leads to a decrease in the predicted value."
+  },
+  {
+    "objectID": "slides-13.html#interepreting-coefficients-1",
+    "href": "slides-13.html#interepreting-coefficients-1",
+    "title": "CPSC 330 Lecture 13: Feature importances",
+    "section": "Interepreting coefficients",
+    "text": "Interepreting coefficients\n\nWhen we have different types of preprocessed features, what challenges you might face in interpreting them?\n\nOrdinally encoded features\nOne-hot encoded features\nScaled numeric features"
+  },
+  {
+    "objectID": "slides-13.html#group-work-class-demo-live-coding-if-time-permits",
+    "href": "slides-13.html#group-work-class-demo-live-coding-if-time-permits",
+    "title": "CPSC 330 Lecture 13: Feature importances",
     "section": "Group Work: Class Demo & Live Coding (if time permits)",
     "text": "Group Work: Class Demo & Live Coding (if time permits)\nFor this demo, each student should click this link to create a new repo in their accounts, then clone that repo locally to follow along with the demo from today.\n  \nIf you really don’t want to create a repo,\n\nNavigate to the cpsc330-2025S1 repo\nrun git pull to pull the latest files in the course repo\nLook for the demo file here"
+  },
+  {
+    "objectID": "slides-06.html#announcements",
+    "href": "slides-06.html#announcements",
+    "title": "Lecture 6: Column transformer and text features",
+    "section": "Announcements",
+    "text": "Announcements\n\nLecture recordings for the first two weeks have been made available - See Piazza.\nMy Office Hours\nHW3 is due next week Tuesday, Oct 1st, 11:59 pm.\n\nYou can work in pairs for this assignment."
+  },
+  {
+    "objectID": "slides-06.html#quick-correction-on-exercise-5.3",
+    "href": "slides-06.html#quick-correction-on-exercise-5.3",
+    "title": "Lecture 6: Column transformer and text features",
+    "section": "Quick Correction on Exercise 5.3",
+    "text": "Quick Correction on Exercise 5.3\n\nI accidentally said only D is true, but B is also true!\n\nSelect all of the following statements which are TRUE.\n\n\nYou can have scaling of numeric features, one-hot encoding of categorical features, and scikit-learn estimator within a single pipeline.\n\n\nOnce you have a scikit-learn pipeline object with an estimator as the last step, you can call fit, predict, and score on it.\n\n\nYou can carry out data splitting within scikit-learn pipeline.\n\n\nWe have to be careful of the order we put each transformation and model in a pipeline."
+  },
+  {
+    "objectID": "slides-06.html#data",
+    "href": "slides-06.html#data",
+    "title": "Lecture 6: Column transformer and text features",
+    "section": "Data",
+    "text": "Data\n\nX, y = make_blobs(n_samples=100, centers=3, random_state=12, cluster_std=5) # make synthetic data\nX_train_toy, X_test_toy, y_train_toy, y_test_toy = train_test_split(\n    X, y, random_state=5, test_size=0.4) # split it into training and test sets\n# Visualize the training data\nplt.scatter(X_train_toy[:, 0], X_train_toy[:, 1], label=\"Training set\", s=60)\nplt.scatter(\n    X_test_toy[:, 0], X_test_toy[:, 1], color=mglearn.cm2(1), label=\"Test set\", s=60\n)\nplt.legend(loc=\"upper right\")"
+  },
+  {
+    "objectID": "slides-06.html#bad-ml-1",
+    "href": "slides-06.html#bad-ml-1",
+    "title": "Lecture 6: Column transformer and text features",
+    "section": "❌ Bad ML 1",
+    "text": "❌ Bad ML 1\n\nWhat’s wrong with the approach below?\n\n\nscaler = StandardScaler() # Creating a scalert object \nscaler.fit(X_train_toy) # Calling fit on the training data \ntrain_scaled = scaler.transform(\n    X_train_toy\n)  # Transforming the training data using the scaler fit on training data\n\nscaler = StandardScaler()  # Creating a separate object for scaling test data\nscaler.fit(X_test_toy)  # Calling fit on the test data\ntest_scaled = scaler.transform(\n    X_test_toy\n)  # Transforming the test data using the scaler fit on test data\n\nknn = KNeighborsClassifier()\nknn.fit(train_scaled, y_train_toy)\nprint(f\"Training score: {knn.score(train_scaled, y_train_toy):.2f}\")\nprint(f\"Test score: {knn.score(test_scaled, y_test_toy):.2f}\") # misleading scores\n\nTraining score: 0.63\nTest score: 0.60"
+  },
+  {
+    "objectID": "slides-06.html#scaling-train-and-test-data-separately",
+    "href": "slides-06.html#scaling-train-and-test-data-separately",
+    "title": "Lecture 6: Column transformer and text features",
+    "section": "Scaling train and test data separately",
+    "text": "Scaling train and test data separately"
+  },
+  {
+    "objectID": "slides-06.html#bad-ml-2",
+    "href": "slides-06.html#bad-ml-2",
+    "title": "Lecture 6: Column transformer and text features",
+    "section": "❌ Bad ML 2",
+    "text": "❌ Bad ML 2\n\nWhat’s wrong with the approach below?\n\n\n# join the train and test sets back together\nXX = np.vstack((X_train_toy, X_test_toy))\n\nscaler = StandardScaler()\nscaler.fit(XX)\nXX_scaled = scaler.transform(XX)\n\nXX_train = XX_scaled[:X_train_toy.shape[0]]\nXX_test = XX_scaled[X_train_toy.shape[0]:]\n\nknn = KNeighborsClassifier()\nknn.fit(XX_train, y_train_toy)\nprint(f\"Training score: {knn.score(XX_train, y_train_toy):.2f}\")  # Misleading score\nprint(f\"Test score: {knn.score(XX_test, y_test_toy):.2f}\")  # Misleading score\n\nTraining score: 0.63\nTest score: 0.55"
+  },
+  {
+    "objectID": "slides-06.html#bad-ml-3",
+    "href": "slides-06.html#bad-ml-3",
+    "title": "Lecture 6: Column transformer and text features",
+    "section": "❌ Bad ML 3",
+    "text": "❌ Bad ML 3\n\nWhat’s wrong with the approach below?\n\n\nknn = KNeighborsClassifier()\n\nscaler = StandardScaler()\nscaler.fit(X_train_toy)\nX_train_scaled = scaler.transform(X_train_toy)\nX_test_scaled = scaler.transform(X_test_toy)\ncross_val_score(knn, X_train_scaled, y_train_toy)\n\narray([0.25      , 0.5       , 0.58333333, 0.58333333, 0.41666667])\n\n\n\nSpeaker notes go here."
+  },
+  {
+    "objectID": "slides-06.html#improper-preprocessing",
+    "href": "slides-06.html#improper-preprocessing",
+    "title": "Lecture 6: Column transformer and text features",
+    "section": "Improper preprocessing",
+    "text": "Improper preprocessing"
+  },
+  {
+    "objectID": "slides-06.html#proper-preprocessing",
+    "href": "slides-06.html#proper-preprocessing",
+    "title": "Lecture 6: Column transformer and text features",
+    "section": "Proper preprocessing",
+    "text": "Proper preprocessing"
+  },
+  {
+    "objectID": "slides-06.html#recap-sklearn-pipelines",
+    "href": "slides-06.html#recap-sklearn-pipelines",
+    "title": "Lecture 6: Column transformer and text features",
+    "section": "Recap: sklearn Pipelines",
+    "text": "Recap: sklearn Pipelines\n\nPipeline is a way to chain multiple steps (e.g., preprocessing + model fitting) into a single workflow.\nSimplify the code and improves readability.\nReduce the risk of data leakage by ensuring proper transformation of the training and test sets.\nAutomatically apply transformations in sequence.\nExample:\n\nChaining a StandardScaler with a KNeighborsClassifier model.\n\n\n\nfrom sklearn.pipeline import make_pipeline\n\npipe_knn = make_pipeline(StandardScaler(), KNeighborsClassifier())\n\n# Correct way to do cross validation without breaking the golden rule. \ncross_val_score(pipe_knn, X_train_toy, y_train_toy) \n\narray([0.25      , 0.5       , 0.5       , 0.58333333, 0.41666667])"
+  },
+  {
+    "objectID": "slides-06.html#group-work-class-demo-live-coding",
+    "href": "slides-06.html#group-work-class-demo-live-coding",
+    "title": "Lecture 6: Column transformer and text features",
+    "section": "Group Work: Class Demo & Live Coding",
+    "text": "Group Work: Class Demo & Live Coding\nFor this demo, each student should click this link to create a new repo in their accounts, then clone that repo locally to follow along with the demo from today.\n  \nIf you really don’t want to create a repo,\n\nNavigate to the cpsc330-2025S1 repo\nrun git pull to pull the latest files in the course repo\nLook for the demo file here: lectures/102-Firas-lectures/class_demos/."
+  },
+  {
+    "objectID": "slides-06.html#sklearns-columntransformer",
+    "href": "slides-06.html#sklearns-columntransformer",
+    "title": "Lecture 6: Column transformer and text features",
+    "section": "sklearn’s ColumnTransformer",
+    "text": "sklearn’s ColumnTransformer\n\nUse ColumnTransformer to build all our transformations together into one object\n\n\n\nUse a column transformer with sklearn pipelines."
+  },
+  {
+    "objectID": "slides-06.html#iclicker-exercise-6.1",
+    "href": "slides-06.html#iclicker-exercise-6.1",
+    "title": "Lecture 6: Column transformer and text features",
+    "section": "(iClicker) Exercise 6.1",
+    "text": "(iClicker) Exercise 6.1\niClicker cloud join link: https://join.iclicker.com/YJHS\nSelect all of the following statements which are TRUE.\n\n\nYou could carry out cross-validation by passing a ColumnTransformer object to cross_validate.\n\n\nAfter applying column transformer, the order of the columns in the transformed data has to be the same as the order of the columns in the original data.\n\n\nAfter applying a column transformer, the transformed data is always going to be of different shape than the original data.\n\n\nWhen you call fit_transform on a ColumnTransformer object, you get a numpy ndarray.\n\n\n\niClicker 6.1\nA. False, column transfer to pipeline. There is no estimator attached to ColumnTransfer\nB. False, numeric, binary, ordinal, categorical etc…Can also use this to remove columns\nC. False, often it will be different, but not always\nD. True, just an ndarray, not a data frame"
+  },
+  {
+    "objectID": "slides-10.html#recap-confusion-matrix",
+    "href": "slides-10.html#recap-confusion-matrix",
+    "title": "CPSC 330 Lecture 10: Regression Metrics",
+    "section": "Recap: Confusion matrix",
+    "text": "Recap: Confusion matrix\n\n\n\n\n\nTN \\(\\rightarrow\\) True negatives\nFP \\(\\rightarrow\\) False positives\nFN \\(\\rightarrow\\) False negatives\nTP \\(\\rightarrow\\) True positives"
+  },
+  {
+    "objectID": "slides-10.html#recap-precision-recall-f1-score",
+    "href": "slides-10.html#recap-precision-recall-f1-score",
+    "title": "CPSC 330 Lecture 10: Regression Metrics",
+    "section": "Recap: Precision, Recall, F1-Score",
+    "text": "Recap: Precision, Recall, F1-Score\n\n\n\n\n\\[ f1 = 2 \\times \\frac{ precision \\times recall}{precision + recall}\\]"
+  },
+  {
+    "objectID": "slides-10.html#recap-pr-curve",
+    "href": "slides-10.html#recap-pr-curve",
+    "title": "CPSC 330 Lecture 10: Regression Metrics",
+    "section": "Recap: PR curve",
+    "text": "Recap: PR curve\n\nCalculate precision and recall (TPR) at every possible threshold and graph them.\nBetter choice for highly imbalanced datasets because it focuses on the performance of the positive class."
+  },
+  {
+    "objectID": "slides-10.html#questions-for-you",
+    "href": "slides-10.html#questions-for-you",
+    "title": "CPSC 330 Lecture 10: Regression Metrics",
+    "section": "Questions for you",
+    "text": "Questions for you\n\nWhat’s the difference between the average precision (AP) score and F1-score?\nWhich model would you pick?"
+  },
+  {
+    "objectID": "slides-10.html#recap-roc-curve",
+    "href": "slides-10.html#recap-roc-curve",
+    "title": "CPSC 330 Lecture 10: Regression Metrics",
+    "section": "Recap: ROC curve",
+    "text": "Recap: ROC curve\n\nCalculate the true positive rate (TPR) and false positive rate (FPR) (\\(\\frac{FP}{FP + TN}\\)) at every possible thresholding and graph TPR over FPR.\nGood choice when the datasets are roughly balanced."
+  },
+  {
+    "objectID": "slides-10.html#recap-roc-curve-1",
+    "href": "slides-10.html#recap-roc-curve-1",
+    "title": "CPSC 330 Lecture 10: Regression Metrics",
+    "section": "Recap: ROC Curve",
+    "text": "Recap: ROC Curve\n\nNot a great choice when there is an extreme imbalance because FPR can remain relatively low even if the number of false positives is high, simply because the number of negatives is very large.\n\\[ FPR  = \\frac{FP}{FP + TN}\\]\nThe area under the ROC curve (AUC) represents the probability that the model, if given a randomly chosen positive and negative example, will rank the positive higher than the negative."
+  },
+  {
+    "objectID": "slides-10.html#questions-for-you-1",
+    "href": "slides-10.html#questions-for-you-1",
+    "title": "CPSC 330 Lecture 10: Regression Metrics",
+    "section": "Questions for you",
+    "text": "Questions for you\n\n\n\n\n\nWhat’s the AUC of a baseline model?\n\n\nSource"
+  },
+  {
+    "objectID": "slides-10.html#questions-for-you-2",
+    "href": "slides-10.html#questions-for-you-2",
+    "title": "CPSC 330 Lecture 10: Regression Metrics",
+    "section": "Questions for you",
+    "text": "Questions for you\n\n\n\n\n\nWhich model would you pick?"
+  },
+  {
+    "objectID": "slides-10.html#dealing-with-class-imbalance",
+    "href": "slides-10.html#dealing-with-class-imbalance",
+    "title": "CPSC 330 Lecture 10: Regression Metrics",
+    "section": "Dealing with class imbalance",
+    "text": "Dealing with class imbalance\n\nUnder sampling\nOversampling\nclass weight=\"balanced\" (preferred method for this course)\nSMOTE"
+  },
+  {
+    "objectID": "slides-10.html#ridge-and-ridgecv",
+    "href": "slides-10.html#ridge-and-ridgecv",
+    "title": "CPSC 330 Lecture 10: Regression Metrics",
+    "section": "Ridge and RidgeCV",
+    "text": "Ridge and RidgeCV\n\nRidge Regression: alpha hyperparameter controls model complexity.\nRidgeCV: Ridge regression with built-in cross-validation to find the optimal alpha."
+  },
+  {
+    "objectID": "slides-10.html#alpha-hyperparameter",
+    "href": "slides-10.html#alpha-hyperparameter",
+    "title": "CPSC 330 Lecture 10: Regression Metrics",
+    "section": "alpha hyperparameter",
+    "text": "alpha hyperparameter\n\nRole of alpha:\n\nControls model complexity\nHigher alpha: Simpler model, smaller coefficients.\nLower alpha: Complex model, larger coefficients."
+  },
+  {
+    "objectID": "slides-10.html#regression-metrics-mse-rmse-mape",
+    "href": "slides-10.html#regression-metrics-mse-rmse-mape",
+    "title": "CPSC 330 Lecture 10: Regression Metrics",
+    "section": "Regression metrics: MSE, RMSE, MAPE",
+    "text": "Regression metrics: MSE, RMSE, MAPE\n\nMean Squared Error (MSE): Average of the squares of the errors.\nRoot Mean Squared Error (RMSE): Square root of MSE, same units as the target variable.\nMean Absolute Percentage Error (MAPE): Average of the absolute percentage errors."
+  },
+  {
+    "objectID": "slides-10.html#applying-log-transformation-to-the-targets",
+    "href": "slides-10.html#applying-log-transformation-to-the-targets",
+    "title": "CPSC 330 Lecture 10: Regression Metrics",
+    "section": "Applying log transformation to the targets",
+    "text": "Applying log transformation to the targets\n\nSuitable when the target has a wide range and spans several orders of magnitude\n\nExample: counts data such as social media likes or price data\n\nHelps manage skewed data, making patterns more apparent and regression models more effective.\nTransformedTargetRegressor\n\nWraps a regression model and applies a transformation to the target values."
+  },
+  {
+    "objectID": "slides-10.html#iclicker-exercise-10.1",
+    "href": "slides-10.html#iclicker-exercise-10.1",
+    "title": "CPSC 330 Lecture 10: Regression Metrics",
+    "section": "iClicker Exercise 10.1",
+    "text": "iClicker Exercise 10.1\niClicker cloud join link: https://join.iclicker.com/YJHS\nSelect all of the following statements which are TRUE.\n\n\nPrice per square foot would be a good feature to add in our X.\n\n\nThe alpha hyperparameter of Ridge has similar interpretation of C hyperparameter of LogisticRegression; higher alpha means more complex model.\n\n\nIn Ridge, smaller alpha means bigger coefficients whereas bigger alpha means smaller coefficients."
+  },
+  {
+    "objectID": "slides-10.html#iclicker-exercise-10.2",
+    "href": "slides-10.html#iclicker-exercise-10.2",
+    "title": "CPSC 330 Lecture 10: Regression Metrics",
+    "section": "iClicker Exercise 10.2",
+    "text": "iClicker Exercise 10.2\niClicker cloud join link: https://join.iclicker.com/YJHS\nSelect all of the following statements which are TRUE.\n\n\nWe can use still use precision and recall for regression problems but now we have other metrics we can use as well.\n\n\nIn sklearn for regression problems, using r2_score() and .score() (with default values) will produce the same results.\n\n\nRMSE is always going to be non-negative.\n\n\nMSE does not directly provide the information about whether the model is underpredicting or overpredicting.\n\n\nWe can pass multiple scoring metrics to GridSearchCV or RandomizedSearchCV for regression as well as classification problems."
   },
   {
     "objectID": "slides-02-terminology-decision-trees.html#announcements",
     "href": "slides-02-terminology-decision-trees.html#announcements",
     "title": "Lecture 2: Terminology, Baselines, Decision Trees",
     "section": "Announcements",
-    "text": "Announcements\n\nThings due this week\n\nHomework 1 (hw1): Due May 16 17:59 \n\nYou can find the tentative due dates for all deliverables here.\nPlease monitor Piazza (especially pinned posts and instructor posts) for announcements.\nI’ll assume that you’ve watched the pre-lecture videos."
+    "text": "Announcements\n\nThings due this week\n\nHomework 1 (hw1): Due May 16 17:59 \n\nYou can find the tentative due dates for all deliverables here.\nPlease monitor Ed Discussion (especially pinned posts and instructor posts) for announcements.\nI’ll assume that you’ve watched the pre-lecture videos."
   },
   {
     "objectID": "slides-02-terminology-decision-trees.html#surveys",
     "href": "slides-02-terminology-decision-trees.html#surveys",
     "title": "Lecture 2: Terminology, Baselines, Decision Trees",
     "section": "Surveys",
-    "text": "Surveys\n\nPlease complete the “Getting to know you” survey on Canvas.\nAlso, please complete the anonymous restaurant survey on Qualtrics here.\n\nWe will try to analyze this data set in the coming weeks."
+    "text": "Surveys\n\n\nPlease complete the anonymous restaurant survey on Qualtrics here.\nWe will try to analyze this data set in the coming weeks."
   },
   {
     "objectID": "slides-02-terminology-decision-trees.html#gradescope",
     "href": "slides-02-terminology-decision-trees.html#gradescope",
     "title": "Lecture 2: Terminology, Baselines, Decision Trees",
     "section": "Gradescope",
-    "text": "Gradescope\nMake sure you can submit your assignment before the hw1 due date!\nIt is not required for you to work in a GitHub repository, but we highly encourage you to do this!\nFor students on the waitlist: Gradescope Entry code is MRZX7Z."
+    "text": "Gradescope\nMake sure you can submit your assignment before the hw1 due date!\nIt is required for you to work in a GitHub repository, please maintain your GitHub repo up-to-date.\nFor students on the waitlist: Gradescope Entry code is 9KK5ZR."
+  },
+  {
+    "objectID": "slides-02-terminology-decision-trees.html#demo-submit-hw1-on-gradescope",
+    "href": "slides-02-terminology-decision-trees.html#demo-submit-hw1-on-gradescope",
+    "title": "Lecture 2: Terminology, Baselines, Decision Trees",
+    "section": "Demo: Submit hw1 on Gradescope",
+    "text": "Demo: Submit hw1 on Gradescope\nWe are going to practice submitting HW1 on Gradescope so you all do it at least once!"
   },
   {
     "objectID": "slides-02-terminology-decision-trees.html#checklist-for-you-in-the-first-week",
     "href": "slides-02-terminology-decision-trees.html#checklist-for-you-in-the-first-week",
     "title": "Lecture 2: Terminology, Baselines, Decision Trees",
     "section": "Checklist for you in the first week",
-    "text": "Checklist for you in the first week\n\nAre you able to access course Canvas shell?\nAre you able to access course Piazza?\nAre you able to access Gradescope? (If not, refer to the Gradescope Student Guide.)\nAre you able to access iClicker Cloud for this course?\nDid you follow the setup instructions here to create a course conda environment on your computer?\nDid you complete the “Getting to know you” survey on Canvas?\nDid you complete the anonymous restaurant survey on Qualtrics?\nAre you almost finished or at least started with homework 1?"
+    "text": "Checklist for you in the first week\n\nAre you able to access course Canvas shell?\nAre you able to access course forum: Ed Discussion?\nAre you able to access Gradescope? (If not, refer to the Gradescope Student Guide.)\nAre you able to access iClicker Cloud for this course?\nDid you follow the setup instructions here to create a course conda environment on your computer?\nDid you complete the “Getting to know you” survey on Canvas?\nDid you complete the anonymous restaurant survey on Qualtrics?\nAre you almost finished or at least started with homework 1?"
   },
   {
     "objectID": "slides-02-terminology-decision-trees.html#suggested-workflow-for-working-with-jupyter-notebooks",
@@ -1589,11 +1687,18 @@
     "text": "Baseline\n\nLet’s try a simplest algorithm of predicting the most popular target!\n\n\nfrom sklearn.dummy import DummyClassifier\n# Initialize the DummyClassifier to always predict the most frequent class\nmodel = DummyClassifier(strategy=\"most_frequent\")\n# Train the model on the feature set X and target variable y\nmodel.fit(X, y)\n# Add the predicted values as a new column in the dataframe\ntoy_happiness_df['dummy_predictions'] = model.predict(X)\n# Show the dataframe\ntoy_happiness_df\n\n\n\n\n\n\n\n\nsupportive_colleagues\nsalary\nfree_coffee\nboss_vegan\nhappy?\ndummy_predictions\n\n\n\n\n0\n0\n70000\n0\n1\nUnhappy\nHappy\n\n\n1\n1\n60000\n0\n0\nUnhappy\nHappy\n\n\n2\n1\n80000\n1\n0\nHappy\nHappy\n\n\n3\n1\n110000\n0\n1\nHappy\nHappy\n\n\n4\n1\n120000\n1\n0\nHappy\nHappy\n\n\n5\n1\n150000\n1\n1\nHappy\nHappy\n\n\n6\n0\n150000\n1\n0\nUnhappy\nHappy"
   },
   {
-    "objectID": "slides-02-terminology-decision-trees.html#pre-intuition",
-    "href": "slides-02-terminology-decision-trees.html#pre-intuition",
+    "objectID": "slides-02-terminology-decision-trees.html#break",
+    "href": "slides-02-terminology-decision-trees.html#break",
     "title": "Lecture 2: Terminology, Baselines, Decision Trees",
-    "section": "Pre-Intuition",
-    "text": "Pre-Intuition\nLet’s play 20 questions! You can ask me up to 20 Yes/No questions to figure out the answer.  \nI’m thinking of a person - who is it ?"
+    "section": "Break",
+    "text": "Break\nLet’s take a break!"
+  },
+  {
+    "objectID": "slides-02-terminology-decision-trees.html#activity-20-questions",
+    "href": "slides-02-terminology-decision-trees.html#activity-20-questions",
+    "title": "Lecture 2: Terminology, Baselines, Decision Trees",
+    "section": "Activity: 20 Questions",
+    "text": "Activity: 20 Questions\nLet’s play 20 questions! You can ask me up to 20 Yes/No questions to figure out the answer.  \nI’m thinking of a person - who is it ?"
   },
   {
     "objectID": "slides-02-terminology-decision-trees.html#intuition",
@@ -1664,6 +1769,20 @@
     "title": "Lecture 2: Terminology, Baselines, Decision Trees",
     "section": "iClicker 2.5: Baselines and Decision trees",
     "text": "iClicker 2.5: Baselines and Decision trees\niClicker cloud join link: https://join.iclicker.com/YJHS\nSelect all of the following statements which are TRUE.\n\n\nChange in features (i.e., binarizing features above) would change DummyClassifier predictions.\n\n\npredict takes only X as argument whereas fit and score take both X and y as arguments.\n\n\nFor the decision tree algorithm to work, the feature values must be binary.\n\n\nThe prediction in a decision tree works by routing the example from the root to the leaf."
+  },
+  {
+    "objectID": "slides-02-terminology-decision-trees.html#break-1",
+    "href": "slides-02-terminology-decision-trees.html#break-1",
+    "title": "Lecture 2: Terminology, Baselines, Decision Trees",
+    "section": "Break",
+    "text": "Break\nLet’s take a break!"
+  },
+  {
+    "objectID": "slides-02-terminology-decision-trees.html#group-work-class-demo-live-coding",
+    "href": "slides-02-terminology-decision-trees.html#group-work-class-demo-live-coding",
+    "title": "Lecture 2: Terminology, Baselines, Decision Trees",
+    "section": "Group Work: Class Demo & Live Coding",
+    "text": "Group Work: Class Demo & Live Coding\nIn some of the classes, we will do a bit of live coding to get your used to practical machine learning. You are highly encouraged to follow along - we won’t usually finish everything in the demo, but it should be a significant portion that you can finish off after class.\nFor this demo, each student should click this link to create a new repo in their accounts, then clone that repo locally to follow along with the demo from today."
   },
   {
     "objectID": "slides-14.html#announcements",
@@ -1901,14 +2020,21 @@
     "href": "slides.html",
     "title": "Overview",
     "section": "",
-    "text": "Title\n\n\nDescription\n\n\n\n\n\n\nLecture 1: Introduction to CPSC 330\n\n\nWhat is machine learning, types of machine learning, learning to navigate through the course materials, getting familiar with the course policies\n\n\n\n\nLecture 2: Terminology, Baselines, Decision Trees\n\n\nSupervised machine learning terminology: Features, target, examples, training, parameters and hyperparameters, Decision boundary, classification vs. regression, inference vs. prediction, accuracy vs. error, baselines, intuition of decision trees\n\n\n\n\nLecture 3: ML fundamentals\n\n\ngeneralization, data splitting, overfitting, underfitting, the fundamental tradeoff, the golden rule\n\n\n\n\nLecture 4: \\(k\\)-nearest neighbours and SVM RBFs\n\n\nintroduction to KNNs, hyperparameter n_neighbours or \\(k\\), C and gamma hyperparameters of SVM RBF, decision boundaries with different values of hyperparameters.\n\n\n\n\nLecture 5: Preprocessing and sklearn pipelines\n\n\nPre-processing, Transformations, and pipelines.\n\n\n\n\nLecture 6: Column transformer and text features\n\n\nPreprocessing and sklearn pipelines\n\n\n\n\nLecture 7: Linear models\n\n\nLinear regression, logistic regression, prediction probabilities, sigmoid, interpretation of coefficients\n\n\n\n\nCPSC 330 Lecture 8: Hyperparameter Optimization\n\n\nLinear regression, logistic regression, prediction probabilities, sigmoid, interpretation of coefficients\n\n\n\n\nCPSC 330 Lecture 9: Classification Metrics\n\n\nconfusion metrics, precision, recall, f1-score, PR curves, AP score, ROC curve, ROC AUC, class imbalance\n\n\n\n\nCPSC 330 Lecture 11: Midterm review\n\n\n \n\n\n\n\nCPSC 330 Lecture 12: Ensembles\n\n\n \n\n\n\n\nCPSC 330 Lecture 13: Feature importances\n\n\n \n\n\n\n\nCPSC 330 Lecture 14: Feature Engineering and Selection\n\n\n \n\n\n\n\nCPSC 330 Lecture 15: K-Means\n\n\n \n\n\n\n\nCPSC 330 Lecture 16: DBSCAN, Hierarchical Clustering\n\n\n \n\n\n\n\nCPSC 330 Lecture 17: Recommender Systems\n\n\n \n\n\n\n\nCPSC 330 Lecture 18: Natural Language Processing\n\n\n \n\n\n\n\nCPSC 330 Lecture 19: Introduction to deep learning and computer vision\n\n\n \n\n\n\n\nCPSC 330 Lecture 20: Time series\n\n\n \n\n\n\n\nCPSC 330 Lecture 21: Survival analysis\n\n\n \n\n\n\n\nCPSC 330 Lecture 24: Deployment and conclusion\n\n\n \n\n\n\n\n\nNo matching items"
+    "text": "Title\n\n\nDescription\n\n\n\n\n\n\nLecture 1: Introduction to CPSC 330\n\n\nWhat is machine learning, types of machine learning, learning to navigate through the course materials, getting familiar with the course policies\n\n\n\n\nLecture 2: Terminology, Baselines, Decision Trees\n\n\nSupervised machine learning terminology: Features, target, examples, training, parameters and hyperparameters, Decision boundary, classification vs. regression, inference vs. prediction, accuracy vs. error, baselines, intuition of decision trees\n\n\n\n\nLecture 3: ML fundamentals\n\n\ngeneralization, data splitting, overfitting, underfitting, the fundamental tradeoff, the golden rule\n\n\n\n\nLecture 4: \\(k\\)-nearest neighbours and SVM RBFs\n\n\nintroduction to KNNs, hyperparameter n_neighbours or \\(k\\), C and gamma hyperparameters of SVM RBF, decision boundaries with different values of hyperparameters.\n\n\n\n\nLecture 5: Preprocessing and sklearn pipelines\n\n\nPre-processing, Transformations, and pipelines.\n\n\n\n\nLecture 6: Column transformer and text features\n\n\nPreprocessing and sklearn pipelines\n\n\n\n\nLecture 7: Linear models\n\n\nLinear regression, logistic regression, prediction probabilities, sigmoid, interpretation of coefficients\n\n\n\n\nCPSC 330 Lecture 8: Hyperparameter Optimization\n\n\nLinear regression, logistic regression, prediction probabilities, sigmoid, interpretation of coefficients\n\n\n\n\nCPSC 330 Lecture 9: Classification Metrics\n\n\nconfusion metrics, precision, recall, f1-score, PR curves, AP score, ROC curve, ROC AUC, class imbalance\n\n\n\n\nCPSC 330 Lecture 10: Regression Metrics\n\n\nRegression metrics\n\n\n\n\nCPSC 330 Midterm 1 Review\n\n\n \n\n\n\n\nCPSC 330 Lecture 12: Ensembles\n\n\n \n\n\n\n\nCPSC 330 Lecture 13: Feature importances\n\n\n \n\n\n\n\nCPSC 330 Lecture 14: Feature Engineering and Selection\n\n\n \n\n\n\n\nCPSC 330 Lecture 15: K-Means\n\n\n \n\n\n\n\nCPSC 330 Lecture 16: DBSCAN, Hierarchical Clustering\n\n\n \n\n\n\n\nCPSC 330 Lecture 17: Recommender Systems\n\n\n \n\n\n\n\nCPSC 330 Lecture 18: Natural Language Processing\n\n\n \n\n\n\n\nCPSC 330 Lecture 19: Introduction to deep learning and computer vision\n\n\n \n\n\n\n\nCPSC 330 Lecture 20: Time series\n\n\n \n\n\n\n\nCPSC 330 Lecture 21: Survival analysis\n\n\n \n\n\n\n\nCPSC 330 Lecture 24: Deployment and conclusion\n\n\n \n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "slides-03-ml-fundamentals.html#announcements",
     "href": "slides-03-ml-fundamentals.html#announcements",
     "title": "Lecture 3: ML fundamentals",
     "section": "Announcements",
-    "text": "Announcements\n\nHomework 2 (hw2) has been released (Due: Sept 16, 11:59pm)\n\nYou are welcome to broadly discuss it with your classmates but final answers and submissions must be your own.\nGroup submissions are not allowed for this assignment.\n\nAdvice on keeping up with the material\n\nPractice!\nMake sure you run the lecture notes on your laptop and experiment with the code.\nStart early on homework assignments.\n\nIf you are still on the waitlist, it’s your responsibility to keep up with the material and submit assignments.\nLast day to drop without a W standing: Sept 16, 2023"
+    "text": "Announcements\n\nRemember, my office hours are MWF from 1:00 - 1:30 PM in DMP 310 (after class)\nHomework 2 (hw2) was released on Wednesday, it is due May 20, 10:00 pm\n\nYou are welcome to broadly discuss it with your classmates but final answers and submissions must be your own.\nGroup submissions are not allowed for this assignment.\n\nAdvice on keeping up with the material\n\nPractice!\nMake sure you run the lecture notes on your laptop and experiment with the code.\nStart early on homework assignments.\n\nIf you are still on the waitlist, it’s your responsibility to keep up with the material and submit assignments!\nLast day to drop without a W standing is today: May 16, 2025"
+  },
+  {
+    "objectID": "slides-03-ml-fundamentals.html#dropping-lowest-homework-update",
+    "href": "slides-03-ml-fundamentals.html#dropping-lowest-homework-update",
+    "title": "Lecture 3: ML fundamentals",
+    "section": "Dropping lowest homework (Update)",
+    "text": "Dropping lowest homework (Update)\n\nCPSC 330 has 9 homework assignments that are all an integral part of your learning\nTo account for illnesses, other commitments, and to preserve your mental health, there has long been a policy of dropping your lowest HW score.\nAfter some analysis from the data from previous terms (Learning Analytics!), there is a slight modification to this policy:\n\n\nWith the exception of HW5, we will drop your lowest homework grade - all students must complete HW5.\n\n\nThis is to encourage all students to complete HW5! It’s important!"
   },
   {
     "objectID": "slides-03-ml-fundamentals.html#recap",
@@ -1953,11 +2079,18 @@
     "text": "Additional Resource\n\n\n\n        \n        \n\n\nReference: MLU-Explain - Cross Validation"
   },
   {
+    "objectID": "slides-03-ml-fundamentals.html#break",
+    "href": "slides-03-ml-fundamentals.html#break",
+    "title": "Lecture 3: ML fundamentals",
+    "section": "Break",
+    "text": "Break\nLet’s take a break!"
+  },
+  {
     "objectID": "slides-03-ml-fundamentals.html#group-work-class-demo-live-coding",
     "href": "slides-03-ml-fundamentals.html#group-work-class-demo-live-coding",
     "title": "Lecture 3: ML fundamentals",
     "section": "Group Work: Class Demo & Live Coding",
-    "text": "Group Work: Class Demo & Live Coding\nFor this demo, each student should click this link to create a new repo in their accounts, then clone that repo locally to follow along with the demo from today.\n  \nIf you really don’t want to create a repo,\n\nNavigate to the cpsc330-2025S1 repo\nrun git pull to pull the latest files in the course repo\nLook for the demo file here: lectures/102-Firas-lectures/class_demos/."
+    "text": "Group Work: Class Demo & Live Coding\nFor this demo, each student should click this link to create a new repo in their accounts, then clone that repo locally to follow along with the demo from today."
   },
   {
     "objectID": "slides-19.html#announcements",
@@ -2181,7 +2314,7 @@
     "href": "slides-19.html#a-feature-vector-given-by-densenet",
     "title": "CPSC 330 Lecture 19: Introduction to deep learning and computer vision",
     "section": "A feature vector given by densenet",
-    "text": "A feature vector given by densenet\n \n\nLet’s examine the feature vectors.\n\n\n\n\n\n\n\n\n\n\n0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n...\n1014\n1015\n1016\n1017\n1018\n1019\n1020\n1021\n1022\n1023\n\n\n\n\n0\n0.000594\n0.005223\n0.002873\n0.001198\n0.095008\n0.586996\n0.000433\n0.003686\n0.270852\n0.000384\n...\n0.690697\n0.614865\n0.795964\n1.646563\n2.446836\n1.365790\n0.528615\n0.365612\n0.255719\n0.183184\n\n\n1\n0.000409\n0.002568\n0.005813\n0.000984\n0.144840\n0.398514\n0.000489\n0.004420\n0.114888\n0.000214\n...\n1.000376\n0.340962\n0.381932\n1.984864\n2.476554\n3.327973\n0.019797\n2.603072\n0.007626\n0.605140\n\n\n2\n0.000416\n0.001159\n0.003767\n0.003172\n0.108386\n0.586645\n0.000397\n0.005292\n0.402600\n0.000431\n...\n0.039042\n0.393666\n0.009340\n0.441228\n0.091897\n0.169580\n0.298863\n1.187954\n0.038596\n1.138481\n\n\n3\n0.000497\n0.005999\n0.002178\n0.002357\n0.148310\n0.246634\n0.001014\n0.002068\n0.051969\n0.000257\n...\n2.246385\n3.856325\n1.375512\n0.013484\n0.142048\n0.458638\n0.615497\n0.938264\n0.201702\n2.921415\n\n\n4\n0.000736\n0.004440\n0.005242\n0.002650\n0.117545\n0.587100\n0.000218\n0.003063\n0.109905\n0.000228\n...\n0.918652\n0.139183\n3.108641\n5.024365\n0.008162\n0.118329\n0.100525\n1.571191\n0.676842\n0.192657\n\n\n\n\n5 rows × 1024 columns\n\n\n\n\nThe features are hard to interpret but they have some important information about the images which can be useful for classification."
+    "text": "A feature vector given by densenet\n \n\nLet’s examine the feature vectors.\n\n\n\n\n\n\n\n\n\n\n0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n...\n1014\n1015\n1016\n1017\n1018\n1019\n1020\n1021\n1022\n1023\n\n\n\n\n0\n0.000594\n0.005223\n0.002873\n0.001198\n0.095008\n0.586996\n0.000433\n0.003686\n0.270852\n0.000384\n...\n0.690697\n0.614865\n0.795964\n1.646563\n2.446836\n1.365790\n0.528615\n0.365612\n0.255719\n0.183184\n\n\n1\n0.000409\n0.002568\n0.005813\n0.000984\n0.144840\n0.398514\n0.000489\n0.004420\n0.114888\n0.000214\n...\n1.000376\n0.340962\n0.381932\n1.984865\n2.476554\n3.327973\n0.019797\n2.603072\n0.007626\n0.605140\n\n\n2\n0.000416\n0.001159\n0.003767\n0.003172\n0.108386\n0.586645\n0.000397\n0.005292\n0.402600\n0.000431\n...\n0.039042\n0.393666\n0.009340\n0.441228\n0.091897\n0.169580\n0.298863\n1.187954\n0.038596\n1.138481\n\n\n3\n0.000497\n0.005999\n0.002178\n0.002357\n0.148310\n0.246634\n0.001014\n0.002068\n0.051969\n0.000257\n...\n2.246385\n3.856325\n1.375512\n0.013484\n0.142048\n0.458638\n0.615497\n0.938264\n0.201702\n2.921415\n\n\n4\n0.000736\n0.004440\n0.005242\n0.002650\n0.117545\n0.587100\n0.000218\n0.003063\n0.109905\n0.000228\n...\n0.918652\n0.139183\n3.108641\n5.024365\n0.008162\n0.118329\n0.100525\n1.571191\n0.676842\n0.192657\n\n\n\n\n5 rows × 1024 columns\n\n\n\n\nThe features are hard to interpret but they have some important information about the images which can be useful for classification."
   },
   {
     "objectID": "slides-19.html#logistic-regression-with-the-extracted-features",
@@ -2209,7 +2342,7 @@
     "href": "slides-19.html#object-detection-using-yolo",
     "title": "CPSC 330 Lecture 19: Introduction to deep learning and computer vision",
     "section": "Object detection using YOLO",
-    "text": "Object detection using YOLO\n\n\nLet’s try this out using a pre-trained model.\n\nfrom ultralytics import YOLO\nmodel = YOLO(\"yolov8n.pt\")  # pretrained YOLOv8n model\n\nyolo_input = \"data/yolo_test/3356700488_183566145b.jpg\"\nyolo_result = \"data/yolo_result.jpg\"\n# Run batched inference on a list of images\nresult = model(yolo_input)  # return a list of Results objects\nresult[0].save(filename=yolo_result)\n\n\nimage 1/1 /Users/firasm/Sync/Teaching/2024_2025/2024S1/cpsc330/cpsc330-slides/website/data/yolo_test/3356700488_183566145b.jpg: 512x640 4 persons, 2 cars, 1 stop sign, 100.0ms\nSpeed: 2.6ms preprocess, 100.0ms inference, 3.9ms postprocess per image at shape (1, 3, 512, 640)\n\n\n'data/yolo_result.jpg'"
+    "text": "Object detection using YOLO\n\n\nLet’s try this out using a pre-trained model.\n\nfrom ultralytics import YOLO\nmodel = YOLO(\"yolov8n.pt\")  # pretrained YOLOv8n model\n\nyolo_input = \"data/yolo_test/3356700488_183566145b.jpg\"\nyolo_result = \"data/yolo_result.jpg\"\n# Run batched inference on a list of images\nresult = model(yolo_input)  # return a list of Results objects\nresult[0].save(filename=yolo_result)\n\nCreating new Ultralytics Settings v0.0.6 file ✅ \nView Ultralytics Settings with 'yolo settings' or at '/Users/firasm/Library/Application Support/Ultralytics/settings.json'\nUpdate Settings with 'yolo settings key=value', i.e. 'yolo settings runs_dir=path/to/dir'. For help see https://docs.ultralytics.com/quickstart/#ultralytics-settings.\n\nimage 1/1 /Users/firasm/Sync/Teaching/2024_2025/2024W1/cpsc330/cpsc330-slides/website/data/yolo_test/3356700488_183566145b.jpg: 512x640 4 persons, 2 cars, 1 stop sign, 63.5ms\nSpeed: 2.1ms preprocess, 63.5ms inference, 3.8ms postprocess per image at shape (1, 3, 512, 640)\n\n\n'data/yolo_result.jpg'"
   },
   {
     "objectID": "slides-19.html#object-detection-output",
@@ -2412,7 +2545,7 @@
     "href": "slides-08.html#grid-search-example",
     "title": "CPSC 330 Lecture 8: Hyperparameter Optimization",
     "section": "Grid search example",
-    "text": "Grid search example\n\nfrom sklearn.model_selection import GridSearchCV\n\npipe_svm = make_pipeline(CountVectorizer(), SVC())\n\nparam_grid = {\n    \"countvectorizer__max_features\": [100, 200, 400],\n    \"svc__gamma\": [0.01, 0.1, 1.0],\n    \"svc__C\": [0.01, 0.1, 1.0],\n}\ngrid_search = GridSearchCV(pipe_svm, \n                  param_grid = param_grid, \n                  n_jobs=-1, \n                  return_train_score=True\n                 )\ngrid_search.fit(X_train, y_train)\ngrid_search.best_score_\n\n0.9782606272997375"
+    "text": "Grid search example\n\nfrom sklearn.model_selection import GridSearchCV\n\npipe_svm = make_pipeline(CountVectorizer(), SVC())\n\nparam_grid = {\n    \"countvectorizer__max_features\": [100, 200, 400],\n    \"svc__gamma\": [0.01, 0.1, 1.0],\n    \"svc__C\": [0.01, 0.1, 1.0],\n}\ngrid_search = GridSearchCV(pipe_svm, \n                  param_grid = param_grid, \n                  n_jobs=-1, \n                  return_train_score=True\n                 )\ngrid_search.fit(X_train, y_train)\ngrid_search.best_score_\n\nnp.float64(0.9782606272997375)"
   },
   {
     "objectID": "slides-08.html#random-search",
@@ -2426,7 +2559,7 @@
     "href": "slides-08.html#random-search-example",
     "title": "CPSC 330 Lecture 8: Hyperparameter Optimization",
     "section": "Random search example",
-    "text": "Random search example\n\nfrom sklearn.model_selection import RandomizedSearchCV\nfrom scipy.stats import randint\n\npipe_svc = make_pipeline(CountVectorizer(), SVC())\n\nparam_dist = {\n    \"countvectorizer__max_features\": randint(100, 2000), \n    \"svc__C\": uniform(0.1, 1e4),  # loguniform(1e-3, 1e3),\n    \"svc__gamma\": loguniform(1e-5, 1e3),\n}\nrandom_search = RandomizedSearchCV(pipe_svm,                                    \n                  param_distributions = param_dist, \n                  n_iter=10, \n                  n_jobs=-1, \n                  return_train_score=True)\n\n# Carry out the search\nrandom_search.fit(X_train, y_train)\nrandom_search.best_score_\n\n0.9812518532227668"
+    "text": "Random search example\n\nfrom sklearn.model_selection import RandomizedSearchCV\nfrom scipy.stats import randint\n\npipe_svc = make_pipeline(CountVectorizer(), SVC())\n\nparam_dist = {\n    \"countvectorizer__max_features\": randint(100, 2000), \n    \"svc__C\": uniform(0.1, 1e4),  # loguniform(1e-3, 1e3),\n    \"svc__gamma\": loguniform(1e-5, 1e3),\n}\nrandom_search = RandomizedSearchCV(pipe_svm,                                    \n                  param_distributions = param_dist, \n                  n_iter=10, \n                  n_jobs=-1, \n                  return_train_score=True)\n\n# Carry out the search\nrandom_search.fit(X_train, y_train)\nrandom_search.best_score_\n\nnp.float64(0.9830476633970345)"
   },
   {
     "objectID": "slides-08.html#optimization-bias",

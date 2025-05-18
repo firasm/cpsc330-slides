@@ -10,7 +10,7 @@
   <meta name="generator" content="quarto-1.6.40">
 
   <meta name="author" content="Firas Moosvi (Slides adapted from Varada Kolhatkar)">
-  <title>CPSC 330 Section 103 Slides – Lecture 2: Terminology, Baselines, Decision Trees</title>
+  <title>CPSC 330 Slides – Lecture 2: Terminology, Baselines, Decision Trees</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -215,39 +215,41 @@ Firas Moosvi (Slides adapted from Varada Kolhatkar)
   - There is some autograding in this homework.
 --></li>
 </ul></li>
-<li>You can find the tentative due dates for all deliverables <a href="https://ubc-cs.github.io/cpsc330-2025S1/README.html#deliverable-due-dates-tentative">here</a>.</li>
-<li>Please monitor Piazza (especially pinned posts and instructor posts) for announcements.</li>
+<li>You can find the tentative due dates for all deliverables <a href="https://ubc-cs.github.io/cpsc330-2025S1/docs/schedule.html#deliverable-due-dates-tentative">here</a>.</li>
+<li>Please monitor Ed Discussion (especially pinned posts and instructor posts) for announcements.</li>
 <li>I’ll assume that you’ve watched the pre-lecture videos.</li>
 </ul>
 <p><br><br></p>
 </section>
 <section id="surveys" class="slide level2 center">
 <h2>Surveys</h2>
+<!-- - Please complete the "Getting to know you" survey on [Canvas](). -->
 <ul>
-<li>Please complete the “Getting to know you” survey on <a href="">Canvas</a>.</li>
-<li>Also, please complete the anonymous restaurant survey on Qualtrics <a href="https://ubc.ca1.qualtrics.com/jfe/form/SV_73VuZiuwM1eDVrw">here</a>.
-<ul>
+<li>Please complete the anonymous restaurant survey on Qualtrics <a href="https://ubc.ca1.qualtrics.com/jfe/form/SV_73VuZiuwM1eDVrw">here</a>.</li>
 <li>We will try to analyze this data set in the coming weeks.</li>
-</ul></li>
 </ul>
 </section>
 <section id="gradescope" class="slide level2 center">
 <h2>Gradescope</h2>
 <p>Make sure you can submit your assignment before the hw1 due date!</p>
-<p>It is not <strong>required</strong> for you to work in a GitHub repository, but we <em>highly encourage you to do this</em>!</p>
-<p><strong>For students on the waitlist</strong>: Gradescope Entry code is <strong>MRZX7Z</strong>.</p>
+<p>It is <strong>required</strong> for you to work in a GitHub repository, please maintain your GitHub repo up-to-date.</p>
+<p><strong>For students on the waitlist</strong>: Gradescope Entry code is <strong>9KK5ZR</strong>.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="img/gradescope.png" class="quarto-figure quarto-figure-center" width="700"></p>
 </figure>
 </div>
 </section>
+<section id="demo-submit-hw1-on-gradescope" class="slide level2 center">
+<h2>Demo: Submit hw1 on Gradescope</h2>
+<p>We are going to practice submitting HW1 on Gradescope so you all do it at least once!</p>
+</section>
 <section id="checklist-for-you-in-the-first-week" class="slide level2 center">
 <h2>Checklist for you in the first week</h2>
 <ul class="task-list">
-<li><label><input type="checkbox">Are you able to access course <a href="https://canvas.ubc.ca/courses/149122">Canvas</a> shell?</label></li>
-<li><label><input type="checkbox">Are you able to access <a href="https://piazza.com/ubc.ca/winterterm12024/cpsc_v3301011021032024S1">course Piazza</a>?</label></li>
-<li><label><input type="checkbox">Are you able to access <a href="https://canvas.ubc.ca/courses/149122/external_tools/53542?display=borderless">Gradescope</a>? (If not, refer to the <a href="https://lthub.ubc.ca/guides/gradescope-student-guide/">Gradescope Student Guide</a>.)</label></li>
+<li><label><input type="checkbox">Are you able to access course <a href="https://canvas.ubc.ca/courses/165412">Canvas</a> shell?</label></li>
+<li><label><input type="checkbox">Are you able to access <a href="https://edstem.org/us/join/rNVu2p">course forum: Ed Discussion</a>?</label></li>
+<li><label><input type="checkbox">Are you able to access <a href="https://canvas.ubc.ca/courses/165412/external_tools/58730?display=borderless">Gradescope</a>? (If not, refer to the <a href="https://lthub.ubc.ca/guides/gradescope-student-guide/">Gradescope Student Guide</a>.)</label></li>
 <li><label><input type="checkbox">Are you able to access <a href="https://join.iclicker.com/YJHS">iClicker Cloud</a> for this course?</label></li>
 <li><label><input type="checkbox">Did you follow the setup instructions <a href="https://ubc-cs.github.io/cpsc330-2025S1/docs/setup.html">here</a> to create a course conda environment on your computer?</label></li>
 <li><label><input type="checkbox">Did you complete the “Getting to know you” survey on Canvas?</label></li>
@@ -368,7 +370,7 @@ Firas Moosvi (Slides adapted from Varada Kolhatkar)
 <li>There are many frameworks to do do machine learning.</li>
 <li>We’ll mainly be using <a href="https://scikit-learn.org/stable/"><code>scikit-learn</code> framework</a>.</li>
 </ul>
-<div id="7b3de29f" class="cell" data-execution_count="2">
+<div id="b92d3eb9" class="cell" data-execution_count="2">
 <div class="cell-output cell-output-display" data-execution_count="2">
 
         <iframe width="1000" height="650" src="https://scikit-learn.org" frameborder="0" allowfullscreen=""></iframe>
@@ -379,7 +381,7 @@ Firas Moosvi (Slides adapted from Varada Kolhatkar)
 <section id="running-example" class="slide level2 center">
 <h2>Running example</h2>
 <p>Imagine you’re in the fortunate situation where, after graduating, you have a few job offers and need to decide which one to choose. You want to pick the job that will likely make you the happiest. To help with your decision, you collect data from like-minded people. Here are the first few rows of this toy dataset.</p>
-<div id="2ee0f6bb" class="cell" data-execution_count="3">
+<div id="61cf3969" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a>toy_happiness_df <span class="op">=</span> pd.read_csv(DATA_DIR <span class="op">+</span> <span class="st">'toy_job_happiness.csv'</span>)</span>
 <span id="cb1-2"><a></a>toy_happiness_df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="3">
@@ -498,7 +500,7 @@ Firas Moosvi (Slides adapted from Varada Kolhatkar)
 <ul>
 <li>Is this a <strong>classification</strong> problem or a <strong>regression</strong> problem?</li>
 </ul>
-<div id="9606ba35" class="cell" data-execution_count="4">
+<div id="c64fb143" class="cell" data-execution_count="4">
 <div class="cell-output cell-output-display" data-execution_count="4">
 <div>
 <style scoped="">
@@ -616,7 +618,7 @@ Firas Moosvi (Slides adapted from Varada Kolhatkar)
 <ul>
 <li>In order to train a model we need to separate <span class="math inline">\(X\)</span> and <span class="math inline">\(y\)</span> from the dataframe.</li>
 </ul>
-<div id="0599fa66" class="cell" data-execution_count="5">
+<div id="b66a21f0" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a></a>X <span class="op">=</span> toy_happiness_df.drop(columns<span class="op">=</span>[<span class="st">"happy?"</span>]) <span class="co"># Extract the feature set by removing the target column "happy?"</span></span>
 <span id="cb2-2"><a></a>y <span class="op">=</span> toy_happiness_df[<span class="st">"happy?"</span>] <span class="co"># Extract the target variable "happy?"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -626,7 +628,7 @@ Firas Moosvi (Slides adapted from Varada Kolhatkar)
 <ul>
 <li>Let’s try a simplest algorithm of predicting the most popular target!</li>
 </ul>
-<div id="0fb2397b" class="cell" data-execution_count="6">
+<div id="bbfa89bd" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a></a><span class="im">from</span> sklearn.dummy <span class="im">import</span> DummyClassifier</span>
 <span id="cb3-2"><a></a><span class="co"># Initialize the DummyClassifier to always predict the most frequent class</span></span>
 <span id="cb3-3"><a></a>model <span class="op">=</span> DummyClassifier(strategy<span class="op">=</span><span class="st">"most_frequent"</span>)</span>
@@ -734,14 +736,19 @@ Firas Moosvi (Slides adapted from Varada Kolhatkar)
 </div>
 </div>
 </div>
-</section></section>
+</section>
+<section id="break" class="slide level2 center">
+<h2>Break</h2>
+<p>Let’s take a break!</p>
+
+<img data-src="img/eva-coffee.png" class="quarto-figure quarto-figure-center r-stretch"></section></section>
 <section>
 <section id="decision-trees" class="title-slide slide level1 center">
 <h1>Decision trees</h1>
 
 </section>
-<section id="pre-intuition" class="slide level2 center">
-<h2>Pre-Intuition</h2>
+<section id="activity-20-questions" class="slide level2 center">
+<h2>Activity: 20 Questions</h2>
 <p>Let’s play <a href="https://en.wikipedia.org/wiki/Twenty_questions">20 questions</a>! You can ask me up to 20 Yes/No questions to figure out the answer. <br> <br></p>
 <h3 id="im-thinking-of-a-person---who-is-it">I’m thinking of a person - who is it ?</h3>
 </section>
@@ -757,7 +764,7 @@ Firas Moosvi (Slides adapted from Varada Kolhatkar)
 <section id="decision-tree-with-sklearn" class="slide level2 center">
 <h2>Decision tree with <code>sklearn</code></h2>
 <p>Let’s train a simple decision tree on our toy dataset.</p>
-<div id="91d1e878" class="cell" data-execution_count="7">
+<div id="d1fbc36f" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a></a><span class="im">from</span> sklearn.tree <span class="im">import</span> DecisionTreeClassifier <span class="co"># import the classifier</span></span>
 <span id="cb4-2"><a></a><span class="im">from</span> sklearn.tree <span class="im">import</span> plot_tree</span>
 <span id="cb4-3"><a></a></span>
@@ -765,15 +772,9 @@ Firas Moosvi (Slides adapted from Varada Kolhatkar)
 <span id="cb4-5"><a></a>model.fit(X, y)</span>
 <span id="cb4-6"><a></a>plot_tree(model, filled<span class="op">=</span><span class="va">True</span>, feature_names <span class="op">=</span> X.columns, class_names<span class="op">=</span>[<span class="st">"Happy"</span>, <span class="st">"Unhappy"</span>], </span>
 <span id="cb4-7"><a></a>          impurity <span class="op">=</span> <span class="va">False</span>, fontsize<span class="op">=</span><span class="dv">12</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
-<div>
-<figure>
-<p><img data-src="slides-02-terminology-decision-trees_files/figure-revealjs/cell-8-output-1.png" width="763" height="389"></p>
-</figure>
+
 </div>
-</div>
-</div>
-</section>
+<img data-src="slides-02-terminology-decision-trees_files/figure-revealjs/cell-8-output-1.png" class="r-stretch"></section>
 <section id="prediction" class="slide level2 center">
 <h2>Prediction</h2>
 <ul>
@@ -784,16 +785,8 @@ Firas Moosvi (Slides adapted from Varada Kolhatkar)
 <li>supportive_colleagues = 1, salary = 60000, coffee_machine = 0, vegan_boss = 1,</li>
 </ul></li>
 </ul>
-<div id="fb210d3a" class="cell" data-execution_count="8">
-<div class="cell-output cell-output-display">
-<div>
-<figure>
-<p><img data-src="slides-02-terminology-decision-trees_files/figure-revealjs/cell-9-output-1.png" width="763" height="389"></p>
-</figure>
-</div>
-</div>
-</div>
-</section>
+
+<img data-src="slides-02-terminology-decision-trees_files/figure-revealjs/cell-9-output-1.png" class="r-stretch"></section>
 <section id="prediction-with-sklearn" class="slide level2 center">
 <h2>Prediction with <code>sklearn</code></h2>
 <ul>
@@ -802,28 +795,22 @@ Firas Moosvi (Slides adapted from Varada Kolhatkar)
 <li>supportive_colleagues = 1, salary = 60000, coffee_machine = 0, vegan_boss = 1,</li>
 </ul></li>
 </ul>
-<div id="29173317" class="cell" data-execution_count="9">
+<div id="8bbe82ad" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a></a>test_example <span class="op">=</span> [[<span class="dv">1</span>, <span class="dv">60000</span>, <span class="dv">0</span>, <span class="dv">1</span>]]</span>
 <span id="cb5-2"><a></a><span class="bu">print</span>(<span class="st">"Model prediction: "</span>, model.predict(test_example))</span>
 <span id="cb5-3"><a></a>plot_tree(model, filled<span class="op">=</span><span class="va">True</span>, feature_names <span class="op">=</span> X.columns, class_names <span class="op">=</span> [<span class="st">"Happy"</span>, <span class="st">"Unhappy"</span>], impurity <span class="op">=</span> <span class="va">False</span>, fontsize<span class="op">=</span><span class="dv">9</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Model prediction:  ['Unhappy']</code></pre>
 </div>
-<div class="cell-output cell-output-display">
-<div>
-<figure>
-<p><img data-src="slides-02-terminology-decision-trees_files/figure-revealjs/cell-10-output-2.png" width="763" height="389"></p>
-</figure>
+
 </div>
-</div>
-</div>
-</section>
+<img data-src="slides-02-terminology-decision-trees_files/figure-revealjs/cell-10-output-2.png" class="r-stretch"></section>
 <section id="training-high-level" class="slide level2 center">
 <h2>Training (high level)</h2>
 <ul>
 <li>How many possible questions could we ask in this context?</li>
 </ul>
-<div id="8f0d5043" class="cell" data-execution_count="10">
+<div id="42b8c224" class="cell" data-execution_count="10">
 <div class="cell-output cell-output-display" data-execution_count="10">
 <div>
 <style scoped="">
@@ -932,28 +919,12 @@ Firas Moosvi (Slides adapted from Varada Kolhatkar)
 </section>
 <section id="decision-boundary-with-max_depth1" class="slide level2 center">
 <h2>Decision boundary with <code>max_depth=1</code></h2>
-<div id="d4a3edc5" class="cell" data-execution_count="11">
-<div class="cell-output cell-output-display">
-<div>
-<figure>
-<p><img data-src="slides-02-terminology-decision-trees_files/figure-revealjs/cell-12-output-1.png" width="1236" height="517"></p>
-</figure>
-</div>
-</div>
-</div>
-</section>
+
+<img data-src="slides-02-terminology-decision-trees_files/figure-revealjs/cell-12-output-1.png" class="r-stretch"></section>
 <section id="decision-boundary-with-max_depth2" class="slide level2 center">
 <h2>Decision boundary with <code>max_depth=2</code></h2>
-<div id="f32fc75d" class="cell" data-execution_count="12">
-<div class="cell-output cell-output-display">
-<div>
-<figure>
-<p><img data-src="slides-02-terminology-decision-trees_files/figure-revealjs/cell-13-output-1.png" width="1236" height="517"></p>
-</figure>
-</div>
-</div>
-</div>
-</section>
+
+<img data-src="slides-02-terminology-decision-trees_files/figure-revealjs/cell-13-output-1.png" class="r-stretch"></section>
 <section id="iclicker-2.5-baselines-and-decision-trees" class="slide level2 center">
 <h2>iClicker 2.5: Baselines and Decision trees</h2>
 <p>iClicker cloud join link: <a href="https://join.iclicker.com/YJHS">https://join.iclicker.com/YJHS</a></p>
@@ -972,6 +943,17 @@ Firas Moosvi (Slides adapted from Varada Kolhatkar)
 <li>The prediction in a decision tree works by routing the example from the root to the leaf.</li>
 </ol></li>
 </ul>
+</section>
+<section id="break-1" class="slide level2 center">
+<h2>Break</h2>
+<p>Let’s take a break!</p>
+
+<img data-src="img/eva-coffee.png" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="group-work-class-demo-live-coding" class="slide level2 center">
+<h2>Group Work: Class Demo &amp; Live Coding</h2>
+<p>In some of the classes, we will do a bit of live coding to get your used to practical machine learning. You are <strong>highly encouraged</strong> to follow along - we won’t usually finish <em>everything</em> in the demo, but it should be a significant portion that you can finish off after class.</p>
+<p>For this demo, each student should <a href="https://github.com/new?template_name=lecture02_demo&amp;template_owner=ubc-cpsc330">click this link</a> to create a new repo in their accounts, then clone that repo locally to follow along with the demo from today.</p>
+<p><br> <br> <br></p>
 
 
 </section></section>

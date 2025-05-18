@@ -1,33 +1,82 @@
 ---
-title: 'CPSC 330 Lecture 12: Ensembles'
-description: Ensembles
+title: 'CPSC 330 Lecture 12: Feature importances'
+description: feature importances, interpreting ordinal, categorical, and numeric features, SHAP  
 
 format:
-  revealjs:
-    embed-resources: true
-    slide-number: true
-    smaller: true
-    center: true
-    logo: img/UBC-CS-logo.png
-    resources:
-      - data/
-      - img/  
+    revealjs:
+        html-math-method: plain
+        slide-number: true
+        slide-level: 2
+        center: true
+        logo: img/UBC-CS-logo.png
+        resources:
+          - data/
+          - img/
 
 editor:
   render-on-save: true
 ---
 
-## Announcements 
+<!-- ## Announcements 
 
-- Midterm is being graded this week - we hope to have the results for you soon.
+- HW4 grades are released 
+- HW5 is due next week Monday. Make use of office hours and tutorials this week.    -->
 
-## Ensembles
+## Scenario 1: Which model would you pick 
 
-Today, we will do a class of live coding and going through the Jupyter Notebook to get back into the swing of things.
+Predicting whether a patient is likely to develop diabetes based on features such as age, blood pressure, glucose levels, and BMI. You have two models:
+
+- LGBM which results in 0.9 f1 score 
+- Logistic regression which results in 0.84 f1 score
+
+Which model would you pick? Why? 
+
+## Scenario 2
+Predicting whether a user will purchase a product next based on their browsing history, previous purchases, and click behavior. You have two models:
+
+- LGBM which results in 0.9 F1 score
+- Logistic regression which results in 0.84 F1 score
+
+Which model would you pick? Why?
+
+## Transparency
+
+- In many domains understanding the relationship between features and predictions is critical for trust and regulatory compliance. 
+
+### Feature importances 
+- How does the output depend upon the input? 
+- How do the predictions change as a function of a particular feature?
+
+# How to get feature importances? 
+
+## Correlations
+:::: {.columns}
+
+::: {.column width="60%"}
+![](img/feat_corr.png)
+:::
+
+::: {.column width="40%"}
+- What are some limitations of correlations? 
+:::
+::::
+
+## Interepreting coefficients 
+- Linear models are interpretable because you get coefficients associated with different features. 
+- Each coefficient represents the estimated impact of a feature on the target variable, assuming all other features are held constant.
+- In a `Ridge` model, 
+  - A positive coefficient indicates that as the feature's value increases, the predicted value also increases.
+	- A negative coefficient indicates that an increase in the feature's value leads to a decrease in the predicted value.
+
+## Interepreting coefficients 
+- When we have different types of preprocessed features, what challenges you might face in interpreting them? 
+  - Ordinally encoded features
+  - One-hot encoded features
+  - Scaled numeric features
 
 ## Group Work: Class Demo & Live Coding (if time permits)
 
-For this demo, each student should [click this link](https://github.com/new?template_name=lecture12_demo&template_owner=ubc-cpsc330) to create a new repo in their accounts, then clone that repo locally to follow along with the demo from today.
+For this demo, each student should [click this link](https://github.com/new?template_name=lecture13_demo&template_owner=ubc-cpsc330) to create a new repo in their accounts, then clone that repo locally to follow along with the demo from today.
 
 <br>
 <br>
@@ -38,3 +87,4 @@ If you really don't want to create a repo,
 - Navigate to the `cpsc330-2025S1` repo
 - run `git pull` to pull the latest files in the course repo
 - Look for the demo file [here](https://github.com/orgs/ubc-cpsc330/repositories)
+

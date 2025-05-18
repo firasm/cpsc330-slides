@@ -1,5 +1,5 @@
 ---
-title: "CPSC 330 Lecture 20: Time series"
+title: "CPSC 330 Lecture 20: Survival analysis"
 author: "Firas Moosvi"
 format: 
     revealjs:
@@ -13,29 +13,14 @@ format:
         - img/        
 ---
 
-
 ## Announcements
+<!-- 
 
-- No new announcements today!
+- HW9 has been released (due Sec 5th)
+  - Almost there! Hang in there 😊
+- Midterm 2 grading is almost done. 
 
-## Motivation
 
-- **Time series** is a collection of data points indexed in time order. 
-- Time series is everywhere:
-    - Physical sciences (e.g., weather forecasting)  
-    - Economics, finance (e.g., stocks, market trends)
-    - Engineering (e.g., energy consumption)
-    - Social sciences 
-    - Sports analytics
+# [Class demo](https://github.com/UBC-CS/cpsc330-2025S1/blob/main/lectures/102-Varada-lectures/class_demos/demo_21-survival-analysis.ipynb) 
 
-## Applying existing methods
-
-What are some challenges we might have with time series data?
-
-## Dataset
-
-We'll be starting with the [CitiBike dataset](https://ride.citibikenyc.com/system-data) today
-![](img/citibike.png)
-
-# [Class demo](https://github.com/new?template_name=lecture20_demo&template_owner=ubc-cpsc330) 
-
+ -->
