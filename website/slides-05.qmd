@@ -314,7 +314,7 @@ pipeline.fit(X_train, y_train)
 y_pred = pipeline.predict(X_test)
 ```
 
-# See you next week!
+# See you next class!
 
 <!-- 
 # [Class demo]()

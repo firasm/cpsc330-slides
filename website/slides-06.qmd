@@ -15,13 +15,16 @@ format:
       - img/  
 ---
 
+<!-- 
 ## Announcements 
 
 - Lecture recordings for the first two weeks have been made available - See Piazza.
 - My Office Hours
 - HW3 is due next week Tuesday, Oct 1st, 11:59 pm. 
   - You can work in pairs for this assignment. 
+ -->
 
+<!-- 
 ## Quick Correction on Exercise 5.3
 
 > I accidentally said *only D is true*, but **B** is also true!
@@ -32,6 +35,7 @@ Select all of the following statements which are TRUE.
 - (B) Once you have a scikit-learn pipeline object with an estimator as the last step, you can call fit, predict, and score on it.
 - (C) You can carry out data splitting within scikit-learn pipeline.
 - (D) We have to be careful of the order we put each transformation and model in a pipeline.
+- -->
 
 
 ```{python}
@@ -183,7 +187,7 @@ cross_val_score(pipe_knn, X_train_toy, y_train_toy)
 
 ## Group Work: Class Demo & Live Coding
 
-For this demo, each student should [click this link](https://github.com/new?template_name=lecture6_demo&template_owner=ubc-cpsc330) to create a new repo in their accounts, then clone that repo locally to follow along with the demo from today.
+For this demo, each student should [click this link](https://github.com/new?template_name=lecture06_demo&template_owner=ubc-cpsc330) to create a new repo in their accounts, then clone that repo locally to follow along with the demo from today.
 
 <br>
 <br>

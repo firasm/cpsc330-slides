@@ -15,17 +15,21 @@ format:
       - img/  
 ---
 
+<!-- 
 ## Announcements 
 
 - Remember Monday September 30th is a holiday, National Day for Truth and Reconciliation
     - I encourage you to spend some reflecting on the Indigenous peoples of Canada. I invite you to [explore the Beyond 94 project which tracks the progress of the 94 calls to action.](https://www.cbc.ca/newsinteractives/beyond-94)
 
 ![](img/beyond94.png){.nostretch fig-align="center" width="600px"}
+ -->
 
+<!-- 
 ## Announcements
 
 - HW3 is due next week Tuesday, Oct 1st, 11:59 pm. 
     - You can work in pairs for this assignment. 
+ -->
 
 # Finishing up slides from last class
 
@@ -388,7 +392,7 @@ Select all of the following statements which are TRUE.
 
 ## Group Work: Class Demo & Live Coding
 
-For this demo, each student should [click this link](https://github.com/new?template_name=lecture7_demo&template_owner=ubc-cpsc330) to create a new repo in their accounts, then clone that repo locally to follow along with the demo from today.
+For this demo, each student should [click this link](https://github.com/new?template_name=lecture07_demo&template_owner=ubc-cpsc330) to create a new repo in their accounts, then clone that repo locally to follow along with the demo from today.
 
 <br>
 <br>
