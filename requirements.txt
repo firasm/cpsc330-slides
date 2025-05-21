@@ -36,3 +36,5 @@ bokeh
 ipywidgets
 jupyter-book
 jupytext
+yellowbrick
+seaborn
