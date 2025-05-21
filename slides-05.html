@@ -1266,6 +1266,9 @@ display:block!important;
 <li><ol start="4" type="A">
 <li>We have to be careful of the order we put each transformation and model in a pipeline.</li>
 </ol></li>
+<li><ol start="5" type="A">
+<li>If you call <code>cross_validate</code> with a pipeline object, it will call <code>fit</code> and <code>transform</code> on the training fold and only <code>transform</code> on the validation fold.</li>
+</ol></li>
 </ul>
 <aside class="notes">
 <p>A: False; It doesn’t make sense to apply one hot encoding to numeric features, and it doesn’t make sense to apply standard scalar to categorical features. Sequence doesn’t make sense, we need column transformers</p>
