@@ -113,8 +113,7 @@ Select all of the following statements which are TRUE.
 - (B) StandardScaler calculates mean and standard deviation for each feature separately.
 - (C) In general, it’s a good idea to apply scaling on numeric features before training $k$-NN or SVM RBF models.
 - (D) The transformed feature values might be hard to interpret for humans.
-
-After applying SimpleImputer The transformed data has a different shape than the original data.
+- (E) After applying SimpleImputer The transformed data has a different shape than the original data.
 
 
 ## (iClicker) Exercise 5.3
