@@ -126,6 +126,7 @@ Select all of the following statements which are TRUE.
 - (B) Once you have a scikit-learn pipeline object with an estimator as the last step, you can call fit, predict, and score on it.
 - (C) You can carry out data splitting within scikit-learn pipeline.
 - (D) We have to be careful of the order we put each transformation and model in a pipeline.
+- (E) If you call `cross_validate` with a pipeline object, it will call `fit` and `transform` on the training fold and only `transform` on the validation fold.
 
 ::: {.notes}
 A: False; It doesn't make sense to apply one hot encoding to numeric features, and it doesn't make sense to apply standard scalar to categorical features. Sequence doesn't make sense, we need column transformers
