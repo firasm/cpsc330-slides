@@ -15,14 +15,16 @@ format:
       - img/  
 ---
 
-## Announcements 
+<!--
+## Announcements
 
 - Important information about midterm 1
   - https://piazza.com/class/m01ukubppof625/post/249
 - Reminder of my office hours
   - Wednesdays from 12:30 to 1:30 PM in my office ICCS 253
 - HW3 is due today 11:59 pm. 
-- HW4 has been released 
+- HW4 has been released  
+-->
 
 
 ```{python}

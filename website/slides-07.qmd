@@ -15,9 +15,15 @@ format:
       - img/  
 ---
 
-<!-- 
-## Announcements 
 
+## Announcements
+
+- Learning Log 01 is due on Sunday!
+- HW3 is due tonight!
+- HW4 is due Monday night
+- Reminder about Midterm 1 next week!
+
+<!-- 
 - Remember Monday September 30th is a holiday, National Day for Truth and Reconciliation
     - I encourage you to spend some reflecting on the Indigenous peoples of Canada. I invite you to [explore the Beyond 94 project which tracks the progress of the 94 calls to action.](https://www.cbc.ca/newsinteractives/beyond-94)
 
@@ -31,15 +37,34 @@ format:
     - You can work in pairs for this assignment. 
  -->
 
-# Finishing up slides from last class
+# Recap of pre-processing
 
-# More preprocessing
+## (iClicker) Exercise 6.1
+**iClicker cloud join link: [https://join.iclicker.com/YJHS](https://join.iclicker.com/YJHS)**
 
-## Remarks on preprocessing 
+**Select all of the following statements which are TRUE.**
+
+- (A) You could carry out cross-validation by passing a `ColumnTransformer` object to `cross_validate`.
+- (B) After applying column transformer, the order of the columns in the transformed data has to be the same as the order of the columns in the original data.
+- (C) After applying a column transformer, the transformed data is always going to be of different shape than the original data.
+- (D) When you call `fit_transform` on a `ColumnTransformer` object, you get a numpy ndarray.
+
+::: {.notes}
+iClicker 6.1
+
+A. False, column transfer to pipeline. There is no estimator attached to ColumnTransfer
+
+B. False, numeric, binary, ordinal, categorical etc…Can also use this to remove columns
+
+C. False, often it will be different, but not always
+
+D. True, just an ndarray, not a data frame
+:::
+
+## Notes on preprocessing 
 - There is no one-size-fits-all solution in data preprocessing, and decisions often involve a degree of subjectivity. 
   - Exploratory data analysis and domain knowledge inform these decisions
 - Always consider the specific goals of your project when deciding how to encode features. 
-
 
 ## Alternative methods for scaling (Reference)
 - [StandardScaler](https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.StandardScaler.html)
@@ -196,22 +221,7 @@ text_pipeline = make_pipeline(
 )
 ```
 
-## (iClicker) Exercise 6.2
-iClicker cloud join link: **https://join.iclicker.com/YJHS**
-
-Select all of the following statements which are TRUE.
-
-- (A) `handle_unknown="ignore"` would treat all unknown categories equally.
-- (B) As you increase the value for `max_features` hyperparameter of `CountVectorizer` the training score is likely to go up.
-- (C) Suppose you are encoding text data using `CountVectorizer`. If you encounter a word in the validation or the test split that's not available in the training data, we'll get an error.
-- (D) In the code below, inside `cross_validate`, each fold might have slightly different number of features (columns) in the fold.
-
-```python
-pipe = (CountVectorizer(), SVC())
-cross_validate(pipe, X_train, y_train)
-```
-
-## Linear models 
+# Linear models 
 
 :::: {.columns}
 
@@ -223,7 +233,6 @@ cross_validate(pipe, X_train, y_train)
   - Y-intercept ($w_0$): Where the line crosses the y-axis.
 
 :::
-
 
 ::: {.column width="55%"}
 ```{python}
@@ -365,7 +374,6 @@ plt.show()
 - Computationally expensive, risk of overfitting with noisy data
 :::
 
-
 ::::
 
 ## (iClicker) Exercise 7.1
@@ -387,19 +395,9 @@ Select all of the following statements which are TRUE.
 
 - (A) Increasing logistic regression’s `C` hyperparameter increases model complexity.
 - (B) The raw output score can be used to calculate the probability score for a given prediction.
-- (C) For linear classifier trained on $d$ features, the decision boundary is a $d-1$-dimensional hyperparlane.
+- (C) For linear classifier trained on $d$ features, the decision boundary is a $d-1$-dimensional hyperplane.
 - (D) A linear model is likely to be uncertain about the data points close to the decision boundary.
 
 ## Group Work: Class Demo & Live Coding
 
 For this demo, each student should [click this link](https://github.com/new?template_name=lecture07_demo&template_owner=ubc-cpsc330) to create a new repo in their accounts, then clone that repo locally to follow along with the demo from today.
-
-<br>
-<br>
-<br>
-
-If you really don't want to create a repo,
-
-- Navigate to the `cpsc330-2025S1` repo
-- run `git pull` to pull the latest files in the course repo
-- Look for the demo file [here](https://github.com/orgs/ubc-cpsc330/repositories)
