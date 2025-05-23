@@ -812,13 +812,6 @@
     "text": "iClicker Exercise 15.3\nSelect all of the following statements which are True\n\n\nIf you train K-Means with n_clusters= the number of examples, the inertia value will be 0.\n\n\nThe elbow plot shows the tradeoff between within cluster distance and the number of clusters.\n\n\nUnlike the Elbow method, the Silhouette method is not dependent on the notion of cluster centers.\n\n\nThe elbow plot is not a reliable method to obtain the optimal number of clusters in all cases.\n\n\nThe Silhouette scores ranges between -1 and 1 where higher scores indicates better cluster assignments.\n\n\n\ns"
   },
   {
-    "objectID": "slides-08.html#announcements",
-    "href": "slides-08.html#announcements",
-    "title": "CPSC 330 Lecture 8: Hyperparameter Optimization",
-    "section": "Announcements",
-    "text": "Announcements\n\nImportant information about midterm 1\n\nhttps://piazza.com/class/m01ukubppof625/post/249\n\nReminder of my office hours\n\nWednesdays from 12:30 to 1:30 PM in my office ICCS 253\n\nHW3 is due today 11:59 pm.\nHW4 has been released"
-  },
-  {
     "objectID": "slides-08.html#recap-logistic-regression",
     "href": "slides-08.html#recap-logistic-regression",
     "title": "CPSC 330 Lecture 8: Hyperparameter Optimization",
@@ -893,7 +886,7 @@
     "href": "slides-08.html#grid-search-example",
     "title": "CPSC 330 Lecture 8: Hyperparameter Optimization",
     "section": "Grid search example",
-    "text": "Grid search example\n\nfrom sklearn.model_selection import GridSearchCV\n\npipe_svm = make_pipeline(CountVectorizer(), SVC())\n\nparam_grid = {\n    \"countvectorizer__max_features\": [100, 200, 400],\n    \"svc__gamma\": [0.01, 0.1, 1.0],\n    \"svc__C\": [0.01, 0.1, 1.0],\n}\ngrid_search = GridSearchCV(pipe_svm, \n                  param_grid = param_grid, \n                  n_jobs=-1, \n                  return_train_score=True\n                 )\ngrid_search.fit(X_train, y_train)\ngrid_search.best_score_\n\nnp.float64(0.9782606272997375)"
+    "text": "Grid search example\n\nfrom sklearn.model_selection import GridSearchCV\n\npipe_svm = make_pipeline(CountVectorizer(), SVC())\n\nparam_grid = {\n    \"countvectorizer__max_features\": [100, 200, 400],\n    \"svc__gamma\": [0.01, 0.1, 1.0],\n    \"svc__C\": [0.01, 0.1, 1.0],\n}\ngrid_search = GridSearchCV(pipe_svm, \n                  param_grid = param_grid, \n                  n_jobs=-1, \n                  return_train_score=True\n                 )\ngrid_search.fit(X_train, y_train)\ngrid_search.best_score_\n\nnp.float64(0.9780612255051213)"
   },
   {
     "objectID": "slides-08.html#random-search",
@@ -907,7 +900,7 @@
     "href": "slides-08.html#random-search-example",
     "title": "CPSC 330 Lecture 8: Hyperparameter Optimization",
     "section": "Random search example",
-    "text": "Random search example\n\nfrom sklearn.model_selection import RandomizedSearchCV\nfrom scipy.stats import randint\n\npipe_svc = make_pipeline(CountVectorizer(), SVC())\n\nparam_dist = {\n    \"countvectorizer__max_features\": randint(100, 2000), \n    \"svc__C\": uniform(0.1, 1e4),  # loguniform(1e-3, 1e3),\n    \"svc__gamma\": loguniform(1e-5, 1e3),\n}\nrandom_search = RandomizedSearchCV(pipe_svm,                                    \n                  param_distributions = param_dist, \n                  n_iter=10, \n                  n_jobs=-1, \n                  return_train_score=True)\n\n# Carry out the search\nrandom_search.fit(X_train, y_train)\nrandom_search.best_score_\n\nnp.float64(0.9830476633970345)"
+    "text": "Random search example\n\nfrom sklearn.model_selection import RandomizedSearchCV\nfrom scipy.stats import randint\n\npipe_svc = make_pipeline(CountVectorizer(), SVC())\n\nparam_dist = {\n    \"countvectorizer__max_features\": randint(100, 2000), \n    \"svc__C\": uniform(0.1, 1e4),  # loguniform(1e-3, 1e3),\n    \"svc__gamma\": loguniform(1e-5, 1e3),\n}\nrandom_search = RandomizedSearchCV(pipe_svm,                                    \n                  param_distributions = param_dist, \n                  n_iter=10, \n                  n_jobs=-1, \n                  return_train_score=True)\n\n# Carry out the search\nrandom_search.fit(X_train, y_train)\nrandom_search.best_score_\n\nnp.float64(0.9822500562185699)"
   },
   {
     "objectID": "slides-08.html#optimization-bias",
@@ -1176,11 +1169,25 @@
     "text": "iClicker Exercise 16.1\nSelect all of the following statements which are True (iClicker)\n\n\nIn the context of recommendation systems, the shapes of validation utility matrix and train utility matrix are the same.\n\n\nRMSE perfectly captures what we want to measure in the context of recommendation systems.\n\n\nIt would be reasonable to impute missing values in the utility matrix by taking the average of the ratings given to an item by similar users.\n\n\nIn KNN type imputation, if a user has not rated any items yet, a reasonable strategy would be recommending them the most popular item."
   },
   {
-    "objectID": "slides-07.html#remarks-on-preprocessing",
-    "href": "slides-07.html#remarks-on-preprocessing",
+    "objectID": "slides-07.html#announcements",
+    "href": "slides-07.html#announcements",
     "title": "Lecture 7: Linear models",
-    "section": "Remarks on preprocessing",
-    "text": "Remarks on preprocessing\n\nThere is no one-size-fits-all solution in data preprocessing, and decisions often involve a degree of subjectivity.\n\nExploratory data analysis and domain knowledge inform these decisions\n\nAlways consider the specific goals of your project when deciding how to encode features."
+    "section": "Announcements",
+    "text": "Announcements\n\nLearning Log 01 is due on Sunday!\nHW3 is due tonight!\nHW4 is due Monday night\nReminder about Midterm 1 next week!"
+  },
+  {
+    "objectID": "slides-07.html#iclicker-exercise-6.1",
+    "href": "slides-07.html#iclicker-exercise-6.1",
+    "title": "Lecture 7: Linear models",
+    "section": "(iClicker) Exercise 6.1",
+    "text": "(iClicker) Exercise 6.1\niClicker cloud join link: https://join.iclicker.com/YJHS\nSelect all of the following statements which are TRUE.\n\n\nYou could carry out cross-validation by passing a ColumnTransformer object to cross_validate.\n\n\nAfter applying column transformer, the order of the columns in the transformed data has to be the same as the order of the columns in the original data.\n\n\nAfter applying a column transformer, the transformed data is always going to be of different shape than the original data.\n\n\nWhen you call fit_transform on a ColumnTransformer object, you get a numpy ndarray.\n\n\n\niClicker 6.1\nA. False, column transfer to pipeline. There is no estimator attached to ColumnTransfer\nB. False, numeric, binary, ordinal, categorical etc…Can also use this to remove columns\nC. False, often it will be different, but not always\nD. True, just an ndarray, not a data frame"
+  },
+  {
+    "objectID": "slides-07.html#notes-on-preprocessing",
+    "href": "slides-07.html#notes-on-preprocessing",
+    "title": "Lecture 7: Linear models",
+    "section": "Notes on preprocessing",
+    "text": "Notes on preprocessing\n\nThere is no one-size-fits-all solution in data preprocessing, and decisions often involve a degree of subjectivity.\n\nExploratory data analysis and domain knowledge inform these decisions\n\nAlways consider the specific goals of your project when deciding how to encode features."
   },
   {
     "objectID": "slides-07.html#alternative-methods-for-scaling-reference",
@@ -1295,20 +1302,6 @@
     "text": "Recap: Incorporating text features in a machine learning pipeline\nfrom sklearn.feature_extraction.text import CountVectorizer\nfrom sklearn.svm import SVC\nfrom sklearn.pipeline import make_pipeline\n\ntext_pipeline = make_pipeline(\n    CountVectorizer(),\n    SVC()\n)"
   },
   {
-    "objectID": "slides-07.html#iclicker-exercise-6.2-1",
-    "href": "slides-07.html#iclicker-exercise-6.2-1",
-    "title": "Lecture 7: Linear models",
-    "section": "(iClicker) Exercise 6.2",
-    "text": "(iClicker) Exercise 6.2\niClicker cloud join link: https://join.iclicker.com/YJHS\nSelect all of the following statements which are TRUE.\n\n\nhandle_unknown=\"ignore\" would treat all unknown categories equally.\n\n\nAs you increase the value for max_features hyperparameter of CountVectorizer the training score is likely to go up.\n\n\nSuppose you are encoding text data using CountVectorizer. If you encounter a word in the validation or the test split that’s not available in the training data, we’ll get an error.\n\n\nIn the code below, inside cross_validate, each fold might have slightly different number of features (columns) in the fold.\n\n\npipe = (CountVectorizer(), SVC())\ncross_validate(pipe, X_train, y_train)"
-  },
-  {
-    "objectID": "slides-07.html#linear-models",
-    "href": "slides-07.html#linear-models",
-    "title": "Lecture 7: Linear models",
-    "section": "Linear models",
-    "text": "Linear models\n\n\n\nLinear models make an assumption that the relationship between X and y is linear.\nIn this case, with only one feature, our model is a straight line.\nWhat do we need to represent a line?\n\nSlope (\\(w_1\\)): Determines the angle of the line.\nY-intercept (\\(w_0\\)): Where the line crosses the y-axis.\n\n\n\n\n\n\n\n\n\n\n\n\n\nMaking predictions\n\n\\(\\hat{y} = w_1 \\times \\text{# hours studied} + w_0\\)"
-  },
-  {
     "objectID": "slides-07.html#ridge-vs.-linearregression",
     "href": "slides-07.html#ridge-vs.-linearregression",
     "title": "Lecture 7: Linear models",
@@ -1362,14 +1355,14 @@
     "href": "slides-07.html#iclicker-exercise-7.2",
     "title": "Lecture 7: Linear models",
     "section": "(iClicker) Exercise 7.2",
-    "text": "(iClicker) Exercise 7.2\niClicker cloud join link: https://join.iclicker.com/YJHS\nSelect all of the following statements which are TRUE.\n\n\nIncreasing logistic regression’s C hyperparameter increases model complexity.\n\n\nThe raw output score can be used to calculate the probability score for a given prediction.\n\n\nFor linear classifier trained on \\(d\\) features, the decision boundary is a \\(d-1\\)-dimensional hyperparlane.\n\n\nA linear model is likely to be uncertain about the data points close to the decision boundary."
+    "text": "(iClicker) Exercise 7.2\niClicker cloud join link: https://join.iclicker.com/YJHS\nSelect all of the following statements which are TRUE.\n\n\nIncreasing logistic regression’s C hyperparameter increases model complexity.\n\n\nThe raw output score can be used to calculate the probability score for a given prediction.\n\n\nFor linear classifier trained on \\(d\\) features, the decision boundary is a \\(d-1\\)-dimensional hyperplane.\n\n\nA linear model is likely to be uncertain about the data points close to the decision boundary."
   },
   {
     "objectID": "slides-07.html#group-work-class-demo-live-coding",
     "href": "slides-07.html#group-work-class-demo-live-coding",
     "title": "Lecture 7: Linear models",
     "section": "Group Work: Class Demo & Live Coding",
-    "text": "Group Work: Class Demo & Live Coding\nFor this demo, each student should click this link to create a new repo in their accounts, then clone that repo locally to follow along with the demo from today.\n  \nIf you really don’t want to create a repo,\n\nNavigate to the cpsc330-2025S1 repo\nrun git pull to pull the latest files in the course repo\nLook for the demo file here"
+    "text": "Group Work: Class Demo & Live Coding\nFor this demo, each student should click this link to create a new repo in their accounts, then clone that repo locally to follow along with the demo from today."
   },
   {
     "objectID": "slides-13.html#continue-with-lecture-13-demo",
@@ -1929,7 +1922,7 @@
     "href": "slides-06.html#group-work-class-demo-live-coding",
     "title": "Lecture 6: Column transformer and text features",
     "section": "Group Work: Class Demo & Live Coding",
-    "text": "Group Work: Class Demo & Live Coding\nFor this demo, each student should click this link to create a new repo in their accounts, then clone that repo locally to follow along with the demo from today.\n  \nIf you really don’t want to create a repo,\n\nNavigate to the cpsc330-2025S1 repo\nrun git pull to pull the latest files in the course repo\nLook for the demo file here: lectures/102-Firas-lectures/class_demos/."
+    "text": "Group Work: Class Demo & Live Coding\nFor this demo, each student should click this link to create a new repo in their accounts, then clone that repo locally to follow along with the demo from today."
   },
   {
     "objectID": "slides-06.html#sklearns-columntransformer",
@@ -1937,13 +1930,6 @@
     "title": "Lecture 6: Column transformer and text features",
     "section": "sklearn’s ColumnTransformer",
     "text": "sklearn’s ColumnTransformer\n\nUse ColumnTransformer to build all our transformations together into one object\n\n\n\nUse a column transformer with sklearn pipelines."
-  },
-  {
-    "objectID": "slides-06.html#iclicker-exercise-6.1",
-    "href": "slides-06.html#iclicker-exercise-6.1",
-    "title": "Lecture 6: Column transformer and text features",
-    "section": "(iClicker) Exercise 6.1",
-    "text": "(iClicker) Exercise 6.1\niClicker cloud join link: https://join.iclicker.com/YJHS\nSelect all of the following statements which are TRUE.\n\n\nYou could carry out cross-validation by passing a ColumnTransformer object to cross_validate.\n\n\nAfter applying column transformer, the order of the columns in the transformed data has to be the same as the order of the columns in the original data.\n\n\nAfter applying a column transformer, the transformed data is always going to be of different shape than the original data.\n\n\nWhen you call fit_transform on a ColumnTransformer object, you get a numpy ndarray.\n\n\n\niClicker 6.1\nA. False, column transfer to pipeline. There is no estimator attached to ColumnTransfer\nB. False, numeric, binary, ordinal, categorical etc…Can also use this to remove columns\nC. False, often it will be different, but not always\nD. True, just an ndarray, not a data frame"
   },
   {
     "objectID": "slides-02.html#announcements",
@@ -2440,7 +2426,7 @@
     "href": "slides-18.html#object-detection-using-yolo",
     "title": "CPSC 330 Lecture 18: Introduction to deep learning and computer vision",
     "section": "Object detection using YOLO",
-    "text": "Object detection using YOLO\n\n\nLet’s try this out using a pre-trained model.\n\nfrom ultralytics import YOLO\nmodel = YOLO(\"yolov8n.pt\")  # pretrained YOLOv8n model\n\nyolo_input = \"data/yolo_test/3356700488_183566145b.jpg\"\nyolo_result = \"data/yolo_result.jpg\"\n# Run batched inference on a list of images\nresult = model(yolo_input)  # return a list of Results objects\nresult[0].save(filename=yolo_result)\n\nCreating new Ultralytics Settings v0.0.6 file ✅ \nView Ultralytics Settings with 'yolo settings' or at '/home/runner/.config/Ultralytics/settings.json'\nUpdate Settings with 'yolo settings key=value', i.e. 'yolo settings runs_dir=path/to/dir'. For help see https://docs.ultralytics.com/quickstart/#ultralytics-settings.\n\nimage 1/1 /home/runner/work/cpsc330-slides/cpsc330-slides/website/data/yolo_test/3356700488_183566145b.jpg: 512x640 4 persons, 2 cars, 1 stop sign, 88.5ms\nSpeed: 3.1ms preprocess, 88.5ms inference, 1.1ms postprocess per image at shape (1, 3, 512, 640)\n\n\n'data/yolo_result.jpg'"
+    "text": "Object detection using YOLO\n\n\nLet’s try this out using a pre-trained model.\n\nfrom ultralytics import YOLO\nmodel = YOLO(\"yolov8n.pt\")  # pretrained YOLOv8n model\n\nyolo_input = \"data/yolo_test/3356700488_183566145b.jpg\"\nyolo_result = \"data/yolo_result.jpg\"\n# Run batched inference on a list of images\nresult = model(yolo_input)  # return a list of Results objects\nresult[0].save(filename=yolo_result)\n\nCreating new Ultralytics Settings v0.0.6 file ✅ \nView Ultralytics Settings with 'yolo settings' or at '/home/runner/.config/Ultralytics/settings.json'\nUpdate Settings with 'yolo settings key=value', i.e. 'yolo settings runs_dir=path/to/dir'. For help see https://docs.ultralytics.com/quickstart/#ultralytics-settings.\n\nimage 1/1 /home/runner/work/cpsc330-slides/cpsc330-slides/website/data/yolo_test/3356700488_183566145b.jpg: 512x640 4 persons, 2 cars, 1 stop sign, 89.5ms\nSpeed: 1.3ms preprocess, 89.5ms inference, 1.1ms postprocess per image at shape (1, 3, 512, 640)\n\n\n'data/yolo_result.jpg'"
   },
   {
     "objectID": "slides-18.html#object-detection-output",
