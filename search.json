@@ -4,7 +4,7 @@
     "href": "slides-09.html#announcements",
     "title": "CPSC 330 Lecture 9: Classification Metrics",
     "section": "Announcements",
-    "text": "Announcements\n\nImportant information about midterm 1 released on this Piazza post\nPractice Midterm will be released today!\n\nWe hope to give you a sense of the exam format, types of questions, and to get you more familiar with the PrairieLearn interface. They do NOT encompass all the topics we’ve discussed nor reflect the actual number of questions on the actual midterm.\nIt will have a limit of 50-mins so you can get used to how the system will behave in the CBTF BUT the practice midterm has NOT been designed to be completed in 50 minutes!\nYou will be able to do the practice midterm multiple times for practice (but the practice MT questions are not randomized)\nAs promised, documentation for numpy, pandas, scipy, and sklearn is provided to you as the first question.\n\nHW4 has been released. Due next week Monday.\nHW5 will be released next week Tuesday. It’s a project-type assignment and you get till Oct 28th to work on it."
+    "text": "Announcements\n\nLearning Log 02 is now out!\nReminder: HW4 is due Monday night\nReminder: Midterm 1 is this week!"
   },
   {
     "objectID": "slides-09.html#ml-workflow",
@@ -46,7 +46,7 @@
     "href": "slides-09.html#break",
     "title": "CPSC 330 Lecture 9: Classification Metrics",
     "section": "Break!",
-    "text": "Break!\nLet’s take a 10 minute break."
+    "text": "Break!\nLet’s take a break!"
   },
   {
     "objectID": "slides-09.html#confusion-matrix-questions",
@@ -96,13 +96,6 @@
     "title": "CPSC 330 Lecture 9: Classification Metrics",
     "section": "ROC AUC questions",
     "text": "ROC AUC questions\nConsider the points A, B, and C in the following diagram, each representing a threshold. Which threshold would you pick in each scenario?\n\n\n\n\n\n\nIf false positives (false alarms) are highly costly\n\n\nIf false positives are cheap and false negatives (missed true positives) highly costly\n\n\nIf the costs are roughly equivalent\n\n\n\nSource"
-  },
-  {
-    "objectID": "slides-09.html#next-class-dr.-giulia-toti",
-    "href": "slides-09.html#next-class-dr.-giulia-toti",
-    "title": "CPSC 330 Lecture 9: Classification Metrics",
-    "section": "Next Class: Dr. Giulia Toti !",
-    "text": "Next Class: Dr. Giulia Toti !\nI’ll be covering CPSC 430 for that prof, so Dr. Toti will be covering my section.\nHave fun!"
   },
   {
     "objectID": "slides-03.html#announcements",
@@ -900,7 +893,7 @@
     "href": "slides-08.html#random-search-example",
     "title": "CPSC 330 Lecture 8: Hyperparameter Optimization",
     "section": "Random search example",
-    "text": "Random search example\n\nfrom sklearn.model_selection import RandomizedSearchCV\nfrom scipy.stats import randint\n\npipe_svc = make_pipeline(CountVectorizer(), SVC())\n\nparam_dist = {\n    \"countvectorizer__max_features\": randint(100, 2000), \n    \"svc__C\": uniform(0.1, 1e4),  # loguniform(1e-3, 1e3),\n    \"svc__gamma\": loguniform(1e-5, 1e3),\n}\nrandom_search = RandomizedSearchCV(pipe_svm,                                    \n                  param_distributions = param_dist, \n                  n_iter=10, \n                  n_jobs=-1, \n                  return_train_score=True)\n\n# Carry out the search\nrandom_search.fit(X_train, y_train)\nrandom_search.best_score_\n\nnp.float64(0.9822500562185699)"
+    "text": "Random search example\n\nfrom sklearn.model_selection import RandomizedSearchCV\nfrom scipy.stats import randint\n\npipe_svc = make_pipeline(CountVectorizer(), SVC())\n\nparam_dist = {\n    \"countvectorizer__max_features\": randint(100, 2000), \n    \"svc__C\": uniform(0.1, 1e4),  # loguniform(1e-3, 1e3),\n    \"svc__gamma\": loguniform(1e-5, 1e3),\n}\nrandom_search = RandomizedSearchCV(pipe_svm,                                    \n                  param_distributions = param_dist, \n                  n_iter=10, \n                  n_jobs=-1, \n                  return_train_score=True)\n\n# Carry out the search\nrandom_search.fit(X_train, y_train)\nrandom_search.best_score_\n\nnp.float64(0.9756682049659405)"
   },
   {
     "objectID": "slides-08.html#optimization-bias",
@@ -2426,7 +2419,7 @@
     "href": "slides-18.html#object-detection-using-yolo",
     "title": "CPSC 330 Lecture 18: Introduction to deep learning and computer vision",
     "section": "Object detection using YOLO",
-    "text": "Object detection using YOLO\n\n\nLet’s try this out using a pre-trained model.\n\nfrom ultralytics import YOLO\nmodel = YOLO(\"yolov8n.pt\")  # pretrained YOLOv8n model\n\nyolo_input = \"data/yolo_test/3356700488_183566145b.jpg\"\nyolo_result = \"data/yolo_result.jpg\"\n# Run batched inference on a list of images\nresult = model(yolo_input)  # return a list of Results objects\nresult[0].save(filename=yolo_result)\n\nCreating new Ultralytics Settings v0.0.6 file ✅ \nView Ultralytics Settings with 'yolo settings' or at '/home/runner/.config/Ultralytics/settings.json'\nUpdate Settings with 'yolo settings key=value', i.e. 'yolo settings runs_dir=path/to/dir'. For help see https://docs.ultralytics.com/quickstart/#ultralytics-settings.\n\nimage 1/1 /home/runner/work/cpsc330-slides/cpsc330-slides/website/data/yolo_test/3356700488_183566145b.jpg: 512x640 4 persons, 2 cars, 1 stop sign, 89.5ms\nSpeed: 1.3ms preprocess, 89.5ms inference, 1.1ms postprocess per image at shape (1, 3, 512, 640)\n\n\n'data/yolo_result.jpg'"
+    "text": "Object detection using YOLO\n\n\nLet’s try this out using a pre-trained model.\n\nfrom ultralytics import YOLO\nmodel = YOLO(\"yolov8n.pt\")  # pretrained YOLOv8n model\n\nyolo_input = \"data/yolo_test/3356700488_183566145b.jpg\"\nyolo_result = \"data/yolo_result.jpg\"\n# Run batched inference on a list of images\nresult = model(yolo_input)  # return a list of Results objects\nresult[0].save(filename=yolo_result)\n\nCreating new Ultralytics Settings v0.0.6 file ✅ \nView Ultralytics Settings with 'yolo settings' or at '/home/runner/.config/Ultralytics/settings.json'\nUpdate Settings with 'yolo settings key=value', i.e. 'yolo settings runs_dir=path/to/dir'. For help see https://docs.ultralytics.com/quickstart/#ultralytics-settings.\n\nimage 1/1 /home/runner/work/cpsc330-slides/cpsc330-slides/website/data/yolo_test/3356700488_183566145b.jpg: 512x640 4 persons, 2 cars, 1 stop sign, 98.2ms\nSpeed: 1.1ms preprocess, 98.2ms inference, 0.9ms postprocess per image at shape (1, 3, 512, 640)\n\n\n'data/yolo_result.jpg'"
   },
   {
     "objectID": "slides-18.html#object-detection-output",
