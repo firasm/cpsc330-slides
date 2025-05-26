@@ -230,6 +230,10 @@ Select all of the following statements which are TRUE.
 
 - Suppose you have 10 hyperparameters and each takes 4 values. If you run `RandomizedSearchCV` with this parameter grid with `n_iter=20`, how many cross-validation experiments will be carried out? 
 
+## Group Work: Class Demo & Live Coding
+
+For this demo, each student should [click this link](https://github.com/new?template_name=lecture08_demo&template_owner=ubc-cpsc330) to create a new repo in their accounts, then clone that repo locally to follow along with the demo from today.
+
 # Looking Ahead
 
 ## Group Work: Invention Activity

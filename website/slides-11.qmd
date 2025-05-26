@@ -34,9 +34,3 @@ For this demo, each student should [click this link](https://github.com/new?temp
 <br>
 <br>
 <br>
-
-If you really don't want to create a repo,
-
-- Navigate to the `cpsc330-2025S1` repo
-- run `git pull` to pull the latest files in the course repo
-- Look for the demo file [here](https://github.com/orgs/ubc-cpsc330/repositories)
