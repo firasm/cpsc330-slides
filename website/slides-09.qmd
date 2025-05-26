@@ -15,8 +15,14 @@ format:
       - img/  
 ---
 
-## Announcements 
+## Announcements
 
+- Learning Log 02 is now out!
+- Reminder: HW4 is due Monday night
+- Reminder: Midterm 1 is this week!
+
+
+<!-- 
 - Important information about midterm 1 released on this [Piazza post](https://piazza.com/class/m01ukubppof625/post/249)
 - Practice Midterm will be released today!
     - We hope to give you a sense of the exam format, types of questions, and to get you more familiar with the PrairieLearn interface. They do NOT encompass all the topics we've discussed nor reflect the actual number of questions on the actual midterm.
@@ -25,7 +31,7 @@ format:
     - As promised, documentation for `numpy`, `pandas`, `scipy`, and `sklearn` is provided to you as the first question.
 - HW4 has been released. Due next week Monday. 
 - HW5 will be released next week Tuesday. It's a project-type assignment and you get till Oct 28th to work on it.
-
+ -->
 
 ```{python}
 import os
@@ -83,7 +89,9 @@ Let's first walk through this [example through StatQuest](https://www.youtube.co
 
 ## Break!
 
-Let's take a 10 minute break.
+Let's take a break!
+
+![](img/eva-coffee.png){fig-align="center"}
 
 ## Confusion matrix questions 
 
@@ -171,9 +179,3 @@ Consider the points A, B, and C in the following diagram, each representing a th
 ::::
 
 [Source](https://developers.google.com/machine-learning/crash-course/classification/roc-and-auc)
-
-## Next Class: Dr. Giulia Toti !
-
-I'll be covering CPSC 430 for that prof, so Dr. Toti will be covering my section.
-
-Have fun!
