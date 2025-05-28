@@ -10,7 +10,7 @@ format:
         theme:
           - slides.scss
         center: true
-        logo: img/mds-hex-sticker.png
+        logo: img/UBC-CS-logo.png
         resources:
           - data/
           - img/
@@ -22,9 +22,7 @@ editor:
 
 ## Announcements 
 
-<!-- 
-# [Regression metrics class demo](https://github.com/UBC-CS/cpsc330-2024W1/blob/main/lectures/102-Varada-lectures/class_demos/demo_10-regression-metrics.ipynb)
--->
+- Nothing new today! 
 
 # Midterm review 
 ## What is machine learning 
