@@ -29,7 +29,7 @@ Today, we will do a class of live coding and going through the Jupyter Notebook 
 
 ## Group Work: Class Demo & Live Coding (if time permits)
 
-For this demo, each student should [click this link](https://github.com/new?template_name=lecture12_demo&template_owner=ubc-cpsc330) to create a new repo in their accounts, then clone that repo locally to follow along with the demo from today.
+For this demo, each student should [click this link](https://github.com/new?template_name=lecture11_demo&template_owner=ubc-cpsc330) to create a new repo in their accounts, then clone that repo locally to follow along with the demo from today.
 
 <br>
 <br>
