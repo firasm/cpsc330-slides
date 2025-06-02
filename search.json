@@ -371,25 +371,67 @@
     "text": "Correlations\n\n\n\n\n\nWhat are some limitations of correlations?"
   },
   {
-    "objectID": "slides-12.html#interepreting-coefficients",
-    "href": "slides-12.html#interepreting-coefficients",
+    "objectID": "slides-12.html#interpreting-coefficients",
+    "href": "slides-12.html#interpreting-coefficients",
     "title": "CPSC 330 Lecture 12: Feature importances",
-    "section": "Interepreting coefficients",
-    "text": "Interepreting coefficients\n\nLinear models are interpretable because you get coefficients associated with different features.\nEach coefficient represents the estimated impact of a feature on the target variable, assuming all other features are held constant.\nIn a Ridge model,\n\nA positive coefficient indicates that as the feature’s value increases, the predicted value also increases.\n\nA negative coefficient indicates that an increase in the feature’s value leads to a decrease in the predicted value."
+    "section": "Interpreting coefficients",
+    "text": "Interpreting coefficients\n\nLinear models are interpretable because you get coefficients associated with different features.\nEach coefficient represents the estimated impact of a feature on the target variable, assuming all other features are held constant.\nIn a Ridge model,\n\nA positive coefficient indicates that as the feature’s value increases, the predicted value also increases.\n\nA negative coefficient indicates that an increase in the feature’s value leads to a decrease in the predicted value."
   },
   {
-    "objectID": "slides-12.html#interepreting-coefficients-1",
-    "href": "slides-12.html#interepreting-coefficients-1",
+    "objectID": "slides-12.html#interpreting-coefficients-1",
+    "href": "slides-12.html#interpreting-coefficients-1",
     "title": "CPSC 330 Lecture 12: Feature importances",
-    "section": "Interepreting coefficients",
-    "text": "Interepreting coefficients\n\nWhen we have different types of preprocessed features, what challenges you might face in interpreting them?\n\nOrdinally encoded features\nOne-hot encoded features\nScaled numeric features"
+    "section": "Interpreting coefficients",
+    "text": "Interpreting coefficients\n\nWhen we have different types of preprocessed features, what challenges you might face in interpreting them?\n\nOrdinally encoded features\nOne-hot encoded features\nScaled numeric features"
+  },
+  {
+    "objectID": "slides-12.html#pause-and-reflect",
+    "href": "slides-12.html#pause-and-reflect",
+    "title": "CPSC 330 Lecture 12: Feature importances",
+    "section": "Pause and Reflect",
+    "text": "Pause and Reflect\nWe are now just over half-way through CPSC 330!\nYou had a midterm already a couple of weeks ago, I’d like some feedback on how things are going in class (as the instructor)."
+  },
+  {
+    "objectID": "slides-12.html#class-survey",
+    "href": "slides-12.html#class-survey",
+    "title": "CPSC 330 Lecture 12: Feature importances",
+    "section": "Class Survey",
+    "text": "Class Survey\nI’d love to hear how you think lectures are going, and how the course is going overall: bit.ly/cpsc330_24W1."
+  },
+  {
+    "objectID": "slides-12.html#iclicker-midterm-poll",
+    "href": "slides-12.html#iclicker-midterm-poll",
+    "title": "CPSC 330 Lecture 12: Feature importances",
+    "section": "(iClicker) Midterm poll",
+    "text": "(iClicker) Midterm poll\nSelect all of the following statements which are TRUE.\n\n\nI’m happy with my progress and learning in this course.\n\n\nI find the course content interesting, but the pace is a bit overwhelming. Balancing this course with other responsibilities is challenging\n\n\nI’m doing okay, but I feel stressed and worried about upcoming assessments.\n\n\nI’m confused about some concepts and would appreciate more clarification or review sessions.\n\n\nI’m struggling to keep up with the material. I am not happy with my learning in this course and my morale is low ☹️."
+  },
+  {
+    "objectID": "slides-12.html#break",
+    "href": "slides-12.html#break",
+    "title": "CPSC 330 Lecture 12: Feature importances",
+    "section": "Break",
+    "text": "Break\nLet’s take a break!"
   },
   {
     "objectID": "slides-12.html#group-work-class-demo-live-coding-if-time-permits",
     "href": "slides-12.html#group-work-class-demo-live-coding-if-time-permits",
     "title": "CPSC 330 Lecture 12: Feature importances",
     "section": "Group Work: Class Demo & Live Coding (if time permits)",
-    "text": "Group Work: Class Demo & Live Coding (if time permits)\nFor this demo, each student should click this link to create a new repo in their accounts, then clone that repo locally to follow along with the demo from today.\n  \nIf you really don’t want to create a repo,\n\nNavigate to the cpsc330-2025S1 repo\nrun git pull to pull the latest files in the course repo\nLook for the demo file here"
+    "text": "Group Work: Class Demo & Live Coding (if time permits)\nFor this demo, each student should click this link to create a new repo in their accounts, then clone that repo locally to follow along with the demo from today."
+  },
+  {
+    "objectID": "slides-12.html#shap",
+    "href": "slides-12.html#shap",
+    "title": "CPSC 330 Lecture 12: Feature importances",
+    "section": "SHAP",
+    "text": "SHAP"
+  },
+  {
+    "objectID": "slides-12.html#shap-1",
+    "href": "slides-12.html#shap-1",
+    "title": "CPSC 330 Lecture 12: Feature importances",
+    "section": "SHAP",
+    "text": "SHAP\n\nYou might need to install SHAP in your conda environment\nconda install -c conda-forge shap"
   },
   {
     "objectID": "slides.html",
@@ -970,7 +1012,7 @@
     "href": "slides-08.html#random-search-example",
     "title": "CPSC 330 Lecture 8: Hyperparameter Optimization",
     "section": "Random search example",
-    "text": "Random search example\n\nfrom sklearn.model_selection import RandomizedSearchCV\nfrom scipy.stats import randint\n\npipe_svc = make_pipeline(CountVectorizer(), SVC())\n\nparam_dist = {\n    \"countvectorizer__max_features\": randint(100, 2000), \n    \"svc__C\": uniform(0.1, 1e4),  # loguniform(1e-3, 1e3),\n    \"svc__gamma\": loguniform(1e-5, 1e3),\n}\nrandom_search = RandomizedSearchCV(pipe_svm,                                    \n                  param_distributions = param_dist, \n                  n_iter=10, \n                  n_jobs=-1, \n                  return_train_score=True)\n\n# Carry out the search\nrandom_search.fit(X_train, y_train)\nrandom_search.best_score_\n\nnp.float64(0.9830476633970345)"
+    "text": "Random search example\n\nfrom sklearn.model_selection import RandomizedSearchCV\nfrom scipy.stats import randint\n\npipe_svc = make_pipeline(CountVectorizer(), SVC())\n\nparam_dist = {\n    \"countvectorizer__max_features\": randint(100, 2000), \n    \"svc__C\": uniform(0.1, 1e4),  # loguniform(1e-3, 1e3),\n    \"svc__gamma\": loguniform(1e-5, 1e3),\n}\nrandom_search = RandomizedSearchCV(pipe_svm,                                    \n                  param_distributions = param_dist, \n                  n_iter=10, \n                  n_jobs=-1, \n                  return_train_score=True)\n\n# Carry out the search\nrandom_search.fit(X_train, y_train)\nrandom_search.best_score_\n\nnp.float64(0.9824490600056119)"
   },
   {
     "objectID": "slides-08.html#optimization-bias",
@@ -1533,20 +1575,6 @@
     "text": "Group Work: Class Demo & Live Coding (if time permits)\nFor this demo, each student should click this link to create a new repo in their accounts, then clone that repo locally to follow along with the demo from today."
   },
   {
-    "objectID": "slides-13.html#continue-with-lecture-13-demo",
-    "href": "slides-13.html#continue-with-lecture-13-demo",
-    "title": "CPSC 330 Lecture 13: Feature Engineering and Selection",
-    "section": "Continue with Lecture 13 demo",
-    "text": "Continue with Lecture 13 demo\n\nSHAP!"
-  },
-  {
-    "objectID": "slides-13.html#break",
-    "href": "slides-13.html#break",
-    "title": "CPSC 330 Lecture 13: Feature Engineering and Selection",
-    "section": "Break",
-    "text": "Break\nLet’s take a 10-min break"
-  },
-  {
     "objectID": "slides-13.html#iclicker-exercise-14.0",
     "href": "slides-13.html#iclicker-exercise-14.0",
     "title": "CPSC 330 Lecture 13: Feature Engineering and Selection",
@@ -2083,7 +2111,7 @@
     "href": "slides-18.html#object-detection-using-yolo",
     "title": "CPSC 330 Lecture 18: Introduction to deep learning and computer vision",
     "section": "Object detection using YOLO",
-    "text": "Object detection using YOLO\n\n\nLet’s try this out using a pre-trained model.\n\nfrom ultralytics import YOLO\nmodel = YOLO(\"yolov8n.pt\")  # pretrained YOLOv8n model\n\nyolo_input = \"data/yolo_test/3356700488_183566145b.jpg\"\nyolo_result = \"data/yolo_result.jpg\"\n# Run batched inference on a list of images\nresult = model(yolo_input)  # return a list of Results objects\nresult[0].save(filename=yolo_result)\n\nCreating new Ultralytics Settings v0.0.6 file ✅ \nView Ultralytics Settings with 'yolo settings' or at '/home/runner/.config/Ultralytics/settings.json'\nUpdate Settings with 'yolo settings key=value', i.e. 'yolo settings runs_dir=path/to/dir'. For help see https://docs.ultralytics.com/quickstart/#ultralytics-settings.\n\nimage 1/1 /home/runner/work/cpsc330-slides/cpsc330-slides/website/data/yolo_test/3356700488_183566145b.jpg: 512x640 4 persons, 2 cars, 1 stop sign, 83.6ms\nSpeed: 1.1ms preprocess, 83.6ms inference, 0.9ms postprocess per image at shape (1, 3, 512, 640)\n\n\n'data/yolo_result.jpg'"
+    "text": "Object detection using YOLO\n\n\nLet’s try this out using a pre-trained model.\n\nfrom ultralytics import YOLO\nmodel = YOLO(\"yolov8n.pt\")  # pretrained YOLOv8n model\n\nyolo_input = \"data/yolo_test/3356700488_183566145b.jpg\"\nyolo_result = \"data/yolo_result.jpg\"\n# Run batched inference on a list of images\nresult = model(yolo_input)  # return a list of Results objects\nresult[0].save(filename=yolo_result)\n\nCreating new Ultralytics Settings v0.0.6 file ✅ \nView Ultralytics Settings with 'yolo settings' or at '/home/runner/.config/Ultralytics/settings.json'\nUpdate Settings with 'yolo settings key=value', i.e. 'yolo settings runs_dir=path/to/dir'. For help see https://docs.ultralytics.com/quickstart/#ultralytics-settings.\n\nimage 1/1 /home/runner/work/cpsc330-slides/cpsc330-slides/website/data/yolo_test/3356700488_183566145b.jpg: 512x640 4 persons, 2 cars, 1 stop sign, 90.6ms\nSpeed: 1.6ms preprocess, 90.6ms inference, 1.0ms postprocess per image at shape (1, 3, 512, 640)\n\n\n'data/yolo_result.jpg'"
   },
   {
     "objectID": "slides-18.html#object-detection-output",
