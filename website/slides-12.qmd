@@ -82,9 +82,7 @@ You had a midterm already a couple of weeks ago, I'd like some feedback on how t
 
 ## Class Survey
 
-I'd love to hear how you think lectures are going, and how the course is going overall: [bit.ly/cpsc330_24W1](https://bit.ly/cpsc330_24W1).
-
-![](img/24W1_survey.png)
+I'd love to hear how you think lectures are going, and how the course is going overall: [bit.ly/cpsc330_24W1](https://bit.ly/cpsc330_2025S).
 
 ## (iClicker) Midterm poll {.smaller}
 
