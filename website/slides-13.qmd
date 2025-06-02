@@ -27,14 +27,6 @@ editor:
     - Viewing sessions (in the CBTF) will be next week
 -->
 
-## Continue with Lecture 13 demo
-
-- SHAP!
-
-## Break
-
-Let's take a 10-min break
-
 ## iClicker Exercise 14.0
 
 **iClicker cloud join link: [https://join.iclicker.com/YJHS](https://join.iclicker.com/YJHS)**

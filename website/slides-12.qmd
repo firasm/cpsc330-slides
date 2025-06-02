@@ -61,30 +61,62 @@ Which model would you pick? Why?
 :::
 ::::
 
-## Interepreting coefficients 
+## Interpreting coefficients 
 - Linear models are interpretable because you get coefficients associated with different features. 
 - Each coefficient represents the estimated impact of a feature on the target variable, assuming all other features are held constant.
 - In a `Ridge` model, 
   - A positive coefficient indicates that as the feature's value increases, the predicted value also increases.
 	- A negative coefficient indicates that an increase in the feature's value leads to a decrease in the predicted value.
 
-## Interepreting coefficients 
+## Interpreting coefficients 
 - When we have different types of preprocessed features, what challenges you might face in interpreting them? 
   - Ordinally encoded features
   - One-hot encoded features
   - Scaled numeric features
 
+## Pause and Reflect 
+
+We are now just over half-way through CPSC 330!
+
+You had a midterm already a couple of weeks ago, I'd like some feedback on how things are going in class (as the instructor).
+
+## Class Survey
+
+I'd love to hear how you think lectures are going, and how the course is going overall: [bit.ly/cpsc330_24W1](https://bit.ly/cpsc330_24W1).
+
+![](img/24W1_survey.png)
+
+## (iClicker) Midterm poll {.smaller}
+
+**Select all of the following statements which are TRUE.**
+
+- (A) I'm happy with my progress and learning in this course.
+- (B) I find the course content interesting, but the pace is a bit overwhelming. Balancing this course with other responsibilities is challenging
+- (C) I'm doing okay, but I feel stressed and worried about upcoming assessments.
+- (D) I'm confused about some concepts and would appreciate more clarification or review sessions.
+- (E) I'm struggling to keep up with the material. I am not happy with my learning in this course and my morale is low ☹️.
+
+## Break
+
+Let's take a break!
+
+![](img/eva-coffee.png){fig-align="center"}
+
+
 ## Group Work: Class Demo & Live Coding (if time permits)
 
-For this demo, each student should [click this link](https://github.com/new?template_name=lecture13_demo&template_owner=ubc-cpsc330) to create a new repo in their accounts, then clone that repo locally to follow along with the demo from today.
+For this demo, each student should [click this link](https://github.com/new?template_name=lecture12_demo&template_owner=ubc-cpsc330) to create a new repo in their accounts, then clone that repo locally to follow along with the demo from today.
 
-<br>
-<br>
-<br>
+## SHAP
 
-If you really don't want to create a repo,
+![](img/shap_example.png){fig-align="center"}
 
-- Navigate to the `cpsc330-2025S1` repo
-- run `git pull` to pull the latest files in the course repo
-- Look for the demo file [here](https://github.com/orgs/ubc-cpsc330/repositories)
+## SHAP
 
+![](img/shap_docs.png){fig-align="center"}
+
+You might need to install [SHAP](https://shap.readthedocs.io/en/latest/example_notebooks/overviews/An%20introduction%20to%20explainable%20AI%20with%20Shapley%20values.html) in your conda environment
+
+```
+conda install -c conda-forge shap
+```
