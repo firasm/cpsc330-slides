@@ -133,49 +133,100 @@
 </div>
 
 </section>
-<section class="slide level2 center">
-
-<!-- 
-## Announcements 
-
-- HW5 is due next week Monday. Make use of office hours and tutorials this week.
-- CPSC 330 final exam window (in the CBTF) will be Dec. 17-19
-- Midterm 1 results will be out tonight (as soon as I get home!)
-    - Viewing sessions (in the CBTF) will be next week
--->
-</section>
-<section id="announcements" class="slide level2 center">
+<section id="announcements" class="slide level2">
 <h2>Announcements</h2>
+<ul>
+<li>Midterm 1 scores are now out!
+<ul>
+<li>The class average was 80% - nice work everyone!</li>
+<li>Viewing sessions (in the CBTF) will be next week.</li>
+<li>Regrade requests must be submitted within the CBTF</li>
+</ul></li>
+<li>HW5 is due tomorrow!</li>
+</ul>
 </section>
-<section id="course-feedback-1" class="slide level2 center">
+<section id="cpsc-330-final-exam" class="slide level2">
+<h2>CPSC 330 Final Exam</h2>
+<ul>
+<li>The final exam will be self-scheduled in the CBTF</li>
+<li>Exam window: Monday June 23 and Tuesday June 24th
+<ul>
+<li>Typically, sessions will be available at 9 AM, 12 PM, 3 PM and sometimes, 6 PM.</li>
+</ul></li>
+<li>I will announce details on booking final exams in the CBTF soon…</li>
+</ul>
+</section>
+<section id="course-feedback-1" class="slide level2">
 <h2>Course Feedback 1</h2>
 
 <img data-src="img/firas/2025S_survey/01_structure.png" class="quarto-figure quarto-figure-center r-stretch"></section>
-<section id="course-feedback-2" class="slide level2 center">
+<section id="course-feedback-2" class="slide level2">
 <h2>Course Feedback 2</h2>
 
 <img data-src="img/firas/2025S_survey/02_lectures.png" class="quarto-figure quarto-figure-center r-stretch"></section>
-<section id="course-feedback-3" class="slide level2 center">
+<section id="course-feedback-3" class="slide level2">
 <h2>Course Feedback 3</h2>
 
 <img data-src="img/firas/2025S_survey/03_pace.png" class="quarto-figure quarto-figure-center r-stretch"></section>
-<section id="course-feedback-4" class="slide level2 center">
+<section id="course-feedback-4" class="slide level2">
 <h2>Course Feedback 4</h2>
 
 <img data-src="img/firas/2025S_survey/04_labs.png" class="quarto-figure quarto-figure-center r-stretch"></section>
-<section id="course-feedback-5" class="slide level2 center">
+<section id="course-feedback-5" class="slide level2">
 <h2>Course Feedback 5</h2>
 
 <img data-src="img/firas/2025S_survey/05_videos.png" class="quarto-figure quarto-figure-center r-stretch"></section>
-<section id="course-feedback-6" class="slide level2 center">
+<section id="course-feedback-6" class="slide level2">
 <h2>Course Feedback 6</h2>
 
 <img data-src="img/firas/2025S_survey/06_TAhours.png" class="quarto-figure quarto-figure-center r-stretch"></section>
-<section id="course-feedback-7" class="slide level2 center">
+<section id="course-feedback-7" class="slide level2">
 <h2>Course Feedback 7</h2>
 
 <img data-src="img/firas/2025S_survey/07_overall.png" class="quarto-figure quarto-figure-center r-stretch"></section>
-<section id="iclicker-exercise-14.0" class="slide level2 center">
+<section id="finishing-up-feature-importances" class="slide level2">
+<h2>Finishing up Feature importances</h2>
+<p>Why do we care about feature importances so much?</p>
+<ul>
+<li>Identify features that are not useful and maybe remove them.</li>
+<li>Get guidance on what new data to collect.
+<ul>
+<li>New features related to useful features -&gt; better results.</li>
+<li>Don’t bother collecting useless features -&gt; save resources.</li>
+</ul></li>
+</ul>
+</section>
+<section id="finishing-up-feature-importances-1" class="slide level2">
+<h2>Finishing up Feature importances</h2>
+<ul>
+<li>Help explain why the model is making certain predictions.
+<ul>
+<li>Debugging, if the model is behaving strangely.</li>
+<li>Regulatory requirements.</li>
+<li>Fairness / bias. See this.</li>
+<li>Keep in mind this can be used on deployment predictions!</li>
+</ul></li>
+</ul>
+</section>
+<section id="extending-shap" class="slide level2">
+<h2>Extending SHAP</h2>
+<ul>
+<li>Can also be used to explain text classification and image classification!</li>
+</ul>
+</section>
+<section id="extending-shap-1" class="slide level2">
+<h2>Extending SHAP</h2>
+
+<img data-src="../img/shap_image_explainer.png" class="r-stretch"><p><a href="https://github.com/slundberg/shap">Source</a></p>
+</section>
+<section id="extending-shap-2" class="slide level2">
+<h2>Extending SHAP</h2>
+
+<img data-src="../img/shap_image_explainer.png" class="r-stretch"><ul>
+<li>Example: In the picture below, red pixels represent positive SHAP values that increase the probability of the class, while blue pixels represent negative SHAP values the reduce the probability of the class.</li>
+</ul>
+</section>
+<section id="iclicker-exercise-14.0" class="slide level2">
 <h2>iClicker Exercise 14.0</h2>
 <p><strong>iClicker cloud join link: <a href="https://join.iclicker.com/YJHS">https://join.iclicker.com/YJHS</a></strong></p>
 <p>Suppose you are working on a machine learning project. If you have to prioritize one of the following in your project which of the following would it be?</p>
@@ -190,7 +241,7 @@
 <h1>Feature engineering motivation</h1>
 
 </section>
-<section id="discussion-question" class="slide level2 center">
+<section id="discussion-question" class="slide level2">
 <h2>Discussion question</h2>
 <ul>
 <li>Suppose we want to predict whether a flight will arrive on time or be delayed. We have a dataset with the following information about flights:
@@ -201,20 +252,45 @@
 </ul>
 <p>Upon analyzing the data, you notice a pattern: flights tend to be delayed more often during the evening rush hours. What feature could be valuable to add for this prediction task? <br><br><br><br></p>
 </section>
-<section id="garbage-in-garbage-out." class="slide level2 center">
+<section id="garbage-in-garbage-out." class="slide level2">
 <h2>Garbage in, garbage out.</h2>
 <ul>
 <li>Model building is interesting. But in your machine learning projects, you’ll be spending more than half of your time on data preparation, feature engineering, and transformations.</li>
 <li>The <em>quality</em> of the data is important. Your model is only as good as your data.</li>
 </ul>
 </section>
-<section id="activity-measuring-quality-of-the-data" class="slide level2 center">
+<section id="activity-measuring-quality-of-the-data" class="slide level2">
 <h2>Activity: Measuring quality of the data</h2>
 <ul>
-<li>Discuss some attributes of good- and bad-quality data</li>
+<li>What are some properties of “good” or “bad” data?</li>
+<li>Along what possible dimensions could we “measure” goodness of data?</li>
 </ul>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Dimension</th>
+<th>Good Data</th>
+<th>Bad Data</th>
+<th>metric to measure</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
 </section>
-<section id="what-is-feature-engineering" class="slide level2 center">
+<section id="what-is-feature-engineering" class="slide level2">
 <h2>What is feature engineering?</h2>
 <blockquote>
 <b>Feature engineering</b> is the process of transforming raw data into features that better represent the underlying problem to the predictive models, resulting in improved model accuracy on unseen data.<br> - <a href="https://machinelearningmastery.com">Jason Brownlee</a>
@@ -224,21 +300,21 @@
 <li>If your features, i.e., representation is bad, whatever fancier model you build is not going to help.</li>
 </ul>
 </section>
-<section id="some-quotes-on-feature-engineering" class="slide level2 center">
+<section id="some-quotes-on-feature-engineering" class="slide level2">
 <h2>Some quotes on feature engineering</h2>
 <p>A quote by Pedro Domingos <a href="https://homes.cs.washington.edu/~pedrod/papers/cacm12.pdf">A Few Useful Things to Know About Machine Learning</a></p>
 <blockquote>
 … At the end of the day, some machine learning projects succeed and some fail. What makes the difference? Easily the most important factor is the features used.
 </blockquote>
 </section>
-<section id="some-quotes-on-feature-engineering-1" class="slide level2 center">
+<section id="some-quotes-on-feature-engineering-1" class="slide level2">
 <h2>Some quotes on feature engineering</h2>
 <p>A quote by Andrew Ng, <a href="https://ai.stanford.edu/~ang/slides/DeepLearning-Mar2013.pptx">Machine Learning and AI via Brain simulations</a></p>
 <blockquote>
 Coming up with features is difficult, time-consuming, requires expert knowledge. “Applied machine learning” is basically feature engineering.
 </blockquote>
 </section>
-<section id="better-features-usually-help-more-than-a-better-model" class="slide level2 smaller center">
+<section id="better-features-usually-help-more-than-a-better-model" class="slide level2 smaller">
 <h2>Better features usually help more than a better model</h2>
 <ul>
 <li>Good features would ideally:
@@ -254,7 +330,7 @@ Coming up with features is difficult, time-consuming, requires expert knowledge.
 </ul></li>
 </ul>
 </section>
-<section id="the-best-features-may-be-dependent-on-the-model-you-use" class="slide level2 smaller center">
+<section id="the-best-features-may-be-dependent-on-the-model-you-use" class="slide level2 smaller">
 <h2>The best features may be dependent on the model you use</h2>
 <ul>
 <li>Examples:
@@ -271,39 +347,55 @@ Coming up with features is difficult, time-consuming, requires expert knowledge.
 </ul></li>
 </ul>
 </section>
-<section id="motivating-feature-engineering" class="slide level2 center">
+<section id="motivating-feature-engineering" class="slide level2">
 <h2>Motivating Feature Engineering</h2>
 <p>Questions:</p>
 <ul>
 <li>What are two possible ways we could “engineer” features?
 <ul>
-<li>Think broadly and philosophically rathern than an implementation…</li>
+<li>Think broadly and philosophically rather than an implementation…</li>
 </ul></li>
 </ul>
-<!-- 
-## [Demo of feature engineering and selection](https://github.com/UBC-CS/cpsc330-2025S1/blob/main/lectures/102-Varada-lectures/class_demos/demo_14-feature-engineering-selection.ipynb)
+</section>
+<section id="break" class="slide level2">
+<h2>Break</h2>
+<p>Let’s take a break!</p>
 
-## Domain-specific transformations
+<img data-src="img/eva-coffee.png" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="group-work-class-demo-live-coding" class="slide level2">
+<h2>Group Work: Class Demo &amp; Live Coding</h2>
+<p>For this demo, each student should <a href="https://github.com/new?template_name=lecture13_demo&amp;template_owner=ubc-cpsc330">click this link</a> to create a new repo in their accounts, then clone that repo locally to follow along with the demo from today.</p>
+</section>
+<section id="break-1" class="slide level2">
+<h2>Break</h2>
+<p>Let’s take a break!</p>
 
-In some domains there are natural transformations to do:
-- Spectrograms (sound data)
-- Wavelets (image data)
-- Convolutions 
+<img data-src="img/eva-coffee.png" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="domain-specific-transformations" class="slide level2">
+<h2>Domain-specific transformations</h2>
+<p>In some domains there are natural transformations to do: - Spectrograms (sound data) - Wavelets (image data) - Convolutions</p>
 
-![](img/spectogram.png)
-
-[Source](https://en.wikipedia.org/wiki/Spectrogram) 
-
-
-## (iClicker) Exercise 14.1 
-
-**iClicker cloud join link: [https://join.iclicker.com/YJHS](https://join.iclicker.com/YJHS)**
-
-**Select all of the following statements which are TRUE.**
-
-- (A) Simple association-based feature selection approaches do not take into account the interaction between features.
-- (B) You can carry out feature selection using linear models by pruning the features which have very small weights (i.e., coefficients less than a threshold).
-- (C) The order of features removed given by `rfe.ranking_` is the same as the order of original feature importances given by the model.   -->
+<img data-src="img/spectogram.png" class="r-stretch"><p><a href="https://en.wikipedia.org/wiki/Spectrogram">Source</a></p>
+</section>
+<section id="developing-intuition-about-feature-engineering" class="slide level2">
+<h2>Developing intuition about Feature Engineering</h2>
+<p>…</p>
+</section>
+<section id="iclicker-exercise-14.1" class="slide level2">
+<h2>(iClicker) Exercise 14.1</h2>
+<p><strong>iClicker cloud join link: <a href="https://join.iclicker.com/YJHS">https://join.iclicker.com/YJHS</a></strong></p>
+<p><strong>Select all of the following statements which are TRUE.</strong></p>
+<ul>
+<li><ol type="A">
+<li>Simple association-based feature selection approaches do not take into account the interaction between features.</li>
+</ol></li>
+<li><ol start="2" type="A">
+<li>You can carry out feature selection using linear models by pruning the features which have very small weights (i.e., coefficients less than a threshold).</li>
+</ol></li>
+<li><ol start="3" type="A">
+<li>The order of features removed given by <code>rfe.ranking_</code> is the same as the order of original feature importances given by the model.</li>
+</ol></li>
+</ul>
 
 
 </section></section>
@@ -392,7 +484,7 @@ In some domains there are natural transformations to do:
         disableLayout: false,
 
         // Vertical centering of slides
-        center: true,
+        center: false,
 
         // Enables touch navigation on devices with touch input
         touch: true,
@@ -468,14 +560,14 @@ In some domains there are natural transformations to do:
         previewLinks: false,
 
         // Transition style (none/fade/slide/convex/concave/zoom)
-        transition: 'none',
+        transition: 'fade',
 
         // Transition speed (default/fast/slow)
         transitionSpeed: 'default',
 
         // Transition style for full page slide backgrounds
         // (none/fade/slide/convex/concave/zoom)
-        backgroundTransition: 'none',
+        backgroundTransition: 'fade',
 
         // Number of slides away from the current that are visible
         viewDistance: 3,

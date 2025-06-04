@@ -1579,7 +1579,14 @@
     "href": "slides-13.html#announcements",
     "title": "CPSC 330 Lecture 13: Feature Engineering and Selection",
     "section": "Announcements",
-    "text": "Announcements"
+    "text": "Announcements\n\nMidterm 1 scores are now out!\n\nThe class average was 80% - nice work everyone!\nViewing sessions (in the CBTF) will be next week.\nRegrade requests must be submitted within the CBTF\n\nHW5 is due tomorrow!"
+  },
+  {
+    "objectID": "slides-13.html#cpsc-330-final-exam",
+    "href": "slides-13.html#cpsc-330-final-exam",
+    "title": "CPSC 330 Lecture 13: Feature Engineering and Selection",
+    "section": "CPSC 330 Final Exam",
+    "text": "CPSC 330 Final Exam\n\nThe final exam will be self-scheduled in the CBTF\nExam window: Monday June 23 and Tuesday June 24th\n\nTypically, sessions will be available at 9 AM, 12 PM, 3 PM and sometimes, 6 PM.\n\nI will announce details on booking final exams in the CBTF soon…"
   },
   {
     "objectID": "slides-13.html#course-feedback-1",
@@ -1631,6 +1638,41 @@
     "text": "Course Feedback 7"
   },
   {
+    "objectID": "slides-13.html#finishing-up-feature-importances",
+    "href": "slides-13.html#finishing-up-feature-importances",
+    "title": "CPSC 330 Lecture 13: Feature Engineering and Selection",
+    "section": "Finishing up Feature importances",
+    "text": "Finishing up Feature importances\nWhy do we care about feature importances so much?\n\nIdentify features that are not useful and maybe remove them.\nGet guidance on what new data to collect.\n\nNew features related to useful features -&gt; better results.\nDon’t bother collecting useless features -&gt; save resources."
+  },
+  {
+    "objectID": "slides-13.html#finishing-up-feature-importances-1",
+    "href": "slides-13.html#finishing-up-feature-importances-1",
+    "title": "CPSC 330 Lecture 13: Feature Engineering and Selection",
+    "section": "Finishing up Feature importances",
+    "text": "Finishing up Feature importances\n\nHelp explain why the model is making certain predictions.\n\nDebugging, if the model is behaving strangely.\nRegulatory requirements.\nFairness / bias. See this.\nKeep in mind this can be used on deployment predictions!"
+  },
+  {
+    "objectID": "slides-13.html#extending-shap",
+    "href": "slides-13.html#extending-shap",
+    "title": "CPSC 330 Lecture 13: Feature Engineering and Selection",
+    "section": "Extending SHAP",
+    "text": "Extending SHAP\n\nCan also be used to explain text classification and image classification!"
+  },
+  {
+    "objectID": "slides-13.html#extending-shap-1",
+    "href": "slides-13.html#extending-shap-1",
+    "title": "CPSC 330 Lecture 13: Feature Engineering and Selection",
+    "section": "Extending SHAP",
+    "text": "Extending SHAP\n\nSource"
+  },
+  {
+    "objectID": "slides-13.html#extending-shap-2",
+    "href": "slides-13.html#extending-shap-2",
+    "title": "CPSC 330 Lecture 13: Feature Engineering and Selection",
+    "section": "Extending SHAP",
+    "text": "Extending SHAP\n\n\nExample: In the picture below, red pixels represent positive SHAP values that increase the probability of the class, while blue pixels represent negative SHAP values the reduce the probability of the class."
+  },
+  {
     "objectID": "slides-13.html#iclicker-exercise-14.0",
     "href": "slides-13.html#iclicker-exercise-14.0",
     "title": "CPSC 330 Lecture 13: Feature Engineering and Selection",
@@ -1656,7 +1698,7 @@
     "href": "slides-13.html#activity-measuring-quality-of-the-data",
     "title": "CPSC 330 Lecture 13: Feature Engineering and Selection",
     "section": "Activity: Measuring quality of the data",
-    "text": "Activity: Measuring quality of the data\n\nDiscuss some attributes of good- and bad-quality data"
+    "text": "Activity: Measuring quality of the data\n\nWhat are some properties of “good” or “bad” data?\nAlong what possible dimensions could we “measure” goodness of data?\n\n\n\n\nDimension\nGood Data\nBad Data\nmetric to measure"
   },
   {
     "objectID": "slides-13.html#what-is-feature-engineering",
@@ -1698,7 +1740,49 @@
     "href": "slides-13.html#motivating-feature-engineering",
     "title": "CPSC 330 Lecture 13: Feature Engineering and Selection",
     "section": "Motivating Feature Engineering",
-    "text": "Motivating Feature Engineering\nQuestions:\n\nWhat are two possible ways we could “engineer” features?\n\nThink broadly and philosophically rathern than an implementation…"
+    "text": "Motivating Feature Engineering\nQuestions:\n\nWhat are two possible ways we could “engineer” features?\n\nThink broadly and philosophically rather than an implementation…"
+  },
+  {
+    "objectID": "slides-13.html#break",
+    "href": "slides-13.html#break",
+    "title": "CPSC 330 Lecture 13: Feature Engineering and Selection",
+    "section": "Break",
+    "text": "Break\nLet’s take a break!"
+  },
+  {
+    "objectID": "slides-13.html#group-work-class-demo-live-coding",
+    "href": "slides-13.html#group-work-class-demo-live-coding",
+    "title": "CPSC 330 Lecture 13: Feature Engineering and Selection",
+    "section": "Group Work: Class Demo & Live Coding",
+    "text": "Group Work: Class Demo & Live Coding\nFor this demo, each student should click this link to create a new repo in their accounts, then clone that repo locally to follow along with the demo from today."
+  },
+  {
+    "objectID": "slides-13.html#break-1",
+    "href": "slides-13.html#break-1",
+    "title": "CPSC 330 Lecture 13: Feature Engineering and Selection",
+    "section": "Break",
+    "text": "Break\nLet’s take a break!"
+  },
+  {
+    "objectID": "slides-13.html#domain-specific-transformations",
+    "href": "slides-13.html#domain-specific-transformations",
+    "title": "CPSC 330 Lecture 13: Feature Engineering and Selection",
+    "section": "Domain-specific transformations",
+    "text": "Domain-specific transformations\nIn some domains there are natural transformations to do: - Spectrograms (sound data) - Wavelets (image data) - Convolutions\n\nSource"
+  },
+  {
+    "objectID": "slides-13.html#developing-intuition-about-feature-engineering",
+    "href": "slides-13.html#developing-intuition-about-feature-engineering",
+    "title": "CPSC 330 Lecture 13: Feature Engineering and Selection",
+    "section": "Developing intuition about Feature Engineering",
+    "text": "Developing intuition about Feature Engineering\n…"
+  },
+  {
+    "objectID": "slides-13.html#iclicker-exercise-14.1",
+    "href": "slides-13.html#iclicker-exercise-14.1",
+    "title": "CPSC 330 Lecture 13: Feature Engineering and Selection",
+    "section": "(iClicker) Exercise 14.1",
+    "text": "(iClicker) Exercise 14.1\niClicker cloud join link: https://join.iclicker.com/YJHS\nSelect all of the following statements which are TRUE.\n\n\nSimple association-based feature selection approaches do not take into account the interaction between features.\n\n\nYou can carry out feature selection using linear models by pruning the features which have very small weights (i.e., coefficients less than a threshold).\n\n\nThe order of features removed given by rfe.ranking_ is the same as the order of original feature importances given by the model."
   },
   {
     "objectID": "slides-20.html#announcements",
@@ -1776,34 +1860,6 @@
     "title": "Lecture 3: ML fundamentals",
     "section": "Group Work: Class Demo & Live Coding",
     "text": "Group Work: Class Demo & Live Coding\nFor this demo, each student should click this link to create a new repo in their accounts, then clone that repo locally to follow along with the demo from today."
-  },
-  {
-    "objectID": "slides-14.html#finishing-up-feature-selection",
-    "href": "slides-14.html#finishing-up-feature-selection",
-    "title": "CPSC 330 Lecture 14: K-Means",
-    "section": "Finishing up Feature Selection",
-    "text": "Finishing up Feature Selection\nLast class we distinguished between Model-based selection and recursive feature feature elimination (RFE).\nLet’s chat a bit more about Recursive Feature Elimination with Cross-validation."
-  },
-  {
-    "objectID": "slides-14.html#pause-and-reflect",
-    "href": "slides-14.html#pause-and-reflect",
-    "title": "CPSC 330 Lecture 14: K-Means",
-    "section": "Pause and Reflect",
-    "text": "Pause and Reflect\nWe are now just over half-way through CPSC 330!\nYou had a midterm already a couple of weeks ago, I’d like some feedback on how things are going in class (as the instructor)."
-  },
-  {
-    "objectID": "slides-14.html#class-survey",
-    "href": "slides-14.html#class-survey",
-    "title": "CPSC 330 Lecture 14: K-Means",
-    "section": "Class Survey",
-    "text": "Class Survey\nI’d love to hear how you think lectures are going, and how the course is going overall: bit.ly/cpsc330_24W1."
-  },
-  {
-    "objectID": "slides-14.html#iclicker-midterm-poll",
-    "href": "slides-14.html#iclicker-midterm-poll",
-    "title": "CPSC 330 Lecture 14: K-Means",
-    "section": "(iClicker) Midterm poll",
-    "text": "(iClicker) Midterm poll\nSelect all of the following statements which are TRUE.\n\n\nI’m happy with my progress and learning in this course.\n\n\nI find the course content interesting, but the pace is a bit overwhelming. Balancing this course with other responsibilities is challenging\n\n\nI’m doing okay, but I feel stressed and worried about upcoming assessments.\n\n\nI’m confused about some concepts and would appreciate more clarification or review sessions.\n\n\nI’m struggling to keep up with the material. I am not happy with my learning in this course and my morale is low ☹️."
   },
   {
     "objectID": "slides-14.html#supervised-learning",
