@@ -1,6 +1,29 @@
 [
   {
     "listing": "/slides.html",
-    "items": []
+    "items": [
+      "/slides-01.html",
+      "/slides-02.html",
+      "/slides-03.html",
+      "/slides-04.html",
+      "/slides-05.html",
+      "/slides-06.html",
+      "/slides-07.html",
+      "/slides-08.html",
+      "/slides-09.html",
+      "/slides-10.html",
+      "/slides-11.html",
+      "/slides-12.html",
+      "/slides-13.html",
+      "/slides-14.html",
+      "/slides-15.html",
+      "/slides-16.html",
+      "/slides-17.html",
+      "/slides-18.html",
+      "/slides-19.html",
+      "/slides-20.html",
+      "/slides-24.html",
+      "/slides-midterm1-review.html"
+    ]
   }
 ]
