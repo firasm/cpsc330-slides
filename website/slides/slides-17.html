@@ -6,10 +6,10 @@
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-8ea72dc5fed832574809a9c94082fbbb.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.6.40">
 
-  <title>CPSC 330 Slides – CPSC 330 Lecture 17: Recommender Systems</title>
+  <title>CPSC 330 Slides – CPSC 330 Lecture 17: Natural Language Processing</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -29,7 +29,7 @@
     }
     .display.math{display: block; text-align: center; margin: 0.5rem auto;}
   </style>
-  <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto-3b708938d2eefc4c2436697c9b4ff381.css">
+  <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto-d6a2e637423beed6a318cacc3341e7d6.css">
   <link href="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -122,112 +122,109 @@
     }
   </style>
 </head>
-<body class="quarto-light">
+<body class="quarto-dark">
   <div class="reveal">
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">CPSC 330 Lecture 17: Recommender Systems</h1>
+  <h1 class="title">CPSC 330 Lecture 17: Natural Language Processing</h1>
 
 <div class="quarto-title-authors">
 </div>
 
 </section>
-<section id="announcements" class="slide level2 center">
-<h2>Announcements</h2>
-<ul>
-<li>HW6 is due this Wednesday.
-<ul>
-<li>Max group size on this assignment is 4 people</li>
-<li>Computationally intensive (welcome to real-life ML!)</li>
-<li>heads up: you will need to install many packages (welcome to real-life ML!)</li>
-</ul></li>
-<li>No classes or OH during the Midterm Break!
-<ul>
-<li>Thursday Nov 14 class is cancelled</li>
-</ul></li>
-<li>Midterm 2 is next week (Nov 14/15)</li>
-<li>Reminder: Please double check your Midterm 2 CBTF booking!</li>
-</ul>
-</section>
-<section id="rest-of-cpsc-330" class="slide level2 center">
-<h2>Rest of CPSC 330</h2>
-<p>We started CPSC 330 with Machine Learning fundamentals, Supervised Learning models, Unsupervised Learning models, more complex fundamentals like feature engineering and feature selection</p>
-<p>We are now ready to try and solve different types of problems! - Today: Recommender Systems - Next class: Text Data and Topic Modelling - After: Images and Computer vision, Time Series Data, etc…</p>
-</section>
-<section id="iclicker-17.0" class="slide level2 center">
-<h2>iClicker 17.0</h2>
-<p>What percentage of the total watch time on YouTube do you think comes from reccomendations?</p>
-<ul>
-<li><ol type="A">
-<li>20%</li>
-</ol></li>
-<li><ol start="2" type="A">
-<li>50%</li>
-</ol></li>
-<li><ol start="3" type="A">
-<li>70%</li>
-</ol></li>
-<li><ol start="4" type="A">
-<li>95%</li>
-</ol></li>
-</ul>
-<p><a href="https://www.technologyreview.com/2022/09/20/1059709/youtube-algorithm-recommendations/">Source: MIT Technology Review</a></p>
-</section>
-<section id="what-is-a-recommender-system" class="slide level2 center">
-<h2>What is a Recommender System?</h2>
-<p>A recommender or a recommendation system recommends a particular product or service to users they are likely to consume.</p>
+<section class="slide level2 center">
 
-<img data-src="img/recommendation_system.png" class="r-stretch"></section>
-<section id="examples-of-recommender-systems" class="slide level2 center">
-<h2>Examples of Recommender Systems</h2>
+<!-- 
+## Announcements 
+
+- Midterm 2 is next week (Nov 14/15)
+- More information on Midterm 2, including a practice midterm will be released later tonight
+- Reminder: Please double check your Midterm 2 CBTF booking!
+ -->
+</section>
+<section id="recap-recommender-systems" class="slide level2 center">
+<h2>Recap: Recommender Systems</h2>
+<p><strong>How the heck did I split the data last class!?</strong></p>
+</section>
+<section id="beyond-error-rate-in-recommender-systems" class="slide level2 center">
+<h2>Beyond Error Rate in Recommender Systems</h2>
 <ul>
-<li>Amazon</li>
-<li>Netflix</li>
-<li>Tinder</li>
-<li>Facebook</li>
-<li>etc…</li>
+<li>If a system gives the best RMSE it doesn’t necessarily mean that it’s going to give best recommendations.</li>
+<li>In recommendation systems we do not have ground truth in the sense that there is no notion of “perfect” recommendations.</li>
+<li>Training your model and evaluating it offline is not ideal.</li>
 </ul>
-<p>What should be shown to the user so they buy more products/spend more time on the app/etc…</p>
 </section>
-<section id="ethics-of-recommender-systems" class="slide level2 center">
-<h2>Ethics of Recommender Systems</h2>
-<p>We should be very mindful of the drawbacks of relying on recommender systems.</p>
-<p><strong>What are some ethical considersations of recommender systems?</strong></p>
+<section id="beyond-error-rate-in-recommender-systems-1" class="slide level2 center">
+<h2>Beyond Error Rate in Recommender Systems</h2>
+<ul>
+<li>Other aspects such as simplicity, interpretation, code maintainability are equally (if not more) important than best validation error.</li>
+<li>Winning system of Netflix Challenge was never adopted.
+<ul>
+<li>Big mess of ensembles was not really maintainable</li>
+</ul></li>
+<li>There are also other considerations:
+<ul>
+<li>diversity</li>
+<li>freshness</li>
+<li>trust</li>
+<li>persistence</li>
+</ul></li>
+</ul>
 </section>
-<section id="what-comprises-a-recommender-system" class="slide level2 center">
-<h2>What comprises a recommender system?</h2>
-<p>What does the problem formulation look like?</p>
-<p>What tools would/should we use to create a recommender system?</p>
-</section>
-<section id="notebook-for-lecture-17" class="slide level2 center">
-<h2>Notebook for Lecture 17</h2>
-<p><a href="https://ubc-cs.github.io/cpsc330-2025S1/lectures/notes/17_recommender-systems.html">You can follow along here</a>!</p>
-</section>
-<section id="break" class="slide level2 center">
-<h2>Break</h2>
-<p>Let’s take a 10 min break</p>
-</section>
-<section id="iclicker-exercise-17.1" class="slide level2 center">
-<h2>iClicker Exercise 17.1</h2>
+<section id="iclicker-exercise-17.2" class="slide level2 center">
+<h2>iClicker Exercise 17.2</h2>
 <p><strong>Select all of the following statements which are True (iClicker)</strong></p>
 <ul>
 <li><ol type="A">
-<li>In the context of recommendation systems, the shapes of validation utility matrix and train utility matrix are the same.</li>
+<li>In content-based filtering we leverage available item features in addition to similarity between users.</li>
 </ol></li>
 <li><ol start="2" type="A">
-<li>RMSE perfectly captures what we want to measure in the context of recommendation systems.</li>
+<li>In content-based filtering you represent each user in terms of known features of items.</li>
 </ol></li>
 <li><ol start="3" type="A">
-<li>It would be reasonable to impute missing values in the utility matrix by taking the average of the ratings given to an item by similar users.</li>
+<li>In the set up of content-based filtering we discussed, if you have a new movie, you would have problems predicting ratings for that movie.</li>
 </ol></li>
 <li><ol start="4" type="A">
-<li>In KNN type imputation, if a user has not rated any items yet, a reasonable strategy would be recommending them the most popular item.</li>
+<li>In content-based filtering if a user has a number of ratings in the training utility matrix but does not have any ratings in the validation utility matrix then we won’t be able to calculate RMSE for the validation utility matrix.</li>
 </ol></li>
 </ul>
-
-
 </section>
+<section>
+<section id="introduction-to-natural-language-processing" class="title-slide slide level1 center">
+<h1>Introduction to Natural Language Processing</h1>
+<p>Natural Language Processing (NLP) is a branch of machine learning focused on enabling computers to understand, interpret, and generate human language.</p>
+</section>
+<section id="motivation-and-context" class="slide level2 center">
+<h2>Motivation and Context</h2>
+<ul>
+<li>Do large language models, such as ChatGPT, “understand” your questions to some extent and provide useful responses?</li>
+<li>What is required for a machine to “understand” language?</li>
+<li>So far we have been talking about sentence or document representations.</li>
+<li>Today, we’ll go one step back and talk about word representations.</li>
+</ul>
+</section>
+<section id="referential-ambiguity" class="slide level2 center">
+<h2>Referential Ambiguity</h2>
+<p>Let’s start with this picture:</p>
+
+<img data-src="img/referential_ambiguity.png" class="r-stretch"><ul>
+<li><p>How do we know what the <code>it</code> is referring to?</p></li>
+<li><p>How do we tell an algorithm that?</p></li>
+</ul>
+</section>
+<section id="activity-context-and-word-meaning" class="slide level2 center">
+<h2>Activity: Context and word meaning</h2>
+<p>Pair up with the person next to you and try to guess the meanings of two made-up words: <code>flibbertigibbet</code> and <code>groak</code>.</p>
+
+<img data-src="img/flibbertigibbet.png" class="r-stretch"><p>Attribution: Thanks to ChatGPT 4o on Wed Nov.&nbsp;6, 2024!</p>
+</section>
+<section id="demo" class="slide level2 center">
+<h2>Demo</h2>
+<p><a href="https://ubc-cs.github.io/cpsc330-2025S1/lectures/notes/18_natural-language-processing.html">You can follow along here</a>!</p>
+
+
+</section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <p><img src="img/UBC-CS-logo.png" class="slide-logo"></p>

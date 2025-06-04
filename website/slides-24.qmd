@@ -8,6 +8,7 @@ format:
       smaller: true
       center: true
       logo: img/UBC-CS-logo.png
+      theme: dracula
       resources:
         - data/
         - img/        

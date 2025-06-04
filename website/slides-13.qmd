@@ -7,10 +7,11 @@ format:
         html-math-method: plain
         slide-number: true
         slide-level: 2
-        theme:
-          - slides.scss
         center: true
         logo: img/UBC-CS-logo.png
+        theme: 
+            - dracula
+            - slides.scss
         resources:
           - data/
           - img/
@@ -26,6 +27,36 @@ editor:
 - Midterm 1 results will be out tonight (as soon as I get home!)
     - Viewing sessions (in the CBTF) will be next week
 -->
+
+## Announcements
+
+## Course Feedback 1
+
+![](img/firas/2025S_survey/01_structure.png){fig-align="center"}
+
+## Course Feedback 2
+
+![](img/firas/2025S_survey/02_lectures.png){fig-align="center"}
+
+## Course Feedback 3
+
+![](img/firas/2025S_survey/03_pace.png){fig-align="center"}
+
+## Course Feedback 4
+
+![](img/firas/2025S_survey/04_labs.png){fig-align="center"}
+
+## Course Feedback 5
+
+![](img/firas/2025S_survey/05_videos.png){fig-align="center"}
+
+## Course Feedback 6
+
+![](img/firas/2025S_survey/06_TAhours.png){fig-align="center"}
+
+## Course Feedback 7
+
+![](img/firas/2025S_survey/07_overall.png){fig-align="center"}
 
 ## iClicker Exercise 14.0
 

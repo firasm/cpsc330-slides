@@ -6,10 +6,10 @@
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-8ea72dc5fed832574809a9c94082fbbb.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.6.40">
 
-  <title>CPSC 330 Slides – CPSC 330 Lecture 13: Feature importances</title>
+  <title>CPSC 330 Slides – CPSC 330 Lecture 13: Feature Engineering and Selection</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -29,7 +29,7 @@
     }
     .display.math{display: block; text-align: center; margin: 0.5rem auto;}
   </style>
-  <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto-bbe7401fe57d4b791b917637bb662036.css">
+  <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto-d6a2e637423beed6a318cacc3341e7d6.css">
   <link href="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -122,104 +122,188 @@
     }
   </style>
 </head>
-<body class="quarto-light">
+<body class="quarto-dark">
   <div class="reveal">
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">CPSC 330 Lecture 13: Feature importances</h1>
+  <h1 class="title">CPSC 330 Lecture 13: Feature Engineering and Selection</h1>
 
 <div class="quarto-title-authors">
 </div>
 
 </section>
+<section class="slide level2 center">
+
+<!-- 
+## Announcements 
+
+- HW5 is due next week Monday. Make use of office hours and tutorials this week.
+- CPSC 330 final exam window (in the CBTF) will be Dec. 17-19
+- Midterm 1 results will be out tonight (as soon as I get home!)
+    - Viewing sessions (in the CBTF) will be next week
+-->
+</section>
 <section id="announcements" class="slide level2 center">
 <h2>Announcements</h2>
-<ul>
-<li>HW4 grades are released</li>
-<li>HW5 is due next week Monday. Make use of office hours and tutorials this week.</li>
-</ul>
 </section>
-<section id="scenario-1-which-model-would-you-pick" class="slide level2 center">
-<h2>Scenario 1: Which model would you pick</h2>
-<p>Predicting whether a patient is likely to develop diabetes based on features such as age, blood pressure, glucose levels, and BMI. You have two models:</p>
-<ul>
-<li>LGBM which results in 0.9 f1 score</li>
-<li>Logistic regression which results in 0.84 f1 score</li>
-</ul>
-<p>Which model would you pick? Why?</p>
-</section>
-<section id="scenario-2" class="slide level2 center">
-<h2>Scenario 2</h2>
-<p>Predicting whether a user will purchase a product next based on their browsing history, previous purchases, and click behavior. You have two models:</p>
-<ul>
-<li>LGBM which results in 0.9 F1 score</li>
-<li>Logistic regression which results in 0.84 F1 score</li>
-</ul>
-<p>Which model would you pick? Why?</p>
-</section>
-<section id="transparency" class="slide level2 center">
-<h2>Transparency</h2>
-<ul>
-<li>In many domains understanding the relationship between features and predictions is critical for trust and regulatory compliance.</li>
-</ul>
-<h3 id="feature-importances">Feature importances</h3>
-<ul>
-<li>How does the output depend upon the input?</li>
-<li>How do the predictions change as a function of a particular feature?</li>
-</ul>
+<section id="course-feedback-1" class="slide level2 center">
+<h2>Course Feedback 1</h2>
+
+<img data-src="img/firas/2025S_survey/01_structure.png" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="course-feedback-2" class="slide level2 center">
+<h2>Course Feedback 2</h2>
+
+<img data-src="img/firas/2025S_survey/02_lectures.png" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="course-feedback-3" class="slide level2 center">
+<h2>Course Feedback 3</h2>
+
+<img data-src="img/firas/2025S_survey/03_pace.png" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="course-feedback-4" class="slide level2 center">
+<h2>Course Feedback 4</h2>
+
+<img data-src="img/firas/2025S_survey/04_labs.png" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="course-feedback-5" class="slide level2 center">
+<h2>Course Feedback 5</h2>
+
+<img data-src="img/firas/2025S_survey/05_videos.png" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="course-feedback-6" class="slide level2 center">
+<h2>Course Feedback 6</h2>
+
+<img data-src="img/firas/2025S_survey/06_TAhours.png" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="course-feedback-7" class="slide level2 center">
+<h2>Course Feedback 7</h2>
+
+<img data-src="img/firas/2025S_survey/07_overall.png" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="iclicker-exercise-14.0" class="slide level2 center">
+<h2>iClicker Exercise 14.0</h2>
+<p><strong>iClicker cloud join link: <a href="https://join.iclicker.com/YJHS">https://join.iclicker.com/YJHS</a></strong></p>
+<p>Suppose you are working on a machine learning project. If you have to prioritize one of the following in your project which of the following would it be?</p>
+<ol type="A">
+<li>The quality and size of the data</li>
+<li>Most recent deep neural network model</li>
+<li>Most recent optimization algorithm</li>
+</ol>
 </section>
 <section>
-<section id="how-to-get-feature-importances" class="title-slide slide level1 center">
-<h1>How to get feature importances?</h1>
+<section id="feature-engineering-motivation" class="title-slide slide level1 center">
+<h1>Feature engineering motivation</h1>
 
 </section>
-<section id="correlations" class="slide level2 center">
-<h2>Correlations</h2>
-<div class="columns">
-<div class="column" style="width:60%;">
-<p><img data-src="img/feat_corr.png"></p>
-</div><div class="column" style="width:40%;">
+<section id="discussion-question" class="slide level2 center">
+<h2>Discussion question</h2>
 <ul>
-<li>What are some limitations of correlations?</li>
-</ul>
-</div></div>
-</section>
-<section id="interepreting-coefficients" class="slide level2 center">
-<h2>Interepreting coefficients</h2>
+<li>Suppose we want to predict whether a flight will arrive on time or be delayed. We have a dataset with the following information about flights:
 <ul>
-<li>Linear models are interpretable because you get coefficients associated with different features.</li>
-<li>Each coefficient represents the estimated impact of a feature on the target variable, assuming all other features are held constant.</li>
-<li>In a <code>Ridge</code> model,
-<ul>
-<li>A positive coefficient indicates that as the feature’s value increases, the predicted value also increases.
-<ul>
-<li>A negative coefficient indicates that an increase in the feature’s value leads to a decrease in the predicted value.</li>
-</ul></li>
+<li>Departure Time</li>
+<li>Expected Duration of Flight (in minutes)</li>
 </ul></li>
 </ul>
+<p>Upon analyzing the data, you notice a pattern: flights tend to be delayed more often during the evening rush hours. What feature could be valuable to add for this prediction task? <br><br><br><br></p>
 </section>
-<section id="interepreting-coefficients-1" class="slide level2 center">
-<h2>Interepreting coefficients</h2>
+<section id="garbage-in-garbage-out." class="slide level2 center">
+<h2>Garbage in, garbage out.</h2>
 <ul>
-<li>When we have different types of preprocessed features, what challenges you might face in interpreting them?
+<li>Model building is interesting. But in your machine learning projects, you’ll be spending more than half of your time on data preparation, feature engineering, and transformations.</li>
+<li>The <em>quality</em> of the data is important. Your model is only as good as your data.</li>
+</ul>
+</section>
+<section id="activity-measuring-quality-of-the-data" class="slide level2 center">
+<h2>Activity: Measuring quality of the data</h2>
 <ul>
-<li>Ordinally encoded features</li>
-<li>One-hot encoded features</li>
-<li>Scaled numeric features</li>
+<li>Discuss some attributes of good- and bad-quality data</li>
+</ul>
+</section>
+<section id="what-is-feature-engineering" class="slide level2 center">
+<h2>What is feature engineering?</h2>
+<blockquote>
+<b>Feature engineering</b> is the process of transforming raw data into features that better represent the underlying problem to the predictive models, resulting in improved model accuracy on unseen data.<br> - <a href="https://machinelearningmastery.com">Jason Brownlee</a>
+</blockquote>
+<ul>
+<li>Better features: more flexibility, higher score, we can get by with simple and more interpretable models.</li>
+<li>If your features, i.e., representation is bad, whatever fancier model you build is not going to help.</li>
+</ul>
+</section>
+<section id="some-quotes-on-feature-engineering" class="slide level2 center">
+<h2>Some quotes on feature engineering</h2>
+<p>A quote by Pedro Domingos <a href="https://homes.cs.washington.edu/~pedrod/papers/cacm12.pdf">A Few Useful Things to Know About Machine Learning</a></p>
+<blockquote>
+… At the end of the day, some machine learning projects succeed and some fail. What makes the difference? Easily the most important factor is the features used.
+</blockquote>
+</section>
+<section id="some-quotes-on-feature-engineering-1" class="slide level2 center">
+<h2>Some quotes on feature engineering</h2>
+<p>A quote by Andrew Ng, <a href="https://ai.stanford.edu/~ang/slides/DeepLearning-Mar2013.pptx">Machine Learning and AI via Brain simulations</a></p>
+<blockquote>
+Coming up with features is difficult, time-consuming, requires expert knowledge. “Applied machine learning” is basically feature engineering.
+</blockquote>
+</section>
+<section id="better-features-usually-help-more-than-a-better-model" class="slide level2 smaller center">
+<h2>Better features usually help more than a better model</h2>
+<ul>
+<li>Good features would ideally:
+<ul>
+<li>capture most important aspects of the problem</li>
+<li>allow learning with few examples</li>
+<li>generalize to new scenarios.</li>
+</ul></li>
+<li>There is a trade-off between simple and expressive features:
+<ul>
+<li>With simple features overfitting risk is low, but scores might be low.</li>
+<li>With complicated features scores can be high, but so is overfitting risk.</li>
 </ul></li>
 </ul>
 </section>
-<section id="group-work-class-demo-live-coding-if-time-permits" class="slide level2 center">
-<h2>Group Work: Class Demo &amp; Live Coding (if time permits)</h2>
-<p>For this demo, each student should <a href="https://github.com/new?template_name=lecture13_demo&amp;template_owner=ubc-cpsc330">click this link</a> to create a new repo in their accounts, then clone that repo locally to follow along with the demo from today.</p>
-<p><br> <br> <br></p>
-<p>If you really don’t want to create a repo,</p>
+<section id="the-best-features-may-be-dependent-on-the-model-you-use" class="slide level2 smaller center">
+<h2>The best features may be dependent on the model you use</h2>
 <ul>
-<li>Navigate to the <code>cpsc330-2025S1</code> repo</li>
-<li>run <code>git pull</code> to pull the latest files in the course repo</li>
-<li>Look for the demo file <a href="https://github.com/orgs/ubc-cpsc330/repositories">here</a></li>
+<li>Examples:
+<ul>
+<li>For counting-based methods like decision trees separate relevant groups of variable values
+<ul>
+<li>Discretization makes sense</li>
+</ul></li>
+<li>For distance-based methods like KNN, we want different class labels to be “far”.
+<ul>
+<li>Standardization</li>
+</ul></li>
+<li>For regression-based methods like linear regression, we want targets to have a linear dependency on features.</li>
+</ul></li>
 </ul>
+</section>
+<section id="motivating-feature-engineering" class="slide level2 center">
+<h2>Motivating Feature Engineering</h2>
+<p>Questions:</p>
+<ul>
+<li>What are two possible ways we could “engineer” features?
+<ul>
+<li>Think broadly and philosophically rathern than an implementation…</li>
+</ul></li>
+</ul>
+<!-- 
+## [Demo of feature engineering and selection](https://github.com/UBC-CS/cpsc330-2025S1/blob/main/lectures/102-Varada-lectures/class_demos/demo_14-feature-engineering-selection.ipynb)
+
+## Domain-specific transformations
+
+In some domains there are natural transformations to do:
+- Spectrograms (sound data)
+- Wavelets (image data)
+- Convolutions 
+
+![](img/spectogram.png)
+
+[Source](https://en.wikipedia.org/wiki/Spectrogram) 
+
+
+## (iClicker) Exercise 14.1 
+
+**iClicker cloud join link: [https://join.iclicker.com/YJHS](https://join.iclicker.com/YJHS)**
+
+**Select all of the following statements which are TRUE.**
+
+- (A) Simple association-based feature selection approaches do not take into account the interaction between features.
+- (B) You can carry out feature selection using linear models by pruning the features which have very small weights (i.e., coefficients less than a threshold).
+- (C) The order of features removed given by `rfe.ranking_` is the same as the order of original feature importances given by the model.   -->
 
 
 </section></section>

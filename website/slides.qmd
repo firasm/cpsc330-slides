@@ -13,5 +13,5 @@ listing:
     field-display-names:
       description-short: Description
     contents:
-      - slides-*.qmd
+      - slides.scss-*.qmd
 ---

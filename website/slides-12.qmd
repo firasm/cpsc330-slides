@@ -9,6 +9,7 @@ format:
         slide-level: 2
         center: true
         logo: img/UBC-CS-logo.png
+        theme: dracula
         resources:
           - data/
           - img/
@@ -82,7 +83,7 @@ You had a midterm already a couple of weeks ago, I'd like some feedback on how t
 
 ## Class Survey
 
-I'd love to hear how you think lectures are going, and how the course is going overall: [bit.ly/cpsc330_24W1](https://bit.ly/cpsc330_2025S).
+I'd love to hear how you think lectures are going, and how the course is going overall: [bit.ly/cpsc330_25S](https://bit.ly/cpsc330_2025S).
 
 ## (iClicker) Midterm poll {.smaller}
 

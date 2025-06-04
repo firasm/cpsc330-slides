@@ -10,6 +10,7 @@ format:
     smaller: true
     center: true
     logo: img/UBC-CS-logo.png
+    theme: dracula
     resources:
       - data/
       - img/  
@@ -208,7 +209,7 @@ $$ FPR  = \frac{FP}{FP + TN}$$
 [Source](https://developers.google.com/machine-learning/crash-course/classification/roc-and-auc)
 
 ## Questions for you {.smaller}
-
+<!-- 
 :::: {.columns}
 :::{.column width="60%"}
 ![](img/roc-curve-which-model.png)
@@ -216,7 +217,7 @@ $$ FPR  = \frac{FP}{FP + TN}$$
 :::{.column width="40%"}
 - Which model would you pick? 
 :::
-::::
+:::: -->
 
 ## iClicker Exercise 9.2
 
@@ -243,7 +244,7 @@ Consider the points A, B, and C in the following diagram, each representing a th
 :::: {.columns}
 
 :::{.column width="50%"}
-![](img/auc_abc)
+![](img/auc_abc.png)
 :::
 
 :::{.column width="50%"}
