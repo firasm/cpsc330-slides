@@ -151,7 +151,7 @@
     "href": "slides-09.html#questions-for-you-2",
     "title": "CPSC 330 Lecture 9: Classification Metrics",
     "section": "Questions for you",
-    "text": "Questions for you\n\n\n\n\n\nWhich model would you pick?"
+    "text": "Questions for you"
   },
   {
     "objectID": "slides-09.html#iclicker-exercise-9.2",
@@ -1327,7 +1327,7 @@
     "href": "slides-13.html#announcements",
     "title": "CPSC 330 Lecture 13: Feature Engineering and Selection",
     "section": "Announcements",
-    "text": "Announcements"
+    "text": "Announcements\n\nMidterm 1 scores are now out!\n\nThe class average was 80% - nice work everyone!\nViewing sessions (in the CBTF) will be next week.\nRegrade requests must be submitted within the CBTF\n\nHW5 is due tomorrow!"
   },
   {
     "objectID": "slides-13.html#course-feedback-1",
@@ -2616,5 +2616,12 @@
     "title": "CPSC 330 Lecture 20: Survival analysis",
     "section": "Announcements",
     "text": "Announcements"
+  },
+  {
+    "objectID": "slides-13.html#cpsc-330-final-exam",
+    "href": "slides-13.html#cpsc-330-final-exam",
+    "title": "CPSC 330 Lecture 13: Feature Engineering and Selection",
+    "section": "CPSC 330 Final Exam",
+    "text": "CPSC 330 Final Exam\n\nThe final exam will be self-scheduled in the CBTF\nExam window: Monday June 23 and Tuesday June 24th\n\nTypically, sessions will be available at 9 AM, 12 PM, 3 PM and sometimes, 6 PM.\n\nI will announce details on booking final exams in the CBTF soon…"
   }
 ]

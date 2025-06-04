@@ -26,35 +26,6 @@ editor:
 - HW6 will be released today. It'll be due next week Wednesday.
  -->
 
-## Finishing up Feature Selection
-
-Last class we distinguished between Model-based selection and recursive feature feature elimination (RFE).
-
-Let's chat a bit more about [Recursive Feature Elimination with Cross-validation](https://ubc-cs.github.io/cpsc330-2025S1/lectures/notes/14_feature-engineering-selection.html#recursive-feature-elimination-rfe).
-
-## Pause and Reflect 
-
-We are now just over half-way through CPSC 330!
-
-You had a midterm already a couple of weeks ago, I'd like some feedback on how things are going in class (as the instructor).
-
-## Class Survey
-
-I'd love to hear how you think lectures are going, and how the course is going overall: [bit.ly/cpsc330_24W1](https://bit.ly/cpsc330_24W1).
-
-![](img/24W1_survey.png)
-
-## (iClicker) Midterm poll {.smaller}
-
-**Select all of the following statements which are TRUE.**
-
-- (A) I'm happy with my progress and learning in this course.
-- (B) I find the course content interesting, but the pace is a bit overwhelming. Balancing this course with other responsibilities is challenging
-- (C) I'm doing okay, but I feel stressed and worried about upcoming assessments.
-- (D) I'm confused about some concepts and would appreciate more clarification or review sessions.
-- (E) I'm struggling to keep up with the material. I am not happy with my learning in this course and my morale is low ☹️.
-
-
 ## Supervised learning {.smaller}
 
 - Training data comprises a set of observations ($X$) and their corresponding targets ($y$). 
@@ -70,7 +41,6 @@ I'd love to hear how you think lectures are going, and how the course is going o
 - Unsupervised learning could be used to group similar things together in $X$ or to find underlying structure in the data. 
 
 ![](img/unsup-learning.png)
-
 
 ## Clustering Activity {.smaller}
 

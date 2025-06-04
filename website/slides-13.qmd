@@ -4,10 +4,12 @@ description: "feature engineering, feature crosses, model-based selection, RFE"
 
 format:
     revealjs:
+        transition: fade
+        background-transition: fade
         html-math-method: plain
         slide-number: true
         slide-level: 2
-        center: true
+        center: false
         logo: img/UBC-CS-logo.png
         theme: 
             - dracula
@@ -19,16 +21,21 @@ format:
 editor:
   render-on-save: true
 ---
-<!-- 
+
 ## Announcements 
 
-- HW5 is due next week Monday. Make use of office hours and tutorials this week.
-- CPSC 330 final exam window (in the CBTF) will be Dec. 17-19
-- Midterm 1 results will be out tonight (as soon as I get home!)
-    - Viewing sessions (in the CBTF) will be next week
--->
+- Midterm 1 scores are now out!
+    - The class average was 80% - nice work everyone!
+    - Viewing sessions (in the CBTF) will be next week.
+    - Regrade requests must be submitted within the CBTF
+- HW5 is due tomorrow!
 
-## Announcements
+## CPSC 330 Final Exam
+
+- The final exam will be self-scheduled in the CBTF
+- Exam window: Monday June 23 and Tuesday June 24th
+    - Typically, sessions will be available at 9 AM, 12 PM, 3 PM and sometimes, 6 PM.
+- I will announce details on booking final exams in the CBTF soon...
 
 ## Course Feedback 1
 
@@ -58,6 +65,39 @@ editor:
 
 ![](img/firas/2025S_survey/07_overall.png){fig-align="center"}
 
+## Finishing up Feature importances
+
+Why do we care about feature importances so much?
+
+- Identify features that are not useful and maybe remove them.
+- Get guidance on what new data to collect.
+  - New features related to useful features -> better results.
+  - Don’t bother collecting useless features -> save resources.
+
+## Finishing up Feature importances
+
+- Help explain why the model is making certain predictions.
+  - Debugging, if the model is behaving strangely.
+  - Regulatory requirements.
+  - Fairness / bias. See this.
+  - Keep in mind this can be used on deployment predictions!
+
+## Extending SHAP
+
+- Can also be used to explain text classification and image classification!
+
+## Extending SHAP 
+
+![](../img/shap_image_explainer.png)
+    
+[Source](https://github.com/slundberg/shap)
+
+## Extending SHAP
+
+![](../img/shap_image_explainer.png)
+
+- Example: In the picture below, red pixels represent positive SHAP values that increase the probability of the class, while blue pixels represent negative SHAP values the reduce the probability of the class. 
+
 ## iClicker Exercise 14.0
 
 **iClicker cloud join link: [https://join.iclicker.com/YJHS](https://join.iclicker.com/YJHS)**
@@ -83,8 +123,15 @@ Upon analyzing the data, you notice a pattern: flights tend to be delayed more o
 - Model building is interesting. But in your machine learning projects, you'll be spending more than half of your time on data preparation, feature engineering, and transformations.
 - The _quality_ of the data is important. Your model is only as good as your data. 
 
-## Activity: Measuring quality of the data 
-- Discuss some attributes of good- and bad-quality data
+## Activity: Measuring quality of the data
+
+- What are some properties of "good" or "bad" data?
+- Along what possible dimensions could we "measure" goodness of data?
+
+| Dimension | Good Data | Bad Data | metric to measure |
+| --------- | --------- | -------- | ----------------- |
+| | |||
+| | |||
 
 ## What is feature engineering?  
 
@@ -92,7 +139,6 @@ Upon analyzing the data, you notice a pattern: flights tend to be delayed more o
 <b>Feature engineering</b> is the process of transforming raw data into features that better represent the underlying problem to the predictive models, resulting in improved model accuracy on unseen data.<br> 
 - [Jason Brownlee](https://machinelearningmastery.com)
 </blockquote> 
-
 
 - Better features: more flexibility, higher score, we can get by with simple and more interpretable models. 
 - If your features, i.e., representation is bad, whatever fancier model you build is not going to help.
@@ -138,10 +184,24 @@ Coming up with features is difficult, time-consuming, requires expert knowledge.
 Questions:
 
 - What are two possible ways we could "engineer" features?
-    - Think broadly and philosophically rathern than an implementation...
+    - Think broadly and philosophically rather than an implementation...
 
-<!-- 
-## [Demo of feature engineering and selection](https://github.com/UBC-CS/cpsc330-2025S1/blob/main/lectures/102-Varada-lectures/class_demos/demo_14-feature-engineering-selection.ipynb)
+## Break
+
+Let's take a break!
+
+![](img/eva-coffee.png){fig-align="center"}
+
+
+## Group Work: Class Demo & Live Coding
+
+For this demo, each student should [click this link](https://github.com/new?template_name=lecture13_demo&template_owner=ubc-cpsc330) to create a new repo in their accounts, then clone that repo locally to follow along with the demo from today.
+
+## Break
+
+Let's take a break!
+
+![](img/eva-coffee.png){fig-align="center"}
 
 ## Domain-specific transformations
 
@@ -154,6 +214,10 @@ In some domains there are natural transformations to do:
 
 [Source](https://en.wikipedia.org/wiki/Spectrogram) 
 
+## Developing intuition about Feature Engineering
+
+...
+
 
 ## (iClicker) Exercise 14.1 
 
@@ -163,4 +227,4 @@ In some domains there are natural transformations to do:
 
 - (A) Simple association-based feature selection approaches do not take into account the interaction between features.
 - (B) You can carry out feature selection using linear models by pruning the features which have very small weights (i.e., coefficients less than a threshold).
-- (C) The order of features removed given by `rfe.ranking_` is the same as the order of original feature importances given by the model.   -->
+- (C) The order of features removed given by `rfe.ranking_` is the same as the order of original feature importances given by the model.  

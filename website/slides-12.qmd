@@ -119,3 +119,37 @@ You might need to install [SHAP](https://shap.readthedocs.io/en/latest/example_n
 ```
 conda install -c conda-forge shap
 ```
+<!-- 
+## Extending SHAP
+
+- Can also be used to explain text classification and image classification!
+
+## Extending SHAP 
+
+![](../img/shap_image_explainer.png)
+    
+[Source](https://github.com/slundberg/shap)
+
+## Extending SHAP
+
+![](../img/shap_image_explainer.png)
+
+- Example: In the picture below, red pixels represent positive SHAP values that increase the probability of the class, while blue pixels represent negative SHAP values the reduce the probability of the class. 
+
+## Finishing up Feature importances
+
+Why do we care about feature importances so much?
+
+- Identify features that are not useful and maybe remove them.
+- Get guidance on what new data to collect.
+  - New features related to useful features -> better results.
+  - Don’t bother collecting useless features -> save resources.
+
+## Finishing up Feature importances
+
+- Help explain why the model is making certain predictions.
+  - Debugging, if the model is behaving strangely.
+  - Regulatory requirements.
+  - Fairness / bias. See this.
+  - Keep in mind this can be used on deployment predictions!
+ -->
