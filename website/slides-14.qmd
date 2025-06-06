@@ -113,7 +113,6 @@ Select all of the following statements which are **True**
 - (C) K-means terminates when the centroid locations do not change between iterations.
 - (D) K-Means is guaranteed to find the optimal solution. 
 
-
 # Choosing k
 
 ## The Elbow Method
@@ -155,8 +154,10 @@ Select all of the following statements which are **True**
 - (D) The elbow plot is not a reliable method to obtain the optimal number of clusters in all cases. 
 - (E) The Silhouette scores ranges between -1 and 1 where higher scores indicates better cluster assignments.  
 
+## Group Work: Class Demo & Live Coding
 
-<!-- 
-# [Class demo](https://github.com/UBC-CS/cpsc330-2025S1/blob/main/lectures/102-Varada-lectures/class_demos/demo_15-k-means.ipynb)
- -->
-s
+**Super cool Demo!**
+
+For this demo, each student should [click this link](https://github.com/new?template_name=lecture14_demo&template_owner=ubc-cpsc330) to create a new repo in their accounts, then clone that repo locally to follow along with the demo from today.
+
+All credit to Dr. Varada Kolhatkar for putting this together!

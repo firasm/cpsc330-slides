@@ -64,23 +64,7 @@ plt.rcParams["figure.figsize"] = (5, 4)
 pd.set_option("display.max_colwidth", 0)
 ```
 
-## Super cool Demo! 
-
-[You can download and checkout the Demo here](https://github.com/UBC-CS/cpsc330-2025S1/blob/main/lectures/102-Varada-lectures/class_demos/demo_15-k-means.ipynb).
-
-All credit to Dr. Varada Kolhatkar for putting this together!
-
-## Recap: iClicker Exercise 15.3 {.smaller}
-
-Select all of the following statements which are **True** 
-
-- (A) If you train K-Means with `n_clusters`= the number of examples, the inertia value will be 0. 
-- (B) The elbow plot shows the tradeoff between within cluster distance and the number of clusters.
-- (C) Unlike the Elbow method, the Silhouette method is not dependent on the notion of cluster centers.
-- (D) The elbow plot is not a reliable method to obtain the optimal number of clusters in all cases. 
-- (E) The Silhouette scores ranges between -1 and 1 where higher scores indicates better cluster assignments.  
-
-## iClicker Exercise 16.1 
+## iClicker Exercise 15.1 
 
 **Select all of the following statements which are TRUE.**
 
@@ -172,7 +156,9 @@ plot_k_means_dbscan_comparison(X_varied)
 
 ## Break
 
-Let's take a 10-min break!
+Let's take a break!
+
+![](img/eva-coffee.png){fig-align="center"}
 
 ## Dendrogram
 
@@ -231,6 +217,17 @@ plot_dendrogram_clusters(X, linkage_array, hier_labels1, title="flattened with m
 | **Handling noise**     | | | 
 | **Examples**           | | |
 
+## Break
+
+Let's take a break!
+
+![](img/eva-coffee.png){fig-align="center"}
+
+## Group Work: Class Demo & Live Coding
+
+For this demo, each student should [click this link](https://github.com/new?template_name=lecture15_demo&template_owner=ubc-cpsc330) to create a new repo in their accounts, then clone that repo locally to follow along with the demo from today.
+
+All credit to Dr. Varada Kolhatkar for putting this together!
 
 <!-- 
 # [Class demo](https://github.com/UBC-CS/cpsc330-2025S1/blob/main/lectures/102-Varada-lectures/class_demos/demo_16-dbscan-hierarchical.ipynb) 
