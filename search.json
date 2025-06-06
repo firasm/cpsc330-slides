@@ -546,25 +546,11 @@
     "text": "Intuition of C and gamma in SVM RBF\n\nC (Regularization): Controls the trade-off between perfect training accuracy and having a simpler decision boundary.\n\nHigh C: Strict, complex boundary (overfitting risk).\nLow C: More errors allowed, smoother boundary (generalizes better).\n\nGamma (Kernel Width): Controls the influence of individual data points.\n\nHigh Gamma: Points have local impact, complex boundary.\nLow Gamma: Points affect broader areas, smoother boundary.\n\nKey trade-off: Proper balance between C and gamma is crucial for avoiding overfitting or underfitting."
   },
   {
-    "objectID": "slides-15.html#super-cool-demo",
-    "href": "slides-15.html#super-cool-demo",
+    "objectID": "slides-15.html#iclicker-exercise-15.1",
+    "href": "slides-15.html#iclicker-exercise-15.1",
     "title": "CPSC 330 Lecture 15: DBSCAN, Hierarchical Clustering",
-    "section": "Super cool Demo!",
-    "text": "Super cool Demo!\nYou can download and checkout the Demo here.\nAll credit to Dr. Varada Kolhatkar for putting this together!"
-  },
-  {
-    "objectID": "slides-15.html#recap-iclicker-exercise-15.3",
-    "href": "slides-15.html#recap-iclicker-exercise-15.3",
-    "title": "CPSC 330 Lecture 15: DBSCAN, Hierarchical Clustering",
-    "section": "Recap: iClicker Exercise 15.3",
-    "text": "Recap: iClicker Exercise 15.3\nSelect all of the following statements which are True\n\n\nIf you train K-Means with n_clusters= the number of examples, the inertia value will be 0.\n\n\nThe elbow plot shows the tradeoff between within cluster distance and the number of clusters.\n\n\nUnlike the Elbow method, the Silhouette method is not dependent on the notion of cluster centers.\n\n\nThe elbow plot is not a reliable method to obtain the optimal number of clusters in all cases.\n\n\nThe Silhouette scores ranges between -1 and 1 where higher scores indicates better cluster assignments."
-  },
-  {
-    "objectID": "slides-15.html#iclicker-exercise-16.1",
-    "href": "slides-15.html#iclicker-exercise-16.1",
-    "title": "CPSC 330 Lecture 15: DBSCAN, Hierarchical Clustering",
-    "section": "iClicker Exercise 16.1",
-    "text": "iClicker Exercise 16.1\nSelect all of the following statements which are TRUE.\n\n\nSimilar to K-nearest neighbours, K-Means is a non parametric model.\n\n\nThe meaning of K in K-nearest neighbours and K-Means clustering is very similar.\n\n\nScaling of input features is crucial in clustering.\n\n\n\nIn clustering, it’s almost always a good idea to find equal-sized clusters."
+    "section": "iClicker Exercise 15.1",
+    "text": "iClicker Exercise 15.1\nSelect all of the following statements which are TRUE.\n\n\nSimilar to K-nearest neighbours, K-Means is a non parametric model.\n\n\nThe meaning of K in K-nearest neighbours and K-Means clustering is very similar.\n\n\nScaling of input features is crucial in clustering.\n\n\n\nIn clustering, it’s almost always a good idea to find equal-sized clusters."
   },
   {
     "objectID": "slides-15.html#shape-of-clusters",
@@ -634,7 +620,7 @@
     "href": "slides-15.html#break",
     "title": "CPSC 330 Lecture 15: DBSCAN, Hierarchical Clustering",
     "section": "Break",
-    "text": "Break\nLet’s take a 10-min break!"
+    "text": "Break\nLet’s take a break!"
   },
   {
     "objectID": "slides-15.html#dendrogram",
@@ -677,6 +663,20 @@
     "title": "CPSC 330 Lecture 15: DBSCAN, Hierarchical Clustering",
     "section": "Activity",
     "text": "Activity\n\nFill in the table below\n\n\n\n\n\n\n\n\n\n\nClustering Method\nKMeans\nDBSCAN\nHierarchical Clustering\n\n\n\n\nApproach\n\n\n\n\n\nHyperparameters\n\n\n\n\n\nShape of clusters\n\n\n\n\n\nHandling noise\n\n\n\n\n\nExamples"
+  },
+  {
+    "objectID": "slides-15.html#break-1",
+    "href": "slides-15.html#break-1",
+    "title": "CPSC 330 Lecture 15: DBSCAN, Hierarchical Clustering",
+    "section": "Break",
+    "text": "Break\nLet’s take a break!"
+  },
+  {
+    "objectID": "slides-15.html#group-work-class-demo-live-coding",
+    "href": "slides-15.html#group-work-class-demo-live-coding",
+    "title": "CPSC 330 Lecture 15: DBSCAN, Hierarchical Clustering",
+    "section": "Group Work: Class Demo & Live Coding",
+    "text": "Group Work: Class Demo & Live Coding\nFor this demo, each student should click this link to create a new repo in their accounts, then clone that repo locally to follow along with the demo from today.\nAll credit to Dr. Varada Kolhatkar for putting this together!"
   },
   {
     "objectID": "slides-02.html#announcements",
@@ -1971,7 +1971,14 @@
     "href": "slides-14.html#iclicker-exercise-15.3",
     "title": "CPSC 330 Lecture 14: K-Means",
     "section": "iClicker Exercise 15.3",
-    "text": "iClicker Exercise 15.3\nSelect all of the following statements which are True\n\n\nIf you train K-Means with n_clusters= the number of examples, the inertia value will be 0.\n\n\nThe elbow plot shows the tradeoff between within cluster distance and the number of clusters.\n\n\nUnlike the Elbow method, the Silhouette method is not dependent on the notion of cluster centers.\n\n\nThe elbow plot is not a reliable method to obtain the optimal number of clusters in all cases.\n\n\nThe Silhouette scores ranges between -1 and 1 where higher scores indicates better cluster assignments.\n\n\n\ns"
+    "text": "iClicker Exercise 15.3\nSelect all of the following statements which are True\n\n\nIf you train K-Means with n_clusters= the number of examples, the inertia value will be 0.\n\n\nThe elbow plot shows the tradeoff between within cluster distance and the number of clusters.\n\n\nUnlike the Elbow method, the Silhouette method is not dependent on the notion of cluster centers.\n\n\nThe elbow plot is not a reliable method to obtain the optimal number of clusters in all cases.\n\n\nThe Silhouette scores ranges between -1 and 1 where higher scores indicates better cluster assignments."
+  },
+  {
+    "objectID": "slides-14.html#group-work-class-demo-live-coding",
+    "href": "slides-14.html#group-work-class-demo-live-coding",
+    "title": "CPSC 330 Lecture 14: K-Means",
+    "section": "Group Work: Class Demo & Live Coding",
+    "text": "Group Work: Class Demo & Live Coding\nSuper cool Demo!\nFor this demo, each student should click this link to create a new repo in their accounts, then clone that repo locally to follow along with the demo from today.\nAll credit to Dr. Varada Kolhatkar for putting this together!"
   },
   {
     "objectID": "slides-18.html#announcements",

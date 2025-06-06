@@ -210,34 +210,8 @@
 -->
 
 <img data-src="slides-15_files/figure-revealjs/cell-2-output-1.png" class="r-stretch"></section>
-<section id="super-cool-demo" class="slide level2 center">
-<h2>Super cool Demo!</h2>
-<p><a href="https://github.com/UBC-CS/cpsc330-2025S1/blob/main/lectures/102-Varada-lectures/class_demos/demo_15-k-means.ipynb">You can download and checkout the Demo here</a>.</p>
-<p>All credit to Dr.&nbsp;Varada Kolhatkar for putting this together!</p>
-</section>
-<section id="recap-iclicker-exercise-15.3" class="slide level2 smaller center">
-<h2>Recap: iClicker Exercise 15.3</h2>
-<p>Select all of the following statements which are <strong>True</strong></p>
-<ul>
-<li><ol type="A">
-<li>If you train K-Means with <code>n_clusters</code>= the number of examples, the inertia value will be 0.</li>
-</ol></li>
-<li><ol start="2" type="A">
-<li>The elbow plot shows the tradeoff between within cluster distance and the number of clusters.</li>
-</ol></li>
-<li><ol start="3" type="A">
-<li>Unlike the Elbow method, the Silhouette method is not dependent on the notion of cluster centers.</li>
-</ol></li>
-<li><ol start="4" type="A">
-<li>The elbow plot is not a reliable method to obtain the optimal number of clusters in all cases.</li>
-</ol></li>
-<li><ol start="5" type="A">
-<li>The Silhouette scores ranges between -1 and 1 where higher scores indicates better cluster assignments.</li>
-</ol></li>
-</ul>
-</section>
-<section id="iclicker-exercise-16.1" class="slide level2 center">
-<h2>iClicker Exercise 16.1</h2>
+<section id="iclicker-exercise-15.1" class="slide level2 center">
+<h2>iClicker Exercise 15.1</h2>
 <p><strong>Select all of the following statements which are TRUE.</strong></p>
 <ul>
 <li><ol type="A">
@@ -302,7 +276,7 @@
 </section>
 <section id="dbscan-1" class="slide level2 center">
 <h2>DBSCAN</h2>
-<div id="bdb86f03" class="cell" data-execution_count="5">
+<div id="a045db5e" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a>X, y <span class="op">=</span> make_moons(n_samples<span class="op">=</span><span class="dv">200</span>, noise<span class="op">=</span><span class="fl">0.08</span>, random_state<span class="op">=</span><span class="dv">42</span>)</span>
 <span id="cb1-2"><a></a>dbscan <span class="op">=</span> DBSCAN(eps<span class="op">=</span><span class="fl">0.2</span>)</span>
 <span id="cb1-3"><a></a>dbscan.fit(X)</span>
@@ -337,7 +311,7 @@
 </li>
 <li>K-Means performs better compared to DBSCAN. But it has the benefit of knowing the value of <span class="math inline"><em>K</em></span> in advance.</li>
 </ul>
-<div id="5977926b" class="cell" data-execution_count="6">
+<div id="dac6d320" class="cell" data-execution_count="6">
 <div class="cell-output cell-output-stdout">
 <pre><code>[ 0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15]</code></pre>
 </div>
@@ -346,8 +320,9 @@
 <img data-src="slides-15_files/figure-revealjs/cell-7-output-2.png" class="r-stretch"></section>
 <section id="break" class="slide level2 center">
 <h2>Break</h2>
-<p>Let’s take a 10-min break!</p>
-</section>
+<p>Let’s take a break!</p>
+
+<img data-src="img/eva-coffee.png" class="quarto-figure quarto-figure-center r-stretch"></section>
 <section id="dendrogram" class="slide level2 center">
 <h2>Dendrogram</h2>
 <p>Definition: visual representation of a tree, in particular, the hierarchical representation of data…</p>
@@ -438,6 +413,16 @@
 </tr>
 </tbody>
 </table>
+</section>
+<section id="break-1" class="slide level2 center">
+<h2>Break</h2>
+<p>Let’s take a break!</p>
+
+<img data-src="img/eva-coffee.png" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="group-work-class-demo-live-coding" class="slide level2 center">
+<h2>Group Work: Class Demo &amp; Live Coding</h2>
+<p>For this demo, each student should <a href="https://github.com/new?template_name=lecture15_demo&amp;template_owner=ubc-cpsc330">click this link</a> to create a new repo in their accounts, then clone that repo locally to follow along with the demo from today.</p>
+<p>All credit to Dr.&nbsp;Varada Kolhatkar for putting this together!</p>
 <!-- 
 # [Class demo](https://github.com/UBC-CS/cpsc330-2025S1/blob/main/lectures/102-Varada-lectures/class_demos/demo_16-dbscan-hierarchical.ipynb) 
 -->
