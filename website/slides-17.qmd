@@ -29,7 +29,7 @@ editor:
 
 ## Recap: Recommender Systems
 
-**How the heck did I split the data last class!?**
+**How the heck did I split the data last time!?**
 
 ## Beyond Error Rate in Recommender Systems
 
@@ -88,4 +88,4 @@ Attribution: Thanks to ChatGPT 4o on Wed Nov. 6, 2024!
 
 ## Demo
 
-[You can follow along here](https://ubc-cs.github.io/cpsc330-2025S1/lectures/notes/18_natural-language-processing.html)!
+[You can follow along here](https://ubc-cs.github.io/cpsc330-2025S1/lectures/notes/17_natural-language-processing.html)!
