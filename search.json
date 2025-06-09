@@ -280,6 +280,13 @@
     "text": "Looking ahead to next class\nIt is very important that you watch the assigned pre-lecture videos before class!"
   },
   {
+    "objectID": "slides-16.html#announcements",
+    "href": "slides-16.html#announcements",
+    "title": "CPSC 330 Lecture 16: Recommender Systems",
+    "section": "Announcements",
+    "text": "Announcements\n\nMidterm 2 Information post is out! HW6 is due tonight at 10 PM.\n\nComputationally intensive (welcome to real-life ML!)\nheads up: you will need to install many packages (welcome to real-life ML!)\n\nHW7 is due Saturday June 14th (remember: content of this is covered in Midterm 2)\nMidterm 2 is this week (Nov 14/15)\n\nNo Tutorials after Wednesday at 10 AM.\nForums will be closed after class on Wednesday\n\nReminder: Please double check your Midterm 2 CBTF booking!\nMidterm 2 Practice Questions will be out later today\nLearning Log 4 will be out later today"
+  },
+  {
     "objectID": "slides-16.html#rest-of-cpsc-330",
     "href": "slides-16.html#rest-of-cpsc-330",
     "title": "CPSC 330 Lecture 16: Recommender Systems",
@@ -312,7 +319,7 @@
     "href": "slides-16.html#ethics-of-recommender-systems",
     "title": "CPSC 330 Lecture 16: Recommender Systems",
     "section": "Ethics of Recommender Systems",
-    "text": "Ethics of Recommender Systems\nWe should be very mindful of the drawbacks of relying on recommender systems.\nWhat are some ethical considersations of recommender systems?"
+    "text": "Ethics of Recommender Systems\nWe should be very mindful of the drawbacks of relying on recommender systems.\nWhat are some ethical considerations of recommender systems?"
   },
   {
     "objectID": "slides-16.html#what-comprises-a-recommender-system",
@@ -322,11 +329,11 @@
     "text": "What comprises a recommender system?\nWhat does the problem formulation look like?\nWhat tools would/should we use to create a recommender system?"
   },
   {
-    "objectID": "slides-16.html#notebook-for-lecture-17",
-    "href": "slides-16.html#notebook-for-lecture-17",
+    "objectID": "slides-16.html#notebook-for-lecture-16",
+    "href": "slides-16.html#notebook-for-lecture-16",
     "title": "CPSC 330 Lecture 16: Recommender Systems",
-    "section": "Notebook for Lecture 17",
-    "text": "Notebook for Lecture 17\nYou can follow along here!"
+    "section": "Notebook for Lecture 16",
+    "text": "Notebook for Lecture 16\nYou can follow along here!"
   },
   {
     "objectID": "slides-16.html#break",
@@ -2629,7 +2636,7 @@
     "href": "slides-17.html#recap-recommender-systems",
     "title": "CPSC 330 Lecture 17: Natural Language Processing",
     "section": "Recap: Recommender Systems",
-    "text": "Recap: Recommender Systems\nHow the heck did I split the data last class!?"
+    "text": "Recap: Recommender Systems\nHow the heck did I split the data last time!?"
   },
   {
     "objectID": "slides-17.html#beyond-error-rate-in-recommender-systems",
