@@ -1733,14 +1733,14 @@
     "href": "slides-18.html#announcements",
     "title": "CPSC 330 Lecture 18: Introduction to deep learning and computer vision",
     "section": "Announcements",
-    "text": "Announcements\n\nHW7 is due June 14th at 10 PM\nHW8 has been released (due June 16th at 10 PM)\nHW9 has also been released (due June 18th at 10 PM)\n\nWe’re almost at the end of term! Hang in there 😊!"
+    "text": "Announcements\n\nFinal Exam reservations for the CBTF will open on June 16th at 10 AM\n\nReminder that final Exam window for CPSC 330 will be June 23 and June 24th\n\nHW7 is due June 14th at 10 PM\nHW8 has been released (due June 16th at 10 PM)\nHW9 has also been released (due June 18th at 10 PM)\n\nWe’re almost at the end of term! Hang in there 😊!"
   },
   {
-    "objectID": "slides-18.html#iclicker-18.1",
-    "href": "slides-18.html#iclicker-18.1",
+    "objectID": "slides-18.html#iclicker-18.1-recap",
+    "href": "slides-18.html#iclicker-18.1-recap",
     "title": "CPSC 330 Lecture 18: Introduction to deep learning and computer vision",
-    "section": "iClicker 18.1",
-    "text": "iClicker 18.1\niClicker cloud join link: https://join.iclicker.com/YJHS\nSelect all of the following statements which are TRUE.\n\n\nIt’s possible to use word2vec embedding representations for text classification instead of bag-of-words representation.\n\n\nThe topic model approach we used in the last lecture, Latent Dirichlet Allocation (LDA), is an unsupervised approach.\n\n\nIn an LDA topic model, the same word can be associated with two different topics with high probability.\n\n\nIn an LDA topic model, a document is a mixture of multiple topics.\n\n\nIf I train a topic model on a large collection of news articles with K = 10, I would get 10 topic labels (e.g., sports, culture, politics, finance) as output."
+    "section": "iClicker 18.1 (Recap)",
+    "text": "iClicker 18.1 (Recap)\niClicker cloud join link: https://join.iclicker.com/YJHS\nSelect all of the following statements which are TRUE.\n\n\nIt’s possible to use word2vec embedding representations for text classification instead of bag-of-words representation.\n\n\nThe topic model approach we used in the last lecture, Latent Dirichlet Allocation (LDA), is an unsupervised approach.\n\n\nIn an LDA topic model, the same word can be associated with two different topics with high probability.\n\n\nIn an LDA topic model, a document is a mixture of multiple topics.\n\n\nIf I train a topic model on a large collection of news articles with K = 10, I would get 10 topic labels (e.g., sports, culture, politics, finance) as output."
   },
   {
     "objectID": "slides-18.html#multiclass-classification",
@@ -1818,6 +1818,20 @@
     "title": "CPSC 330 Lecture 18: Introduction to deep learning and computer vision",
     "section": "Neural networks",
     "text": "Neural networks\n\n\n\nWith a neural net, you specify the number of features after each transformation.\n\nIn the above, it goes from 4 to 3 to 3 to 1.\n\nTo make them really powerful compared to the linear models, we apply a non-linear function to the weighted sum for each hidden node.\nNeural network = neural net\nDeep learning ~ using neural networks"
+  },
+  {
+    "objectID": "slides-18.html#understanding-convolutional-neural-networks-intuitively",
+    "href": "slides-18.html#understanding-convolutional-neural-networks-intuitively",
+    "title": "CPSC 330 Lecture 18: Introduction to deep learning and computer vision",
+    "section": "Understanding Convolutional Neural Networks intuitively",
+    "text": "Understanding Convolutional Neural Networks intuitively\nLink to video"
+  },
+  {
+    "objectID": "slides-18.html#highly-highly-recommend-this-video",
+    "href": "slides-18.html#highly-highly-recommend-this-video",
+    "title": "CPSC 330 Lecture 18: Introduction to deep learning and computer vision",
+    "section": "Highly (highly) recommend this video!",
+    "text": "Highly (highly) recommend this video!\n\nLinked here"
   },
   {
     "objectID": "slides-18.html#why-neural-networks",
@@ -1978,7 +1992,7 @@
     "href": "slides-18.html#object-detection-using-yolo",
     "title": "CPSC 330 Lecture 18: Introduction to deep learning and computer vision",
     "section": "Object detection using YOLO",
-    "text": "Object detection using YOLO\n\n\nLet’s try this out using a pre-trained model.\n\nfrom ultralytics import YOLO\nmodel = YOLO(\"yolov8n.pt\")  # pretrained YOLOv8n model\n\nyolo_input = \"data/yolo_test/3356700488_183566145b.jpg\"\nyolo_result = \"data/yolo_result.jpg\"\n# Run batched inference on a list of images\nresult = model(yolo_input)  # return a list of Results objects\nresult[0].save(filename=yolo_result)\n\nCreating new Ultralytics Settings v0.0.6 file ✅ \nView Ultralytics Settings with 'yolo settings' or at '/home/runner/.config/Ultralytics/settings.json'\nUpdate Settings with 'yolo settings key=value', i.e. 'yolo settings runs_dir=path/to/dir'. For help see https://docs.ultralytics.com/quickstart/#ultralytics-settings.\n\nimage 1/1 /home/runner/work/cpsc330-slides/cpsc330-slides/website/data/yolo_test/3356700488_183566145b.jpg: 512x640 4 persons, 2 cars, 1 stop sign, 82.8ms\nSpeed: 1.2ms preprocess, 82.8ms inference, 0.9ms postprocess per image at shape (1, 3, 512, 640)\n\n\n'data/yolo_result.jpg'"
+    "text": "Object detection using YOLO\n\n\nLet’s try this out using a pre-trained model.\n\nfrom ultralytics import YOLO\nmodel = YOLO(\"yolov8n.pt\")  # pretrained YOLOv8n model\n\nyolo_input = \"data/yolo_test/3356700488_183566145b.jpg\"\nyolo_result = \"data/yolo_result.jpg\"\n# Run batched inference on a list of images\nresult = model(yolo_input)  # return a list of Results objects\nresult[0].save(filename=yolo_result)\n\nCreating new Ultralytics Settings v0.0.6 file ✅ \nView Ultralytics Settings with 'yolo settings' or at '/home/runner/.config/Ultralytics/settings.json'\nUpdate Settings with 'yolo settings key=value', i.e. 'yolo settings runs_dir=path/to/dir'. For help see https://docs.ultralytics.com/quickstart/#ultralytics-settings.\n\nimage 1/1 /home/runner/work/cpsc330-slides/cpsc330-slides/website/data/yolo_test/3356700488_183566145b.jpg: 512x640 4 persons, 2 cars, 1 stop sign, 83.2ms\nSpeed: 3.0ms preprocess, 83.2ms inference, 0.9ms postprocess per image at shape (1, 3, 512, 640)\n\n\n'data/yolo_result.jpg'"
   },
   {
     "objectID": "slides-18.html#object-detection-output",
