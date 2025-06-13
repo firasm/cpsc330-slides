@@ -33,6 +33,8 @@ import matplotlib.image as mpimg
 
 ## Announcements
 
+- Final Exam reservations for the CBTF will open on **June 16th at 10 AM**
+  - Reminder that final Exam window for CPSC 330 will be June 23 and June 24th
 - HW7 is due June 14th at 10 PM 
 - HW8 has been released (due June 16th at 10 PM)
 - HW9 has also been released (due June 18th at 10 PM)
@@ -52,7 +54,7 @@ iClicker cloud join link: **https://join.iclicker.com/YJHS**
 - (E) I felt the midterm was a good reflection of what we cover in the lectures and homework assignments. 
 - -->
 
-## iClicker 18.1
+## iClicker 18.1 (Recap)
 
 iClicker cloud join link: **https://join.iclicker.com/YJHS**
 
@@ -124,8 +126,7 @@ Image classification is not an easy problem because of the variations in the loc
 
 - Neural networks are perfect for these types of problems where local structures are important. 
 - A significant advancement in image classification was the application of **convolutional neural networks** (ConvNets or CNNs) to this problem. 
-  - [ImageNet Classification with Deep Convolutional
-Neural Networks](https://dl.acm.org/doi/10.1145/3065386)
+  - [ImageNet Classification with Deep Convolutional Neural Networks](https://dl.acm.org/doi/10.1145/3065386)
   - Achieved a winning test error rate of 15.3%, compared to 26.2% achieved by the second-best entry in the ILSVRC-2012 competition. 
 - Let's go over the basics of a neural network.
 
@@ -171,6 +172,18 @@ mglearn.plots.plot_two_hidden_layer_graph()
 - To make them really powerful compared to the linear models, we apply a non-linear function to the weighted sum for each hidden node. 
 - Neural network = neural net
 - Deep learning ~ using neural networks
+
+
+## Understanding Convolutional Neural Networks intuitively
+
+[Link to video](https://youtu.be/oGvHtpJMO3M?feature=shared&t=326)
+
+## Highly (highly) recommend this video!
+
+![](img/neural_network_video.png)
+
+[Linked here](https://www.youtube.com/playlist?list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi)
+
 
 ## Why neural networks?
 \
