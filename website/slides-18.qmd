@@ -33,11 +33,12 @@ import matplotlib.image as mpimg
 
 ## Announcements
 
-- HW7 was due yesterday 
-- HW8 has been released (due next week Monday)
-  - Almost there! Hang in there 😊
-- Midterm 2 grading is in progress. 
+- HW7 is due June 14th at 10 PM 
+- HW8 has been released (due June 16th at 10 PM)
+- HW9 has also been released (due June 18th at 10 PM)
+  - We're almost at the end of term! Hang in there 😊!
 
+<!-- 
 # iClicker 18.0
 
 iClicker cloud join link: **https://join.iclicker.com/YJHS**
@@ -48,7 +49,8 @@ iClicker cloud join link: **https://join.iclicker.com/YJHS**
 - (B) The coding questions took a lot of time.
 - (C) I didn't like the format of the midterm.
 - (D) I appreciated the mix of coding, conceptual, and multiple-choice questions.
-- (E) I felt the midterm was a good reflection of what we cover in the lectures and homework assignments.
+- (E) I felt the midterm was a good reflection of what we cover in the lectures and homework assignments. 
+- -->
 
 ## iClicker 18.1
 
@@ -83,7 +85,6 @@ $P(y = j \mid x_i) = \frac{e^{w_j^\top x_i + b_j}}{\sum_{k=1}^{K} e^{w_k^\top x_
 - $b_j$ is the bias term for class $j$.
 - $K$ is the total number of classes.
 
-
 ## Making Predictions
 
 1. **Compute Probabilities**:  
@@ -92,8 +93,6 @@ $P(y = j \mid x_i) = \frac{e^{w_j^\top x_i + b_j}}{\sum_{k=1}^{K} e^{w_k^\top x_
 2. **Select the Class with the Highest Probability**:  
    The predicted class \(\hat{y}\) is:  
    $\hat{y} = \arg \max_{j \in \{1, \dots, K\}} P(y = j \mid x_i)$
-
-
 
 ## Binary vs multinomial logistic regression 
 
