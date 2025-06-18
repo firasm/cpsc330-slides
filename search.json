@@ -1544,7 +1544,21 @@
     "href": "slides-24.html#announcements",
     "title": "CPSC 330 Lecture 24: Deployment and conclusion",
     "section": "Announcements",
-    "text": "Announcements\n\nLast lecture today 🎉 !\nHW9 is due today Dec 5th at 11:59 PM (No late submission allowed.)\nEthics bonus assignment is due tomorrow at 11:59pm."
+    "text": "Announcements\n\nLast class today 🎉 !\nHW9 is due today June 18th at 9:59 PM\nLast Learning Log (LL05) due June 19th at 9:59 PM\nBonus Learning Log (if you missed one) due June 19th at 9:59 PM\nEthics bonus assignment is due tomorrow (June 19th) at 11:59pm.\nFinal Exam Study guide has been posted!"
+  },
+  {
+    "objectID": "slides-24.html#course-evaluations-10-mins",
+    "href": "slides-24.html#course-evaluations-10-mins",
+    "title": "CPSC 330 Lecture 24: Deployment and conclusion",
+    "section": "Course evaluations (~10 mins)",
+    "text": "Course evaluations (~10 mins)\nhttps://canvas.ubc.ca/courses/165412/external_tools/53187"
+  },
+  {
+    "objectID": "slides-24.html#break",
+    "href": "slides-24.html#break",
+    "title": "CPSC 330 Lecture 24: Deployment and conclusion",
+    "section": "Break",
+    "text": "Break"
   },
   {
     "objectID": "slides-24.html#questions-for-you",
@@ -1575,6 +1589,13 @@
     "text": "We will use the tools below for\n\nSaving the model: We will use Joblib\nMaking the saved model conveniently accessible: Flask & render"
   },
   {
+    "objectID": "slides-24.html#group-work-class-demo-live-coding",
+    "href": "slides-24.html#group-work-class-demo-live-coding",
+    "title": "CPSC 330 Lecture 24: Deployment and conclusion",
+    "section": "Group Work: Class Demo & Live Coding",
+    "text": "Group Work: Class Demo & Live Coding\nFor this demo, each student should click this link to create a new repo in their accounts, then clone that repo locally to follow along with the demo from today."
+  },
+  {
     "objectID": "slides-24.html#web-app",
     "href": "slides-24.html#web-app",
     "title": "CPSC 330 Lecture 24: Deployment and conclusion",
@@ -1587,13 +1608,6 @@
     "title": "CPSC 330 Lecture 24: Deployment and conclusion",
     "section": "API",
     "text": "API"
-  },
-  {
-    "objectID": "slides-24.html#course-evaluations-10-mins",
-    "href": "slides-24.html#course-evaluations-10-mins",
-    "title": "CPSC 330 Lecture 24: Deployment and conclusion",
-    "section": "Course evaluations (~10 mins)",
-    "text": "Course evaluations (~10 mins)\nhttps://canvas.ubc.ca/courses/149122/external_tools/53187\n\nThey help us improve our teaching!\nUBC & CS uses them to provide rewards to instructors and TAs who are doing well!\nUBC & CS uses them to identify where instructors, TAs and courses need additional supports to improve.\nUBC uses these in evaluating professors for tenure and promotion.\nI’ll very much appreciate your constructive and concrete feedback."
   },
   {
     "objectID": "slides-24.html#what-did-we-cover",
@@ -1992,7 +2006,7 @@
     "href": "slides-18.html#object-detection-using-yolo",
     "title": "CPSC 330 Lecture 18: Introduction to deep learning and computer vision",
     "section": "Object detection using YOLO",
-    "text": "Object detection using YOLO\n\n\nLet’s try this out using a pre-trained model.\n\nfrom ultralytics import YOLO\nmodel = YOLO(\"yolov8n.pt\")  # pretrained YOLOv8n model\n\nyolo_input = \"data/yolo_test/3356700488_183566145b.jpg\"\nyolo_result = \"data/yolo_result.jpg\"\n# Run batched inference on a list of images\nresult = model(yolo_input)  # return a list of Results objects\nresult[0].save(filename=yolo_result)\n\nCreating new Ultralytics Settings v0.0.6 file ✅ \nView Ultralytics Settings with 'yolo settings' or at '/home/runner/.config/Ultralytics/settings.json'\nUpdate Settings with 'yolo settings key=value', i.e. 'yolo settings runs_dir=path/to/dir'. For help see https://docs.ultralytics.com/quickstart/#ultralytics-settings.\n\nimage 1/1 /home/runner/work/cpsc330-slides/cpsc330-slides/website/data/yolo_test/3356700488_183566145b.jpg: 512x640 4 persons, 2 cars, 1 stop sign, 84.2ms\nSpeed: 1.1ms preprocess, 84.2ms inference, 0.9ms postprocess per image at shape (1, 3, 512, 640)\n\n\n'data/yolo_result.jpg'"
+    "text": "Object detection using YOLO\n\n\nLet’s try this out using a pre-trained model.\n\nfrom ultralytics import YOLO\nmodel = YOLO(\"yolov8n.pt\")  # pretrained YOLOv8n model\n\nyolo_input = \"data/yolo_test/3356700488_183566145b.jpg\"\nyolo_result = \"data/yolo_result.jpg\"\n# Run batched inference on a list of images\nresult = model(yolo_input)  # return a list of Results objects\nresult[0].save(filename=yolo_result)\n\nCreating new Ultralytics Settings v0.0.6 file ✅ \nView Ultralytics Settings with 'yolo settings' or at '/home/runner/.config/Ultralytics/settings.json'\nUpdate Settings with 'yolo settings key=value', i.e. 'yolo settings runs_dir=path/to/dir'. For help see https://docs.ultralytics.com/quickstart/#ultralytics-settings.\n\nimage 1/1 /home/runner/work/cpsc330-slides/cpsc330-slides/website/data/yolo_test/3356700488_183566145b.jpg: 512x640 4 persons, 2 cars, 1 stop sign, 88.5ms\nSpeed: 1.3ms preprocess, 88.5ms inference, 1.1ms postprocess per image at shape (1, 3, 512, 640)\n\n\n'data/yolo_result.jpg'"
   },
   {
     "objectID": "slides-18.html#object-detection-output",
@@ -2371,13 +2385,6 @@
     "title": "CPSC 330 Lecture 20: Survival analysis",
     "section": "Recap: Time Series Analysis",
     "text": "Recap: Time Series Analysis"
-  },
-  {
-    "objectID": "slides-20.html#introduction-to-survival-analysis",
-    "href": "slides-20.html#introduction-to-survival-analysis",
-    "title": "CPSC 330 Lecture 20: Survival analysis",
-    "section": "Introduction to Survival Analysis",
-    "text": "Introduction to Survival Analysis"
   },
   {
     "objectID": "slides-20.html#group-work-class-demo-live-coding",
