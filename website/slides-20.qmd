@@ -44,16 +44,11 @@ iClicker cloud join link: **https://join.iclicker.com/YJHS**
 - (C) In time series forecasting, the future value of a series can only be predicted based on its past values and cannot incorporate other variables.
 - (D) When we used RandomForestRegressor model on the POSIX time feature, it predicted a straight line on the test data because tree-based models are inherently unable to extrapolate (i.e., make predictions outside the - range of the training data).
 
-
-
-## Introduction to Survival Analysis
-
-- 
+# Introduction to Survival Analysis
 
 ## Group Work: Class Demo & Live Coding
 
 For this demo, each student should [click this link](https://github.com/new?template_name=lecture20_demo&template_owner=ubc-cpsc330) to create a new repo in their accounts, then clone that repo locally to follow along with the demo from today.
-
 
 # iClicker 20.2
 
