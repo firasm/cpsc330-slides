@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
+<meta name="generator" content="quarto-1.8.26">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -34,14 +34,15 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-cbb68b6503013f50816b80c4e3fb2a7e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-1bd24f4458b9b8d7df456356fd6ef90f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -113,7 +114,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -212,222 +213,12 @@ Description
 </thead>
 <tbody class="list">
 
-<tr data-index="0" data-listing-file-modified-sort="1750565287032" data-listing-reading-time-sort="11" data-listing-word-count-sort="2093" data-listing-title-sort="Lecture 1: Introduction to CPSC 330" data-listing-filename-sort="slides-01.qmd">
+<tr data-index="0" data-listing-file-modified-sort="1767740659269" data-listing-reading-time-sort="11" data-listing-word-count-sort="2093" data-listing-title-sort="Lecture 1: Introduction to CPSC 330" data-listing-filename-sort="slides-01.qmd">
 <td>
 <a href="./slides-01.html" class="title listing-title">Lecture 1: Introduction to CPSC 330</a>
 </td>
 <td>
 <span class="listing-description-short">What is machine learning, types of machine learning, learning to navigate through the course materials, getting familiar with the course policies</span>
-</td>
-
-</tr>
-
-<tr data-index="1" data-listing-file-modified-sort="1750565287035" data-listing-reading-time-sort="10" data-listing-word-count-sort="1935" data-listing-title-sort="Lecture 2: Terminology, Baselines, Decision Trees" data-listing-filename-sort="slides-02.qmd">
-<td>
-<a href="./slides-02.html" class="title listing-title">Lecture 2: Terminology, Baselines, Decision Trees</a>
-</td>
-<td>
-<span class="listing-description-short">Supervised machine learning terminology: Features, target, examples, training, parameters and hyperparameters, Decision boundary, classification vs.&nbsp;regression, inference vs.&nbsp;prediction, accuracy vs.&nbsp;error, baselines, intuition of decision trees</span>
-</td>
-
-</tr>
-
-<tr data-index="2" data-listing-file-modified-sort="1750565287035" data-listing-reading-time-sort="3" data-listing-word-count-sort="507" data-listing-title-sort="Lecture 3: ML fundamentals" data-listing-filename-sort="slides-03.qmd">
-<td>
-<a href="./slides-03.html" class="title listing-title">Lecture 3: ML fundamentals</a>
-</td>
-<td>
-<span class="listing-description-short">generalization, data splitting, overfitting, underfitting, the fundamental tradeoff, the golden rule</span>
-</td>
-
-</tr>
-
-<tr data-index="3" data-listing-file-modified-sort="1750565287035" data-listing-reading-time-sort="5" data-listing-word-count-sort="885" data-listing-title-sort="Lecture 4: $k$-nearest neighbours and SVM RBFs" data-listing-filename-sort="slides-04.qmd">
-<td>
-<a href="./slides-04.html" class="title listing-title">Lecture 4: <span class="math inline">\(k\)</span>-nearest neighbours and SVM RBFs</a>
-</td>
-<td>
-<span class="listing-description-short">introduction to KNNs, hyperparameter <code>n_neighbours</code> or <span class="math inline">\(k\)</span>, <code>C</code> and <code>gamma</code> hyperparameters of SVM RBF, decision boundaries with different values of hyperparameters.</span>
-</td>
-
-</tr>
-
-<tr data-index="4" data-listing-file-modified-sort="1750565287035" data-listing-reading-time-sort="10" data-listing-word-count-sort="1885" data-listing-title-sort="Lecture 5: Preprocessing and sklearn pipelines" data-listing-filename-sort="slides-05.qmd">
-<td>
-<a href="./slides-05.html" class="title listing-title">Lecture 5: Preprocessing and sklearn pipelines</a>
-</td>
-<td>
-<span class="listing-description-short">Pre-processing, Transformations, and pipelines.</span>
-</td>
-
-</tr>
-
-<tr data-index="5" data-listing-file-modified-sort="1750565287035" data-listing-reading-time-sort="4" data-listing-word-count-sort="605" data-listing-title-sort="Lecture 6: Column transformer and text features" data-listing-filename-sort="slides-06.qmd">
-<td>
-<a href="./slides-06.html" class="title listing-title">Lecture 6: Column transformer and text features</a>
-</td>
-<td>
-<span class="listing-description-short">Preprocessing and sklearn pipelines</span>
-</td>
-
-</tr>
-
-<tr data-index="6" data-listing-file-modified-sort="1750565287037" data-listing-reading-time-sort="11" data-listing-word-count-sort="2060" data-listing-title-sort="Lecture 7: Linear models" data-listing-filename-sort="slides-07.qmd">
-<td>
-<a href="./slides-07.html" class="title listing-title">Lecture 7: Linear models</a>
-</td>
-<td>
-<span class="listing-description-short">Linear regression, logistic regression, prediction probabilities, sigmoid, interpretation of coefficients</span>
-</td>
-
-</tr>
-
-<tr data-index="7" data-listing-file-modified-sort="1750565287038" data-listing-reading-time-sort="6" data-listing-word-count-sort="1147" data-listing-title-sort="CPSC 330 Lecture 8: Hyperparameter Optimization" data-listing-filename-sort="slides-08.qmd">
-<td>
-<a href="./slides-08.html" class="title listing-title">CPSC 330 Lecture 8: Hyperparameter Optimization</a>
-</td>
-<td>
-<span class="listing-description-short">Linear regression, logistic regression, prediction probabilities, sigmoid, interpretation of coefficients</span>
-</td>
-
-</tr>
-
-<tr data-index="8" data-listing-file-modified-sort="1750565287038" data-listing-reading-time-sort="5" data-listing-word-count-sort="943" data-listing-title-sort="CPSC 330 Lecture 9: Classification Metrics" data-listing-filename-sort="slides-09.qmd">
-<td>
-<a href="./slides-09.html" class="title listing-title">CPSC 330 Lecture 9: Classification Metrics</a>
-</td>
-<td>
-<span class="listing-description-short">confusion metrics, precision, recall, f1-score, PR curves, AP score, ROC curve, ROC AUC, class imbalance</span>
-</td>
-
-</tr>
-
-<tr data-index="9" data-listing-file-modified-sort="1750565287038" data-listing-reading-time-sort="3" data-listing-word-count-sort="412" data-listing-title-sort="CPSC 330 Lecture 10: Regression Metrics" data-listing-filename-sort="slides-10.qmd">
-<td>
-<a href="./slides-10.html" class="title listing-title">CPSC 330 Lecture 10: Regression Metrics</a>
-</td>
-<td>
-<span class="listing-description-short">Regression metrics</span>
-</td>
-
-</tr>
-
-<tr data-index="10" data-listing-file-modified-sort="1750565287038" data-listing-reading-time-sort="1" data-listing-word-count-sort="81" data-listing-title-sort="CPSC 330 Lecture 11: Ensembles" data-listing-filename-sort="slides-11.qmd">
-<td>
-<a href="./slides-11.html" class="title listing-title">CPSC 330 Lecture 11: Ensembles</a>
-</td>
-<td>
-<span class="listing-description-short">&nbsp;</span>
-</td>
-
-</tr>
-
-<tr data-index="11" data-listing-file-modified-sort="1750565287038" data-listing-reading-time-sort="4" data-listing-word-count-sort="654" data-listing-title-sort="CPSC 330 Lecture 12: Feature importances" data-listing-filename-sort="slides-12.qmd">
-<td>
-<a href="./slides-12.html" class="title listing-title">CPSC 330 Lecture 12: Feature importances</a>
-</td>
-<td>
-<span class="listing-description-short">&nbsp;</span>
-</td>
-
-</tr>
-
-<tr data-index="12" data-listing-file-modified-sort="1750565287038" data-listing-reading-time-sort="5" data-listing-word-count-sort="996" data-listing-title-sort="CPSC 330 Lecture 13: Feature Engineering and Selection" data-listing-filename-sort="slides-13.qmd">
-<td>
-<a href="./slides-13.html" class="title listing-title">CPSC 330 Lecture 13: Feature Engineering and Selection</a>
-</td>
-<td>
-<span class="listing-description-short">&nbsp;</span>
-</td>
-
-</tr>
-
-<tr data-index="13" data-listing-file-modified-sort="1750565287038" data-listing-reading-time-sort="4" data-listing-word-count-sort="798" data-listing-title-sort="CPSC 330 Lecture 14: K-Means" data-listing-filename-sort="slides-14.qmd">
-<td>
-<a href="./slides-14.html" class="title listing-title">CPSC 330 Lecture 14: K-Means</a>
-</td>
-<td>
-<span class="listing-description-short">&nbsp;</span>
-</td>
-
-</tr>
-
-<tr data-index="14" data-listing-file-modified-sort="1750565287038" data-listing-reading-time-sort="5" data-listing-word-count-sort="856" data-listing-title-sort="CPSC 330 Lecture 15: DBSCAN, Hierarchical Clustering" data-listing-filename-sort="slides-15.qmd">
-<td>
-<a href="./slides-15.html" class="title listing-title">CPSC 330 Lecture 15: DBSCAN, Hierarchical Clustering</a>
-</td>
-<td>
-<span class="listing-description-short">&nbsp;</span>
-</td>
-
-</tr>
-
-<tr data-index="15" data-listing-file-modified-sort="1750565287038" data-listing-reading-time-sort="2" data-listing-word-count-sort="400" data-listing-title-sort="CPSC 330 Lecture 16: Recommender Systems" data-listing-filename-sort="slides-16.qmd">
-<td>
-<a href="./slides-16.html" class="title listing-title">CPSC 330 Lecture 16: Recommender Systems</a>
-</td>
-<td>
-<span class="listing-description-short">&nbsp;</span>
-</td>
-
-</tr>
-
-<tr data-index="16" data-listing-file-modified-sort="1750565287039" data-listing-reading-time-sort="3" data-listing-word-count-sort="415" data-listing-title-sort="CPSC 330 Lecture 17: Natural Language Processing" data-listing-filename-sort="slides-17.qmd">
-<td>
-<a href="./slides-17.html" class="title listing-title">CPSC 330 Lecture 17: Natural Language Processing</a>
-</td>
-<td>
-<span class="listing-description-short">&nbsp;</span>
-</td>
-
-</tr>
-
-<tr data-index="17" data-listing-file-modified-sort="1750565287039" data-listing-reading-time-sort="14" data-listing-word-count-sort="2621" data-listing-title-sort="CPSC 330 Lecture 18: Introduction to deep learning and computer vision" data-listing-filename-sort="slides-18.qmd">
-<td>
-<a href="./slides-18.html" class="title listing-title">CPSC 330 Lecture 18: Introduction to deep learning and computer vision</a>
-</td>
-<td>
-<span class="listing-description-short">&nbsp;</span>
-</td>
-
-</tr>
-
-<tr data-index="18" data-listing-file-modified-sort="1750565287039" data-listing-reading-time-sort="1" data-listing-word-count-sort="125" data-listing-title-sort="CPSC 330 Lecture 19: Time series" data-listing-filename-sort="slides-19.qmd">
-<td>
-<a href="./slides-19.html" class="title listing-title">CPSC 330 Lecture 19: Time series</a>
-</td>
-<td>
-<span class="listing-description-short">&nbsp;</span>
-</td>
-
-</tr>
-
-<tr data-index="19" data-listing-file-modified-sort="1750565287039" data-listing-reading-time-sort="3" data-listing-word-count-sort="409" data-listing-title-sort="CPSC 330 Lecture 20: Survival analysis" data-listing-filename-sort="slides-20.qmd">
-<td>
-<a href="./slides-20.html" class="title listing-title">CPSC 330 Lecture 20: Survival analysis</a>
-</td>
-<td>
-<span class="listing-description-short">&nbsp;</span>
-</td>
-
-</tr>
-
-<tr data-index="20" data-listing-file-modified-sort="1750565287039" data-listing-reading-time-sort="5" data-listing-word-count-sort="822" data-listing-title-sort="CPSC 330 Lecture 23: Deployment and conclusion" data-listing-filename-sort="slides-23.qmd">
-<td>
-<a href="./slides-23.html" class="title listing-title">CPSC 330 Lecture 23: Deployment and conclusion</a>
-</td>
-<td>
-<span class="listing-description-short">&nbsp;</span>
-</td>
-
-</tr>
-
-<tr data-index="21" data-listing-file-modified-sort="1750565287039" data-listing-reading-time-sort="5" data-listing-word-count-sort="978" data-listing-title-sort="CPSC 330: Midterm 1 review" data-listing-filename-sort="slides-midterm1-review.qmd">
-<td>
-<a href="./slides-midterm1-review.html" class="title listing-title">CPSC 330: Midterm 1 review</a>
-</td>
-<td>
-<span class="listing-description-short">&nbsp;</span>
 </td>
 
 </tr>
@@ -487,13 +278,14 @@ Description
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
