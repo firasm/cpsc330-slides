@@ -1,0 +1,99 @@
+---
+title: 'CPSC 330 Lecture 16: Recommender Systems'
+description: "Recommender systems with a focus on content-based recommenders."
+format:
+    revealjs:
+        html-math-method: plain
+        slide-number: true
+        slide-level: 2
+        center: true
+        logo: img/UBC-CS-logo.png
+        theme: 
+            - dracula
+            - slides.scss
+        resources:
+          - data/
+          - img/
+
+editor:
+  render-on-save: true
+---
+
+## Announcements 
+
+- Midterm 2 Information post is out!
+   HW6 is due tonight at 10 PM. 
+    - Computationally intensive (welcome to real-life ML!)
+    - heads up: you will need to install many packages  (welcome to real-life ML!)
+- HW7 is due Saturday June 14th (remember: content of this is covered in Midterm 2)
+- Midterm 2 is this week (Nov 14/15)
+  - No Tutorials after Wednesday at 10 AM.
+  - Forums will be closed after class on Wednesday
+- Reminder: Please double check your Midterm 2 CBTF booking!
+- Midterm 2 Practice Questions will be out later today
+- Learning Log 4 will be out later today
+
+## Rest of CPSC 330
+
+We started CPSC 330 with Machine Learning fundamentals, Supervised Learning models, Unsupervised Learning models, more complex fundamentals like feature engineering and feature selection
+
+We are now ready to try and solve different types of problems!
+- Today: Recommender Systems
+- Next class: Text Data and Topic Modelling
+- After: Images and Computer vision, Time Series Data, etc...
+
+## iClicker 16.0
+
+What percentage of the total watch time on YouTube do you think comes from reccomendations?
+
+- (A) 20%
+- (B) 50%
+- (C) 70%
+- (D) 95%
+
+[Source: MIT Technology Review](https://www.technologyreview.com/2022/09/20/1059709/youtube-algorithm-recommendations/)
+
+## What is a Recommender System?
+
+A recommender or a recommendation system recommends a particular product or service to users they are likely to consume.
+
+![](img/recommendation_system.png)
+
+## Examples of Recommender Systems
+
+- Amazon
+- Netflix
+- Tinder
+- Facebook
+- etc...
+
+What should be shown to the user so they buy more products/spend more time on the app/etc...
+
+## Ethics of Recommender Systems
+
+We should be very mindful of the drawbacks of relying on recommender systems.
+
+**What are some ethical considerations of recommender systems?**
+
+## What comprises a recommender system?
+
+What does the problem formulation look like?
+
+What tools would/should we use to create a recommender system?
+
+## Notebook for Lecture 16
+
+[You can follow along here](https://ubc-cs.github.io/cpsc330-2025S1/lectures/notes/16_recommender-systems.html)!
+
+## Break
+
+Let's take a 10 min break
+
+## iClicker Exercise 16.1 
+
+**Select all of the following statements which are True (iClicker)**
+
+- (A) In the context of recommendation systems, the shapes of validation utility matrix and train utility matrix are the same.
+- (B) RMSE perfectly captures what we want to measure in the context of recommendation systems.
+- (C) It would be reasonable to impute missing values in the utility matrix by taking the average of the ratings given to an item by similar users.
+- (D) In KNN type imputation, if a user has not rated any items yet, a reasonable strategy would be recommending them the most popular item.

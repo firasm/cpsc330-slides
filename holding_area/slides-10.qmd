@@ -1,0 +1,75 @@
+---
+title: "CPSC 330 Lecture 10: Regression Metrics" 
+author: "Firas Moosvi (Slides adapted from Varada Kolhatkar)"
+description: "Metrics for Regression"
+description-short: "Regression metrics" 
+format:
+  revealjs:
+    embed-resources: true
+    slide-number: true
+    smaller: true
+    center: true
+    logo: img/UBC-CS-logo.png
+    theme: dracula
+    resources:
+      - data/
+      - img/  
+---
+
+<!-- ## Announcements 
+
+- Important information about midterm 1
+  - https://piazza.com/class/m01ukubppof625/post/249
+  - **Good news for you: You'll have access to our course notes in the midterm!**
+- Note the change in the [lecture schedule](https://ubc-cs.github.io/cpsc330-2024W1/README.html#lecture-schedule-tentative).   
+- HW5 will be released today. It's a project-type assignment and you get till Oct 28th to work on it.   -->
+
+## Recap: Ridge and RidgeCV
+- **Ridge Regression**: `alpha` hyperparameter controls model complexity.
+- **RidgeCV**: Ridge regression with built-in cross-validation to find the optimal `alpha`.
+
+## Recap: `alpha` hyperparameter
+- **Role of `alpha`**:
+  - Controls model complexity
+  - Higher `alpha`: Simpler model, smaller coefficients.
+  - Lower `alpha`: Complex model, larger coefficients.
+
+## Regression metrics: MSE, RMSE, MAPE
+
+- **Mean Squared Error (MSE)**: Average of the squares of the errors.
+- **Root Mean Squared Error (RMSE)**: Square root of MSE, same units as the target variable.
+- **Mean Absolute Percentage Error (MAPE)**: Average of the absolute percentage errors.
+
+## Applying log transformation to the targets
+
+- Suitable when the target has a wide range and spans several orders of magnitude 
+  - Example: counts data such as social media likes or price data
+- Helps manage skewed data, making patterns more apparent and regression models more effective.
+- `TransformedTargetRegressor`
+  - Wraps a regression model and applies a transformation to the target values.
+
+## iClicker Exercise 10.1
+
+**iClicker cloud join link: https://join.iclicker.com/YJHS**
+
+**Select all of the following statements which are TRUE.**
+
+- (A) Price per square foot would be a good feature to add in our `X`. 
+- (B) The `alpha` hyperparameter of `Ridge` has similar interpretation of `C` hyperparameter of `LogisticRegression`; higher `alpha` means more complex model. 
+- (C) In `Ridge`, smaller alpha means bigger coefficients whereas bigger alpha means smaller coefficients.  
+
+## iClicker Exercise 10.2
+
+**iClicker cloud join link: https://join.iclicker.com/YJHS**
+
+**Select all of the following statements which are TRUE.**
+
+- (A) We can use still use precision and recall for regression problems but now we have other metrics we can use as well.
+- (B) In `sklearn` for regression problems, using `r2_score()` and `.score()` (with default values) will produce the same results.
+- (C) RMSE is always going to be non-negative.
+- (D) MSE does not directly provide the information about whether the model is underpredicting or overpredicting.
+- (E) We can pass multiple scoring metrics to `GridSearchCV` or `RandomizedSearchCV` for regression as well as classification problems. 
+
+## Group Work: Class Demo & Live Coding
+
+For this demo, each student should [click this link](https://github.com/new?template_name=lecture10_demo&template_owner=ubc-cpsc330) to create a new repo in their accounts, then clone that repo locally to follow along with the demo from today.

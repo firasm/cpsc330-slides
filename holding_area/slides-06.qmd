@@ -1,0 +1,199 @@
+---
+title: "Lecture 6: Column transformer and text features"
+author: "Firas Moosvi (Slides adapted from Varada Kolhatkar)"
+description: "Column transformer and introduction to text features"
+description-short: "Preprocessing and sklearn pipelines"
+format:
+  revealjs:
+    embed-resources: true
+    slide-number: true
+    smaller: true
+    center: true
+    logo: img/UBC-CS-logo.png
+    theme: dracula
+    resources:
+      - data/
+      - img/  
+---
+
+<!-- 
+## Announcements 
+
+- Lecture recordings for the first two weeks have been made available - See Piazza.
+- My Office Hours
+- HW3 is due next week Tuesday, Oct 1st, 11:59 pm. 
+  - You can work in pairs for this assignment. 
+ -->
+
+<!-- 
+## Quick Correction on Exercise 5.3
+
+> I accidentally said *only D is true*, but **B** is also true!
+
+Select all of the following statements which are TRUE.
+
+- (A) You can have scaling of numeric features, one-hot encoding of categorical features, and scikit-learn estimator within a single pipeline.
+- (B) Once you have a scikit-learn pipeline object with an estimator as the last step, you can call fit, predict, and score on it.
+- (C) You can carry out data splitting within scikit-learn pipeline.
+- (D) We have to be careful of the order we put each transformation and model in a pipeline.
+- -->
+
+
+```{python}
+import os
+import sys
+
+import matplotlib.pyplot as plt
+import numpy as np
+import pandas as pd
+
+sys.path.append(os.path.join(os.path.abspath("."), "code"))
+from plotting_functions import *
+from utils import *
+from sklearn.compose import ColumnTransformer, make_column_transformer
+from sklearn.impute import SimpleImputer
+from sklearn.model_selection import cross_val_score, cross_validate, train_test_split
+from sklearn.neighbors import KNeighborsClassifier
+from sklearn.pipeline import Pipeline, make_pipeline
+from sklearn.preprocessing import OneHotEncoder, OrdinalEncoder, StandardScaler
+from sklearn.svm import SVC
+from sklearn.datasets import make_blobs, make_classification
+```
+
+# Recap: Preprocessing mistakes
+
+## Data 
+```{python}
+#| echo: true
+X, y = make_blobs(n_samples=100, centers=3, random_state=12, cluster_std=5) # make synthetic data
+X_train_toy, X_test_toy, y_train_toy, y_test_toy = train_test_split(
+    X, y, random_state=5, test_size=0.4) # split it into training and test sets
+# Visualize the training data
+plt.scatter(X_train_toy[:, 0], X_train_toy[:, 1], label="Training set", s=60)
+plt.scatter(
+    X_test_toy[:, 0], X_test_toy[:, 1], color=mglearn.cm2(1), label="Test set", s=60
+)
+plt.legend(loc="upper right")
+```
+
+## ❌ Bad ML 1
+- What's wrong with the approach below? 
+
+```{python}
+#| echo: true
+scaler = StandardScaler() # Creating a scalert object 
+scaler.fit(X_train_toy) # Calling fit on the training data 
+train_scaled = scaler.transform(
+    X_train_toy
+)  # Transforming the training data using the scaler fit on training data
+
+scaler = StandardScaler()  # Creating a separate object for scaling test data
+scaler.fit(X_test_toy)  # Calling fit on the test data
+test_scaled = scaler.transform(
+    X_test_toy
+)  # Transforming the test data using the scaler fit on test data
+
+knn = KNeighborsClassifier()
+knn.fit(train_scaled, y_train_toy)
+print(f"Training score: {knn.score(train_scaled, y_train_toy):.2f}")
+print(f"Test score: {knn.score(test_scaled, y_test_toy):.2f}") # misleading scores
+```
+
+## Scaling train and test data separately
+
+```{python}
+plot_original_scaled(
+    X_train_toy,
+    X_test_toy,
+    train_scaled,
+    test_scaled,
+    title_transformed="Improperly transformed",
+)
+```
+
+## ❌ Bad ML 2 
+- What's wrong with the approach below? 
+
+```{python}
+#| echo: true
+# join the train and test sets back together
+XX = np.vstack((X_train_toy, X_test_toy))
+
+scaler = StandardScaler()
+scaler.fit(XX)
+XX_scaled = scaler.transform(XX)
+
+XX_train = XX_scaled[:X_train_toy.shape[0]]
+XX_test = XX_scaled[X_train_toy.shape[0]:]
+
+knn = KNeighborsClassifier()
+knn.fit(XX_train, y_train_toy)
+print(f"Training score: {knn.score(XX_train, y_train_toy):.2f}")  # Misleading score
+print(f"Test score: {knn.score(XX_test, y_test_toy):.2f}")  # Misleading score
+```
+
+
+## ❌ Bad ML 3
+
+- What's wrong with the approach below? 
+```{python}
+#| echo: true
+knn = KNeighborsClassifier()
+
+scaler = StandardScaler()
+scaler.fit(X_train_toy)
+X_train_scaled = scaler.transform(X_train_toy)
+X_test_scaled = scaler.transform(X_test_toy)
+cross_val_score(knn, X_train_scaled, y_train_toy)
+```
+
+::: {.notes}
+Speaker notes go here.
+:::
+
+::: {.scroll-container style="overflow-y: scroll; height: 500px;"}
+## Improper preprocessing
+
+```{python}
+plot_improper_processing("kNN")
+```
+:::
+
+::: {.scroll-container style="overflow-y: scroll; height: 500px;"}
+## Proper preprocessing
+
+```{python}
+plot_proper_processing("kNN")
+```
+:::
+
+## Recap: `sklearn` Pipelines
+
+- Pipeline is a way to chain multiple steps (e.g., preprocessing + model fitting) into a single workflow.
+- Simplify the code and improves readability.
+- Reduce the risk of data leakage by ensuring proper transformation of the training and test sets.
+- Automatically apply transformations in sequence.
+- **Example:**
+  - Chaining a `StandardScaler` with a `KNeighborsClassifier` model.
+
+```{python}
+#| echo: true
+from sklearn.pipeline import make_pipeline
+
+pipe_knn = make_pipeline(StandardScaler(), KNeighborsClassifier())
+
+# Correct way to do cross validation without breaking the golden rule. 
+cross_val_score(pipe_knn, X_train_toy, y_train_toy) 
+```
+
+## Group Work: Class Demo & Live Coding
+
+For this demo, each student should [click this link](https://github.com/new?template_name=lecture06_demo&template_owner=ubc-cpsc330) to create a new repo in their accounts, then clone that repo locally to follow along with the demo from today.
+
+## `sklearn`'s `ColumnTransformer` 
+
+- Use ColumnTransformer to build all our transformations together into one object 
+
+![](img/column-transformer.png)
+
+- Use a column transformer with sklearn pipelines. 
