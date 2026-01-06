@@ -585,14 +585,14 @@
     "href": "index.html",
     "title": "Welcome",
     "section": "",
-    "text": "Welcome to CPSC330! Here, you’ll find slides for CPSC 330. These slides are based on the notes present here.\n\nClass times 🕘 10 AM to 1 PM, Monday, Wednesday, Friday\nWhere? 📍 Hugh Dempster Pavillion 310, 6245 Agronomy Road, Vancouver, BC V6T 1Z4"
+    "text": "Welcome to CPSC330! Here, you’ll find slides for CPSC 330. These slides are based on the notes present here.\n\nClass times 🕘 3:30 PM to 5 PM, Tuesday and Thursday\nWhere? 📍 Hugh Dempster Pavillion 310, 6245 Agronomy Road, Vancouver, BC V6T 1Z4"
   },
   {
     "objectID": "slides.html",
     "href": "slides.html",
     "title": "Overview",
     "section": "",
-    "text": "Title\n\n\nDescription\n\n\n\n\n\n\n\nNo matching items"
+    "text": "Title\n\n\n\nDescription\n\n\n\n\n\n\n\n\nLecture 1: Introduction to CPSC 330\n\n\nWhat is machine learning, types of machine learning, learning to navigate through the course materials, getting familiar with the course policies\n\n\n\n\n\n\nLecture 2: Terminology, Baselines, Decision Trees\n\n\nSupervised machine learning terminology: Features, target, examples, training, parameters and hyperparameters, Decision boundary, classification vs. regression, inference vs. prediction, accuracy vs. error, baselines, intuition of decision trees\n\n\n\n\n\n\nLecture 3: ML fundamentals\n\n\ngeneralization, data splitting, overfitting, underfitting, the fundamental tradeoff, the golden rule\n\n\n\n\n\n\nLecture 4: \\(k\\)-nearest neighbours and SVM RBFs\n\n\nintroduction to KNNs, hyperparameter n_neighbours or \\(k\\), C and gamma hyperparameters of SVM RBF, decision boundaries with different values of hyperparameters.\n\n\n\n\n\n\nLecture 5: Preprocessing and sklearn pipelines\n\n\nPre-processing, Transformations, and pipelines.\n\n\n\n\n\n\nLecture 6: Column transformer and text features\n\n\nPreprocessing and sklearn pipelines\n\n\n\n\n\n\nLecture 7: Linear models\n\n\nLinear regression, logistic regression, prediction probabilities, sigmoid, interpretation of coefficients\n\n\n\n\n\n\nCPSC 330 Lecture 8: Hyperparameter Optimization\n\n\nLinear regression, logistic regression, prediction probabilities, sigmoid, interpretation of coefficients\n\n\n\n\n\n\nCPSC 330 Lecture 9: Classification Metrics\n\n\nconfusion metrics, precision, recall, f1-score, PR curves, AP score, ROC curve, ROC AUC, class imbalance\n\n\n\n\n\n\nCPSC 330 Lecture 10: Regression Metrics\n\n\nRegression metrics\n\n\n\n\n\n\nCPSC 330 Lecture 11: Ensembles\n\n\n \n\n\n\n\n\n\nCPSC 330 Lecture 12: Feature importances\n\n\n \n\n\n\n\n\n\nCPSC 330 Lecture 13: Feature Engineering and Selection\n\n\n \n\n\n\n\n\n\nCPSC 330 Lecture 14: K-Means\n\n\n \n\n\n\n\n\n\nCPSC 330 Lecture 15: DBSCAN, Hierarchical Clustering\n\n\n \n\n\n\n\n\n\nCPSC 330 Lecture 16: Recommender Systems\n\n\n \n\n\n\n\n\n\nCPSC 330 Lecture 17: Natural Language Processing\n\n\n \n\n\n\n\n\n\nCPSC 330 Lecture 18: Introduction to deep learning and computer vision\n\n\n \n\n\n\n\n\n\nCPSC 330 Lecture 19: Time series\n\n\n \n\n\n\n\n\n\nCPSC 330 Lecture 20: Survival analysis\n\n\n \n\n\n\n\n\n\nCPSC 330 Lecture 23: Deployment and conclusion\n\n\n \n\n\n\n\n\n\nCPSC 330: Midterm 1 review\n\n\n \n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "slides-03.html#announcements",
@@ -2623,5 +2623,124 @@
     "title": "CPSC 330 Lecture 13: Feature Engineering and Selection",
     "section": "CPSC 330 Final Exam",
     "text": "CPSC 330 Final Exam\n\nThe final exam will be self-scheduled in the CBTF\nExam window: Monday June 23 and Tuesday June 24th\n\nTypically, sessions will be available at 9 AM, 12 PM, 3 PM and sometimes, 6 PM.\n\nI will announce details on booking final exams in the CBTF soon…"
+  },
+  {
+    "objectID": "slides-23.html#announcements",
+    "href": "slides-23.html#announcements",
+    "title": "CPSC 330 Lecture 23: Deployment and conclusion",
+    "section": "Announcements",
+    "text": "Announcements\n\nLast class today 🎉 !\nHW9 is due today June 18th at 9:59 PM\nLast Learning Log (LL05) due June 19th at 9:59 PM\nBonus Learning Log (if you missed one) due June 19th at 9:59 PM\nEthics bonus assignment is due tomorrow (June 19th) at 11:59pm.\nFinal Exam Study guide has been posted!"
+  },
+  {
+    "objectID": "slides-23.html#course-evaluations-10-mins",
+    "href": "slides-23.html#course-evaluations-10-mins",
+    "title": "CPSC 330 Lecture 23: Deployment and conclusion",
+    "section": "Course evaluations (~10 mins)",
+    "text": "Course evaluations (~10 mins)\nhttps://canvas.ubc.ca/courses/165412/external_tools/53187"
+  },
+  {
+    "objectID": "slides-23.html#break",
+    "href": "slides-23.html#break",
+    "title": "CPSC 330 Lecture 23: Deployment and conclusion",
+    "section": "Break",
+    "text": "Break"
+  },
+  {
+    "objectID": "slides-23.html#questions-for-you",
+    "href": "slides-23.html#questions-for-you",
+    "title": "CPSC 330 Lecture 23: Deployment and conclusion",
+    "section": "❓❓ Questions for you",
+    "text": "❓❓ Questions for you\nImagine you’ve created a machine learning model and are eager to share it with others. Consider the following scenarios for sharing your model:\n\nTo a non-technical Audience: How would you present your model to friends and family who may not have a technical background?\nTo a technical audience: How would you share your model with peers or professionals in the field who have a technical understanding of machine learning?\nIn an academic or research setting: How would you disseminate your model within academic or research communities?"
+  },
+  {
+    "objectID": "slides-23.html#try-out-this-moment-predictor",
+    "href": "slides-23.html#try-out-this-moment-predictor",
+    "title": "CPSC 330 Lecture 23: Deployment and conclusion",
+    "section": "Try out this moment predictor",
+    "text": "Try out this moment predictor\nhttps://cpsc330-moment-predictor.onrender.com/\n\nIn this lecture, I will show you how to set up/develop this."
+  },
+  {
+    "objectID": "slides-23.html#what-is-deployment",
+    "href": "slides-23.html#what-is-deployment",
+    "title": "CPSC 330 Lecture 23: Deployment and conclusion",
+    "section": "What is deployment?",
+    "text": "What is deployment?\n\nAfter we train a model, we want to use it!\nThe user likely does not want to install your Python stack, train your model.\nYou don’t necessarily want to share their dataset.\nSo we need to do two things:\n\nSave/store your model for later use.\nMake the saved model conveniently accessible."
+  },
+  {
+    "objectID": "slides-23.html#we-will-use-the-tools-below-for",
+    "href": "slides-23.html#we-will-use-the-tools-below-for",
+    "title": "CPSC 330 Lecture 23: Deployment and conclusion",
+    "section": "We will use the tools below for",
+    "text": "We will use the tools below for\n\nSaving the model: We will use Joblib\nMaking the saved model conveniently accessible: Flask & render"
+  },
+  {
+    "objectID": "slides-23.html#group-work-class-demo-live-coding",
+    "href": "slides-23.html#group-work-class-demo-live-coding",
+    "title": "CPSC 330 Lecture 23: Deployment and conclusion",
+    "section": "Group Work: Class Demo & Live Coding",
+    "text": "Group Work: Class Demo & Live Coding\nFor this demo, each student should click this link to create a new repo in their accounts, then clone that repo locally to follow along with the demo from today."
+  },
+  {
+    "objectID": "slides-23.html#web-app",
+    "href": "slides-23.html#web-app",
+    "title": "CPSC 330 Lecture 23: Deployment and conclusion",
+    "section": "Web App",
+    "text": "Web App"
+  },
+  {
+    "objectID": "slides-23.html#api",
+    "href": "slides-23.html#api",
+    "title": "CPSC 330 Lecture 23: Deployment and conclusion",
+    "section": "API",
+    "text": "API"
+  },
+  {
+    "objectID": "slides-23.html#what-did-we-cover",
+    "href": "slides-23.html#what-did-we-cover",
+    "title": "CPSC 330 Lecture 23: Deployment and conclusion",
+    "section": "What did we cover",
+    "text": "What did we cover\n\nPart 1: Supervised learning on tabular data: ML fundamentals, preprocessing and data encoding, a bunch of models, evaluation metrics, feature importances and model transparency, feature selection, hyperparameter optimization\nPart 2: Dealing with other non-tabular data types: Clustering, recommender systems, computer vision with pre-trained deep learning models (high level), language data, text preprocessing, embeddings, topic modeling, time series, right-censored data / survival analysis\nPart 3: Communication, Ethics, and Deployment"
+  },
+  {
+    "objectID": "slides-23.html#what-we-didnt-cover",
+    "href": "slides-23.html#what-we-didnt-cover",
+    "title": "CPSC 330 Lecture 23: Deployment and conclusion",
+    "section": "What we didn’t cover",
+    "text": "What we didn’t cover\n\nHow do these models work under the hood"
+  },
+  {
+    "objectID": "slides-23.html#what-would-i-do-differently",
+    "href": "slides-23.html#what-would-i-do-differently",
+    "title": "CPSC 330 Lecture 23: Deployment and conclusion",
+    "section": "What would I do differently?",
+    "text": "What would I do differently?\nLots of room for improvement. Here are some things on my mind.\n\nBalance the pace of the course a bit more (too intense at the beginning, too relaxed at the end!)\nFlipped classroom in a more effective way in the first part of the course.\nMore demos during lecture time\nWorksheets/practice questions during tutorials\nAdd a course project !?!\nAdd more interactive components in the lectures\nSome material to cover: dealing with outliers, data collection, large language models"
+  },
+  {
+    "objectID": "slides-23.html#what-next",
+    "href": "slides-23.html#what-next",
+    "title": "CPSC 330 Lecture 23: Deployment and conclusion",
+    "section": "What next?",
+    "text": "What next?\nIf you want to further develop your machine learning skills: - Practice! - Work on your own projects - Work hard and be consistent.\n\nIf you are interested in research in machine learning\n\nTake CPSC 340. If you do not have the required prereqs you can try to audit it.\n\nGet into the habit of reading papers and replicating results"
+  },
+  {
+    "objectID": "slides-23.html#questions-for-you-1",
+    "href": "slides-23.html#questions-for-you-1",
+    "title": "CPSC 330 Lecture 23: Deployment and conclusion",
+    "section": "❓❓ Questions for you",
+    "text": "❓❓ Questions for you\nFor each of the scenarios below\n\nIdentify if ML is a good solution for a problem.\nIf yes\n\nFrame the problem to a ML problem.\nDiscuss what kind of features you would need to effectively solve the problem\nWhat would be a reasonable baseline?\nWhich model would be a suitable model for the given scenario?\nWhat would be the appropriate success metrics."
+  },
+  {
+    "objectID": "slides-23.html#questions-for-you-2",
+    "href": "slides-23.html#questions-for-you-2",
+    "title": "CPSC 330 Lecture 23: Deployment and conclusion",
+    "section": "❓❓ Questions for you",
+    "text": "❓❓ Questions for you\n\n\n\n\n\n\n\nApp\nGoal\n\n\n\n\nQueuePredictor app\nInform callers how long they’ll wait on hold given the current call volume\n\n\nTo-doList App\nKeep track of the tasks that a user inputs and organize them by date\n\n\nSegmentSphere App\nTo segment customers to tailor marketing strategies based on purchasing behavior\n\n\nVideo app\nRecommend useful videos\n\n\nDining app\nIdentify cuisine by a restaurant’s menu\n\n\nWeather app\nCalculate precipitation in six hour increments for a geographic region\n\n\nEvoCarShare app\nCalculate number of car rentals in four increaments at a particular Evo parking spot\n\n\nPharma app\nUnderstand the effect of a new drug on patient survival time"
+  },
+  {
+    "objectID": "slides-23.html#conclusion-farewell",
+    "href": "slides-23.html#conclusion-farewell",
+    "title": "CPSC 330 Lecture 23: Deployment and conclusion",
+    "section": "Conclusion & farewell",
+    "text": "Conclusion & farewell\nThat’s all, folks. We made it! Good luck on your final exam! When you get a chance, please let me know what worked for you and what didn’t work for you in this course."
   }
 ]
