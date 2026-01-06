@@ -9,8 +9,29 @@ from sklearn.svm import SVC
 from sklearn.pipeline import Pipeline, make_pipeline
 from sklearn.ensemble import RandomForestClassifier
 
+def plot_loss_diagram(labels_inside=False): # From Mike's notebook: https://github.com/UBC-CS/cpsc340-2020w2/blob/main/lectures/19_linear-classifiers-fit.ipynb        
+    grid = np.linspace(-2,2,1000)
+    plt.figure(figsize=(8, 5), dpi=80)
+    plt.xlabel('$y_iw^T x_i$', fontsize=18)
+    plt.ylabel('$f_i(w)$', fontsize=18)
+    plt.xlim(-2,2)
+    plt.ylim(-0.025,3)
+    plt.fill_between([0, 2], -1, 3, facecolor='blue', alpha=0.2);
+    plt.fill_between([-2, 0], -1, 3, facecolor='red', alpha=0.2);
+    plt.yticks([0,1,2,3]);
+
+    if labels_inside:
+        plt.text(-1.95, 2.73, "incorrect prediction", fontsize=15) # 2.68
+        plt.text(0.15, 2.73, "correct prediction", fontsize=15)
+    else:
+        plt.text(-1.95, 3.1, "incorrect prediction", fontsize=15) # 2.68
+        plt.text(0.15, 3.1, "correct prediction", fontsize=15)
+
+
+    plt.tight_layout()
+
 def plot_tree_decision_boundary(
-    model, X, y, x_label="x-axis", y_label="y-axis", eps=None, ax=None, title=None
+    model, X, y, x_label="x-axis", y_label="y-axis", eps=None, ax=None, title=None, min_padding = 0.1
 ):
     if ax is None:
         ax = plt.gca()
@@ -25,10 +46,23 @@ def plot_tree_decision_boundary(
     ax.set_xlabel(x_label)
     ax.set_ylabel(y_label)
     ax.set_title(title)
+    
+    # Add padding to and set x and y axis limits
+    x_min, x_max = calculate_axis_limits(X, 0, min_padding)
+    ax.set_xlim(x_min, x_max)
+    
+    y_min, y_max = calculate_axis_limits(X, 1, min_padding)
+    ax.set_ylim(y_min, y_max)
+
+def calculate_axis_limits(X, col_index, min_padding = 0.1):
+    x_min, x_max = X.iloc[:, col_index].min(), X.iloc[:, col_index].max()
+    x_padding = max(min_padding, (x_max - x_min) * min_padding)
+    return (x_min - x_padding, x_max + x_padding)
+    
 
 
 def plot_tree_decision_boundary_and_tree(
-    model, X, y, height=6, width=16, fontsize = 9, x_label="x-axis", y_label="y-axis", eps=None, class_names = ["A+", "not A+"]
+    model, X, y, height=6, width=16, fontsize = 9, x_label="x-axis", y_label="y-axis", eps=None, class_names = ["A+", "not A+"], min_padding = 0.1
 ):
     fig, ax = plt.subplots(
         1,
@@ -37,7 +71,7 @@ def plot_tree_decision_boundary_and_tree(
         subplot_kw={"xticks": (), "yticks": ()},
         gridspec_kw={"width_ratios": [1.5, 2]},
     )
-    plot_tree_decision_boundary(model, X, y, x_label, y_label, eps, ax=ax[0])
+    plot_tree_decision_boundary(model, X, y, x_label, y_label, eps, ax=ax[0], min_padding = min_padding)
     custom_plot_tree(model, 
                  feature_names=X.columns.tolist(), 
                  class_names=class_names,
