@@ -1,4 +1,4 @@
-––---
+---
 title: 'Lecture 1: Introduction to CPSC 330'
 author: "Firas Moosvi (Slides adapted from Varada Kolhatkar)"
 description: Introduction to ML and CPSC 330
