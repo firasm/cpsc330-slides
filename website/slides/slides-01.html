@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2" crossorigin="anonymous"></script><script src="site_libs/clipboard/clipboard.min.js"></script>
 <script src="site_libs/quarto-html/tabby.min.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -95,7 +95,7 @@
     code span.vs { color: #abe338; } /* VerbatimString */
     code span.wa { color: #dcc6e0; } /* Warning */
   </style>
-  <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto-21c801d8f06c8a6b03b0774175d31071.css">
+  <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto-4a5b24c8b3ae7b593930d61c52872a99.css">
   <link href="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -187,7 +187,7 @@
       margin-right: 0; 
     }
   </style>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/requirejs@2.3.6/require.min.js" integrity="sha384-c9c+LnTbwQ3aujuU7ULEPVvgLs+Fn6fJUvIGTsuu1ZcCf11fiEubah0ttpca4ntM sha384-6V1/AdqZRWk1KAlWbKBlGhN7VG4iE/yAZcO6NZPMF8od0vukrvr0tg4qY6NSrItx" crossorigin="anonymous"></script>
   
   <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 </head>
@@ -261,17 +261,16 @@ Firas Moosvi (Slides adapted from Varada Kolhatkar)
 - Please fill out [Getting to know you survey](https://canvas.ubc.ca/courses/149122/quizzes) when you get a chance. 
 -->
 </section>
-<section id="learning-outcomes" class="slide level2 center">
-<h2>Learning outcomes</h2>
-<p>From this lecture, you will be able to</p>
+<section id="learning-outcomes" class="slide level2 smaller center">
+<h2>🎯 Learning Outcomes</h2>
+<p>By the end of this lesson, you will be able to:</p>
 <ul>
-<li>Explain the motivation behind study machine learning.</li>
-<li>Briefly describe supervised learning.</li>
-<li>Differentiate between traditional programming and machine learning.</li>
-<li>Assess whether a given problem is suitable for a machine learning solution.</li>
-<li>Navigate through the course material.</li>
-<li>Be familiar with the policies and how the class is going to run.</li>
-<li>Become familiar with CPSC 330 and how the course works</li>
+<li><p>Explain the difference between AI, ML, and DL</p></li>
+<li><p>Describe what machine learning is and when it is appropriate to use ML-based solutions.</p></li>
+<li><p>Briefly describe supervised learning.</p></li>
+<li><p>Differentiate between traditional programming and machine learning.</p></li>
+<li><p>Evaluate whether a machine learning solution is suitable for your problem or whether a rule-based or human-expert solution is more appropriate.</p></li>
+<li><p>Navigate the course materials and get familiar with the course syllabus and policies.</p></li>
 </ul>
 </section>
 <section id="about-this-course" class="slide level2 center">
@@ -280,8 +279,8 @@ Firas Moosvi (Slides adapted from Varada Kolhatkar)
 <section id="cpsc-330-website" class="slide level2 center">
 <h2>CPSC 330 website</h2>
 <ul>
-<li>Course Jupyter book: https://ubc-cs.github.io/cpsc330-2025S1</li>
-<li>Course GitHub repository: https://github.com/UBC-CS/cpsc330-2025S1</li>
+<li>Course Jupyter book: https://ubc-cs.github.io/cpsc330-2025W2</li>
+<li>Course GitHub repository: https://github.com/UBC-CS/cpsc330-2025W2</li>
 </ul>
 <div class="callout callout-important callout-titled callout-style-default">
 <div class="callout-body">
@@ -292,10 +291,10 @@ Firas Moosvi (Slides adapted from Varada Kolhatkar)
 <p><strong>Important</strong></p>
 </div>
 <div class="callout-content">
-<p>Course website: <a href="https://ubc-cs.github.io/cpsc330-2025S1">https://ubc-cs.github.io/cpsc330-2025S1</a> is the most important link. You can access the course website from Canvas.</p>
+<p>Course website: <a href="https://ubc-cs.github.io/cpsc330-2025W2">https://ubc-cs.github.io/cpsc330-2025W2</a> is the most important link. You can access the course website from Canvas.</p>
 <p><img data-src="img/canvas.png"></p>
 <p>Please read everything on there!</p>
-<p>You can find the source code for everything we do here: https://ubc-cs.github.io/cpsc330-2025S1.</p>
+<p>You can find the source code for everything we do here: https://ubc-cs.github.io/cpsc330-2025W2.</p>
 </div>
 </div>
 </div>
@@ -308,7 +307,7 @@ Firas Moosvi (Slides adapted from Varada Kolhatkar)
 <p><strong>Important</strong></p>
 </div>
 <div class="callout-content">
-<p>Make sure you go through the syllabus thoroughly and complete the syllabus quiz before Friday’s class!</p>
+<p>Make sure you go through the syllabus thoroughly and complete the syllabus quiz before next class!</p>
 </div>
 </div>
 </div>
@@ -316,7 +315,7 @@ Firas Moosvi (Slides adapted from Varada Kolhatkar)
 <section id="asking-questions-during-class" class="slide level2 center">
 <h2>Asking questions during class</h2>
 <p>You are welcome to ask questions by raising your hand!</p>
-<p>If you would prefer to write notes and ask questions later, you are more than welcome to do that also! Use Piazza.</p>
+<p>If you would prefer to write notes and ask questions later, you are more than welcome to do that also! Use Ed Discussion.</p>
 </section>
 <section id="registration-waitlist-and-prerequisites" class="slide level2 center">
 <h2>Registration, waitlist and prerequisites</h2>
@@ -329,21 +328,21 @@ Firas Moosvi (Slides adapted from Varada Kolhatkar)
 <p><strong>Important</strong></p>
 </div>
 <div class="callout-content">
-<p>Please go through <a href="https://ubc-cs.github.io/cpsc330-2025S1/syllabus.html#registration">this document</a> carefully before contacting your instructors about these issues. Even then, we are very unlikely to be able to help with registration, waitlist or prerequisite issues.</p>
+<p>Please go through <a href="https://ubc-cs.github.io/cpsc330-2025W2/syllabus/#registration">this document</a> carefully before contacting your instructors about these issues. Even then, we are very unlikely to be able to help with registration, waitlist or prerequisite issues.</p>
 </div>
 </div>
 </div>
 <ul>
-<li>If you are on waitlist and if you’d like to try your chances, you should be able to access <a href="https://canvas.ubc.ca/courses/165412">Canvas</a> and Ed Discussion.<br>
-</li>
-<li>If you’re unable to make it this time, there will be multiple sections of this course offered next semester and then again in the spring.</li>
+<li>We are expecting that all students registered on the waitlist have already, or will soon get a notification to join the course!</li>
+<li>The waitlist will close on Friday at 3 PM and no more students will be able to register after that!</li>
+<li>It is your responsibility to catch up on any missed work.</li>
 </ul>
 </section>
 <section id="lecture-format" class="slide level2 center">
 <h2>Lecture format</h2>
 <ul>
-<li>In person lectures M,W,F from 10 AM to 1 PM.</li>
-<li>There will be videos to watch before every lecture. You will find the list of pre-watch videos in the schedule on the course webpage.</li>
+<li>In person lectures Tuesday and Thursday from 3:30 PM - 5 PM</li>
+<li>There will be videos to watch before almost every lecture. You will find the list of pre-watch videos in the schedule on the course webpage.</li>
 <li>We will also try to work on some questions and exercises together during the class.</li>
 <li>All materials will be posted in this GitHub repository. <!-- - Weekly tutorials will be **office hour format** run by the TAs and are **completely optional**. --> <!-- - You do not need to be registered in a tutorial. -->
 <ul>
@@ -354,7 +353,8 @@ Firas Moosvi (Slides adapted from Varada Kolhatkar)
 <section id="home-work-assignments" class="slide level2 center">
 <h2>Home work assignments</h2>
 <ul>
-<li>First homework assignment is due <strong>Friday May 16th</strong>, at 6 PM. This is a relatively straightforward assignment on Python. If you struggle with this assignment then that could be a sign that you will struggle later on in the course.<br>
+<li>First homework assignment is due soon, it will be released to you today.</li>
+<li>This is a relatively straightforward assignment on Python. If you struggle with this assignment then that could be a sign that you will struggle later on in the course.<br>
 </li>
 <li>You must do the first two homework assignments on your own.</li>
 </ul>
@@ -369,7 +369,7 @@ Firas Moosvi (Slides adapted from Varada Kolhatkar)
 
 Here is our course Calendar. Make sure you check it on a regular basis: 
 
-[https://htmlpreview.github.io/?https://github.com/UBC-CS/cpsc330-2025S1/blob/main/docs/calendar.html](https://htmlpreview.github.io/?https://github.com/UBC-CS/cpsc330-2025S1/blob/main/docs/calendar.html)
+[https://htmlpreview.github.io/?https://github.com/UBC-CS/cpsc330-2025W2/blob/main/docs/calendar.html](https://htmlpreview.github.io/?https://github.com/UBC-CS/cpsc330-2025W2/blob/main/docs/calendar.html)
  -->
 </section>
 <section id="course-structure" class="slide level2 center">
@@ -392,10 +392,83 @@ Here is our course Calendar. Make sure you check it on a regular basis:
 <p><strong>Important</strong></p>
 </div>
 <div class="callout-content">
-<p>Please read <a href="https://ubc-cs.github.io/cpsc330-2025S1/docs/asking_for_help.html">this entire document about asking for help</a>. <strong>TLDR:</strong> Be nice.</p>
+<p>Please read <a href="https://ubc-cs.github.io/cpsc330-2025W2/docs/asking_for_help.html">this entire document about asking for help</a>. <strong>TLDR:</strong> Be nice.</p>
 </div>
 </div>
 </div>
+</section>
+<section id="setting-up-your-computer-for-the-course" class="title-slide slide level1 center">
+<h1>Setting up your computer for the course</h1>
+
+</section>
+
+<section>
+<section id="tools-used-in-this-course" class="title-slide slide level1 center">
+<h1>Tools used in this course</h1>
+<p>We will use the following tools throughout the course:</p>
+<ul>
+<li><strong>Coding:</strong> <code>Python</code>, with either <code>Jupyter Lab</code> or <code>VS Code</code></li>
+<li><strong>Version Control:</strong> <code>git</code> and <code>GitHub</code></li>
+<li><strong>Assignment Submission:</strong> <code>Gradescope</code></li>
+<li><strong>Discussion Forum:</strong> <code>Piazza</code></li>
+<li><strong>Exams and Final Grades:</strong> <code>PrairieLearn</code> and <code>Canvas</code></li>
+<li><strong>Recommended Browsers:</strong> <a href="https://www.google.com/chrome/">Google Chrome</a> or <a href="https://www.mozilla.org/en-US/firefox/new/">Mozilla Firefox</a></li>
+</ul>
+</section>
+<section id="course-conda-environment" class="slide level2 center">
+<h2>Course <code>conda</code> environment</h2>
+<ul>
+<li>Follow the setup instructions <a href="https://ubc-cs.github.io/cpsc330-2025W1/docs/setup.html">here</a> to create a course <code>conda</code> environment on your computer.</li>
+<li>If you do not have your computer with you, you can partner up with someone and set up your own computer later.</li>
+</ul>
+</section>
+<section id="python-requirementsresources" class="slide level2 smaller center">
+<h2>Python requirements/resources</h2>
+<p>We will primarily use Python in this course.</p>
+<p>Here is the basic Python knowledge you’ll need for the course:</p>
+<ul>
+<li>Basic Python programming</li>
+<li>Numpy</li>
+<li>Pandas</li>
+<li>Basic matplotlib</li>
+</ul>
+<p>Homework 1 is all about Python.</p>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Note</strong></p>
+</div>
+<div class="callout-content">
+<p>We do not have time to teach all the Python we need but you can find some useful Python resources <a href="https://github.com/UBC-CS/cpsc330-2025W1/blob/main/docs/resources.md">here</a>.</p>
+</div>
+</div>
+</div>
+<p><br><br></p>
+</section>
+<section id="workload" class="slide level2 center">
+<h2>Workload</h2>
+<p>What does a typical week look like?</p>
+<ul>
+<li><p><strong>Before class:</strong> Watch pre-lecture videos or preview notes<br>
+</p></li>
+<li><p><strong>In class:</strong> Two 80-minute lectures with iClicker questions, activities, and live demos<br>
+</p></li>
+<li><p><strong>Support:</strong> Weekly tutorials and office hours</p></li>
+<li><p><strong>Practice:</strong> Weekly assignments (except exam weeks)</p></li>
+</ul>
+</section>
+<section id="tips-for-success" class="slide level2 center">
+<h2>Tips for success:</h2>
+<ul>
+<li><p>Attend lectures regularly and ask questions<br>
+</p></li>
+<li><p>Start homework early. Hands-on practice is essential</p></li>
+<li><p>Use Generative AI tools <strong>responsibly</strong>. No blind copy-pasting</p></li>
+<li><p>Always question your data, methods, and results — justify your choices</p></li>
+</ul>
 </section>
 <section id="homework-format-jupyter-lab-notebooks" class="slide level2 center">
 <h2>Homework format: Jupyter lab notebooks</h2>
@@ -416,17 +489,17 @@ Here is our course Calendar. Make sure you check it on a regular basis:
 <li>When you open a Jupyter notebook in one of these apps, the document is “live”, meaning you can run the code.</li>
 </ul>
 <p>For example:</p>
-<div id="aaa4e2df" class="cell" data-execution_count="2">
+<div id="f3267b49" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a><span class="dv">1</span> <span class="op">+</span> <span class="dv">1</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display" data-execution_count="2">
+<div class="cell-output cell-output-display" data-execution_count="3">
 <pre><code>2</code></pre>
 </div>
 </div>
-<div id="9c306548" class="cell" data-execution_count="3">
+<div id="00eeb117" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a></a>x <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]</span>
 <span id="cb3-2"><a></a>x[<span class="dv">0</span>] <span class="op">=</span> <span class="dv">9999</span></span>
 <span id="cb3-3"><a></a>x</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display" data-execution_count="3">
+<div class="cell-output cell-output-display" data-execution_count="4">
 <pre><code>[9999, 2, 3]</code></pre>
 </div>
 </div>
@@ -435,7 +508,7 @@ Here is our course Calendar. Make sure you check it on a regular basis:
 <h2>More about Jupyter lab</h2>
 <ul>
 <li>By default, Jupyter prints out the result of the last line of code, so you don’t need as many <code>print</code> statements.</li>
-<li>In addition to the “live” notebooks, Jupyter notebooks can be statically rendered in the web browser, e.g.&nbsp;<a href="https://github.com/UBC-CS/cpsc330-2025S1/blob/main/lectures/01_intro.ipynb">this</a>.
+<li>In addition to the “live” notebooks, Jupyter notebooks can be statically rendered in the web browser, e.g.&nbsp;<a href="https://github.com/UBC-CS/cpsc330-2025W2/blob/main/lectures/01_intro.ipynb">this</a>.
 <ul>
 <li>This can be convenient for quick read-only access, without needing to launch the Jupyter notebook/lab application.</li>
 <li>But you need to launch the app properly to interact with the notebooks.</li>
@@ -447,20 +520,20 @@ Here is our course Calendar. Make sure you check it on a regular basis:
 <ul>
 <li>All the lectures from last year are <a href="https://ubc-cs.github.io/cpsc330-2024W2">available here</a>.</li>
 <li>We cannot promise anything will stay the same from last year to this year, so read them in advance at your own risk.</li>
-<li>A “finalized” version will be pushed to <a href="https://github.com/UBC-CS/cpsc330-2025S1">GitHub</a> and the <a href="https://ubc-cs.github.io/cpsc330-2025S1">Jupyter book</a> right before each class.</li>
+<li>A “finalized” version will be pushed to <a href="https://github.com/UBC-CS/cpsc330-2025W2">GitHub</a> and the <a href="https://ubc-cs.github.io/cpsc330-2025W2">Jupyter book</a> right before each class.</li>
 <li>Each instructor will have slightly adapted versions of notes to present slides during lectures.<br>
 </li>
-<li>You will find the link to these slides in our repository: https://github.com/UBC-CS/cpsc330-2025S1/tree/main/lectures/103-Firas-lectures</li>
+<li>You will find the link to these slides in our repository: https://github.com/UBC-CS/cpsc330-2025W2/tree/main/lectures/103-Firas-lectures</li>
 </ul>
 </section>
 <section id="grades" class="slide level2 center">
 <h2>Grades</h2>
 <ul>
-<li>The grading breakdown is <a href="https://ubc-cs.github.io/cpsc330-2025S1/syllabus.html#grading-scheme">here</a>.</li>
-<li>The policy on challenging grades is <a href="https://ubc-cs.github.io/cpsc330-2025S1/docs/grades.html#reasonable-grading-concerns">here</a>.</li>
+<li>The grading breakdown is <a href="https://ubc-cs.github.io/cpsc330-2025W2/syllabus.html#grading-scheme">here</a>.</li>
+<li>The policy on challenging grades is <a href="https://ubc-cs.github.io/cpsc330-2025W2/docs/grades.html#reasonable-grading-concerns">here</a>.</li>
 </ul>
 </section>
-<section id="setting-up-your-computer-for-the-course" class="slide level2 center">
+<section id="setting-up-your-computer-for-the-course-1" class="slide level2 center">
 <h2>Setting up your computer for the course</h2>
 </section>
 <section id="recommended-browser-and-tools" class="slide level2 center">
@@ -469,16 +542,16 @@ Here is our course Calendar. Make sure you check it on a regular basis:
 <li>You can install Chrome <a href="https://www.google.com/chrome/">here</a>.</li>
 <li>You can install Firefox <a href="https://www.mozilla.org/en-US/firefox/new/">here</a>.</li>
 </ul>
-<p>In this course, we will primarily be using <code>Python</code> , <code>git</code>, <code>GitHub</code>, <code>Canvas</code>, <code>Gradescope</code>, <code>Piazza</code>, and <code>PrairieLearn</code>.</p>
+<p>In this course, we will primarily be using <code>Python</code> , <code>git</code>, <code>GitHub</code>, <code>Canvas</code>, <code>Gradescope</code>, <code>Ed DIscussion</code>, and <code>PrairieLearn</code>.</p>
 </section>
-<section id="course-conda-environment" class="slide level2 center">
+<section id="course-conda-environment-1" class="slide level2 center">
 <h2>Course <code>conda</code> environment</h2>
 <ul>
-<li>Follow the setup instructions <a href="https://ubc-cs.github.io/cpsc330-2025S1/docs/setup.html">here</a> to create a course <code>conda</code> environment on your computer.</li>
+<li>Follow the setup instructions <a href="https://ubc-cs.github.io/cpsc330-2025W2/docs/setup.html">here</a> to create a course <code>conda</code> environment on your computer.</li>
 <li>If you do not have your computer with you, you can partner up with someone and set up your own computer later.</li>
 </ul>
 </section>
-<section id="python-requirementsresources" class="slide level2 center">
+<section id="python-requirementsresources-1" class="slide level2 center">
 <h2>Python requirements/resources</h2>
 <p>We will primarily use Python in this course.</p>
 <p>Here is the basic Python knowledge you’ll need for the course:</p>
@@ -499,7 +572,7 @@ Here is our course Calendar. Make sure you check it on a regular basis:
 <p><strong>Note</strong></p>
 </div>
 <div class="callout-content">
-<p>We do not have time to teach all the Python we need but you can find some useful Python resources <a href="https://github.com/UBC-CS/cpsc330-2025S1/blob/main/docs/resources.md">here</a>.</p>
+<p>We do not have time to teach all the Python we need but you can find some useful Python resources <a href="https://github.com/UBC-CS/cpsc330-2025W2/blob/main/docs/resources.md">here</a>.</p>
 </div>
 </div>
 </div>
@@ -507,7 +580,7 @@ Here is our course Calendar. Make sure you check it on a regular basis:
 </section>
 <section id="cpsc-330-vs.-340" class="slide level2 center">
 <h2>CPSC 330 vs.&nbsp;340</h2>
-<p>Read <a href="https://ubc-cs.github.io/cpsc330-2025S1/docs%20330_vs_340.html">https://ubc-cs.github.io/cpsc330-2025S1/docs/330_vs_340.html</a> which explains the difference between two courses.</p>
+<p>Read <a href="https://ubc-cs.github.io/cpsc330-2025W2/docs%20330_vs_340.html">https://ubc-cs.github.io/cpsc330-2025W2/docs/330_vs_340.html</a> which explains the difference between two courses.</p>
 <p><strong>TLDR:</strong></p>
 <ul>
 <li>340: how do ML models work?</li>
@@ -516,6 +589,4199 @@ Here is our course Calendar. Make sure you check it on a regular basis:
 <li>CPSC 340 goes deeper but has a more narrow scope.</li>
 <li>I think CPSC 330 will be more useful if you just plan to apply basic ML.</li>
 </ul>
+</section>
+<section id="break" class="slide level2 center">
+<h2>Break</h2>
+
+<img data-src="img/eva-coffee.png" class="r-stretch"></section>
+<section id="activity-1" class="slide level2 center">
+<h2>Activity 1</h2>
+<p><br>
+Discuss with you neighbour</p>
+<ul>
+<li>What do you know about machine learning?</li>
+<li>What would you like to get out this course?</li>
+<li>Are there any particular topics or aspects of this course that you are especially excited or anxious about? Why?</li>
+</ul>
+</section></section>
+<section>
+<section id="what-is-machine-learning" class="title-slide slide level1 center">
+<h1>What is machine learning?</h1>
+
+</section>
+<section id="which-cat-do-you-think-is-ai-generated" class="slide level2 smaller center">
+<h2>Which cat do you think is AI-generated?</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<p><img data-src="img/ai-or-not-cat.png"></p>
+<p><a href="https://thinktan.net/are-you-sure-this-photo-is-not-ai-generated/">Source</a></p>
+</div><div class="column" style="width:40%;">
+<ul>
+<li>A</li>
+<li>B</li>
+<li>Both</li>
+<li>None</li>
+</ul>
+</div></div>
+<ul>
+<li>What clues did you use to decide?</li>
+</ul>
+</section>
+<section id="what-are-ai-ml-dl" class="slide level2 smaller center">
+<h2>What are AI, ML, DL?</h2>
+<ul>
+<li><strong>Artificial Intelligence (AI)</strong>: Making computers act smart
+<ul>
+<li>Examples: <a href="https://www.ibm.com/history/deep-blue">Deep Blue</a>, early spell checkers</li>
+</ul></li>
+<li><strong>Machine Learning (ML)</strong>: Learning patterns from data
+<ul>
+<li>Example: Spam filtering in Gmail</li>
+</ul></li>
+<li><strong>Deep Learning (DL)</strong>: Using neural networks to learn complex patterns
+<ul>
+<li>Examples: Face recognition in your phone, voice assistants</li>
+</ul></li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="img/ai-ml-dl.png" class="quarto-figure quarto-figure-center" width="700"></p>
+</figure>
+</div>
+</section>
+<section id="lets-walk-through-an-example" class="slide level2 center">
+<h2>Let’s walk through an example</h2>
+<ul>
+<li>Have you used search in Google Photos? You can search for “cat” and it will retrieve photos from your libraries containing cats.</li>
+<li>This can be done using <strong>image classification</strong>.</li>
+</ul>
+</section>
+<section id="image-classification" class="slide level2 smaller center">
+<h2>Image classification</h2>
+<ul>
+<li>Imagine we want a system that can tell cats and foxes apart.</li>
+<li>How might we do this with traditional programming? With ML?</li>
+</ul>
+<div class="columns">
+<div class="column" style="width:40%;">
+<p><img data-src="img/cat-or-fox.png"></p>
+</div><div class="column" style="width:60%;">
+<table class="caption-top">
+<colgroup>
+<col style="width: 12%">
+<col style="width: 21%">
+<col style="width: 13%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 15%">
+<col style="width: 8%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Image ID</th>
+<th>Whiskers Present</th>
+<th>Ear Size</th>
+<th>Face Shape</th>
+<th>Fur Color</th>
+<th>Eye Shape</th>
+<th>Label</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>Yes</td>
+<td>Large</td>
+<td>Round</td>
+<td>Mixed</td>
+<td>Round</td>
+<td>Cat</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>Yes</td>
+<td>Medium</td>
+<td>Round</td>
+<td>Brown</td>
+<td>Almond</td>
+<td>Cat</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>Yes</td>
+<td>Large</td>
+<td>Pointed</td>
+<td>Red</td>
+<td>Narrow</td>
+<td>Fox</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>Yes</td>
+<td>Large</td>
+<td>Pointed</td>
+<td>Red</td>
+<td>Narrow</td>
+<td>Fox</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>Yes</td>
+<td>Small</td>
+<td>Round</td>
+<td>Mixed</td>
+<td>Round</td>
+<td>Cat</td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td>Yes</td>
+<td>Large</td>
+<td>Pointed</td>
+<td>Red</td>
+<td>Narrow</td>
+<td>Fox</td>
+</tr>
+<tr class="odd">
+<td>7</td>
+<td>Yes</td>
+<td>Small</td>
+<td>Round</td>
+<td>Grey</td>
+<td>Round</td>
+<td>Cat</td>
+</tr>
+<tr class="even">
+<td>8</td>
+<td>Yes</td>
+<td>Small</td>
+<td>Round</td>
+<td>Black</td>
+<td>Round</td>
+<td>Cat</td>
+</tr>
+<tr class="odd">
+<td>9</td>
+<td>Yes</td>
+<td>Large</td>
+<td>Pointed</td>
+<td>Red</td>
+<td>Narrow</td>
+<td>Fox</td>
+</tr>
+</tbody>
+</table>
+</div></div>
+</section>
+<section id="traditional-programming-example" class="slide level2 center">
+<h2>Traditional programming: example</h2>
+<div class="columns">
+<div class="column" style="width:40%;">
+<p><img data-src="img/cat-or-fox.png"></p>
+</div><div class="column" style="width:60%;">
+<ul>
+<li>You hard-code rules. If all of the following satisfy, it’s a fox.
+<ul>
+<li>pointed face ✅</li>
+<li>red fur ✅</li>
+<li>narrow eyes ✅<br>
+</li>
+</ul></li>
+<li>This works for normal cases, but what if there are exceptions</li>
+</ul>
+</div></div>
+</section>
+<section id="ml-approach-example" class="slide level2 center">
+<h2>ML approach: example</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><img data-src="img/cat-or-fox.png"></p>
+</div><div class="column" style="width:50%;">
+<ul>
+<li>We don’t tell the model the exact rule. Instead, we give it many labeled images, and it learns probabilistic patterns across multiple features, not rigid rules.
+<ul>
+<li>If fur is red <span class="math inline">\(\rightarrow\)</span> 90% chance of Fox.</li>
+</ul></li>
+</ul>
+</div></div>
+</section>
+<section id="dl-approach-example" class="slide level2 center">
+<h2>DL approach: example</h2>
+<div class="columns">
+<div class="column" style="width:40%;">
+<p><img data-src="img/cat-or-fox.png"></p>
+</div><div class="column" style="width:60%;">
+<ul>
+<li>A neural network automatically learns which features to look at (edges <span class="math inline">\(\rightarrow\)</span> textures <span class="math inline">\(\rightarrow\)</span> objects).</li>
+<li>No need to even specify face shape or fur colour. It learns relevant features on its own.</li>
+</ul>
+</div></div>
+</section>
+<section id="what-is-ml" class="slide level2 center">
+<h2>What is ML?</h2>
+<ul>
+<li>ML uses algorithms to learn patterns from data and build models.<br>
+</li>
+<li>These models can:
+<ul>
+<li>Make predictions on new data<br>
+</li>
+<li>Support complex decisions<br>
+</li>
+<li>Generate new content<br>
+</li>
+</ul></li>
+<li>ML systems can improve when trained on more data.<br>
+</li>
+<li>There is no one-size-fits-all model. The right choice depends on the problem.</li>
+</ul>
+</section>
+<section id="when-to-use-ml" class="slide level2 center">
+<h2>When to use ML?</h2>
+<ul>
+<li>When the problem can’t be solved with a fixed set of rules</li>
+<li>When you have <strong>lots of data</strong> and <strong>complex relationships</strong></li>
+<li>When human decision-making is too slow or inconsistent</li>
+</ul>
+<table class="caption-top">
+<colgroup>
+<col style="width: 37%">
+<col style="width: 62%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Approach</th>
+<th>Best for</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Traditional Programming</td>
+<td>Rules are known, data is clean/predictable</td>
+</tr>
+<tr class="even">
+<td>Machine Learning</td>
+<td>Rules are complex/unknown, data is noisy</td>
+</tr>
+</tbody>
+</table>
+</section></section>
+<section>
+<section id="when-to-use-machine-learning-ml-solutions" class="title-slide slide level1 center">
+<h1>When to use Machine Learning (ML) solutions?</h1>
+
+</section>
+<section id="example-supervised-classification" class="slide level2 smaller center">
+<h2>Example: Supervised classification</h2>
+<ul>
+<li>We want to predict liver disease from tabular features:</li>
+</ul>
+<div id="0077cc11" class="cell" data-execution_count="5">
+<div class="cell-output cell-output-display" data-execution_count="5">
+<table class="dataframe caption-top" data-border="1">
+<thead>
+<tr class="header" style="text-align: right;">
+<th data-quarto-table-cell-role="th">Age</th>
+<th data-quarto-table-cell-role="th">Total_Bilirubin</th>
+<th data-quarto-table-cell-role="th">Direct_Bilirubin</th>
+<th data-quarto-table-cell-role="th">Alkaline_Phosphotase</th>
+<th data-quarto-table-cell-role="th">Alamine_Aminotransferase</th>
+<th data-quarto-table-cell-role="th">Aspartate_Aminotransferase</th>
+<th data-quarto-table-cell-role="th">Total_Protiens</th>
+<th data-quarto-table-cell-role="th">Albumin</th>
+<th data-quarto-table-cell-role="th">Albumin_and_Globulin_Ratio</th>
+<th data-quarto-table-cell-role="th">Target</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>40</td>
+<td>14.5</td>
+<td>6.4</td>
+<td>358</td>
+<td>50</td>
+<td>75</td>
+<td>5.7</td>
+<td>2.1</td>
+<td>0.50</td>
+<td>Disease</td>
+</tr>
+<tr class="even">
+<td>33</td>
+<td>0.7</td>
+<td>0.2</td>
+<td>256</td>
+<td>21</td>
+<td>30</td>
+<td>8.5</td>
+<td>3.9</td>
+<td>0.80</td>
+<td>Disease</td>
+</tr>
+<tr class="odd">
+<td>24</td>
+<td>0.7</td>
+<td>0.2</td>
+<td>188</td>
+<td>11</td>
+<td>10</td>
+<td>5.5</td>
+<td>2.3</td>
+<td>0.71</td>
+<td>No Disease</td>
+</tr>
+<tr class="even">
+<td>60</td>
+<td>0.7</td>
+<td>0.2</td>
+<td>171</td>
+<td>31</td>
+<td>26</td>
+<td>7.0</td>
+<td>3.5</td>
+<td>1.00</td>
+<td>No Disease</td>
+</tr>
+<tr class="odd">
+<td>18</td>
+<td>0.8</td>
+<td>0.2</td>
+<td>199</td>
+<td>34</td>
+<td>31</td>
+<td>6.5</td>
+<td>3.5</td>
+<td>1.16</td>
+<td>No Disease</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="model-training" class="slide level2 center">
+<h2>Model training</h2>
+<div id="2185283c" class="cell" data-execution_count="6">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a></a><span class="im">from</span> lightgbm.sklearn <span class="im">import</span> LGBMClassifier</span>
+<span id="cb5-2"><a></a>model <span class="op">=</span> LGBMClassifier(random_state<span class="op">=</span><span class="dv">123</span>, verbose<span class="op">=-</span><span class="dv">1</span>)</span>
+<span id="cb5-3"><a></a>model.fit(X_train, y_train)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="6">
+<style>#sk-container-id-1 {
+  /* Definition of color scheme common for light and dark mode */
+  --sklearn-color-text: #000;
+  --sklearn-color-text-muted: #666;
+  --sklearn-color-line: gray;
+  /* Definition of color scheme for unfitted estimators */
+  --sklearn-color-unfitted-level-0: #fff5e6;
+  --sklearn-color-unfitted-level-1: #f6e4d2;
+  --sklearn-color-unfitted-level-2: #ffe0b3;
+  --sklearn-color-unfitted-level-3: chocolate;
+  /* Definition of color scheme for fitted estimators */
+  --sklearn-color-fitted-level-0: #f0f8ff;
+  --sklearn-color-fitted-level-1: #d4ebff;
+  --sklearn-color-fitted-level-2: #b3dbfd;
+  --sklearn-color-fitted-level-3: cornflowerblue;
+}
+
+#sk-container-id-1.light {
+  /* Specific color for light theme */
+  --sklearn-color-text-on-default-background: black;
+  --sklearn-color-background: white;
+  --sklearn-color-border-box: black;
+  --sklearn-color-icon: #696969;
+}
+
+#sk-container-id-1.dark {
+  --sklearn-color-text-on-default-background: white;
+  --sklearn-color-background: #111;
+  --sklearn-color-border-box: white;
+  --sklearn-color-icon: #878787;
+}
+
+#sk-container-id-1 {
+  color: var(--sklearn-color-text);
+}
+
+#sk-container-id-1 pre {
+  padding: 0;
+}
+
+#sk-container-id-1 input.sk-hidden--visually {
+  border: 0;
+  clip: rect(1px 1px 1px 1px);
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+#sk-container-id-1 div.sk-dashed-wrapped {
+  border: 1px dashed var(--sklearn-color-line);
+  margin: 0 0.4em 0.5em 0.4em;
+  box-sizing: border-box;
+  padding-bottom: 0.4em;
+  background-color: var(--sklearn-color-background);
+}
+
+#sk-container-id-1 div.sk-container {
+  /* jupyter's `normalize.less` sets `[hidden] { display: none; }`
+     but bootstrap.min.css set `[hidden] { display: none !important; }`
+     so we also need the `!important` here to be able to override the
+     default hidden behavior on the sphinx rendered scikit-learn.org.
+     See: https://github.com/scikit-learn/scikit-learn/issues/21755 */
+  display: inline-block !important;
+  position: relative;
+}
+
+#sk-container-id-1 div.sk-text-repr-fallback {
+  display: none;
+}
+
+div.sk-parallel-item,
+div.sk-serial,
+div.sk-item {
+  /* draw centered vertical line to link estimators */
+  background-image: linear-gradient(var(--sklearn-color-text-on-default-background), var(--sklearn-color-text-on-default-background));
+  background-size: 2px 100%;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+/* Parallel-specific style estimator block */
+
+#sk-container-id-1 div.sk-parallel-item::after {
+  content: "";
+  width: 100%;
+  border-bottom: 2px solid var(--sklearn-color-text-on-default-background);
+  flex-grow: 1;
+}
+
+#sk-container-id-1 div.sk-parallel {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  background-color: var(--sklearn-color-background);
+  position: relative;
+}
+
+#sk-container-id-1 div.sk-parallel-item {
+  display: flex;
+  flex-direction: column;
+}
+
+#sk-container-id-1 div.sk-parallel-item:first-child::after {
+  align-self: flex-end;
+  width: 50%;
+}
+
+#sk-container-id-1 div.sk-parallel-item:last-child::after {
+  align-self: flex-start;
+  width: 50%;
+}
+
+#sk-container-id-1 div.sk-parallel-item:only-child::after {
+  width: 0;
+}
+
+/* Serial-specific style estimator block */
+
+#sk-container-id-1 div.sk-serial {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--sklearn-color-background);
+  padding-right: 1em;
+  padding-left: 1em;
+}
+
+
+/* Toggleable style: style used for estimator/Pipeline/ColumnTransformer box that is
+clickable and can be expanded/collapsed.
+- Pipeline and ColumnTransformer use this feature and define the default style
+- Estimators will overwrite some part of the style using the `sk-estimator` class
+*/
+
+/* Pipeline and ColumnTransformer style (default) */
+
+#sk-container-id-1 div.sk-toggleable {
+  /* Default theme specific background. It is overwritten whether we have a
+  specific estimator or a Pipeline/ColumnTransformer */
+  background-color: var(--sklearn-color-background);
+}
+
+/* Toggleable label */
+#sk-container-id-1 label.sk-toggleable__label {
+  cursor: pointer;
+  display: flex;
+  width: 100%;
+  margin-bottom: 0;
+  padding: 0.5em;
+  box-sizing: border-box;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
+}
+
+#sk-container-id-1 label.sk-toggleable__label .caption {
+  font-size: 0.6rem;
+  font-weight: lighter;
+  color: var(--sklearn-color-text-muted);
+}
+
+#sk-container-id-1 label.sk-toggleable__label-arrow:before {
+  /* Arrow on the left of the label */
+  content: "▸";
+  float: left;
+  margin-right: 0.25em;
+  color: var(--sklearn-color-icon);
+}
+
+#sk-container-id-1 label.sk-toggleable__label-arrow:hover:before {
+  color: var(--sklearn-color-text);
+}
+
+/* Toggleable content - dropdown */
+
+#sk-container-id-1 div.sk-toggleable__content {
+  display: none;
+  text-align: left;
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-0);
+}
+
+#sk-container-id-1 div.sk-toggleable__content.fitted {
+  /* fitted */
+  background-color: var(--sklearn-color-fitted-level-0);
+}
+
+#sk-container-id-1 div.sk-toggleable__content pre {
+  margin: 0.2em;
+  border-radius: 0.25em;
+  color: var(--sklearn-color-text);
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-0);
+}
+
+#sk-container-id-1 div.sk-toggleable__content.fitted pre {
+  /* unfitted */
+  background-color: var(--sklearn-color-fitted-level-0);
+}
+
+#sk-container-id-1 input.sk-toggleable__control:checked~div.sk-toggleable__content {
+  /* Expand drop-down */
+  display: block;
+  width: 100%;
+  overflow: visible;
+}
+
+#sk-container-id-1 input.sk-toggleable__control:checked~label.sk-toggleable__label-arrow:before {
+  content: "▾";
+}
+
+/* Pipeline/ColumnTransformer-specific style */
+
+#sk-container-id-1 div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {
+  color: var(--sklearn-color-text);
+  background-color: var(--sklearn-color-unfitted-level-2);
+}
+
+#sk-container-id-1 div.sk-label.fitted input.sk-toggleable__control:checked~label.sk-toggleable__label {
+  background-color: var(--sklearn-color-fitted-level-2);
+}
+
+/* Estimator-specific style */
+
+/* Colorize estimator box */
+#sk-container-id-1 div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-2);
+}
+
+#sk-container-id-1 div.sk-estimator.fitted input.sk-toggleable__control:checked~label.sk-toggleable__label {
+  /* fitted */
+  background-color: var(--sklearn-color-fitted-level-2);
+}
+
+#sk-container-id-1 div.sk-label label.sk-toggleable__label,
+#sk-container-id-1 div.sk-label label {
+  /* The background is the default theme color */
+  color: var(--sklearn-color-text-on-default-background);
+}
+
+/* On hover, darken the color of the background */
+#sk-container-id-1 div.sk-label:hover label.sk-toggleable__label {
+  color: var(--sklearn-color-text);
+  background-color: var(--sklearn-color-unfitted-level-2);
+}
+
+/* Label box, darken color on hover, fitted */
+#sk-container-id-1 div.sk-label.fitted:hover label.sk-toggleable__label.fitted {
+  color: var(--sklearn-color-text);
+  background-color: var(--sklearn-color-fitted-level-2);
+}
+
+/* Estimator label */
+
+#sk-container-id-1 div.sk-label label {
+  font-family: monospace;
+  font-weight: bold;
+  line-height: 1.2em;
+}
+
+#sk-container-id-1 div.sk-label-container {
+  text-align: center;
+}
+
+/* Estimator-specific */
+#sk-container-id-1 div.sk-estimator {
+  font-family: monospace;
+  border: 1px dotted var(--sklearn-color-border-box);
+  border-radius: 0.25em;
+  box-sizing: border-box;
+  margin-bottom: 0.5em;
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-0);
+}
+
+#sk-container-id-1 div.sk-estimator.fitted {
+  /* fitted */
+  background-color: var(--sklearn-color-fitted-level-0);
+}
+
+/* on hover */
+#sk-container-id-1 div.sk-estimator:hover {
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-2);
+}
+
+#sk-container-id-1 div.sk-estimator.fitted:hover {
+  /* fitted */
+  background-color: var(--sklearn-color-fitted-level-2);
+}
+
+/* Specification for estimator info (e.g. "i" and "?") */
+
+/* Common style for "i" and "?" */
+
+.sk-estimator-doc-link,
+a:link.sk-estimator-doc-link,
+a:visited.sk-estimator-doc-link {
+  float: right;
+  font-size: smaller;
+  line-height: 1em;
+  font-family: monospace;
+  background-color: var(--sklearn-color-unfitted-level-0);
+  border-radius: 1em;
+  height: 1em;
+  width: 1em;
+  text-decoration: none !important;
+  margin-left: 0.5em;
+  text-align: center;
+  /* unfitted */
+  border: var(--sklearn-color-unfitted-level-3) 1pt solid;
+  color: var(--sklearn-color-unfitted-level-3);
+}
+
+.sk-estimator-doc-link.fitted,
+a:link.sk-estimator-doc-link.fitted,
+a:visited.sk-estimator-doc-link.fitted {
+  /* fitted */
+  background-color: var(--sklearn-color-fitted-level-0);
+  border: var(--sklearn-color-fitted-level-3) 1pt solid;
+  color: var(--sklearn-color-fitted-level-3);
+}
+
+/* On hover */
+div.sk-estimator:hover .sk-estimator-doc-link:hover,
+.sk-estimator-doc-link:hover,
+div.sk-label-container:hover .sk-estimator-doc-link:hover,
+.sk-estimator-doc-link:hover {
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-3);
+  border: var(--sklearn-color-fitted-level-0) 1pt solid;
+  color: var(--sklearn-color-unfitted-level-0);
+  text-decoration: none;
+}
+
+div.sk-estimator.fitted:hover .sk-estimator-doc-link.fitted:hover,
+.sk-estimator-doc-link.fitted:hover,
+div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
+.sk-estimator-doc-link.fitted:hover {
+  /* fitted */
+  background-color: var(--sklearn-color-fitted-level-3);
+  border: var(--sklearn-color-fitted-level-0) 1pt solid;
+  color: var(--sklearn-color-fitted-level-0);
+  text-decoration: none;
+}
+
+/* Span, style for the box shown on hovering the info icon */
+.sk-estimator-doc-link span {
+  display: none;
+  z-index: 9999;
+  position: relative;
+  font-weight: normal;
+  right: .2ex;
+  padding: .5ex;
+  margin: .5ex;
+  width: min-content;
+  min-width: 20ex;
+  max-width: 50ex;
+  color: var(--sklearn-color-text);
+  box-shadow: 2pt 2pt 4pt #999;
+  /* unfitted */
+  background: var(--sklearn-color-unfitted-level-0);
+  border: .5pt solid var(--sklearn-color-unfitted-level-3);
+}
+
+.sk-estimator-doc-link.fitted span {
+  /* fitted */
+  background: var(--sklearn-color-fitted-level-0);
+  border: var(--sklearn-color-fitted-level-3);
+}
+
+.sk-estimator-doc-link:hover span {
+  display: block;
+}
+
+/* "?"-specific style due to the `<a>` HTML tag */
+
+#sk-container-id-1 a.estimator_doc_link {
+  float: right;
+  font-size: 1rem;
+  line-height: 1em;
+  font-family: monospace;
+  background-color: var(--sklearn-color-unfitted-level-0);
+  border-radius: 1rem;
+  height: 1rem;
+  width: 1rem;
+  text-decoration: none;
+  /* unfitted */
+  color: var(--sklearn-color-unfitted-level-1);
+  border: var(--sklearn-color-unfitted-level-1) 1pt solid;
+}
+
+#sk-container-id-1 a.estimator_doc_link.fitted {
+  /* fitted */
+  background-color: var(--sklearn-color-fitted-level-0);
+  border: var(--sklearn-color-fitted-level-1) 1pt solid;
+  color: var(--sklearn-color-fitted-level-1);
+}
+
+/* On hover */
+#sk-container-id-1 a.estimator_doc_link:hover {
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-3);
+  color: var(--sklearn-color-background);
+  text-decoration: none;
+}
+
+#sk-container-id-1 a.estimator_doc_link.fitted:hover {
+  /* fitted */
+  background-color: var(--sklearn-color-fitted-level-3);
+}
+
+.estimator-table {
+    font-family: monospace;
+}
+
+.estimator-table summary {
+    padding: .5rem;
+    cursor: pointer;
+}
+
+.estimator-table summary::marker {
+    font-size: 0.7rem;
+}
+
+.estimator-table details[open] {
+    padding-left: 0.1rem;
+    padding-right: 0.1rem;
+    padding-bottom: 0.3rem;
+}
+
+.estimator-table .parameters-table {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    margin-top: 0;
+}
+
+.estimator-table .parameters-table tr:nth-child(odd) {
+    background-color: #fff;
+}
+
+.estimator-table .parameters-table tr:nth-child(even) {
+    background-color: #f6f6f6;
+}
+
+.estimator-table .parameters-table tr:hover {
+    background-color: #e0e0e0;
+}
+
+.estimator-table table td {
+    border: 1px solid rgba(106, 105, 104, 0.232);
+}
+
+/*
+    `table td`is set in notebook with right text-align.
+    We need to overwrite it.
+*/
+.estimator-table table td.param {
+    text-align: left;
+    position: relative;
+    padding: 0;
+}
+
+.user-set td {
+    color:rgb(255, 94, 0);
+    text-align: left !important;
+}
+
+.user-set td.value {
+    color:rgb(255, 94, 0);
+    background-color: transparent;
+}
+
+.default td {
+    color: black;
+    text-align: left !important;
+}
+
+.user-set td i,
+.default td i {
+    color: black;
+}
+
+/*
+    Styles for parameter documentation links
+    We need styling for visited so jupyter doesn't overwrite it
+*/
+a.param-doc-link,
+a.param-doc-link:link,
+a.param-doc-link:visited {
+    text-decoration: underline dashed;
+    text-underline-offset: .3em;
+    color: inherit;
+    display: block;
+    padding: .5em;
+}
+
+/* "hack" to make the entire area of the cell containing the link clickable */
+a.param-doc-link::before {
+    position: absolute;
+    content: "";
+    inset: 0;
+}
+
+.param-doc-description {
+    display: none;
+    position: absolute;
+    z-index: 9999;
+    left: 0;
+    padding: .5ex;
+    margin-left: 1.5em;
+    color: var(--sklearn-color-text);
+    box-shadow: .3em .3em .4em #999;
+    width: max-content;
+    text-align: left;
+    max-height: 10em;
+    overflow-y: auto;
+
+    /* unfitted */
+    background: var(--sklearn-color-unfitted-level-0);
+    border: thin solid var(--sklearn-color-unfitted-level-3);
+}
+
+/* Fitted state for parameter tooltips */
+.fitted .param-doc-description {
+    /* fitted */
+    background: var(--sklearn-color-fitted-level-0);
+    border: thin solid var(--sklearn-color-fitted-level-3);
+}
+
+.param-doc-link:hover .param-doc-description {
+    display: block;
+}
+
+.copy-paste-icon {
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0NDggNTEyIj48IS0tIUZvbnQgQXdlc29tZSBGcmVlIDYuNy4yIGJ5IEBmb250YXdlc29tZSAtIGh0dHBzOi8vZm9udGF3ZXNvbWUuY29tIExpY2Vuc2UgLSBodHRwczovL2ZvbnRhd2Vzb21lLmNvbS9saWNlbnNlL2ZyZWUgQ29weXJpZ2h0IDIwMjUgRm9udGljb25zLCBJbmMuLS0+PHBhdGggZD0iTTIwOCAwTDMzMi4xIDBjMTIuNyAwIDI0LjkgNS4xIDMzLjkgMTQuMWw2Ny45IDY3LjljOSA5IDE0LjEgMjEuMiAxNC4xIDMzLjlMNDQ4IDMzNmMwIDI2LjUtMjEuNSA0OC00OCA0OGwtMTkyIDBjLTI2LjUgMC00OC0yMS41LTQ4LTQ4bDAtMjg4YzAtMjYuNSAyMS41LTQ4IDQ4LTQ4ek00OCAxMjhsODAgMCAwIDY0LTY0IDAgMCAyNTYgMTkyIDAgMC0zMiA2NCAwIDAgNDhjMCAyNi41LTIxLjUgNDgtNDggNDhMNDggNTEyYy0yNi41IDAtNDgtMjEuNS00OC00OEwwIDE3NmMwLTI2LjUgMjEuNS00OCA0OC00OHoiLz48L3N2Zz4=);
+    background-repeat: no-repeat;
+    background-size: 14px 14px;
+    background-position: 0;
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    cursor: pointer;
+}
+</style><div id="sk-container-id-1" class="sk-top-container"><div class="sk-text-repr-fallback"><pre>LGBMClassifier(random_state=123, verbose=-1)</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br>On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden=""><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-1" type="checkbox" checked=""><label for="sk-estimator-id-1" class="sk-toggleable__label fitted sk-toggleable__label-arrow"><div><div>LGBMClassifier</div></div><div><span class="sk-estimator-doc-link fitted">i<span>Fitted</span></span></div></label><div class="sk-toggleable__content fitted" data-param-prefix="">
+        <div class="estimator-table">
+            <details>
+                <summary>Parameters</summary>
+                
+<table class="parameters-table caption-top">
+<tbody>
+<tr class="default odd">
+<td><em></em></td>
+<td class="param">boosting_type</td>
+<td class="value">'gbdt'</td>
+</tr>
+<tr class="default even">
+<td><em></em></td>
+<td class="param">num_leaves</td>
+<td class="value">31</td>
+</tr>
+<tr class="default odd">
+<td><em></em></td>
+<td class="param">max_depth</td>
+<td class="value">-1</td>
+</tr>
+<tr class="default even">
+<td><em></em></td>
+<td class="param">learning_rate</td>
+<td class="value">0.1</td>
+</tr>
+<tr class="default odd">
+<td><em></em></td>
+<td class="param">n_estimators</td>
+<td class="value">100</td>
+</tr>
+<tr class="default even">
+<td><em></em></td>
+<td class="param">subsample_for_bin</td>
+<td class="value">200000</td>
+</tr>
+<tr class="default odd">
+<td><em></em></td>
+<td class="param">objective</td>
+<td class="value">None</td>
+</tr>
+<tr class="default even">
+<td><em></em></td>
+<td class="param">class_weight</td>
+<td class="value">None</td>
+</tr>
+<tr class="default odd">
+<td><em></em></td>
+<td class="param">min_split_gain</td>
+<td class="value">0.0</td>
+</tr>
+<tr class="default even">
+<td><em></em></td>
+<td class="param">min_child_weight</td>
+<td class="value">0.001</td>
+</tr>
+<tr class="default odd">
+<td><em></em></td>
+<td class="param">min_child_samples</td>
+<td class="value">20</td>
+</tr>
+<tr class="default even">
+<td><em></em></td>
+<td class="param">subsample</td>
+<td class="value">1.0</td>
+</tr>
+<tr class="default odd">
+<td><em></em></td>
+<td class="param">subsample_freq</td>
+<td class="value">0</td>
+</tr>
+<tr class="default even">
+<td><em></em></td>
+<td class="param">colsample_bytree</td>
+<td class="value">1.0</td>
+</tr>
+<tr class="default odd">
+<td><em></em></td>
+<td class="param">reg_alpha</td>
+<td class="value">0.0</td>
+</tr>
+<tr class="default even">
+<td><em></em></td>
+<td class="param">reg_lambda</td>
+<td class="value">0.0</td>
+</tr>
+<tr class="user-set odd">
+<td><em></em></td>
+<td class="param">random_state</td>
+<td class="value">123</td>
+</tr>
+<tr class="default even">
+<td><em></em></td>
+<td class="param">n_jobs</td>
+<td class="value">None</td>
+</tr>
+<tr class="default odd">
+<td><em></em></td>
+<td class="param">importance_type</td>
+<td class="value">'split'</td>
+</tr>
+<tr class="user-set even">
+<td><em></em></td>
+<td class="param">verbose</td>
+<td class="value">-1</td>
+</tr>
+</tbody>
+</table>
+
+            </details>
+        </div>
+    </div></div></div></div></div><script>function copyToClipboard(text, element) {
+    // Get the parameter prefix from the closest toggleable content
+    const toggleableContent = element.closest('.sk-toggleable__content');
+    const paramPrefix = toggleableContent ? toggleableContent.dataset.paramPrefix : '';
+    const fullParamName = paramPrefix ? `${paramPrefix}${text}` : text;
+
+    const originalStyle = element.style;
+    const computedStyle = window.getComputedStyle(element);
+    const originalWidth = computedStyle.width;
+    const originalHTML = element.innerHTML.replace('Copied!', '');
+
+    navigator.clipboard.writeText(fullParamName)
+        .then(() => {
+            element.style.width = originalWidth;
+            element.style.color = 'green';
+            element.innerHTML = "Copied!";
+
+            setTimeout(() => {
+                element.innerHTML = originalHTML;
+                element.style = originalStyle;
+            }, 2000);
+        })
+        .catch(err => {
+            console.error('Failed to copy:', err);
+            element.style.color = 'red';
+            element.innerHTML = "Failed!";
+            setTimeout(() => {
+                element.innerHTML = originalHTML;
+                element.style = originalStyle;
+            }, 2000);
+        });
+    return false;
+}
+
+document.querySelectorAll('.copy-paste-icon').forEach(function(element) {
+    const toggleableContent = element.closest('.sk-toggleable__content');
+    const paramPrefix = toggleableContent ? toggleableContent.dataset.paramPrefix : '';
+    const paramName = element.parentElement.nextElementSibling
+        .textContent.trim().split(' ')[0];
+    const fullParamName = paramPrefix ? `${paramPrefix}${paramName}` : paramName;
+
+    element.setAttribute('title', fullParamName);
+});
+
+
+/**
+ * Adapted from Skrub
+ * https://github.com/skrub-data/skrub/blob/403466d1d5d4dc76a7ef569b3f8228db59a31dc3/skrub/_reporting/_data/templates/report.js#L789
+ * @returns "light" or "dark"
+ */
+function detectTheme(element) {
+    const body = document.querySelector('body');
+
+    // Check VSCode theme
+    const themeKindAttr = body.getAttribute('data-vscode-theme-kind');
+    const themeNameAttr = body.getAttribute('data-vscode-theme-name');
+
+    if (themeKindAttr && themeNameAttr) {
+        const themeKind = themeKindAttr.toLowerCase();
+        const themeName = themeNameAttr.toLowerCase();
+
+        if (themeKind.includes("dark") || themeName.includes("dark")) {
+            return "dark";
+        }
+        if (themeKind.includes("light") || themeName.includes("light")) {
+            return "light";
+        }
+    }
+
+    // Check Jupyter theme
+    if (body.getAttribute('data-jp-theme-light') === 'false') {
+        return 'dark';
+    } else if (body.getAttribute('data-jp-theme-light') === 'true') {
+        return 'light';
+    }
+
+    // Guess based on a parent element's color
+    const color = window.getComputedStyle(element.parentNode, null).getPropertyValue('color');
+    const match = color.match(/^rgb\s*\(\s*(\d+)\s*,\s*(\d+)\s*,\s*(\d+)\s*\)\s*$/i);
+    if (match) {
+        const [r, g, b] = [
+            parseFloat(match[1]),
+            parseFloat(match[2]),
+            parseFloat(match[3])
+        ];
+
+        // https://en.wikipedia.org/wiki/HSL_and_HSV#Lightness
+        const luma = 0.299 * r + 0.587 * g + 0.114 * b;
+
+        if (luma > 180) {
+            // If the text is very bright we have a dark theme
+            return 'dark';
+        }
+        if (luma < 75) {
+            // If the text is very dark we have a light theme
+            return 'light';
+        }
+        // Otherwise fall back to the next heuristic.
+    }
+
+    // Fallback to system preference
+    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+}
+
+
+function forceTheme(elementId) {
+    const estimatorElement = document.querySelector(`#${elementId}`);
+    if (estimatorElement === null) {
+        console.error(`Element with id ${elementId} not found.`);
+    } else {
+        const theme = detectTheme(estimatorElement);
+        estimatorElement.classList.add(theme);
+    }
+}
+
+forceTheme('sk-container-id-1');</script>
+</div>
+</div>
+</section>
+<section id="new-examples" class="slide level2 center">
+<h2>New examples</h2>
+<ul>
+<li>Given features of new patients below we’ll use this model to predict whether these patients have the liver disease or not.</li>
+</ul>
+<div id="c8c5d576" class="cell" data-execution_count="7">
+<div class="cell-output cell-output-display" data-execution_count="7">
+<table class="dataframe caption-top" data-border="1">
+<thead>
+<tr class="header" style="text-align: right;">
+<th data-quarto-table-cell-role="th">Age</th>
+<th data-quarto-table-cell-role="th">Total_Bilirubin</th>
+<th data-quarto-table-cell-role="th">Direct_Bilirubin</th>
+<th data-quarto-table-cell-role="th">Alkaline_Phosphotase</th>
+<th data-quarto-table-cell-role="th">Alamine_Aminotransferase</th>
+<th data-quarto-table-cell-role="th">Aspartate_Aminotransferase</th>
+<th data-quarto-table-cell-role="th">Total_Protiens</th>
+<th data-quarto-table-cell-role="th">Albumin</th>
+<th data-quarto-table-cell-role="th">Albumin_and_Globulin_Ratio</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>19</td>
+<td>1.4</td>
+<td>0.8</td>
+<td>178</td>
+<td>13</td>
+<td>26</td>
+<td>8.0</td>
+<td>4.6</td>
+<td>1.30</td>
+</tr>
+<tr class="even">
+<td>12</td>
+<td>1.0</td>
+<td>0.2</td>
+<td>719</td>
+<td>157</td>
+<td>108</td>
+<td>7.2</td>
+<td>3.7</td>
+<td>1.00</td>
+</tr>
+<tr class="odd">
+<td>60</td>
+<td>5.7</td>
+<td>2.8</td>
+<td>214</td>
+<td>412</td>
+<td>850</td>
+<td>7.3</td>
+<td>3.2</td>
+<td>0.78</td>
+</tr>
+<tr class="even">
+<td>42</td>
+<td>0.5</td>
+<td>0.1</td>
+<td>162</td>
+<td>155</td>
+<td>108</td>
+<td>8.1</td>
+<td>4.0</td>
+<td>0.90</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="model-predictions-on-new-examples" class="slide level2 smaller center">
+<h2>Model predictions on new examples</h2>
+<ul>
+<li>Let’s examine predictions</li>
+</ul>
+<div id="b4132dd8" class="cell" data-execution_count="8">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a></a>pred_df <span class="op">=</span> pd.DataFrame({<span class="st">"Predicted_target"</span>: model.predict(X_test).tolist()})</span>
+<span id="cb6-2"><a></a>df_concat <span class="op">=</span> pd.concat([pred_df, X_test.reset_index(drop<span class="op">=</span><span class="va">True</span>)], axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb6-3"><a></a>HTML(df_concat.to_html(index<span class="op">=</span><span class="va">False</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="8">
+<table class="dataframe caption-top" data-border="1">
+<thead>
+<tr class="header" style="text-align: right;">
+<th data-quarto-table-cell-role="th">Predicted_target</th>
+<th data-quarto-table-cell-role="th">Age</th>
+<th data-quarto-table-cell-role="th">Total_Bilirubin</th>
+<th data-quarto-table-cell-role="th">Direct_Bilirubin</th>
+<th data-quarto-table-cell-role="th">Alkaline_Phosphotase</th>
+<th data-quarto-table-cell-role="th">Alamine_Aminotransferase</th>
+<th data-quarto-table-cell-role="th">Aspartate_Aminotransferase</th>
+<th data-quarto-table-cell-role="th">Total_Protiens</th>
+<th data-quarto-table-cell-role="th">Albumin</th>
+<th data-quarto-table-cell-role="th">Albumin_and_Globulin_Ratio</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>No Disease</td>
+<td>19</td>
+<td>1.4</td>
+<td>0.8</td>
+<td>178</td>
+<td>13</td>
+<td>26</td>
+<td>8.0</td>
+<td>4.6</td>
+<td>1.30</td>
+</tr>
+<tr class="even">
+<td>Disease</td>
+<td>12</td>
+<td>1.0</td>
+<td>0.2</td>
+<td>719</td>
+<td>157</td>
+<td>108</td>
+<td>7.2</td>
+<td>3.7</td>
+<td>1.00</td>
+</tr>
+<tr class="odd">
+<td>Disease</td>
+<td>60</td>
+<td>5.7</td>
+<td>2.8</td>
+<td>214</td>
+<td>412</td>
+<td>850</td>
+<td>7.3</td>
+<td>3.2</td>
+<td>0.78</td>
+</tr>
+<tr class="even">
+<td>Disease</td>
+<td>42</td>
+<td>0.5</td>
+<td>0.1</td>
+<td>162</td>
+<td>155</td>
+<td>108</td>
+<td>8.1</td>
+<td>4.0</td>
+<td>0.90</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="example-supervised-regression" class="slide level2 smaller center">
+<h2>Example: Supervised regression</h2>
+<p>Suppose we want to predict housing prices given a number of attributes associated with houses. The target here is <strong>continuous</strong> and not <strong>discrete</strong>.</p>
+<div id="c9d22022" class="cell" data-execution_count="9">
+<div class="cell-output cell-output-display" data-execution_count="9">
+<table class="dataframe caption-top" data-border="1">
+<thead>
+<tr class="header" style="text-align: right;">
+<th data-quarto-table-cell-role="th">target</th>
+<th data-quarto-table-cell-role="th">bedrooms</th>
+<th data-quarto-table-cell-role="th">bathrooms</th>
+<th data-quarto-table-cell-role="th">sqft_living</th>
+<th data-quarto-table-cell-role="th">sqft_lot</th>
+<th data-quarto-table-cell-role="th">floors</th>
+<th data-quarto-table-cell-role="th">waterfront</th>
+<th data-quarto-table-cell-role="th">view</th>
+<th data-quarto-table-cell-role="th">condition</th>
+<th data-quarto-table-cell-role="th">grade</th>
+<th data-quarto-table-cell-role="th">sqft_above</th>
+<th data-quarto-table-cell-role="th">sqft_basement</th>
+<th data-quarto-table-cell-role="th">yr_built</th>
+<th data-quarto-table-cell-role="th">yr_renovated</th>
+<th data-quarto-table-cell-role="th">zipcode</th>
+<th data-quarto-table-cell-role="th">lat</th>
+<th data-quarto-table-cell-role="th">long</th>
+<th data-quarto-table-cell-role="th">sqft_living15</th>
+<th data-quarto-table-cell-role="th">sqft_lot15</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>509000.0</td>
+<td>2</td>
+<td>1.50</td>
+<td>1930</td>
+<td>3521</td>
+<td>2.0</td>
+<td>0</td>
+<td>0</td>
+<td>3</td>
+<td>8</td>
+<td>1930</td>
+<td>0</td>
+<td>1989</td>
+<td>0</td>
+<td>98007</td>
+<td>47.6092</td>
+<td>-122.146</td>
+<td>1840</td>
+<td>3576</td>
+</tr>
+<tr class="even">
+<td>675000.0</td>
+<td>5</td>
+<td>2.75</td>
+<td>2570</td>
+<td>12906</td>
+<td>2.0</td>
+<td>0</td>
+<td>0</td>
+<td>3</td>
+<td>8</td>
+<td>2570</td>
+<td>0</td>
+<td>1987</td>
+<td>0</td>
+<td>98075</td>
+<td>47.5814</td>
+<td>-122.050</td>
+<td>2580</td>
+<td>12927</td>
+</tr>
+<tr class="odd">
+<td>420000.0</td>
+<td>3</td>
+<td>1.00</td>
+<td>1150</td>
+<td>5120</td>
+<td>1.0</td>
+<td>0</td>
+<td>0</td>
+<td>4</td>
+<td>6</td>
+<td>800</td>
+<td>350</td>
+<td>1946</td>
+<td>0</td>
+<td>98116</td>
+<td>47.5588</td>
+<td>-122.392</td>
+<td>1220</td>
+<td>5120</td>
+</tr>
+<tr class="even">
+<td>680000.0</td>
+<td>8</td>
+<td>2.75</td>
+<td>2530</td>
+<td>4800</td>
+<td>2.0</td>
+<td>0</td>
+<td>0</td>
+<td>4</td>
+<td>7</td>
+<td>1390</td>
+<td>1140</td>
+<td>1901</td>
+<td>0</td>
+<td>98112</td>
+<td>47.6241</td>
+<td>-122.305</td>
+<td>1540</td>
+<td>4800</td>
+</tr>
+<tr class="odd">
+<td>357823.0</td>
+<td>3</td>
+<td>1.50</td>
+<td>1240</td>
+<td>9196</td>
+<td>1.0</td>
+<td>0</td>
+<td>0</td>
+<td>3</td>
+<td>8</td>
+<td>1240</td>
+<td>0</td>
+<td>1968</td>
+<td>0</td>
+<td>98072</td>
+<td>47.7562</td>
+<td>-122.094</td>
+<td>1690</td>
+<td>10800</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="building-a-regression-model" class="slide level2 center">
+<h2>Building a regression model</h2>
+<div id="4778acec" class="cell" data-execution_count="10">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a></a><span class="im">from</span> lightgbm.sklearn <span class="im">import</span> LGBMRegressor</span>
+<span id="cb7-2"><a></a></span>
+<span id="cb7-3"><a></a>X_train, y_train <span class="op">=</span> train_df.drop(columns<span class="op">=</span> [<span class="st">"target"</span>]), train_df[<span class="st">"target"</span>]</span>
+<span id="cb7-4"><a></a>X_test, y_test <span class="op">=</span> test_df.drop(columns<span class="op">=</span> [<span class="st">"target"</span>]), train_df[<span class="st">"target"</span>]</span>
+<span id="cb7-5"><a></a></span>
+<span id="cb7-6"><a></a>model <span class="op">=</span> LGBMRegressor()</span>
+<span id="cb7-7"><a></a>model.fit(X_train, y_train)<span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="predicting-prices-of-unseen-houses" class="slide level2 smaller center">
+<h2>Predicting prices of unseen houses</h2>
+<div id="4204ab73" class="cell" data-execution_count="11">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a></a>pred_df <span class="op">=</span> pd.DataFrame(</span>
+<span id="cb8-2"><a></a>    {<span class="st">"Predicted_target"</span>: model.predict(X_test[<span class="dv">0</span>:<span class="dv">4</span>]).tolist()}</span>
+<span id="cb8-3"><a></a>)</span>
+<span id="cb8-4"><a></a>df_concat <span class="op">=</span> pd.concat([pred_df, X_test[<span class="dv">0</span>:<span class="dv">4</span>].reset_index(drop<span class="op">=</span><span class="va">True</span>)], axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb8-5"><a></a>HTML(df_concat.to_html(index<span class="op">=</span><span class="va">False</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="11">
+<table class="dataframe caption-top" data-border="1">
+<thead>
+<tr class="header" style="text-align: right;">
+<th data-quarto-table-cell-role="th">Predicted_target</th>
+<th data-quarto-table-cell-role="th">bedrooms</th>
+<th data-quarto-table-cell-role="th">bathrooms</th>
+<th data-quarto-table-cell-role="th">sqft_living</th>
+<th data-quarto-table-cell-role="th">sqft_lot</th>
+<th data-quarto-table-cell-role="th">floors</th>
+<th data-quarto-table-cell-role="th">waterfront</th>
+<th data-quarto-table-cell-role="th">view</th>
+<th data-quarto-table-cell-role="th">condition</th>
+<th data-quarto-table-cell-role="th">grade</th>
+<th data-quarto-table-cell-role="th">sqft_above</th>
+<th data-quarto-table-cell-role="th">sqft_basement</th>
+<th data-quarto-table-cell-role="th">yr_built</th>
+<th data-quarto-table-cell-role="th">yr_renovated</th>
+<th data-quarto-table-cell-role="th">zipcode</th>
+<th data-quarto-table-cell-role="th">lat</th>
+<th data-quarto-table-cell-role="th">long</th>
+<th data-quarto-table-cell-role="th">sqft_living15</th>
+<th data-quarto-table-cell-role="th">sqft_lot15</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>345831.740542</td>
+<td>4</td>
+<td>2.25</td>
+<td>2130</td>
+<td>8078</td>
+<td>1.0</td>
+<td>0</td>
+<td>0</td>
+<td>4</td>
+<td>7</td>
+<td>1380</td>
+<td>750</td>
+<td>1977</td>
+<td>0</td>
+<td>98055</td>
+<td>47.4482</td>
+<td>-122.209</td>
+<td>2300</td>
+<td>8112</td>
+</tr>
+<tr class="even">
+<td>601042.018745</td>
+<td>3</td>
+<td>2.50</td>
+<td>2210</td>
+<td>7620</td>
+<td>2.0</td>
+<td>0</td>
+<td>0</td>
+<td>3</td>
+<td>8</td>
+<td>2210</td>
+<td>0</td>
+<td>1994</td>
+<td>0</td>
+<td>98052</td>
+<td>47.6938</td>
+<td>-122.130</td>
+<td>1920</td>
+<td>7440</td>
+</tr>
+<tr class="odd">
+<td>311310.186024</td>
+<td>4</td>
+<td>1.50</td>
+<td>1800</td>
+<td>9576</td>
+<td>1.0</td>
+<td>0</td>
+<td>0</td>
+<td>4</td>
+<td>7</td>
+<td>1800</td>
+<td>0</td>
+<td>1977</td>
+<td>0</td>
+<td>98045</td>
+<td>47.4664</td>
+<td>-121.747</td>
+<td>1370</td>
+<td>9576</td>
+</tr>
+<tr class="even">
+<td>597555.592401</td>
+<td>3</td>
+<td>2.50</td>
+<td>1580</td>
+<td>1321</td>
+<td>2.0</td>
+<td>0</td>
+<td>2</td>
+<td>3</td>
+<td>8</td>
+<td>1080</td>
+<td>500</td>
+<td>2014</td>
+<td>0</td>
+<td>98107</td>
+<td>47.6688</td>
+<td>-122.402</td>
+<td>1530</td>
+<td>1357</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>We are predicting <strong>continuous values</strong> here as apposed to discrete values in <code>disease</code> vs.&nbsp;<code>no disease</code> example.</p>
+</section></section>
+<section>
+<section id="text-data" class="title-slide slide level1 center">
+<h1>Text data</h1>
+
+</section>
+<section id="example-text-classification" class="slide level2 smaller center">
+<h2>Example: Text classification</h2>
+<ul>
+<li>Suppose you are given some data with labeled spam and non-spam messages and you want to predict whether a new message is spam or not spam.</li>
+</ul>
+<div class="panel-tabset">
+<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">Code</a></li><li><a href="#tabset-1-2">Output</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1">
+<div id="1a53d65a" class="cell" data-execution_count="12">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a></a>sms_df <span class="op">=</span> pd.read_csv(DATA_DIR <span class="op">+</span> <span class="st">"spam.csv"</span>, encoding<span class="op">=</span><span class="st">"latin-1"</span>)</span>
+<span id="cb9-2"><a></a>sms_df <span class="op">=</span> sms_df.drop(columns <span class="op">=</span> [<span class="st">"Unnamed: 2"</span>, <span class="st">"Unnamed: 3"</span>, <span class="st">"Unnamed: 4"</span>])</span>
+<span id="cb9-3"><a></a>sms_df <span class="op">=</span> sms_df.rename(columns<span class="op">=</span>{<span class="st">"v1"</span>: <span class="st">"target"</span>, <span class="st">"v2"</span>: <span class="st">"sms"</span>})</span>
+<span id="cb9-4"><a></a>train_df, test_df <span class="op">=</span> train_test_split(sms_df, test_size<span class="op">=</span><span class="fl">0.10</span>, random_state<span class="op">=</span><span class="dv">42</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+<div id="tabset-1-2">
+<div class="scroll-container" style="overflow-y: scroll; height: 400px;">
+<div id="f35315c5" class="cell" data-execution_count="13">
+<div class="cell-output cell-output-display" data-execution_count="13">
+<table class="dataframe caption-top" data-border="1">
+<thead>
+<tr class="header" style="text-align: right;">
+<th data-quarto-table-cell-role="th">target</th>
+<th data-quarto-table-cell-role="th">sms</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>spam</td>
+<td>LookAtMe!: Thanks for your purchase of a video clip from LookAtMe!, you've been charged 35p. Think you can do better? Why not send a video in a MMSto 32323.</td>
+</tr>
+<tr class="even">
+<td>ham</td>
+<td>Aight, I'll hit you up when I get some cash</td>
+</tr>
+<tr class="odd">
+<td>ham</td>
+<td>Don no da:)whats you plan?</td>
+</tr>
+<tr class="even">
+<td>ham</td>
+<td>Going to take your babe out ?</td>
+</tr>
+<tr class="odd">
+<td>ham</td>
+<td>No need lar. Jus testing e phone card. Dunno network not gd i thk. Me waiting 4 my sis 2 finish bathing so i can bathe. Dun disturb u liao u cleaning ur room.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="lets-train-a-model" class="slide level2 center">
+<h2>Let’s train a model</h2>
+<div id="bc0b7307" class="cell" data-execution_count="14">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a></a>X_train, y_train <span class="op">=</span> train_df[<span class="st">"sms"</span>], train_df[<span class="st">"target"</span>]</span>
+<span id="cb10-2"><a></a>X_test, y_test <span class="op">=</span> test_df[<span class="st">"sms"</span>], test_df[<span class="st">"target"</span>]</span>
+<span id="cb10-3"><a></a>clf <span class="op">=</span> make_pipeline(CountVectorizer(max_features<span class="op">=</span><span class="dv">5000</span>), LogisticRegression(max_iter<span class="op">=</span><span class="dv">5000</span>))</span>
+<span id="cb10-4"><a></a>clf.fit(X_train, y_train) <span class="co"># Training the model</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="14">
+<style>#sk-container-id-2 {
+  /* Definition of color scheme common for light and dark mode */
+  --sklearn-color-text: #000;
+  --sklearn-color-text-muted: #666;
+  --sklearn-color-line: gray;
+  /* Definition of color scheme for unfitted estimators */
+  --sklearn-color-unfitted-level-0: #fff5e6;
+  --sklearn-color-unfitted-level-1: #f6e4d2;
+  --sklearn-color-unfitted-level-2: #ffe0b3;
+  --sklearn-color-unfitted-level-3: chocolate;
+  /* Definition of color scheme for fitted estimators */
+  --sklearn-color-fitted-level-0: #f0f8ff;
+  --sklearn-color-fitted-level-1: #d4ebff;
+  --sklearn-color-fitted-level-2: #b3dbfd;
+  --sklearn-color-fitted-level-3: cornflowerblue;
+}
+
+#sk-container-id-2.light {
+  /* Specific color for light theme */
+  --sklearn-color-text-on-default-background: black;
+  --sklearn-color-background: white;
+  --sklearn-color-border-box: black;
+  --sklearn-color-icon: #696969;
+}
+
+#sk-container-id-2.dark {
+  --sklearn-color-text-on-default-background: white;
+  --sklearn-color-background: #111;
+  --sklearn-color-border-box: white;
+  --sklearn-color-icon: #878787;
+}
+
+#sk-container-id-2 {
+  color: var(--sklearn-color-text);
+}
+
+#sk-container-id-2 pre {
+  padding: 0;
+}
+
+#sk-container-id-2 input.sk-hidden--visually {
+  border: 0;
+  clip: rect(1px 1px 1px 1px);
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+#sk-container-id-2 div.sk-dashed-wrapped {
+  border: 1px dashed var(--sklearn-color-line);
+  margin: 0 0.4em 0.5em 0.4em;
+  box-sizing: border-box;
+  padding-bottom: 0.4em;
+  background-color: var(--sklearn-color-background);
+}
+
+#sk-container-id-2 div.sk-container {
+  /* jupyter's `normalize.less` sets `[hidden] { display: none; }`
+     but bootstrap.min.css set `[hidden] { display: none !important; }`
+     so we also need the `!important` here to be able to override the
+     default hidden behavior on the sphinx rendered scikit-learn.org.
+     See: https://github.com/scikit-learn/scikit-learn/issues/21755 */
+  display: inline-block !important;
+  position: relative;
+}
+
+#sk-container-id-2 div.sk-text-repr-fallback {
+  display: none;
+}
+
+div.sk-parallel-item,
+div.sk-serial,
+div.sk-item {
+  /* draw centered vertical line to link estimators */
+  background-image: linear-gradient(var(--sklearn-color-text-on-default-background), var(--sklearn-color-text-on-default-background));
+  background-size: 2px 100%;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+/* Parallel-specific style estimator block */
+
+#sk-container-id-2 div.sk-parallel-item::after {
+  content: "";
+  width: 100%;
+  border-bottom: 2px solid var(--sklearn-color-text-on-default-background);
+  flex-grow: 1;
+}
+
+#sk-container-id-2 div.sk-parallel {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  background-color: var(--sklearn-color-background);
+  position: relative;
+}
+
+#sk-container-id-2 div.sk-parallel-item {
+  display: flex;
+  flex-direction: column;
+}
+
+#sk-container-id-2 div.sk-parallel-item:first-child::after {
+  align-self: flex-end;
+  width: 50%;
+}
+
+#sk-container-id-2 div.sk-parallel-item:last-child::after {
+  align-self: flex-start;
+  width: 50%;
+}
+
+#sk-container-id-2 div.sk-parallel-item:only-child::after {
+  width: 0;
+}
+
+/* Serial-specific style estimator block */
+
+#sk-container-id-2 div.sk-serial {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--sklearn-color-background);
+  padding-right: 1em;
+  padding-left: 1em;
+}
+
+
+/* Toggleable style: style used for estimator/Pipeline/ColumnTransformer box that is
+clickable and can be expanded/collapsed.
+- Pipeline and ColumnTransformer use this feature and define the default style
+- Estimators will overwrite some part of the style using the `sk-estimator` class
+*/
+
+/* Pipeline and ColumnTransformer style (default) */
+
+#sk-container-id-2 div.sk-toggleable {
+  /* Default theme specific background. It is overwritten whether we have a
+  specific estimator or a Pipeline/ColumnTransformer */
+  background-color: var(--sklearn-color-background);
+}
+
+/* Toggleable label */
+#sk-container-id-2 label.sk-toggleable__label {
+  cursor: pointer;
+  display: flex;
+  width: 100%;
+  margin-bottom: 0;
+  padding: 0.5em;
+  box-sizing: border-box;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
+}
+
+#sk-container-id-2 label.sk-toggleable__label .caption {
+  font-size: 0.6rem;
+  font-weight: lighter;
+  color: var(--sklearn-color-text-muted);
+}
+
+#sk-container-id-2 label.sk-toggleable__label-arrow:before {
+  /* Arrow on the left of the label */
+  content: "▸";
+  float: left;
+  margin-right: 0.25em;
+  color: var(--sklearn-color-icon);
+}
+
+#sk-container-id-2 label.sk-toggleable__label-arrow:hover:before {
+  color: var(--sklearn-color-text);
+}
+
+/* Toggleable content - dropdown */
+
+#sk-container-id-2 div.sk-toggleable__content {
+  display: none;
+  text-align: left;
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-0);
+}
+
+#sk-container-id-2 div.sk-toggleable__content.fitted {
+  /* fitted */
+  background-color: var(--sklearn-color-fitted-level-0);
+}
+
+#sk-container-id-2 div.sk-toggleable__content pre {
+  margin: 0.2em;
+  border-radius: 0.25em;
+  color: var(--sklearn-color-text);
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-0);
+}
+
+#sk-container-id-2 div.sk-toggleable__content.fitted pre {
+  /* unfitted */
+  background-color: var(--sklearn-color-fitted-level-0);
+}
+
+#sk-container-id-2 input.sk-toggleable__control:checked~div.sk-toggleable__content {
+  /* Expand drop-down */
+  display: block;
+  width: 100%;
+  overflow: visible;
+}
+
+#sk-container-id-2 input.sk-toggleable__control:checked~label.sk-toggleable__label-arrow:before {
+  content: "▾";
+}
+
+/* Pipeline/ColumnTransformer-specific style */
+
+#sk-container-id-2 div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {
+  color: var(--sklearn-color-text);
+  background-color: var(--sklearn-color-unfitted-level-2);
+}
+
+#sk-container-id-2 div.sk-label.fitted input.sk-toggleable__control:checked~label.sk-toggleable__label {
+  background-color: var(--sklearn-color-fitted-level-2);
+}
+
+/* Estimator-specific style */
+
+/* Colorize estimator box */
+#sk-container-id-2 div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-2);
+}
+
+#sk-container-id-2 div.sk-estimator.fitted input.sk-toggleable__control:checked~label.sk-toggleable__label {
+  /* fitted */
+  background-color: var(--sklearn-color-fitted-level-2);
+}
+
+#sk-container-id-2 div.sk-label label.sk-toggleable__label,
+#sk-container-id-2 div.sk-label label {
+  /* The background is the default theme color */
+  color: var(--sklearn-color-text-on-default-background);
+}
+
+/* On hover, darken the color of the background */
+#sk-container-id-2 div.sk-label:hover label.sk-toggleable__label {
+  color: var(--sklearn-color-text);
+  background-color: var(--sklearn-color-unfitted-level-2);
+}
+
+/* Label box, darken color on hover, fitted */
+#sk-container-id-2 div.sk-label.fitted:hover label.sk-toggleable__label.fitted {
+  color: var(--sklearn-color-text);
+  background-color: var(--sklearn-color-fitted-level-2);
+}
+
+/* Estimator label */
+
+#sk-container-id-2 div.sk-label label {
+  font-family: monospace;
+  font-weight: bold;
+  line-height: 1.2em;
+}
+
+#sk-container-id-2 div.sk-label-container {
+  text-align: center;
+}
+
+/* Estimator-specific */
+#sk-container-id-2 div.sk-estimator {
+  font-family: monospace;
+  border: 1px dotted var(--sklearn-color-border-box);
+  border-radius: 0.25em;
+  box-sizing: border-box;
+  margin-bottom: 0.5em;
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-0);
+}
+
+#sk-container-id-2 div.sk-estimator.fitted {
+  /* fitted */
+  background-color: var(--sklearn-color-fitted-level-0);
+}
+
+/* on hover */
+#sk-container-id-2 div.sk-estimator:hover {
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-2);
+}
+
+#sk-container-id-2 div.sk-estimator.fitted:hover {
+  /* fitted */
+  background-color: var(--sklearn-color-fitted-level-2);
+}
+
+/* Specification for estimator info (e.g. "i" and "?") */
+
+/* Common style for "i" and "?" */
+
+.sk-estimator-doc-link,
+a:link.sk-estimator-doc-link,
+a:visited.sk-estimator-doc-link {
+  float: right;
+  font-size: smaller;
+  line-height: 1em;
+  font-family: monospace;
+  background-color: var(--sklearn-color-unfitted-level-0);
+  border-radius: 1em;
+  height: 1em;
+  width: 1em;
+  text-decoration: none !important;
+  margin-left: 0.5em;
+  text-align: center;
+  /* unfitted */
+  border: var(--sklearn-color-unfitted-level-3) 1pt solid;
+  color: var(--sklearn-color-unfitted-level-3);
+}
+
+.sk-estimator-doc-link.fitted,
+a:link.sk-estimator-doc-link.fitted,
+a:visited.sk-estimator-doc-link.fitted {
+  /* fitted */
+  background-color: var(--sklearn-color-fitted-level-0);
+  border: var(--sklearn-color-fitted-level-3) 1pt solid;
+  color: var(--sklearn-color-fitted-level-3);
+}
+
+/* On hover */
+div.sk-estimator:hover .sk-estimator-doc-link:hover,
+.sk-estimator-doc-link:hover,
+div.sk-label-container:hover .sk-estimator-doc-link:hover,
+.sk-estimator-doc-link:hover {
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-3);
+  border: var(--sklearn-color-fitted-level-0) 1pt solid;
+  color: var(--sklearn-color-unfitted-level-0);
+  text-decoration: none;
+}
+
+div.sk-estimator.fitted:hover .sk-estimator-doc-link.fitted:hover,
+.sk-estimator-doc-link.fitted:hover,
+div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
+.sk-estimator-doc-link.fitted:hover {
+  /* fitted */
+  background-color: var(--sklearn-color-fitted-level-3);
+  border: var(--sklearn-color-fitted-level-0) 1pt solid;
+  color: var(--sklearn-color-fitted-level-0);
+  text-decoration: none;
+}
+
+/* Span, style for the box shown on hovering the info icon */
+.sk-estimator-doc-link span {
+  display: none;
+  z-index: 9999;
+  position: relative;
+  font-weight: normal;
+  right: .2ex;
+  padding: .5ex;
+  margin: .5ex;
+  width: min-content;
+  min-width: 20ex;
+  max-width: 50ex;
+  color: var(--sklearn-color-text);
+  box-shadow: 2pt 2pt 4pt #999;
+  /* unfitted */
+  background: var(--sklearn-color-unfitted-level-0);
+  border: .5pt solid var(--sklearn-color-unfitted-level-3);
+}
+
+.sk-estimator-doc-link.fitted span {
+  /* fitted */
+  background: var(--sklearn-color-fitted-level-0);
+  border: var(--sklearn-color-fitted-level-3);
+}
+
+.sk-estimator-doc-link:hover span {
+  display: block;
+}
+
+/* "?"-specific style due to the `<a>` HTML tag */
+
+#sk-container-id-2 a.estimator_doc_link {
+  float: right;
+  font-size: 1rem;
+  line-height: 1em;
+  font-family: monospace;
+  background-color: var(--sklearn-color-unfitted-level-0);
+  border-radius: 1rem;
+  height: 1rem;
+  width: 1rem;
+  text-decoration: none;
+  /* unfitted */
+  color: var(--sklearn-color-unfitted-level-1);
+  border: var(--sklearn-color-unfitted-level-1) 1pt solid;
+}
+
+#sk-container-id-2 a.estimator_doc_link.fitted {
+  /* fitted */
+  background-color: var(--sklearn-color-fitted-level-0);
+  border: var(--sklearn-color-fitted-level-1) 1pt solid;
+  color: var(--sklearn-color-fitted-level-1);
+}
+
+/* On hover */
+#sk-container-id-2 a.estimator_doc_link:hover {
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-3);
+  color: var(--sklearn-color-background);
+  text-decoration: none;
+}
+
+#sk-container-id-2 a.estimator_doc_link.fitted:hover {
+  /* fitted */
+  background-color: var(--sklearn-color-fitted-level-3);
+}
+
+.estimator-table {
+    font-family: monospace;
+}
+
+.estimator-table summary {
+    padding: .5rem;
+    cursor: pointer;
+}
+
+.estimator-table summary::marker {
+    font-size: 0.7rem;
+}
+
+.estimator-table details[open] {
+    padding-left: 0.1rem;
+    padding-right: 0.1rem;
+    padding-bottom: 0.3rem;
+}
+
+.estimator-table .parameters-table {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    margin-top: 0;
+}
+
+.estimator-table .parameters-table tr:nth-child(odd) {
+    background-color: #fff;
+}
+
+.estimator-table .parameters-table tr:nth-child(even) {
+    background-color: #f6f6f6;
+}
+
+.estimator-table .parameters-table tr:hover {
+    background-color: #e0e0e0;
+}
+
+.estimator-table table td {
+    border: 1px solid rgba(106, 105, 104, 0.232);
+}
+
+/*
+    `table td`is set in notebook with right text-align.
+    We need to overwrite it.
+*/
+.estimator-table table td.param {
+    text-align: left;
+    position: relative;
+    padding: 0;
+}
+
+.user-set td {
+    color:rgb(255, 94, 0);
+    text-align: left !important;
+}
+
+.user-set td.value {
+    color:rgb(255, 94, 0);
+    background-color: transparent;
+}
+
+.default td {
+    color: black;
+    text-align: left !important;
+}
+
+.user-set td i,
+.default td i {
+    color: black;
+}
+
+/*
+    Styles for parameter documentation links
+    We need styling for visited so jupyter doesn't overwrite it
+*/
+a.param-doc-link,
+a.param-doc-link:link,
+a.param-doc-link:visited {
+    text-decoration: underline dashed;
+    text-underline-offset: .3em;
+    color: inherit;
+    display: block;
+    padding: .5em;
+}
+
+/* "hack" to make the entire area of the cell containing the link clickable */
+a.param-doc-link::before {
+    position: absolute;
+    content: "";
+    inset: 0;
+}
+
+.param-doc-description {
+    display: none;
+    position: absolute;
+    z-index: 9999;
+    left: 0;
+    padding: .5ex;
+    margin-left: 1.5em;
+    color: var(--sklearn-color-text);
+    box-shadow: .3em .3em .4em #999;
+    width: max-content;
+    text-align: left;
+    max-height: 10em;
+    overflow-y: auto;
+
+    /* unfitted */
+    background: var(--sklearn-color-unfitted-level-0);
+    border: thin solid var(--sklearn-color-unfitted-level-3);
+}
+
+/* Fitted state for parameter tooltips */
+.fitted .param-doc-description {
+    /* fitted */
+    background: var(--sklearn-color-fitted-level-0);
+    border: thin solid var(--sklearn-color-fitted-level-3);
+}
+
+.param-doc-link:hover .param-doc-description {
+    display: block;
+}
+
+.copy-paste-icon {
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0NDggNTEyIj48IS0tIUZvbnQgQXdlc29tZSBGcmVlIDYuNy4yIGJ5IEBmb250YXdlc29tZSAtIGh0dHBzOi8vZm9udGF3ZXNvbWUuY29tIExpY2Vuc2UgLSBodHRwczovL2ZvbnRhd2Vzb21lLmNvbS9saWNlbnNlL2ZyZWUgQ29weXJpZ2h0IDIwMjUgRm9udGljb25zLCBJbmMuLS0+PHBhdGggZD0iTTIwOCAwTDMzMi4xIDBjMTIuNyAwIDI0LjkgNS4xIDMzLjkgMTQuMWw2Ny45IDY3LjljOSA5IDE0LjEgMjEuMiAxNC4xIDMzLjlMNDQ4IDMzNmMwIDI2LjUtMjEuNSA0OC00OCA0OGwtMTkyIDBjLTI2LjUgMC00OC0yMS41LTQ4LTQ4bDAtMjg4YzAtMjYuNSAyMS41LTQ4IDQ4LTQ4ek00OCAxMjhsODAgMCAwIDY0LTY0IDAgMCAyNTYgMTkyIDAgMC0zMiA2NCAwIDAgNDhjMCAyNi41LTIxLjUgNDgtNDggNDhMNDggNTEyYy0yNi41IDAtNDgtMjEuNS00OC00OEwwIDE3NmMwLTI2LjUgMjEuNS00OCA0OC00OHoiLz48L3N2Zz4=);
+    background-repeat: no-repeat;
+    background-size: 14px 14px;
+    background-position: 0;
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    cursor: pointer;
+}
+</style><div id="sk-container-id-2" class="sk-top-container"><div class="sk-text-repr-fallback"><pre>Pipeline(steps=[('countvectorizer', CountVectorizer(max_features=5000)),
+                ('logisticregression', LogisticRegression(max_iter=5000))])</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br>On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden=""><div class="sk-item sk-dashed-wrapped"><div class="sk-label-container"><div class="sk-label fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-2" type="checkbox"><label for="sk-estimator-id-2" class="sk-toggleable__label fitted sk-toggleable__label-arrow"><div><div>Pipeline</div></div><div><a class="sk-estimator-doc-link fitted" rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.8/modules/generated/sklearn.pipeline.Pipeline.html">?<span>Documentation for Pipeline</span></a><span class="sk-estimator-doc-link fitted">i<span>Fitted</span></span></div></label><div class="sk-toggleable__content fitted" data-param-prefix="">
+        <div class="estimator-table">
+            <details>
+                <summary>Parameters</summary>
+                
+<table class="parameters-table caption-top">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<tbody>
+<tr class="user-set odd">
+<td><em></em></td>
+<td class="param"><a href="https://scikit-learn.org/1.8/modules/generated/sklearn.pipeline.Pipeline.html#:~:text=steps,-list%20of%20tuples" class="param-doc-link" rel="noreferrer" target="_blank">steps <span class="param-doc-description">steps: list of tuples<br>
+<br>
+List of (name of step, estimator) tuples that are to be chained in<br>
+sequential order. To be compatible with the scikit-learn API, all steps<br>
+must define `fit`. All non-last steps must also define `transform`. See<br>
+:ref:`Combining Estimators <combining_estimators>` for more details.</combining_estimators></span></a></td>
+<td class="value">[('countvectorizer', ...), ('logisticregression', ...)]</td>
+</tr>
+<tr class="default even">
+<td><em></em></td>
+<td class="param"><a href="https://scikit-learn.org/1.8/modules/generated/sklearn.pipeline.Pipeline.html#:~:text=transform_input,-list%20of%20str%2C%20default%3DNone" class="param-doc-link" rel="noreferrer" target="_blank">transform_input <span class="param-doc-description">transform_input: list of str, default=None<br>
+<br>
+The names of the :term:`metadata` parameters that should be transformed by the<br>
+pipeline before passing it to the step consuming it.<br>
+<br>
+This enables transforming some input arguments to ``fit`` (other than ``X``)<br>
+to be transformed by the steps of the pipeline up to the step which requires<br>
+them. Requirement is defined via :ref:`metadata routing <metadata_routing>`.<br>
+For instance, this can be used to pass a validation set through the pipeline.<br>
+<br>
+You can only set this if metadata routing is enabled, which you<br>
+can enable using ``sklearn.set_config(enable_metadata_routing=True)``.<br>
+<br>
+.. versionadded:: 1.6</metadata_routing></span></a></td>
+<td class="value">None</td>
+</tr>
+<tr class="default odd">
+<td><em></em></td>
+<td class="param"><a href="https://scikit-learn.org/1.8/modules/generated/sklearn.pipeline.Pipeline.html#:~:text=memory,-str%20or%20object%20with%20the%20joblib.Memory%20interface%2C%20default%3DNone" class="param-doc-link" rel="noreferrer" target="_blank">memory <span class="param-doc-description">memory: str or object with the joblib.Memory interface, default=None<br>
+<br>
+Used to cache the fitted transformers of the pipeline. The last step<br>
+will never be cached, even if it is a transformer. By default, no<br>
+caching is performed. If a string is given, it is the path to the<br>
+caching directory. Enabling caching triggers a clone of the transformers<br>
+before fitting. Therefore, the transformer instance given to the<br>
+pipeline cannot be inspected directly. Use the attribute ``named_steps``<br>
+or ``steps`` to inspect estimators within the pipeline. Caching the<br>
+transformers is advantageous when fitting is time consuming. See<br>
+:ref:`sphx_glr_auto_examples_neighbors_plot_caching_nearest_neighbors.py`<br>
+for an example on how to enable caching.</span></a></td>
+<td class="value">None</td>
+</tr>
+<tr class="default even">
+<td><em></em></td>
+<td class="param"><a href="https://scikit-learn.org/1.8/modules/generated/sklearn.pipeline.Pipeline.html#:~:text=verbose,-bool%2C%20default%3DFalse" class="param-doc-link" rel="noreferrer" target="_blank">verbose <span class="param-doc-description">verbose: bool, default=False<br>
+<br>
+If True, the time elapsed while fitting each step will be printed as it<br>
+is completed.</span></a></td>
+<td class="value">False</td>
+</tr>
+</tbody>
+</table>
+
+            </details>
+        </div>
+    </div></div></div><div class="sk-serial"><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-3" type="checkbox"><label for="sk-estimator-id-3" class="sk-toggleable__label fitted sk-toggleable__label-arrow"><div><div>CountVectorizer</div></div><div><a class="sk-estimator-doc-link fitted" rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.8/modules/generated/sklearn.feature_extraction.text.CountVectorizer.html">?<span>Documentation for CountVectorizer</span></a></div></label><div class="sk-toggleable__content fitted" data-param-prefix="countvectorizer__">
+        <div class="estimator-table">
+            <details>
+                <summary>Parameters</summary>
+                
+<table class="parameters-table caption-top">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<tbody>
+<tr class="default odd">
+<td><em></em></td>
+<td class="param"><a href="https://scikit-learn.org/1.8/modules/generated/sklearn.feature_extraction.text.CountVectorizer.html#:~:text=input,-%7B%27filename%27%2C%20%27file%27%2C%20%27content%27%7D%2C%20default%3D%27content%27" class="param-doc-link" rel="noreferrer" target="_blank">input <span class="param-doc-description">input: {'filename', 'file', 'content'}, default='content'<br>
+<br>
+- If `'filename'`, the sequence passed as an argument to fit is<br>
+expected to be a list of filenames that need reading to fetch<br>
+the raw content to analyze.<br>
+<br>
+- If `'file'`, the sequence items must have a 'read' method (file-like<br>
+object) that is called to fetch the bytes in memory.<br>
+<br>
+- If `'content'`, the input is expected to be a sequence of items that<br>
+can be of type string or byte.</span></a></td>
+<td class="value">'content'</td>
+</tr>
+<tr class="default even">
+<td><em></em></td>
+<td class="param"><a href="https://scikit-learn.org/1.8/modules/generated/sklearn.feature_extraction.text.CountVectorizer.html#:~:text=encoding,-str%2C%20default%3D%27utf-8%27" class="param-doc-link" rel="noreferrer" target="_blank">encoding <span class="param-doc-description">encoding: str, default='utf-8'<br>
+<br>
+If bytes or files are given to analyze, this encoding is used to<br>
+decode.</span></a></td>
+<td class="value">'utf-8'</td>
+</tr>
+<tr class="default odd">
+<td><em></em></td>
+<td class="param"><a href="https://scikit-learn.org/1.8/modules/generated/sklearn.feature_extraction.text.CountVectorizer.html#:~:text=decode_error,-%7B%27strict%27%2C%20%27ignore%27%2C%20%27replace%27%7D%2C%20default%3D%27strict%27" class="param-doc-link" rel="noreferrer" target="_blank">decode_error <span class="param-doc-description">decode_error: {'strict', 'ignore', 'replace'}, default='strict'<br>
+<br>
+Instruction on what to do if a byte sequence is given to analyze that<br>
+contains characters not of the given `encoding`. By default, it is<br>
+'strict', meaning that a UnicodeDecodeError will be raised. Other<br>
+values are 'ignore' and 'replace'.</span></a></td>
+<td class="value">'strict'</td>
+</tr>
+<tr class="default even">
+<td><em></em></td>
+<td class="param"><a href="https://scikit-learn.org/1.8/modules/generated/sklearn.feature_extraction.text.CountVectorizer.html#:~:text=strip_accents,-%7B%27ascii%27%2C%20%27unicode%27%7D%20or%20callable%2C%20default%3DNone" class="param-doc-link" rel="noreferrer" target="_blank">strip_accents <span class="param-doc-description">strip_accents: {'ascii', 'unicode'} or callable, default=None<br>
+<br>
+Remove accents and perform other character normalization<br>
+during the preprocessing step.<br>
+'ascii' is a fast method that only works on characters that have<br>
+a direct ASCII mapping.<br>
+'unicode' is a slightly slower method that works on any characters.<br>
+None (default) means no character normalization is performed.<br>
+<br>
+Both 'ascii' and 'unicode' use NFKD normalization from<br>
+:func:`unicodedata.normalize`.</span></a></td>
+<td class="value">None</td>
+</tr>
+<tr class="default odd">
+<td><em></em></td>
+<td class="param"><a href="https://scikit-learn.org/1.8/modules/generated/sklearn.feature_extraction.text.CountVectorizer.html#:~:text=lowercase,-bool%2C%20default%3DTrue" class="param-doc-link" rel="noreferrer" target="_blank">lowercase <span class="param-doc-description">lowercase: bool, default=True<br>
+<br>
+Convert all characters to lowercase before tokenizing.</span></a></td>
+<td class="value">True</td>
+</tr>
+<tr class="default even">
+<td><em></em></td>
+<td class="param"><a href="https://scikit-learn.org/1.8/modules/generated/sklearn.feature_extraction.text.CountVectorizer.html#:~:text=preprocessor,-callable%2C%20default%3DNone" class="param-doc-link" rel="noreferrer" target="_blank">preprocessor <span class="param-doc-description">preprocessor: callable, default=None<br>
+<br>
+Override the preprocessing (strip_accents and lowercase) stage while<br>
+preserving the tokenizing and n-grams generation steps.<br>
+Only applies if ``analyzer`` is not callable.</span></a></td>
+<td class="value">None</td>
+</tr>
+<tr class="default odd">
+<td><em></em></td>
+<td class="param"><a href="https://scikit-learn.org/1.8/modules/generated/sklearn.feature_extraction.text.CountVectorizer.html#:~:text=tokenizer,-callable%2C%20default%3DNone" class="param-doc-link" rel="noreferrer" target="_blank">tokenizer <span class="param-doc-description">tokenizer: callable, default=None<br>
+<br>
+Override the string tokenization step while preserving the<br>
+preprocessing and n-grams generation steps.<br>
+Only applies if ``analyzer == 'word'``.</span></a></td>
+<td class="value">None</td>
+</tr>
+<tr class="default even">
+<td><em></em></td>
+<td class="param"><a href="https://scikit-learn.org/1.8/modules/generated/sklearn.feature_extraction.text.CountVectorizer.html#:~:text=stop_words,-%7B%27english%27%7D%2C%20list%2C%20default%3DNone" class="param-doc-link" rel="noreferrer" target="_blank">stop_words <span class="param-doc-description">stop_words: {'english'}, list, default=None<br>
+<br>
+If 'english', a built-in stop word list for English is used.<br>
+There are several known issues with 'english' and you should<br>
+consider an alternative (see :ref:`stop_words`).<br>
+<br>
+If a list, that list is assumed to contain stop words, all of which<br>
+will be removed from the resulting tokens.<br>
+Only applies if ``analyzer == 'word'``.<br>
+<br>
+If None, no stop words will be used. In this case, setting `max_df`<br>
+to a higher value, such as in the range (0.7, 1.0), can automatically detect<br>
+and filter stop words based on intra corpus document frequency of terms.</span></a></td>
+<td class="value">None</td>
+</tr>
+<tr class="default odd">
+<td><em></em></td>
+<td class="param"><a href="https://scikit-learn.org/1.8/modules/generated/sklearn.feature_extraction.text.CountVectorizer.html#:~:text=token_pattern,-str%20or%20None%2C%20default%3Dr%22%28%3Fu%29%5C%5Cb%5C%5Cw%5C%5Cw%2B%5C%5Cb%22" class="param-doc-link" rel="noreferrer" target="_blank">token_pattern <span class="param-doc-description">token_pattern: str or None, default=r"(?u)\\b\\w\\w+\\b"<br>
+<br>
+Regular expression denoting what constitutes a "token", only used<br>
+if ``analyzer == 'word'``. The default regexp select tokens of 2<br>
+or more alphanumeric characters (punctuation is completely ignored<br>
+and always treated as a token separator).<br>
+<br>
+If there is a capturing group in token_pattern then the<br>
+captured group content, not the entire match, becomes the token.<br>
+At most one capturing group is permitted.</span></a></td>
+<td class="value">'(?u)\\b\\w\\w+\\b'</td>
+</tr>
+<tr class="default even">
+<td><em></em></td>
+<td class="param"><a href="https://scikit-learn.org/1.8/modules/generated/sklearn.feature_extraction.text.CountVectorizer.html#:~:text=ngram_range,-tuple%20%28min_n%2C%20max_n%29%2C%20default%3D%281%2C%201%29" class="param-doc-link" rel="noreferrer" target="_blank">ngram_range <span class="param-doc-description">ngram_range: tuple (min_n, max_n), default=(1, 1)<br>
+<br>
+The lower and upper boundary of the range of n-values for different<br>
+word n-grams or char n-grams to be extracted. All values of n such<br>
+such that min_n &lt;= n &lt;= max_n will be used. For example an<br>
+``ngram_range`` of ``(1, 1)`` means only unigrams, ``(1, 2)`` means<br>
+unigrams and bigrams, and ``(2, 2)`` means only bigrams.<br>
+Only applies if ``analyzer`` is not callable.</span></a></td>
+<td class="value">(1, ...)</td>
+</tr>
+<tr class="default odd">
+<td><em></em></td>
+<td class="param"><a href="https://scikit-learn.org/1.8/modules/generated/sklearn.feature_extraction.text.CountVectorizer.html#:~:text=analyzer,-%7B%27word%27%2C%20%27char%27%2C%20%27char_wb%27%7D%20or%20callable%2C%20default%3D%27word%27" class="param-doc-link" rel="noreferrer" target="_blank">analyzer <span class="param-doc-description">analyzer: {'word', 'char', 'char_wb'} or callable, default='word'<br>
+<br>
+Whether the feature should be made of word n-gram or character<br>
+n-grams.<br>
+Option 'char_wb' creates character n-grams only from text inside<br>
+word boundaries; n-grams at the edges of words are padded with space.<br>
+<br>
+If a callable is passed it is used to extract the sequence of features<br>
+out of the raw, unprocessed input.<br>
+<br>
+.. versionchanged:: 0.21<br>
+<br>
+Since v0.21, if ``input`` is ``filename`` or ``file``, the data is<br>
+first read from the file and then passed to the given callable<br>
+analyzer.</span></a></td>
+<td class="value">'word'</td>
+</tr>
+<tr class="default even">
+<td><em></em></td>
+<td class="param"><a href="https://scikit-learn.org/1.8/modules/generated/sklearn.feature_extraction.text.CountVectorizer.html#:~:text=max_df,-float%20in%20range%20%5B0.0%2C%201.0%5D%20or%20int%2C%20default%3D1.0" class="param-doc-link" rel="noreferrer" target="_blank">max_df <span class="param-doc-description">max_df: float in range [0.0, 1.0] or int, default=1.0<br>
+<br>
+When building the vocabulary ignore terms that have a document<br>
+frequency strictly higher than the given threshold (corpus-specific<br>
+stop words).<br>
+If float, the parameter represents a proportion of documents, integer<br>
+absolute counts.<br>
+This parameter is ignored if vocabulary is not None.</span></a></td>
+<td class="value">1.0</td>
+</tr>
+<tr class="default odd">
+<td><em></em></td>
+<td class="param"><a href="https://scikit-learn.org/1.8/modules/generated/sklearn.feature_extraction.text.CountVectorizer.html#:~:text=min_df,-float%20in%20range%20%5B0.0%2C%201.0%5D%20or%20int%2C%20default%3D1" class="param-doc-link" rel="noreferrer" target="_blank">min_df <span class="param-doc-description">min_df: float in range [0.0, 1.0] or int, default=1<br>
+<br>
+When building the vocabulary ignore terms that have a document<br>
+frequency strictly lower than the given threshold. This value is also<br>
+called cut-off in the literature.<br>
+If float, the parameter represents a proportion of documents, integer<br>
+absolute counts.<br>
+This parameter is ignored if vocabulary is not None.</span></a></td>
+<td class="value">1</td>
+</tr>
+<tr class="user-set even">
+<td><em></em></td>
+<td class="param"><a href="https://scikit-learn.org/1.8/modules/generated/sklearn.feature_extraction.text.CountVectorizer.html#:~:text=max_features,-int%2C%20default%3DNone" class="param-doc-link" rel="noreferrer" target="_blank">max_features <span class="param-doc-description">max_features: int, default=None<br>
+<br>
+If not None, build a vocabulary that only consider the top<br>
+`max_features` ordered by term frequency across the corpus.<br>
+Otherwise, all features are used.<br>
+<br>
+This parameter is ignored if vocabulary is not None.</span></a></td>
+<td class="value">5000</td>
+</tr>
+<tr class="default odd">
+<td><em></em></td>
+<td class="param"><a href="https://scikit-learn.org/1.8/modules/generated/sklearn.feature_extraction.text.CountVectorizer.html#:~:text=vocabulary,-Mapping%20or%20iterable%2C%20default%3DNone" class="param-doc-link" rel="noreferrer" target="_blank">vocabulary <span class="param-doc-description">vocabulary: Mapping or iterable, default=None<br>
+<br>
+Either a Mapping (e.g., a dict) where keys are terms and values are<br>
+indices in the feature matrix, or an iterable over terms. If not<br>
+given, a vocabulary is determined from the input documents. Indices<br>
+in the mapping should not be repeated and should not have any gap<br>
+between 0 and the largest index.</span></a></td>
+<td class="value">None</td>
+</tr>
+<tr class="default even">
+<td><em></em></td>
+<td class="param"><a href="https://scikit-learn.org/1.8/modules/generated/sklearn.feature_extraction.text.CountVectorizer.html#:~:text=binary,-bool%2C%20default%3DFalse" class="param-doc-link" rel="noreferrer" target="_blank">binary <span class="param-doc-description">binary: bool, default=False<br>
+<br>
+If True, all non zero counts are set to 1. This is useful for discrete<br>
+probabilistic models that model binary events rather than integer<br>
+counts.</span></a></td>
+<td class="value">False</td>
+</tr>
+<tr class="default odd">
+<td><em></em></td>
+<td class="param"><a href="https://scikit-learn.org/1.8/modules/generated/sklearn.feature_extraction.text.CountVectorizer.html#:~:text=dtype,-dtype%2C%20default%3Dnp.int64" class="param-doc-link" rel="noreferrer" target="_blank">dtype <span class="param-doc-description">dtype: dtype, default=np.int64<br>
+<br>
+Type of the matrix returned by fit_transform() or transform().</span></a></td>
+<td class="value">&lt;class 'numpy.int64'&gt;</td>
+</tr>
+</tbody>
+</table>
+
+            </details>
+        </div>
+    </div></div></div><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-4" type="checkbox"><label for="sk-estimator-id-4" class="sk-toggleable__label fitted sk-toggleable__label-arrow"><div><div>LogisticRegression</div></div><div><a class="sk-estimator-doc-link fitted" rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.8/modules/generated/sklearn.linear_model.LogisticRegression.html">?<span>Documentation for LogisticRegression</span></a></div></label><div class="sk-toggleable__content fitted" data-param-prefix="logisticregression__">
+        <div class="estimator-table">
+            <details>
+                <summary>Parameters</summary>
+                
+<table class="parameters-table caption-top">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<tbody>
+<tr class="default odd">
+<td><em></em></td>
+<td class="param"><a href="https://scikit-learn.org/1.8/modules/generated/sklearn.linear_model.LogisticRegression.html#:~:text=penalty,-%7B%27l1%27%2C%20%27l2%27%2C%20%27elasticnet%27%2C%20None%7D%2C%20default%3D%27l2%27" class="param-doc-link" rel="noreferrer" target="_blank">penalty <span class="param-doc-description">penalty: {'l1', 'l2', 'elasticnet', None}, default='l2'<br>
+<br>
+Specify the norm of the penalty:<br>
+<br>
+- `None`: no penalty is added;<br>
+- `'l2'`: add a L2 penalty term and it is the default choice;<br>
+- `'l1'`: add a L1 penalty term;<br>
+- `'elasticnet'`: both L1 and L2 penalty terms are added.<br>
+<br>
+.. warning::<br>
+Some penalties may not work with some solvers. See the parameter<br>
+`solver` below, to know the compatibility between the penalty and<br>
+solver.<br>
+<br>
+.. versionadded:: 0.19<br>
+l1 penalty with SAGA solver (allowing 'multinomial' + L1)<br>
+<br>
+.. deprecated:: 1.8<br>
+`penalty` was deprecated in version 1.8 and will be removed in 1.10.<br>
+Use `l1_ratio` instead. `l1_ratio=0` for `penalty='l2'`, `l1_ratio=1` for<br>
+`penalty='l1'` and `l1_ratio` set to any float between 0 and 1 for<br>
+`'penalty='elasticnet'`.</span></a></td>
+<td class="value">'deprecated'</td>
+</tr>
+<tr class="default even">
+<td><em></em></td>
+<td class="param"><a href="https://scikit-learn.org/1.8/modules/generated/sklearn.linear_model.LogisticRegression.html#:~:text=C,-float%2C%20default%3D1.0" class="param-doc-link" rel="noreferrer" target="_blank">C <span class="param-doc-description">C: float, default=1.0<br>
+<br>
+Inverse of regularization strength; must be a positive float.<br>
+Like in support vector machines, smaller values specify stronger<br>
+regularization. `C=np.inf` results in unpenalized logistic regression.<br>
+For a visual example on the effect of tuning the `C` parameter<br>
+with an L1 penalty, see:<br>
+:ref:`sphx_glr_auto_examples_linear_model_plot_logistic_path.py`.</span></a></td>
+<td class="value">1.0</td>
+</tr>
+<tr class="default odd">
+<td><em></em></td>
+<td class="param"><a href="https://scikit-learn.org/1.8/modules/generated/sklearn.linear_model.LogisticRegression.html#:~:text=l1_ratio,-float%2C%20default%3D0.0" class="param-doc-link" rel="noreferrer" target="_blank">l1_ratio <span class="param-doc-description">l1_ratio: float, default=0.0<br>
+<br>
+The Elastic-Net mixing parameter, with `0 &lt;= l1_ratio &lt;= 1`. Setting<br>
+`l1_ratio=1` gives a pure L1-penalty, setting `l1_ratio=0` a pure L2-penalty.<br>
+Any value between 0 and 1 gives an Elastic-Net penalty of the form<br>
+`l1_ratio * L1 + (1 - l1_ratio) * L2`.<br>
+<br>
+.. warning::<br>
+Certain values of `l1_ratio`, i.e. some penalties, may not work with some<br>
+solvers. See the parameter `solver` below, to know the compatibility between<br>
+the penalty and solver.<br>
+<br>
+.. versionchanged:: 1.8<br>
+Default value changed from None to 0.0.<br>
+<br>
+.. deprecated:: 1.8<br>
+`None` is deprecated and will be removed in version 1.10. Always use<br>
+`l1_ratio` to specify the penalty type.</span></a></td>
+<td class="value">0.0</td>
+</tr>
+<tr class="default even">
+<td><em></em></td>
+<td class="param"><a href="https://scikit-learn.org/1.8/modules/generated/sklearn.linear_model.LogisticRegression.html#:~:text=dual,-bool%2C%20default%3DFalse" class="param-doc-link" rel="noreferrer" target="_blank">dual <span class="param-doc-description">dual: bool, default=False<br>
+<br>
+Dual (constrained) or primal (regularized, see also<br>
+:ref:`this equation <regularized-logistic-loss>`) formulation. Dual formulation<br>
+is only implemented for l2 penalty with liblinear solver. Prefer `dual=False`<br>
+when n_samples &gt; n_features.</regularized-logistic-loss></span></a></td>
+<td class="value">False</td>
+</tr>
+<tr class="default odd">
+<td><em></em></td>
+<td class="param"><a href="https://scikit-learn.org/1.8/modules/generated/sklearn.linear_model.LogisticRegression.html#:~:text=tol,-float%2C%20default%3D1e-4" class="param-doc-link" rel="noreferrer" target="_blank">tol <span class="param-doc-description">tol: float, default=1e-4<br>
+<br>
+Tolerance for stopping criteria.</span></a></td>
+<td class="value">0.0001</td>
+</tr>
+<tr class="default even">
+<td><em></em></td>
+<td class="param"><a href="https://scikit-learn.org/1.8/modules/generated/sklearn.linear_model.LogisticRegression.html#:~:text=fit_intercept,-bool%2C%20default%3DTrue" class="param-doc-link" rel="noreferrer" target="_blank">fit_intercept <span class="param-doc-description">fit_intercept: bool, default=True<br>
+<br>
+Specifies if a constant (a.k.a. bias or intercept) should be<br>
+added to the decision function.</span></a></td>
+<td class="value">True</td>
+</tr>
+<tr class="default odd">
+<td><em></em></td>
+<td class="param"><a href="https://scikit-learn.org/1.8/modules/generated/sklearn.linear_model.LogisticRegression.html#:~:text=intercept_scaling,-float%2C%20default%3D1" class="param-doc-link" rel="noreferrer" target="_blank">intercept_scaling <span class="param-doc-description">intercept_scaling: float, default=1<br>
+<br>
+Useful only when the solver `liblinear` is used<br>
+and `self.fit_intercept` is set to `True`. In this case, `x` becomes<br>
+`[x, self.intercept_scaling]`,<br>
+i.e. a "synthetic" feature with constant value equal to<br>
+`intercept_scaling` is appended to the instance vector.<br>
+The intercept becomes<br>
+``intercept_scaling * synthetic_feature_weight``.<br>
+<br>
+.. note::<br>
+The synthetic feature weight is subject to L1 or L2<br>
+regularization as all other features.<br>
+To lessen the effect of regularization on synthetic feature weight<br>
+(and therefore on the intercept) `intercept_scaling` has to be increased.</span></a></td>
+<td class="value">1</td>
+</tr>
+<tr class="default even">
+<td><em></em></td>
+<td class="param"><a href="https://scikit-learn.org/1.8/modules/generated/sklearn.linear_model.LogisticRegression.html#:~:text=class_weight,-dict%20or%20%27balanced%27%2C%20default%3DNone" class="param-doc-link" rel="noreferrer" target="_blank">class_weight <span class="param-doc-description">class_weight: dict or 'balanced', default=None<br>
+<br>
+Weights associated with classes in the form ``{class_label: weight}``.<br>
+If not given, all classes are supposed to have weight one.<br>
+<br>
+The "balanced" mode uses the values of y to automatically adjust<br>
+weights inversely proportional to class frequencies in the input data<br>
+as ``n_samples / (n_classes * np.bincount(y))``.<br>
+<br>
+Note that these weights will be multiplied with sample_weight (passed<br>
+through the fit method) if sample_weight is specified.<br>
+<br>
+.. versionadded:: 0.17<br>
+*class_weight='balanced'*</span></a></td>
+<td class="value">None</td>
+</tr>
+<tr class="default odd">
+<td><em></em></td>
+<td class="param"><a href="https://scikit-learn.org/1.8/modules/generated/sklearn.linear_model.LogisticRegression.html#:~:text=random_state,-int%2C%20RandomState%20instance%2C%20default%3DNone" class="param-doc-link" rel="noreferrer" target="_blank">random_state <span class="param-doc-description">random_state: int, RandomState instance, default=None<br>
+<br>
+Used when ``solver`` == 'sag', 'saga' or 'liblinear' to shuffle the<br>
+data. See :term:`Glossary <random_state>` for details.</random_state></span></a></td>
+<td class="value">None</td>
+</tr>
+<tr class="default even">
+<td><em></em></td>
+<td class="param"><a href="https://scikit-learn.org/1.8/modules/generated/sklearn.linear_model.LogisticRegression.html#:~:text=solver,-%7B%27lbfgs%27%2C%20%27liblinear%27%2C%20%27newton-cg%27%2C%20%27newton-cholesky%27%2C%20%27sag%27%2C%20%27saga%27%7D%2C%20%20%20%20%20%20%20%20%20%20%20%20%20default%3D%27lbfgs%27" class="param-doc-link" rel="noreferrer" target="_blank">solver <span class="param-doc-description">solver: {'lbfgs', 'liblinear', 'newton-cg', 'newton-cholesky', 'sag', 'saga'}, default='lbfgs'<br>
+<br>
+Algorithm to use in the optimization problem. Default is 'lbfgs'.<br>
+To choose a solver, you might want to consider the following aspects:<br>
+<br>
+- 'lbfgs' is a good default solver because it works reasonably well for a wide<br>
+class of problems.<br>
+- For :term:`multiclass` problems (`n_classes &gt;= 3`), all solvers except<br>
+'liblinear' minimize the full multinomial loss, 'liblinear' will raise an<br>
+error.<br>
+- 'newton-cholesky' is a good choice for<br>
+`n_samples` &gt;&gt; `n_features * n_classes`, especially with one-hot encoded<br>
+categorical features with rare categories. Be aware that the memory usage<br>
+of this solver has a quadratic dependency on `n_features * n_classes`<br>
+because it explicitly computes the full Hessian matrix.<br>
+- For small datasets, 'liblinear' is a good choice, whereas 'sag'<br>
+and 'saga' are faster for large ones;<br>
+- 'liblinear' can only handle binary classification by default. To apply a<br>
+one-versus-rest scheme for the multiclass setting one can wrap it with the<br>
+:class:`~sklearn.multiclass.OneVsRestClassifier`.<br>
+<br>
+.. warning::<br>
+The choice of the algorithm depends on the penalty chosen (`l1_ratio=0`<br>
+for L2-penalty, `l1_ratio=1` for L1-penalty and `0 &lt; l1_ratio &lt; 1` for<br>
+Elastic-Net) and on (multinomial) multiclass support:<br>
+<br>
+================= ======================== ======================<br>
+solver l1_ratio multinomial multiclass<br>
+================= ======================== ======================<br>
+'lbfgs' l1_ratio=0 yes<br>
+'liblinear' l1_ratio=1 or l1_ratio=0 no<br>
+'newton-cg' l1_ratio=0 yes<br>
+'newton-cholesky' l1_ratio=0 yes<br>
+'sag' l1_ratio=0 yes<br>
+'saga' 0&lt;=l1_ratio&lt;=1 yes<br>
+================= ======================== ======================<br>
+<br>
+.. note::<br>
+'sag' and 'saga' fast convergence is only guaranteed on features<br>
+with approximately the same scale. You can preprocess the data with<br>
+a scaler from :mod:`sklearn.preprocessing`.<br>
+<br>
+.. seealso::<br>
+Refer to the :ref:`User Guide <logistic_regression>` for more<br>
+information regarding :class:`LogisticRegression` and more specifically the<br>
+:ref:`Table <logistic_regression_solvers>`<br>
+summarizing solver/penalty supports.<br>
+<br>
+.. versionadded:: 0.17<br>
+Stochastic Average Gradient (SAG) descent solver. Multinomial support in<br>
+version 0.18.<br>
+.. versionadded:: 0.19<br>
+SAGA solver.<br>
+.. versionchanged:: 0.22<br>
+The default solver changed from 'liblinear' to 'lbfgs' in 0.22.<br>
+.. versionadded:: 1.2<br>
+newton-cholesky solver. Multinomial support in version 1.6.</logistic_regression_solvers></logistic_regression></span></a></td>
+<td class="value">'lbfgs'</td>
+</tr>
+<tr class="user-set odd">
+<td><em></em></td>
+<td class="param"><a href="https://scikit-learn.org/1.8/modules/generated/sklearn.linear_model.LogisticRegression.html#:~:text=max_iter,-int%2C%20default%3D100" class="param-doc-link" rel="noreferrer" target="_blank">max_iter <span class="param-doc-description">max_iter: int, default=100<br>
+<br>
+Maximum number of iterations taken for the solvers to converge.</span></a></td>
+<td class="value">5000</td>
+</tr>
+<tr class="default even">
+<td><em></em></td>
+<td class="param"><a href="https://scikit-learn.org/1.8/modules/generated/sklearn.linear_model.LogisticRegression.html#:~:text=verbose,-int%2C%20default%3D0" class="param-doc-link" rel="noreferrer" target="_blank">verbose <span class="param-doc-description">verbose: int, default=0<br>
+<br>
+For the liblinear and lbfgs solvers set verbose to any positive<br>
+number for verbosity.</span></a></td>
+<td class="value">0</td>
+</tr>
+<tr class="default odd">
+<td><em></em></td>
+<td class="param"><a href="https://scikit-learn.org/1.8/modules/generated/sklearn.linear_model.LogisticRegression.html#:~:text=warm_start,-bool%2C%20default%3DFalse" class="param-doc-link" rel="noreferrer" target="_blank">warm_start <span class="param-doc-description">warm_start: bool, default=False<br>
+<br>
+When set to True, reuse the solution of the previous call to fit as<br>
+initialization, otherwise, just erase the previous solution.<br>
+Useless for liblinear solver. See :term:`the Glossary <warm_start>`.<br>
+<br>
+.. versionadded:: 0.17<br>
+*warm_start* to support *lbfgs*, *newton-cg*, *sag*, *saga* solvers.</warm_start></span></a></td>
+<td class="value">False</td>
+</tr>
+<tr class="default even">
+<td><em></em></td>
+<td class="param"><a href="https://scikit-learn.org/1.8/modules/generated/sklearn.linear_model.LogisticRegression.html#:~:text=n_jobs,-int%2C%20default%3DNone" class="param-doc-link" rel="noreferrer" target="_blank">n_jobs <span class="param-doc-description">n_jobs: int, default=None<br>
+<br>
+Does not have any effect.<br>
+<br>
+.. deprecated:: 1.8<br>
+`n_jobs` is deprecated in version 1.8 and will be removed in 1.10.</span></a></td>
+<td class="value">None</td>
+</tr>
+</tbody>
+</table>
+
+            </details>
+        </div>
+    </div></div></div></div></div></div></div><script>function copyToClipboard(text, element) {
+    // Get the parameter prefix from the closest toggleable content
+    const toggleableContent = element.closest('.sk-toggleable__content');
+    const paramPrefix = toggleableContent ? toggleableContent.dataset.paramPrefix : '';
+    const fullParamName = paramPrefix ? `${paramPrefix}${text}` : text;
+
+    const originalStyle = element.style;
+    const computedStyle = window.getComputedStyle(element);
+    const originalWidth = computedStyle.width;
+    const originalHTML = element.innerHTML.replace('Copied!', '');
+
+    navigator.clipboard.writeText(fullParamName)
+        .then(() => {
+            element.style.width = originalWidth;
+            element.style.color = 'green';
+            element.innerHTML = "Copied!";
+
+            setTimeout(() => {
+                element.innerHTML = originalHTML;
+                element.style = originalStyle;
+            }, 2000);
+        })
+        .catch(err => {
+            console.error('Failed to copy:', err);
+            element.style.color = 'red';
+            element.innerHTML = "Failed!";
+            setTimeout(() => {
+                element.innerHTML = originalHTML;
+                element.style = originalStyle;
+            }, 2000);
+        });
+    return false;
+}
+
+document.querySelectorAll('.copy-paste-icon').forEach(function(element) {
+    const toggleableContent = element.closest('.sk-toggleable__content');
+    const paramPrefix = toggleableContent ? toggleableContent.dataset.paramPrefix : '';
+    const paramName = element.parentElement.nextElementSibling
+        .textContent.trim().split(' ')[0];
+    const fullParamName = paramPrefix ? `${paramPrefix}${paramName}` : paramName;
+
+    element.setAttribute('title', fullParamName);
+});
+
+
+/**
+ * Adapted from Skrub
+ * https://github.com/skrub-data/skrub/blob/403466d1d5d4dc76a7ef569b3f8228db59a31dc3/skrub/_reporting/_data/templates/report.js#L789
+ * @returns "light" or "dark"
+ */
+function detectTheme(element) {
+    const body = document.querySelector('body');
+
+    // Check VSCode theme
+    const themeKindAttr = body.getAttribute('data-vscode-theme-kind');
+    const themeNameAttr = body.getAttribute('data-vscode-theme-name');
+
+    if (themeKindAttr && themeNameAttr) {
+        const themeKind = themeKindAttr.toLowerCase();
+        const themeName = themeNameAttr.toLowerCase();
+
+        if (themeKind.includes("dark") || themeName.includes("dark")) {
+            return "dark";
+        }
+        if (themeKind.includes("light") || themeName.includes("light")) {
+            return "light";
+        }
+    }
+
+    // Check Jupyter theme
+    if (body.getAttribute('data-jp-theme-light') === 'false') {
+        return 'dark';
+    } else if (body.getAttribute('data-jp-theme-light') === 'true') {
+        return 'light';
+    }
+
+    // Guess based on a parent element's color
+    const color = window.getComputedStyle(element.parentNode, null).getPropertyValue('color');
+    const match = color.match(/^rgb\s*\(\s*(\d+)\s*,\s*(\d+)\s*,\s*(\d+)\s*\)\s*$/i);
+    if (match) {
+        const [r, g, b] = [
+            parseFloat(match[1]),
+            parseFloat(match[2]),
+            parseFloat(match[3])
+        ];
+
+        // https://en.wikipedia.org/wiki/HSL_and_HSV#Lightness
+        const luma = 0.299 * r + 0.587 * g + 0.114 * b;
+
+        if (luma > 180) {
+            // If the text is very bright we have a dark theme
+            return 'dark';
+        }
+        if (luma < 75) {
+            // If the text is very dark we have a light theme
+            return 'light';
+        }
+        // Otherwise fall back to the next heuristic.
+    }
+
+    // Fallback to system preference
+    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+}
+
+
+function forceTheme(elementId) {
+    const estimatorElement = document.querySelector(`#${elementId}`);
+    if (estimatorElement === null) {
+        console.error(`Element with id ${elementId} not found.`);
+    } else {
+        const theme = detectTheme(estimatorElement);
+        estimatorElement.classList.add(theme);
+    }
+}
+
+forceTheme('sk-container-id-2');</script>
+</div>
+</div>
+</section>
+<section id="unseen-messages" class="slide level2 smaller center">
+<h2>Unseen messages</h2>
+<ul>
+<li>Now use the trained model to predict targets of unseen messages:</li>
+</ul>
+<div id="e4feabbd" class="cell" data-execution_count="15">
+<div class="cell-output cell-output-display" data-execution_count="15">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+
+<table class="dataframe caption-top" data-border="1">
+<thead>
+<tr class="header" style="text-align: right;">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">sms</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">3245</th>
+<td>Funny fact Nobody teaches volcanoes 2 erupt, tsunamis 2 arise, hurricanes 2 sway aroundn no 1 teaches hw 2 choose a wife Natural disasters just happens</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">944</th>
+<td>I sent my scores to sophas and i had to do secondary application for a few schools. I think if you are thinking of applying, do a research on cost also. Contact joke ogunrinde, her school is one m...</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">1044</th>
+<td>We know someone who you know that fancies you. Call 09058097218 to find out who. POBox 6, LS15HB 150p</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">2484</th>
+<td>Only if you promise your getting out as SOON as you can. And you'll text me in the morning to let me know you made it in ok.</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</section>
+<section id="predicting-on-unseen-data" class="slide level2 smaller center">
+<h2>Predicting on unseen data</h2>
+<p><strong>The model is accurately predicting labels for the unseen text messages above!</strong></p>
+<div id="404fe2de" class="cell" data-execution_count="16">
+<div class="cell-output cell-output-display" data-execution_count="16">
+<style type="text/css">
+#T_74b52_row0_col0, #T_74b52_row0_col1, #T_74b52_row1_col0, #T_74b52_row1_col1, #T_74b52_row2_col0, #T_74b52_row2_col1, #T_74b52_row3_col0, #T_74b52_row3_col1 {
+  text-align: left;
+}
+</style>
+
+<table id="T_74b52" class="caption-top">
+<thead>
+<tr class="header">
+<th class="blank level0" data-quarto-table-cell-role="th">&nbsp;</th>
+<th id="T_74b52_level0_col0" class="col_heading level0 col0" data-quarto-table-cell-role="th">sms</th>
+<th id="T_74b52_level0_col1" class="col_heading level0 col1" data-quarto-table-cell-role="th">spam_predictions</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<th id="T_74b52_level0_row0" class="row_heading level0 row0" data-quarto-table-cell-role="th">3245</th>
+<td id="T_74b52_row0_col0" class="data row0 col0">Funny fact Nobody teaches volcanoes 2 erupt, tsunamis 2 arise, hurricanes 2 sway aroundn no 1 teaches hw 2 choose a wife Natural disasters just happens</td>
+<td id="T_74b52_row0_col1" class="data row0 col1">ham</td>
+</tr>
+<tr class="even">
+<th id="T_74b52_level0_row1" class="row_heading level0 row1" data-quarto-table-cell-role="th">944</th>
+<td id="T_74b52_row1_col0" class="data row1 col0">I sent my scores to sophas and i had to do secondary application for a few schools. I think if you are thinking of applying, do a research on cost also. Contact joke ogunrinde, her school is one me the less expensive ones</td>
+<td id="T_74b52_row1_col1" class="data row1 col1">ham</td>
+</tr>
+<tr class="odd">
+<th id="T_74b52_level0_row2" class="row_heading level0 row2" data-quarto-table-cell-role="th">1044</th>
+<td id="T_74b52_row2_col0" class="data row2 col0">We know someone who you know that fancies you. Call 09058097218 to find out who. POBox 6, LS15HB 150p</td>
+<td id="T_74b52_row2_col1" class="data row2 col1">spam</td>
+</tr>
+<tr class="even">
+<th id="T_74b52_level0_row3" class="row_heading level0 row3" data-quarto-table-cell-role="th">2484</th>
+<td id="T_74b52_row3_col0" class="data row3 col0">Only if you promise your getting out as SOON as you can. And you'll text me in the morning to let me know you made it in ok.</td>
+<td id="T_74b52_row3_col1" class="data row3 col1">ham</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="examplel-text-classification-with-llms" class="slide level2 center">
+<h2>Examplel: Text classification with LLMs</h2>
+<p>&nbsp;</p>
+<ul>
+<li>LLMs = Large Language Models</li>
+</ul>
+<div id="e71bae8e" class="cell" data-execution_count="17">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a></a><span class="im">from</span> transformers <span class="im">import</span> pipeline, AutoModelForTokenClassification, AutoTokenizer</span>
+<span id="cb11-2"><a></a><span class="co"># Sentiment analysis pipeline</span></span>
+<span id="cb11-3"><a></a>analyzer <span class="op">=</span> pipeline(<span class="st">"sentiment-analysis"</span>, model<span class="op">=</span><span class="st">'distilbert-base-uncased-finetuned-sst-2-english'</span>)</span>
+<span id="cb11-4"><a></a>analyzer([<span class="st">"I asked my model to predict my future, and it said '404: Life not found.'"</span>,</span>
+<span id="cb11-5"><a></a>          <span class="st">'''Machine learning is just like cooking—sometimes you follow the recipe, </span></span>
+<span id="cb11-6"><a></a><span class="st">            and other times you just hope for the best!.'''</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="17">
+<pre><code>[{'label': 'NEGATIVE', 'score': 0.995707631111145},
+ {'label': 'POSITIVE', 'score': 0.9994770884513855}]</code></pre>
+</div>
+</div>
+</section>
+<section id="zero-shot-learning" class="slide level2 smaller center">
+<h2>Zero-shot learning</h2>
+<p><br>
+</p>
+<ul>
+<li>Now suppose you want to identify the emotion expressed in the text rather than just positive or negative.</li>
+</ul>
+<div class="scroll-container" style="overflow-y: scroll; height: 400px;">
+<div id="fd729aab" class="cell" data-execution_count="18">
+<div class="cell-output cell-output-display" data-execution_count="18">
+<pre><code>['im feeling rather rotten so im not very ambitious right now',
+ 'im updating my blog because i feel shitty',
+ 'i never make her separate from me because i don t ever want her to feel like i m ashamed with her',
+ 'i left with my bouquet of red and yellow tulips under my arm feeling slightly more optimistic than when i arrived',
+ 'i was feeling a little vain when i did this one',
+ 'i cant walk into a shop anywhere where i do not feel uncomfortable',
+ 'i felt anger when at the end of a telephone call',
+ 'i explain why i clung to a relationship with a boy who was in many ways immature and uncommitted despite the excitement i should have been feeling for getting accepted into the masters program at the university of virginia',
+ 'i like to have the same breathless feeling as a reader eager to see what will happen next',
+ 'i jest i feel grumpy tired and pre menstrual which i probably am but then again its only been a week and im about as fit as a walrus on vacation for the summer']</code></pre>
+</div>
+</div>
+</div>
+</section>
+<section id="zero-shot-learning-for-emotion-detection" class="slide level2 center">
+<h2>Zero-shot learning for emotion detection</h2>
+<p><br>
+</p>
+<div id="a43c30de" class="cell" data-execution_count="19">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a></a><span class="im">from</span> transformers <span class="im">import</span> AutoTokenizer</span>
+<span id="cb14-2"><a></a><span class="im">from</span> transformers <span class="im">import</span> pipeline </span>
+<span id="cb14-3"><a></a><span class="im">import</span> torch</span>
+<span id="cb14-4"><a></a></span>
+<span id="cb14-5"><a></a><span class="co">#Load the pretrained model</span></span>
+<span id="cb14-6"><a></a>model_name <span class="op">=</span> <span class="st">"facebook/bart-large-mnli"</span></span>
+<span id="cb14-7"><a></a>classifier <span class="op">=</span> pipeline(<span class="st">'zero-shot-classification'</span>, model<span class="op">=</span>model_name)</span>
+<span id="cb14-8"><a></a>exs <span class="op">=</span> dataset[<span class="st">"test"</span>][<span class="st">"text"</span>][<span class="dv">10</span>:<span class="dv">20</span>]</span>
+<span id="cb14-9"><a></a>candidate_labels <span class="op">=</span> [<span class="st">"sadness"</span>, <span class="st">"joy"</span>, <span class="st">"love"</span>,<span class="st">"anger"</span>, <span class="st">"fear"</span>, <span class="st">"surprise"</span>]</span>
+<span id="cb14-10"><a></a>outputs <span class="op">=</span> classifier(exs, candidate_labels)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="zero-shot-learning-for-emotion-detection-1" class="slide level2 smaller center">
+<h2>Zero-shot learning for emotion detection</h2>
+<p><br>
+</p>
+<div class="scroll-container" style="overflow-y: scroll; height: 400px;">
+<div id="1d663332" class="cell" data-execution_count="20">
+<div class="cell-output cell-output-display" data-execution_count="20">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+
+<table class="dataframe caption-top" data-border="1">
+<thead>
+<tr class="header" style="text-align: right;">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">sequence</th>
+<th data-quarto-table-cell-role="th">labels</th>
+<th data-quarto-table-cell-role="th">scores</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">0</th>
+<td>i don t feel particularly agitated</td>
+<td>[surprise, anger, joy, sadness, fear, love]</td>
+<td>[0.3600873053073883, 0.3019026815891266, 0.11901309341192245, 0.11381532996892929, 0.060391392558813095, 0.04479021206498146]</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">1</th>
+<td>i feel beautifully emotional knowing that these women of whom i knew just a handful were holding me and my baba on our journey</td>
+<td>[joy, love, surprise, fear, sadness, anger]</td>
+<td>[0.36994317173957825, 0.28871580958366394, 0.25607895851135254, 0.042923394590616226, 0.03344894200563431, 0.008889704011380672]</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">2</th>
+<td>i pay attention it deepens into a feeling of being invaded and helpless</td>
+<td>[fear, surprise, sadness, anger, joy, love]</td>
+<td>[0.3414689302444458, 0.30880674719810486, 0.2561693787574768, 0.07989845424890518, 0.00784482154995203, 0.005811676848679781]</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">3</th>
+<td>i just feel extremely comfortable with the group of people that i dont even need to hide myself</td>
+<td>[joy, surprise, love, sadness, anger, fear]</td>
+<td>[0.33052244782447815, 0.29472336173057556, 0.15343077480793, 0.07691455632448196, 0.07596749812364578, 0.06844136863946915]</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">4</th>
+<td>i find myself in the odd position of feeling supportive of</td>
+<td>[surprise, joy, fear, love, sadness, anger]</td>
+<td>[0.8287991881370544, 0.043179433792829514, 0.039773616939783096, 0.03141303360462189, 0.031412284821271896, 0.025422412902116776]</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">5</th>
+<td>i was feeling as heartbroken as im sure katniss was</td>
+<td>[sadness, surprise, fear, love, anger, joy]</td>
+<td>[0.7667970657348633, 0.18184703588485718, 0.025871269404888153, 0.011756835505366325, 0.00817161239683628, 0.00555615546181798]</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">6</th>
+<td>i feel a little mellow today</td>
+<td>[surprise, joy, love, fear, sadness, anger]</td>
+<td>[0.4937363266944885, 0.2632198929786682, 0.11367864906787872, 0.06402146071195602, 0.050954896956682205, 0.014388857409358025]</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">7</th>
+<td>i feel like my only role now would be to tear your sails with my pessimism and discontent</td>
+<td>[sadness, anger, surprise, fear, joy, love]</td>
+<td>[0.6992800235748291, 0.20048724114894867, 0.06185886263847351, 0.03287408500909805, 0.0036468561738729477, 0.0018528576474636793]</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">8</th>
+<td>i feel just bcoz a fight we get mad to each other n u wanna make a publicity n let the world knows about our fight</td>
+<td>[anger, surprise, sadness, fear, joy, love]</td>
+<td>[0.6029898524284363, 0.19827152788639069, 0.10198832303285599, 0.08116993308067322, 0.010117105208337307, 0.005463324021548033]</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">9</th>
+<td>i feel like reds and purples are just so rich and kind of perfect</td>
+<td>[joy, surprise, love, anger, fear, sadness]</td>
+<td>[0.3644145131111145, 0.3051210939884186, 0.19462482631206512, 0.055566418915987015, 0.05413556843996048, 0.02613767609000206]</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</div>
+</section></section>
+<section>
+<section id="image-data" class="title-slide slide level1 center">
+<h1>Image data</h1>
+
+</section>
+<section id="example-predicting-labels-of-a-given-image" class="slide level2 smaller center">
+<h2>Example: Predicting labels of a given image</h2>
+<ul>
+<li>Suppose you have a bunch of animal images. You do not have any labels associated with them and you want to predict labels of these images.</li>
+<li>We can use machine learning to predict labels of these images using a technique called <strong>transfer learning</strong>.</li>
+</ul>
+<div class="scroll-container" style="overflow-y: scroll; height: 400px;">
+<div id="4eeef93e" class="cell" data-execution_count="21">
+<div class="cell-output cell-output-display">
+<div>
+<figure>
+<p><img data-src="slides-01_files/figure-revealjs/cell-22-output-1.png" width="578" height="427"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                         Class  Probability score
+                     tiger cat              0.636
+              tabby, tabby cat              0.174
+Pembroke, Pembroke Welsh corgi              0.081
+               lynx, catamount              0.011
+--------------------------------------------------------------</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure>
+<p><img data-src="slides-01_files/figure-revealjs/cell-22-output-3.png" width="354" height="427"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                                     Class  Probability score
+         cheetah, chetah, Acinonyx jubatus              0.994
+                  leopard, Panthera pardus              0.005
+jaguar, panther, Panthera onca, Felis onca              0.001
+       snow leopard, ounce, Panthera uncia              0.000
+--------------------------------------------------------------</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure>
+<p><img data-src="slides-01_files/figure-revealjs/cell-22-output-5.png" width="329" height="427"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                                   Class  Probability score
+                                 macaque              0.885
+patas, hussar monkey, Erythrocebus patas              0.062
+      proboscis monkey, Nasalis larvatus              0.015
+                       titi, titi monkey              0.010
+--------------------------------------------------------------</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure>
+<p><img data-src="slides-01_files/figure-revealjs/cell-22-output-7.png" width="315" height="427"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                        Class  Probability score
+Walker hound, Walker foxhound              0.582
+             English foxhound              0.144
+                       beagle              0.068
+                  EntleBucher              0.059
+--------------------------------------------------------------</code></pre>
+</div>
+</div>
+</div>
+<p>:::</p>
+</section></section>
+<section>
+<section id="clustering-images" class="title-slide slide level1 center">
+<h1>Clustering images</h1>
+
+</section>
+<section id="finding-groups-in-food-images" class="slide level2 center">
+<h2>Finding groups in food images</h2>
+<p><br>
+</p>
+<div id="661d3499" class="cell" data-execution_count="22">
+<div class="cell-output cell-output-display">
+<div>
+<figure>
+<p><img data-src="slides-01_files/figure-revealjs/cell-23-output-1.png" width="763" height="326"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="k-means-on-food-dataset" class="slide level2 center">
+<h2>K-Means on food dataset</h2>
+<p><br>
+</p>
+<div id="79eabdac" class="cell" data-execution_count="23">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a></a>densenet <span class="op">=</span> models.densenet121(weights<span class="op">=</span><span class="st">"DenseNet121_Weights.IMAGENET1K_V1"</span>)</span>
+<span id="cb19-2"><a></a>densenet.classifier <span class="op">=</span> torch.nn.Identity()  <span class="co"># remove that last "classification" layer</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="6981705f" class="cell" data-execution_count="24">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a></a>Z_food <span class="op">=</span> get_features_unsup(densenet, food_inputs)</span>
+<span id="cb20-2"><a></a>k <span class="op">=</span> <span class="dv">5</span></span>
+<span id="cb20-3"><a></a>km <span class="op">=</span> KMeans(n_clusters<span class="op">=</span>k, n_init<span class="op">=</span><span class="st">'auto'</span>, random_state<span class="op">=</span><span class="dv">123</span>)</span>
+<span id="cb20-4"><a></a>km.fit(Z_food)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="24">
+<style>#sk-container-id-3 {
+  /* Definition of color scheme common for light and dark mode */
+  --sklearn-color-text: #000;
+  --sklearn-color-text-muted: #666;
+  --sklearn-color-line: gray;
+  /* Definition of color scheme for unfitted estimators */
+  --sklearn-color-unfitted-level-0: #fff5e6;
+  --sklearn-color-unfitted-level-1: #f6e4d2;
+  --sklearn-color-unfitted-level-2: #ffe0b3;
+  --sklearn-color-unfitted-level-3: chocolate;
+  /* Definition of color scheme for fitted estimators */
+  --sklearn-color-fitted-level-0: #f0f8ff;
+  --sklearn-color-fitted-level-1: #d4ebff;
+  --sklearn-color-fitted-level-2: #b3dbfd;
+  --sklearn-color-fitted-level-3: cornflowerblue;
+}
+
+#sk-container-id-3.light {
+  /* Specific color for light theme */
+  --sklearn-color-text-on-default-background: black;
+  --sklearn-color-background: white;
+  --sklearn-color-border-box: black;
+  --sklearn-color-icon: #696969;
+}
+
+#sk-container-id-3.dark {
+  --sklearn-color-text-on-default-background: white;
+  --sklearn-color-background: #111;
+  --sklearn-color-border-box: white;
+  --sklearn-color-icon: #878787;
+}
+
+#sk-container-id-3 {
+  color: var(--sklearn-color-text);
+}
+
+#sk-container-id-3 pre {
+  padding: 0;
+}
+
+#sk-container-id-3 input.sk-hidden--visually {
+  border: 0;
+  clip: rect(1px 1px 1px 1px);
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+#sk-container-id-3 div.sk-dashed-wrapped {
+  border: 1px dashed var(--sklearn-color-line);
+  margin: 0 0.4em 0.5em 0.4em;
+  box-sizing: border-box;
+  padding-bottom: 0.4em;
+  background-color: var(--sklearn-color-background);
+}
+
+#sk-container-id-3 div.sk-container {
+  /* jupyter's `normalize.less` sets `[hidden] { display: none; }`
+     but bootstrap.min.css set `[hidden] { display: none !important; }`
+     so we also need the `!important` here to be able to override the
+     default hidden behavior on the sphinx rendered scikit-learn.org.
+     See: https://github.com/scikit-learn/scikit-learn/issues/21755 */
+  display: inline-block !important;
+  position: relative;
+}
+
+#sk-container-id-3 div.sk-text-repr-fallback {
+  display: none;
+}
+
+div.sk-parallel-item,
+div.sk-serial,
+div.sk-item {
+  /* draw centered vertical line to link estimators */
+  background-image: linear-gradient(var(--sklearn-color-text-on-default-background), var(--sklearn-color-text-on-default-background));
+  background-size: 2px 100%;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+/* Parallel-specific style estimator block */
+
+#sk-container-id-3 div.sk-parallel-item::after {
+  content: "";
+  width: 100%;
+  border-bottom: 2px solid var(--sklearn-color-text-on-default-background);
+  flex-grow: 1;
+}
+
+#sk-container-id-3 div.sk-parallel {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  background-color: var(--sklearn-color-background);
+  position: relative;
+}
+
+#sk-container-id-3 div.sk-parallel-item {
+  display: flex;
+  flex-direction: column;
+}
+
+#sk-container-id-3 div.sk-parallel-item:first-child::after {
+  align-self: flex-end;
+  width: 50%;
+}
+
+#sk-container-id-3 div.sk-parallel-item:last-child::after {
+  align-self: flex-start;
+  width: 50%;
+}
+
+#sk-container-id-3 div.sk-parallel-item:only-child::after {
+  width: 0;
+}
+
+/* Serial-specific style estimator block */
+
+#sk-container-id-3 div.sk-serial {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--sklearn-color-background);
+  padding-right: 1em;
+  padding-left: 1em;
+}
+
+
+/* Toggleable style: style used for estimator/Pipeline/ColumnTransformer box that is
+clickable and can be expanded/collapsed.
+- Pipeline and ColumnTransformer use this feature and define the default style
+- Estimators will overwrite some part of the style using the `sk-estimator` class
+*/
+
+/* Pipeline and ColumnTransformer style (default) */
+
+#sk-container-id-3 div.sk-toggleable {
+  /* Default theme specific background. It is overwritten whether we have a
+  specific estimator or a Pipeline/ColumnTransformer */
+  background-color: var(--sklearn-color-background);
+}
+
+/* Toggleable label */
+#sk-container-id-3 label.sk-toggleable__label {
+  cursor: pointer;
+  display: flex;
+  width: 100%;
+  margin-bottom: 0;
+  padding: 0.5em;
+  box-sizing: border-box;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
+}
+
+#sk-container-id-3 label.sk-toggleable__label .caption {
+  font-size: 0.6rem;
+  font-weight: lighter;
+  color: var(--sklearn-color-text-muted);
+}
+
+#sk-container-id-3 label.sk-toggleable__label-arrow:before {
+  /* Arrow on the left of the label */
+  content: "▸";
+  float: left;
+  margin-right: 0.25em;
+  color: var(--sklearn-color-icon);
+}
+
+#sk-container-id-3 label.sk-toggleable__label-arrow:hover:before {
+  color: var(--sklearn-color-text);
+}
+
+/* Toggleable content - dropdown */
+
+#sk-container-id-3 div.sk-toggleable__content {
+  display: none;
+  text-align: left;
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-0);
+}
+
+#sk-container-id-3 div.sk-toggleable__content.fitted {
+  /* fitted */
+  background-color: var(--sklearn-color-fitted-level-0);
+}
+
+#sk-container-id-3 div.sk-toggleable__content pre {
+  margin: 0.2em;
+  border-radius: 0.25em;
+  color: var(--sklearn-color-text);
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-0);
+}
+
+#sk-container-id-3 div.sk-toggleable__content.fitted pre {
+  /* unfitted */
+  background-color: var(--sklearn-color-fitted-level-0);
+}
+
+#sk-container-id-3 input.sk-toggleable__control:checked~div.sk-toggleable__content {
+  /* Expand drop-down */
+  display: block;
+  width: 100%;
+  overflow: visible;
+}
+
+#sk-container-id-3 input.sk-toggleable__control:checked~label.sk-toggleable__label-arrow:before {
+  content: "▾";
+}
+
+/* Pipeline/ColumnTransformer-specific style */
+
+#sk-container-id-3 div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {
+  color: var(--sklearn-color-text);
+  background-color: var(--sklearn-color-unfitted-level-2);
+}
+
+#sk-container-id-3 div.sk-label.fitted input.sk-toggleable__control:checked~label.sk-toggleable__label {
+  background-color: var(--sklearn-color-fitted-level-2);
+}
+
+/* Estimator-specific style */
+
+/* Colorize estimator box */
+#sk-container-id-3 div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-2);
+}
+
+#sk-container-id-3 div.sk-estimator.fitted input.sk-toggleable__control:checked~label.sk-toggleable__label {
+  /* fitted */
+  background-color: var(--sklearn-color-fitted-level-2);
+}
+
+#sk-container-id-3 div.sk-label label.sk-toggleable__label,
+#sk-container-id-3 div.sk-label label {
+  /* The background is the default theme color */
+  color: var(--sklearn-color-text-on-default-background);
+}
+
+/* On hover, darken the color of the background */
+#sk-container-id-3 div.sk-label:hover label.sk-toggleable__label {
+  color: var(--sklearn-color-text);
+  background-color: var(--sklearn-color-unfitted-level-2);
+}
+
+/* Label box, darken color on hover, fitted */
+#sk-container-id-3 div.sk-label.fitted:hover label.sk-toggleable__label.fitted {
+  color: var(--sklearn-color-text);
+  background-color: var(--sklearn-color-fitted-level-2);
+}
+
+/* Estimator label */
+
+#sk-container-id-3 div.sk-label label {
+  font-family: monospace;
+  font-weight: bold;
+  line-height: 1.2em;
+}
+
+#sk-container-id-3 div.sk-label-container {
+  text-align: center;
+}
+
+/* Estimator-specific */
+#sk-container-id-3 div.sk-estimator {
+  font-family: monospace;
+  border: 1px dotted var(--sklearn-color-border-box);
+  border-radius: 0.25em;
+  box-sizing: border-box;
+  margin-bottom: 0.5em;
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-0);
+}
+
+#sk-container-id-3 div.sk-estimator.fitted {
+  /* fitted */
+  background-color: var(--sklearn-color-fitted-level-0);
+}
+
+/* on hover */
+#sk-container-id-3 div.sk-estimator:hover {
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-2);
+}
+
+#sk-container-id-3 div.sk-estimator.fitted:hover {
+  /* fitted */
+  background-color: var(--sklearn-color-fitted-level-2);
+}
+
+/* Specification for estimator info (e.g. "i" and "?") */
+
+/* Common style for "i" and "?" */
+
+.sk-estimator-doc-link,
+a:link.sk-estimator-doc-link,
+a:visited.sk-estimator-doc-link {
+  float: right;
+  font-size: smaller;
+  line-height: 1em;
+  font-family: monospace;
+  background-color: var(--sklearn-color-unfitted-level-0);
+  border-radius: 1em;
+  height: 1em;
+  width: 1em;
+  text-decoration: none !important;
+  margin-left: 0.5em;
+  text-align: center;
+  /* unfitted */
+  border: var(--sklearn-color-unfitted-level-3) 1pt solid;
+  color: var(--sklearn-color-unfitted-level-3);
+}
+
+.sk-estimator-doc-link.fitted,
+a:link.sk-estimator-doc-link.fitted,
+a:visited.sk-estimator-doc-link.fitted {
+  /* fitted */
+  background-color: var(--sklearn-color-fitted-level-0);
+  border: var(--sklearn-color-fitted-level-3) 1pt solid;
+  color: var(--sklearn-color-fitted-level-3);
+}
+
+/* On hover */
+div.sk-estimator:hover .sk-estimator-doc-link:hover,
+.sk-estimator-doc-link:hover,
+div.sk-label-container:hover .sk-estimator-doc-link:hover,
+.sk-estimator-doc-link:hover {
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-3);
+  border: var(--sklearn-color-fitted-level-0) 1pt solid;
+  color: var(--sklearn-color-unfitted-level-0);
+  text-decoration: none;
+}
+
+div.sk-estimator.fitted:hover .sk-estimator-doc-link.fitted:hover,
+.sk-estimator-doc-link.fitted:hover,
+div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
+.sk-estimator-doc-link.fitted:hover {
+  /* fitted */
+  background-color: var(--sklearn-color-fitted-level-3);
+  border: var(--sklearn-color-fitted-level-0) 1pt solid;
+  color: var(--sklearn-color-fitted-level-0);
+  text-decoration: none;
+}
+
+/* Span, style for the box shown on hovering the info icon */
+.sk-estimator-doc-link span {
+  display: none;
+  z-index: 9999;
+  position: relative;
+  font-weight: normal;
+  right: .2ex;
+  padding: .5ex;
+  margin: .5ex;
+  width: min-content;
+  min-width: 20ex;
+  max-width: 50ex;
+  color: var(--sklearn-color-text);
+  box-shadow: 2pt 2pt 4pt #999;
+  /* unfitted */
+  background: var(--sklearn-color-unfitted-level-0);
+  border: .5pt solid var(--sklearn-color-unfitted-level-3);
+}
+
+.sk-estimator-doc-link.fitted span {
+  /* fitted */
+  background: var(--sklearn-color-fitted-level-0);
+  border: var(--sklearn-color-fitted-level-3);
+}
+
+.sk-estimator-doc-link:hover span {
+  display: block;
+}
+
+/* "?"-specific style due to the `<a>` HTML tag */
+
+#sk-container-id-3 a.estimator_doc_link {
+  float: right;
+  font-size: 1rem;
+  line-height: 1em;
+  font-family: monospace;
+  background-color: var(--sklearn-color-unfitted-level-0);
+  border-radius: 1rem;
+  height: 1rem;
+  width: 1rem;
+  text-decoration: none;
+  /* unfitted */
+  color: var(--sklearn-color-unfitted-level-1);
+  border: var(--sklearn-color-unfitted-level-1) 1pt solid;
+}
+
+#sk-container-id-3 a.estimator_doc_link.fitted {
+  /* fitted */
+  background-color: var(--sklearn-color-fitted-level-0);
+  border: var(--sklearn-color-fitted-level-1) 1pt solid;
+  color: var(--sklearn-color-fitted-level-1);
+}
+
+/* On hover */
+#sk-container-id-3 a.estimator_doc_link:hover {
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-3);
+  color: var(--sklearn-color-background);
+  text-decoration: none;
+}
+
+#sk-container-id-3 a.estimator_doc_link.fitted:hover {
+  /* fitted */
+  background-color: var(--sklearn-color-fitted-level-3);
+}
+
+.estimator-table {
+    font-family: monospace;
+}
+
+.estimator-table summary {
+    padding: .5rem;
+    cursor: pointer;
+}
+
+.estimator-table summary::marker {
+    font-size: 0.7rem;
+}
+
+.estimator-table details[open] {
+    padding-left: 0.1rem;
+    padding-right: 0.1rem;
+    padding-bottom: 0.3rem;
+}
+
+.estimator-table .parameters-table {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    margin-top: 0;
+}
+
+.estimator-table .parameters-table tr:nth-child(odd) {
+    background-color: #fff;
+}
+
+.estimator-table .parameters-table tr:nth-child(even) {
+    background-color: #f6f6f6;
+}
+
+.estimator-table .parameters-table tr:hover {
+    background-color: #e0e0e0;
+}
+
+.estimator-table table td {
+    border: 1px solid rgba(106, 105, 104, 0.232);
+}
+
+/*
+    `table td`is set in notebook with right text-align.
+    We need to overwrite it.
+*/
+.estimator-table table td.param {
+    text-align: left;
+    position: relative;
+    padding: 0;
+}
+
+.user-set td {
+    color:rgb(255, 94, 0);
+    text-align: left !important;
+}
+
+.user-set td.value {
+    color:rgb(255, 94, 0);
+    background-color: transparent;
+}
+
+.default td {
+    color: black;
+    text-align: left !important;
+}
+
+.user-set td i,
+.default td i {
+    color: black;
+}
+
+/*
+    Styles for parameter documentation links
+    We need styling for visited so jupyter doesn't overwrite it
+*/
+a.param-doc-link,
+a.param-doc-link:link,
+a.param-doc-link:visited {
+    text-decoration: underline dashed;
+    text-underline-offset: .3em;
+    color: inherit;
+    display: block;
+    padding: .5em;
+}
+
+/* "hack" to make the entire area of the cell containing the link clickable */
+a.param-doc-link::before {
+    position: absolute;
+    content: "";
+    inset: 0;
+}
+
+.param-doc-description {
+    display: none;
+    position: absolute;
+    z-index: 9999;
+    left: 0;
+    padding: .5ex;
+    margin-left: 1.5em;
+    color: var(--sklearn-color-text);
+    box-shadow: .3em .3em .4em #999;
+    width: max-content;
+    text-align: left;
+    max-height: 10em;
+    overflow-y: auto;
+
+    /* unfitted */
+    background: var(--sklearn-color-unfitted-level-0);
+    border: thin solid var(--sklearn-color-unfitted-level-3);
+}
+
+/* Fitted state for parameter tooltips */
+.fitted .param-doc-description {
+    /* fitted */
+    background: var(--sklearn-color-fitted-level-0);
+    border: thin solid var(--sklearn-color-fitted-level-3);
+}
+
+.param-doc-link:hover .param-doc-description {
+    display: block;
+}
+
+.copy-paste-icon {
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0NDggNTEyIj48IS0tIUZvbnQgQXdlc29tZSBGcmVlIDYuNy4yIGJ5IEBmb250YXdlc29tZSAtIGh0dHBzOi8vZm9udGF3ZXNvbWUuY29tIExpY2Vuc2UgLSBodHRwczovL2ZvbnRhd2Vzb21lLmNvbS9saWNlbnNlL2ZyZWUgQ29weXJpZ2h0IDIwMjUgRm9udGljb25zLCBJbmMuLS0+PHBhdGggZD0iTTIwOCAwTDMzMi4xIDBjMTIuNyAwIDI0LjkgNS4xIDMzLjkgMTQuMWw2Ny45IDY3LjljOSA5IDE0LjEgMjEuMiAxNC4xIDMzLjlMNDQ4IDMzNmMwIDI2LjUtMjEuNSA0OC00OCA0OGwtMTkyIDBjLTI2LjUgMC00OC0yMS41LTQ4LTQ4bDAtMjg4YzAtMjYuNSAyMS41LTQ4IDQ4LTQ4ek00OCAxMjhsODAgMCAwIDY0LTY0IDAgMCAyNTYgMTkyIDAgMC0zMiA2NCAwIDAgNDhjMCAyNi41LTIxLjUgNDgtNDggNDhMNDggNTEyYy0yNi41IDAtNDgtMjEuNS00OC00OEwwIDE3NmMwLTI2LjUgMjEuNS00OCA0OC00OHoiLz48L3N2Zz4=);
+    background-repeat: no-repeat;
+    background-size: 14px 14px;
+    background-position: 0;
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    cursor: pointer;
+}
+</style><div id="sk-container-id-3" class="sk-top-container"><div class="sk-text-repr-fallback"><pre>KMeans(n_clusters=5, random_state=123)</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br>On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden=""><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-5" type="checkbox" checked=""><label for="sk-estimator-id-5" class="sk-toggleable__label fitted sk-toggleable__label-arrow"><div><div>KMeans</div></div><div><a class="sk-estimator-doc-link fitted" rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.8/modules/generated/sklearn.cluster.KMeans.html">?<span>Documentation for KMeans</span></a><span class="sk-estimator-doc-link fitted">i<span>Fitted</span></span></div></label><div class="sk-toggleable__content fitted" data-param-prefix="">
+        <div class="estimator-table">
+            <details>
+                <summary>Parameters</summary>
+                
+<table class="parameters-table caption-top">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<tbody>
+<tr class="user-set odd">
+<td><em></em></td>
+<td class="param"><a href="https://scikit-learn.org/1.8/modules/generated/sklearn.cluster.KMeans.html#:~:text=n_clusters,-int%2C%20default%3D8" class="param-doc-link" rel="noreferrer" target="_blank">n_clusters <span class="param-doc-description">n_clusters: int, default=8<br>
+<br>
+The number of clusters to form as well as the number of<br>
+centroids to generate.<br>
+<br>
+For an example of how to choose an optimal value for `n_clusters` refer to<br>
+:ref:`sphx_glr_auto_examples_cluster_plot_kmeans_silhouette_analysis.py`.</span></a></td>
+<td class="value">5</td>
+</tr>
+<tr class="default even">
+<td><em></em></td>
+<td class="param"><a href="https://scikit-learn.org/1.8/modules/generated/sklearn.cluster.KMeans.html#:~:text=init,-%7B%27k-means%2B%2B%27%2C%20%27random%27%7D%2C%20callable%20or%20array-like%20of%20shape%20%20%20%20%20%20%20%20%20%20%20%20%20%28n_clusters%2C%20n_features%29%2C%20default%3D%27k-means%2B%2B%27" class="param-doc-link" rel="noreferrer" target="_blank">init <span class="param-doc-description">init: {'k-means++', 'random'}, callable or array-like of shape (n_clusters, n_features), default='k-means++'<br>
+<br>
+Method for initialization:<br>
+<br>
+* 'k-means++' : selects initial cluster centroids using sampling based on an empirical probability distribution of the points' contribution to the overall inertia. This technique speeds up convergence. The algorithm implemented is "greedy k-means++". It differs from the vanilla k-means++ by making several trials at each sampling step and choosing the best centroid among them.<br>
+<br>
+* 'random': choose `n_clusters` observations (rows) at random from data for the initial centroids.<br>
+<br>
+* If an array is passed, it should be of shape (n_clusters, n_features) and gives the initial centers.<br>
+<br>
+* If a callable is passed, it should take arguments X, n_clusters and a random state and return an initialization.<br>
+<br>
+For an example of how to use the different `init` strategies, see<br>
+:ref:`sphx_glr_auto_examples_cluster_plot_kmeans_digits.py`.<br>
+<br>
+For an evaluation of the impact of initialization, see the example<br>
+:ref:`sphx_glr_auto_examples_cluster_plot_kmeans_stability_low_dim_dense.py`.</span></a></td>
+<td class="value">'k-means++'</td>
+</tr>
+<tr class="default odd">
+<td><em></em></td>
+<td class="param"><a href="https://scikit-learn.org/1.8/modules/generated/sklearn.cluster.KMeans.html#:~:text=n_init,-%27auto%27%20or%20int%2C%20default%3D%27auto%27" class="param-doc-link" rel="noreferrer" target="_blank">n_init <span class="param-doc-description">n_init: 'auto' or int, default='auto'<br>
+<br>
+Number of times the k-means algorithm is run with different centroid<br>
+seeds. The final results is the best output of `n_init` consecutive runs<br>
+in terms of inertia. Several runs are recommended for sparse<br>
+high-dimensional problems (see :ref:`kmeans_sparse_high_dim`).<br>
+<br>
+When `n_init='auto'`, the number of runs depends on the value of init:<br>
+10 if using `init='random'` or `init` is a callable;<br>
+1 if using `init='k-means++'` or `init` is an array-like.<br>
+<br>
+.. versionadded:: 1.2<br>
+Added 'auto' option for `n_init`.<br>
+<br>
+.. versionchanged:: 1.4<br>
+Default value for `n_init` changed to `'auto'`.</span></a></td>
+<td class="value">'auto'</td>
+</tr>
+<tr class="default even">
+<td><em></em></td>
+<td class="param"><a href="https://scikit-learn.org/1.8/modules/generated/sklearn.cluster.KMeans.html#:~:text=max_iter,-int%2C%20default%3D300" class="param-doc-link" rel="noreferrer" target="_blank">max_iter <span class="param-doc-description">max_iter: int, default=300<br>
+<br>
+Maximum number of iterations of the k-means algorithm for a<br>
+single run.</span></a></td>
+<td class="value">300</td>
+</tr>
+<tr class="default odd">
+<td><em></em></td>
+<td class="param"><a href="https://scikit-learn.org/1.8/modules/generated/sklearn.cluster.KMeans.html#:~:text=tol,-float%2C%20default%3D1e-4" class="param-doc-link" rel="noreferrer" target="_blank">tol <span class="param-doc-description">tol: float, default=1e-4<br>
+<br>
+Relative tolerance with regards to Frobenius norm of the difference<br>
+in the cluster centers of two consecutive iterations to declare<br>
+convergence.</span></a></td>
+<td class="value">0.0001</td>
+</tr>
+<tr class="default even">
+<td><em></em></td>
+<td class="param"><a href="https://scikit-learn.org/1.8/modules/generated/sklearn.cluster.KMeans.html#:~:text=verbose,-int%2C%20default%3D0" class="param-doc-link" rel="noreferrer" target="_blank">verbose <span class="param-doc-description">verbose: int, default=0<br>
+<br>
+Verbosity mode.</span></a></td>
+<td class="value">0</td>
+</tr>
+<tr class="user-set odd">
+<td><em></em></td>
+<td class="param"><a href="https://scikit-learn.org/1.8/modules/generated/sklearn.cluster.KMeans.html#:~:text=random_state,-int%2C%20RandomState%20instance%20or%20None%2C%20default%3DNone" class="param-doc-link" rel="noreferrer" target="_blank">random_state <span class="param-doc-description">random_state: int, RandomState instance or None, default=None<br>
+<br>
+Determines random number generation for centroid initialization. Use<br>
+an int to make the randomness deterministic.<br>
+See :term:`Glossary <random_state>`.</random_state></span></a></td>
+<td class="value">123</td>
+</tr>
+<tr class="default even">
+<td><em></em></td>
+<td class="param"><a href="https://scikit-learn.org/1.8/modules/generated/sklearn.cluster.KMeans.html#:~:text=copy_x,-bool%2C%20default%3DTrue" class="param-doc-link" rel="noreferrer" target="_blank">copy_x <span class="param-doc-description">copy_x: bool, default=True<br>
+<br>
+When pre-computing distances it is more numerically accurate to center<br>
+the data first. If copy_x is True (default), then the original data is<br>
+not modified. If False, the original data is modified, and put back<br>
+before the function returns, but small numerical differences may be<br>
+introduced by subtracting and then adding the data mean. Note that if<br>
+the original data is not C-contiguous, a copy will be made even if<br>
+copy_x is False. If the original data is sparse, but not in CSR format,<br>
+a copy will be made even if copy_x is False.</span></a></td>
+<td class="value">True</td>
+</tr>
+<tr class="default odd">
+<td><em></em></td>
+<td class="param"><a href="https://scikit-learn.org/1.8/modules/generated/sklearn.cluster.KMeans.html#:~:text=algorithm,-%7B%22lloyd%22%2C%20%22elkan%22%7D%2C%20default%3D%22lloyd%22" class="param-doc-link" rel="noreferrer" target="_blank">algorithm <span class="param-doc-description">algorithm: {"lloyd", "elkan"}, default="lloyd"<br>
+<br>
+K-means algorithm to use. The classical EM-style algorithm is `"lloyd"`.<br>
+The `"elkan"` variation can be more efficient on some datasets with<br>
+well-defined clusters, by using the triangle inequality. However it's<br>
+more memory intensive due to the allocation of an extra array of shape<br>
+`(n_samples, n_clusters)`.<br>
+<br>
+.. versionchanged:: 0.18<br>
+Added Elkan algorithm<br>
+<br>
+.. versionchanged:: 1.1<br>
+Renamed "full" to "lloyd", and deprecated "auto" and "full".<br>
+Changed "auto" to use "lloyd" instead of "elkan".</span></a></td>
+<td class="value">'lloyd'</td>
+</tr>
+</tbody>
+</table>
+
+            </details>
+        </div>
+    </div></div></div></div></div><script>function copyToClipboard(text, element) {
+    // Get the parameter prefix from the closest toggleable content
+    const toggleableContent = element.closest('.sk-toggleable__content');
+    const paramPrefix = toggleableContent ? toggleableContent.dataset.paramPrefix : '';
+    const fullParamName = paramPrefix ? `${paramPrefix}${text}` : text;
+
+    const originalStyle = element.style;
+    const computedStyle = window.getComputedStyle(element);
+    const originalWidth = computedStyle.width;
+    const originalHTML = element.innerHTML.replace('Copied!', '');
+
+    navigator.clipboard.writeText(fullParamName)
+        .then(() => {
+            element.style.width = originalWidth;
+            element.style.color = 'green';
+            element.innerHTML = "Copied!";
+
+            setTimeout(() => {
+                element.innerHTML = originalHTML;
+                element.style = originalStyle;
+            }, 2000);
+        })
+        .catch(err => {
+            console.error('Failed to copy:', err);
+            element.style.color = 'red';
+            element.innerHTML = "Failed!";
+            setTimeout(() => {
+                element.innerHTML = originalHTML;
+                element.style = originalStyle;
+            }, 2000);
+        });
+    return false;
+}
+
+document.querySelectorAll('.copy-paste-icon').forEach(function(element) {
+    const toggleableContent = element.closest('.sk-toggleable__content');
+    const paramPrefix = toggleableContent ? toggleableContent.dataset.paramPrefix : '';
+    const paramName = element.parentElement.nextElementSibling
+        .textContent.trim().split(' ')[0];
+    const fullParamName = paramPrefix ? `${paramPrefix}${paramName}` : paramName;
+
+    element.setAttribute('title', fullParamName);
+});
+
+
+/**
+ * Adapted from Skrub
+ * https://github.com/skrub-data/skrub/blob/403466d1d5d4dc76a7ef569b3f8228db59a31dc3/skrub/_reporting/_data/templates/report.js#L789
+ * @returns "light" or "dark"
+ */
+function detectTheme(element) {
+    const body = document.querySelector('body');
+
+    // Check VSCode theme
+    const themeKindAttr = body.getAttribute('data-vscode-theme-kind');
+    const themeNameAttr = body.getAttribute('data-vscode-theme-name');
+
+    if (themeKindAttr && themeNameAttr) {
+        const themeKind = themeKindAttr.toLowerCase();
+        const themeName = themeNameAttr.toLowerCase();
+
+        if (themeKind.includes("dark") || themeName.includes("dark")) {
+            return "dark";
+        }
+        if (themeKind.includes("light") || themeName.includes("light")) {
+            return "light";
+        }
+    }
+
+    // Check Jupyter theme
+    if (body.getAttribute('data-jp-theme-light') === 'false') {
+        return 'dark';
+    } else if (body.getAttribute('data-jp-theme-light') === 'true') {
+        return 'light';
+    }
+
+    // Guess based on a parent element's color
+    const color = window.getComputedStyle(element.parentNode, null).getPropertyValue('color');
+    const match = color.match(/^rgb\s*\(\s*(\d+)\s*,\s*(\d+)\s*,\s*(\d+)\s*\)\s*$/i);
+    if (match) {
+        const [r, g, b] = [
+            parseFloat(match[1]),
+            parseFloat(match[2]),
+            parseFloat(match[3])
+        ];
+
+        // https://en.wikipedia.org/wiki/HSL_and_HSV#Lightness
+        const luma = 0.299 * r + 0.587 * g + 0.114 * b;
+
+        if (luma > 180) {
+            // If the text is very bright we have a dark theme
+            return 'dark';
+        }
+        if (luma < 75) {
+            // If the text is very dark we have a light theme
+            return 'light';
+        }
+        // Otherwise fall back to the next heuristic.
+    }
+
+    // Fallback to system preference
+    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+}
+
+
+function forceTheme(elementId) {
+    const estimatorElement = document.querySelector(`#${elementId}`);
+    if (estimatorElement === null) {
+        console.error(`Element with id ${elementId} not found.`);
+    } else {
+        const theme = detectTheme(estimatorElement);
+        estimatorElement.classList.add(theme);
+    }
+}
+
+forceTheme('sk-container-id-3');</script>
+</div>
+</div>
+</section>
+<section id="examining-food-clusters" class="slide level2 center">
+<h2>Examining food clusters</h2>
+<p><br>
+</p>
+<div class="scroll-container" style="overflow-y: scroll; height: 400px;">
+<div id="13840603" class="cell" data-execution_count="25">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a></a><span class="cf">for</span> cluster <span class="kw">in</span> <span class="bu">range</span>(k):</span>
+<span id="cb21-2"><a></a>    get_cluster_images(km, Z_food, X_food, cluster, n_img<span class="op">=</span><span class="dv">6</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>39
+Image indices:  [ 39 197  12  14 138 181]</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure>
+<p><img data-src="slides-01_files/figure-revealjs/cell-26-output-2.png" width="821" height="137"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>228
+Image indices:  [228  65 128  54 175 260]</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure>
+<p><img data-src="slides-01_files/figure-revealjs/cell-26-output-4.png" width="821" height="137"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>138
+Image indices:  [138  54 185 278  39  89]</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure>
+<p><img data-src="slides-01_files/figure-revealjs/cell-26-output-6.png" width="821" height="137"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>193
+Image indices:  [193  39 145 212 169 108]</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure>
+<p><img data-src="slides-01_files/figure-revealjs/cell-26-output-8.png" width="821" height="137"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>120
+Image indices:  [120 268 244  94  72  87]</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure>
+<p><img data-src="slides-01_files/figure-revealjs/cell-26-output-10.png" width="821" height="137"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section></section>
+<section>
+<section id="interactive-is-ml-appropriate" class="title-slide slide level1 center">
+<h1>Interactive: Is ML appropriate?</h1>
+
+</section>
+<section id="questions-for-you" class="slide level2 smaller center">
+<h2>❓❓ Questions for you</h2>
+<p><strong>Select all that apply: Which problems are suitable for ML?</strong></p>
+<ul>
+<li><ol type="A">
+<li>Checking if a UBC email address ends with <span class="citation" data-cites="student.ubc.ca">@student.ubc.ca</span> before allowing login</li>
+</ol></li>
+<li><ol start="2" type="A">
+<li>Deciding which students should be awarded a scholarship based on their personal essays</li>
+</ol></li>
+<li><ol start="3" type="A">
+<li>Predicting which songs you’ll like based on your Spotify listening history</li>
+</ol></li>
+<li><ol start="4" type="A">
+<li>Detecting plagiarism by checking if two essays are exactly identical</li>
+</ol></li>
+<li><ol start="5" type="A">
+<li>Automatically tagging photos of your friends on Instagram</li>
+</ol></li>
+</ul>
+</section>
+<section id="summary-when-is-ml-suitable" class="slide level2 center">
+<h2>Summary: When is ML suitable?</h2>
+<table class="caption-top">
+<colgroup>
+<col style="width: 16%">
+<col style="width: 83%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Approach</strong></th>
+<th><strong>Best Used When…</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Machine Learning</strong></td>
+<td>The dataset is <strong>large and complex</strong>, and the decision rules are <strong>unknown, fuzzy, or too complex to define explicitly</strong></td>
+</tr>
+<tr class="even">
+<td><strong>Rule-based System</strong></td>
+<td>The logic is <strong>clear and deterministic</strong>, and the rules or thresholds are <strong>known and stable</strong></td>
+</tr>
+<tr class="odd">
+<td><strong>Human Expert</strong></td>
+<td>The problem involves <strong>ethics, creativity, emotion, or ambiguity</strong> that can’t be formalized easily</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="activity-2" class="slide level2 center">
+<h2>Activity 2</h2>
+<p>Think of a problem you have come across in the past which could be solved using machine learning.</p>
+<ul>
+<li>What would be the input and output?</li>
+<li>How do humans solve this now? Are there heuristics or rules?</li>
+<li>What kind of data do you have or could you collect?</li>
+</ul>
+</section>
+<section id="types-of-machine-learning" class="slide level2 center">
+<h2>Types of machine learning</h2>
+<p>Here are some typical learning problems.</p>
+<ul>
+<li><strong>Supervised learning</strong> (<a href="https://support.google.com/a/answer/2368132?hl=en">Gmail spam filtering</a>)</li>
+<li><strong>Unsupervised learning</strong> (<a href="https://news.google.com/">Google News</a>)</li>
+<li>Reinforcement learning (<a href="https://deepmind.com/research/case-studies/alphago-the-story-so-far">AlphaGo</a>)</li>
+<li>Generative AI (<a href="https://chatgpt.com/">ChatGPT</a>)</li>
+<li><strong>Recommendation systems</strong> (<a href="https://www.cs.umd.edu/~samir/498/Amazon-Recommendations.pdf">Amazon item recommendation system</a>)</li>
+</ul>
+</section>
+<section id="what-is-supervised-learning" class="slide level2 smaller center">
+<h2>What is supervised learning?</h2>
+<ul>
+<li>Training data comprises a set of observations (<span class="math inline">\(X\)</span>) and their corresponding targets (<span class="math inline">\(y\)</span>).</li>
+<li>We wish to find a model function <span class="math inline">\(f\)</span> that relates <span class="math inline">\(X\)</span> to <span class="math inline">\(y\)</span>.</li>
+<li>We use the model function to predict targets of new examples.</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="img/sup-learning.png" class="quarto-figure quarto-figure-center" width="700"></p>
+</figure>
+</div>
+</section>
+<section id="evas-questions" class="slide level2 smaller center">
+<h2>🤔 Eva’s questions</h2>
+<p><br>
+</p>
+<p>At this point, Eva is wondering about many questions.</p>
+<ul>
+<li>How are we exactly “learning” whether a message is spam and ham?</li>
+<li>Are we expected to get correct predictions for all possible messages? How does it predict the label for a message it has not seen before?<br>
+</li>
+<li>What if the model mis-labels an unseen example? For instance, what if the model incorrectly predicts a non-spam as a spam? What would be the consequences?</li>
+<li>How do we measure the success or failure of spam identification?</li>
+<li>If you want to use this model in the wild, how do you know how reliable it is?<br>
+</li>
+<li>Would it be useful to know how confident the model is about the predictions rather than just a yes or a no?</li>
+</ul>
+<p>It’s great to think about these questions right now. But Eva has to be patient. By the end of this course you’ll know answers to many of these questions!</p>
 </section>
 <section id="what-is-machine-learning-ml" class="slide level2 center">
 <h2>What is Machine Learning (ML)?</h2>
@@ -526,20 +4792,20 @@ Here is our course Calendar. Make sure you check it on a regular basis:
 <li>Suppose you are given some data with labelled spam and non-spam messages</li>
 </ul>
 <div class="panel-tabset">
-<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">Code</a></li><li><a href="#tabset-1-2">Output</a></li></ul>
+<ul id="tabset-2" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-2-1">Code</a></li><li><a href="#tabset-2-2">Output</a></li></ul>
 <div class="tab-content">
-<div id="tabset-1-1">
-<div id="5507ac15" class="cell" data-execution_count="4">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a></a>sms_df <span class="op">=</span> pd.read_csv(DATA_DIR <span class="op">+</span> <span class="st">"spam.csv"</span>, encoding<span class="op">=</span><span class="st">"latin-1"</span>)</span>
-<span id="cb5-2"><a></a>sms_df <span class="op">=</span> sms_df.drop(columns <span class="op">=</span> [<span class="st">"Unnamed: 2"</span>, <span class="st">"Unnamed: 3"</span>, <span class="st">"Unnamed: 4"</span>])</span>
-<span id="cb5-3"><a></a>sms_df <span class="op">=</span> sms_df.rename(columns<span class="op">=</span>{<span class="st">"v1"</span>: <span class="st">"target"</span>, <span class="st">"v2"</span>: <span class="st">"sms"</span>})</span>
-<span id="cb5-4"><a></a>train_df, test_df <span class="op">=</span> train_test_split(sms_df, test_size<span class="op">=</span><span class="fl">0.10</span>, random_state<span class="op">=</span><span class="dv">42</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="tabset-2-1">
+<div id="e072bff5" class="cell" data-execution_count="26">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a></a>sms_df <span class="op">=</span> pd.read_csv(DATA_DIR <span class="op">+</span> <span class="st">"spam.csv"</span>, encoding<span class="op">=</span><span class="st">"latin-1"</span>)</span>
+<span id="cb27-2"><a></a>sms_df <span class="op">=</span> sms_df.drop(columns <span class="op">=</span> [<span class="st">"Unnamed: 2"</span>, <span class="st">"Unnamed: 3"</span>, <span class="st">"Unnamed: 4"</span>])</span>
+<span id="cb27-3"><a></a>sms_df <span class="op">=</span> sms_df.rename(columns<span class="op">=</span>{<span class="st">"v1"</span>: <span class="st">"target"</span>, <span class="st">"v2"</span>: <span class="st">"sms"</span>})</span>
+<span id="cb27-4"><a></a>train_df, test_df <span class="op">=</span> train_test_split(sms_df, test_size<span class="op">=</span><span class="fl">0.10</span>, random_state<span class="op">=</span><span class="dv">42</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
-<div id="tabset-1-2">
+<div id="tabset-2-2">
 <div class="scroll-container" style="overflow-y: scroll; height: 400px;">
-<div id="fd7b0301" class="cell" data-execution_count="5">
-<div class="cell-output cell-output-display" data-execution_count="5">
+<div id="e144f5b1" class="cell" data-execution_count="27">
+<div class="cell-output cell-output-display" data-execution_count="27">
 <table class="dataframe caption-top" data-border="1">
 <thead>
 <tr class="header" style="text-align: right;">
@@ -592,25 +4858,25 @@ Here is our course Calendar. Make sure you check it on a regular basis:
 </ul></li>
 </ul>
 </section>
-<section id="lets-train-a-model" class="slide level2 center">
+<section id="lets-train-a-model-1" class="slide level2 center">
 <h2>Let’s train a model</h2>
 <ul>
 <li>There are several packages that help us perform machine learning.</li>
 </ul>
-<div id="1a43ac3d" class="cell" data-execution_count="6">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a></a>X_train, y_train <span class="op">=</span> train_df[<span class="st">"sms"</span>], train_df[<span class="st">"target"</span>]</span>
-<span id="cb6-2"><a></a>X_test, y_test <span class="op">=</span> test_df[<span class="st">"sms"</span>], test_df[<span class="st">"target"</span>]</span>
-<span id="cb6-3"><a></a>clf <span class="op">=</span> make_pipeline(CountVectorizer(max_features<span class="op">=</span><span class="dv">5000</span>), LogisticRegression(max_iter<span class="op">=</span><span class="dv">5000</span>))</span>
-<span id="cb6-4"><a></a>clf.fit(X_train, y_train)<span class="op">;</span> <span class="co"># Training the model</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="eaaae52f" class="cell" data-execution_count="28">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a></a>X_train, y_train <span class="op">=</span> train_df[<span class="st">"sms"</span>], train_df[<span class="st">"target"</span>]</span>
+<span id="cb28-2"><a></a>X_test, y_test <span class="op">=</span> test_df[<span class="st">"sms"</span>], test_df[<span class="st">"target"</span>]</span>
+<span id="cb28-3"><a></a>clf <span class="op">=</span> make_pipeline(CountVectorizer(max_features<span class="op">=</span><span class="dv">5000</span>), LogisticRegression(max_iter<span class="op">=</span><span class="dv">5000</span>))</span>
+<span id="cb28-4"><a></a>clf.fit(X_train, y_train)<span class="op">;</span> <span class="co"># Training the model</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
-<section id="unseen-messages" class="slide level2 center">
+<section id="unseen-messages-1" class="slide level2 center">
 <h2>Unseen messages</h2>
 <ul>
 <li>Now use the trained model to predict targets of unseen messages:</li>
 </ul>
-<div id="b0dabec7" class="cell" data-execution_count="7">
-<div class="cell-output cell-output-display" data-execution_count="7">
+<div id="d803a842" class="cell" data-execution_count="29">
+<div class="cell-output cell-output-display" data-execution_count="29">
 <div>
 <style scoped="">
     .dataframe tbody tr th:only-of-type {
@@ -657,45 +4923,45 @@ Here is our course Calendar. Make sure you check it on a regular basis:
 </div>
 </div>
 </section>
-<section id="predicting-on-unseen-data" class="slide level2 smaller center">
+<section id="predicting-on-unseen-data-1" class="slide level2 smaller center">
 <h2>Predicting on unseen data</h2>
 <p><strong>The model is accurately predicting labels for the unseen text messages above!</strong></p>
-<div id="7dd420f5" class="cell" data-execution_count="8">
-<div class="cell-output cell-output-display" data-execution_count="8">
+<div id="5ce2b14d" class="cell" data-execution_count="30">
+<div class="cell-output cell-output-display" data-execution_count="30">
 <style type="text/css">
-#T_cd216_row0_col0, #T_cd216_row0_col1, #T_cd216_row1_col0, #T_cd216_row1_col1, #T_cd216_row2_col0, #T_cd216_row2_col1, #T_cd216_row3_col0, #T_cd216_row3_col1 {
+#T_686cc_row0_col0, #T_686cc_row0_col1, #T_686cc_row1_col0, #T_686cc_row1_col1, #T_686cc_row2_col0, #T_686cc_row2_col1, #T_686cc_row3_col0, #T_686cc_row3_col1 {
   text-align: left;
 }
 </style>
 
-<table id="T_cd216" class="caption-top">
+<table id="T_686cc" class="caption-top">
 <thead>
 <tr class="header">
 <th class="blank level0" data-quarto-table-cell-role="th">&nbsp;</th>
-<th id="T_cd216_level0_col0" class="col_heading level0 col0" data-quarto-table-cell-role="th">sms</th>
-<th id="T_cd216_level0_col1" class="col_heading level0 col1" data-quarto-table-cell-role="th">spam_predictions</th>
+<th id="T_686cc_level0_col0" class="col_heading level0 col0" data-quarto-table-cell-role="th">sms</th>
+<th id="T_686cc_level0_col1" class="col_heading level0 col1" data-quarto-table-cell-role="th">spam_predictions</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<th id="T_cd216_level0_row0" class="row_heading level0 row0" data-quarto-table-cell-role="th">3245</th>
-<td id="T_cd216_row0_col0" class="data row0 col0">Funny fact Nobody teaches volcanoes 2 erupt, tsunamis 2 arise, hurricanes 2 sway aroundn no 1 teaches hw 2 choose a wife Natural disasters just happens</td>
-<td id="T_cd216_row0_col1" class="data row0 col1">ham</td>
+<th id="T_686cc_level0_row0" class="row_heading level0 row0" data-quarto-table-cell-role="th">3245</th>
+<td id="T_686cc_row0_col0" class="data row0 col0">Funny fact Nobody teaches volcanoes 2 erupt, tsunamis 2 arise, hurricanes 2 sway aroundn no 1 teaches hw 2 choose a wife Natural disasters just happens</td>
+<td id="T_686cc_row0_col1" class="data row0 col1">ham</td>
 </tr>
 <tr class="even">
-<th id="T_cd216_level0_row1" class="row_heading level0 row1" data-quarto-table-cell-role="th">944</th>
-<td id="T_cd216_row1_col0" class="data row1 col0">I sent my scores to sophas and i had to do secondary application for a few schools. I think if you are thinking of applying, do a research on cost also. Contact joke ogunrinde, her school is one me the less expensive ones</td>
-<td id="T_cd216_row1_col1" class="data row1 col1">ham</td>
+<th id="T_686cc_level0_row1" class="row_heading level0 row1" data-quarto-table-cell-role="th">944</th>
+<td id="T_686cc_row1_col0" class="data row1 col0">I sent my scores to sophas and i had to do secondary application for a few schools. I think if you are thinking of applying, do a research on cost also. Contact joke ogunrinde, her school is one me the less expensive ones</td>
+<td id="T_686cc_row1_col1" class="data row1 col1">ham</td>
 </tr>
 <tr class="odd">
-<th id="T_cd216_level0_row2" class="row_heading level0 row2" data-quarto-table-cell-role="th">1044</th>
-<td id="T_cd216_row2_col0" class="data row2 col0">We know someone who you know that fancies you. Call 09058097218 to find out who. POBox 6, LS15HB 150p</td>
-<td id="T_cd216_row2_col1" class="data row2 col1">spam</td>
+<th id="T_686cc_level0_row2" class="row_heading level0 row2" data-quarto-table-cell-role="th">1044</th>
+<td id="T_686cc_row2_col0" class="data row2 col0">We know someone who you know that fancies you. Call 09058097218 to find out who. POBox 6, LS15HB 150p</td>
+<td id="T_686cc_row2_col1" class="data row2 col1">spam</td>
 </tr>
 <tr class="even">
-<th id="T_cd216_level0_row3" class="row_heading level0 row3" data-quarto-table-cell-role="th">2484</th>
-<td id="T_cd216_row3_col0" class="data row3 col0">Only if you promise your getting out as SOON as you can. And you'll text me in the morning to let me know you made it in ok.</td>
-<td id="T_cd216_row3_col1" class="data row3 col1">ham</td>
+<th id="T_686cc_level0_row3" class="row_heading level0 row3" data-quarto-table-cell-role="th">2484</th>
+<td id="T_686cc_row3_col0" class="data row3 col0">Only if you promise your getting out as SOON as you can. And you'll text me in the morning to let me know you made it in ok.</td>
+<td id="T_686cc_row3_col1" class="data row3 col1">ham</td>
 </tr>
 </tbody>
 </table>
@@ -739,7 +5005,7 @@ A field of study that gives computers the ability to learn without being explici
 <li>Finding the distance between two nodes in a graph</li>
 </ul>
 </section>
-<section id="types-of-machine-learning" class="slide level2 center">
+<section id="types-of-machine-learning-1" class="slide level2 center">
 <h2>Types of machine learning</h2>
 <p>Here are some typical learning problems.</p>
 <ul>
@@ -762,7 +5028,7 @@ A field of study that gives computers the ability to learn without being explici
 </ul></li>
 </ul>
 </section>
-<section id="what-is-supervised-learning" class="slide level2 center">
+<section id="what-is-supervised-learning-1" class="slide level2 center">
 <h2>What is supervised learning?</h2>
 <ul>
 <li>Training data comprises a set of observations (<span class="math inline">\(X\)</span>) and their corresponding targets (<span class="math inline">\(y\)</span>).</li>
@@ -775,7 +5041,7 @@ A field of study that gives computers the ability to learn without being explici
 </figure>
 </div>
 </section>
-<section id="evas-questions" class="slide level2 center">
+<section id="evas-questions-1" class="slide level2 center">
 <h2>🤔 Eva’s questions</h2>
 <p><br>
 </p>
@@ -797,7 +5063,7 @@ A field of study that gives computers the ability to learn without being explici
 <p>It is <em>very</em> important that you watch the assigned pre-lecture videos before class!</p>
 
 
-</section>
+</section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <p><img src="img/UBC-CS-logo.png" class="slide-logo"></p>

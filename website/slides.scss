@@ -169,3 +169,13 @@ div.shinylive-wrapper {
   overflow-y: scroll;
   height: 400px; 
 }
+
+/* Make all headings bright yellow */
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4,
+.reveal h5,
+.reveal h6 {
+  color: #FFFF00; /* bright yellow */
+}
