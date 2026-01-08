@@ -592,7 +592,7 @@
     "href": "slides.html",
     "title": "Overview",
     "section": "",
-    "text": "Title\n\n\n\nDescription\n\n\n\n\n\n\n\n\nLecture 1: Introduction to CPSC 330\n\n\nWhat is machine learning, types of machine learning, learning to navigate through the course materials, getting familiar with the course policies\n\n\n\n\n\n\nNo matching items"
+    "text": "Title\n\n\n\nDescription\n\n\n\n\n\n\n\n\nLecture 1: Introduction to CPSC 330\n\n\nWhat is machine learning, types of machine learning, learning to navigate through the course materials, getting familiar with the course policies\n\n\n\n\n\n\nLecture 2: Terminology, Baselines, Decision Trees\n\n\nTerminology and Decision Trees\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "slides-03.html#announcements",
@@ -2062,7 +2062,7 @@
     "href": "slides-02.html#announcements",
     "title": "Lecture 2: Terminology, Baselines, Decision Trees",
     "section": "Announcements",
-    "text": "Announcements\n\nThings due this week\n\nHomework 1 (hw1): Due May 16 17:59 \n\nYou can find the tentative due dates for all deliverables here.\nPlease monitor Ed Discussion (especially pinned posts and instructor posts) for announcements.\nI’ll assume that you’ve watched the pre-lecture videos."
+    "text": "Announcements\n\nThings due this week\n\nHomework 1 (hw1): Due Jan 12 , 11:59 pm\nThere are some assert statements in the notebook you can use to check your work! If they fail, you didn’t get the exercise correct \n\nYou can find the tentative due dates for all deliverables here.\nPlease monitor Ed Discussion (especially pinned posts and instructor posts) for announcements.\nI’ll assume that you’ve watched the pre-lecture videos."
   },
   {
     "objectID": "slides-02.html#surveys",
@@ -2076,7 +2076,7 @@
     "href": "slides-02.html#gradescope",
     "title": "Lecture 2: Terminology, Baselines, Decision Trees",
     "section": "Gradescope",
-    "text": "Gradescope\nMake sure you can submit your assignment before the hw1 due date!\nIt is required for you to work in a GitHub repository, please maintain your GitHub repo up-to-date.\nFor students on the waitlist: Gradescope Entry code is 9KK5ZR."
+    "text": "Gradescope\nMake sure you can submit your assignment before the hw1 due date!\n\nIt is required for you to work in a GitHub repository, please maintain your GitHub repo up-to-date.\nSome students are having trouble getting registered on Gradescope, we’re working on a fix - come see me in the break or after class!"
   },
   {
     "objectID": "slides-02.html#demo-submit-hw1-on-gradescope",
@@ -2090,14 +2090,14 @@
     "href": "slides-02.html#checklist-for-you-in-the-first-week",
     "title": "Lecture 2: Terminology, Baselines, Decision Trees",
     "section": "Checklist for you in the first week",
-    "text": "Checklist for you in the first week\n\nAre you able to access course Canvas shell?\nAre you able to access course forum: Ed Discussion?\nAre you able to access Gradescope? (If not, refer to the Gradescope Student Guide.)\nAre you able to access iClicker Cloud for this course?\nDid you follow the setup instructions here to create a course conda environment on your computer?\nDid you complete the “Getting to know you” survey on Canvas?\nDid you complete the anonymous restaurant survey on Qualtrics?\nAre you almost finished or at least started with homework 1?"
+    "text": "Checklist for you in the first week\n\nAre you able to access course Canvas shell?\nAre you able to access course forum: Ed Discussion?\nAre you able to access Gradescope? (If not, refer to the Gradescope Student Guide.) \nDid you follow the setup instructions here to create a course conda environment on your computer?  \nAre you almost finished or at least started with homework 1?"
   },
   {
     "objectID": "slides-02.html#suggested-workflow-for-working-with-jupyter-notebooks",
     "href": "slides-02.html#suggested-workflow-for-working-with-jupyter-notebooks",
     "title": "Lecture 2: Terminology, Baselines, Decision Trees",
     "section": "Suggested Workflow for working with Jupyter Notebooks",
-    "text": "Suggested Workflow for working with Jupyter Notebooks\n\nCreate a folder on your computer that will have all the CPSC 330 repos:\n\n~/School/Year3/CPSC330/ &lt;– Consider this your CPSC parent folder\n\nCreate subfolders for: hw, class, practice\nIn the hw folder, you will then clone hw1, hw2, hw3, etc…\nIn the class folder, you will clone the cpsc330-2025S1 repo which contains all the class jupyter notebooks\n\nDo not make any changes to files in this directory/repo, you will have trouble when you pull stuff during each class.\nIf you did make changes, you can reset to the last commit and DESTROY any changes you made (be careful with this command) using: git reset --hard\n\nIn the practice folder, you can copy any notebooks (.ipynb) and files (like data/*.csv) you want to try running locally and experiment"
+    "text": "Suggested Workflow for working with Jupyter Notebooks\n\nCreate a folder on your computer that will have all the CPSC 330 repos:\n\n~/School/Year3/CPSC330/ &lt;– Consider this your CPSC parent folder\n\nCreate subfolders for: hw, class, practice\nIn the hw folder, you will then clone hw1, hw2, hw3, etc…\nIn the class folder, you will clone the cpsc330-2025W2 repo which contains all the class jupyter notebooks\n\nDo not make any changes to files in this directory/repo, you will have trouble when you pull stuff during each class.\nIf you did make changes, you can reset to the last commit and DESTROY any changes you made (be careful with this command) using: git reset --hard\n\nIn the practice folder, you can copy any notebooks (.ipynb) and files (like data/*.csv) you want to try running locally and experiment"
   },
   {
     "objectID": "slides-02.html#recap-machine-learning-workflow",
@@ -2160,14 +2160,14 @@
     "href": "slides-02.html#running-example",
     "title": "Lecture 2: Terminology, Baselines, Decision Trees",
     "section": "Running example",
-    "text": "Running example\nImagine you’re in the fortunate situation where, after graduating, you have a few job offers and need to decide which one to choose. You want to pick the job that will likely make you the happiest. To help with your decision, you collect data from like-minded people. Here are the first few rows of this toy dataset.\n\ntoy_happiness_df = pd.read_csv(DATA_DIR + 'toy_job_happiness.csv')\ntoy_happiness_df\n\n\n\n\n\n\n\n\nsupportive_colleagues\nsalary\nfree_coffee\nboss_vegan\nhappy?\n\n\n\n\n0\n0\n70000\n0\n1\nUnhappy\n\n\n1\n1\n60000\n0\n0\nUnhappy\n\n\n2\n1\n80000\n1\n0\nHappy\n\n\n3\n1\n110000\n0\n1\nHappy\n\n\n4\n1\n120000\n1\n0\nHappy\n\n\n5\n1\n150000\n1\n1\nHappy\n\n\n6\n0\n150000\n1\n0\nUnhappy"
+    "text": "Running example\nImagine you’re in the fortunate situation where, after graduating, you have a few job offers and need to decide which one to choose. You want to pick the job that will likely make you the happiest. To help with your decision, you collect data from like-minded people.\n\nCan you think of relevant features for this problem?"
   },
   {
     "objectID": "slides-02.html#features-target-example",
     "href": "slides-02.html#features-target-example",
     "title": "Lecture 2: Terminology, Baselines, Decision Trees",
     "section": "Features, target, example",
-    "text": "Features, target, example\n\nWhat are the features \\(X\\)?\n\nfeatures = inputs = predictors = explanatory variables = regressors = independent variables = covariates\n\nWhat’s the target \\(y\\)?\n\ntarget = output = outcome = response variable = dependent variable = labels\n\nCan you think of other relevant features for this problem?\nWhat is an example?"
+    "text": "Features, target, example\n\nTerminologyData\n\n\n\nWhat are the features \\(X\\)?\n\nfeatures = inputs = predictors = explanatory variables = regressors = independent variables = covariates\n\nWhat’s the target \\(y\\)?\n\ntarget = output = outcome = response variable = dependent variable = labels\n\nWhat is an example?\n\n\n\n\n\n\n\n\n\n\n\n\nsupportive_colleagues\nsalary\nfree_coffee\nboss_vegan\nhappy?\n\n\n\n\n0\n0\n70000\n0\n1\nUnhappy\n\n\n1\n1\n60000\n0\n0\nUnhappy\n\n\n2\n1\n80000\n1\n0\nHappy\n\n\n3\n1\n110000\n0\n1\nHappy\n\n\n4\n1\n120000\n1\n0\nHappy\n\n\n5\n1\n150000\n1\n1\nHappy\n\n\n6\n0\n150000\n1\n0\nUnhappy"
   },
   {
     "objectID": "slides-02.html#classification-vs.-regression",
@@ -2202,7 +2202,7 @@
     "href": "slides-02.html#baseline",
     "title": "Lecture 2: Terminology, Baselines, Decision Trees",
     "section": "Baseline",
-    "text": "Baseline\n\nLet’s try a simplest algorithm of predicting the most popular target!\n\n\nfrom sklearn.dummy import DummyClassifier\n# Initialize the DummyClassifier to always predict the most frequent class\nmodel = DummyClassifier(strategy=\"most_frequent\")\n# Train the model on the feature set X and target variable y\nmodel.fit(X, y)\n# Add the predicted values as a new column in the dataframe\ntoy_happiness_df['dummy_predictions'] = model.predict(X)\n# Show the dataframe\ntoy_happiness_df\n\n\n\n\n\n\n\n\nsupportive_colleagues\nsalary\nfree_coffee\nboss_vegan\nhappy?\ndummy_predictions\n\n\n\n\n0\n0\n70000\n0\n1\nUnhappy\nHappy\n\n\n1\n1\n60000\n0\n0\nUnhappy\nHappy\n\n\n2\n1\n80000\n1\n0\nHappy\nHappy\n\n\n3\n1\n110000\n0\n1\nHappy\nHappy\n\n\n4\n1\n120000\n1\n0\nHappy\nHappy\n\n\n5\n1\n150000\n1\n1\nHappy\nHappy\n\n\n6\n0\n150000\n1\n0\nUnhappy\nHappy"
+    "text": "Baseline\n\nLet’s try a simplest algorithm of predicting the most popular target!\n\n\nfrom sklearn.dummy import DummyClassifier\nmodel = DummyClassifier(strategy=\"most_frequent\") # Initialize the DummyClassifier to always predict the most frequent class\nmodel.fit(X, y) # Train the model on the feature set X and target variable y\ntoy_happiness_df['dummy_predictions'] = model.predict(X) # Add the predicted values as a new column in the dataframe\ntoy_happiness_df\n\n\n\n\n\n\n\n\nsupportive_colleagues\nsalary\nfree_coffee\nboss_vegan\nhappy?\ndummy_predictions\n\n\n\n\n0\n0\n70000\n0\n1\nUnhappy\nHappy\n\n\n1\n1\n60000\n0\n0\nUnhappy\nHappy\n\n\n2\n1\n80000\n1\n0\nHappy\nHappy\n\n\n3\n1\n110000\n0\n1\nHappy\nHappy\n\n\n4\n1\n120000\n1\n0\nHappy\nHappy\n\n\n5\n1\n150000\n1\n1\nHappy\nHappy\n\n\n6\n0\n150000\n1\n0\nUnhappy\nHappy"
   },
   {
     "objectID": "slides-02.html#break",
@@ -2230,7 +2230,7 @@
     "href": "slides-02.html#decision-tree-with-sklearn",
     "title": "Lecture 2: Terminology, Baselines, Decision Trees",
     "section": "Decision tree with sklearn",
-    "text": "Decision tree with sklearn\nLet’s train a simple decision tree on our toy dataset.\n\nfrom sklearn.tree import DecisionTreeClassifier # import the classifier\nfrom sklearn.tree import plot_tree\n\nmodel = DecisionTreeClassifier(max_depth=2, random_state=1) # Create a class object\nmodel.fit(X, y)\nplot_tree(model, filled=True, feature_names = X.columns, class_names=[\"Happy\", \"Unhappy\"], \n          impurity = False, fontsize=12);"
+    "text": "Decision tree with sklearn\nLet’s train a simple decision tree on our toy dataset using sklearn\n\nfrom sklearn.tree import DecisionTreeClassifier # import the classifier\nfrom sklearn.tree import plot_tree\n\nmodel = DecisionTreeClassifier(max_depth=2, random_state=1) # Create a class object\nmodel.fit(X, y)\nplot_tree(model, filled=True, feature_names = X.columns, class_names=[\"Happy\", \"Unhappy\"], impurity = False, fontsize=12);"
   },
   {
     "objectID": "slides-02.html#prediction",
@@ -2244,7 +2244,7 @@
     "href": "slides-02.html#prediction-with-sklearn",
     "title": "Lecture 2: Terminology, Baselines, Decision Trees",
     "section": "Prediction with sklearn",
-    "text": "Prediction with sklearn\n\nWhat would be the prediction for the example below using the tree above?\n\nsupportive_colleagues = 1, salary = 60000, coffee_machine = 0, vegan_boss = 1,\n\n\n\ntest_example = [[1, 60000, 0, 1]]\nprint(\"Model prediction: \", model.predict(test_example))\nplot_tree(model, filled=True, feature_names = X.columns, class_names = [\"Happy\", \"Unhappy\"], impurity = False, fontsize=9);\n\nModel prediction:  ['Unhappy']"
+    "text": "Prediction with sklearn\n\nWhat would be the prediction for the example below using the tree above?\n\nsupportive_colleagues = 1, salary = 60000, free_coffee = 0, vegan_boss = 1,\n\n\n\ntest_example = [[1, 60000, 0, 1]]\nprint(\"Model prediction: \", model.predict(test_example))\nplot_tree(model, filled=True, feature_names = X.columns, class_names = [\"Happy\", \"Unhappy\"], impurity = False, fontsize=9);\n\nModel prediction:  ['Unhappy']"
   },
   {
     "objectID": "slides-02.html#training-high-level",
@@ -3029,5 +3029,145 @@
     "title": "Lecture 1: Introduction to CPSC 330",
     "section": "🤔 Eva’s questions",
     "text": "🤔 Eva’s questions\n\n\nAt this point, Eva is wondering about many questions.\n\nHow are we exactly “learning” whether a message is spam and ham?\nAre we expected to get correct predictions for all possible messages? How does it predict the label for a message it has not seen before?\n\nWhat if the model mis-labels an unseen example? For instance, what if the model incorrectly predicts a non-spam as a spam? What would be the consequences?\nHow do we measure the success or failure of spam identification?\nIf you want to use this model in the wild, how do you know how reliable it is?\n\nWould it be useful to know how confident the model is about the predictions rather than just a yes or a no?\n\nIt’s great to think about these questions right now. But Eva has to be patient. By the end of this course you’ll know answers to many of these questions!"
+  },
+  {
+    "objectID": "slides-02.html#participation-marks-5-in-section-202",
+    "href": "slides-02.html#participation-marks-5-in-section-202",
+    "title": "Lecture 2: Terminology, Baselines, Decision Trees",
+    "section": "Participation marks (5%) in Section 202",
+    "text": "Participation marks (5%) in Section 202\n\nIn this section (202) we will not be using iClickers for “attendance”\nInstead, you will have weekly “Learning Logs” where you will reflect on the material covered for the week\nThe first Learning Log will be released tonight, and will be due Sunday Jan 11, 11:59 PM\nOnly students registered in section 202 will see these on PrairieLearn"
+  },
+  {
+    "objectID": "slides-02.html#learning-outcomes",
+    "href": "slides-02.html#learning-outcomes",
+    "title": "Lecture 2: Terminology, Baselines, Decision Trees",
+    "section": "🎯 Learning Outcomes",
+    "text": "🎯 Learning Outcomes\nBy the end of this lesson, you will be able to:\n\nDefine key machine learning terminology:\nfeatures, targets, predictions, training, error, classification vs. regression, supervised vs. unsupervised learning, hyperparameters vs. parameters, baselines, decision boundaries\nBuild a simple machine learning model in scikit-learn, explaining the fit–predict workflow and evaluating performance with the score method\nDescribe at a high level how decision trees are trained (fitting) and how they make predictions\nImplement and visualize decision trees in scikit-learn using DecisionTreeClassifier and DecisionTreeRegressor"
+  },
+  {
+    "objectID": "slides-02.html#class-participation-using-agora",
+    "href": "slides-02.html#class-participation-using-agora",
+    "title": "Lecture 2: Terminology, Baselines, Decision Trees",
+    "section": "Class Participation using Agora",
+    "text": "Class Participation using Agora\n\nVisit: https://agora.students.cs.ubc.ca\nLogin with your UBC CWL\nUse enrol code: agentic"
+  },
+  {
+    "objectID": "slides-02.html#clicker-2.1-ml-or-not",
+    "href": "slides-02.html#clicker-2.1-ml-or-not",
+    "title": "Lecture 2: Terminology, Baselines, Decision Trees",
+    "section": "Clicker 2.1: ML or not",
+    "text": "Clicker 2.1: ML or not\nSelect all of the following statements which are suitable problems for machine learning.\n\n\nIdentifying objects within digital images, such as facial recognition in security systems or categorizing images based on content.\n\n\nDetermining if individuals meet the necessary criteria for government or financial services based on strict guidelines.\n\n\nIdentifying unusual patterns that may indicate fraudulent transactions in banking and finance.\n\n\nAutomatically analyzing images from MRIs, CT scans, or X-rays to detect abnormalities like tumors or fractures.\n\n\nAddressing mental health issues where human empathy, understanding, and adaptability are key."
+  },
+  {
+    "objectID": "slides-02.html#therapists-using-chatgpt-secretly",
+    "href": "slides-02.html#therapists-using-chatgpt-secretly",
+    "title": "Lecture 2: Terminology, Baselines, Decision Trees",
+    "section": "Therapists using ChatGPT secretly 😔",
+    "text": "Therapists using ChatGPT secretly 😔"
+  },
+  {
+    "objectID": "slides-02.html#recap-when-is-ml-suitable",
+    "href": "slides-02.html#recap-when-is-ml-suitable",
+    "title": "Lecture 2: Terminology, Baselines, Decision Trees",
+    "section": "Recap: When is ML suitable?",
+    "text": "Recap: When is ML suitable?\n\nML excels when the problem involve identifying complex patterns or relationships in large datasets that are difficult for humans to discern manually.\nRule-based systems are suitable where clear and deterministic rules can be defined. Good for structured decision making.\nHuman experts are good with problems which require deep contextual understanding, ethical judgment, creative input, or emotional intelligence."
+  },
+  {
+    "objectID": "slides-02.html#unsupervised-learning",
+    "href": "slides-02.html#unsupervised-learning",
+    "title": "Lecture 2: Terminology, Baselines, Decision Trees",
+    "section": "Unsupervised learning",
+    "text": "Unsupervised learning\n\nTraining data consists of observations \\(X\\) without any corresponding targets.\nUnsupervised learning could be used to group similar things together in \\(X\\) or to find underlying structure in the data."
+  },
+  {
+    "objectID": "slides-02.html#clicker-2.2-supervised-vs-unsupervised",
+    "href": "slides-02.html#clicker-2.2-supervised-vs-unsupervised",
+    "title": "Lecture 2: Terminology, Baselines, Decision Trees",
+    "section": "Clicker 2.2: Supervised vs unsupervised",
+    "text": "Clicker 2.2: Supervised vs unsupervised\nParticipate using Agora (code: agentic)\nSelect all of the following statements which are examples of supervised machine learning\n\n\nFinding groups of similar properties in a real estate data set.\n\n\nPredicting whether someone will have a heart attack or not on the basis of demographic, diet, and clinical measurement.\n\n\nGrouping articles on different topics from different news sources (something like the Google News app).\n\n\nDetecting credit card fraud based on examples of fraudulent and non-fraudulent transactions.\n\n\nGiven some measure of employee performance, identify the key factors which are likely to influence their performance."
+  },
+  {
+    "objectID": "slides-02.html#clicker-2.3-classification-vs.-regression",
+    "href": "slides-02.html#clicker-2.3-classification-vs.-regression",
+    "title": "Lecture 2: Terminology, Baselines, Decision Trees",
+    "section": "Clicker 2.3: Classification vs. Regression",
+    "text": "Clicker 2.3: Classification vs. Regression\nParticipate using Agora (code: agentic)\nSelect all of the following statements which are examples of regression problems\n\n\nPredicting the price of a house based on features such as number of bedrooms and the year built.\n\n\nPredicting if a house will sell or not based on features like the price of the house, number of rooms, etc.\n\n\nPredicting percentage grade in CPSC 330 based on past grades.\n\n\nPredicting whether you should bicycle tomorrow or not based on the weather forecast.\n\n\nPredicting appropriate thermostat temperature based on the wind speed and the number of people in a room."
+  },
+  {
+    "objectID": "slides-02.html#todays-focus",
+    "href": "slides-02.html#todays-focus",
+    "title": "Lecture 2: Terminology, Baselines, Decision Trees",
+    "section": "Today’s focus",
+    "text": "Today’s focus\n\nML Terminology\nUsing sklearn to build a simple supervised ML model\nIntuition of Decision Trees"
+  },
+  {
+    "objectID": "slides-02.html#framework",
+    "href": "slides-02.html#framework",
+    "title": "Lecture 2: Terminology, Baselines, Decision Trees",
+    "section": "Framework",
+    "text": "Framework\n\nThere are many frameworks to do do machine learning.\nWe’ll mainly be using scikit-learn framework."
+  },
+  {
+    "objectID": "slides-02.html#toy-job-happinees-dataset",
+    "href": "slides-02.html#toy-job-happinees-dataset",
+    "title": "Lecture 2: Terminology, Baselines, Decision Trees",
+    "section": "Toy job happinees dataset",
+    "text": "Toy job happinees dataset\nHere are the first few rows of a toy dataset.\n\ntoy_happiness_df = pd.read_csv(DATA_DIR + 'toy_job_happiness.csv')\ntoy_happiness_df\n\n\n\n\n\n\n\n\nsupportive_colleagues\nsalary\nfree_coffee\nboss_vegan\nhappy?\n\n\n\n\n0\n0\n70000\n0\n1\nUnhappy\n\n\n1\n1\n60000\n0\n0\nUnhappy\n\n\n2\n1\n80000\n1\n0\nHappy\n\n\n3\n1\n110000\n0\n1\nHappy\n\n\n4\n1\n120000\n1\n0\nHappy\n\n\n5\n1\n150000\n1\n1\nHappy\n\n\n6\n0\n150000\n1\n0\nUnhappy"
+  },
+  {
+    "objectID": "slides-02.html#optional-inference-vs.-prediction",
+    "href": "slides-02.html#optional-inference-vs.-prediction",
+    "title": "Lecture 2: Terminology, Baselines, Decision Trees",
+    "section": "(Optional) Inference vs. Prediction",
+    "text": "(Optional) Inference vs. Prediction\n\n\n\nInference asks: Why does something happen?\n\nGoal: understand and quantify the relationship between variables\n\nOften involves estimating model parameters and testing hypotheses\n\nExample: Which factors influence happiness, and by how much?\n\n\n\n\nPrediction asks: What will happen?\n\nGoal: accurately predict the target without needing to fully explain the relationships\n\nExample: Will you be happy in a particular job?\n\n\n\nOf course these goals are related, and in many situations we need both."
+  },
+  {
+    "objectID": "slides-02.html#error-and-accuracy",
+    "href": "slides-02.html#error-and-accuracy",
+    "title": "Lecture 2: Terminology, Baselines, Decision Trees",
+    "section": "Error and accuracy",
+    "text": "Error and accuracy\n\nMachine learning models are not perfect—they will make mistakes.\n\nTo judge whether a model is useful, we need to track its performance.\n\nFor classification problems, the most common (and default in sklearn) metric is accuracy:\n\n\\[\n\\text{Accuracy} = \\frac{\\text{Number of correct predictions}}{\\text{Total number of examples}}\n\\]"
+  },
+  {
+    "objectID": "slides-02.html#which-question-is-more-effective",
+    "href": "slides-02.html#which-question-is-more-effective",
+    "title": "Lecture 2: Terminology, Baselines, Decision Trees",
+    "section": "Which question is more effective?",
+    "text": "Which question is more effective?\n\nVisualData\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nsupportive_colleagues\nsalary\nfree_coffee\nboss_vegan\nhappy?\n\n\n\n\n0\n0\n70000\n0\n1\nUnhappy\n\n\n1\n1\n60000\n0\n0\nUnhappy\n\n\n2\n1\n80000\n1\n0\nHappy\n\n\n3\n1\n110000\n0\n1\nHappy\n\n\n4\n1\n120000\n1\n0\nHappy\n\n\n5\n1\n150000\n1\n1\nHappy\n\n\n6\n0\n150000\n1\n0\nUnhappy"
+  },
+  {
+    "objectID": "slides-02.html#what-are-we-trying-to-learn",
+    "href": "slides-02.html#what-are-we-trying-to-learn",
+    "title": "Lecture 2: Terminology, Baselines, Decision Trees",
+    "section": "What are we trying to learn?",
+    "text": "What are we trying to learn?\n\nWe want to learn which questions to ask and in what order.\nHow many possible questions could we ask with these features?\n\n\n\n\n\n\n\n\n\n\nsupportive_colleagues\nsalary\nfree_coffee\nboss_vegan\nhappy?\n\n\n\n\n0\n0\n70000\n0\n1\nUnhappy\n\n\n1\n1\n60000\n0\n0\nUnhappy\n\n\n2\n1\n80000\n1\n0\nHappy\n\n\n3\n1\n110000\n0\n1\nHappy\n\n\n4\n1\n120000\n1\n0\nHappy\n\n\n5\n1\n150000\n1\n1\nHappy\n\n\n6\n0\n150000\n1\n0\nUnhappy"
+  },
+  {
+    "objectID": "slides-02.html#decision-tree-training-high-level",
+    "href": "slides-02.html#decision-tree-training-high-level",
+    "title": "Lecture 2: Terminology, Baselines, Decision Trees",
+    "section": "Decision tree Training (high level)",
+    "text": "Decision tree Training (high level)\n\nTraining a decision tree is a search process: we look for the “best” tree among many possible ones.\nThere are different algorithms for learning trees. Check this out.\nAt each step, we evaluate candidate questions using measures such as:\n\nInformation gain\nGini index\n\nThe goal is to split the data into groups with greater certainty (more homogeneous outcomes)."
+  },
+  {
+    "objectID": "slides-02.html#decision-boundary",
+    "href": "slides-02.html#decision-boundary",
+    "title": "Lecture 2: Terminology, Baselines, Decision Trees",
+    "section": "Decision boundary",
+    "text": "Decision boundary\n\nA decision boundary is the line, curve, or surface that separates classes.\nPoints on one side \\(\\rightarrow\\) Model predicts Class Happy\n\nPoints on the other side \\(\\rightarrow\\) Model predicts Class Unhappy"
+  },
+  {
+    "objectID": "slides-02.html#clicker-2.4-baselines-and-decision-trees",
+    "href": "slides-02.html#clicker-2.4-baselines-and-decision-trees",
+    "title": "Lecture 2: Terminology, Baselines, Decision Trees",
+    "section": "Clicker 2.4: Baselines and Decision trees",
+    "text": "Clicker 2.4: Baselines and Decision trees\niParticipate using Agora (code: agentic) https://join.iclicker.com/FZMQ\nSelect all of the following statements which are TRUE.\n\n\nChange in features (i.e., binarizing features above) would change DummyClassifier predictions.\n\n\npredict takes only X as argument whereas fit and score take both X and y as arguments.\n\n\nFor the decision tree algorithm to work, the feature values must be binary.\n\n\nThe prediction in a decision tree works by routing the example from the root to the leaf."
+  },
+  {
+    "objectID": "slides-02.html#summary",
+    "href": "slides-02.html#summary",
+    "title": "Lecture 2: Terminology, Baselines, Decision Trees",
+    "section": "Summary",
+    "text": "Summary\n\nTerminology\nsklearn basic steps\nDecision tree intuition"
   }
 ]
