@@ -170,7 +170,7 @@ In the first part of this course, we'll focus on supervised machine learning.
 
 ## Clicker 2.2: Supervised vs unsupervised {.smaller}
 
-Participate using Agora (code: agentic)
+Participate using [Agora](https://agora.students.cs.ubc.ca) (code: agentic)
 
 Select all of the following statements which are examples of supervised machine learning
 
@@ -183,7 +183,7 @@ Select all of the following statements which are examples of supervised machine 
 
 ## Clicker 2.3: Classification vs. Regression {.smaller}
 
-Participate using Agora (code: agentic)
+Participate using [Agora](https://agora.students.cs.ubc.ca) (code: agentic)
  
 Select all of the following statements which are examples of regression problems
 
