@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2" crossorigin="anonymous"></script><script src="site_libs/clipboard/clipboard.min.js"></script>
 <script src="site_libs/quarto-html/tabby.min.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-8ea72dc5fed832574809a9c94082fbbb.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.6.40">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-b758ccaa5987ceb1b75504551e579abf.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.8.26">
 
   <meta name="author" content="Firas Moosvi (Slides adapted from Varada Kolhatkar)">
   <title>CPSC 330 Slides – Lecture 3: ML fundamentals</title>
@@ -29,7 +29,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto-49e13e7374f23f473f2716d5a610a8f0.css">
+  <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto-d44d78e70847a9a9b2b9b7a718eeef2f.css">
   <link href="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -121,7 +121,7 @@
       margin-right: 0; 
     }
   </style>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/requirejs@2.3.6/require.min.js" integrity="sha384-c9c+LnTbwQ3aujuU7ULEPVvgLs+Fn6fJUvIGTsuu1ZcCf11fiEubah0ttpca4ntM sha384-6V1/AdqZRWk1KAlWbKBlGhN7VG4iE/yAZcO6NZPMF8od0vukrvr0tg4qY6NSrItx" crossorigin="anonymous"></script>
   
   <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 </head>
@@ -184,6 +184,10 @@ Firas Moosvi (Slides adapted from Varada Kolhatkar)
 <li>Cross-validation</li>
 </ul>
 </section>
+<section id="finish-up-demo-from-last-class" class="slide level2 center">
+<h2>Finish up demo from last class</h2>
+<p>For this demo, each student should <a href="https://github.com/new?template_name=lecture02_demo&amp;template_owner=ubc-cpsc330">click this link</a> to create a new repo in their accounts, then clone that repo locally to follow along with the demo from today.</p>
+</section>
 <section id="recap-1" class="slide level2 center">
 <h2>Recap</h2>
 <p>A typical sequence of steps to train supervised machine learning models</p>
@@ -193,19 +197,19 @@ Firas Moosvi (Slides adapted from Varada Kolhatkar)
 <li>checking the generalization performance on the test split</li>
 </ul>
 </section>
-<section id="iclicker-3.1" class="slide level2 center">
-<h2>iClicker 3.1</h2>
-<p>Clicker cloud join link: <a href="https://join.iclicker.com/YJHS">https://join.iclicker.com/YJHS</a></p>
-<p>Select all of the following statements which are TRUE.</p>
+<section id="clicker-3.1" class="slide level2 center">
+<h2>Clicker 3.1</h2>
+<p>Participate using <a href="https://agora.students.cs.ubc.ca">Agora</a> (code: agentic)</p>
+<p><strong>Select all of the following statements which are TRUE.</strong></p>
 <ul>
 <li><ol type="A">
-<li>A decision tree model with no depth (the default <code>max_depth</code> in sklearn) is likely to perform very well on the deployment data.</li>
+<li>A decision tree model with no depth (the default <code>max_depth</code> in <code>sklearn</code>) is likely to perform very well on the deployment data.</li>
 </ol></li>
 <li><ol start="2" type="A">
 <li>Data splitting helps us assess how well our model would generalize.</li>
 </ol></li>
 <li><ol start="3" type="A">
-<li>Deployment data is only scored once.</li>
+<li>Deployment data is scored only once.</li>
 </ol></li>
 <li><ol start="4" type="A">
 <li>Validation data could be used for hyperparameter optimization.</li>
@@ -215,32 +219,148 @@ Firas Moosvi (Slides adapted from Varada Kolhatkar)
 </ol></li>
 </ul>
 </section>
-<section id="additional-resource" class="slide level2 center">
-<h2>Additional Resource</h2>
-<div id="26b195bd" class="cell" data-execution_count="1">
-<div class="cell-output cell-output-display" data-execution_count="1">
-
-        <iframe width="1000" height="650" src="https://mlu-explain.github.io/train-test-validation//" frameborder="0" allowfullscreen=""></iframe>
-        
-</div>
-</div>
-<p>Reference: <a href="https://mlu-explain.github.io/train-test-validation/">MLU-Explain - Data Splitting</a></p>
-</section>
-<section id="iclicker-3.2" class="slide level2 center">
-<h2>iClicker 3.2</h2>
-<p>Clicker cloud join link: <a href="https://join.iclicker.com/YJHS">https://join.iclicker.com/YJHS</a></p>
-<p>Select all of the following statements which are TRUE.</p>
-<ol type="A">
+<section id="clicker-3.2" class="slide level2 center">
+<h2>Clicker 3.2</h2>
+<p>Participate using <a href="https://agora.students.cs.ubc.ca">Agora</a> (code: agentic)</p>
+<p><strong>Select all of the following statements which are TRUE.</strong></p>
+<ul>
+<li><ol type="A">
 <li><span class="math inline">\(k\)</span>-fold cross-validation calls fit <span class="math inline">\(k\)</span> times</li>
+</ol></li>
+<li><ol start="2" type="A">
 <li>We use cross-validation to get a more robust estimate of model performance.</li>
+</ol></li>
+<li><ol start="3" type="A">
 <li>If the mean train accuracy is much higher than the mean cross-validation accuracy it’s likely to be a case of overfitting.</li>
+</ol></li>
+<li><ol start="4" type="A">
 <li>The fundamental tradeoff of ML states that as training error goes down, validation error goes up.</li>
+</ol></li>
+<li><ol start="5" type="A">
 <li>A decision stump on a complicated classification problem is likely to underfit.</li>
-</ol>
+</ol></li>
+</ul>
 </section>
-<section id="additional-resource-1" class="slide level2 center">
-<h2>Additional Resource</h2>
-<div id="a06d85a2" class="cell" data-execution_count="2">
+<section id="recap-from-videos" class="slide level2 center">
+<h2>Recap from videos</h2>
+<ul>
+<li>Why do we split the data? What are train/valid/test splits?</li>
+<li>What are the benefits of cross-validation?</li>
+<li>What is underfitting and overfitting?</li>
+<li>What’s the fundamental trade-off in supervised machine learning?</li>
+<li>What is the golden rule of machine learning?</li>
+</ul>
+</section>
+<section id="summary-of-train-validation-test-and-deployment-data" class="slide level2 center">
+<h2>Summary of train, validation, test, and deployment data</h2>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th></th>
+<th><code>fit</code></th>
+<th><code>score</code></th>
+<th><code>predict</code></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Train</td>
+<td>✔️</td>
+<td>✔️</td>
+<td>✔️</td>
+</tr>
+<tr class="even">
+<td>Validation</td>
+<td></td>
+<td>✔️</td>
+<td>✔️</td>
+</tr>
+<tr class="odd">
+<td>Test</td>
+<td></td>
+<td>once</td>
+<td>once</td>
+</tr>
+<tr class="even">
+<td>Deployment</td>
+<td></td>
+<td></td>
+<td>✔️</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="cross-validation" class="slide level2 center">
+<h2>Cross validation</h2>
+
+<img data-src="img/cross-validation.png" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="cross-validation-1" class="slide level2 center">
+<h2>Cross validation</h2>
+<div id="f06dfbb1" class="cell" data-execution_count="1">
+<div class="cell-output cell-output-display">
+<div>
+<figure>
+<p><img data-src="slides-03_files/figure-revealjs/cell-2-output-1.png" width="1161" height="228"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="overfitting-and-underfitting" class="slide level2 center">
+<h2>Overfitting and underfitting</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<p><img data-src="img/underfit-overfit-google-developer.png"></p>
+<p><a href="https://developers.google.com/machine-learning/crash-course/overfitting/overfitting">Source</a></p>
+</div><div class="column" style="width:40%;">
+<ul>
+<li>An <strong>overfit model</strong> matches the training set so closely that it fails to make correct predictions on new unseen data.<br>
+</li>
+<li>An <strong>underfit model</strong> is too simple and does not even make good predictions on the training data</li>
+</ul>
+</div></div>
+</section>
+<section id="the-fundamental-tradeoff" class="slide level2 center">
+<h2>The fundamental tradeoff</h2>
+<p>As you increase the model complexity, training score tends to go up and the gap between train and validation scores tends to go up.</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="img/malp_0201.png" class="quarto-figure quarto-figure-center"></p>
+</figure>
+</div>
+</div><div class="column" style="width:50%;">
+<ul>
+<li>Underfitting: Both accuracies rise</li>
+<li>Sweet spot: Validation accuracy peaks</li>
+<li>Overfitting: Training <span class="math inline">\(\uparrow\)</span>, Validation <span class="math inline">\(\downarrow\)</span></li>
+<li>Tradeoff: Balance complexity to avoid both</li>
+</ul>
+</div></div>
+</section>
+<section id="the-golden-rule" class="slide level2 center">
+<h2>The golden rule</h2>
+<ul>
+<li>Although our primary concern is the model’s performance on the test data, this data should not influence the training process in any way.</li>
+</ul>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><img data-src="img/golden_rule_analogy.png" class="quarto-figure quarto-figure-center"> Source: Image generated by ChatGPT 5</p>
+</div><div class="column" style="width:50%;">
+<ul>
+<li><strong>Test data = final exam</strong><br>
+</li>
+<li>You can practice all you want with training/validation data</li>
+<li>But <strong>never peek</strong> at the test set before evaluation</li>
+<li>Otherwise, it’s like sneaking answers before the exam <span class="math inline">\(\rightarrow\)</span> <strong>not a real assessment of your learning</strong>.<br>
+</li>
+</ul>
+</div></div>
+</section>
+<section id="additional-resource-on-cross-validation" class="slide level2 center">
+<h2>Additional Resource on Cross Validation</h2>
+<div id="b87a9dbd" class="cell" data-execution_count="2">
 <div class="cell-output cell-output-display" data-execution_count="2">
 
         <iframe width="1000" height="650" src="https://mlu-explain.github.io/cross-validation/" frameborder="0" allowfullscreen=""></iframe>
@@ -451,7 +571,7 @@ Firas Moosvi (Slides adapted from Varada Kolhatkar)
         margin: 0.1,
 
         math: {
-          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js',
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
           config: 'TeX-AMS_HTML-full',
           tex2jax: {
             inlineMath: [['\\(','\\)']],
@@ -478,190 +598,173 @@ Firas Moosvi (Slides adapted from Varada Kolhatkar)
       });
     </script>
     <script id="quarto-html-after-body" type="application/javascript">
-    window.document.addEventListener("DOMContentLoaded", function (event) {
-      const toggleBodyColorMode = (bsSheetEl) => {
-        const mode = bsSheetEl.getAttribute("data-mode");
-        const bodyEl = window.document.querySelector("body");
-        if (mode === "dark") {
-          bodyEl.classList.add("quarto-dark");
-          bodyEl.classList.remove("quarto-light");
-        } else {
-          bodyEl.classList.add("quarto-light");
-          bodyEl.classList.remove("quarto-dark");
-        }
-      }
-      const toggleBodyColorPrimary = () => {
-        const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
-        if (bsSheetEl) {
-          toggleBodyColorMode(bsSheetEl);
-        }
-      }
-      toggleBodyColorPrimary();  
-      const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
-      tabsets.forEach(function(tabset) {
-        const tabby = new Tabby('#' + tabset.id);
-      });
-      const isCodeAnnotation = (el) => {
-        for (const clz of el.classList) {
-          if (clz.startsWith('code-annotation-')) {                     
-            return true;
+      window.document.addEventListener("DOMContentLoaded", function (event) {
+        const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+        tabsets.forEach(function(tabset) {
+          const tabby = new Tabby('#' + tabset.id);
+        });
+        const isCodeAnnotation = (el) => {
+          for (const clz of el.classList) {
+            if (clz.startsWith('code-annotation-')) {                     
+              return true;
+            }
           }
+          return false;
         }
-        return false;
-      }
-      const onCopySuccess = function(e) {
-        // button target
-        const button = e.trigger;
-        // don't keep focus
-        button.blur();
-        // flash "checked"
-        button.classList.add('code-copy-button-checked');
-        var currentTitle = button.getAttribute("title");
-        button.setAttribute("title", "Copied!");
-        let tooltip;
-        if (window.bootstrap) {
-          button.setAttribute("data-bs-toggle", "tooltip");
-          button.setAttribute("data-bs-placement", "left");
-          button.setAttribute("data-bs-title", "Copied!");
-          tooltip = new bootstrap.Tooltip(button, 
-            { trigger: "manual", 
-              customClass: "code-copy-button-tooltip",
-              offset: [0, -8]});
-          tooltip.show();    
-        }
-        setTimeout(function() {
-          if (tooltip) {
-            tooltip.hide();
-            button.removeAttribute("data-bs-title");
-            button.removeAttribute("data-bs-toggle");
-            button.removeAttribute("data-bs-placement");
+        const onCopySuccess = function(e) {
+          // button target
+          const button = e.trigger;
+          // don't keep focus
+          button.blur();
+          // flash "checked"
+          button.classList.add('code-copy-button-checked');
+          var currentTitle = button.getAttribute("title");
+          button.setAttribute("title", "Copied!");
+          let tooltip;
+          if (window.bootstrap) {
+            button.setAttribute("data-bs-toggle", "tooltip");
+            button.setAttribute("data-bs-placement", "left");
+            button.setAttribute("data-bs-title", "Copied!");
+            tooltip = new bootstrap.Tooltip(button, 
+              { trigger: "manual", 
+                customClass: "code-copy-button-tooltip",
+                offset: [0, -8]});
+            tooltip.show();    
           }
-          button.setAttribute("title", currentTitle);
-          button.classList.remove('code-copy-button-checked');
-        }, 1000);
-        // clear code selection
-        e.clearSelection();
-      }
-      const getTextToCopy = function(trigger) {
-          const codeEl = trigger.previousElementSibling.cloneNode(true);
+          setTimeout(function() {
+            if (tooltip) {
+              tooltip.hide();
+              button.removeAttribute("data-bs-title");
+              button.removeAttribute("data-bs-toggle");
+              button.removeAttribute("data-bs-placement");
+            }
+            button.setAttribute("title", currentTitle);
+            button.classList.remove('code-copy-button-checked');
+          }, 1000);
+          // clear code selection
+          e.clearSelection();
+        }
+        const getTextToCopy = function(trigger) {
+          const outerScaffold = trigger.parentElement.cloneNode(true);
+          const codeEl = outerScaffold.querySelector('code');
           for (const childEl of codeEl.children) {
             if (isCodeAnnotation(childEl)) {
               childEl.remove();
             }
           }
           return codeEl.innerText;
-      }
-      const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-        text: getTextToCopy
-      });
-      clipboard.on('success', onCopySuccess);
-      if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-        const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-          text: getTextToCopy,
-          container: window.document.getElementById('quarto-embedded-source-code-modal')
-        });
-        clipboardModal.on('success', onCopySuccess);
-      }
-        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-        var mailtoRegex = new RegExp(/^mailto:/);
-          var filterRegex = new RegExp('/' + window.location.host + '/');
-        var isInternal = (href) => {
-            return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
         }
-        // Inspect non-navigation links and adorn them if external
-     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
-        for (var i=0; i<links.length; i++) {
-          const link = links[i];
-          if (!isInternal(link.href)) {
-            // undo the damage that might have been done by quarto-nav.js in the case of
-            // links that we want to consider external
-            if (link.dataset.originalHref !== undefined) {
-              link.href = link.dataset.originalHref;
+        const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+          text: getTextToCopy
+        });
+        clipboard.on('success', onCopySuccess);
+        if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+          const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+            text: getTextToCopy,
+            container: window.document.getElementById('quarto-embedded-source-code-modal')
+          });
+          clipboardModal.on('success', onCopySuccess);
+        }
+          var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+          var mailtoRegex = new RegExp(/^mailto:/);
+            var filterRegex = new RegExp("https:\/\/firasm\.github\.io\/cpsc330-slides\/");
+          var isInternal = (href) => {
+              return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+          }
+          // Inspect non-navigation links and adorn them if external
+         var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+          for (var i=0; i<links.length; i++) {
+            const link = links[i];
+            if (!isInternal(link.href)) {
+              // undo the damage that might have been done by quarto-nav.js in the case of
+              // links that we want to consider external
+              if (link.dataset.originalHref !== undefined) {
+                link.href = link.dataset.originalHref;
+              }
             }
           }
-        }
-      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
-        const config = {
-          allowHTML: true,
-          maxWidth: 500,
-          delay: 100,
-          arrow: false,
-          appendTo: function(el) {
-              return el.closest('section.slide') || el.parentElement;
-          },
-          interactive: true,
-          interactiveBorder: 10,
-          theme: 'light-border',
-          placement: 'bottom-start',
-        };
-        if (contentFn) {
-          config.content = contentFn;
-        }
-        if (onTriggerFn) {
-          config.onTrigger = onTriggerFn;
-        }
-        if (onUntriggerFn) {
-          config.onUntrigger = onUntriggerFn;
-        }
-          config['offset'] = [0,0];
-          config['maxWidth'] = 700;
-        window.tippy(el, config); 
-      }
-      const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
-      for (var i=0; i<noterefs.length; i++) {
-        const ref = noterefs[i];
-        tippyHover(ref, function() {
-          // use id or data attribute instead here
-          let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
-          try { href = new URL(href).hash; } catch {}
-          const id = href.replace(/^#\/?/, "");
-          const note = window.document.getElementById(id);
-          if (note) {
-            return note.innerHTML;
-          } else {
-            return "";
+        function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+          const config = {
+            allowHTML: true,
+            maxWidth: 500,
+            delay: 100,
+            arrow: false,
+            appendTo: function(el) {
+                return el.closest('section.slide') || el.parentElement;
+            },
+            interactive: true,
+            interactiveBorder: 10,
+            theme: 'light-border',
+            placement: 'bottom-start',
+          };
+          if (contentFn) {
+            config.content = contentFn;
           }
-        });
-      }
-      const findCites = (el) => {
-        const parentEl = el.parentElement;
-        if (parentEl) {
-          const cites = parentEl.dataset.cites;
-          if (cites) {
-            return {
-              el,
-              cites: cites.split(' ')
-            };
-          } else {
-            return findCites(el.parentElement)
+          if (onTriggerFn) {
+            config.onTrigger = onTriggerFn;
           }
-        } else {
-          return undefined;
+          if (onUntriggerFn) {
+            config.onUntrigger = onUntriggerFn;
+          }
+            config['offset'] = [0,0];
+            config['maxWidth'] = 700;
+          window.tippy(el, config); 
         }
-      };
-      var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-      for (var i=0; i<bibliorefs.length; i++) {
-        const ref = bibliorefs[i];
-        const citeInfo = findCites(ref);
-        if (citeInfo) {
-          tippyHover(citeInfo.el, function() {
-            var popup = window.document.createElement('div');
-            citeInfo.cites.forEach(function(cite) {
-              var citeDiv = window.document.createElement('div');
-              citeDiv.classList.add('hanging-indent');
-              citeDiv.classList.add('csl-entry');
-              var biblioDiv = window.document.getElementById('ref-' + cite);
-              if (biblioDiv) {
-                citeDiv.innerHTML = biblioDiv.innerHTML;
-              }
-              popup.appendChild(citeDiv);
-            });
-            return popup.innerHTML;
+        const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+        for (var i=0; i<noterefs.length; i++) {
+          const ref = noterefs[i];
+          tippyHover(ref, function() {
+            // use id or data attribute instead here
+            let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+            try { href = new URL(href).hash; } catch {}
+            const id = href.replace(/^#\/?/, "");
+            const note = window.document.getElementById(id);
+            if (note) {
+              return note.innerHTML;
+            } else {
+              return "";
+            }
           });
         }
-      }
-    });
-    </script>
+        const findCites = (el) => {
+          const parentEl = el.parentElement;
+          if (parentEl) {
+            const cites = parentEl.dataset.cites;
+            if (cites) {
+              return {
+                el,
+                cites: cites.split(' ')
+              };
+            } else {
+              return findCites(el.parentElement)
+            }
+          } else {
+            return undefined;
+          }
+        };
+        var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+        for (var i=0; i<bibliorefs.length; i++) {
+          const ref = bibliorefs[i];
+          const citeInfo = findCites(ref);
+          if (citeInfo) {
+            tippyHover(citeInfo.el, function() {
+              var popup = window.document.createElement('div');
+              citeInfo.cites.forEach(function(cite) {
+                var citeDiv = window.document.createElement('div');
+                citeDiv.classList.add('hanging-indent');
+                citeDiv.classList.add('csl-entry');
+                var biblioDiv = window.document.getElementById('ref-' + cite);
+                if (biblioDiv) {
+                  citeDiv.innerHTML = biblioDiv.innerHTML;
+                }
+                popup.appendChild(citeDiv);
+              });
+              return popup.innerHTML;
+            });
+          }
+        }
+      });
+      </script>
     
 
 </body></html>
