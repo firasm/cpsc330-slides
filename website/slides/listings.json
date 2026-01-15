@@ -3,7 +3,9 @@
     "listing": "/slides.html",
     "items": [
       "/slides-01.html",
-      "/slides-02.html"
+      "/slides-02.html",
+      "/slides-03.html",
+      "/slides-04.html"
     ]
   }
 ]
