@@ -421,7 +421,7 @@ We are going to practice submitting HW1 on Gradescope so you all do it at least 
 <li>There are many frameworks to do do machine learning.</li>
 <li>We’ll mainly be using <a href="https://scikit-learn.org/stable/"><code>scikit-learn</code> framework</a>.</li>
 </ul>
-<div id="38537c4a" class="cell" data-execution_count="2">
+<div id="87411eb8" class="cell" data-execution_count="2">
 <div class="cell-output cell-output-display" data-execution_count="2">
 
         <iframe width="1000" height="650" src="https://scikit-learn.org" frameborder="0" allowfullscreen=""></iframe>
@@ -439,7 +439,7 @@ We are going to practice submitting HW1 on Gradescope so you all do it at least 
 <section id="toy-job-happinees-dataset" class="slide level2 smaller center">
 <h2>Toy job happinees dataset</h2>
 <p>Here are the first few rows of a toy dataset.</p>
-<div id="59a33545" class="cell" data-execution_count="3">
+<div id="11869645" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a>toy_happiness_df <span class="op">=</span> pd.read_csv(DATA_DIR <span class="op">+</span> <span class="st">'toy_job_happiness.csv'</span>)</span>
 <span id="cb1-2"><a></a>toy_happiness_df</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="3">
@@ -557,7 +557,7 @@ We are going to practice submitting HW1 on Gradescope so you all do it at least 
 </ul>
 </div>
 <div id="tabset-1-2">
-<div id="5465d585" class="cell" data-execution_count="4">
+<div id="4d817d75" class="cell" data-execution_count="4">
 <div class="cell-output cell-output-display" data-execution_count="4">
 <div>
 <style scoped="">
@@ -657,7 +657,7 @@ We are going to practice submitting HW1 on Gradescope so you all do it at least 
 <ul>
 <li>Is this a <strong>classification</strong> problem or a <strong>regression</strong> problem?</li>
 </ul>
-<div id="f7e02fe1" class="cell" data-execution_count="5">
+<div id="7f3f4605" class="cell" data-execution_count="5">
 <div class="cell-output cell-output-display" data-execution_count="5">
 <div>
 <style scoped="">
@@ -803,7 +803,7 @@ We are going to practice submitting HW1 on Gradescope so you all do it at least 
 <ul>
 <li>In order to train a model we need to separate <span class="math inline">\(X\)</span> and <span class="math inline">\(y\)</span> from the dataframe.</li>
 </ul>
-<div id="1e5042b6" class="cell" data-execution_count="6">
+<div id="e298c30e" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a></a>X <span class="op">=</span> toy_happiness_df.drop(columns<span class="op">=</span>[<span class="st">"happy?"</span>]) <span class="co"># Extract the feature set by removing the target column "happy?"</span></span>
 <span id="cb2-2"><a></a>y <span class="op">=</span> toy_happiness_df[<span class="st">"happy?"</span>] <span class="co"># Extract the target variable "happy?"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
@@ -813,7 +813,7 @@ We are going to practice submitting HW1 on Gradescope so you all do it at least 
 <ul>
 <li>Let’s try a simplest algorithm of predicting the most popular target!</li>
 </ul>
-<div id="03dd9010" class="cell" data-execution_count="7">
+<div id="abaa51fc" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a></a><span class="im">from</span> sklearn.dummy <span class="im">import</span> DummyClassifier</span>
 <span id="cb3-2"><a></a>model <span class="op">=</span> DummyClassifier(strategy<span class="op">=</span><span class="st">"most_frequent"</span>) <span class="co"># Initialize the DummyClassifier to always predict the most frequent class</span></span>
 <span id="cb3-3"><a></a>model.fit(X, y) <span class="co"># Train the model on the feature set X and target variable y</span></span>
@@ -927,7 +927,7 @@ We are going to practice submitting HW1 on Gradescope so you all do it at least 
 <li>Which question would help you best separate the <strong>happy</strong> and <strong>unhappy</strong> examples?</li>
 </ul>
 
-<img data-src="img/happy_unhappy_faces.png" class="r-stretch"><div id="f74cfbf1" class="cell" data-execution_count="8">
+<img data-src="img/happy_unhappy_faces.png" class="r-stretch"><div id="0d524af1" class="cell" data-execution_count="8">
 <div class="cell-output cell-output-display" data-execution_count="8">
 <div>
 <style scoped="">
@@ -1028,7 +1028,7 @@ We are going to practice submitting HW1 on Gradescope so you all do it at least 
 <p><img data-src="img/decision_tree_intuition.png"></p>
 </div>
 <div id="tabset-2-2">
-<div id="f5975026" class="cell" data-execution_count="9">
+<div id="d05a23bf" class="cell" data-execution_count="9">
 <div class="cell-output cell-output-display" data-execution_count="9">
 <div>
 <style scoped="">
@@ -1129,7 +1129,7 @@ We are going to practice submitting HW1 on Gradescope so you all do it at least 
 <li>We want to learn which questions to ask and in what order.</li>
 <li>How many possible questions could we ask with these features?</li>
 </ul>
-<div id="0d39de13" class="cell" data-execution_count="10">
+<div id="96da4fcd" class="cell" data-execution_count="10">
 <div class="cell-output cell-output-display" data-execution_count="10">
 <div>
 <style scoped="">
@@ -1237,7 +1237,7 @@ We are going to practice submitting HW1 on Gradescope so you all do it at least 
 <section id="decision-tree-with-sklearn" class="slide level2 center">
 <h2>Decision tree with <code>sklearn</code></h2>
 <p>Let’s train a simple decision tree on our toy dataset using <code>sklearn</code></p>
-<div id="1c08a06f" class="cell" data-execution_count="11">
+<div id="0807f983" class="cell" data-execution_count="11">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a></a><span class="im">from</span> sklearn.tree <span class="im">import</span> DecisionTreeClassifier <span class="co"># import the classifier</span></span>
 <span id="cb4-2"><a></a><span class="im">from</span> sklearn.tree <span class="im">import</span> plot_tree</span>
 <span id="cb4-3"><a></a></span>
@@ -1263,7 +1263,7 @@ We are going to practice submitting HW1 on Gradescope so you all do it at least 
 <li>supportive_colleagues = 1, salary = 60000, coffee_machine = 0, vegan_boss = 1,</li>
 </ul></li>
 </ul>
-<div id="79bcb40b" class="cell" data-execution_count="12">
+<div id="f99985d7" class="cell" data-execution_count="12">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -1281,7 +1281,7 @@ We are going to practice submitting HW1 on Gradescope so you all do it at least 
 <li>supportive_colleagues = 1, salary = 60000, free_coffee = 0, vegan_boss = 1,</li>
 </ul></li>
 </ul>
-<div id="61d69bfa" class="cell" data-execution_count="13">
+<div id="207f79e3" class="cell" data-execution_count="13">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a></a>test_example <span class="op">=</span> [[<span class="dv">1</span>, <span class="dv">60000</span>, <span class="dv">0</span>, <span class="dv">1</span>]]</span>
 <span id="cb5-2"><a></a><span class="bu">print</span>(<span class="st">"Model prediction: "</span>, model.predict(test_example))</span>
 <span id="cb5-3"><a></a>plot_tree(model, filled<span class="op">=</span><span class="va">True</span>, feature_names <span class="op">=</span> X.columns, class_names <span class="op">=</span> [<span class="st">"Happy"</span>, <span class="st">"Unhappy"</span>], impurity <span class="op">=</span> <span class="va">False</span>, fontsize<span class="op">=</span><span class="dv">9</span>)<span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -1323,7 +1323,7 @@ We are going to practice submitting HW1 on Gradescope so you all do it at least 
 </section>
 <section id="decision-boundary-with-max_depth1" class="slide level2 center">
 <h2>Decision boundary with <code>max_depth=1</code></h2>
-<div id="d62a69eb" class="cell" data-execution_count="14">
+<div id="2f1e231a" class="cell" data-execution_count="14">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -1335,7 +1335,7 @@ We are going to practice submitting HW1 on Gradescope so you all do it at least 
 </section>
 <section id="decision-boundary-with-max_depth2" class="slide level2 center">
 <h2>Decision boundary with <code>max_depth=2</code></h2>
-<div id="1cb80117" class="cell" data-execution_count="15">
+<div id="09c4f305" class="cell" data-execution_count="15">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
