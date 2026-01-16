@@ -170,7 +170,9 @@ Let's take a break!
 
 ## Group Work: Class Demo & Live Coding
 
-For this demo, each student should [click this link](https://github.com/new?template_name=lecture04_demo&template_owner=ubc-cpsc330) to create a new repo in their accounts, then clone that repo locally to follow along with the demo from today.
+There is no lecture demo for today because it requires some complex setup - just watch the instructor demo it live!
+
+<!-- For this demo, each student should [click this link](https://github.com/new?template_name=lecture04_demo&template_owner=ubc-cpsc330) to create a new repo in their accounts, then clone that repo locally to follow along with the demo from today. -->
 
 # Models
 ## Supervised models we have seen 
