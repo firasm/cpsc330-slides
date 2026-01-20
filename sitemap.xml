@@ -1,27 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://firasm.github.io/cpsc330-slides/slides-03.html</loc>
-    <lastmod>2026-01-16T00:10:42.046Z</lastmod>
-  </url>
-  <url>
-    <loc>https://firasm.github.io/cpsc330-slides/slides-01.html</loc>
-    <lastmod>2026-01-16T00:10:42.044Z</lastmod>
-  </url>
-  <url>
-    <loc>https://firasm.github.io/cpsc330-slides/slides-04.html</loc>
-    <lastmod>2026-01-16T00:10:42.046Z</lastmod>
-  </url>
-  <url>
-    <loc>https://firasm.github.io/cpsc330-slides/slides.html</loc>
-    <lastmod>2026-01-16T00:10:42.049Z</lastmod>
-  </url>
-  <url>
-    <loc>https://firasm.github.io/cpsc330-slides/index.html</loc>
-    <lastmod>2026-01-16T00:10:42.043Z</lastmod>
+    <loc>https://firasm.github.io/cpsc330-slides/slides-05.html</loc>
+    <lastmod>2026-01-20T22:24:40.786Z</lastmod>
   </url>
   <url>
     <loc>https://firasm.github.io/cpsc330-slides/slides-02.html</loc>
-    <lastmod>2026-01-16T00:10:42.046Z</lastmod>
+    <lastmod>2026-01-20T22:24:40.785Z</lastmod>
+  </url>
+  <url>
+    <loc>https://firasm.github.io/cpsc330-slides/index.html</loc>
+    <lastmod>2026-01-20T22:24:40.782Z</lastmod>
+  </url>
+  <url>
+    <loc>https://firasm.github.io/cpsc330-slides/slides.html</loc>
+    <lastmod>2026-01-20T22:24:40.789Z</lastmod>
+  </url>
+  <url>
+    <loc>https://firasm.github.io/cpsc330-slides/slides-04.html</loc>
+    <lastmod>2026-01-20T22:24:40.785Z</lastmod>
+  </url>
+  <url>
+    <loc>https://firasm.github.io/cpsc330-slides/slides-01.html</loc>
+    <lastmod>2026-01-20T22:24:40.782Z</lastmod>
+  </url>
+  <url>
+    <loc>https://firasm.github.io/cpsc330-slides/slides-03.html</loc>
+    <lastmod>2026-01-20T22:24:40.785Z</lastmod>
   </url>
 </urlset>
