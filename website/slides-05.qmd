@@ -35,8 +35,6 @@ format:
 
 # Synthesizing existing knowledge
 
-## Recap
-
 ## Comparison of models (activity)
 
 | **Model**        | Parameters and hyperparameters | **Strengths**  | **Weaknesses**     |
@@ -139,7 +137,7 @@ Take a guess: In your machine learning project, how much time will you typically
 - (C) ~50% of the project time
 - (D) None. Most of the time will be spent on model building
 
-The question is adapted from [here](https://developers.google.com/machine-learning/crash-course/numerical-data).
+The question is adapted from [here](https://developers.google.com/machine-learning/crash-course/overfitting).
 
 ## Clicker 5.2
 Participate using [Agora](https://agora.students.cs.ubc.ca) (code: agentic)
