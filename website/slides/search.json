@@ -592,7 +592,7 @@
     "href": "slides.html",
     "title": "Overview",
     "section": "",
-    "text": "Title\n\n\n\nDescription\n\n\n\n\n\n\n\n\nLecture 1: Introduction to CPSC 330\n\n\nWhat is machine learning, types of machine learning, learning to navigate through the course materials, getting familiar with the course policies\n\n\n\n\n\n\nLecture 2: Terminology, Baselines, Decision Trees\n\n\nTerminology and Decision Trees\n\n\n\n\n\n\nLecture 3: ML fundamentals\n\n\ngeneralization, data splitting, overfitting, underfitting, the fundamental tradeoff, the golden rule\n\n\n\n\n\n\nLecture 4: \\(k\\)-nearest neighbours and SVM RBFs\n\n\nintroduction to KNNs, hyperparameter n_neighbours or \\(k\\), C and gamma hyperparameters of SVM RBF, decision boundaries with different values of hyperparameters.\n\n\n\n\n\n\nNo matching items"
+    "text": "Title\n\n\n\nDescription\n\n\n\n\n\n\n\n\nLecture 1: Introduction to CPSC 330\n\n\nWhat is machine learning, types of machine learning, learning to navigate through the course materials, getting familiar with the course policies\n\n\n\n\n\n\nLecture 2: Terminology, Baselines, Decision Trees\n\n\nTerminology and Decision Trees\n\n\n\n\n\n\nLecture 3: ML fundamentals\n\n\ngeneralization, data splitting, overfitting, underfitting, the fundamental tradeoff, the golden rule\n\n\n\n\n\n\nLecture 4: \\(k\\)-nearest neighbours and SVM RBFs\n\n\nintroduction to KNNs, hyperparameter n_neighbours or \\(k\\), C and gamma hyperparameters of SVM RBF, decision boundaries with different values of hyperparameters.\n\n\n\n\n\n\nLecture 5: Preprocessing and sklearn pipelines\n\n\nPre-processing, Transformations, and pipelines.\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "slides-03.html#announcements",
@@ -865,7 +865,7 @@
     "href": "slides-05.html#announcements",
     "title": "Lecture 5: Preprocessing and sklearn pipelines",
     "section": "Announcements",
-    "text": "Announcements"
+    "text": "Announcements\n\nI am away this Thursday and next Tuesday for EAAI 2026\n\nEAAI is the Symposium on Educational Advances in Artificial Intelligence in Singapore\n“Effective Strategies for Teaching Machine Learning”\n\nOther instructors Dr. Giulia Toti (Thursday) and Dr. Mehrdad Oveisi (Tuesday) will teach !\nHeads up: they won’t use Agora (or iClicker) for class participation ; just show of hands"
   },
   {
     "objectID": "slides-05.html#recap",
@@ -879,14 +879,14 @@
     "href": "slides-05.html#recap-1",
     "title": "Lecture 5: Preprocessing and sklearn pipelines",
     "section": "Recap",
-    "text": "Recap\n\n\n\n\n\n\n\n\n\nAspect\nDecision Trees\nK-Nearest Neighbors (KNN)\nSupport Vector Machines (SVM) with RBF Kernel\n\n\n\n\nMain hyperparameters\nMax depth, min samples split\nNumber of neighbors (\\(k\\))\nC (regularization), Gamma (RBF kernel width)\n\n\nInterpretability\n\n\n\n\n\nHandling of Non-linearity\n\n\n\n\n\nScalability\n\n\n\n\n\n\n\nInterpretability (output easy to understand): - DT is very interpretable - KNN is moderately interpretable - SVM-RBF not interpretable at all\nNon-linearity: - DT Handle non-linearity, but boundaries are boxy - KNN can identify non-linear boundaries - SVM-RBF is a great choice for non-linearity\nScalability: - DT is very scalable, fast and can be done on large datasets - KNN is not scalable, because the distance needs to be calculated - SVM-RB is scalable, optimization is complicated so will be expensive"
+    "text": "Recap"
   },
   {
     "objectID": "slides-05.html#recap-2",
     "href": "slides-05.html#recap-2",
     "title": "Lecture 5: Preprocessing and sklearn pipelines",
     "section": "Recap",
-    "text": "Recap\n\n\n\n\n\n\n\n\n\nAspect\nDecision Trees\nK-Nearest Neighbors (KNN)\nSupport Vector Machines (SVM) with RBF Kernel\n\n\n\n\nSensitivity to Outliers\n\n\n\n\n\nMemory Usage\n\n\n\n\n\nTraining Time\n\n\n\n\n\nPrediction Time\n\n\n\n\n\nMulticlass support\n\n\n\n\n\n\n\nSensitivity to Outliers - DT has some sensitivity to outliers (based on where the splits happen) - KNN is distance based, not that sensitive to outliers, but depends on the number of neighbours - SVM-RBF robust to outliers\nMemory Usage - DT is is very memory efficient, stores the model not the data - KNN uses a lot of memory, all data sets stored in memory - SVM-RBF is reasonably memory efficient, stores only support vectors\nTraining Time - DT training time is higher than KNN - KNN is 0, all points are stored - SVM-RBF much lower compared to KNN and DT\nPrediction Time - DT, also very efficient at predicting - KNN is high, all the work happens here - SVM-RBF, very efficient at predicting\nMulticlass Support - DT, multi-class is fine - KNN, multi-class is fine - SVM-RBF, bit complicated"
+    "text": "Recap\n\n\n\n\n\n\n\n\n\nAspect\nDecision Trees\nK-Nearest Neighbors (KNN)\nSupport Vector Machines (SVM) with RBF Kernel\n\n\n\n\nSensitivity to Outliers\n\n\n\n\n\nMemory Usage\n\n\n\n\n\nTraining Time\n\n\n\n\n\nPrediction Time\n\n\n\n\n\n\n\nSensitivity to Outliers - DT has some sensitivity to outliers (based on where the splits happen) - KNN is distance based, not that sensitive to outliers, but depends on the number of neighbours - SVM-RBF robust to outliers\nMemory Usage - DT is is very memory efficient, stores the model not the data - KNN uses a lot of memory, all data sets stored in memory - SVM-RBF is reasonably memory efficient, stores only support vectors\nTraining Time - DT training time is higher than KNN - KNN is 0, all points are stored - SVM-RBF much lower compared to KNN and DT\nPrediction Time - DT, also very efficient at predicting - KNN is high, all the work happens here - SVM-RBF, very efficient at predicting"
   },
   {
     "objectID": "slides-05.html#iclicker-exercise-5.1",
@@ -928,21 +928,21 @@
     "href": "slides-05.html#preprocessing-motivation-example-1",
     "title": "Lecture 5: Preprocessing and sklearn pipelines",
     "section": "Preprocessing motivation: example",
-    "text": "Preprocessing motivation: example\n\nYou are 30 years old and have 250 Facebook friends.\n\n\n\n\n\n\n\n\n\n\n\nPerson\nAge\n#FB Friends\nEuclidean Distance Calculation\nDistance\n\n\n\n\nA\n25\n400\n√(5² + 150²)\n150.08\n\n\nB\n27\n300\n√(3² + 50²)\n50.09\n\n\nC\n30\n500\n√(0² + 250²)\n250.00\n\n\nD\n60\n250\n√(30² + 0²)\n30.00\n\n\n\nBased on the distances, the two nearest neighbors (2-NN) are:\n\nPerson D (Distance: 30.00)\nPerson B (Distance: 50.09)\n\nWhat’s the problem here?"
+    "text": "Preprocessing motivation: example\n\nYou are 30 years old and have 250 Facebook friends.\n\n\n\n\n\n\n\n\n\n\n\nPerson\nAge\n#FB Friends\nEuclidean Distance Calculation\nDistance\n\n\n\n\nA\n25\n400\n\\(\\sqrt{5^2 + 150^2}\\)\n150.08\n\n\nB\n27\n300\n\\(\\sqrt{3^2 + 50^2}\\)\n50.09\n\n\nC\n30\n500\n\\(\\sqrt{0^2 + 250^2}\\)\n250.00\n\n\nD\n60\n250\n\\(\\sqrt{30^2 + 0^2}\\)\n30.00\n\n\n\nBased on the distances, the two nearest neighbors (2-NN) are:\n\nPerson D (Distance: 30.00)\nPerson B (Distance: 50.09)\n\nWhat’s the problem here?"
   },
   {
     "objectID": "slides-05.html#imputation-fill-the-gaps",
     "href": "slides-05.html#imputation-fill-the-gaps",
     "title": "Lecture 5: Preprocessing and sklearn pipelines",
     "section": "Imputation: Fill the gaps! (🟩 🟧 🟦)",
-    "text": "Imputation: Fill the gaps! (🟩 🟧 🟦)\nFill in missing data using a chosen strategy:\n\nMean: Replace missing values with the average of the available data.\nMedian: Use the middle value.\nMost Frequent: Use the most common value (mode).\nKNN Imputation: Fill based on similar neighbors.\n\nExample:\nFill in missing values like filling empty seats in a classroom with the average student.\nfrom sklearn.impute import SimpleImputer\nimputer = SimpleImputer(strategy='mean')\nX_imputed = imputer.fit_transform(X)"
+    "text": "Imputation: Fill the gaps! (🟩 🟧 🟦)\nFill in missing data using a chosen strategy:\n\nMean: Replace missing values with the average of the available data.\nMedian: Use the middle value.\nMost Frequent: Use the most common value (mode).\nKNN Imputation: Fill based on similar neighbors.\n\nExample:\nImputation is like filling in your average or median or most frequent grade for an assessment you missed.\nfrom sklearn.impute import SimpleImputer\nimputer = SimpleImputer(strategy='mean')\nX_imputed = imputer.fit_transform(X)"
   },
   {
     "objectID": "slides-05.html#scaling-everything-to-the-same-range",
     "href": "slides-05.html#scaling-everything-to-the-same-range",
     "title": "Lecture 5: Preprocessing and sklearn pipelines",
     "section": "Scaling: Everything to the same range! (📉 📈)",
-    "text": "Scaling: Everything to the same range! (📉 📈)\nEnsure all features have a comparable range.\n\nStandardScaler: Mean = 0, Standard Deviation = 1.\nMinMaxScaler: Scales features to a [0, 1] range.\nRobustScaler: Scales features using median and quantiles.\n\nExample:\nRescaling everyone’s height to make basketball players and gymnasts comparable.\nfrom sklearn.preprocessing import StandardScaler\nscaler = StandardScaler()\nX_scaled = scaler.fit_transform(X)"
+    "text": "Scaling: Everything to the same range! (📉 📈)\nEnsure all features have a comparable range.\n\nStandardScaler: Mean = 0, Standard Deviation = 1.\n\nExample:\nScaling is like adjusting the number of everyone’s Facebook friends so that both the number of friends and their age are on a comparable scale. This way, one feature doesn’t dominate the other when making comparisons.\nfrom sklearn.preprocessing import StandardScaler\nscaler = StandardScaler()\nX_scaled = scaler.fit_transform(X)"
   },
   {
     "objectID": "slides-05.html#one-hot-encoding-1-0-0",
@@ -970,7 +970,7 @@
     "href": "slides-05.html#estimators",
     "title": "Lecture 5: Preprocessing and sklearn pipelines",
     "section": "Estimators",
-    "text": "Estimators\n\nUsed to make predictions.\nImplement fit and predict methods.\n\nfit(X, y): Learns from labeled data.\npredict(X): Makes predictions on new data.\n\nExamples: DecisionTreeClassifier, SVC, KNeighborsClassifier\n\nfrom sklearn.tree import DecisionTreeClassifier\ntree_clf = DecisionTreeClassifier()"
+    "text": "Estimators\n\nUsed to make predictions.\nImplement fit and predict methods.\n\nfit(X, y): Learns from labeled data.\npredict(X): Makes predictions on new data.\n\nExamples: DecisionTreeClassifier, SVC, KNeighborsClassifier"
   },
   {
     "objectID": "slides-05.html#the-golden-rule-in-feature-transformations",
@@ -3224,7 +3224,7 @@
     "href": "slides-04.html#group-work-class-demo-live-coding",
     "title": "Lecture 4: \\(k\\)-nearest neighbours and SVM RBFs",
     "section": "Group Work: Class Demo & Live Coding",
-    "text": "Group Work: Class Demo & Live Coding\nFor this demo, each student should click this link to create a new repo in their accounts, then clone that repo locally to follow along with the demo from today."
+    "text": "Group Work: Class Demo & Live Coding\nThere is no lecture demo for today because it requires some complex setup - just watch the instructor demo it live!"
   },
   {
     "objectID": "slides-04.html#supervised-models-we-have-seen",
@@ -3316,5 +3316,68 @@
     "title": "Lecture 3: ML fundamentals",
     "section": "Additional Resource on Cross Validation",
     "text": "Additional Resource on Cross Validation\n\n\n\n        \n        \n\n\nReference: MLU-Explain - Cross Validation"
+  },
+  {
+    "objectID": "slides-04.html#announcements",
+    "href": "slides-04.html#announcements",
+    "title": "Lecture 4: \\(k\\)-nearest neighbours and SVM RBFs",
+    "section": "Announcements",
+    "text": "Announcements\n\nReminder: hw2 is due January 19th!\nAdd/Drop date is tomorrow!"
+  },
+  {
+    "objectID": "slides-04.html#situation-in-iran",
+    "href": "slides-04.html#situation-in-iran",
+    "title": "Lecture 4: \\(k\\)-nearest neighbours and SVM RBFs",
+    "section": "Situation in Iran",
+    "text": "Situation in Iran\n\nCome talk to me if there’s something you think I can do.\nScience Embedded Counsellor and UBC for other supports\nSupport for unanticipated circumstances"
+  },
+  {
+    "objectID": "slides-05.html#comparison-of-models-activity",
+    "href": "slides-05.html#comparison-of-models-activity",
+    "title": "Lecture 5: Preprocessing and sklearn pipelines",
+    "section": "Comparison of models (activity)",
+    "text": "Comparison of models (activity)\n\n\n\n\n\n\n\n\n\nModel\nParameters and hyperparameters\nStrengths\nWeaknesses\n\n\n\n\nDecision Trees\n\n\n\n\n\nKNNs\n\n\n\n\n\nSVM RBF\n\n\n\n\n\n\n\nInterpretability (output easy to understand): - DT is very interpretable - KNN is moderately interpretable - SVM-RBF not interpretable at all\nNon-linearity: - DT Handle non-linearity, but boundaries are boxy - KNN can identify non-linear boundaries - SVM-RBF is a great choice for non-linearity\nScalability: - DT is very scalable, fast and can be done on large datasets - KNN is not scalable, because the distance needs to be calculated - SVM-RB is scalable, optimization is complicated so will be expensive"
+  },
+  {
+    "objectID": "slides-05.html#what-is-preprocessing",
+    "href": "slides-05.html#what-is-preprocessing",
+    "title": "Lecture 5: Preprocessing and sklearn pipelines",
+    "section": "What is preprocessing?",
+    "text": "What is preprocessing?\n\nPreprocessing is about making the raw dataset ready for machine learning."
+  },
+  {
+    "objectID": "slides-05.html#clicker-5.1",
+    "href": "slides-05.html#clicker-5.1",
+    "title": "Lecture 5: Preprocessing and sklearn pipelines",
+    "section": "Clicker 5.1",
+    "text": "Clicker 5.1\nParticipate using Agora (code: agentic)\nTake a guess: In your machine learning project, how much time will you typically spend on data preparation and transformation?\n\n\n~80% of the project time\n\n\n~20% of the project time\n\n\n~50% of the project time\n\n\nNone. Most of the time will be spent on model building\n\n\nThe question is adapted from here."
+  },
+  {
+    "objectID": "slides-05.html#clicker-5.2",
+    "href": "slides-05.html#clicker-5.2",
+    "title": "Lecture 5: Preprocessing and sklearn pipelines",
+    "section": "Clicker 5.2",
+    "text": "Clicker 5.2\nParticipate using Agora (code: agentic)\nSelect all of the following statements which are TRUE.\n\n\nStandardScaler ensures a fixed range (i.e., minimum and maximum values) for the features.\n\n\nStandardScaler calculates mean and standard deviation for each feature separately.\n\n\nIn general, it’s a good idea to apply scaling on numeric features before training \\(k\\)-NN or SVM RBF models.\n\n\nThe transformed feature values might be hard to interpret for humans.\n\n\nAfter applying SimpleImputer The transformed data has a different shape than the original data."
+  },
+  {
+    "objectID": "slides-05.html#clicker-5.3",
+    "href": "slides-05.html#clicker-5.3",
+    "title": "Lecture 5: Preprocessing and sklearn pipelines",
+    "section": "Clicker 5.3",
+    "text": "Clicker 5.3\nParticipate using Agora (code: agentic)\nSelect all of the following statements which are TRUE.\n\n\nYou can have scaling of numeric features, one-hot encoding of categorical features, and scikit-learn estimator within a single pipeline.\n\n\nOnce you have a scikit-learn pipeline object with an estimator as the last step, you can call fit, predict, and score on it.\n\n\nYou can carry out data splitting within scikit-learn pipeline.\n\n\nWe have to be careful of the order we put each transformation and model in a pipeline.\n\n\n\nA: False; It doesn’t make sense to apply one hot encoding to numeric features, and it doesn’t make sense to apply standard scalar to categorical features. Sequence doesn’t make sense, we need column transformers\nB: True; can do this as long as the estimator is the last step\nC: False\nD: True;"
+  },
+  {
+    "objectID": "slides-05.html#ordinal-encoding-ranking-matters-3",
+    "href": "slides-05.html#ordinal-encoding-ranking-matters-3",
+    "title": "Lecture 5: Preprocessing and sklearn pipelines",
+    "section": "Ordinal encoding: Ranking matters! (⭐️⭐️⭐️ → 3️⃣)",
+    "text": "Ordinal encoding: Ranking matters! (⭐️⭐️⭐️ → 3️⃣)\nConvert categories into integer values that have a meaningful order.\n\nAssign integers based on order or rank.\nUseful when there is an inherent ranking in the data.\n\nExample:\nTurn “Poor, Average, Good” into 1, 2, 3:\n\n\n\nRating\nOrdinal\n\n\n\n\nPoor\n1\n\n\nAverage\n2\n\n\nGood\n3\n\n\n\nfrom sklearn.preprocessing import OrdinalEncoder\nencoder = OrdinalEncoder()\nX_ordinal = encoder.fit_transform(X)"
+  },
+  {
+    "objectID": "slides-05.html#group-work-class-demo-live-coding",
+    "href": "slides-05.html#group-work-class-demo-live-coding",
+    "title": "Lecture 5: Preprocessing and sklearn pipelines",
+    "section": "Group Work: Class Demo & Live Coding",
+    "text": "Group Work: Class Demo & Live Coding\n\nLet’s walk through strategies for handling missing values, categorical variables, text, scaling, and irrelevant features using a class demo.\nFor this demo, each student should click this link to create a new repo in their accounts, then clone that repo locally to follow along with the demo from today."
   }
 ]

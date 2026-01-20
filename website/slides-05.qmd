@@ -10,13 +10,19 @@ format:
     smaller: true
     center: true
     logo: img/UBC-CS-logo.png
-    theme: dracula
+    theme: [night, slides.scss]
     resources:
       - data/
       - img/  
 ---
 
 ## Announcements 
+
+- I am away this Thursday and next Tuesday for EAAI 2026
+  - EAAI is the Symposium on Educational Advances in Artificial Intelligence in Singapore
+  - "Effective Strategies for Teaching Machine Learning"
+- Other instructors Dr. Giulia Toti (Thursday) and Dr. Mehrdad Oveisi (Tuesday) will teach !
+- Heads up: they won't use Agora (or iClicker) for class participation ; just show of hands
 
 <!-- - HW1 grades have been posted.
 - Homework 1 solutions have been posted on Canvas under Files tab. Please do not share them with anyone or do not post them anywhere. -->
@@ -31,12 +37,14 @@ format:
 
 ## Recap
 
-| **Aspect**                     | **Decision Trees**              | **K-Nearest Neighbors (KNN)** | **Support Vector Machines (SVM) with RBF Kernel**      |
-|--------------------------------|---------------------------------|-------------------------------|--------------------------------------------------------|
-| **Main hyperparameters**       | Max depth, min samples split    | Number of neighbors ($k$)     | C (regularization), Gamma (RBF kernel width)           |
-| **Interpretability**           |  |  | 
-| **Handling of Non-linearity**  |  |  | 
-| **Scalability**                |  |  | 
+## Comparison of models (activity)
+
+| **Model**        | Parameters and hyperparameters | **Strengths**  | **Weaknesses**     |
+|------------------|--------------------------------|---------------------------|---------------------------|
+| **Decision Trees**    |  |  |  |
+| **KNNs**              |  |  |  |
+| **SVM RBF**           |  |  |  |
+
 
 ::: {.notes}
 Interpretability (output easy to understand):
@@ -57,13 +65,12 @@ Scalability:
 
 ## Recap
 
-| **Aspect**                     | **Decision Trees**                                        | **K-Nearest Neighbors (KNN)**                         | **Support Vector Machines (SVM) with RBF Kernel**      |
-|--------------------------------|-----------------------------------------------------------|-------------------------------------------------------|--------------------------------------------------------|
-| **Sensitivity to Outliers**    |  |  | 
-| **Memory Usage**               |  |  | 
-| **Training Time**              |  |  | 
-| **Prediction Time**            |  |  | 
-| **Multiclass support**         |  |  | 
+| **Aspect**  | **Decision Trees**  | **K-Nearest Neighbors (KNN)**| **Support Vector Machines (SVM) with RBF Kernel** |
+|-------------|---------------------|------------------------------|---------------------------------------------------|
+| **Sensitivity to Outliers**       |  |  | 
+| **Memory Usage**                  |  |  | 
+| **Training Time**                 |  |  | 
+| **Prediction Time**               |  |  | 
 
 ::: {.notes}
 Sensitivity to Outliers
@@ -86,14 +93,44 @@ Prediction Time
     - KNN is high, all the work happens here
     - SVM-RBF, very efficient at predicting
 
-Multiclass Support
+<!-- Multiclass Support
     - DT, multi-class is fine
     - KNN, multi-class is fine
-    - SVM-RBF, bit complicated
+    - SVM-RBF, bit complicated -->
 :::
 
-## (iClicker) Exercise 5.1
-iClicker cloud join link: **https://join.iclicker.com/YJHS**
+## Preprocessing motivation: example 
+
+You’re trying to find a suitable date based on:
+
+- Age (closer to yours is better).
+- Number of Facebook Friends (closer to your social circle is ideal).
+
+## Preprocessing motivation: example {.smaller}
+
+- You are 30 years old and have 250 Facebook friends.
+
+| Person | Age | #FB Friends | Euclidean Distance Calculation  | Distance    |
+|--------|-----|-------------|---------------------------------|-------------|
+| A      | 25  | 400         | $\sqrt{5^2 + 150^2}$            | 150.08      |
+| B      | 27  | 300         |  $\sqrt{3^2 + 50^2}$            | 50.09       |
+| C      | 30  | 500         |  $\sqrt{0^2 + 250^2}$           | 250.00      |
+| D      | 60  | 250         |  $\sqrt{30^2 + 0^2}$            | 30.00       |
+
+Based on the distances, the two nearest neighbors (2-NN) are:
+
+- **Person D** (Distance: 30.00)
+- **Person B** (Distance: 50.09)
+
+What's the problem here? 
+
+## What is preprocessing? 
+
+- **Preprocessing** is about making the raw dataset ready for machine learning. 
+
+
+## Clicker 5.1
+Participate using [Agora](https://agora.students.cs.ubc.ca) (code: agentic)
 
 Take a guess: In your machine learning project, how much time will you typically spend on data preparation and transformation?
 
@@ -104,29 +141,27 @@ Take a guess: In your machine learning project, how much time will you typically
 
 The question is adapted from [here](https://developers.google.com/machine-learning/crash-course/numerical-data).
 
-
-## (iClicker) Exercise 5.2
-iClicker cloud join link: **https://join.iclicker.com/YJHS**
+## Clicker 5.2
+Participate using [Agora](https://agora.students.cs.ubc.ca) (code: agentic)
 
 Select all of the following statements which are TRUE.
 
-- (A) StandardScaler ensures a fixed range (i.e., minimum and maximum values) for the features.
-- (B) StandardScaler calculates mean and standard deviation for each feature separately.
+- (A) `StandardScaler` ensures a fixed range (i.e., minimum and maximum values) for the features.
+- (B) `StandardScaler` calculates mean and standard deviation for each feature separately.
 - (C) In general, it’s a good idea to apply scaling on numeric features before training $k$-NN or SVM RBF models.
 - (D) The transformed feature values might be hard to interpret for humans.
-- (E) After applying SimpleImputer The transformed data has a different shape than the original data.
+- (E) After applying `SimpleImputer` The transformed data has a different shape than the original data.
 
 
-## (iClicker) Exercise 5.3
-iClicker cloud join link: **https://join.iclicker.com/YJHS**
+## Clicker 5.3
+Participate using [Agora](https://agora.students.cs.ubc.ca) (code: agentic)
 
 Select all of the following statements which are TRUE.
 
 - (A) You can have scaling of numeric features, one-hot encoding of categorical features, and scikit-learn estimator within a single pipeline.
-- (B) Once you have a scikit-learn pipeline object with an estimator as the last step, you can call fit, predict, and score on it.
-- (C) You can carry out data splitting within scikit-learn pipeline.
+- (B) Once you have a `scikit-learn` pipeline object with an estimator as the last step, you can call `fit`, `predict`, and `score` on it.
+- (C) You can carry out data splitting within `scikit-learn` pipeline.
 - (D) We have to be careful of the order we put each transformation and model in a pipeline.
-- (E) If you call `cross_validate` with a pipeline object, it will call `fit` and `transform` on the training fold and only `transform` on the validation fold.
 
 ::: {.notes}
 A: False; It doesn't make sense to apply one hot encoding to numeric features, and it doesn't make sense to apply standard scalar to categorical features. Sequence doesn't make sense, we need column transformers
@@ -136,42 +171,7 @@ B: True; can do this as long as the estimator is the last step
 C: False
 
 D: True; 
-
 :::
-
-
-## Break
-
-Let's take a break!
-
-![](img/eva-coffee.png){fig-align="center"}
-/
-
-
-## Preprocessing motivation: example 
-
-You’re trying to find a suitable date based on:
-
-- Age (closer to yours is better).
-- Number of Facebook Friends (closer to your social circle is ideal).
-
-## Preprocessing motivation: example 
-
-- You are 30 years old and have 250 Facebook friends.
-
-| Person | Age | #FB Friends | Euclidean Distance Calculation  | Distance    |
-|--------|-----|-------------|---------------------------------|-------------|
-| A      | 25  | 400         | √(5² + 150²)                    | 150.08      |
-| B      | 27  | 300         | √(3² + 50²)                     | 50.09       |
-| C      | 30  | 500         | √(0² + 250²)                    | 250.00      |
-| D      | 60  | 250         | √(30² + 0²)                     | 30.00       |
-
-Based on the distances, the two nearest neighbors (2-NN) are:
-
-- **Person D** (Distance: 30.00)
-- **Person B** (Distance: 50.09)
-
-What's the problem here? 
 
 # Common transformations
 
@@ -184,7 +184,7 @@ Fill in missing data using a chosen strategy:
 - **KNN Imputation**: Fill based on similar neighbors.
 
 ### Example:
-Fill in missing values like filling empty seats in a classroom with the average student.
+Imputation is like filling in your average or median or most frequent grade for an assessment you missed. 
 
 ```python
 from sklearn.impute import SimpleImputer
@@ -196,11 +196,9 @@ X_imputed = imputer.fit_transform(X)
 Ensure all features have a comparable range.
 
 - **StandardScaler**: Mean = 0, Standard Deviation = 1.
-- **MinMaxScaler**: Scales features to a [0, 1] range.
-- **RobustScaler**: Scales features using median and quantiles.
 
 ### Example:
-Rescaling everyone’s height to make basketball players and gymnasts comparable.
+Scaling is like adjusting the number of everyone’s Facebook friends so that both the number of friends and their age are on a comparable scale. This way, one feature doesn't dominate the other when making comparisons.
 
 ```python
 from sklearn.preprocessing import StandardScaler
@@ -231,7 +229,7 @@ X_encoded = encoder.fit_transform(X)
 ```
 
 
-## Ordinal encoding: Ranking matters! (⭐️⭐️⭐️⭐️⭐️ → 1️⃣)
+## Ordinal encoding: Ranking matters! (⭐️⭐️⭐️ → 3️⃣)
 Convert categories into integer values that have a meaningful order.
 
 - Assign integers based on order or rank.
@@ -273,10 +271,6 @@ X_ordinal = encoder.fit_transform(X)
 
 - Examples: `DecisionTreeClassifier`, `SVC`, `KNeighborsClassifier`
 
-```python
-from sklearn.tree import DecisionTreeClassifier
-tree_clf = DecisionTreeClassifier()
-```
 
 ## The golden rule in feature transformations
 - **Never** transform the entire dataset at once!
@@ -315,8 +309,17 @@ pipeline.fit(X_train, y_train)
 y_pred = pipeline.predict(X_test)
 ```
 
-# See you next class!
+## Break
 
-<!-- 
-# [Class demo]()
- -->
+Let's take a break!
+
+![](img/eva-coffee.png){fig-align="center"}
+/
+
+## Group Work: Class Demo & Live Coding
+
+- Let's walk through strategies for handling missing values, categorical variables, text, scaling, and irrelevant features using a class demo.
+- 
+For this demo, each student should [click this link](https://github.com/new?template_name=lecture05_demo&template_owner=ubc-cpsc330) to create a new repo in their accounts, then clone that repo locally to follow along with the demo from today.
+
+# See you next time!
