@@ -10,56 +10,50 @@ format:
     smaller: true
     center: true
     logo: img/UBC-CS-logo.png
-    theme: dracula
+    theme: [night, slides.scss]
     resources:
       - data/
       - img/  
 ---
 
-<!--
-## Announcements
+## Announcements 
 
-- Important information about midterm 1
-  - https://piazza.com/class/m01ukubppof625/post/249
-- Reminder of my office hours
-  - Wednesdays from 12:30 to 1:30 PM in my office ICCS 253
-- HW3 is due today 11:59 pm. 
-- HW4 has been released  
--->
+- Important information about midterm 1 posted on Ed Discussion!
+- Reminder to book your CBTF Test reservation
+
+## Clicker 8.0a - Logistic Regression 1
+
+Which of the following are **True**?
+
+- (A) Logistic regression can be used for binary as well as multi-class classification tasks.  
+- (B) Logistic regression computes a weighted sum of features and applies the sigmoid function.  
+- (C) The sigmoid function ensures outputs between 0 and 1, interpreted as probabilities.  
+- (D) The decision boundary in logistic regression is linear, even though the sigmoid is applied. 
+- (E) When the weighted sum is 0, $\hat{p}$ = 0.5.  
+
+## Clicker 8.0b - Logistic Regression 2
+
+Which of the following are **True**?
+
+- (A) Logistic regression coefficients always have to be positive.  
+- (B) Larger coefficients (in absolute value) indicate stronger feature influence on the prediction.  
+- (C) For $d$ features, the decision boundary is a $d-1$ dimensional hyperplane.  
+- (D) In `sklearn`, very small `C` value shrinks coefficients, often leading to underfitting.  
+- (E) A larger `C` value allows larger coefficients and a more complex model.  
 
 
-```{python}
-import os
-import sys
-import pandas as pd 
-import numpy as np
-from sklearn import datasets
-from sklearn.svm import SVC
-from sklearn.model_selection import cross_val_score, cross_validate, train_test_split
-from sklearn.pipeline import Pipeline, make_pipeline
-from sklearn.linear_model import LogisticRegression
-import matplotlib.pyplot as plt
-from sklearn.feature_extraction.text import CountVectorizer
-from scipy.stats import expon, lognorm, loguniform, randint, uniform, norm, randint
-%matplotlib inline
-import mglearn
-DATA_DIR = 'data/' 
-```
-
-## Recap: Logistic regression
+## Recap: Logistic regression {.smaller}
 - A **linear model used for binary classification** tasks. 
-  - There is a variant of logistic regression called multinomial logistic regression for multiclass classification.
+  - (Optional) There is am extension of logistic regression called multinomial logistic regression for multiclass classification.
 - Parameters: 
-  - Coefficients (Weights): The model learns a coefficient or a weight associated with each feature that represents its importance.
-  - Bias (Intercept): A constant term added to the linear combination of features and their coefficients.
+  - **Coefficients (Weights)**: The model learns a coefficient or a weight associated with each feature that represents its importance.
+  - **Bias (Intercept)**: A constant term added to the linear combination of features and their coefficients.
 
-## Recap: Logistic regression 
+## Recap: Logistic regression {.smaller}
 - The model computes a weighted sum of the input features’ values, adjusted by their respective coefficients and the bias term.
 - This weighted sum is passed through a sigmoid function to transform it into a probability score, indicating the likelihood of the input belonging to the "positive" class.
 
-\begin{equation}
-P_{hat} = \sigma\left(\sum_{i=1}^d w_i x_i + b\right) 
-\end{equation}
+$$ \hat{p} = \sigma\left(\sum_{i=1}^d w_i x_i + b\right) $$
 
 - $P_{hat}$ is the predicted probability of the example belonging to the positive class. 
 - $w_i$ is the learned weight associated with feature $i$
@@ -73,19 +67,6 @@ separates the classes is a $d-1$ dimensional hyperplane.
 - Complexity hyperparameter: `C` in `sklearn`. 
   - Higher `C` $\rightarrow$ more complex model meaning larger coefficients
   - Lower `C` $\rightarrow$ less complex model meaning smaller coefficients
-
-
-## Recap: `CountVectorizer` input 
-
-- Primarily designed to accept either a `pandas.Series` of text data or a 1D `numpy` array. It can also process a list of string data directly.
-- Unlike many transformers that handle multiple features (`DataFrame` or 2D `numpy` array), `CountVectorizer` a single text column at a time.
-- If your dataset contains multiple text columns, you will need to instantiate separate `CountVectorizer` objects for each text feature.
-- This approach ensures that the unique vocabulary and tokenization processes are correctly applied to each specific text column without interference.
-
-## Hyperparameter optimization motivation
-
-![](img/hyperparam-optimization.png)
-
 
 ## Data
 
@@ -164,7 +145,6 @@ grid_search.fit(X_train, y_train)
 grid_search.best_score_
 ```
 
-
 ## Random Search 
 - More efficient than grid search when dealing with large hyperparameter spaces.
 - Samples a given number of parameter settings from distributions.
@@ -197,10 +177,54 @@ random_search.fit(X_train, y_train)
 random_search.best_score_
 ```
 
-## Optimization bias 
+# Optimization bias 
 
+## Pizza baking competition example
+
+Imagine that you participate in pizza baking competition. 
+
+:::: {columns}
+::: {.column width="50%"}
+
+![](img/margherita-pizza.jpeg)
+:::
+
+::: {.column width="50%"}
+- **Training phase**: Collecting recipes and practicing at home  
+- **Validation phase**: Inviting a group of friends for tasting and feedback  
+- **Test phase (competition day)**: Serving the judges  
+:::
+::::
+
+## Overfitting on the validation set
+:::: {columns}
+::: {.column width="50%"}
+- Your friends loved your pineapple pizza. 
+- You fine-tune your recipe for the same group of friends, perfecting it for their tastes.
+
+<img src="img/pineapple-pizza.png" width="60%" alt="Pineapple Pizza">
+:::
+
+::: {.column width="50%"}
+- On the competition day, you confidently present your perfected pineapple pizza.  
+- Judges are not impressed: *“This doesn’t appeal to a broad audience.”*  
+![](img/eva-sad.png)
+
+:::
+::::
+
+This is similar to reusing the same validation set again and again to perfect the model for it! 
+
+## Lesson: Overfitting on the validation set {.smaller}
+
+- You tailored your recipe too closely to your friends’ tastes.  
+- They were **not representative** of the broader audience (the judges).  
+- The pizza, while perfect for your validation group, failed to **generalize**.  
+- Over many iterations, the validation set no longer gives an **unbiased estimate** of performance.  
+- That's why we need a **separate test set** (like a group of tasters who never influenced your pizza).  
+
+## Optimization bias
 - Why do we need separate validation and test datasets? 
-
 ![](img/optimization-bias.png)
 
 ## Mitigating optimization bias.
@@ -208,10 +232,7 @@ random_search.best_score_
   - Ensembles 
   - Regularization and choosing a simpler model  
 
-
-## (iClicker) Exercise 8.1
-
-**iClicker cloud join link: [https://join.iclicker.com/YJHS](https://join.iclicker.com/YJHS)**
+## Clicker 8.1
 
 Select all of the following statements which are TRUE.
 
@@ -225,11 +246,15 @@ Select all of the following statements which are TRUE.
   - Probably
   - Probably not
 
+
 ## Questions for class discussion
 
-- Suppose you have 10 hyperparameters, each with 4 possible values. If you run `GridSearchCV` with this parameter grid, how many experiments will be carried out?
-
+- Suppose you have 10 hyperparameters, each with 4 possible values. If you run `GridSearchCV` with this parameter grid, how many cross-validation experiments will be carried out? 
 - Suppose you have 10 hyperparameters and each takes 4 values. If you run `RandomizedSearchCV` with this parameter grid with `n_iter=20`, how many cross-validation experiments will be carried out? 
+
+# [Class Demo](https://github.com/UBC-CS/cpsc330-2025W1/blob/main/lectures/102-Varada-lectures/class_demos/demo_08-hyperparameter-optimization.ipynb)
+
+
 
 ## Group Work: Class Demo & Live Coding
 
