@@ -427,13 +427,6 @@
     "text": "Welcome to CPSC330! Here, you’ll find slides for CPSC 330. These slides are based on the notes presented here.\n\nClass times 🕘 3:30 PM to 5 PM, Tuesday and Thursday\nWhere? 📍 Hugh Dempster Pavillion 310, 6245 Agronomy Road, Vancouver, BC V6T 1Z4"
   },
   {
-    "objectID": "slides.html",
-    "href": "slides.html",
-    "title": "Overview",
-    "section": "",
-    "text": "Title\n\n\n\nDescription\n\n\n\n\n\n\n\n\nLecture 1: Introduction to CPSC 330\n\n\nWhat is machine learning, types of machine learning, learning to navigate through the course materials, getting familiar with the course policies\n\n\n\n\n\n\nLecture 2: Terminology, Baselines, Decision Trees\n\n\nTerminology and Decision Trees\n\n\n\n\n\n\nLecture 3: ML fundamentals\n\n\ngeneralization, data splitting, overfitting, underfitting, the fundamental tradeoff, the golden rule\n\n\n\n\n\n\nLecture 4: \\(k\\)-nearest neighbours and SVM RBFs\n\n\nintroduction to KNNs, hyperparameter n_neighbours or \\(k\\), C and gamma hyperparameters of SVM RBF, decision boundaries with different values of hyperparameters.\n\n\n\n\n\n\nLecture 5: Preprocessing and sklearn pipelines\n\n\nPre-processing, Transformations, and pipelines.\n\n\n\n\n\n\nNo matching items"
-  },
-  {
     "objectID": "slides-04.html#announcements",
     "href": "slides-04.html#announcements",
     "title": "Lecture 4: \\(k\\)-nearest neighbours and SVM RBFs",
@@ -572,6 +565,181 @@
     "title": "Lecture 4: \\(k\\)-nearest neighbours and SVM RBFs",
     "section": "Comparison of models (activity)",
     "text": "Comparison of models (activity)\n\n\n\n\n\n\n\n\n\nModel\nParameters and hyperparameters\nStrengths\nWeaknesses\n\n\n\n\nDecision Trees\n\n\n\n\n\nKNNs\n\n\n\n\n\nSVM RBF"
+  },
+  {
+    "objectID": "slides.html",
+    "href": "slides.html",
+    "title": "Overview",
+    "section": "",
+    "text": "Title\n\n\n\nDescription\n\n\n\n\n\n\n\n\nLecture 1: Introduction to CPSC 330\n\n\nWhat is machine learning, types of machine learning, learning to navigate through the course materials, getting familiar with the course policies\n\n\n\n\n\n\nLecture 2: Terminology, Baselines, Decision Trees\n\n\nTerminology and Decision Trees\n\n\n\n\n\n\nLecture 3: ML fundamentals\n\n\ngeneralization, data splitting, overfitting, underfitting, the fundamental tradeoff, the golden rule\n\n\n\n\n\n\nLecture 4: \\(k\\)-nearest neighbours and SVM RBFs\n\n\nintroduction to KNNs, hyperparameter n_neighbours or \\(k\\), C and gamma hyperparameters of SVM RBF, decision boundaries with different values of hyperparameters.\n\n\n\n\n\n\nLecture 5: Preprocessing and sklearn pipelines\n\n\nPre-processing, Transformations, and pipelines.\n\n\n\n\n\n\nCPSC 330 Lecture 8: Hyperparameter Optimization\n\n\nLinear regression, logistic regression, prediction probabilities, sigmoid, interpretation of coefficients\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "slides-08.html#announcements",
+    "href": "slides-08.html#announcements",
+    "title": "CPSC 330 Lecture 8: Hyperparameter Optimization",
+    "section": "Announcements",
+    "text": "Announcements\n\nImportant information about midterm 1 posted on Ed Discussion!\nReminder to book your CBTF Test reservation"
+  },
+  {
+    "objectID": "slides-08.html#clicker-8.0a---logistic-regression-1",
+    "href": "slides-08.html#clicker-8.0a---logistic-regression-1",
+    "title": "CPSC 330 Lecture 8: Hyperparameter Optimization",
+    "section": "Clicker 8.0a - Logistic Regression 1",
+    "text": "Clicker 8.0a - Logistic Regression 1\nWhich of the following are True?\n\n\nLogistic regression can be used for binary as well as multi-class classification tasks.\n\n\n\nLogistic regression computes a weighted sum of features and applies the sigmoid function.\n\n\n\nThe sigmoid function ensures outputs between 0 and 1, interpreted as probabilities.\n\n\n\nThe decision boundary in logistic regression is linear, even though the sigmoid is applied.\n\n\nWhen the weighted sum is 0, \\(\\hat{p}\\) = 0.5."
+  },
+  {
+    "objectID": "slides-08.html#clicker-8.0b---logistic-regression-2",
+    "href": "slides-08.html#clicker-8.0b---logistic-regression-2",
+    "title": "CPSC 330 Lecture 8: Hyperparameter Optimization",
+    "section": "Clicker 8.0b - Logistic Regression 2",
+    "text": "Clicker 8.0b - Logistic Regression 2\nWhich of the following are True?\n\n\nLogistic regression coefficients always have to be positive.\n\n\n\nLarger coefficients (in absolute value) indicate stronger feature influence on the prediction.\n\n\n\nFor \\(d\\) features, the decision boundary is a \\(d-1\\) dimensional hyperplane.\n\n\n\nIn sklearn, very small C value shrinks coefficients, often leading to underfitting.\n\n\n\nA larger C value allows larger coefficients and a more complex model."
+  },
+  {
+    "objectID": "slides-08.html#recap-logistic-regression",
+    "href": "slides-08.html#recap-logistic-regression",
+    "title": "CPSC 330 Lecture 8: Hyperparameter Optimization",
+    "section": "Recap: Logistic regression",
+    "text": "Recap: Logistic regression\n\nA linear model used for binary classification tasks.\n\n(Optional) There is am extension of logistic regression called multinomial logistic regression for multiclass classification.\n\nParameters:\n\nCoefficients (Weights): The model learns a coefficient or a weight associated with each feature that represents its importance.\nBias (Intercept): A constant term added to the linear combination of features and their coefficients."
+  },
+  {
+    "objectID": "slides-08.html#recap-logistic-regression-1",
+    "href": "slides-08.html#recap-logistic-regression-1",
+    "title": "CPSC 330 Lecture 8: Hyperparameter Optimization",
+    "section": "Recap: Logistic regression",
+    "text": "Recap: Logistic regression\n\nThe model computes a weighted sum of the input features’ values, adjusted by their respective coefficients and the bias term.\nThis weighted sum is passed through a sigmoid function to transform it into a probability score, indicating the likelihood of the input belonging to the “positive” class.\n\n\\[ \\hat{p} = \\sigma\\left(\\sum_{i=1}^d w_i x_i + b\\right) \\]\n\n\\(P_{hat}\\) is the predicted probability of the example belonging to the positive class.\n\\(w_i\\) is the learned weight associated with feature \\(i\\)\n\\(x_i\\) is the value of the input feature \\(i\\)\n\\(b\\) is the bias term"
+  },
+  {
+    "objectID": "slides-08.html#recap-logistic-regression-2",
+    "href": "slides-08.html#recap-logistic-regression-2",
+    "title": "CPSC 330 Lecture 8: Hyperparameter Optimization",
+    "section": "Recap: Logistic regression",
+    "text": "Recap: Logistic regression\n\nFor a dataset with \\(d\\) features, the decision boundary that separates the classes is a \\(d-1\\) dimensional hyperplane.\n\nComplexity hyperparameter: C in sklearn.\n\nHigher C \\(\\rightarrow\\) more complex model meaning larger coefficients\nLower C \\(\\rightarrow\\) less complex model meaning smaller coefficients"
+  },
+  {
+    "objectID": "slides-08.html#data",
+    "href": "slides-08.html#data",
+    "title": "CPSC 330 Lecture 8: Hyperparameter Optimization",
+    "section": "Data",
+    "text": "Data\n\nsms_df = pd.read_csv(DATA_DIR + \"spam.csv\", encoding=\"latin-1\")\nsms_df = sms_df.drop(columns = [\"Unnamed: 2\", \"Unnamed: 3\", \"Unnamed: 4\"])\nsms_df = sms_df.rename(columns={\"v1\": \"target\", \"v2\": \"sms\"})\ntrain_df, test_df = train_test_split(sms_df, test_size=0.10, random_state=42)\nX_train, y_train = train_df[\"sms\"], train_df[\"target\"]\nX_test, y_test = test_df[\"sms\"], test_df[\"target\"]\ntrain_df.head(4)\n\n\n\n\n\n\n\n\ntarget\nsms\n\n\n\n\n3130\nspam\nLookAtMe!: Thanks for your purchase of a video...\n\n\n106\nham\nAight, I'll hit you up when I get some cash\n\n\n4697\nham\nDon no da:)whats you plan?\n\n\n856\nham\nGoing to take your babe out ?"
+  },
+  {
+    "objectID": "slides-08.html#model-building",
+    "href": "slides-08.html#model-building",
+    "title": "CPSC 330 Lecture 8: Hyperparameter Optimization",
+    "section": "Model building",
+    "text": "Model building\n\nLet’s define a pipeline\n\n\npipe_svm = make_pipeline(CountVectorizer(), SVC())\n\n\nSuppose we want to try out different hyperparameter values.\n\n\nparameters = {\n    \"max_features\": [100, 200, 400],\n    \"gamma\": [0.01, 0.1, 1.0],\n    \"C\": [0.01, 0.1, 1.0],\n}"
+  },
+  {
+    "objectID": "slides-08.html#hyperparameter-optimization-with-loops",
+    "href": "slides-08.html#hyperparameter-optimization-with-loops",
+    "title": "CPSC 330 Lecture 8: Hyperparameter Optimization",
+    "section": "Hyperparameter optimization with loops",
+    "text": "Hyperparameter optimization with loops\n\nDefine a parameter space.\nIterate through possible combinations.\nEvaluate model performance.\nWhat are some limitations of this approach?"
+  },
+  {
+    "objectID": "slides-08.html#sklearn-methods",
+    "href": "slides-08.html#sklearn-methods",
+    "title": "CPSC 330 Lecture 8: Hyperparameter Optimization",
+    "section": "sklearn methods",
+    "text": "sklearn methods\n\nsklearn provides two main methods for hyperparameter optimization\n\nGrid Search\nRandom Search"
+  },
+  {
+    "objectID": "slides-08.html#grid-search",
+    "href": "slides-08.html#grid-search",
+    "title": "CPSC 330 Lecture 8: Hyperparameter Optimization",
+    "section": "Grid Search",
+    "text": "Grid Search\n\nCovers all possible combinations from the provided grid.\nCan be parallelized easily.\nIntegrates cross-validation."
+  },
+  {
+    "objectID": "slides-08.html#grid-search-example",
+    "href": "slides-08.html#grid-search-example",
+    "title": "CPSC 330 Lecture 8: Hyperparameter Optimization",
+    "section": "Grid search example",
+    "text": "Grid search example\n\nfrom sklearn.model_selection import GridSearchCV\n\npipe_svm = make_pipeline(CountVectorizer(), SVC())\n\nparam_grid = {\n    \"countvectorizer__max_features\": [100, 200, 400],\n    \"svc__gamma\": [0.01, 0.1, 1.0],\n    \"svc__C\": [0.01, 0.1, 1.0],\n}\ngrid_search = GridSearchCV(pipe_svm, \n                  param_grid = param_grid, \n                  n_jobs=-1, \n                  return_train_score=True\n                 )\ngrid_search.fit(X_train, y_train)\ngrid_search.best_score_\n\nnp.float64(0.9780612255051213)"
+  },
+  {
+    "objectID": "slides-08.html#random-search",
+    "href": "slides-08.html#random-search",
+    "title": "CPSC 330 Lecture 8: Hyperparameter Optimization",
+    "section": "Random Search",
+    "text": "Random Search\n\nMore efficient than grid search when dealing with large hyperparameter spaces.\nSamples a given number of parameter settings from distributions."
+  },
+  {
+    "objectID": "slides-08.html#random-search-example",
+    "href": "slides-08.html#random-search-example",
+    "title": "CPSC 330 Lecture 8: Hyperparameter Optimization",
+    "section": "Random search example",
+    "text": "Random search example\n\nfrom sklearn.model_selection import RandomizedSearchCV\nfrom scipy.stats import randint\n\npipe_svc = make_pipeline(CountVectorizer(), SVC())\n\nparam_dist = {\n    \"countvectorizer__max_features\": randint(100, 2000), \n    \"svc__C\": uniform(0.1, 1e4),  # loguniform(1e-3, 1e3),\n    \"svc__gamma\": loguniform(1e-5, 1e3),\n}\nrandom_search = RandomizedSearchCV(pipe_svm,                                    \n                  param_distributions = param_dist, \n                  n_iter=10, \n                  n_jobs=-1, \n                  return_train_score=True)\n\n# Carry out the search\nrandom_search.fit(X_train, y_train)\nrandom_search.best_score_\n\nnp.float64(0.982648262796441)"
+  },
+  {
+    "objectID": "slides-08.html#pizza-baking-competition-example",
+    "href": "slides-08.html#pizza-baking-competition-example",
+    "title": "CPSC 330 Lecture 8: Hyperparameter Optimization",
+    "section": "Pizza baking competition example",
+    "text": "Pizza baking competition example\nImagine that you participate in pizza baking competition.\n\n\n\n\n\nTraining phase: Collecting recipes and practicing at home\n\nValidation phase: Inviting a group of friends for tasting and feedback\n\nTest phase (competition day): Serving the judges"
+  },
+  {
+    "objectID": "slides-08.html#overfitting-on-the-validation-set",
+    "href": "slides-08.html#overfitting-on-the-validation-set",
+    "title": "CPSC 330 Lecture 8: Hyperparameter Optimization",
+    "section": "Overfitting on the validation set",
+    "text": "Overfitting on the validation set\n\n\n\nYour friends loved your pineapple pizza.\nYou fine-tune your recipe for the same group of friends, perfecting it for their tastes.\n\n\n\n\nOn the competition day, you confidently present your perfected pineapple pizza.\n\nJudges are not impressed: “This doesn’t appeal to a broad audience.”\n\n\n\nThis is similar to reusing the same validation set again and again to perfect the model for it!"
+  },
+  {
+    "objectID": "slides-08.html#lesson-overfitting-on-the-validation-set",
+    "href": "slides-08.html#lesson-overfitting-on-the-validation-set",
+    "title": "CPSC 330 Lecture 8: Hyperparameter Optimization",
+    "section": "Lesson: Overfitting on the validation set",
+    "text": "Lesson: Overfitting on the validation set\n\nYou tailored your recipe too closely to your friends’ tastes.\n\nThey were not representative of the broader audience (the judges).\n\nThe pizza, while perfect for your validation group, failed to generalize.\n\nOver many iterations, the validation set no longer gives an unbiased estimate of performance.\n\nThat’s why we need a separate test set (like a group of tasters who never influenced your pizza)."
+  },
+  {
+    "objectID": "slides-08.html#optimization-bias-1",
+    "href": "slides-08.html#optimization-bias-1",
+    "title": "CPSC 330 Lecture 8: Hyperparameter Optimization",
+    "section": "Optimization bias",
+    "text": "Optimization bias\n\nWhy do we need separate validation and test datasets?"
+  },
+  {
+    "objectID": "slides-08.html#mitigating-optimization-bias.",
+    "href": "slides-08.html#mitigating-optimization-bias.",
+    "title": "CPSC 330 Lecture 8: Hyperparameter Optimization",
+    "section": "Mitigating optimization bias.",
+    "text": "Mitigating optimization bias.\n\nCross-validation\nEnsembles\nRegularization and choosing a simpler model"
+  },
+  {
+    "objectID": "slides-08.html#clicker-8.1",
+    "href": "slides-08.html#clicker-8.1",
+    "title": "CPSC 330 Lecture 8: Hyperparameter Optimization",
+    "section": "Clicker 8.1",
+    "text": "Clicker 8.1\nSelect all of the following statements which are TRUE.\n\n\nIf you get best results at the edges of your parameter grid, it might be a good idea to adjust the range of values in your parameter grid.\n\n\nGrid search is guaranteed to find the best hyperparameter values.\n\n\nIt is possible to get different hyperparameters in different runs of RandomizedSearchCV."
+  },
+  {
+    "objectID": "slides-08.html#questions-for-you",
+    "href": "slides-08.html#questions-for-you",
+    "title": "CPSC 330 Lecture 8: Hyperparameter Optimization",
+    "section": "Questions for you",
+    "text": "Questions for you\n\nYou have a dataset and you give me 1/10th of it. The dataset given to me is rather small and so I split it into 96% train and 4% validation split. I carry out hyperparameter optimization using a single 4% validation split and report validation accuracy of 0.97. Would it classify the rest of the data with similar accuracy?\n\nProbably\nProbably not"
+  },
+  {
+    "objectID": "slides-08.html#questions-for-class-discussion",
+    "href": "slides-08.html#questions-for-class-discussion",
+    "title": "CPSC 330 Lecture 8: Hyperparameter Optimization",
+    "section": "Questions for class discussion",
+    "text": "Questions for class discussion\n\nSuppose you have 10 hyperparameters, each with 4 possible values. If you run GridSearchCV with this parameter grid, how many cross-validation experiments will be carried out?\nSuppose you have 10 hyperparameters and each takes 4 values. If you run RandomizedSearchCV with this parameter grid with n_iter=20, how many cross-validation experiments will be carried out?"
+  },
+  {
+    "objectID": "slides-08.html#group-work-class-demo-live-coding",
+    "href": "slides-08.html#group-work-class-demo-live-coding",
+    "title": "CPSC 330 Lecture 8: Hyperparameter Optimization",
+    "section": "Group Work: Class Demo & Live Coding",
+    "text": "Group Work: Class Demo & Live Coding\nFor this demo, each student should click this link to create a new repo in their accounts, then clone that repo locally to follow along with the demo from today."
+  },
+  {
+    "objectID": "slides-08.html#group-work-invention-activity",
+    "href": "slides-08.html#group-work-invention-activity",
+    "title": "CPSC 330 Lecture 8: Hyperparameter Optimization",
+    "section": "Group Work: Invention Activity",
+    "text": "Group Work: Invention Activity\nSo far we have looked only at score as a metric for evaluating our metrics.\nWhat else could be used as a possible metric? Think of what else might be important for machine learning practioners and stakeholders?\nIn your group, brainstorm 4 alternative options:"
   },
   {
     "objectID": "slides-01.html#introductions",
