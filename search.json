@@ -914,7 +914,7 @@
     "href": "slides-08.html#random-search-example",
     "title": "CPSC 330 Lecture 8: Hyperparameter Optimization",
     "section": "Random search example",
-    "text": "Random search example\n\nfrom sklearn.model_selection import RandomizedSearchCV\nfrom scipy.stats import randint\n\npipe_svc = make_pipeline(CountVectorizer(), SVC())\n\nparam_dist = {\n    \"countvectorizer__max_features\": randint(100, 2000), \n    \"svc__C\": uniform(0.1, 1e4),  # loguniform(1e-3, 1e3),\n    \"svc__gamma\": loguniform(1e-5, 1e3),\n}\nrandom_search = RandomizedSearchCV(pipe_svm,                                    \n                  param_distributions = param_dist, \n                  n_iter=10, \n                  n_jobs=-1, \n                  return_train_score=True)\n\n# Carry out the search\nrandom_search.fit(X_train, y_train)\nrandom_search.best_score_\n\nnp.float64(0.9828476645910573)"
+    "text": "Random search example\n\nfrom sklearn.model_selection import RandomizedSearchCV\nfrom scipy.stats import randint\n\npipe_svc = make_pipeline(CountVectorizer(), SVC())\n\nparam_dist = {\n    \"countvectorizer__max_features\": randint(100, 2000), \n    \"svc__C\": uniform(0.1, 1e4),  # loguniform(1e-3, 1e3),\n    \"svc__gamma\": loguniform(1e-5, 1e3),\n}\nrandom_search = RandomizedSearchCV(pipe_svm,                                    \n                  param_distributions = param_dist, \n                  n_iter=10, \n                  n_jobs=-1, \n                  return_train_score=True)\n\n# Carry out the search\nrandom_search.fit(X_train, y_train)\nrandom_search.best_score_\n\nnp.float64(0.9816512538233603)"
   },
   {
     "objectID": "slides-08.html#pizza-baking-competition-example",
@@ -991,7 +991,126 @@
     "href": "slides.html",
     "title": "Overview",
     "section": "",
-    "text": "Title\n\n\n\nDescription\n\n\n\n\n\n\n\n\nLecture 1: Introduction to CPSC 330\n\n\nWhat is machine learning, types of machine learning, learning to navigate through the course materials, getting familiar with the course policies\n\n\n\n\n\n\nLecture 2: Terminology, Baselines, Decision Trees\n\n\nTerminology and Decision Trees\n\n\n\n\n\n\nLecture 3: ML fundamentals\n\n\ngeneralization, data splitting, overfitting, underfitting, the fundamental tradeoff, the golden rule\n\n\n\n\n\n\nLecture 4: \\(k\\)-nearest neighbours and SVM RBFs\n\n\nintroduction to KNNs, hyperparameter n_neighbours or \\(k\\), C and gamma hyperparameters of SVM RBF, decision boundaries with different values of hyperparameters.\n\n\n\n\n\n\nLecture 5: Preprocessing and sklearn pipelines\n\n\nPre-processing, Transformations, and pipelines.\n\n\n\n\n\n\nCPSC 330 Lecture 8: Hyperparameter Optimization\n\n\nLinear regression, logistic regression, prediction probabilities, sigmoid, interpretation of coefficients\n\n\n\n\n\n\nCPSC 330 Lecture 9: Classification Metrics\n\n\nconfusion metrics, precision, recall, f1-score, PR curves, AP score, ROC curve, ROC AUC, class imbalance\n\n\n\n\n\n\nNo matching items"
+    "text": "Title\n\n\n\nDescription\n\n\n\n\n\n\n\n\nLecture 1: Introduction to CPSC 330\n\n\nWhat is machine learning, types of machine learning, learning to navigate through the course materials, getting familiar with the course policies\n\n\n\n\n\n\nLecture 2: Terminology, Baselines, Decision Trees\n\n\nTerminology and Decision Trees\n\n\n\n\n\n\nLecture 3: ML fundamentals\n\n\ngeneralization, data splitting, overfitting, underfitting, the fundamental tradeoff, the golden rule\n\n\n\n\n\n\nLecture 4: \\(k\\)-nearest neighbours and SVM RBFs\n\n\nintroduction to KNNs, hyperparameter n_neighbours or \\(k\\), C and gamma hyperparameters of SVM RBF, decision boundaries with different values of hyperparameters.\n\n\n\n\n\n\nLecture 5: Preprocessing and sklearn pipelines\n\n\nPre-processing, Transformations, and pipelines.\n\n\n\n\n\n\nCPSC 330 Lecture 8: Hyperparameter Optimization\n\n\nLinear regression, logistic regression, prediction probabilities, sigmoid, interpretation of coefficients\n\n\n\n\n\n\nCPSC 330 Lecture 9: Classification Metrics\n\n\nconfusion metrics, precision, recall, f1-score, PR curves, AP score, ROC curve, ROC AUC, class imbalance\n\n\n\n\n\n\nCPSC 330 Lecture 10: Regression Metrics\n\n\nRegression metrics\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "slides-10.html#which-metric-fits-best",
+    "href": "slides-10.html#which-metric-fits-best",
+    "title": "CPSC 330 Lecture 10: Regression Metrics",
+    "section": "Which metric fits best?",
+    "text": "Which metric fits best?\n\n\n\nScenario\nData Imbalance\nMain Concern\nBest Metric(s) / Curve\n\n\n\n\nEmail Spam Detection\n10% spam\nAvoid false positives\n\n\n\nDisease Screening\n1 in 10,000\nAvoid false negatives\n\n\n\nCredit Card Fraud\n0.1% fraud\nFocus on rare positive class\n\n\n\nCustomer Churn\n20% churn\nBalance FP & FN\n\n\n\nSentiment Analysis\n50/50 balanced\nOverall correctness\n\n\n\nFace Recognition\nBalanced pairs\nTrade-off FP vs FN"
+  },
+  {
+    "objectID": "slides-10.html#summary-choosing-the-right-metric",
+    "href": "slides-10.html#summary-choosing-the-right-metric",
+    "title": "CPSC 330 Lecture 10: Regression Metrics",
+    "section": "Summary: Choosing the right metric",
+    "text": "Summary: Choosing the right metric\n\n\n\n\n\n\n\n\nMetric / Plot\nWhen to Use\nWhy\n\n\n\n\nPrecision, Recall, F1\nWhen you care about specific error types (FP vs FN) or a fixed threshold.\nFocus on particular tradeoffs.\n\n\nPR Curve & AP Score\nWhen the dataset is highly imbalanced (rare positives).\nIgnores TNs; focuses on positives.\n\n\nROC Curve & AUC\nWhen classes are moderately imbalanced.\nMeasures ranking ability across thresholds."
+  },
+  {
+    "objectID": "slides-10.html#questions-for-you",
+    "href": "slides-10.html#questions-for-you",
+    "title": "CPSC 330 Lecture 10: Regression Metrics",
+    "section": "Questions for you",
+    "text": "Questions for you\n\nWhat’s the difference between the average precision (AP) score and F1-score?\nWhich model would you pick?"
+  },
+  {
+    "objectID": "slides-10.html#roc-of-a-baseline-model",
+    "href": "slides-10.html#roc-of-a-baseline-model",
+    "title": "CPSC 330 Lecture 10: Regression Metrics",
+    "section": "ROC of a baseline model",
+    "text": "ROC of a baseline model\n\n\n\n\nAUC–ROC measures the probability that a randomly chosen positive example receives a higher score than a randomly chosen negative example.\n\nPerfect model: (AUC = 1.0). Always ranks positives above negatives.\n\nRandom model (AUC = 0.5): No discriminative ability (equivalent to random guessing).\n\n\n\nSource"
+  },
+  {
+    "objectID": "slides-10.html#questions-for-you-1",
+    "href": "slides-10.html#questions-for-you-1",
+    "title": "CPSC 330 Lecture 10: Regression Metrics",
+    "section": "Questions for you",
+    "text": "Questions for you\n\n\n\n\n\nWhich model would you pick?"
+  },
+  {
+    "objectID": "slides-10.html#dealing-with-class-imbalance",
+    "href": "slides-10.html#dealing-with-class-imbalance",
+    "title": "CPSC 330 Lecture 10: Regression Metrics",
+    "section": "Dealing with class imbalance",
+    "text": "Dealing with class imbalance\n\nUnder sampling\nOversampling\nclass weight=\"balanced\" (preferred method for this course)\nSMOTE"
+  },
+  {
+    "objectID": "slides-10.html#handling-imbalance-by-chaning-class-weights",
+    "href": "slides-10.html#handling-imbalance-by-chaning-class-weights",
+    "title": "CPSC 330 Lecture 10: Regression Metrics",
+    "section": "Handling imbalance by chaning class weights",
+    "text": "Handling imbalance by chaning class weights\n\nWe can specify class_weight=“balanced” to give more importance to rare examples during training.\n\n\n\n\n\n\n\n\n\n\n\n\nThis sets the weights so that the classes are “equal”.\nWe have reduced false negatives but we have many more false positives now …\n\nDecreases false negatives, which improves recall.\nIncreases false positives, which might lower precision."
+  },
+  {
+    "objectID": "slides-10.html#ridge-and-ridgecv",
+    "href": "slides-10.html#ridge-and-ridgecv",
+    "title": "CPSC 330 Lecture 10: Regression Metrics",
+    "section": "Ridge and RidgeCV",
+    "text": "Ridge and RidgeCV\n\nRidge Regression: alpha hyperparameter controls model complexity.\nRidgeCV: Ridge regression with built-in cross-validation to find the optimal alpha."
+  },
+  {
+    "objectID": "slides-10.html#alpha-hyperparameter",
+    "href": "slides-10.html#alpha-hyperparameter",
+    "title": "CPSC 330 Lecture 10: Regression Metrics",
+    "section": "alpha hyperparameter",
+    "text": "alpha hyperparameter\n\nRole of alpha:\n\nControls model complexity\nHigher alpha: Simpler model, smaller coefficients.\nLower alpha: Complex model, larger coefficients."
+  },
+  {
+    "objectID": "slides-10.html#regression-metrics-mse-rmse-mape-r2_score",
+    "href": "slides-10.html#regression-metrics-mse-rmse-mape-r2_score",
+    "title": "CPSC 330 Lecture 10: Regression Metrics",
+    "section": "Regression metrics: MSE, RMSE, MAPE, r2_score",
+    "text": "Regression metrics: MSE, RMSE, MAPE, r2_score\n\nMean Squared Error (MSE): Average of the squares of the errors.\nRoot Mean Squared Error (RMSE): Square root of MSE, same units as the target variable.\nr2 measures how much of the variation in the target variable your model can explain.-\nMean Absolute Percentage Error (MAPE): Average of the absolute percentage errors."
+  },
+  {
+    "objectID": "slides-10.html#applying-log-transformation-to-the-targets",
+    "href": "slides-10.html#applying-log-transformation-to-the-targets",
+    "title": "CPSC 330 Lecture 10: Regression Metrics",
+    "section": "Applying log transformation to the targets",
+    "text": "Applying log transformation to the targets\n\nSuitable when the target has a wide range and spans several orders of magnitude\n\nExample: counts data such as social media likes or price data\n\nHelps manage skewed data, making patterns more apparent and regression models more effective.\nTransformedTargetRegressor\n\nWraps a regression model and applies a transformation to the target values."
+  },
+  {
+    "objectID": "slides-10.html#iclicker-exercise-10.1",
+    "href": "slides-10.html#iclicker-exercise-10.1",
+    "title": "CPSC 330 Lecture 10: Regression Metrics",
+    "section": "iClicker Exercise 10.1",
+    "text": "iClicker Exercise 10.1\niClicker cloud join link: https://join.iclicker.com/YJHS\nSelect all of the following statements which are TRUE.\n\n\nPrice per square foot would be a good feature to add in our X.\n\n\nThe alpha hyperparameter of Ridge has similar interpretation of C hyperparameter of LogisticRegression; higher alpha means more complex model.\n\n\nIn Ridge, smaller alpha means bigger coefficients whereas bigger alpha means smaller coefficients."
+  },
+  {
+    "objectID": "slides-10.html#group-work-class-demo-live-coding",
+    "href": "slides-10.html#group-work-class-demo-live-coding",
+    "title": "CPSC 330 Lecture 10: Regression Metrics",
+    "section": "Group Work: Class Demo & Live Coding",
+    "text": "Group Work: Class Demo & Live Coding\nFor this demo, each student should click this link to create a new repo in their accounts, then clone that repo locally to follow along with the demo from today."
+  },
+  {
+    "objectID": "slides-10.html#which-metric-fits-the-scenario",
+    "href": "slides-10.html#which-metric-fits-the-scenario",
+    "title": "CPSC 330 Lecture 10: Regression Metrics",
+    "section": "Which metric fits the scenario?",
+    "text": "Which metric fits the scenario?\n\n\n\n\n\n\n\n\nScenario\nWhat matters most?\nBest metric(s)?\n\n\n\n\nPredicting house prices ranging from $60K–$800K.\nA $30K error is huge for a $60K house but small for a $500K house.\n\n\n\nPredicting exam scores (0–100).\nYou want an interpretable measure of average error in points.\n\n\n\nPredicting energy consumption in a large industrial system.\nLarge errors are very costly and should be penalized heavily.\n\n\n\nPredicting insurance claim amounts.\nYou want to compare how well different models explain the variation in claims."
+  },
+  {
+    "objectID": "slides-10.html#iclicker-exercise-10.2",
+    "href": "slides-10.html#iclicker-exercise-10.2",
+    "title": "CPSC 330 Lecture 10: Regression Metrics",
+    "section": "iClicker Exercise 10.2",
+    "text": "iClicker Exercise 10.2\niClicker cloud join link: https://join.iclicker.com/YJHS\nSelect all of the following statements which are TRUE.\n\n\nWe can use still use precision and recall for regression problems but now we have other metrics we can use as well.\n\n\nIn sklearn for regression problems, using r2_score() and .score() (with default values) will produce the same results.\n\n\nRMSE is always going to be non-negative.\n\n\nMSE does not directly provide the information about whether the model is underpredicting or overpredicting.\n\n\nWe can pass multiple scoring metrics to GridSearchCV or RandomizedSearchCV for regression as well as classification problems."
+  },
+  {
+    "objectID": "slides-10.html#which-metric-fits-the-scenario-1",
+    "href": "slides-10.html#which-metric-fits-the-scenario-1",
+    "title": "CPSC 330 Lecture 10: Regression Metrics",
+    "section": "Which metric fits the scenario?",
+    "text": "Which metric fits the scenario?\n\n\n\n\n\n\n\n\nScenario\nWhat matters most?\nBest metric(s)?\n\n\n\n\nPredicting house prices ranging from $60K–$800K.\nA $30K error is huge for a $60K house but small for a $500K house.\n\n\n\nPredicting exam scores (0–100).\nYou want an interpretable measure of average error in points.\n\n\n\nPredicting energy consumption in a large industrial system.\nLarge errors are very costly and should be penalized heavily.\n\n\n\nPredicting insurance claim amounts.\nYou want to compare how well different models explain the variation in claims."
+  },
+  {
+    "objectID": "slides-10.html#which-metric-fits-the-scenario-2",
+    "href": "slides-10.html#which-metric-fits-the-scenario-2",
+    "title": "CPSC 330 Lecture 10: Regression Metrics",
+    "section": "Which metric fits the scenario?",
+    "text": "Which metric fits the scenario?\n\nFor interpretability: prefer RMSE or MAPE\nWhen you want to discourage large error: MSE is common\nFor fair comparison: r2 provides a normalized score similar to accuracy in classification.\n\nFor imbalanced scales: MAPE helps when proportional error matters more than absolute error."
   },
   {
     "objectID": "slides-04.html#announcements",
