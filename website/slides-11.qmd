@@ -9,7 +9,7 @@ format:
     smaller: true
     center: true
     logo: img/UBC-CS-logo.png
-    theme: dracula
+    theme: [night, slides.scss]
     resources:
       - data/
       - img/  
@@ -263,3 +263,15 @@ Goal: Combining diverse models for better generalization
 
 :::
 ::::
+
+
+## Break
+
+Let's take a break!
+
+![](img/eva-coffee.png){fig-align="center"}
+/
+
+## Group Work: Class Demo & Live Coding
+
+For this demo, each student should [click this link](https://github.com/new?template_name=lecture11_demo&template_owner=ubc-cpsc330) to create a new repo in their accounts, then clone that repo locally to follow along with the demo from today.
