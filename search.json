@@ -1,143 +1,10 @@
 [
   {
-    "objectID": "slides-05.html#announcements",
-    "href": "slides-05.html#announcements",
-    "title": "Lecture 5: Preprocessing and sklearn pipelines",
-    "section": "Announcements",
-    "text": "Announcements\n\nI am away this Thursday and next Tuesday for EAAI 2026\n\nEAAI is the Symposium on Educational Advances in Artificial Intelligence in Singapore\n“Effective Strategies for Teaching Machine Learning”\n\nOther instructors Dr. Giulia Toti (Thursday) and Dr. Mehrdad Oveisi (Tuesday) will teach !\nHeads up: they won’t use Agora (or iClicker) for class participation ; just show of hands"
-  },
-  {
-    "objectID": "slides-05.html#recap",
-    "href": "slides-05.html#recap",
-    "title": "Lecture 5: Preprocessing and sklearn pipelines",
-    "section": "Recap",
-    "text": "Recap\n\nDecision trees: Split data into subsets based on feature values to create decision rules\n\\(k\\)-NNs: Classify based on the majority vote from k nearest neighbors\nSVM RBFs: Create a boundary using an RBF kernel to separate classes"
-  },
-  {
-    "objectID": "slides-05.html#comparison-of-models-activity",
-    "href": "slides-05.html#comparison-of-models-activity",
-    "title": "Lecture 5: Preprocessing and sklearn pipelines",
-    "section": "Comparison of models (activity)",
-    "text": "Comparison of models (activity)\n\n\n\n\n\n\n\n\n\nModel\nParameters and hyperparameters\nStrengths\nWeaknesses\n\n\n\n\nDecision Trees\n\n\n\n\n\nKNNs\n\n\n\n\n\nSVM RBF\n\n\n\n\n\n\n\nInterpretability (output easy to understand): - DT is very interpretable - KNN is moderately interpretable - SVM-RBF not interpretable at all\nNon-linearity: - DT Handle non-linearity, but boundaries are boxy - KNN can identify non-linear boundaries - SVM-RBF is a great choice for non-linearity\nScalability: - DT is very scalable, fast and can be done on large datasets - KNN is not scalable, because the distance needs to be calculated - SVM-RB is scalable, optimization is complicated so will be expensive"
-  },
-  {
-    "objectID": "slides-05.html#recap-1",
-    "href": "slides-05.html#recap-1",
-    "title": "Lecture 5: Preprocessing and sklearn pipelines",
-    "section": "Recap",
-    "text": "Recap\n\n\n\n\n\n\n\n\n\nAspect\nDecision Trees\nK-Nearest Neighbors (KNN)\nSupport Vector Machines (SVM) with RBF Kernel\n\n\n\n\nSensitivity to Outliers\n\n\n\n\n\nMemory Usage\n\n\n\n\n\nTraining Time\n\n\n\n\n\nPrediction Time\n\n\n\n\n\n\n\nSensitivity to Outliers - DT has some sensitivity to outliers (based on where the splits happen) - KNN is distance based, not that sensitive to outliers, but depends on the number of neighbours - SVM-RBF robust to outliers\nMemory Usage - DT is is very memory efficient, stores the model not the data - KNN uses a lot of memory, all data sets stored in memory - SVM-RBF is reasonably memory efficient, stores only support vectors\nTraining Time - DT training time is higher than KNN - KNN is 0, all points are stored - SVM-RBF much lower compared to KNN and DT\nPrediction Time - DT, also very efficient at predicting - KNN is high, all the work happens here - SVM-RBF, very efficient at predicting"
-  },
-  {
-    "objectID": "slides-05.html#preprocessing-motivation-example",
-    "href": "slides-05.html#preprocessing-motivation-example",
-    "title": "Lecture 5: Preprocessing and sklearn pipelines",
-    "section": "Preprocessing motivation: example",
-    "text": "Preprocessing motivation: example\nYou’re trying to find a suitable date based on:\n\nAge (closer to yours is better).\nNumber of Facebook Friends (closer to your social circle is ideal)."
-  },
-  {
-    "objectID": "slides-05.html#preprocessing-motivation-example-1",
-    "href": "slides-05.html#preprocessing-motivation-example-1",
-    "title": "Lecture 5: Preprocessing and sklearn pipelines",
-    "section": "Preprocessing motivation: example",
-    "text": "Preprocessing motivation: example\n\nYou are 30 years old and have 250 Facebook friends.\n\n\n\n\n\n\n\n\n\n\n\nPerson\nAge\n#FB Friends\nEuclidean Distance Calculation\nDistance\n\n\n\n\nA\n25\n400\n\\(\\sqrt{5^2 + 150^2}\\)\n150.08\n\n\nB\n27\n300\n\\(\\sqrt{3^2 + 50^2}\\)\n50.09\n\n\nC\n30\n500\n\\(\\sqrt{0^2 + 250^2}\\)\n250.00\n\n\nD\n60\n250\n\\(\\sqrt{30^2 + 0^2}\\)\n30.00\n\n\n\nBased on the distances, the two nearest neighbors (2-NN) are:\n\nPerson D (Distance: 30.00)\nPerson B (Distance: 50.09)\n\nWhat’s the problem here?"
-  },
-  {
-    "objectID": "slides-05.html#what-is-preprocessing",
-    "href": "slides-05.html#what-is-preprocessing",
-    "title": "Lecture 5: Preprocessing and sklearn pipelines",
-    "section": "What is preprocessing?",
-    "text": "What is preprocessing?\n\nPreprocessing is about making the raw dataset ready for machine learning."
-  },
-  {
-    "objectID": "slides-05.html#clicker-5.1",
-    "href": "slides-05.html#clicker-5.1",
-    "title": "Lecture 5: Preprocessing and sklearn pipelines",
-    "section": "Clicker 5.1",
-    "text": "Clicker 5.1\nParticipate using Agora (code: agentic)\nTake a guess: In your machine learning project, how much time will you typically spend on data preparation and transformation?\n\n\n~80% of the project time\n\n\n~20% of the project time\n\n\n~50% of the project time\n\n\nNone. Most of the time will be spent on model building\n\n\nThe question is adapted from here."
-  },
-  {
-    "objectID": "slides-05.html#clicker-5.2",
-    "href": "slides-05.html#clicker-5.2",
-    "title": "Lecture 5: Preprocessing and sklearn pipelines",
-    "section": "Clicker 5.2",
-    "text": "Clicker 5.2\nParticipate using Agora (code: agentic)\nSelect all of the following statements which are TRUE.\n\n\nStandardScaler ensures a fixed range (i.e., minimum and maximum values) for the features.\n\n\nStandardScaler calculates mean and standard deviation for each feature separately.\n\n\nIn general, it’s a good idea to apply scaling on numeric features before training \\(k\\)-NN or SVM RBF models.\n\n\nThe transformed feature values might be hard to interpret for humans.\n\n\nAfter applying SimpleImputer The transformed data has a different shape than the original data."
-  },
-  {
-    "objectID": "slides-05.html#clicker-5.3",
-    "href": "slides-05.html#clicker-5.3",
-    "title": "Lecture 5: Preprocessing and sklearn pipelines",
-    "section": "Clicker 5.3",
-    "text": "Clicker 5.3\nParticipate using Agora (code: agentic)\nSelect all of the following statements which are TRUE.\n\n\nYou can have scaling of numeric features, one-hot encoding of categorical features, and scikit-learn estimator within a single pipeline.\n\n\nOnce you have a scikit-learn pipeline object with an estimator as the last step, you can call fit, predict, and score on it.\n\n\nYou can carry out data splitting within scikit-learn pipeline.\n\n\nWe have to be careful of the order we put each transformation and model in a pipeline.\n\n\n\nA: False; It doesn’t make sense to apply one hot encoding to numeric features, and it doesn’t make sense to apply standard scalar to categorical features. Sequence doesn’t make sense, we need column transformers\nB: True; can do this as long as the estimator is the last step\nC: False\nD: True;"
-  },
-  {
-    "objectID": "slides-05.html#imputation-fill-the-gaps",
-    "href": "slides-05.html#imputation-fill-the-gaps",
-    "title": "Lecture 5: Preprocessing and sklearn pipelines",
-    "section": "Imputation: Fill the gaps! (🟩 🟧 🟦)",
-    "text": "Imputation: Fill the gaps! (🟩 🟧 🟦)\nFill in missing data using a chosen strategy:\n\nMean: Replace missing values with the average of the available data.\nMedian: Use the middle value.\nMost Frequent: Use the most common value (mode).\nKNN Imputation: Fill based on similar neighbors.\n\nExample:\nImputation is like filling in your average or median or most frequent grade for an assessment you missed.\nfrom sklearn.impute import SimpleImputer\nimputer = SimpleImputer(strategy='mean')\nX_imputed = imputer.fit_transform(X)"
-  },
-  {
-    "objectID": "slides-05.html#scaling-everything-to-the-same-range",
-    "href": "slides-05.html#scaling-everything-to-the-same-range",
-    "title": "Lecture 5: Preprocessing and sklearn pipelines",
-    "section": "Scaling: Everything to the same range! (📉 📈)",
-    "text": "Scaling: Everything to the same range! (📉 📈)\nEnsure all features have a comparable range.\n\nStandardScaler: Mean = 0, Standard Deviation = 1.\n\nExample:\nScaling is like adjusting the number of everyone’s Facebook friends so that both the number of friends and their age are on a comparable scale. This way, one feature doesn’t dominate the other when making comparisons.\nfrom sklearn.preprocessing import StandardScaler\nscaler = StandardScaler()\nX_scaled = scaler.fit_transform(X)"
-  },
-  {
-    "objectID": "slides-05.html#one-hot-encoding-1-0-0",
-    "href": "slides-05.html#one-hot-encoding-1-0-0",
-    "title": "Lecture 5: Preprocessing and sklearn pipelines",
-    "section": "One-Hot encoding: 🍎 → 1️⃣ 0️⃣ 0️⃣",
-    "text": "One-Hot encoding: 🍎 → 1️⃣ 0️⃣ 0️⃣\nConvert categorical features into binary columns.\n\nCreates new binary columns for each category.\nUseful for handling categorical data in machine learning models.\n\nExample:\nTurn “Apple, Banana, Orange” into binary columns:\n\n\n\nFruit\n🍎\n🍌\n🍊\n\n\n\n\nApple 🍎\n1\n0\n0\n\n\nBanana 🍌\n0\n1\n0\n\n\nOrange 🍊\n0\n0\n1\n\n\n\nfrom sklearn.preprocessing import OneHotEncoder\nencoder = OneHotEncoder()\nX_encoded = encoder.fit_transform(X)"
-  },
-  {
-    "objectID": "slides-05.html#ordinal-encoding-ranking-matters-3",
-    "href": "slides-05.html#ordinal-encoding-ranking-matters-3",
-    "title": "Lecture 5: Preprocessing and sklearn pipelines",
-    "section": "Ordinal encoding: Ranking matters! (⭐️⭐️⭐️ → 3️⃣)",
-    "text": "Ordinal encoding: Ranking matters! (⭐️⭐️⭐️ → 3️⃣)\nConvert categories into integer values that have a meaningful order.\n\nAssign integers based on order or rank.\nUseful when there is an inherent ranking in the data.\n\nExample:\nTurn “Poor, Average, Good” into 1, 2, 3:\n\n\n\nRating\nOrdinal\n\n\n\n\nPoor\n1\n\n\nAverage\n2\n\n\nGood\n3\n\n\n\nfrom sklearn.preprocessing import OrdinalEncoder\nencoder = OrdinalEncoder()\nX_ordinal = encoder.fit_transform(X)"
-  },
-  {
-    "objectID": "slides-05.html#transformers",
-    "href": "slides-05.html#transformers",
-    "title": "Lecture 5: Preprocessing and sklearn pipelines",
-    "section": "Transformers",
-    "text": "Transformers\n\nAre used to transform or preprocess data.\nImplement the fit and transform methods.\n\nfit(X): Learns parameters from the data.\ntransform(X): Applies the learned transformation to the data.\n\nExamples:\n\nImputation (SimpleImputer): Fills missing values.\nScaling (StandardScaler): Standardizes features."
-  },
-  {
-    "objectID": "slides-05.html#estimators",
-    "href": "slides-05.html#estimators",
-    "title": "Lecture 5: Preprocessing and sklearn pipelines",
-    "section": "Estimators",
-    "text": "Estimators\n\nUsed to make predictions.\nImplement fit and predict methods.\n\nfit(X, y): Learns from labeled data.\npredict(X): Makes predictions on new data.\n\nExamples: DecisionTreeClassifier, SVC, KNeighborsClassifier"
-  },
-  {
-    "objectID": "slides-05.html#the-golden-rule-in-feature-transformations",
-    "href": "slides-05.html#the-golden-rule-in-feature-transformations",
-    "title": "Lecture 5: Preprocessing and sklearn pipelines",
-    "section": "The golden rule in feature transformations",
-    "text": "The golden rule in feature transformations\n\nNever transform the entire dataset at once!\nWhy? It leads to data leakage — using information from the test set in your training process, which can artificially inflate model performance.\nFit transformers like scalers and imputers on the training set only.\nApply the transformations to both the training and test sets separately.\n\nExample:\nfrom sklearn.preprocessing import StandardScaler\nscaler = StandardScaler()\nX_train_scaled = scaler.fit_transform(X_train)\nX_test_scaled = scaler.transform(X_test)"
-  },
-  {
-    "objectID": "slides-05.html#sklearn-pipelines",
-    "href": "slides-05.html#sklearn-pipelines",
-    "title": "Lecture 5: Preprocessing and sklearn pipelines",
-    "section": "sklearn Pipelines",
-    "text": "sklearn Pipelines\n\nPipeline is a way to chain multiple steps (e.g., preprocessing + model fitting) into a single workflow.\nSimplify the code and improves readability.\nReduce the risk of data leakage by ensuring proper transformation of the training and test sets.\nAutomatically apply transformations in sequence.\n\nExample:\nChaining a StandardScaler with a KNeighborsClassifier model.\nfrom sklearn.pipeline import make_pipeline\nfrom sklearn.preprocessing import StandardScaler\nfrom sklearn.neighbors import KNeighborsClassifier\n\npipeline = make_pipeline(StandardScaler(), KNeighborsClassifier())\n\npipeline.fit(X_train, y_train)\ny_pred = pipeline.predict(X_test)"
-  },
-  {
-    "objectID": "slides-05.html#break",
-    "href": "slides-05.html#break",
-    "title": "Lecture 5: Preprocessing and sklearn pipelines",
-    "section": "Break",
-    "text": "Break\nLet’s take a break!\n /"
-  },
-  {
-    "objectID": "slides-05.html#group-work-class-demo-live-coding",
-    "href": "slides-05.html#group-work-class-demo-live-coding",
-    "title": "Lecture 5: Preprocessing and sklearn pipelines",
-    "section": "Group Work: Class Demo & Live Coding",
-    "text": "Group Work: Class Demo & Live Coding\n\nLet’s walk through strategies for handling missing values, categorical variables, text, scaling, and irrelevant features using a class demo.\nFor this demo, each student should click this link to create a new repo in their accounts, then clone that repo locally to follow along with the demo from today."
+    "objectID": "slides.html",
+    "href": "slides.html",
+    "title": "Overview",
+    "section": "",
+    "text": "Title\n\n\n\nDescription\n\n\n\n\n\n\n\n\nLecture 1: Introduction to CPSC 330\n\n\nWhat is machine learning, types of machine learning, learning to navigate through the course materials, getting familiar with the course policies\n\n\n\n\n\n\nLecture 2: Terminology, Baselines, Decision Trees\n\n\nTerminology and Decision Trees\n\n\n\n\n\n\nLecture 3: ML fundamentals\n\n\ngeneralization, data splitting, overfitting, underfitting, the fundamental tradeoff, the golden rule\n\n\n\n\n\n\nLecture 4: \\(k\\)-nearest neighbours and SVM RBFs\n\n\nintroduction to KNNs, hyperparameter n_neighbours or \\(k\\), C and gamma hyperparameters of SVM RBF, decision boundaries with different values of hyperparameters.\n\n\n\n\n\n\nLecture 5: Preprocessing and sklearn pipelines\n\n\nPre-processing, Transformations, and pipelines.\n\n\n\n\n\n\nCPSC 330 Lecture 8: Hyperparameter Optimization\n\n\nLinear regression, logistic regression, prediction probabilities, sigmoid, interpretation of coefficients\n\n\n\n\n\n\nCPSC 330 Lecture 9: Classification Metrics\n\n\nconfusion metrics, precision, recall, f1-score, PR curves, AP score, ROC curve, ROC AUC, class imbalance\n\n\n\n\n\n\nCPSC 330 Lecture 10: Regression Metrics\n\n\nRegression metrics\n\n\n\n\n\n\nCPSC 330 Lecture 11: Ensembles\n\n\n \n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "slides-03.html#announcements",
@@ -257,6 +124,174 @@
     "title": "Lecture 3: ML fundamentals",
     "section": "Group Work: Class Demo & Live Coding",
     "text": "Group Work: Class Demo & Live Coding\nFor this demo, each student should click this link to create a new repo in their accounts, then clone that repo locally to follow along with the demo from today."
+  },
+  {
+    "objectID": "slides-08.html#announcements",
+    "href": "slides-08.html#announcements",
+    "title": "CPSC 330 Lecture 8: Hyperparameter Optimization",
+    "section": "Announcements",
+    "text": "Announcements\n\nImportant information about midterm 1 posted on Ed Discussion!\nReminder to book your CBTF Test reservation"
+  },
+  {
+    "objectID": "slides-08.html#clicker-8.0a---logistic-regression-1",
+    "href": "slides-08.html#clicker-8.0a---logistic-regression-1",
+    "title": "CPSC 330 Lecture 8: Hyperparameter Optimization",
+    "section": "Clicker 8.0a - Logistic Regression 1",
+    "text": "Clicker 8.0a - Logistic Regression 1\nWhich of the following are True?\n\n\nLogistic regression can be used for binary as well as multi-class classification tasks.\n\n\n\nLogistic regression computes a weighted sum of features and applies the sigmoid function.\n\n\n\nThe sigmoid function ensures outputs between 0 and 1, interpreted as probabilities.\n\n\n\nThe decision boundary in logistic regression is linear, even though the sigmoid is applied.\n\n\nWhen the weighted sum is 0, \\(\\hat{p}\\) = 0.5."
+  },
+  {
+    "objectID": "slides-08.html#clicker-8.0b---logistic-regression-2",
+    "href": "slides-08.html#clicker-8.0b---logistic-regression-2",
+    "title": "CPSC 330 Lecture 8: Hyperparameter Optimization",
+    "section": "Clicker 8.0b - Logistic Regression 2",
+    "text": "Clicker 8.0b - Logistic Regression 2\nWhich of the following are True?\n\n\nLogistic regression coefficients always have to be positive.\n\n\n\nLarger coefficients (in absolute value) indicate stronger feature influence on the prediction.\n\n\n\nFor \\(d\\) features, the decision boundary is a \\(d-1\\) dimensional hyperplane.\n\n\n\nIn sklearn, very small C value shrinks coefficients, often leading to underfitting.\n\n\n\nA larger C value allows larger coefficients and a more complex model."
+  },
+  {
+    "objectID": "slides-08.html#recap-logistic-regression",
+    "href": "slides-08.html#recap-logistic-regression",
+    "title": "CPSC 330 Lecture 8: Hyperparameter Optimization",
+    "section": "Recap: Logistic regression",
+    "text": "Recap: Logistic regression\n\nA linear model used for binary classification tasks.\n\n(Optional) There is am extension of logistic regression called multinomial logistic regression for multiclass classification.\n\nParameters:\n\nCoefficients (Weights): The model learns a coefficient or a weight associated with each feature that represents its importance.\nBias (Intercept): A constant term added to the linear combination of features and their coefficients."
+  },
+  {
+    "objectID": "slides-08.html#recap-logistic-regression-1",
+    "href": "slides-08.html#recap-logistic-regression-1",
+    "title": "CPSC 330 Lecture 8: Hyperparameter Optimization",
+    "section": "Recap: Logistic regression",
+    "text": "Recap: Logistic regression\n\nThe model computes a weighted sum of the input features’ values, adjusted by their respective coefficients and the bias term.\nThis weighted sum is passed through a sigmoid function to transform it into a probability score, indicating the likelihood of the input belonging to the “positive” class.\n\n\\[ \\hat{p} = \\sigma\\left(\\sum_{i=1}^d w_i x_i + b\\right) \\]\n\n\\(P_{hat}\\) is the predicted probability of the example belonging to the positive class.\n\\(w_i\\) is the learned weight associated with feature \\(i\\)\n\\(x_i\\) is the value of the input feature \\(i\\)\n\\(b\\) is the bias term"
+  },
+  {
+    "objectID": "slides-08.html#recap-logistic-regression-2",
+    "href": "slides-08.html#recap-logistic-regression-2",
+    "title": "CPSC 330 Lecture 8: Hyperparameter Optimization",
+    "section": "Recap: Logistic regression",
+    "text": "Recap: Logistic regression\n\nFor a dataset with \\(d\\) features, the decision boundary that separates the classes is a \\(d-1\\) dimensional hyperplane.\n\nComplexity hyperparameter: C in sklearn.\n\nHigher C \\(\\rightarrow\\) more complex model meaning larger coefficients\nLower C \\(\\rightarrow\\) less complex model meaning smaller coefficients"
+  },
+  {
+    "objectID": "slides-08.html#data",
+    "href": "slides-08.html#data",
+    "title": "CPSC 330 Lecture 8: Hyperparameter Optimization",
+    "section": "Data",
+    "text": "Data\n\nsms_df = pd.read_csv(DATA_DIR + \"spam.csv\", encoding=\"latin-1\")\nsms_df = sms_df.drop(columns = [\"Unnamed: 2\", \"Unnamed: 3\", \"Unnamed: 4\"])\nsms_df = sms_df.rename(columns={\"v1\": \"target\", \"v2\": \"sms\"})\ntrain_df, test_df = train_test_split(sms_df, test_size=0.10, random_state=42)\nX_train, y_train = train_df[\"sms\"], train_df[\"target\"]\nX_test, y_test = test_df[\"sms\"], test_df[\"target\"]\ntrain_df.head(4)\n\n\n\n\n\n\n\n\ntarget\nsms\n\n\n\n\n3130\nspam\nLookAtMe!: Thanks for your purchase of a video...\n\n\n106\nham\nAight, I'll hit you up when I get some cash\n\n\n4697\nham\nDon no da:)whats you plan?\n\n\n856\nham\nGoing to take your babe out ?"
+  },
+  {
+    "objectID": "slides-08.html#model-building",
+    "href": "slides-08.html#model-building",
+    "title": "CPSC 330 Lecture 8: Hyperparameter Optimization",
+    "section": "Model building",
+    "text": "Model building\n\nLet’s define a pipeline\n\n\npipe_svm = make_pipeline(CountVectorizer(), SVC())\n\n\nSuppose we want to try out different hyperparameter values.\n\n\nparameters = {\n    \"max_features\": [100, 200, 400],\n    \"gamma\": [0.01, 0.1, 1.0],\n    \"C\": [0.01, 0.1, 1.0],\n}"
+  },
+  {
+    "objectID": "slides-08.html#hyperparameter-optimization-with-loops",
+    "href": "slides-08.html#hyperparameter-optimization-with-loops",
+    "title": "CPSC 330 Lecture 8: Hyperparameter Optimization",
+    "section": "Hyperparameter optimization with loops",
+    "text": "Hyperparameter optimization with loops\n\nDefine a parameter space.\nIterate through possible combinations.\nEvaluate model performance.\nWhat are some limitations of this approach?"
+  },
+  {
+    "objectID": "slides-08.html#sklearn-methods",
+    "href": "slides-08.html#sklearn-methods",
+    "title": "CPSC 330 Lecture 8: Hyperparameter Optimization",
+    "section": "sklearn methods",
+    "text": "sklearn methods\n\nsklearn provides two main methods for hyperparameter optimization\n\nGrid Search\nRandom Search"
+  },
+  {
+    "objectID": "slides-08.html#grid-search",
+    "href": "slides-08.html#grid-search",
+    "title": "CPSC 330 Lecture 8: Hyperparameter Optimization",
+    "section": "Grid Search",
+    "text": "Grid Search\n\nCovers all possible combinations from the provided grid.\nCan be parallelized easily.\nIntegrates cross-validation."
+  },
+  {
+    "objectID": "slides-08.html#grid-search-example",
+    "href": "slides-08.html#grid-search-example",
+    "title": "CPSC 330 Lecture 8: Hyperparameter Optimization",
+    "section": "Grid search example",
+    "text": "Grid search example\n\nfrom sklearn.model_selection import GridSearchCV\n\npipe_svm = make_pipeline(CountVectorizer(), SVC())\n\nparam_grid = {\n    \"countvectorizer__max_features\": [100, 200, 400],\n    \"svc__gamma\": [0.01, 0.1, 1.0],\n    \"svc__C\": [0.01, 0.1, 1.0],\n}\ngrid_search = GridSearchCV(pipe_svm, \n                  param_grid = param_grid, \n                  n_jobs=-1, \n                  return_train_score=True\n                 )\ngrid_search.fit(X_train, y_train)\ngrid_search.best_score_\n\nnp.float64(0.9780612255051213)"
+  },
+  {
+    "objectID": "slides-08.html#random-search",
+    "href": "slides-08.html#random-search",
+    "title": "CPSC 330 Lecture 8: Hyperparameter Optimization",
+    "section": "Random Search",
+    "text": "Random Search\n\nMore efficient than grid search when dealing with large hyperparameter spaces.\nSamples a given number of parameter settings from distributions."
+  },
+  {
+    "objectID": "slides-08.html#random-search-example",
+    "href": "slides-08.html#random-search-example",
+    "title": "CPSC 330 Lecture 8: Hyperparameter Optimization",
+    "section": "Random search example",
+    "text": "Random search example\n\nfrom sklearn.model_selection import RandomizedSearchCV\nfrom scipy.stats import randint\n\npipe_svc = make_pipeline(CountVectorizer(), SVC())\n\nparam_dist = {\n    \"countvectorizer__max_features\": randint(100, 2000), \n    \"svc__C\": uniform(0.1, 1e4),  # loguniform(1e-3, 1e3),\n    \"svc__gamma\": loguniform(1e-5, 1e3),\n}\nrandom_search = RandomizedSearchCV(pipe_svm,                                    \n                  param_distributions = param_dist, \n                  n_iter=10, \n                  n_jobs=-1, \n                  return_train_score=True)\n\n# Carry out the search\nrandom_search.fit(X_train, y_train)\nrandom_search.best_score_\n\nnp.float64(0.9822492602034216)"
+  },
+  {
+    "objectID": "slides-08.html#pizza-baking-competition-example",
+    "href": "slides-08.html#pizza-baking-competition-example",
+    "title": "CPSC 330 Lecture 8: Hyperparameter Optimization",
+    "section": "Pizza baking competition example",
+    "text": "Pizza baking competition example\nImagine that you participate in pizza baking competition.\n\n\n\n\n\nTraining phase: Collecting recipes and practicing at home\n\nValidation phase: Inviting a group of friends for tasting and feedback\n\nTest phase (competition day): Serving the judges"
+  },
+  {
+    "objectID": "slides-08.html#overfitting-on-the-validation-set",
+    "href": "slides-08.html#overfitting-on-the-validation-set",
+    "title": "CPSC 330 Lecture 8: Hyperparameter Optimization",
+    "section": "Overfitting on the validation set",
+    "text": "Overfitting on the validation set\n\n\n\nYour friends loved your pineapple pizza.\nYou fine-tune your recipe for the same group of friends, perfecting it for their tastes.\n\n\n\n\nOn the competition day, you confidently present your perfected pineapple pizza.\n\nJudges are not impressed: “This doesn’t appeal to a broad audience.”\n\n\n\nThis is similar to reusing the same validation set again and again to perfect the model for it!"
+  },
+  {
+    "objectID": "slides-08.html#lesson-overfitting-on-the-validation-set",
+    "href": "slides-08.html#lesson-overfitting-on-the-validation-set",
+    "title": "CPSC 330 Lecture 8: Hyperparameter Optimization",
+    "section": "Lesson: Overfitting on the validation set",
+    "text": "Lesson: Overfitting on the validation set\n\nYou tailored your recipe too closely to your friends’ tastes.\n\nThey were not representative of the broader audience (the judges).\n\nThe pizza, while perfect for your validation group, failed to generalize.\n\nOver many iterations, the validation set no longer gives an unbiased estimate of performance.\n\nThat’s why we need a separate test set (like a group of tasters who never influenced your pizza)."
+  },
+  {
+    "objectID": "slides-08.html#optimization-bias-1",
+    "href": "slides-08.html#optimization-bias-1",
+    "title": "CPSC 330 Lecture 8: Hyperparameter Optimization",
+    "section": "Optimization bias",
+    "text": "Optimization bias\n\nWhy do we need separate validation and test datasets?"
+  },
+  {
+    "objectID": "slides-08.html#mitigating-optimization-bias.",
+    "href": "slides-08.html#mitigating-optimization-bias.",
+    "title": "CPSC 330 Lecture 8: Hyperparameter Optimization",
+    "section": "Mitigating optimization bias.",
+    "text": "Mitigating optimization bias.\n\nCross-validation\nEnsembles\nRegularization and choosing a simpler model"
+  },
+  {
+    "objectID": "slides-08.html#clicker-8.1",
+    "href": "slides-08.html#clicker-8.1",
+    "title": "CPSC 330 Lecture 8: Hyperparameter Optimization",
+    "section": "Clicker 8.1",
+    "text": "Clicker 8.1\nSelect all of the following statements which are TRUE.\n\n\nIf you get best results at the edges of your parameter grid, it might be a good idea to adjust the range of values in your parameter grid.\n\n\nGrid search is guaranteed to find the best hyperparameter values.\n\n\nIt is possible to get different hyperparameters in different runs of RandomizedSearchCV."
+  },
+  {
+    "objectID": "slides-08.html#questions-for-you",
+    "href": "slides-08.html#questions-for-you",
+    "title": "CPSC 330 Lecture 8: Hyperparameter Optimization",
+    "section": "Questions for you",
+    "text": "Questions for you\n\nYou have a dataset and you give me 1/10th of it. The dataset given to me is rather small and so I split it into 96% train and 4% validation split. I carry out hyperparameter optimization using a single 4% validation split and report validation accuracy of 0.97. Would it classify the rest of the data with similar accuracy?\n\nProbably\nProbably not"
+  },
+  {
+    "objectID": "slides-08.html#questions-for-class-discussion",
+    "href": "slides-08.html#questions-for-class-discussion",
+    "title": "CPSC 330 Lecture 8: Hyperparameter Optimization",
+    "section": "Questions for class discussion",
+    "text": "Questions for class discussion\n\nSuppose you have 10 hyperparameters, each with 4 possible values. If you run GridSearchCV with this parameter grid, how many cross-validation experiments will be carried out?\nSuppose you have 10 hyperparameters and each takes 4 values. If you run RandomizedSearchCV with this parameter grid with n_iter=20, how many cross-validation experiments will be carried out?"
+  },
+  {
+    "objectID": "slides-08.html#group-work-class-demo-live-coding",
+    "href": "slides-08.html#group-work-class-demo-live-coding",
+    "title": "CPSC 330 Lecture 8: Hyperparameter Optimization",
+    "section": "Group Work: Class Demo & Live Coding",
+    "text": "Group Work: Class Demo & Live Coding\nFor this demo, each student should click this link to create a new repo in their accounts, then clone that repo locally to follow along with the demo from today."
+  },
+  {
+    "objectID": "slides-08.html#group-work-invention-activity",
+    "href": "slides-08.html#group-work-invention-activity",
+    "title": "CPSC 330 Lecture 8: Hyperparameter Optimization",
+    "section": "Group Work: Invention Activity",
+    "text": "Group Work: Invention Activity\nSo far we have looked only at score as a metric for evaluating our metrics.\nWhat else could be used as a possible metric? Think of what else might be important for machine learning practioners and stakeholders?\nIn your group, brainstorm 4 alternative options:"
   },
   {
     "objectID": "slides-01.html#introductions",
@@ -819,181 +854,6 @@
     "text": "Looking ahead to next class\nIt is very important that you watch the assigned pre-lecture videos before class!"
   },
   {
-    "objectID": "slides-08.html#announcements",
-    "href": "slides-08.html#announcements",
-    "title": "CPSC 330 Lecture 8: Hyperparameter Optimization",
-    "section": "Announcements",
-    "text": "Announcements\n\nImportant information about midterm 1 posted on Ed Discussion!\nReminder to book your CBTF Test reservation"
-  },
-  {
-    "objectID": "slides-08.html#clicker-8.0a---logistic-regression-1",
-    "href": "slides-08.html#clicker-8.0a---logistic-regression-1",
-    "title": "CPSC 330 Lecture 8: Hyperparameter Optimization",
-    "section": "Clicker 8.0a - Logistic Regression 1",
-    "text": "Clicker 8.0a - Logistic Regression 1\nWhich of the following are True?\n\n\nLogistic regression can be used for binary as well as multi-class classification tasks.\n\n\n\nLogistic regression computes a weighted sum of features and applies the sigmoid function.\n\n\n\nThe sigmoid function ensures outputs between 0 and 1, interpreted as probabilities.\n\n\n\nThe decision boundary in logistic regression is linear, even though the sigmoid is applied.\n\n\nWhen the weighted sum is 0, \\(\\hat{p}\\) = 0.5."
-  },
-  {
-    "objectID": "slides-08.html#clicker-8.0b---logistic-regression-2",
-    "href": "slides-08.html#clicker-8.0b---logistic-regression-2",
-    "title": "CPSC 330 Lecture 8: Hyperparameter Optimization",
-    "section": "Clicker 8.0b - Logistic Regression 2",
-    "text": "Clicker 8.0b - Logistic Regression 2\nWhich of the following are True?\n\n\nLogistic regression coefficients always have to be positive.\n\n\n\nLarger coefficients (in absolute value) indicate stronger feature influence on the prediction.\n\n\n\nFor \\(d\\) features, the decision boundary is a \\(d-1\\) dimensional hyperplane.\n\n\n\nIn sklearn, very small C value shrinks coefficients, often leading to underfitting.\n\n\n\nA larger C value allows larger coefficients and a more complex model."
-  },
-  {
-    "objectID": "slides-08.html#recap-logistic-regression",
-    "href": "slides-08.html#recap-logistic-regression",
-    "title": "CPSC 330 Lecture 8: Hyperparameter Optimization",
-    "section": "Recap: Logistic regression",
-    "text": "Recap: Logistic regression\n\nA linear model used for binary classification tasks.\n\n(Optional) There is am extension of logistic regression called multinomial logistic regression for multiclass classification.\n\nParameters:\n\nCoefficients (Weights): The model learns a coefficient or a weight associated with each feature that represents its importance.\nBias (Intercept): A constant term added to the linear combination of features and their coefficients."
-  },
-  {
-    "objectID": "slides-08.html#recap-logistic-regression-1",
-    "href": "slides-08.html#recap-logistic-regression-1",
-    "title": "CPSC 330 Lecture 8: Hyperparameter Optimization",
-    "section": "Recap: Logistic regression",
-    "text": "Recap: Logistic regression\n\nThe model computes a weighted sum of the input features’ values, adjusted by their respective coefficients and the bias term.\nThis weighted sum is passed through a sigmoid function to transform it into a probability score, indicating the likelihood of the input belonging to the “positive” class.\n\n\\[ \\hat{p} = \\sigma\\left(\\sum_{i=1}^d w_i x_i + b\\right) \\]\n\n\\(P_{hat}\\) is the predicted probability of the example belonging to the positive class.\n\\(w_i\\) is the learned weight associated with feature \\(i\\)\n\\(x_i\\) is the value of the input feature \\(i\\)\n\\(b\\) is the bias term"
-  },
-  {
-    "objectID": "slides-08.html#recap-logistic-regression-2",
-    "href": "slides-08.html#recap-logistic-regression-2",
-    "title": "CPSC 330 Lecture 8: Hyperparameter Optimization",
-    "section": "Recap: Logistic regression",
-    "text": "Recap: Logistic regression\n\nFor a dataset with \\(d\\) features, the decision boundary that separates the classes is a \\(d-1\\) dimensional hyperplane.\n\nComplexity hyperparameter: C in sklearn.\n\nHigher C \\(\\rightarrow\\) more complex model meaning larger coefficients\nLower C \\(\\rightarrow\\) less complex model meaning smaller coefficients"
-  },
-  {
-    "objectID": "slides-08.html#data",
-    "href": "slides-08.html#data",
-    "title": "CPSC 330 Lecture 8: Hyperparameter Optimization",
-    "section": "Data",
-    "text": "Data\n\nsms_df = pd.read_csv(DATA_DIR + \"spam.csv\", encoding=\"latin-1\")\nsms_df = sms_df.drop(columns = [\"Unnamed: 2\", \"Unnamed: 3\", \"Unnamed: 4\"])\nsms_df = sms_df.rename(columns={\"v1\": \"target\", \"v2\": \"sms\"})\ntrain_df, test_df = train_test_split(sms_df, test_size=0.10, random_state=42)\nX_train, y_train = train_df[\"sms\"], train_df[\"target\"]\nX_test, y_test = test_df[\"sms\"], test_df[\"target\"]\ntrain_df.head(4)\n\n\n\n\n\n\n\n\ntarget\nsms\n\n\n\n\n3130\nspam\nLookAtMe!: Thanks for your purchase of a video...\n\n\n106\nham\nAight, I'll hit you up when I get some cash\n\n\n4697\nham\nDon no da:)whats you plan?\n\n\n856\nham\nGoing to take your babe out ?"
-  },
-  {
-    "objectID": "slides-08.html#model-building",
-    "href": "slides-08.html#model-building",
-    "title": "CPSC 330 Lecture 8: Hyperparameter Optimization",
-    "section": "Model building",
-    "text": "Model building\n\nLet’s define a pipeline\n\n\npipe_svm = make_pipeline(CountVectorizer(), SVC())\n\n\nSuppose we want to try out different hyperparameter values.\n\n\nparameters = {\n    \"max_features\": [100, 200, 400],\n    \"gamma\": [0.01, 0.1, 1.0],\n    \"C\": [0.01, 0.1, 1.0],\n}"
-  },
-  {
-    "objectID": "slides-08.html#hyperparameter-optimization-with-loops",
-    "href": "slides-08.html#hyperparameter-optimization-with-loops",
-    "title": "CPSC 330 Lecture 8: Hyperparameter Optimization",
-    "section": "Hyperparameter optimization with loops",
-    "text": "Hyperparameter optimization with loops\n\nDefine a parameter space.\nIterate through possible combinations.\nEvaluate model performance.\nWhat are some limitations of this approach?"
-  },
-  {
-    "objectID": "slides-08.html#sklearn-methods",
-    "href": "slides-08.html#sklearn-methods",
-    "title": "CPSC 330 Lecture 8: Hyperparameter Optimization",
-    "section": "sklearn methods",
-    "text": "sklearn methods\n\nsklearn provides two main methods for hyperparameter optimization\n\nGrid Search\nRandom Search"
-  },
-  {
-    "objectID": "slides-08.html#grid-search",
-    "href": "slides-08.html#grid-search",
-    "title": "CPSC 330 Lecture 8: Hyperparameter Optimization",
-    "section": "Grid Search",
-    "text": "Grid Search\n\nCovers all possible combinations from the provided grid.\nCan be parallelized easily.\nIntegrates cross-validation."
-  },
-  {
-    "objectID": "slides-08.html#grid-search-example",
-    "href": "slides-08.html#grid-search-example",
-    "title": "CPSC 330 Lecture 8: Hyperparameter Optimization",
-    "section": "Grid search example",
-    "text": "Grid search example\n\nfrom sklearn.model_selection import GridSearchCV\n\npipe_svm = make_pipeline(CountVectorizer(), SVC())\n\nparam_grid = {\n    \"countvectorizer__max_features\": [100, 200, 400],\n    \"svc__gamma\": [0.01, 0.1, 1.0],\n    \"svc__C\": [0.01, 0.1, 1.0],\n}\ngrid_search = GridSearchCV(pipe_svm, \n                  param_grid = param_grid, \n                  n_jobs=-1, \n                  return_train_score=True\n                 )\ngrid_search.fit(X_train, y_train)\ngrid_search.best_score_\n\nnp.float64(0.9780612255051213)"
-  },
-  {
-    "objectID": "slides-08.html#random-search",
-    "href": "slides-08.html#random-search",
-    "title": "CPSC 330 Lecture 8: Hyperparameter Optimization",
-    "section": "Random Search",
-    "text": "Random Search\n\nMore efficient than grid search when dealing with large hyperparameter spaces.\nSamples a given number of parameter settings from distributions."
-  },
-  {
-    "objectID": "slides-08.html#random-search-example",
-    "href": "slides-08.html#random-search-example",
-    "title": "CPSC 330 Lecture 8: Hyperparameter Optimization",
-    "section": "Random search example",
-    "text": "Random search example\n\nfrom sklearn.model_selection import RandomizedSearchCV\nfrom scipy.stats import randint\n\npipe_svc = make_pipeline(CountVectorizer(), SVC())\n\nparam_dist = {\n    \"countvectorizer__max_features\": randint(100, 2000), \n    \"svc__C\": uniform(0.1, 1e4),  # loguniform(1e-3, 1e3),\n    \"svc__gamma\": loguniform(1e-5, 1e3),\n}\nrandom_search = RandomizedSearchCV(pipe_svm,                                    \n                  param_distributions = param_dist, \n                  n_iter=10, \n                  n_jobs=-1, \n                  return_train_score=True)\n\n# Carry out the search\nrandom_search.fit(X_train, y_train)\nrandom_search.best_score_\n\nnp.float64(0.9816512538233603)"
-  },
-  {
-    "objectID": "slides-08.html#pizza-baking-competition-example",
-    "href": "slides-08.html#pizza-baking-competition-example",
-    "title": "CPSC 330 Lecture 8: Hyperparameter Optimization",
-    "section": "Pizza baking competition example",
-    "text": "Pizza baking competition example\nImagine that you participate in pizza baking competition.\n\n\n\n\n\nTraining phase: Collecting recipes and practicing at home\n\nValidation phase: Inviting a group of friends for tasting and feedback\n\nTest phase (competition day): Serving the judges"
-  },
-  {
-    "objectID": "slides-08.html#overfitting-on-the-validation-set",
-    "href": "slides-08.html#overfitting-on-the-validation-set",
-    "title": "CPSC 330 Lecture 8: Hyperparameter Optimization",
-    "section": "Overfitting on the validation set",
-    "text": "Overfitting on the validation set\n\n\n\nYour friends loved your pineapple pizza.\nYou fine-tune your recipe for the same group of friends, perfecting it for their tastes.\n\n\n\n\nOn the competition day, you confidently present your perfected pineapple pizza.\n\nJudges are not impressed: “This doesn’t appeal to a broad audience.”\n\n\n\nThis is similar to reusing the same validation set again and again to perfect the model for it!"
-  },
-  {
-    "objectID": "slides-08.html#lesson-overfitting-on-the-validation-set",
-    "href": "slides-08.html#lesson-overfitting-on-the-validation-set",
-    "title": "CPSC 330 Lecture 8: Hyperparameter Optimization",
-    "section": "Lesson: Overfitting on the validation set",
-    "text": "Lesson: Overfitting on the validation set\n\nYou tailored your recipe too closely to your friends’ tastes.\n\nThey were not representative of the broader audience (the judges).\n\nThe pizza, while perfect for your validation group, failed to generalize.\n\nOver many iterations, the validation set no longer gives an unbiased estimate of performance.\n\nThat’s why we need a separate test set (like a group of tasters who never influenced your pizza)."
-  },
-  {
-    "objectID": "slides-08.html#optimization-bias-1",
-    "href": "slides-08.html#optimization-bias-1",
-    "title": "CPSC 330 Lecture 8: Hyperparameter Optimization",
-    "section": "Optimization bias",
-    "text": "Optimization bias\n\nWhy do we need separate validation and test datasets?"
-  },
-  {
-    "objectID": "slides-08.html#mitigating-optimization-bias.",
-    "href": "slides-08.html#mitigating-optimization-bias.",
-    "title": "CPSC 330 Lecture 8: Hyperparameter Optimization",
-    "section": "Mitigating optimization bias.",
-    "text": "Mitigating optimization bias.\n\nCross-validation\nEnsembles\nRegularization and choosing a simpler model"
-  },
-  {
-    "objectID": "slides-08.html#clicker-8.1",
-    "href": "slides-08.html#clicker-8.1",
-    "title": "CPSC 330 Lecture 8: Hyperparameter Optimization",
-    "section": "Clicker 8.1",
-    "text": "Clicker 8.1\nSelect all of the following statements which are TRUE.\n\n\nIf you get best results at the edges of your parameter grid, it might be a good idea to adjust the range of values in your parameter grid.\n\n\nGrid search is guaranteed to find the best hyperparameter values.\n\n\nIt is possible to get different hyperparameters in different runs of RandomizedSearchCV."
-  },
-  {
-    "objectID": "slides-08.html#questions-for-you",
-    "href": "slides-08.html#questions-for-you",
-    "title": "CPSC 330 Lecture 8: Hyperparameter Optimization",
-    "section": "Questions for you",
-    "text": "Questions for you\n\nYou have a dataset and you give me 1/10th of it. The dataset given to me is rather small and so I split it into 96% train and 4% validation split. I carry out hyperparameter optimization using a single 4% validation split and report validation accuracy of 0.97. Would it classify the rest of the data with similar accuracy?\n\nProbably\nProbably not"
-  },
-  {
-    "objectID": "slides-08.html#questions-for-class-discussion",
-    "href": "slides-08.html#questions-for-class-discussion",
-    "title": "CPSC 330 Lecture 8: Hyperparameter Optimization",
-    "section": "Questions for class discussion",
-    "text": "Questions for class discussion\n\nSuppose you have 10 hyperparameters, each with 4 possible values. If you run GridSearchCV with this parameter grid, how many cross-validation experiments will be carried out?\nSuppose you have 10 hyperparameters and each takes 4 values. If you run RandomizedSearchCV with this parameter grid with n_iter=20, how many cross-validation experiments will be carried out?"
-  },
-  {
-    "objectID": "slides-08.html#group-work-class-demo-live-coding",
-    "href": "slides-08.html#group-work-class-demo-live-coding",
-    "title": "CPSC 330 Lecture 8: Hyperparameter Optimization",
-    "section": "Group Work: Class Demo & Live Coding",
-    "text": "Group Work: Class Demo & Live Coding\nFor this demo, each student should click this link to create a new repo in their accounts, then clone that repo locally to follow along with the demo from today."
-  },
-  {
-    "objectID": "slides-08.html#group-work-invention-activity",
-    "href": "slides-08.html#group-work-invention-activity",
-    "title": "CPSC 330 Lecture 8: Hyperparameter Optimization",
-    "section": "Group Work: Invention Activity",
-    "text": "Group Work: Invention Activity\nSo far we have looked only at score as a metric for evaluating our metrics.\nWhat else could be used as a possible metric? Think of what else might be important for machine learning practioners and stakeholders?\nIn your group, brainstorm 4 alternative options:"
-  },
-  {
-    "objectID": "slides.html",
-    "href": "slides.html",
-    "title": "Overview",
-    "section": "",
-    "text": "Title\n\n\n\nDescription\n\n\n\n\n\n\n\n\nLecture 1: Introduction to CPSC 330\n\n\nWhat is machine learning, types of machine learning, learning to navigate through the course materials, getting familiar with the course policies\n\n\n\n\n\n\nLecture 2: Terminology, Baselines, Decision Trees\n\n\nTerminology and Decision Trees\n\n\n\n\n\n\nLecture 3: ML fundamentals\n\n\ngeneralization, data splitting, overfitting, underfitting, the fundamental tradeoff, the golden rule\n\n\n\n\n\n\nLecture 4: \\(k\\)-nearest neighbours and SVM RBFs\n\n\nintroduction to KNNs, hyperparameter n_neighbours or \\(k\\), C and gamma hyperparameters of SVM RBF, decision boundaries with different values of hyperparameters.\n\n\n\n\n\n\nLecture 5: Preprocessing and sklearn pipelines\n\n\nPre-processing, Transformations, and pipelines.\n\n\n\n\n\n\nCPSC 330 Lecture 8: Hyperparameter Optimization\n\n\nLinear regression, logistic regression, prediction probabilities, sigmoid, interpretation of coefficients\n\n\n\n\n\n\nCPSC 330 Lecture 9: Classification Metrics\n\n\nconfusion metrics, precision, recall, f1-score, PR curves, AP score, ROC curve, ROC AUC, class imbalance\n\n\n\n\n\n\nCPSC 330 Lecture 10: Regression Metrics\n\n\nRegression metrics\n\n\n\n\n\n\nNo matching items"
-  },
-  {
     "objectID": "slides-10.html#which-metric-fits-best",
     "href": "slides-10.html#which-metric-fits-best",
     "title": "CPSC 330 Lecture 10: Regression Metrics",
@@ -1111,6 +971,265 @@
     "title": "CPSC 330 Lecture 10: Regression Metrics",
     "section": "Which metric fits the scenario?",
     "text": "Which metric fits the scenario?\n\nFor interpretability: prefer RMSE or MAPE\nWhen you want to discourage large error: MSE is common\nFor fair comparison: r2 provides a normalized score similar to accuracy in classification.\n\nFor imbalanced scales: MAPE helps when proportional error matters more than absolute error."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Welcome",
+    "section": "",
+    "text": "Welcome to CPSC330! Here, you’ll find slides for CPSC 330. These slides are based on the notes presented here.\n\nClass times 🕘 3:30 PM to 5 PM, Tuesday and Thursday\nWhere? 📍 Hugh Dempster Pavillion 310, 6245 Agronomy Road, Vancouver, BC V6T 1Z4"
+  },
+  {
+    "objectID": "slides-09.html#announcements",
+    "href": "slides-09.html#announcements",
+    "title": "CPSC 330 Lecture 9: Classification Metrics",
+    "section": "Announcements",
+    "text": "Announcements\n\nReminder: Midterm 1 is next week!\nPractice Midterm should be released soon\nSee the announcement on Ed Discussion for the details of resources you’ll be provided on the exam"
+  },
+  {
+    "objectID": "slides-09.html#ml-workflow",
+    "href": "slides-09.html#ml-workflow",
+    "title": "CPSC 330 Lecture 9: Classification Metrics",
+    "section": "ML workflow",
+    "text": "ML workflow"
+  },
+  {
+    "objectID": "slides-09.html#accuracy",
+    "href": "slides-09.html#accuracy",
+    "title": "CPSC 330 Lecture 9: Classification Metrics",
+    "section": "Accuracy",
+    "text": "Accuracy\n\nSo far, we’ve been measuring model performance using Accuracy.\n\nAccuracy is the proportion of all predictions that were correct — whether positive or negative.\n\n\\[\n\\text{Accuracy} = \\frac{\\text{correct classifications}}{\\text{total classifications}}\n\\]\n\nBut is accuracy always the right metric to evaluate a model? 🤔"
+  },
+  {
+    "objectID": "slides-09.html#a-fraud-classification-example",
+    "href": "slides-09.html#a-fraud-classification-example",
+    "title": "CPSC 330 Lecture 9: Classification Metrics",
+    "section": "A fraud classification example",
+    "text": "A fraud classification example\n\n\n(139554, 29)\n\n\n\n\n\n\n\n\n\nClass\nTime\nAmount\nV1\nV2\nV3\nV4\nV5\nV6\nV7\n...\nV19\nV20\nV21\nV22\nV23\nV24\nV25\nV26\nV27\nV28\n\n\n\n\n64454\n0\n51150.0\n1.00\n-3.538816\n3.481893\n-1.827130\n-0.573050\n2.644106\n-0.340988\n2.102135\n...\n-1.509991\n1.345904\n0.530978\n-0.860677\n-0.201810\n-1.719747\n0.729143\n-0.547993\n-0.023636\n-0.454966\n\n\n37906\n0\n39163.0\n18.49\n-0.363913\n0.853399\n1.648195\n1.118934\n0.100882\n0.423852\n0.472790\n...\n0.810267\n-0.192932\n0.687055\n-0.094586\n0.121531\n0.146830\n-0.944092\n-0.558564\n-0.186814\n-0.257103\n\n\n79378\n0\n57994.0\n23.74\n1.193021\n-0.136714\n0.622612\n0.780864\n-0.823511\n-0.706444\n-0.206073\n...\n0.258815\n-0.178761\n-0.310405\n-0.842028\n0.085477\n0.366005\n0.254443\n0.290002\n-0.036764\n0.015039\n\n\n245686\n0\n152859.0\n156.52\n1.604032\n-0.808208\n-1.594982\n0.200475\n0.502985\n0.832370\n-0.034071\n...\n-1.009429\n-0.040448\n0.519029\n1.429217\n-0.139322\n-1.293663\n0.037785\n0.061206\n0.005387\n-0.057296\n\n\n60943\n0\n49575.0\n57.50\n-2.669614\n-2.734385\n0.662450\n-0.059077\n3.346850\n-2.549682\n-1.430571\n...\n0.157993\n-0.430295\n-0.228329\n-0.370643\n-0.211544\n-0.300837\n-1.174590\n0.573818\n0.388023\n0.161782\n\n\n\n\n5 rows × 31 columns"
+  },
+  {
+    "objectID": "slides-09.html#dummyclassifier",
+    "href": "slides-09.html#dummyclassifier",
+    "title": "CPSC 330 Lecture 9: Classification Metrics",
+    "section": "DummyClassifier",
+    "text": "DummyClassifier\nLet’s try a DummyClassifier, which makes predictions without learning any patterns.\n\ndummy = DummyClassifier()\ncross_val_score(dummy, X_train, y_train).mean()\n\nnp.float64(0.9983017327649726)\n\n\n\nThe accuracy looks surprisingly high!\nShould we be happy with this model and deploy it?"
+  },
+  {
+    "objectID": "slides-09.html#problem-class-imbalance",
+    "href": "slides-09.html#problem-class-imbalance",
+    "title": "CPSC 330 Lecture 9: Classification Metrics",
+    "section": "Problem: Class imbalance",
+    "text": "Problem: Class imbalance\n\ny_train.value_counts()\n\nClass\n0    139317\n1       237\nName: count, dtype: int64\n\n\n\nIn many real-world problems, some classes are much rarer than others.\nA model that always predicts “no fraud” could still achieve &gt;99% accuracy!\nThis is why accuracy can be misleading in imbalanced datasets.\nWe need metrics that differentiate types of errors."
+  },
+  {
+    "objectID": "slides-09.html#dummyclassifier-confusion-matrix",
+    "href": "slides-09.html#dummyclassifier-confusion-matrix",
+    "title": "CPSC 330 Lecture 9: Classification Metrics",
+    "section": "DummyClassifier: Confusion matrix",
+    "text": "DummyClassifier: Confusion matrix\nWhich types of errors would be most critical for the bank to address? Missing a fraud case or flagging a legitimate transaction as fraud?"
+  },
+  {
+    "objectID": "slides-09.html#logisticregression-confusion-matrix",
+    "href": "slides-09.html#logisticregression-confusion-matrix",
+    "title": "CPSC 330 Lecture 9: Classification Metrics",
+    "section": "LogisticRegression: Confusion matrix",
+    "text": "LogisticRegression: Confusion matrix\nAre we doing better with logistic regression?"
+  },
+  {
+    "objectID": "slides-09.html#understanding-the-confusion-matrix",
+    "href": "slides-09.html#understanding-the-confusion-matrix",
+    "title": "CPSC 330 Lecture 9: Classification Metrics",
+    "section": "Understanding the confusion matrix",
+    "text": "Understanding the confusion matrix\n\n\n\n\n\nTN \\(\\rightarrow\\) True negatives\nFP \\(\\rightarrow\\) False positives\nFN \\(\\rightarrow\\) False negatives\nTP \\(\\rightarrow\\) True positives"
+  },
+  {
+    "objectID": "slides-09.html#confusion-matrix-questions",
+    "href": "slides-09.html#confusion-matrix-questions",
+    "title": "CPSC 330 Lecture 9: Classification Metrics",
+    "section": "Confusion matrix questions",
+    "text": "Confusion matrix questions\nImagine a spam filter model where emails labeled 1 = spam, 0 = not spam.\nIf a spam email is incorrectly classified as not spam, what kind of error is this?\n\n\nA false positive\n\n\nA true positive\n\n\nA false negative\n\n\nA true negative"
+  },
+  {
+    "objectID": "slides-09.html#confusion-matrix-questions-1",
+    "href": "slides-09.html#confusion-matrix-questions-1",
+    "title": "CPSC 330 Lecture 9: Classification Metrics",
+    "section": "Confusion matrix questions",
+    "text": "Confusion matrix questions\nIn an intrusion detection system, 1 = intrusion, 0 = safe.\nIf the system misses an actual intrusion and classifies it as safe, this is a:\n\n\nA false positive\n\n\nA true positive\n\n\nA false negative\n\n\nA true negative"
+  },
+  {
+    "objectID": "slides-09.html#confusion-matrix-questions-2",
+    "href": "slides-09.html#confusion-matrix-questions-2",
+    "title": "CPSC 330 Lecture 9: Classification Metrics",
+    "section": "Confusion matrix questions",
+    "text": "Confusion matrix questions\nIn a medical test for a disease, 1 = diseased, 0 = healthy.\nIf a healthy patient is incorrectly diagnosed as diseased, that’s a:\n\n\nA false positive\n\n\nA true positive\n\n\nA false negative\n\n\nA true negative"
+  },
+  {
+    "objectID": "slides-09.html#metrics-other-than-accuracy",
+    "href": "slides-09.html#metrics-other-than-accuracy",
+    "title": "CPSC 330 Lecture 9: Classification Metrics",
+    "section": "Metrics other than accuracy",
+    "text": "Metrics other than accuracy\nNow that we understand the different types of errors, we can explore metrics that better capture model performance when accuracy falls short, especially for imbalanced datasets.\nWe’ll start with three key ones:\n\nPrecision\nRecall\nF1-score"
+  },
+  {
+    "objectID": "slides-09.html#precision-and-recall",
+    "href": "slides-09.html#precision-and-recall",
+    "title": "CPSC 330 Lecture 9: Classification Metrics",
+    "section": "Precision and recall",
+    "text": "Precision and recall\nLet’s revisit our fraud detection scenario. The circle below represents all transactions predicted as fraud by an imaginary toy model designed to detect fraudulent activity."
+  },
+  {
+    "objectID": "slides-09.html#intuition-behind-the-two-metrics",
+    "href": "slides-09.html#intuition-behind-the-two-metrics",
+    "title": "CPSC 330 Lecture 9: Classification Metrics",
+    "section": "Intuition behind the two metrics",
+    "text": "Intuition behind the two metrics\n\nPrecision: Of all the transactions predicted as fraud, how many were actually fraud?\n\nHigh precision \\(\\rightarrow\\) few false alarms (low false positives).\n\nRecall: Of all the actual fraud cases, how many did the model catch?\n\nHigh recall \\(\\rightarrow\\) few missed frauds (low false negatives)."
+  },
+  {
+    "objectID": "slides-09.html#trade-off-between-precision-and-recall",
+    "href": "slides-09.html#trade-off-between-precision-and-recall",
+    "title": "CPSC 330 Lecture 9: Classification Metrics",
+    "section": "Trade-off between precision and recall",
+    "text": "Trade-off between precision and recall\n\nIncreasing recall often decreases precision, and vice versa.\n\nExample:\n\nPredict “fraud” for every transaction \\(\\rightarrow\\) perfect recall, terrible precision.\n\nPredict “fraud” only when 100% sure \\(\\rightarrow\\) high precision, low recall.\n\n\nThe right balance depends on the application and cost of errors."
+  },
+  {
+    "objectID": "slides-09.html#f1-score",
+    "href": "slides-09.html#f1-score",
+    "title": "CPSC 330 Lecture 9: Classification Metrics",
+    "section": "F1-score",
+    "text": "F1-score\n\nSometimes, we want a single metric that balances precision and recall.\n\nThe F1-score is the harmonic mean of the two:\n\n\\[\nF1 = 2 \\times \\frac{\\text{Precision} \\times \\text{Recall}}{\\text{Precision} + \\text{Recall}}\n\\]\n\nHigh F1 means both precision and recall are strong.\n\nUseful when we care about both false positives and false negatives."
+  },
+  {
+    "objectID": "slides-09.html#summary",
+    "href": "slides-09.html#summary",
+    "title": "CPSC 330 Lecture 9: Classification Metrics",
+    "section": "Summary",
+    "text": "Summary\n\n\n\n\n\n\n\n\nMetric\nWhat it measures\nHigh value means\n\n\n\n\nAccuracy\nOverall correctness\nModel gets most predictions right\n\n\nPrecision\nQuality of positive predictions\nFew false alarms\n\n\nRecall\nQuantity of true positives caught\nFew missed positives\n\n\nF1-score\nBalance of precision & recall\nBoth precision and recall are high"
+  },
+  {
+    "objectID": "slides-09.html#activity-1-create-confusion-matrix",
+    "href": "slides-09.html#activity-1-create-confusion-matrix",
+    "title": "CPSC 330 Lecture 9: Classification Metrics",
+    "section": "Activity 1: Create Confusion Matrix",
+    "text": "Activity 1: Create Confusion Matrix\n\nSource: StatQuest"
+  },
+  {
+    "objectID": "slides-09.html#activity-2-calculate-precision-recall-specificity",
+    "href": "slides-09.html#activity-2-calculate-precision-recall-specificity",
+    "title": "CPSC 330 Lecture 9: Classification Metrics",
+    "section": "Activity 2: Calculate Precision, Recall, Specificity",
+    "text": "Activity 2: Calculate Precision, Recall, Specificity\n\nRecall (aka Sensitivity in biomedical literature)\n\nTP/(TP+FN)\n\nPrecision\n\nTP/(TP+FP)\n\nSpecificity\n\nTN/(TN+FP)"
+  },
+  {
+    "objectID": "slides-09.html#break",
+    "href": "slides-09.html#break",
+    "title": "CPSC 330 Lecture 9: Classification Metrics",
+    "section": "Break!",
+    "text": "Break!\nLet’s take a break!"
+  },
+  {
+    "objectID": "slides-09.html#clicker-exercise-9.1",
+    "href": "slides-09.html#clicker-exercise-9.1",
+    "title": "CPSC 330 Lecture 9: Classification Metrics",
+    "section": "Clicker Exercise 9.1",
+    "text": "Clicker Exercise 9.1\nSelect all of the following statements which are TRUE.\n\n\nIn medical diagnosis, false positives are more damaging than false negatives (assume “positive” means the person has a disease, “negative” means they don’t).\n\n\nIn spam classification, false positives are more damaging than false negatives (assume “positive” means the email is spam, “negative” means they it’s not).\n\n\nIf method A gets a higher accuracy than method B, that means its precision is also higher.\n\n\nIf method A gets a higher accuracy than method B, that means its recall is also higher."
+  },
+  {
+    "objectID": "slides-09.html#counter-examples",
+    "href": "slides-09.html#counter-examples",
+    "title": "CPSC 330 Lecture 9: Classification Metrics",
+    "section": "Counter examples",
+    "text": "Counter examples\nMethod A - higher accuracy but lower precision\n\n\n\nNegative\nPositive\n\n\n\n\n90\n5\n\n\n5\n0\n\n\n\nMethod B - lower accuracy but higher precision\n\n\n\nNegative\nPositive\n\n\n\n\n80\n15\n\n\n0\n5"
+  },
+  {
+    "objectID": "slides-09.html#takeaway",
+    "href": "slides-09.html#takeaway",
+    "title": "CPSC 330 Lecture 9: Classification Metrics",
+    "section": "Takeaway",
+    "text": "Takeaway\n\nAccuracy summarizes overall correctness but hides class-specific behaviour.\n\nYou can have high accuracy but poor precision or recall,\nespecially in imbalanced datasets.\n\nAlways check multiple metrics before deciding which model is better."
+  },
+  {
+    "objectID": "slides-09.html#predicting-with-logistic-regression",
+    "href": "slides-09.html#predicting-with-logistic-regression",
+    "title": "CPSC 330 Lecture 9: Classification Metrics",
+    "section": "Predicting with logistic regression",
+    "text": "Predicting with logistic regression\n\n\n\n\n\nMost classification models don’t directly predict labels. They predict scores or probabilities.\nTo get a label (e.g., “fraud” or “non fraud”), we choose a threshold (often 0.5). If the threshold changes, predictions change, and so do the errors.\nWhat happens to precision and recall if we change the probability threshold?\nPlay with classification thresholds\n\n\n\n\nDecreasing the threshold:\n\nIncreases the number of positive predictions\nIdentify more examples as “fraud” examples\nMore false positives, more true positives.\nRecall would either stay the same or go up and precision is likely to go down (precision may increase if all the new examples after decreasing the threshold are TPs).\n\nIncreasing the threshold:\n\nDecreases the number of positive predictions\nRecall would go down or stay the same but precision is likely to go up (precision may go down if TP decrease but FP do not decrease).\n\nKey question: How do we decide on the best threshold? It depends on the problem and trade-offs between false positives and false negatives."
+  },
+  {
+    "objectID": "slides-09.html#pr-curve",
+    "href": "slides-09.html#pr-curve",
+    "title": "CPSC 330 Lecture 9: Classification Metrics",
+    "section": "PR curve",
+    "text": "PR curve\n\nCalculate precision and recall (TPR) at every possible threshold and graph them.\nTop left \\(\\rightarrow\\) Very high threshold (strict model = high precision)\nBottom right \\(\\rightarrow\\) Very low threshold (linient model = high recall)\n\n\n\n\n\n\n\n\n\n\n\n\nWe can look at all possible thresholds and plot the corresponding precision and recall!\nAs we lower the threshold, the classifier predicts more positives:\n\nRecall increases because we capture more true positives.\nPrecision usually decreases because some of the additional positives are false positives.\n\nAs we raise the threshold, the classifier predicts fewer positives:\n\nPrecision increases because only the most confident predictions are positive.\nRecall decreases because we miss more true positives.\n\nThe curve shows the trade-offs between precision and recall across all thresholds.\nIdeal performance: top-right corner (high precision and high recall).\nUse cases like fraud detection often require focusing on areas of the curve that favor one metric over the other (e.g., high recall for safety-critical tasks)."
+  },
+  {
+    "objectID": "slides-09.html#pr-curve-different-thresholds",
+    "href": "slides-09.html#pr-curve-different-thresholds",
+    "title": "CPSC 330 Lecture 9: Classification Metrics",
+    "section": "PR curve different thresholds",
+    "text": "PR curve different thresholds\n\nWhich of the red dots are reasonable trade offs?"
+  },
+  {
+    "objectID": "slides-09.html#average-precision-ap-score",
+    "href": "slides-09.html#average-precision-ap-score",
+    "title": "CPSC 330 Lecture 9: Classification Metrics",
+    "section": "Average Precision (AP) Score",
+    "text": "Average Precision (AP) Score\n\n\n\nAP score summarizes the PR curve by calculating the area under the curve\nIt measures the ranking ability of a model; how well it assigns higher probabilities to positive examples than to negative ones, regardless of the specific threshold."
+  },
+  {
+    "objectID": "slides-09.html#clicker-exercise-9.2",
+    "href": "slides-09.html#clicker-exercise-9.2",
+    "title": "CPSC 330 Lecture 9: Classification Metrics",
+    "section": "Clicker Exercise 9.2",
+    "text": "Clicker Exercise 9.2\nChoose the appropriate evaluation metric for the following scenarios:\nScenario 1: Balance between precision and recall for a threshold.\nScenario 2: Assess performance across all thresholds.\n\n\nF1 for 1, AP for 2\n\n\nAP for 1, F1 Score for 2\n\n\nAP for both\n\n\nF1 for both\n\n\n\n\nF1 score is for a given threshold and measures the quality of predict.\nAP score is a summary across thresholds and measures the quality of predict_proba."
+  },
+  {
+    "objectID": "slides-09.html#clicker-exercise-9.3",
+    "href": "slides-09.html#clicker-exercise-9.3",
+    "title": "CPSC 330 Lecture 9: Classification Metrics",
+    "section": "Clicker Exercise 9.3",
+    "text": "Clicker Exercise 9.3\nSelect all of the following statements which are TRUE.\n\n\nIf we increase the classification threshold, both true and false positives are likely to decrease.\n\n\nIf we increase the classification threshold, both true and false negatives are likely to decrease.\n\n\nLowering the classification threshold generally increases the model’s recall.\n\n\n\nRaising the classification threshold can improve the precision of the model if it effectively reduces the number of false positives without significantly affecting true positives."
+  },
+  {
+    "objectID": "slides-09.html#roc-curve",
+    "href": "slides-09.html#roc-curve",
+    "title": "CPSC 330 Lecture 9: Classification Metrics",
+    "section": "ROC Curve",
+    "text": "ROC Curve\n\nCompute the True Positive Rate (TPR) and False Positive Rate (FPR) at every possible threshold, and plot TPR vs FPR.\n\nHow well does the model separate positive and negative classes in terms of predicted probability?\nA good choice when the dataset is reasonably balanced or not extremely imbalanced (e.g., fraud detection, disease diagnosis)."
+  },
+  {
+    "objectID": "slides-09.html#roc-curve-example",
+    "href": "slides-09.html#roc-curve-example",
+    "title": "CPSC 330 Lecture 9: Classification Metrics",
+    "section": "ROC Curve example",
+    "text": "ROC Curve example\n\nBottom-left \\(\\rightarrow\\) very high threshold (almost everything predicted negative: low recall, low FPR).\n\nTop-right \\(\\rightarrow\\) very low threshold (almost everything predicted positive: high recall, high FPR)."
+  },
+  {
+    "objectID": "slides-09.html#auc",
+    "href": "slides-09.html#auc",
+    "title": "CPSC 330 Lecture 9: Classification Metrics",
+    "section": "AUC",
+    "text": "AUC\n\nThe area under the ROC curve (AUC) represents the probability that the model, if given a randomly chosen positive and negative example, will rank the positive higher than the negative."
+  },
+  {
+    "objectID": "slides-09.html#roc-auc-questions",
+    "href": "slides-09.html#roc-auc-questions",
+    "title": "CPSC 330 Lecture 9: Classification Metrics",
+    "section": "ROC AUC questions",
+    "text": "ROC AUC questions\nConsider the points A, B, and C in the following diagram, each representing a threshold. Which threshold would you pick in each scenario?\n\n\n\n\n\n\nIf false positives (false alarms) are highly costly\n\n\nIf false positives are cheap and false negatives (missed true positives) highly costly\n\n\nIf the costs are roughly equivalent\n\n\n\nSource"
+  },
+  {
+    "objectID": "slides-09.html#group-work-class-demo-live-coding",
+    "href": "slides-09.html#group-work-class-demo-live-coding",
+    "title": "CPSC 330 Lecture 9: Classification Metrics",
+    "section": "Group Work: Class Demo & Live Coding",
+    "text": "Group Work: Class Demo & Live Coding\nFor this demo, each student should click this link to create a new repo in their accounts, then clone that repo locally to follow along with the demo from today."
+  },
+  {
+    "objectID": "slides-09.html#what-did-we-learn",
+    "href": "slides-09.html#what-did-we-learn",
+    "title": "CPSC 330 Lecture 9: Classification Metrics",
+    "section": "What did we learn?",
+    "text": "What did we learn?\n\nWhy accuracy is not always a good metric?\nConfusion matrix\nPrecision, recall, & f1-score\nPrecision-recall curves & average precision\nReceiver Operator Characteristic (ROC) curves & AUC"
   },
   {
     "objectID": "slides-04.html#announcements",
@@ -1253,11 +1372,305 @@
     "text": "Comparison of models (activity)\n\n\n\n\n\n\n\n\n\nModel\nParameters and hyperparameters\nStrengths\nWeaknesses\n\n\n\n\nDecision Trees\n\n\n\n\n\nKNNs\n\n\n\n\n\nSVM RBF"
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Welcome",
-    "section": "",
-    "text": "Welcome to CPSC330! Here, you’ll find slides for CPSC 330. These slides are based on the notes presented here.\n\nClass times 🕘 3:30 PM to 5 PM, Tuesday and Thursday\nWhere? 📍 Hugh Dempster Pavillion 310, 6245 Agronomy Road, Vancouver, BC V6T 1Z4"
+    "objectID": "slides-05.html#announcements",
+    "href": "slides-05.html#announcements",
+    "title": "Lecture 5: Preprocessing and sklearn pipelines",
+    "section": "Announcements",
+    "text": "Announcements\n\nI am away this Thursday and next Tuesday for EAAI 2026\n\nEAAI is the Symposium on Educational Advances in Artificial Intelligence in Singapore\n“Effective Strategies for Teaching Machine Learning”\n\nOther instructors Dr. Giulia Toti (Thursday) and Dr. Mehrdad Oveisi (Tuesday) will teach !\nHeads up: they won’t use Agora (or iClicker) for class participation ; just show of hands"
+  },
+  {
+    "objectID": "slides-05.html#recap",
+    "href": "slides-05.html#recap",
+    "title": "Lecture 5: Preprocessing and sklearn pipelines",
+    "section": "Recap",
+    "text": "Recap\n\nDecision trees: Split data into subsets based on feature values to create decision rules\n\\(k\\)-NNs: Classify based on the majority vote from k nearest neighbors\nSVM RBFs: Create a boundary using an RBF kernel to separate classes"
+  },
+  {
+    "objectID": "slides-05.html#comparison-of-models-activity",
+    "href": "slides-05.html#comparison-of-models-activity",
+    "title": "Lecture 5: Preprocessing and sklearn pipelines",
+    "section": "Comparison of models (activity)",
+    "text": "Comparison of models (activity)\n\n\n\n\n\n\n\n\n\nModel\nParameters and hyperparameters\nStrengths\nWeaknesses\n\n\n\n\nDecision Trees\n\n\n\n\n\nKNNs\n\n\n\n\n\nSVM RBF\n\n\n\n\n\n\n\nInterpretability (output easy to understand): - DT is very interpretable - KNN is moderately interpretable - SVM-RBF not interpretable at all\nNon-linearity: - DT Handle non-linearity, but boundaries are boxy - KNN can identify non-linear boundaries - SVM-RBF is a great choice for non-linearity\nScalability: - DT is very scalable, fast and can be done on large datasets - KNN is not scalable, because the distance needs to be calculated - SVM-RB is scalable, optimization is complicated so will be expensive"
+  },
+  {
+    "objectID": "slides-05.html#recap-1",
+    "href": "slides-05.html#recap-1",
+    "title": "Lecture 5: Preprocessing and sklearn pipelines",
+    "section": "Recap",
+    "text": "Recap\n\n\n\n\n\n\n\n\n\nAspect\nDecision Trees\nK-Nearest Neighbors (KNN)\nSupport Vector Machines (SVM) with RBF Kernel\n\n\n\n\nSensitivity to Outliers\n\n\n\n\n\nMemory Usage\n\n\n\n\n\nTraining Time\n\n\n\n\n\nPrediction Time\n\n\n\n\n\n\n\nSensitivity to Outliers - DT has some sensitivity to outliers (based on where the splits happen) - KNN is distance based, not that sensitive to outliers, but depends on the number of neighbours - SVM-RBF robust to outliers\nMemory Usage - DT is is very memory efficient, stores the model not the data - KNN uses a lot of memory, all data sets stored in memory - SVM-RBF is reasonably memory efficient, stores only support vectors\nTraining Time - DT training time is higher than KNN - KNN is 0, all points are stored - SVM-RBF much lower compared to KNN and DT\nPrediction Time - DT, also very efficient at predicting - KNN is high, all the work happens here - SVM-RBF, very efficient at predicting"
+  },
+  {
+    "objectID": "slides-05.html#preprocessing-motivation-example",
+    "href": "slides-05.html#preprocessing-motivation-example",
+    "title": "Lecture 5: Preprocessing and sklearn pipelines",
+    "section": "Preprocessing motivation: example",
+    "text": "Preprocessing motivation: example\nYou’re trying to find a suitable date based on:\n\nAge (closer to yours is better).\nNumber of Facebook Friends (closer to your social circle is ideal)."
+  },
+  {
+    "objectID": "slides-05.html#preprocessing-motivation-example-1",
+    "href": "slides-05.html#preprocessing-motivation-example-1",
+    "title": "Lecture 5: Preprocessing and sklearn pipelines",
+    "section": "Preprocessing motivation: example",
+    "text": "Preprocessing motivation: example\n\nYou are 30 years old and have 250 Facebook friends.\n\n\n\n\n\n\n\n\n\n\n\nPerson\nAge\n#FB Friends\nEuclidean Distance Calculation\nDistance\n\n\n\n\nA\n25\n400\n\\(\\sqrt{5^2 + 150^2}\\)\n150.08\n\n\nB\n27\n300\n\\(\\sqrt{3^2 + 50^2}\\)\n50.09\n\n\nC\n30\n500\n\\(\\sqrt{0^2 + 250^2}\\)\n250.00\n\n\nD\n60\n250\n\\(\\sqrt{30^2 + 0^2}\\)\n30.00\n\n\n\nBased on the distances, the two nearest neighbors (2-NN) are:\n\nPerson D (Distance: 30.00)\nPerson B (Distance: 50.09)\n\nWhat’s the problem here?"
+  },
+  {
+    "objectID": "slides-05.html#what-is-preprocessing",
+    "href": "slides-05.html#what-is-preprocessing",
+    "title": "Lecture 5: Preprocessing and sklearn pipelines",
+    "section": "What is preprocessing?",
+    "text": "What is preprocessing?\n\nPreprocessing is about making the raw dataset ready for machine learning."
+  },
+  {
+    "objectID": "slides-05.html#clicker-5.1",
+    "href": "slides-05.html#clicker-5.1",
+    "title": "Lecture 5: Preprocessing and sklearn pipelines",
+    "section": "Clicker 5.1",
+    "text": "Clicker 5.1\nParticipate using Agora (code: agentic)\nTake a guess: In your machine learning project, how much time will you typically spend on data preparation and transformation?\n\n\n~80% of the project time\n\n\n~20% of the project time\n\n\n~50% of the project time\n\n\nNone. Most of the time will be spent on model building\n\n\nThe question is adapted from here."
+  },
+  {
+    "objectID": "slides-05.html#clicker-5.2",
+    "href": "slides-05.html#clicker-5.2",
+    "title": "Lecture 5: Preprocessing and sklearn pipelines",
+    "section": "Clicker 5.2",
+    "text": "Clicker 5.2\nParticipate using Agora (code: agentic)\nSelect all of the following statements which are TRUE.\n\n\nStandardScaler ensures a fixed range (i.e., minimum and maximum values) for the features.\n\n\nStandardScaler calculates mean and standard deviation for each feature separately.\n\n\nIn general, it’s a good idea to apply scaling on numeric features before training \\(k\\)-NN or SVM RBF models.\n\n\nThe transformed feature values might be hard to interpret for humans.\n\n\nAfter applying SimpleImputer The transformed data has a different shape than the original data."
+  },
+  {
+    "objectID": "slides-05.html#clicker-5.3",
+    "href": "slides-05.html#clicker-5.3",
+    "title": "Lecture 5: Preprocessing and sklearn pipelines",
+    "section": "Clicker 5.3",
+    "text": "Clicker 5.3\nParticipate using Agora (code: agentic)\nSelect all of the following statements which are TRUE.\n\n\nYou can have scaling of numeric features, one-hot encoding of categorical features, and scikit-learn estimator within a single pipeline.\n\n\nOnce you have a scikit-learn pipeline object with an estimator as the last step, you can call fit, predict, and score on it.\n\n\nYou can carry out data splitting within scikit-learn pipeline.\n\n\nWe have to be careful of the order we put each transformation and model in a pipeline.\n\n\n\nA: False; It doesn’t make sense to apply one hot encoding to numeric features, and it doesn’t make sense to apply standard scalar to categorical features. Sequence doesn’t make sense, we need column transformers\nB: True; can do this as long as the estimator is the last step\nC: False\nD: True;"
+  },
+  {
+    "objectID": "slides-05.html#imputation-fill-the-gaps",
+    "href": "slides-05.html#imputation-fill-the-gaps",
+    "title": "Lecture 5: Preprocessing and sklearn pipelines",
+    "section": "Imputation: Fill the gaps! (🟩 🟧 🟦)",
+    "text": "Imputation: Fill the gaps! (🟩 🟧 🟦)\nFill in missing data using a chosen strategy:\n\nMean: Replace missing values with the average of the available data.\nMedian: Use the middle value.\nMost Frequent: Use the most common value (mode).\nKNN Imputation: Fill based on similar neighbors.\n\nExample:\nImputation is like filling in your average or median or most frequent grade for an assessment you missed.\nfrom sklearn.impute import SimpleImputer\nimputer = SimpleImputer(strategy='mean')\nX_imputed = imputer.fit_transform(X)"
+  },
+  {
+    "objectID": "slides-05.html#scaling-everything-to-the-same-range",
+    "href": "slides-05.html#scaling-everything-to-the-same-range",
+    "title": "Lecture 5: Preprocessing and sklearn pipelines",
+    "section": "Scaling: Everything to the same range! (📉 📈)",
+    "text": "Scaling: Everything to the same range! (📉 📈)\nEnsure all features have a comparable range.\n\nStandardScaler: Mean = 0, Standard Deviation = 1.\n\nExample:\nScaling is like adjusting the number of everyone’s Facebook friends so that both the number of friends and their age are on a comparable scale. This way, one feature doesn’t dominate the other when making comparisons.\nfrom sklearn.preprocessing import StandardScaler\nscaler = StandardScaler()\nX_scaled = scaler.fit_transform(X)"
+  },
+  {
+    "objectID": "slides-05.html#one-hot-encoding-1-0-0",
+    "href": "slides-05.html#one-hot-encoding-1-0-0",
+    "title": "Lecture 5: Preprocessing and sklearn pipelines",
+    "section": "One-Hot encoding: 🍎 → 1️⃣ 0️⃣ 0️⃣",
+    "text": "One-Hot encoding: 🍎 → 1️⃣ 0️⃣ 0️⃣\nConvert categorical features into binary columns.\n\nCreates new binary columns for each category.\nUseful for handling categorical data in machine learning models.\n\nExample:\nTurn “Apple, Banana, Orange” into binary columns:\n\n\n\nFruit\n🍎\n🍌\n🍊\n\n\n\n\nApple 🍎\n1\n0\n0\n\n\nBanana 🍌\n0\n1\n0\n\n\nOrange 🍊\n0\n0\n1\n\n\n\nfrom sklearn.preprocessing import OneHotEncoder\nencoder = OneHotEncoder()\nX_encoded = encoder.fit_transform(X)"
+  },
+  {
+    "objectID": "slides-05.html#ordinal-encoding-ranking-matters-3",
+    "href": "slides-05.html#ordinal-encoding-ranking-matters-3",
+    "title": "Lecture 5: Preprocessing and sklearn pipelines",
+    "section": "Ordinal encoding: Ranking matters! (⭐️⭐️⭐️ → 3️⃣)",
+    "text": "Ordinal encoding: Ranking matters! (⭐️⭐️⭐️ → 3️⃣)\nConvert categories into integer values that have a meaningful order.\n\nAssign integers based on order or rank.\nUseful when there is an inherent ranking in the data.\n\nExample:\nTurn “Poor, Average, Good” into 1, 2, 3:\n\n\n\nRating\nOrdinal\n\n\n\n\nPoor\n1\n\n\nAverage\n2\n\n\nGood\n3\n\n\n\nfrom sklearn.preprocessing import OrdinalEncoder\nencoder = OrdinalEncoder()\nX_ordinal = encoder.fit_transform(X)"
+  },
+  {
+    "objectID": "slides-05.html#transformers",
+    "href": "slides-05.html#transformers",
+    "title": "Lecture 5: Preprocessing and sklearn pipelines",
+    "section": "Transformers",
+    "text": "Transformers\n\nAre used to transform or preprocess data.\nImplement the fit and transform methods.\n\nfit(X): Learns parameters from the data.\ntransform(X): Applies the learned transformation to the data.\n\nExamples:\n\nImputation (SimpleImputer): Fills missing values.\nScaling (StandardScaler): Standardizes features."
+  },
+  {
+    "objectID": "slides-05.html#estimators",
+    "href": "slides-05.html#estimators",
+    "title": "Lecture 5: Preprocessing and sklearn pipelines",
+    "section": "Estimators",
+    "text": "Estimators\n\nUsed to make predictions.\nImplement fit and predict methods.\n\nfit(X, y): Learns from labeled data.\npredict(X): Makes predictions on new data.\n\nExamples: DecisionTreeClassifier, SVC, KNeighborsClassifier"
+  },
+  {
+    "objectID": "slides-05.html#the-golden-rule-in-feature-transformations",
+    "href": "slides-05.html#the-golden-rule-in-feature-transformations",
+    "title": "Lecture 5: Preprocessing and sklearn pipelines",
+    "section": "The golden rule in feature transformations",
+    "text": "The golden rule in feature transformations\n\nNever transform the entire dataset at once!\nWhy? It leads to data leakage — using information from the test set in your training process, which can artificially inflate model performance.\nFit transformers like scalers and imputers on the training set only.\nApply the transformations to both the training and test sets separately.\n\nExample:\nfrom sklearn.preprocessing import StandardScaler\nscaler = StandardScaler()\nX_train_scaled = scaler.fit_transform(X_train)\nX_test_scaled = scaler.transform(X_test)"
+  },
+  {
+    "objectID": "slides-05.html#sklearn-pipelines",
+    "href": "slides-05.html#sklearn-pipelines",
+    "title": "Lecture 5: Preprocessing and sklearn pipelines",
+    "section": "sklearn Pipelines",
+    "text": "sklearn Pipelines\n\nPipeline is a way to chain multiple steps (e.g., preprocessing + model fitting) into a single workflow.\nSimplify the code and improves readability.\nReduce the risk of data leakage by ensuring proper transformation of the training and test sets.\nAutomatically apply transformations in sequence.\n\nExample:\nChaining a StandardScaler with a KNeighborsClassifier model.\nfrom sklearn.pipeline import make_pipeline\nfrom sklearn.preprocessing import StandardScaler\nfrom sklearn.neighbors import KNeighborsClassifier\n\npipeline = make_pipeline(StandardScaler(), KNeighborsClassifier())\n\npipeline.fit(X_train, y_train)\ny_pred = pipeline.predict(X_test)"
+  },
+  {
+    "objectID": "slides-05.html#break",
+    "href": "slides-05.html#break",
+    "title": "Lecture 5: Preprocessing and sklearn pipelines",
+    "section": "Break",
+    "text": "Break\nLet’s take a break!\n /"
+  },
+  {
+    "objectID": "slides-05.html#group-work-class-demo-live-coding",
+    "href": "slides-05.html#group-work-class-demo-live-coding",
+    "title": "Lecture 5: Preprocessing and sklearn pipelines",
+    "section": "Group Work: Class Demo & Live Coding",
+    "text": "Group Work: Class Demo & Live Coding\n\nLet’s walk through strategies for handling missing values, categorical variables, text, scaling, and irrelevant features using a class demo.\nFor this demo, each student should click this link to create a new repo in their accounts, then clone that repo locally to follow along with the demo from today."
+  },
+  {
+    "objectID": "slides-11.html#iclicker-exercise-11.0",
+    "href": "slides-11.html#iclicker-exercise-11.0",
+    "title": "CPSC 330 Lecture 11: Ensembles",
+    "section": "iClicker Exercise 11.0",
+    "text": "iClicker Exercise 11.0\nWhich of the following scenarios has worked effectively for you in the past?\n\n\nWorking independently on a project/assignment.\n\n\nWorking with like-minded people.\n\n\nTeaming up with a diverse group offering varied perspectives and skills."
+  },
+  {
+    "objectID": "slides-11.html#the-wisdom-of-crowds",
+    "href": "slides-11.html#the-wisdom-of-crowds",
+    "title": "CPSC 330 Lecture 11: Ensembles",
+    "section": "The Wisdom of Crowds",
+    "text": "The Wisdom of Crowds\nGroups can often make better decisions than individuals, especially when group members are diverse enough."
+  },
+  {
+    "objectID": "slides-11.html#ensembles-key-idea",
+    "href": "slides-11.html#ensembles-key-idea",
+    "title": "CPSC 330 Lecture 11: Ensembles",
+    "section": "Ensembles key idea",
+    "text": "Ensembles key idea\n\n\n\nSource\n\n\nCombine predictions from multiple models for a more accurate and stable result\nClassification: either take majority class or average predicted probabilities\nRegression: Average (mean or median) predictions\nAveraging reduces individual model errors, making the ensemble more robust than any single model"
+  },
+  {
+    "objectID": "slides-11.html#ensembles",
+    "href": "slides-11.html#ensembles",
+    "title": "CPSC 330 Lecture 11: Ensembles",
+    "section": "Ensembles",
+    "text": "Ensembles\n\nEnsemble methods are widely used in industry and dominate machine learning competitions (e.g., Kaggle).\n\nIn this course, we’ll explore\n\nTree-based ensembles:\n\nRandom Forests\n\nGradient Boosted Trees (at a high level)\n\nWays to combine models:\n\nAveraging: combine model outputs directly\n\nStacking: use one model to learn how to combine others"
+  },
+  {
+    "objectID": "slides-11.html#when-do-ensembles-help",
+    "href": "slides-11.html#when-do-ensembles-help",
+    "title": "CPSC 330 Lecture 11: Ensembles",
+    "section": "When do ensembles help?",
+    "text": "When do ensembles help?\nIn which of these scenarios does an ensemble improve performance?\n\n\n\n\n\nSource"
+  },
+  {
+    "objectID": "slides-11.html#when-do-ensembles-help-1",
+    "href": "slides-11.html#when-do-ensembles-help-1",
+    "title": "CPSC 330 Lecture 11: Ensembles",
+    "section": "When do ensembles help?",
+    "text": "When do ensembles help?\nEnsembles improve performance when the individual models are both competent (have expertise) and make different kinds of errors (are diverse)."
+  },
+  {
+    "objectID": "slides-11.html#diversity",
+    "href": "slides-11.html#diversity",
+    "title": "CPSC 330 Lecture 11: Ensembles",
+    "section": "Diversity",
+    "text": "Diversity\n\nEnsembles work best when their models make different types of mistakes.\n\nIf all models make the same errors, averaging won’t help.\n\nWe can encourage diversity by:\n\nIntroducing randomness (e.g., bootstrapped samples and random feature subsets (Random Forests))\nSequentially focusing on previous errors (e.g., Gradient Boosting)"
+  },
+  {
+    "objectID": "slides-11.html#expertise",
+    "href": "slides-11.html#expertise",
+    "title": "CPSC 330 Lecture 11: Ensembles",
+    "section": "Expertise",
+    "text": "Expertise\n\nDiversity alone is not enough. Individual models should still have some predictive skill.\n\nIf each model performs poorly (worse than random), the ensemble can’t recover.\n\nBest ensembles strike a balance between:\n\nDiversity: models disagree in useful ways\n\nExpertise: each model performs better than chance"
+  },
+  {
+    "objectID": "slides-11.html#what-can-we-randomize-between-trees",
+    "href": "slides-11.html#what-can-we-randomize-between-trees",
+    "title": "CPSC 330 Lecture 11: Ensembles",
+    "section": "What can we randomize between trees?",
+    "text": "What can we randomize between trees?"
+  },
+  {
+    "objectID": "slides-11.html#two-sources-of-randomness-in-random-forests",
+    "href": "slides-11.html#two-sources-of-randomness-in-random-forests",
+    "title": "CPSC 330 Lecture 11: Ensembles",
+    "section": "Two sources of randomness in random forests",
+    "text": "Two sources of randomness in random forests\n\nBootstrap sampling of data\nEach tree is trained on a slightly different dataset → decorrelates trees.\nRandom subset of features at each split\nEach split considers only a random subset of features → further reduces correlation."
+  },
+  {
+    "objectID": "slides-11.html#bootstrap-sample",
+    "href": "slides-11.html#bootstrap-sample",
+    "title": "CPSC 330 Lecture 11: Ensembles",
+    "section": "Bootstrap sample",
+    "text": "Bootstrap sample\n\nEnsures trees see different versions of the data\n\nCreates diversity while preserving similar overall structure\n\n\n\n\nSource"
+  },
+  {
+    "objectID": "slides-11.html#random-subset-of-features-at-each-split",
+    "href": "slides-11.html#random-subset-of-features-at-each-split",
+    "title": "CPSC 330 Lecture 11: Ensembles",
+    "section": "Random subset of features at each split",
+    "text": "Random subset of features at each split\n\n\n\nSource\n\n\nSelect a different subset of features at every split\nEach tree now explores different parts of the feature space\n\n🤔 But why not pick one subset per tree instead?"
+  },
+  {
+    "objectID": "slides-11.html#why-use-a-new-subset-at-each-split",
+    "href": "slides-11.html#why-use-a-new-subset-at-each-split",
+    "title": "CPSC 330 Lecture 11: Ensembles",
+    "section": "Why use a new subset at each split?",
+    "text": "Why use a new subset at each split?\n\n\n\n\n\n\n\n\n\nStrategy\nDiversity\nExpertise\nIssue\n\n\n\n\nOne subset per tree\nVery high\nOften low\nMay miss important features\n\n\nNew subset per split\nModerate\nHigh\nStronger, less correlated trees\n\n\n\n\nUsing a new subset per split strikes a balance between diversity and strength\n\nPrevents trees from becoming too weak while still keeping them different\n\n\n“Random selection of features at each node gives substantial additional accuracy gains over bagging alone.”\n— Breiman (2001)"
+  },
+  {
+    "objectID": "slides-11.html#interim-summary",
+    "href": "slides-11.html#interim-summary",
+    "title": "CPSC 330 Lecture 11: Ensembles",
+    "section": "Interim summary",
+    "text": "Interim summary\n\nRandom Forests reduce overfitting by decorrelating trees\nTwo ingredients make this happen: Random data (bootstrapping) and random features (per split)\n\nTogether, they build a strong yet diverse ensemble"
+  },
+  {
+    "objectID": "slides-11.html#iclicker-exercise-11.1",
+    "href": "slides-11.html#iclicker-exercise-11.1",
+    "title": "CPSC 330 Lecture 11: Ensembles",
+    "section": "iClicker Exercise 11.1",
+    "text": "iClicker Exercise 11.1\nSelect the most accurate option below.\n\n\nEvery tree in a random forest uses a different bootstrap sample of the training set.\n\n\nTo train a tree in a random forest, we first randomly select a subset of features. The tree is then restricted to only using those features.\n\n\nThe n_estimators hyperparameter of random forests should be tuned to get a better performance on the validation or test data.\n\n\n\nIn random forests we build trees in a sequential fashion, where the current tree is dependent upon the previous tree.\n\n\n\nLet classifiers A, B, and C have training errors of 10%, 20%, and 30%, respectively. Then, the best possible training error from averaging A, B and C is 10%."
+  },
+  {
+    "objectID": "slides-11.html#from-random-forests-to-boosting",
+    "href": "slides-11.html#from-random-forests-to-boosting",
+    "title": "CPSC 330 Lecture 11: Ensembles",
+    "section": "From random forests to boosting",
+    "text": "From random forests to boosting\n\nIn random forests, we build trees independently and average their predictions\n\nreduces overfitting by combining diverse models\n\n\nIn boosting, we build trees sequentially\n\neach new tree learns from the mistakes of the previous ones\n\nreduces underfitting by making the model smarter over time"
+  },
+  {
+    "objectID": "slides-11.html#why-it-works",
+    "href": "slides-11.html#why-it-works",
+    "title": "CPSC 330 Lecture 11: Ensembles",
+    "section": "Why it works",
+    "text": "Why it works\n\nSequential correction: each tree improves on what’s left of the error\n\nBias reduction: starts simple and adds complexity gradually\n\nControlled learning: small trees and a learning rate prevent overfitting"
+  },
+  {
+    "objectID": "slides-11.html#most-commonly-used-boosting-models",
+    "href": "slides-11.html#most-commonly-used-boosting-models",
+    "title": "CPSC 330 Lecture 11: Ensembles",
+    "section": "Most commonly used boosting models",
+    "text": "Most commonly used boosting models\n\nXGBoost: extremely optimized and widely adopted in industry\n\nLightGBM: faster training with large datasets\n\nCatBoost: handles categorical features efficiently\n\n\n“More recently, gradient boosting machines (GBMs) have become a Swiss army knife in many a Kaggler’s toolbelt.”\n— Sebastian Raschka, Joshua Patterson, & Corey Nolet (2020)"
+  },
+  {
+    "objectID": "slides-11.html#averaging-voting",
+    "href": "slides-11.html#averaging-voting",
+    "title": "CPSC 330 Lecture 11: Ensembles",
+    "section": "Averaging (Voting)",
+    "text": "Averaging (Voting)\n\nCombines predictions from multiple base models\nWorks for both classification and regression\nImproves stability and performance by averaging over models\nRandom forest is a type of averaging classifier"
+  },
+  {
+    "objectID": "slides-11.html#types-of-voting",
+    "href": "slides-11.html#types-of-voting",
+    "title": "CPSC 330 Lecture 11: Ensembles",
+    "section": "Types of Voting",
+    "text": "Types of Voting\n\n\nHard Voting\n\nEach model votes for a class label\n\nFinal prediction = majority vote\n\n\nSoft Voting\n\nAverages the predicted probabilities from each model\n\nFinal prediction = class with highest average probability\n\nUsually performs better"
+  },
+  {
+    "objectID": "slides-11.html#stacking",
+    "href": "slides-11.html#stacking",
+    "title": "CPSC 330 Lecture 11: Ensembles",
+    "section": "Stacking",
+    "text": "Stacking\n\nGoes one step beyond averaging\nInstead of simple averaging, trains a meta-model to learn how to best combine base models’ predictions"
+  },
+  {
+    "objectID": "slides-11.html#how-stacking-works",
+    "href": "slides-11.html#how-stacking-works",
+    "title": "CPSC 330 Lecture 11: Ensembles",
+    "section": "How stacking works",
+    "text": "How stacking works\n\nTrain several base models on the training data\nCollect their predictions on a validation set\nTrain a meta-model on those predictions to learn the optimal combination\nFinal prediction = output of the meta-model"
+  },
+  {
+    "objectID": "slides-11.html#stacking-1",
+    "href": "slides-11.html#stacking-1",
+    "title": "CPSC 330 Lecture 11: Ensembles",
+    "section": "Stacking",
+    "text": "Stacking\n\n\n\nSource"
   },
   {
     "objectID": "slides-02.html#announcements",
@@ -1538,257 +1951,5 @@
     "title": "Lecture 2: Terminology, Baselines, Decision Trees",
     "section": "Group Work: Class Demo & Live Coding",
     "text": "Group Work: Class Demo & Live Coding\nIn some of the classes, we will do a bit of live coding to get your used to practical machine learning. You are highly encouraged to follow along - we won’t usually finish everything in the demo, but it should be a significant portion that you can finish off after class.\nFor this demo, each student should click this link to create a new repo in their accounts, then clone that repo locally to follow along with the demo from today."
-  },
-  {
-    "objectID": "slides-09.html#announcements",
-    "href": "slides-09.html#announcements",
-    "title": "CPSC 330 Lecture 9: Classification Metrics",
-    "section": "Announcements",
-    "text": "Announcements\n\nReminder: Midterm 1 is next week!\nPractice Midterm should be released soon\nSee the announcement on Ed Discussion for the details of resources you’ll be provided on the exam"
-  },
-  {
-    "objectID": "slides-09.html#ml-workflow",
-    "href": "slides-09.html#ml-workflow",
-    "title": "CPSC 330 Lecture 9: Classification Metrics",
-    "section": "ML workflow",
-    "text": "ML workflow"
-  },
-  {
-    "objectID": "slides-09.html#accuracy",
-    "href": "slides-09.html#accuracy",
-    "title": "CPSC 330 Lecture 9: Classification Metrics",
-    "section": "Accuracy",
-    "text": "Accuracy\n\nSo far, we’ve been measuring model performance using Accuracy.\n\nAccuracy is the proportion of all predictions that were correct — whether positive or negative.\n\n\\[\n\\text{Accuracy} = \\frac{\\text{correct classifications}}{\\text{total classifications}}\n\\]\n\nBut is accuracy always the right metric to evaluate a model? 🤔"
-  },
-  {
-    "objectID": "slides-09.html#a-fraud-classification-example",
-    "href": "slides-09.html#a-fraud-classification-example",
-    "title": "CPSC 330 Lecture 9: Classification Metrics",
-    "section": "A fraud classification example",
-    "text": "A fraud classification example\n\n\n(139554, 29)\n\n\n\n\n\n\n\n\n\nClass\nTime\nAmount\nV1\nV2\nV3\nV4\nV5\nV6\nV7\n...\nV19\nV20\nV21\nV22\nV23\nV24\nV25\nV26\nV27\nV28\n\n\n\n\n64454\n0\n51150.0\n1.00\n-3.538816\n3.481893\n-1.827130\n-0.573050\n2.644106\n-0.340988\n2.102135\n...\n-1.509991\n1.345904\n0.530978\n-0.860677\n-0.201810\n-1.719747\n0.729143\n-0.547993\n-0.023636\n-0.454966\n\n\n37906\n0\n39163.0\n18.49\n-0.363913\n0.853399\n1.648195\n1.118934\n0.100882\n0.423852\n0.472790\n...\n0.810267\n-0.192932\n0.687055\n-0.094586\n0.121531\n0.146830\n-0.944092\n-0.558564\n-0.186814\n-0.257103\n\n\n79378\n0\n57994.0\n23.74\n1.193021\n-0.136714\n0.622612\n0.780864\n-0.823511\n-0.706444\n-0.206073\n...\n0.258815\n-0.178761\n-0.310405\n-0.842028\n0.085477\n0.366005\n0.254443\n0.290002\n-0.036764\n0.015039\n\n\n245686\n0\n152859.0\n156.52\n1.604032\n-0.808208\n-1.594982\n0.200475\n0.502985\n0.832370\n-0.034071\n...\n-1.009429\n-0.040448\n0.519029\n1.429217\n-0.139322\n-1.293663\n0.037785\n0.061206\n0.005387\n-0.057296\n\n\n60943\n0\n49575.0\n57.50\n-2.669614\n-2.734385\n0.662450\n-0.059077\n3.346850\n-2.549682\n-1.430571\n...\n0.157993\n-0.430295\n-0.228329\n-0.370643\n-0.211544\n-0.300837\n-1.174590\n0.573818\n0.388023\n0.161782\n\n\n\n\n5 rows × 31 columns"
-  },
-  {
-    "objectID": "slides-09.html#dummyclassifier",
-    "href": "slides-09.html#dummyclassifier",
-    "title": "CPSC 330 Lecture 9: Classification Metrics",
-    "section": "DummyClassifier",
-    "text": "DummyClassifier\nLet’s try a DummyClassifier, which makes predictions without learning any patterns.\n\ndummy = DummyClassifier()\ncross_val_score(dummy, X_train, y_train).mean()\n\nnp.float64(0.9983017327649726)\n\n\n\nThe accuracy looks surprisingly high!\nShould we be happy with this model and deploy it?"
-  },
-  {
-    "objectID": "slides-09.html#problem-class-imbalance",
-    "href": "slides-09.html#problem-class-imbalance",
-    "title": "CPSC 330 Lecture 9: Classification Metrics",
-    "section": "Problem: Class imbalance",
-    "text": "Problem: Class imbalance\n\ny_train.value_counts()\n\nClass\n0    139317\n1       237\nName: count, dtype: int64\n\n\n\nIn many real-world problems, some classes are much rarer than others.\nA model that always predicts “no fraud” could still achieve &gt;99% accuracy!\nThis is why accuracy can be misleading in imbalanced datasets.\nWe need metrics that differentiate types of errors."
-  },
-  {
-    "objectID": "slides-09.html#dummyclassifier-confusion-matrix",
-    "href": "slides-09.html#dummyclassifier-confusion-matrix",
-    "title": "CPSC 330 Lecture 9: Classification Metrics",
-    "section": "DummyClassifier: Confusion matrix",
-    "text": "DummyClassifier: Confusion matrix\nWhich types of errors would be most critical for the bank to address? Missing a fraud case or flagging a legitimate transaction as fraud?"
-  },
-  {
-    "objectID": "slides-09.html#logisticregression-confusion-matrix",
-    "href": "slides-09.html#logisticregression-confusion-matrix",
-    "title": "CPSC 330 Lecture 9: Classification Metrics",
-    "section": "LogisticRegression: Confusion matrix",
-    "text": "LogisticRegression: Confusion matrix\nAre we doing better with logistic regression?"
-  },
-  {
-    "objectID": "slides-09.html#understanding-the-confusion-matrix",
-    "href": "slides-09.html#understanding-the-confusion-matrix",
-    "title": "CPSC 330 Lecture 9: Classification Metrics",
-    "section": "Understanding the confusion matrix",
-    "text": "Understanding the confusion matrix\n\n\n\n\n\nTN \\(\\rightarrow\\) True negatives\nFP \\(\\rightarrow\\) False positives\nFN \\(\\rightarrow\\) False negatives\nTP \\(\\rightarrow\\) True positives"
-  },
-  {
-    "objectID": "slides-09.html#confusion-matrix-questions",
-    "href": "slides-09.html#confusion-matrix-questions",
-    "title": "CPSC 330 Lecture 9: Classification Metrics",
-    "section": "Confusion matrix questions",
-    "text": "Confusion matrix questions\nImagine a spam filter model where emails labeled 1 = spam, 0 = not spam.\nIf a spam email is incorrectly classified as not spam, what kind of error is this?\n\n\nA false positive\n\n\nA true positive\n\n\nA false negative\n\n\nA true negative"
-  },
-  {
-    "objectID": "slides-09.html#confusion-matrix-questions-1",
-    "href": "slides-09.html#confusion-matrix-questions-1",
-    "title": "CPSC 330 Lecture 9: Classification Metrics",
-    "section": "Confusion matrix questions",
-    "text": "Confusion matrix questions\nIn an intrusion detection system, 1 = intrusion, 0 = safe.\nIf the system misses an actual intrusion and classifies it as safe, this is a:\n\n\nA false positive\n\n\nA true positive\n\n\nA false negative\n\n\nA true negative"
-  },
-  {
-    "objectID": "slides-09.html#confusion-matrix-questions-2",
-    "href": "slides-09.html#confusion-matrix-questions-2",
-    "title": "CPSC 330 Lecture 9: Classification Metrics",
-    "section": "Confusion matrix questions",
-    "text": "Confusion matrix questions\nIn a medical test for a disease, 1 = diseased, 0 = healthy.\nIf a healthy patient is incorrectly diagnosed as diseased, that’s a:\n\n\nA false positive\n\n\nA true positive\n\n\nA false negative\n\n\nA true negative"
-  },
-  {
-    "objectID": "slides-09.html#metrics-other-than-accuracy",
-    "href": "slides-09.html#metrics-other-than-accuracy",
-    "title": "CPSC 330 Lecture 9: Classification Metrics",
-    "section": "Metrics other than accuracy",
-    "text": "Metrics other than accuracy\nNow that we understand the different types of errors, we can explore metrics that better capture model performance when accuracy falls short, especially for imbalanced datasets.\nWe’ll start with three key ones:\n\nPrecision\nRecall\nF1-score"
-  },
-  {
-    "objectID": "slides-09.html#precision-and-recall",
-    "href": "slides-09.html#precision-and-recall",
-    "title": "CPSC 330 Lecture 9: Classification Metrics",
-    "section": "Precision and recall",
-    "text": "Precision and recall\nLet’s revisit our fraud detection scenario. The circle below represents all transactions predicted as fraud by an imaginary toy model designed to detect fraudulent activity."
-  },
-  {
-    "objectID": "slides-09.html#intuition-behind-the-two-metrics",
-    "href": "slides-09.html#intuition-behind-the-two-metrics",
-    "title": "CPSC 330 Lecture 9: Classification Metrics",
-    "section": "Intuition behind the two metrics",
-    "text": "Intuition behind the two metrics\n\nPrecision: Of all the transactions predicted as fraud, how many were actually fraud?\n\nHigh precision \\(\\rightarrow\\) few false alarms (low false positives).\n\nRecall: Of all the actual fraud cases, how many did the model catch?\n\nHigh recall \\(\\rightarrow\\) few missed frauds (low false negatives)."
-  },
-  {
-    "objectID": "slides-09.html#trade-off-between-precision-and-recall",
-    "href": "slides-09.html#trade-off-between-precision-and-recall",
-    "title": "CPSC 330 Lecture 9: Classification Metrics",
-    "section": "Trade-off between precision and recall",
-    "text": "Trade-off between precision and recall\n\nIncreasing recall often decreases precision, and vice versa.\n\nExample:\n\nPredict “fraud” for every transaction \\(\\rightarrow\\) perfect recall, terrible precision.\n\nPredict “fraud” only when 100% sure \\(\\rightarrow\\) high precision, low recall.\n\n\nThe right balance depends on the application and cost of errors."
-  },
-  {
-    "objectID": "slides-09.html#f1-score",
-    "href": "slides-09.html#f1-score",
-    "title": "CPSC 330 Lecture 9: Classification Metrics",
-    "section": "F1-score",
-    "text": "F1-score\n\nSometimes, we want a single metric that balances precision and recall.\n\nThe F1-score is the harmonic mean of the two:\n\n\\[\nF1 = 2 \\times \\frac{\\text{Precision} \\times \\text{Recall}}{\\text{Precision} + \\text{Recall}}\n\\]\n\nHigh F1 means both precision and recall are strong.\n\nUseful when we care about both false positives and false negatives."
-  },
-  {
-    "objectID": "slides-09.html#summary",
-    "href": "slides-09.html#summary",
-    "title": "CPSC 330 Lecture 9: Classification Metrics",
-    "section": "Summary",
-    "text": "Summary\n\n\n\n\n\n\n\n\nMetric\nWhat it measures\nHigh value means\n\n\n\n\nAccuracy\nOverall correctness\nModel gets most predictions right\n\n\nPrecision\nQuality of positive predictions\nFew false alarms\n\n\nRecall\nQuantity of true positives caught\nFew missed positives\n\n\nF1-score\nBalance of precision & recall\nBoth precision and recall are high"
-  },
-  {
-    "objectID": "slides-09.html#activity-1-create-confusion-matrix",
-    "href": "slides-09.html#activity-1-create-confusion-matrix",
-    "title": "CPSC 330 Lecture 9: Classification Metrics",
-    "section": "Activity 1: Create Confusion Matrix",
-    "text": "Activity 1: Create Confusion Matrix\n\nSource: StatQuest"
-  },
-  {
-    "objectID": "slides-09.html#activity-2-calculate-precision-recall-specificity",
-    "href": "slides-09.html#activity-2-calculate-precision-recall-specificity",
-    "title": "CPSC 330 Lecture 9: Classification Metrics",
-    "section": "Activity 2: Calculate Precision, Recall, Specificity",
-    "text": "Activity 2: Calculate Precision, Recall, Specificity\n\nRecall (aka Sensitivity in biomedical literature)\n\nTP/(TP+FN)\n\nPrecision\n\nTP/(TP+FP)\n\nSpecificity\n\nTN/(TN+FP)"
-  },
-  {
-    "objectID": "slides-09.html#break",
-    "href": "slides-09.html#break",
-    "title": "CPSC 330 Lecture 9: Classification Metrics",
-    "section": "Break!",
-    "text": "Break!\nLet’s take a break!"
-  },
-  {
-    "objectID": "slides-09.html#clicker-exercise-9.1",
-    "href": "slides-09.html#clicker-exercise-9.1",
-    "title": "CPSC 330 Lecture 9: Classification Metrics",
-    "section": "Clicker Exercise 9.1",
-    "text": "Clicker Exercise 9.1\nSelect all of the following statements which are TRUE.\n\n\nIn medical diagnosis, false positives are more damaging than false negatives (assume “positive” means the person has a disease, “negative” means they don’t).\n\n\nIn spam classification, false positives are more damaging than false negatives (assume “positive” means the email is spam, “negative” means they it’s not).\n\n\nIf method A gets a higher accuracy than method B, that means its precision is also higher.\n\n\nIf method A gets a higher accuracy than method B, that means its recall is also higher."
-  },
-  {
-    "objectID": "slides-09.html#counter-examples",
-    "href": "slides-09.html#counter-examples",
-    "title": "CPSC 330 Lecture 9: Classification Metrics",
-    "section": "Counter examples",
-    "text": "Counter examples\nMethod A - higher accuracy but lower precision\n\n\n\nNegative\nPositive\n\n\n\n\n90\n5\n\n\n5\n0\n\n\n\nMethod B - lower accuracy but higher precision\n\n\n\nNegative\nPositive\n\n\n\n\n80\n15\n\n\n0\n5"
-  },
-  {
-    "objectID": "slides-09.html#takeaway",
-    "href": "slides-09.html#takeaway",
-    "title": "CPSC 330 Lecture 9: Classification Metrics",
-    "section": "Takeaway",
-    "text": "Takeaway\n\nAccuracy summarizes overall correctness but hides class-specific behaviour.\n\nYou can have high accuracy but poor precision or recall,\nespecially in imbalanced datasets.\n\nAlways check multiple metrics before deciding which model is better."
-  },
-  {
-    "objectID": "slides-09.html#predicting-with-logistic-regression",
-    "href": "slides-09.html#predicting-with-logistic-regression",
-    "title": "CPSC 330 Lecture 9: Classification Metrics",
-    "section": "Predicting with logistic regression",
-    "text": "Predicting with logistic regression\n\n\n\n\n\nMost classification models don’t directly predict labels. They predict scores or probabilities.\nTo get a label (e.g., “fraud” or “non fraud”), we choose a threshold (often 0.5). If the threshold changes, predictions change, and so do the errors.\nWhat happens to precision and recall if we change the probability threshold?\nPlay with classification thresholds\n\n\n\n\nDecreasing the threshold:\n\nIncreases the number of positive predictions\nIdentify more examples as “fraud” examples\nMore false positives, more true positives.\nRecall would either stay the same or go up and precision is likely to go down (precision may increase if all the new examples after decreasing the threshold are TPs).\n\nIncreasing the threshold:\n\nDecreases the number of positive predictions\nRecall would go down or stay the same but precision is likely to go up (precision may go down if TP decrease but FP do not decrease).\n\nKey question: How do we decide on the best threshold? It depends on the problem and trade-offs between false positives and false negatives."
-  },
-  {
-    "objectID": "slides-09.html#pr-curve",
-    "href": "slides-09.html#pr-curve",
-    "title": "CPSC 330 Lecture 9: Classification Metrics",
-    "section": "PR curve",
-    "text": "PR curve\n\nCalculate precision and recall (TPR) at every possible threshold and graph them.\nTop left \\(\\rightarrow\\) Very high threshold (strict model = high precision)\nBottom right \\(\\rightarrow\\) Very low threshold (linient model = high recall)\n\n\n\n\n\n\n\n\n\n\n\n\nWe can look at all possible thresholds and plot the corresponding precision and recall!\nAs we lower the threshold, the classifier predicts more positives:\n\nRecall increases because we capture more true positives.\nPrecision usually decreases because some of the additional positives are false positives.\n\nAs we raise the threshold, the classifier predicts fewer positives:\n\nPrecision increases because only the most confident predictions are positive.\nRecall decreases because we miss more true positives.\n\nThe curve shows the trade-offs between precision and recall across all thresholds.\nIdeal performance: top-right corner (high precision and high recall).\nUse cases like fraud detection often require focusing on areas of the curve that favor one metric over the other (e.g., high recall for safety-critical tasks)."
-  },
-  {
-    "objectID": "slides-09.html#pr-curve-different-thresholds",
-    "href": "slides-09.html#pr-curve-different-thresholds",
-    "title": "CPSC 330 Lecture 9: Classification Metrics",
-    "section": "PR curve different thresholds",
-    "text": "PR curve different thresholds\n\nWhich of the red dots are reasonable trade offs?"
-  },
-  {
-    "objectID": "slides-09.html#average-precision-ap-score",
-    "href": "slides-09.html#average-precision-ap-score",
-    "title": "CPSC 330 Lecture 9: Classification Metrics",
-    "section": "Average Precision (AP) Score",
-    "text": "Average Precision (AP) Score\n\n\n\nAP score summarizes the PR curve by calculating the area under the curve\nIt measures the ranking ability of a model; how well it assigns higher probabilities to positive examples than to negative ones, regardless of the specific threshold."
-  },
-  {
-    "objectID": "slides-09.html#clicker-exercise-9.2",
-    "href": "slides-09.html#clicker-exercise-9.2",
-    "title": "CPSC 330 Lecture 9: Classification Metrics",
-    "section": "Clicker Exercise 9.2",
-    "text": "Clicker Exercise 9.2\nChoose the appropriate evaluation metric for the following scenarios:\nScenario 1: Balance between precision and recall for a threshold.\nScenario 2: Assess performance across all thresholds.\n\n\nF1 for 1, AP for 2\n\n\nAP for 1, F1 Score for 2\n\n\nAP for both\n\n\nF1 for both\n\n\n\n\nF1 score is for a given threshold and measures the quality of predict.\nAP score is a summary across thresholds and measures the quality of predict_proba."
-  },
-  {
-    "objectID": "slides-09.html#clicker-exercise-9.3",
-    "href": "slides-09.html#clicker-exercise-9.3",
-    "title": "CPSC 330 Lecture 9: Classification Metrics",
-    "section": "Clicker Exercise 9.3",
-    "text": "Clicker Exercise 9.3\nSelect all of the following statements which are TRUE.\n\n\nIf we increase the classification threshold, both true and false positives are likely to decrease.\n\n\nIf we increase the classification threshold, both true and false negatives are likely to decrease.\n\n\nLowering the classification threshold generally increases the model’s recall.\n\n\n\nRaising the classification threshold can improve the precision of the model if it effectively reduces the number of false positives without significantly affecting true positives."
-  },
-  {
-    "objectID": "slides-09.html#roc-curve",
-    "href": "slides-09.html#roc-curve",
-    "title": "CPSC 330 Lecture 9: Classification Metrics",
-    "section": "ROC Curve",
-    "text": "ROC Curve\n\nCompute the True Positive Rate (TPR) and False Positive Rate (FPR) at every possible threshold, and plot TPR vs FPR.\n\nHow well does the model separate positive and negative classes in terms of predicted probability?\nA good choice when the dataset is reasonably balanced or not extremely imbalanced (e.g., fraud detection, disease diagnosis)."
-  },
-  {
-    "objectID": "slides-09.html#roc-curve-example",
-    "href": "slides-09.html#roc-curve-example",
-    "title": "CPSC 330 Lecture 9: Classification Metrics",
-    "section": "ROC Curve example",
-    "text": "ROC Curve example\n\nBottom-left \\(\\rightarrow\\) very high threshold (almost everything predicted negative: low recall, low FPR).\n\nTop-right \\(\\rightarrow\\) very low threshold (almost everything predicted positive: high recall, high FPR)."
-  },
-  {
-    "objectID": "slides-09.html#auc",
-    "href": "slides-09.html#auc",
-    "title": "CPSC 330 Lecture 9: Classification Metrics",
-    "section": "AUC",
-    "text": "AUC\n\nThe area under the ROC curve (AUC) represents the probability that the model, if given a randomly chosen positive and negative example, will rank the positive higher than the negative."
-  },
-  {
-    "objectID": "slides-09.html#roc-auc-questions",
-    "href": "slides-09.html#roc-auc-questions",
-    "title": "CPSC 330 Lecture 9: Classification Metrics",
-    "section": "ROC AUC questions",
-    "text": "ROC AUC questions\nConsider the points A, B, and C in the following diagram, each representing a threshold. Which threshold would you pick in each scenario?\n\n\n\n\n\n\nIf false positives (false alarms) are highly costly\n\n\nIf false positives are cheap and false negatives (missed true positives) highly costly\n\n\nIf the costs are roughly equivalent\n\n\n\nSource"
-  },
-  {
-    "objectID": "slides-09.html#group-work-class-demo-live-coding",
-    "href": "slides-09.html#group-work-class-demo-live-coding",
-    "title": "CPSC 330 Lecture 9: Classification Metrics",
-    "section": "Group Work: Class Demo & Live Coding",
-    "text": "Group Work: Class Demo & Live Coding\nFor this demo, each student should click this link to create a new repo in their accounts, then clone that repo locally to follow along with the demo from today."
-  },
-  {
-    "objectID": "slides-09.html#what-did-we-learn",
-    "href": "slides-09.html#what-did-we-learn",
-    "title": "CPSC 330 Lecture 9: Classification Metrics",
-    "section": "What did we learn?",
-    "text": "What did we learn?\n\nWhy accuracy is not always a good metric?\nConfusion matrix\nPrecision, recall, & f1-score\nPrecision-recall curves & average precision\nReceiver Operator Characteristic (ROC) curves & AUC"
   }
 ]
