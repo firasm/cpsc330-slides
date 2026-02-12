@@ -221,7 +221,7 @@
     "href": "slides-08.html#random-search-example",
     "title": "CPSC 330 Lecture 8: Hyperparameter Optimization",
     "section": "Random search example",
-    "text": "Random search example\n\nfrom sklearn.model_selection import RandomizedSearchCV\nfrom scipy.stats import randint\n\npipe_svc = make_pipeline(CountVectorizer(), SVC())\n\nparam_dist = {\n    \"countvectorizer__max_features\": randint(100, 2000), \n    \"svc__C\": uniform(0.1, 1e4),  # loguniform(1e-3, 1e3),\n    \"svc__gamma\": loguniform(1e-5, 1e3),\n}\nrandom_search = RandomizedSearchCV(pipe_svm,                                    \n                  param_distributions = param_dist, \n                  n_iter=10, \n                  n_jobs=-1, \n                  return_train_score=True)\n\n# Carry out the search\nrandom_search.fit(X_train, y_train)\nrandom_search.best_score_\n\nnp.float64(0.9822492602034216)"
+    "text": "Random search example\n\nfrom sklearn.model_selection import RandomizedSearchCV\nfrom scipy.stats import randint\n\npipe_svc = make_pipeline(CountVectorizer(), SVC())\n\nparam_dist = {\n    \"countvectorizer__max_features\": randint(100, 2000), \n    \"svc__C\": uniform(0.1, 1e4),  # loguniform(1e-3, 1e3),\n    \"svc__gamma\": loguniform(1e-5, 1e3),\n}\nrandom_search = RandomizedSearchCV(pipe_svm,                                    \n                  param_distributions = param_dist, \n                  n_iter=10, \n                  n_jobs=-1, \n                  return_train_score=True)\n\n# Carry out the search\nrandom_search.fit(X_train, y_train)\nrandom_search.best_score_\n\nnp.float64(0.9814518520287441)"
   },
   {
     "objectID": "slides-08.html#pizza-baking-competition-example",
@@ -1671,6 +1671,20 @@
     "title": "CPSC 330 Lecture 11: Ensembles",
     "section": "Stacking",
     "text": "Stacking\n\n\n\nSource"
+  },
+  {
+    "objectID": "slides-11.html#break",
+    "href": "slides-11.html#break",
+    "title": "CPSC 330 Lecture 11: Ensembles",
+    "section": "Break",
+    "text": "Break\nLet’s take a break!\n /"
+  },
+  {
+    "objectID": "slides-11.html#group-work-class-demo-live-coding",
+    "href": "slides-11.html#group-work-class-demo-live-coding",
+    "title": "CPSC 330 Lecture 11: Ensembles",
+    "section": "Group Work: Class Demo & Live Coding",
+    "text": "Group Work: Class Demo & Live Coding\nFor this demo, each student should click this link to create a new repo in their accounts, then clone that repo locally to follow along with the demo from today."
   },
   {
     "objectID": "slides-02.html#announcements",
