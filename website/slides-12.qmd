@@ -18,12 +18,30 @@ editor:
   render-on-save: true
 ---
 
-<!-- ## Announcements 
+## Announcements 
 
+- Midterm 1 grades are released on PrairieLearn
+- Please remember to view your midterm in the CBTF! 
+
+## Midterm Debrief
+
+How did you feel about the first midterm?
+
+- (A) I felt well-prepared and it went smoothly
+- (B) I think it went okay. We'll see when grades come back
+- (C) I struggled and didn't feel fully prepared
+- (D) I noticed some gaps between what we practiced and what appeared on the exam
+- (E) It was a stressful experience for me 😔
+
+<!--
 - HW4 grades are released 
 - HW5 is due next week Monday. Make use of office hours and tutorials this week.    -->
 
-## Scenario 1: Which model would you pick 
+## Motivating Feature importances
+
+Consider the following two scenarios:
+
+### Scenario 1: Which model would you pick 
 
 Predicting whether a patient is likely to develop diabetes based on features such as age, blood pressure, glucose levels, and BMI. You have two models:
 
@@ -32,19 +50,20 @@ Predicting whether a patient is likely to develop diabetes based on features suc
 
 Which model would you pick? Why? 
 
-## Scenario 2
+### Scenario 2
 Predicting whether a user will purchase a product next based on their browsing history, previous purchases, and click behavior. You have two models:
 
 - LGBM which results in 0.9 F1 score
 - Logistic regression which results in 0.84 F1 score
 
-Which model would you pick? Why?
+Which model would you pick? Why? 
 
 ## Transparency
 
-- In many domains understanding the relationship between features and predictions is critical for trust and regulatory compliance. 
+- In many domains understanding the **relationship between features and predictions** is critical for trust and regulatory compliance. 
 
 ### Feature importances 
+
 - How does the output depend upon the input? 
 - How do the predictions change as a function of a particular feature?
 
@@ -70,10 +89,17 @@ Which model would you pick? Why?
 	- A negative coefficient indicates that an increase in the feature's value leads to a decrease in the predicted value.
 
 ## Interpreting coefficients 
+
 - When we have different types of preprocessed features, what challenges you might face in interpreting them? 
   - Ordinally encoded features
   - One-hot encoded features
   - Scaled numeric features
+
+## Break
+
+Let's take a break!
+
+![](img/eva-coffee.png){fig-align="center"}
 
 ## Pause and Reflect 
 
@@ -83,8 +109,15 @@ You had a midterm already a couple of weeks ago, I'd like some feedback on how t
 
 ## Class Survey
 
-I'd love to hear how you think lectures are going, and how the course is going overall: [bit.ly/cpsc330_25S](https://bit.ly/cpsc330_2025S).
+I'd love to hear how you think lectures are going, and how the course is going overall: [bit.ly/cpsc330_2025W2](https://bit.ly/cpsc330_2025W2).
 
+Let's take a couple of minutes to complete this before we get started on today's content.
+
+## Group Work: Class Demo & Live Coding
+
+For this demo, each student should [click this link](https://github.com/new?template_name=lecture12_demo&template_owner=ubc-cpsc330) to create a new repo in their accounts, then clone that repo locally to follow along with the demo from today.
+
+<!-- 
 ## (iClicker) Midterm poll {.smaller}
 
 **Select all of the following statements which are TRUE.**
@@ -94,12 +127,10 @@ I'd love to hear how you think lectures are going, and how the course is going o
 - (C) I'm doing okay, but I feel stressed and worried about upcoming assessments.
 - (D) I'm confused about some concepts and would appreciate more clarification or review sessions.
 - (E) I'm struggling to keep up with the material. I am not happy with my learning in this course and my morale is low ☹️.
+ -->
 
-## Break
 
-Let's take a break!
 
-![](img/eva-coffee.png){fig-align="center"}
 
 
 ## Group Work: Class Demo & Live Coding (if time permits)
