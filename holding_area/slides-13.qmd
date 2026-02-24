@@ -11,9 +11,7 @@ format:
         slide-level: 2
         center: false
         logo: img/UBC-CS-logo.png
-        theme: 
-            - dracula
-            - slides.scss
+        theme: [night, slides.scss]
         resources:
           - data/
           - img/
