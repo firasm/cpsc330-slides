@@ -221,7 +221,7 @@
     "href": "slides-08.html#random-search-example",
     "title": "CPSC 330 Lecture 8: Hyperparameter Optimization",
     "section": "Random search example",
-    "text": "Random search example\n\nfrom sklearn.model_selection import RandomizedSearchCV\nfrom scipy.stats import randint\n\npipe_svc = make_pipeline(CountVectorizer(), SVC())\n\nparam_dist = {\n    \"countvectorizer__max_features\": randint(100, 2000), \n    \"svc__C\": uniform(0.1, 1e4),  # loguniform(1e-3, 1e3),\n    \"svc__gamma\": loguniform(1e-5, 1e3),\n}\nrandom_search = RandomizedSearchCV(pipe_svm,                                    \n                  param_distributions = param_dist, \n                  n_iter=10, \n                  n_jobs=-1, \n                  return_train_score=True)\n\n# Carry out the search\nrandom_search.fit(X_train, y_train)\nrandom_search.best_score_\n\nnp.float64(0.9824492590093991)"
+    "text": "Random search example\n\nfrom sklearn.model_selection import RandomizedSearchCV\nfrom scipy.stats import randint\n\npipe_svc = make_pipeline(CountVectorizer(), SVC())\n\nparam_dist = {\n    \"countvectorizer__max_features\": randint(100, 2000), \n    \"svc__C\": uniform(0.1, 1e4),  # loguniform(1e-3, 1e3),\n    \"svc__gamma\": loguniform(1e-5, 1e3),\n}\nrandom_search = RandomizedSearchCV(pipe_svm,                                    \n                  param_distributions = param_dist, \n                  n_iter=10, \n                  n_jobs=-1, \n                  return_train_score=True)\n\n# Carry out the search\nrandom_search.fit(X_train, y_train)\nrandom_search.best_score_\n\nnp.float64(0.9818506556179762)"
   },
   {
     "objectID": "slides-08.html#pizza-baking-competition-example",
@@ -642,6 +642,13 @@
     "title": "CPSC 330 Lecture 13: Feature Engineering and Selection",
     "section": "(iClicker) Exercise 13.2",
     "text": "(iClicker) Exercise 13.2\nSelect all of the following statements which are TRUE.\n\n\nYou can carry out feature selection using linear models by pruning the features which have very small weights (i.e., coefficients less than a threshold).\n\n\nThe order of features removed given by rfe.ranking_ is the same as the order of original feature importances given by the model."
+  },
+  {
+    "objectID": "slides-13.html#group-work-class-demo-live-coding-if-time-permits",
+    "href": "slides-13.html#group-work-class-demo-live-coding-if-time-permits",
+    "title": "CPSC 330 Lecture 13: Feature Engineering and Selection",
+    "section": "Group Work: Class Demo & Live Coding (if time permits)",
+    "text": "Group Work: Class Demo & Live Coding (if time permits)\nFor this demo, each student should click this link to create a new repo in their accounts, then clone that repo locally to follow along with the demo from today."
   },
   {
     "objectID": "slides-10.html#which-metric-fits-best",
