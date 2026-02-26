@@ -238,4 +238,8 @@ Upon analyzing the data, you notice a pattern: flights tend to be delayed more o
 **Select all of the following statements which are TRUE.**
 
 - (A) You can carry out feature selection using linear models by pruning the features which have very small weights (i.e., coefficients less than a threshold).
-- (B) The order of features removed given by `rfe.ranking_` is the same as the order of original feature importances given by the model.  
+- (B) The order of features removed given by `rfe.ranking_` is the same as the order of original feature importances given by the model.
+
+## Group Work: Class Demo & Live Coding (if time permits)
+
+For this demo, each student should [click this link](https://github.com/new?template_name=lecture13_demo&template_owner=ubc-cpsc330) to create a new repo in their accounts, then clone that repo locally to follow along with the demo from today.
