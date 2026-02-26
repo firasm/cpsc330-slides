@@ -20,50 +20,7 @@ editor:
   render-on-save: true
 ---
 
-## Announcements 
-
-- Midterm 1 scores are now out!
-    - The class average was 80% - nice work everyone!
-    - Viewing sessions (in the CBTF) will be next week.
-    - Regrade requests must be submitted within the CBTF
-- HW5 is due tomorrow!
-
-## CPSC 330 Final Exam
-
-- The final exam will be self-scheduled in the CBTF
-- Exam window: Monday June 23 and Tuesday June 24th
-    - Typically, sessions will be available at 9 AM, 12 PM, 3 PM and sometimes, 6 PM.
-- I will announce details on booking final exams in the CBTF soon...
-
-## Course Feedback 1
-
-![](img/firas/2025S_survey/01_structure.png){fig-align="center"}
-
-## Course Feedback 2
-
-![](img/firas/2025S_survey/02_lectures.png){fig-align="center"}
-
-## Course Feedback 3
-
-![](img/firas/2025S_survey/03_pace.png){fig-align="center"}
-
-## Course Feedback 4
-
-![](img/firas/2025S_survey/04_labs.png){fig-align="center"}
-
-## Course Feedback 5
-
-![](img/firas/2025S_survey/05_videos.png){fig-align="center"}
-
-## Course Feedback 6
-
-![](img/firas/2025S_survey/06_TAhours.png){fig-align="center"}
-
-## Course Feedback 7
-
-![](img/firas/2025S_survey/07_overall.png){fig-align="center"}
-
-## Finishing up Feature importances
+## Finishing up Feature importances and SHAP
 
 Why do we care about feature importances so much?
 
@@ -80,6 +37,20 @@ Why do we care about feature importances so much?
   - Fairness / bias. See this.
   - Keep in mind this can be used on deployment predictions!
 
+## Why bother about model transparancey? 
+
+![](img/shap_example.png)
+
+## SHAP intuition 
+- Think of the model as a "black box" that outputs predictions.
+- SHAP asks: If we treat each feature as a player contributing to the final prediction, how much credit does each one deserve?
+- To answer this fairly, SHAP looks at all possible combinations of features and averages their marginal contributions.
+- A marginal contribution is how much the prediction changes when you add that feature to a subset of other features.
+
+## SHAP 
+
+![](img/shap-explanation-example.png)
+
 ## Extending SHAP
 
 - Can also be used to explain text classification and image classification!
@@ -94,11 +65,25 @@ Why do we care about feature importances so much?
 
 ![](../img/shap_image_explainer.png)
 
-- Example: In the picture below, red pixels represent positive SHAP values that increase the probability of the class, while blue pixels represent negative SHAP values the reduce the probability of the class. 
+- Example: In the picture below, red pixels represent positive SHAP values that increase the probability of the class, while blue pixels represent negative SHAP values the reduce the probability of the class.
 
-## iClicker Exercise 14.0
+## Practice Question on SHAP {.smaller}
 
-**iClicker cloud join link: [https://join.iclicker.com/YJHS](https://join.iclicker.com/YJHS)**
+Select all the statements that are true:
+
+- (A) SHAP values are model parameters learned during training.
+- (B) Coefficients in a linear model and SHAP values both quantify how much each feature contributes to a prediction, but coefficients are global while SHAP values are local.
+- (C) SHAP values can only be computed for tree-based models.
+- (D) A waterfall plot shows how each feature's SHAP value cumulatively contributes to a single prediction.
+- (E) SHAP provides the same explanation for all examples in the dataset.
+
+## Break
+
+Let's take a break!
+
+![](img/eva-coffee.png){fig-align="center"}
+
+## Clicker Question 14.0
 
 Suppose you are working on a machine learning project. If you have to prioritize one of the following in your project which of the following would it be?
 
@@ -115,6 +100,13 @@ Suppose you are working on a machine learning project. If you have to prioritize
 
 Upon analyzing the data, you notice a pattern: flights tend to be delayed more often during the evening rush hours. What feature could be valuable to add for this prediction task?
 <br><br><br><br>
+
+## Motivating Feature Engineering
+
+Questions:
+
+- What are two possible ways we could "engineer" features?
+    - Think broadly and philosophically rather than an implementation...
 
 ## Garbage in, garbage out.
 
@@ -141,7 +133,6 @@ Upon analyzing the data, you notice a pattern: flights tend to be delayed more o
 - Better features: more flexibility, higher score, we can get by with simple and more interpretable models. 
 - If your features, i.e., representation is bad, whatever fancier model you build is not going to help.
 
-
 ## Some quotes on feature engineering 
 
 A quote by Pedro Domingos [A Few Useful Things to Know About Machine Learning](https://homes.cs.washington.edu/~pedrod/papers/cacm12.pdf)
@@ -156,7 +147,6 @@ A quote by Andrew Ng, [Machine Learning and AI via Brain simulations](https://ai
 <blockquote>
 Coming up with features is difficult, time-consuming, requires expert knowledge. "Applied machine learning" is basically feature engineering.
 </blockquote>
-
 
 ## Better features usually help more than a better model {.smaller}
 - Good features would ideally:
@@ -177,19 +167,16 @@ Coming up with features is difficult, time-consuming, requires expert knowledge.
         - Standardization 
     - For regression-based methods like linear regression, we want targets to have a linear dependency on features.
 
-## Motivating Feature Engineering
+## Domain-specific transformations
 
-Questions:
+In some domains there are natural transformations to do:
 
-- What are two possible ways we could "engineer" features?
-    - Think broadly and philosophically rather than an implementation...
+- Spectrograms (sound data)
+- Convolutions (image data)
 
-## Break
+![](img/spectogram.png)
 
-Let's take a break!
-
-![](img/eva-coffee.png){fig-align="center"}
-
+[Source](https://en.wikipedia.org/wiki/Spectrogram) 
 
 ## Group Work: Class Demo & Live Coding
 
@@ -216,13 +203,39 @@ In some domains there are natural transformations to do:
 
 ...
 
+## Discussion question
 
-## (iClicker) Exercise 14.1 
+- Suppose we want to predict whether a flight will arrive on time or be delayed. We have a dataset with the following information about flights:
+    - Departure Time
+    - Expected Duration of Flight (in minutes)
 
-**iClicker cloud join link: [https://join.iclicker.com/YJHS](https://join.iclicker.com/YJHS)**
+Upon analyzing the data, you notice a pattern: flights tend to be delayed more often during the evening rush hours. What feature could be valuable to add for this prediction task?
+<br><br><br><br>
+
+## Clicker Question 13.1 
 
 **Select all of the following statements which are TRUE.**
 
 - (A) Simple association-based feature selection approaches do not take into account the interaction between features.
 - (B) You can carry out feature selection using linear models by pruning the features which have very small weights (i.e., coefficients less than a threshold).
-- (C) The order of features removed given by `rfe.ranking_` is the same as the order of original feature importances given by the model.  
+- (C) The order of features removed given by `rfe.ranking_` is the same as the order of original feature importances given by the model.
+
+## Feature selection pipeline
+
+![](img/feat-selection-pipeline.png)
+
+##  Two useful methods 
+
+- Model-based selection
+    - Use a supervised machine learning model to judge the importance of each feature.
+    - Keep only the most important once.
+- Recursive feature elimination 
+    - Build a series of models
+    - At each iteration, discard the least important feature according to the model. 
+
+## (iClicker) Exercise 13.2
+
+**Select all of the following statements which are TRUE.**
+
+- (A) You can carry out feature selection using linear models by pruning the features which have very small weights (i.e., coefficients less than a threshold).
+- (B) The order of features removed given by `rfe.ranking_` is the same as the order of original feature importances given by the model.  

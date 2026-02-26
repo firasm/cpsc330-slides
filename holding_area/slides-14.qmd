@@ -22,6 +22,36 @@ editor:
 
 - HW5 extension: New due date is tomorrow.
 - HW6 will be released today. It'll be due next week Wednesday.
+
+## Course Feedback 1
+
+![](img/firas/2025S_survey/01_structure.png){fig-align="center"}
+
+## Course Feedback 2
+
+![](img/firas/2025S_survey/02_lectures.png){fig-align="center"}
+
+## Course Feedback 3
+
+![](img/firas/2025S_survey/03_pace.png){fig-align="center"}
+
+## Course Feedback 4
+
+![](img/firas/2025S_survey/04_labs.png){fig-align="center"}
+
+## Course Feedback 5
+
+![](img/firas/2025S_survey/05_videos.png){fig-align="center"}
+
+## Course Feedback 6
+
+![](img/firas/2025S_survey/06_TAhours.png){fig-align="center"}
+
+## Course Feedback 7
+
+![](img/firas/2025S_survey/07_overall.png){fig-align="center"}
+
+
  -->
 
 ## Supervised learning {.smaller}
