@@ -358,10 +358,6 @@ Coming up with features is difficult, time-consuming, requires expert knowledge.
 
 <img data-src="img/spectogram.png" class="r-stretch"><p><a href="https://en.wikipedia.org/wiki/Spectrogram">Source</a></p>
 </section>
-<section id="group-work-class-demo-live-coding" class="slide level2">
-<h2>Group Work: Class Demo &amp; Live Coding</h2>
-<p>For this demo, each student should <a href="https://github.com/new?template_name=lecture13_demo&amp;template_owner=ubc-cpsc330">click this link</a> to create a new repo in their accounts, then clone that repo locally to follow along with the demo from today.</p>
-</section>
 <section id="break-1" class="slide level2">
 <h2>Break</h2>
 <p>Let’s take a break!</p>
@@ -372,36 +368,6 @@ Coming up with features is difficult, time-consuming, requires expert knowledge.
 <p>In some domains there are natural transformations to do: - Spectrograms (sound data) - Wavelets (image data) - Convolutions</p>
 
 <img data-src="img/spectogram.png" class="r-stretch"><p><a href="https://en.wikipedia.org/wiki/Spectrogram">Source</a></p>
-</section>
-<section id="developing-intuition-about-feature-engineering" class="slide level2">
-<h2>Developing intuition about Feature Engineering</h2>
-<p>…</p>
-</section>
-<section id="discussion-question-1" class="slide level2">
-<h2>Discussion question</h2>
-<ul>
-<li>Suppose we want to predict whether a flight will arrive on time or be delayed. We have a dataset with the following information about flights:
-<ul>
-<li>Departure Time</li>
-<li>Expected Duration of Flight (in minutes)</li>
-</ul></li>
-</ul>
-<p>Upon analyzing the data, you notice a pattern: flights tend to be delayed more often during the evening rush hours. What feature could be valuable to add for this prediction task? <br><br><br><br></p>
-</section>
-<section id="clicker-question-13.1" class="slide level2">
-<h2>Clicker Question 13.1</h2>
-<p><strong>Select all of the following statements which are TRUE.</strong></p>
-<ul>
-<li><ol type="A">
-<li>Simple association-based feature selection approaches do not take into account the interaction between features.</li>
-</ol></li>
-<li><ol start="2" type="A">
-<li>You can carry out feature selection using linear models by pruning the features which have very small weights (i.e., coefficients less than a threshold).</li>
-</ol></li>
-<li><ol start="3" type="A">
-<li>The order of features removed given by <code>rfe.ranking_</code> is the same as the order of original feature importances given by the model.</li>
-</ol></li>
-</ul>
 </section>
 <section id="feature-selection-pipeline" class="slide level2">
 <h2>Feature selection pipeline</h2>
@@ -420,6 +386,21 @@ Coming up with features is difficult, time-consuming, requires expert knowledge.
 <li>Build a series of models</li>
 <li>At each iteration, discard the least important feature according to the model.</li>
 </ul></li>
+</ul>
+</section>
+<section id="clicker-question-13.1" class="slide level2">
+<h2>Clicker Question 13.1</h2>
+<p><strong>Select all of the following statements which are TRUE.</strong></p>
+<ul>
+<li><ol type="A">
+<li>Simple association-based feature selection approaches do not take into account the interaction between features.</li>
+</ol></li>
+<li><ol start="2" type="A">
+<li>You can carry out feature selection using linear models by pruning the features which have very small weights (i.e., coefficients less than a threshold).</li>
+</ol></li>
+<li><ol start="3" type="A">
+<li>The order of features removed given by <code>rfe.ranking_</code> is the same as the order of original feature importances given by the model.</li>
+</ol></li>
 </ul>
 </section>
 <section id="iclicker-exercise-13.2" class="slide level2">

@@ -207,7 +207,7 @@
     "href": "slides-08.html#grid-search-example",
     "title": "CPSC 330 Lecture 8: Hyperparameter Optimization",
     "section": "Grid search example",
-    "text": "Grid search example\n\nfrom sklearn.model_selection import GridSearchCV\n\npipe_svm = make_pipeline(CountVectorizer(), SVC())\n\nparam_grid = {\n    \"countvectorizer__max_features\": [100, 200, 400],\n    \"svc__gamma\": [0.01, 0.1, 1.0],\n    \"svc__C\": [0.01, 0.1, 1.0],\n}\ngrid_search = GridSearchCV(pipe_svm, \n                  param_grid = param_grid, \n                  n_jobs=-1, \n                  return_train_score=True\n                 )\ngrid_search.fit(X_train, y_train)\ngrid_search.best_score_\n\nnp.float64(0.9780612255051213)"
+    "text": "Grid search example\n\nfrom sklearn.model_selection import GridSearchCV\n\npipe_svm = make_pipeline(CountVectorizer(), SVC())\n\nparam_grid = {\n    \"countvectorizer__max_features\": [100, 200, 400],\n    \"svc__gamma\": [0.01, 0.1, 1.0],\n    \"svc__C\": [0.01, 0.1, 1.0],\n}\ngrid_search = GridSearchCV(pipe_svm, \n                  param_grid = param_grid, \n                  n_jobs=-1, \n                  return_train_score=True\n                 )\ngrid_search.fit(X_train, y_train)\ngrid_search.best_score_\n\nnp.float64(0.9782606272997375)"
   },
   {
     "objectID": "slides-08.html#random-search",
@@ -221,7 +221,7 @@
     "href": "slides-08.html#random-search-example",
     "title": "CPSC 330 Lecture 8: Hyperparameter Optimization",
     "section": "Random search example",
-    "text": "Random search example\n\nfrom sklearn.model_selection import RandomizedSearchCV\nfrom scipy.stats import randint\n\npipe_svc = make_pipeline(CountVectorizer(), SVC())\n\nparam_dist = {\n    \"countvectorizer__max_features\": randint(100, 2000), \n    \"svc__C\": uniform(0.1, 1e4),  # loguniform(1e-3, 1e3),\n    \"svc__gamma\": loguniform(1e-5, 1e3),\n}\nrandom_search = RandomizedSearchCV(pipe_svm,                                    \n                  param_distributions = param_dist, \n                  n_iter=10, \n                  n_jobs=-1, \n                  return_train_score=True)\n\n# Carry out the search\nrandom_search.fit(X_train, y_train)\nrandom_search.best_score_\n\nnp.float64(0.9818506556179762)"
+    "text": "Random search example\n\nfrom sklearn.model_selection import RandomizedSearchCV\nfrom scipy.stats import randint\n\npipe_svc = make_pipeline(CountVectorizer(), SVC())\n\nparam_dist = {\n    \"countvectorizer__max_features\": randint(100, 2000), \n    \"svc__C\": uniform(0.1, 1e4),  # loguniform(1e-3, 1e3),\n    \"svc__gamma\": loguniform(1e-5, 1e3),\n}\nrandom_search = RandomizedSearchCV(pipe_svm,                                    \n                  param_distributions = param_dist, \n                  n_iter=10, \n                  n_jobs=-1, \n                  return_train_score=True)\n\n# Carry out the search\nrandom_search.fit(X_train, y_train)\nrandom_search.best_score_\n\nnp.float64(0.982449259009399)"
   },
   {
     "objectID": "slides-08.html#pizza-baking-competition-example",
@@ -581,13 +581,6 @@
     "text": "Domain-specific transformations\nIn some domains there are natural transformations to do:\n\nSpectrograms (sound data)\nConvolutions (image data)\n\n\nSource"
   },
   {
-    "objectID": "slides-13.html#group-work-class-demo-live-coding",
-    "href": "slides-13.html#group-work-class-demo-live-coding",
-    "title": "CPSC 330 Lecture 13: Feature Engineering and Selection",
-    "section": "Group Work: Class Demo & Live Coding",
-    "text": "Group Work: Class Demo & Live Coding\nFor this demo, each student should click this link to create a new repo in their accounts, then clone that repo locally to follow along with the demo from today."
-  },
-  {
     "objectID": "slides-13.html#break-1",
     "href": "slides-13.html#break-1",
     "title": "CPSC 330 Lecture 13: Feature Engineering and Selection",
@@ -602,27 +595,6 @@
     "text": "Domain-specific transformations\nIn some domains there are natural transformations to do: - Spectrograms (sound data) - Wavelets (image data) - Convolutions\n\nSource"
   },
   {
-    "objectID": "slides-13.html#developing-intuition-about-feature-engineering",
-    "href": "slides-13.html#developing-intuition-about-feature-engineering",
-    "title": "CPSC 330 Lecture 13: Feature Engineering and Selection",
-    "section": "Developing intuition about Feature Engineering",
-    "text": "Developing intuition about Feature Engineering\n…"
-  },
-  {
-    "objectID": "slides-13.html#discussion-question-1",
-    "href": "slides-13.html#discussion-question-1",
-    "title": "CPSC 330 Lecture 13: Feature Engineering and Selection",
-    "section": "Discussion question",
-    "text": "Discussion question\n\nSuppose we want to predict whether a flight will arrive on time or be delayed. We have a dataset with the following information about flights:\n\nDeparture Time\nExpected Duration of Flight (in minutes)\n\n\nUpon analyzing the data, you notice a pattern: flights tend to be delayed more often during the evening rush hours. What feature could be valuable to add for this prediction task?"
-  },
-  {
-    "objectID": "slides-13.html#clicker-question-13.1",
-    "href": "slides-13.html#clicker-question-13.1",
-    "title": "CPSC 330 Lecture 13: Feature Engineering and Selection",
-    "section": "Clicker Question 13.1",
-    "text": "Clicker Question 13.1\nSelect all of the following statements which are TRUE.\n\n\nSimple association-based feature selection approaches do not take into account the interaction between features.\n\n\nYou can carry out feature selection using linear models by pruning the features which have very small weights (i.e., coefficients less than a threshold).\n\n\nThe order of features removed given by rfe.ranking_ is the same as the order of original feature importances given by the model."
-  },
-  {
     "objectID": "slides-13.html#feature-selection-pipeline",
     "href": "slides-13.html#feature-selection-pipeline",
     "title": "CPSC 330 Lecture 13: Feature Engineering and Selection",
@@ -635,6 +607,13 @@
     "title": "CPSC 330 Lecture 13: Feature Engineering and Selection",
     "section": "Two useful methods",
     "text": "Two useful methods\n\nModel-based selection\n\nUse a supervised machine learning model to judge the importance of each feature.\nKeep only the most important once.\n\nRecursive feature elimination\n\nBuild a series of models\nAt each iteration, discard the least important feature according to the model."
+  },
+  {
+    "objectID": "slides-13.html#clicker-question-13.1",
+    "href": "slides-13.html#clicker-question-13.1",
+    "title": "CPSC 330 Lecture 13: Feature Engineering and Selection",
+    "section": "Clicker Question 13.1",
+    "text": "Clicker Question 13.1\nSelect all of the following statements which are TRUE.\n\n\nSimple association-based feature selection approaches do not take into account the interaction between features.\n\n\nYou can carry out feature selection using linear models by pruning the features which have very small weights (i.e., coefficients less than a threshold).\n\n\nThe order of features removed given by rfe.ranking_ is the same as the order of original feature importances given by the model."
   },
   {
     "objectID": "slides-13.html#iclicker-exercise-13.2",
