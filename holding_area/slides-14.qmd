@@ -54,6 +54,25 @@ editor:
 
  -->
 
+## Feature Engineering Recap
+
+...
+
+## Clicker Question 13.1 
+
+**Select all of the following statements which are TRUE.**
+
+- (A) Simple association-based feature selection approaches do not take into account the interaction between features.
+- (B) You can carry out feature selection using linear models by pruning the features which have very small weights (i.e., coefficients less than a threshold).
+- (C) The order of features removed given by `rfe.ranking_` is the same as the order of original feature importances given by the model.
+
+## Clicker Question 13.2
+
+**Select all of the following statements which are TRUE.**
+
+- (A) You can carry out feature selection using linear models by pruning the features which have very small weights (i.e., coefficients less than a threshold).
+- (B) The order of features removed given by `rfe.ranking_` is the same as the order of original feature importances given by the model.
+
 ## Supervised learning {.smaller}
 
 - Training data comprises a set of observations ($X$) and their corresponding targets ($y$). 
@@ -132,7 +151,7 @@ Select all of the following statements which are **True**
 - (C) In K-Means, it makes sense to have $K$ $\leq$ # of examples. 
 - (D) In K-Means, in some iterations some points may be left unassigned. 
 
-## iClicker Exercise 15.2 
+## Clicker Question 15.2 
 
 Select all of the following statements which are **True**
 
@@ -172,7 +191,7 @@ Select all of the following statements which are **True**
 - Higher average silhouette score indicates "better" clustering.
 
 
-## iClicker Exercise 15.3 {.smaller}
+## Clicker Question 15.3 {.smaller}
 
 Select all of the following statements which are **True** 
 

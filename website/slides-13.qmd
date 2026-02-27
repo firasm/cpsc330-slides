@@ -178,10 +178,6 @@ In some domains there are natural transformations to do:
 
 [Source](https://en.wikipedia.org/wiki/Spectrogram) 
 
-## Group Work: Class Demo & Live Coding
-
-For this demo, each student should [click this link](https://github.com/new?template_name=lecture13_demo&template_owner=ubc-cpsc330) to create a new repo in their accounts, then clone that repo locally to follow along with the demo from today.
-
 ## Break
 
 Let's take a break!
@@ -199,27 +195,6 @@ In some domains there are natural transformations to do:
 
 [Source](https://en.wikipedia.org/wiki/Spectrogram) 
 
-## Developing intuition about Feature Engineering
-
-...
-
-## Discussion question
-
-- Suppose we want to predict whether a flight will arrive on time or be delayed. We have a dataset with the following information about flights:
-    - Departure Time
-    - Expected Duration of Flight (in minutes)
-
-Upon analyzing the data, you notice a pattern: flights tend to be delayed more often during the evening rush hours. What feature could be valuable to add for this prediction task?
-<br><br><br><br>
-
-## Clicker Question 13.1 
-
-**Select all of the following statements which are TRUE.**
-
-- (A) Simple association-based feature selection approaches do not take into account the interaction between features.
-- (B) You can carry out feature selection using linear models by pruning the features which have very small weights (i.e., coefficients less than a threshold).
-- (C) The order of features removed given by `rfe.ranking_` is the same as the order of original feature importances given by the model.
-
 ## Feature selection pipeline
 
 ![](img/feat-selection-pipeline.png)
@@ -231,7 +206,16 @@ Upon analyzing the data, you notice a pattern: flights tend to be delayed more o
     - Keep only the most important once.
 - Recursive feature elimination 
     - Build a series of models
-    - At each iteration, discard the least important feature according to the model. 
+    - At each iteration, discard the least important feature according to the model.
+
+
+## Clicker Question 13.1 
+
+**Select all of the following statements which are TRUE.**
+
+- (A) Simple association-based feature selection approaches do not take into account the interaction between features.
+- (B) You can carry out feature selection using linear models by pruning the features which have very small weights (i.e., coefficients less than a threshold).
+- (C) The order of features removed given by `rfe.ranking_` is the same as the order of original feature importances given by the model.
 
 ## (iClicker) Exercise 13.2
 
