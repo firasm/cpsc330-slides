@@ -89,12 +89,15 @@ editor:
 
 ![](img/unsup-learning.png)
 
-## Clustering Activity {.smaller}
+
+## Clustering activity {.smaller}
 
 ![](img/food-clustering-activity.png)
 
 - Categorize the food items in the image and write your categories. Do you think there is one correct way to cluster these images? Why or why not?
 - If you want to build a machine learning model to cluster such images how would you represent such images?
+- Write your answers here: https://docs.google.com/document/d/12GXA9Efi_19WiRnCi8FiOmdpxM-I_wq2nz97LjvXILg/edit?usp=sharing
+
 
 ## The "perfect" spaghetti sauce
 
@@ -108,7 +111,8 @@ Howard Moskowitz found out that Americans fall into one of the following three c
 - people who like their spaghetti sauce **spicy**
 - people who like their spaghetti sauce **extra chunky**
 
-![](img/prego-pasta-sauces.png)
+![](img/prego-pasta-sauces.png){.nostretch fig-align="center" width="700px"}
+
 Reference: [Malcolm Gladwell’s Ted talk](https://www.ted.com/talks/malcolm_gladwell_choice_happiness_and_spaghetti_sauce?language=en)
 
 ## The "perfect" spaghetti sauce
@@ -117,18 +121,65 @@ Reference: [Malcolm Gladwell’s Ted talk](https://www.ted.com/talks/malcolm_gla
 - Can we apply this concept of clustering and tailoring solutions to specific groups in machine learning?
 
 
-<!-- <img src="img/unsup-learning.png" alt="" height="900" width="900">  -->
-
-<!-- <img src="img/sup-learning.png" height="1000" width="1000">  -->
-
 # K-Means 
 
-## K-means Clustering
-- **Algorithm Steps**:
-  1. Select K initial centroids.
-  2. Assign each data point to the nearest centroid.
-  3. Recalculate centroids based on assigned points.
-  4. Repeat until centroids stabilize or reach a maximum number of iterations.
+## K-Means clustering algorithm 
+1. Select K initial centroids.
+2. Assign each data point to the nearest centroid.
+3. Recalculate centroids based on assigned points.
+4. Repeat until centroids stabilize or reach a maximum number of iterations.
+
+# K-Means activity
+
+## Initialization
+In K-Means, we start with random initial cluster centers. Who would like to be cluster centers? 
+
+:::: {.columns}
+::: {.column width="50%"}
+![](img/cluster-centers.png)
+
+Source: Image created by ChatGPT 5.0
+:::
+
+::: {.column width="50%"}
+Let's pretend you are data points scattered across a 2D feature space. 
+:::
+::: 
+
+## Cluster assignment 
+
+Which cluster do you belong to? 
+
+:::: {.columns}
+::: {.column width="50%"}
+![](img/cluster-assignment.png)
+
+Source: Image created by ChatGPT 5.0
+:::
+
+::: {.column width="50%"}
+Look around and decide which cluster center is closest to you, just by eyeballing distance in the room.
+:::
+::: 
+
+## Recompute cluster centers 
+
+- Now each cluster needs to find its new mean location. Let’s compute new centroids!
+
+- For each cluster, identify the "average" position of your members. For example, pick someone roughly in the middle or calculate the average row/column number.
+
+- Move your old “cluster center” to these new locations.
+
+## Repeat cluster assignment 
+
+Now that cluster centers have moved, you may need to switch clusters! Check again: which center are you closest to now?
+
+## Discussion questions
+
+- Did anyone switch clusters in the second round?
+
+- When do you think K-Means stops? 
+- Could we end up in a different final clustering if we started with different centers?
 
 ## K-Means example 
 ![](img/k-means.png)
@@ -139,10 +190,10 @@ Reference: [Malcolm Gladwell’s Ted talk](https://www.ted.com/talks/malcolm_gla
   - Works well with spherical clusters.
 
 - **Limitations**:
-  - Needs pre-defined K.
+  - Needs pre-defined $k$.
   - Sensitive to outliers and initial centroid placement.
 
-## iClicker Exercise 15.1 
+## Clicker Question 14.1 
 
 Select all of the following statements which are **True**
 
@@ -151,7 +202,7 @@ Select all of the following statements which are **True**
 - (C) In K-Means, it makes sense to have $K$ $\leq$ # of examples. 
 - (D) In K-Means, in some iterations some points may be left unassigned. 
 
-## Clicker Question 15.2 
+## Clicker Question 14.2 
 
 Select all of the following statements which are **True**
 
@@ -160,22 +211,73 @@ Select all of the following statements which are **True**
 - (C) K-means terminates when the centroid locations do not change between iterations.
 - (D) K-Means is guaranteed to find the optimal solution. 
 
-# Choosing k
 
-## The Elbow Method
+# Choosing $k$ (the number of clusters) 
 
-- **Purpose**: Identify the optimal number of clusters (K).
+## How many clusters? {.smaller}
+- Clustering is not about perfect scores, but **insight**.
+- Typically we do not want too few or way too many clusters. 
+- There's no single **"correct" value of $k$** -- only *useful* ones that make sense for your problem.
+- Some **preferred** values may exist (e.g., based on domain knowledge).
+- The goal is to find **interpretable, meaningful** clusters. So pick $k$ that helps tell a **useful story** about your data.
+- We typically go with **quantitative** and **qualitative** approaches.
+
+## {.smaller}
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+### Quantitative methods
+
+- **The Elbow plot**  
+   - Plot inertia vs. K  
+   - Look for the "elbow" — diminishing returns  
+- **Silhouette score**  
+   - Measures cluster cohesion and separation  
+   - Higher score: better-defined clusters
+:::
+
+::: {.column width="50%"}
+
+### Qualitative methods
+
+- **Manually inspect** clusters:
+  - Do they make sense?
+  - Are they interpretable and actionable?
+- The ultimate goal:  
+  **Human-understandable themes** for real-world decisions.
+- There's *no escape* from manual interpretation!
+:::
+::::
+
+## The Elbow method
+
+- **Purpose**: Identify the optimal number of clusters $k$.
 - **How it Works**:
-  - Plot intra-cluster distances for different values of K.
+  - Plot intra-cluster distances for different values of $k$.
   - Look for the "elbow" point where the intra-cluster reduction slows.
 
 - **Interpretation**:
-  - The point of diminishing returns suggests a good K.
+  - The point of diminishing returns suggests a good $k$.
 
 ## The Elbow method example
-![](img/elbow-plot)
+:::: {.columns}
+
+::: {.column width="60%"}
+![](img/elbow-plot.png)
+:::
+::: {.column width="40%"}
+
+What would be the intracluster distance when 
+
+- $k=1$ 
+- $k=$ \# number of data points?  
+::: 
+::::
 
 ## The Silhouette method {.smaller}
+
 - **Silhouette Score**: Measures how well data points fit within their cluster.
   - $s(i) = \frac{b(i) - a(i)}{\max (a(i), b(i))}$
     - $a(i)$: Mean distance to other points in the same cluster.
@@ -191,7 +293,11 @@ Select all of the following statements which are **True**
 - Higher average silhouette score indicates "better" clustering.
 
 
-## Clicker Question 15.3 {.smaller}
+## Silhouette plot example
+
+![](img/silhoutte-example.png)
+
+## Clicker Question 14.3 {.smaller}
 
 Select all of the following statements which are **True** 
 
