@@ -6,8 +6,8 @@
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-8ea72dc5fed832574809a9c94082fbbb.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.6.40">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-4d9afe2b8d18ee9fa5d0d57b5ed4214d.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.8.27">
 
   <title>CPSC 330 Slides – CPSC 330 Lecture 14: K-Means</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -29,7 +29,7 @@
     }
     .display.math{display: block; text-align: center; margin: 0.5rem auto;}
   </style>
-  <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto-d6a2e637423beed6a318cacc3341e7d6.css">
+  <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto-d44d78e70847a9a9b2b9b7a718eeef2f.css">
   <link href="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -140,41 +140,66 @@
 
 - HW5 extension: New due date is tomorrow.
 - HW6 will be released today. It'll be due next week Wednesday.
+
+## Course Feedback 1
+
+![](img/firas/2025S_survey/01_structure.png){fig-align="center"}
+
+## Course Feedback 2
+
+![](img/firas/2025S_survey/02_lectures.png){fig-align="center"}
+
+## Course Feedback 3
+
+![](img/firas/2025S_survey/03_pace.png){fig-align="center"}
+
+## Course Feedback 4
+
+![](img/firas/2025S_survey/04_labs.png){fig-align="center"}
+
+## Course Feedback 5
+
+![](img/firas/2025S_survey/05_videos.png){fig-align="center"}
+
+## Course Feedback 6
+
+![](img/firas/2025S_survey/06_TAhours.png){fig-align="center"}
+
+## Course Feedback 7
+
+![](img/firas/2025S_survey/07_overall.png){fig-align="center"}
+
+
  -->
 </section>
-<section id="finishing-up-feature-selection" class="slide level2 center">
-<h2>Finishing up Feature Selection</h2>
-<p>Last class we distinguished between Model-based selection and recursive feature feature elimination (RFE).</p>
-<p>Let’s chat a bit more about <a href="https://ubc-cs.github.io/cpsc330-2025S1/lectures/notes/14_feature-engineering-selection.html#recursive-feature-elimination-rfe">Recursive Feature Elimination with Cross-validation</a>.</p>
+<section id="feature-engineering-recap" class="slide level2 center">
+<h2>Feature Engineering Recap</h2>
+<p>…</p>
 </section>
-<section id="pause-and-reflect" class="slide level2 center">
-<h2>Pause and Reflect</h2>
-<p>We are now just over half-way through CPSC 330!</p>
-<p>You had a midterm already a couple of weeks ago, I’d like some feedback on how things are going in class (as the instructor).</p>
-</section>
-<section id="class-survey" class="slide level2 center">
-<h2>Class Survey</h2>
-<p>I’d love to hear how you think lectures are going, and how the course is going overall: <a href="https://bit.ly/cpsc330_24W1">bit.ly/cpsc330_24W1</a>.</p>
-
-<img data-src="img/24W1_survey.png" class="r-stretch"></section>
-<section id="iclicker-midterm-poll" class="slide level2 smaller center">
-<h2>(iClicker) Midterm poll</h2>
+<section id="clicker-question-13.1" class="slide level2 center">
+<h2>Clicker Question 13.1</h2>
 <p><strong>Select all of the following statements which are TRUE.</strong></p>
 <ul>
 <li><ol type="A">
-<li>I’m happy with my progress and learning in this course.</li>
+<li>Simple association-based feature selection approaches do not take into account the interaction between features.</li>
 </ol></li>
 <li><ol start="2" type="A">
-<li>I find the course content interesting, but the pace is a bit overwhelming. Balancing this course with other responsibilities is challenging</li>
+<li>You can carry out feature selection using linear models by pruning the features which have very small weights (i.e., coefficients less than a threshold).</li>
 </ol></li>
 <li><ol start="3" type="A">
-<li>I’m doing okay, but I feel stressed and worried about upcoming assessments.</li>
+<li>The order of features removed given by <code>rfe.ranking_</code> is the same as the order of original feature importances given by the model.</li>
 </ol></li>
-<li><ol start="4" type="A">
-<li>I’m confused about some concepts and would appreciate more clarification or review sessions.</li>
+</ul>
+</section>
+<section id="clicker-question-13.2" class="slide level2 center">
+<h2>Clicker Question 13.2</h2>
+<p><strong>Select all of the following statements which are TRUE.</strong></p>
+<ul>
+<li><ol type="A">
+<li>You can carry out feature selection using linear models by pruning the features which have very small weights (i.e., coefficients less than a threshold).</li>
 </ol></li>
-<li><ol start="5" type="A">
-<li>I’m struggling to keep up with the material. I am not happy with my learning in this course and my morale is low ☹️.</li>
+<li><ol start="2" type="A">
+<li>The order of features removed given by <code>rfe.ranking_</code> is the same as the order of original feature importances given by the model.</li>
 </ol></li>
 </ul>
 </section>
@@ -197,11 +222,12 @@
 
 <img data-src="img/unsup-learning.png" class="r-stretch"></section>
 <section id="clustering-activity" class="slide level2 smaller center">
-<h2>Clustering Activity</h2>
+<h2>Clustering activity</h2>
 
 <img data-src="img/food-clustering-activity.png" class="r-stretch"><ul>
 <li>Categorize the food items in the image and write your categories. Do you think there is one correct way to cluster these images? Why or why not?</li>
 <li>If you want to build a machine learning model to cluster such images how would you represent such images?</li>
+<li>Write your answers here: https://docs.google.com/document/d/12GXA9Efi_19WiRnCi8FiOmdpxM-I_wq2nz97LjvXILg/edit?usp=sharing</li>
 </ul>
 </section>
 <section id="the-perfect-spaghetti-sauce" class="slide level2 center">
@@ -216,7 +242,12 @@
 <li>people who like their spaghetti sauce <strong>spicy</strong></li>
 <li>people who like their spaghetti sauce <strong>extra chunky</strong></li>
 </ul>
-<p><img data-src="img/prego-pasta-sauces.png"> Reference: <a href="https://www.ted.com/talks/malcolm_gladwell_choice_happiness_and_spaghetti_sauce?language=en">Malcolm Gladwell’s Ted talk</a></p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="img/prego-pasta-sauces.png" class="quarto-figure quarto-figure-center" width="700"></p>
+</figure>
+</div>
+<p>Reference: <a href="https://www.ted.com/talks/malcolm_gladwell_choice_happiness_and_spaghetti_sauce?language=en">Malcolm Gladwell’s Ted talk</a></p>
 </section>
 <section id="the-perfect-spaghetti-sauce-2" class="slide level2 center">
 <h2>The “perfect” spaghetti sauce</h2>
@@ -224,24 +255,66 @@
 <li>If one “perfect” authentic sauce satisfies 60%, of the people on average, creating several tailored sauce clusters could increase average happiness to between 75% to 78%.</li>
 <li>Can we apply this concept of clustering and tailoring solutions to specific groups in machine learning?</li>
 </ul>
-<!-- <img src="img/unsup-learning.png" alt="" height="900" width="900">  -->
-<!-- <img src="img/sup-learning.png" height="1000" width="1000">  -->
 </section>
 <section>
 <section id="k-means" class="title-slide slide level1 center">
 <h1>K-Means</h1>
 
 </section>
-<section id="k-means-clustering" class="slide level2 center">
-<h2>K-means Clustering</h2>
-<ul>
-<li><strong>Algorithm Steps</strong>:
+<section id="k-means-clustering-algorithm" class="slide level2 center">
+<h2>K-Means clustering algorithm</h2>
 <ol type="1">
 <li>Select K initial centroids.</li>
 <li>Assign each data point to the nearest centroid.</li>
 <li>Recalculate centroids based on assigned points.</li>
 <li>Repeat until centroids stabilize or reach a maximum number of iterations.</li>
-</ol></li>
+</ol>
+</section></section>
+<section>
+<section id="k-means-activity" class="title-slide slide level1 center">
+<h1>K-Means activity</h1>
+
+</section>
+<section id="initialization" class="slide level2 center">
+<h2>Initialization</h2>
+<p>In K-Means, we start with random initial cluster centers. Who would like to be cluster centers?</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><img data-src="img/cluster-centers.png"></p>
+<p>Source: Image created by ChatGPT 5.0</p>
+</div><div class="column" style="width:50%;">
+<p>Let’s pretend you are data points scattered across a 2D feature space.</p>
+</div></div>
+</section>
+<section id="cluster-assignment" class="slide level2 center">
+<h2>Cluster assignment</h2>
+<p>Which cluster do you belong to?</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><img data-src="img/cluster-assignment.png"></p>
+<p>Source: Image created by ChatGPT 5.0</p>
+</div><div class="column" style="width:50%;">
+<p>Look around and decide which cluster center is closest to you, just by eyeballing distance in the room.</p>
+</div></div>
+</section>
+<section id="recompute-cluster-centers" class="slide level2 center">
+<h2>Recompute cluster centers</h2>
+<ul>
+<li><p>Now each cluster needs to find its new mean location. Let’s compute new centroids!</p></li>
+<li><p>For each cluster, identify the “average” position of your members. For example, pick someone roughly in the middle or calculate the average row/column number.</p></li>
+<li><p>Move your old “cluster center” to these new locations.</p></li>
+</ul>
+</section>
+<section id="repeat-cluster-assignment" class="slide level2 center">
+<h2>Repeat cluster assignment</h2>
+<p>Now that cluster centers have moved, you may need to switch clusters! Check again: which center are you closest to now?</p>
+</section>
+<section id="discussion-questions" class="slide level2 center">
+<h2>Discussion questions</h2>
+<ul>
+<li><p>Did anyone switch clusters in the second round?</p></li>
+<li><p>When do you think K-Means stops?</p></li>
+<li><p>Could we end up in a different final clustering if we started with different centers?</p></li>
 </ul>
 </section>
 <section id="k-means-example" class="slide level2 center">
@@ -258,13 +331,13 @@
 </ul></li>
 <li><strong>Limitations</strong>:
 <ul>
-<li>Needs pre-defined K.</li>
+<li>Needs pre-defined <span class="math inline"><em>k</em></span>.</li>
 <li>Sensitive to outliers and initial centroid placement.</li>
 </ul></li>
 </ul>
 </section>
-<section id="iclicker-exercise-15.1" class="slide level2 center">
-<h2>iClicker Exercise 15.1</h2>
+<section id="clicker-question-14.1" class="slide level2 center">
+<h2>Clicker Question 14.1</h2>
 <p>Select all of the following statements which are <strong>True</strong></p>
 <ul>
 <li><ol type="A">
@@ -281,8 +354,8 @@
 </ol></li>
 </ul>
 </section>
-<section id="iclicker-exercise-15.2" class="slide level2 center">
-<h2>iClicker Exercise 15.2</h2>
+<section id="clicker-question-14.2" class="slide level2 center">
+<h2>Clicker Question 14.2</h2>
 <p>Select all of the following statements which are <strong>True</strong></p>
 <ul>
 <li><ol type="A">
@@ -300,29 +373,84 @@
 </ul>
 </section></section>
 <section>
-<section id="choosing-k" class="title-slide slide level1 center">
-<h1>Choosing k</h1>
+<section id="choosing-k-the-number-of-clusters" class="title-slide slide level1 center">
+<h1>Choosing <span class="math inline"><em>k</em></span> (the number of clusters)</h1>
 
 </section>
-<section id="the-elbow-method" class="slide level2 center">
-<h2>The Elbow Method</h2>
+<section id="how-many-clusters" class="slide level2 smaller center">
+<h2>How many clusters?</h2>
 <ul>
-<li><strong>Purpose</strong>: Identify the optimal number of clusters (K).</li>
+<li>Clustering is not about perfect scores, but <strong>insight</strong>.</li>
+<li>Typically we do not want too few or way too many clusters.</li>
+<li>There’s no single <strong>“correct” value of <span class="math inline"><em>k</em></span></strong> – only <em>useful</em> ones that make sense for your problem.</li>
+<li>Some <strong>preferred</strong> values may exist (e.g., based on domain knowledge).</li>
+<li>The goal is to find <strong>interpretable, meaningful</strong> clusters. So pick <span class="math inline"><em>k</em></span> that helps tell a <strong>useful story</strong> about your data.</li>
+<li>We typically go with <strong>quantitative</strong> and <strong>qualitative</strong> approaches.</li>
+</ul>
+</section>
+<section id="section" class="slide level2 smaller center">
+<h2></h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<h3 id="quantitative-methods">Quantitative methods</h3>
+<ul>
+<li><strong>The Elbow plot</strong>
+<ul>
+<li>Plot inertia vs.&nbsp;K<br>
+</li>
+<li>Look for the “elbow” — diminishing returns<br>
+</li>
+</ul></li>
+<li><strong>Silhouette score</strong>
+<ul>
+<li>Measures cluster cohesion and separation<br>
+</li>
+<li>Higher score: better-defined clusters</li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:50%;">
+<h3 id="qualitative-methods">Qualitative methods</h3>
+<ul>
+<li><strong>Manually inspect</strong> clusters:
+<ul>
+<li>Do they make sense?</li>
+<li>Are they interpretable and actionable?</li>
+</ul></li>
+<li>The ultimate goal:<br>
+<strong>Human-understandable themes</strong> for real-world decisions.</li>
+<li>There’s <em>no escape</em> from manual interpretation!</li>
+</ul>
+</div></div>
+</section>
+<section id="the-elbow-method" class="slide level2 center">
+<h2>The Elbow method</h2>
+<ul>
+<li><strong>Purpose</strong>: Identify the optimal number of clusters <span class="math inline"><em>k</em></span>.</li>
 <li><strong>How it Works</strong>:
 <ul>
-<li>Plot intra-cluster distances for different values of K.</li>
+<li>Plot intra-cluster distances for different values of <span class="math inline"><em>k</em></span>.</li>
 <li>Look for the “elbow” point where the intra-cluster reduction slows.</li>
 </ul></li>
 <li><strong>Interpretation</strong>:
 <ul>
-<li>The point of diminishing returns suggests a good K.</li>
+<li>The point of diminishing returns suggests a good <span class="math inline"><em>k</em></span>.</li>
 </ul></li>
 </ul>
 </section>
 <section id="the-elbow-method-example" class="slide level2 center">
 <h2>The Elbow method example</h2>
-
-<img data-src="img/elbow-plot.png" class="r-stretch"></section>
+<div class="columns">
+<div class="column" style="width:60%;">
+<p><img data-src="img/elbow-plot.png"></p>
+</div><div class="column" style="width:40%;">
+<p>What would be the intracluster distance when</p>
+<ul>
+<li><span class="math inline"><em>k</em> = 1</span></li>
+<li><span class="math inline"><em>k</em>=</span> # number of data points?<br>
+</li>
+</ul>
+</div></div>
+</section>
 <section id="the-silhouette-method" class="slide level2 smaller center">
 <h2>The Silhouette method</h2>
 <ul>
@@ -349,8 +477,12 @@
 <li>Higher average silhouette score indicates “better” clustering.</li>
 </ul>
 </section>
-<section id="iclicker-exercise-15.3" class="slide level2 smaller center">
-<h2>iClicker Exercise 15.3</h2>
+<section id="silhouette-plot-example" class="slide level2 center">
+<h2>Silhouette plot example</h2>
+
+<img data-src="img/silhoutte-example.png" class="r-stretch"></section>
+<section id="clicker-question-14.3" class="slide level2 smaller center">
+<h2>Clicker Question 14.3</h2>
 <p>Select all of the following statements which are <strong>True</strong></p>
 <ul>
 <li><ol type="A">
@@ -369,10 +501,12 @@
 <li>The Silhouette scores ranges between -1 and 1 where higher scores indicates better cluster assignments.</li>
 </ol></li>
 </ul>
-<!-- 
-# [Class demo](https://github.com/UBC-CS/cpsc330-2025S1/blob/main/lectures/102-Varada-lectures/class_demos/demo_15-k-means.ipynb)
- -->
-<p>s</p>
+</section>
+<section id="group-work-class-demo-live-coding" class="slide level2 center">
+<h2>Group Work: Class Demo &amp; Live Coding</h2>
+<p><strong>Super cool Demo!</strong></p>
+<p>For this demo, each student should <a href="https://github.com/new?template_name=lecture14_demo&amp;template_owner=ubc-cpsc330">click this link</a> to create a new repo in their accounts, then clone that repo locally to follow along with the demo from today.</p>
+<p>All credit to Dr.&nbsp;Varada Kolhatkar for putting this together!</p>
 
 
 </section></section>
@@ -574,190 +708,173 @@
       });
     </script>
     <script id="quarto-html-after-body" type="application/javascript">
-    window.document.addEventListener("DOMContentLoaded", function (event) {
-      const toggleBodyColorMode = (bsSheetEl) => {
-        const mode = bsSheetEl.getAttribute("data-mode");
-        const bodyEl = window.document.querySelector("body");
-        if (mode === "dark") {
-          bodyEl.classList.add("quarto-dark");
-          bodyEl.classList.remove("quarto-light");
-        } else {
-          bodyEl.classList.add("quarto-light");
-          bodyEl.classList.remove("quarto-dark");
-        }
-      }
-      const toggleBodyColorPrimary = () => {
-        const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
-        if (bsSheetEl) {
-          toggleBodyColorMode(bsSheetEl);
-        }
-      }
-      toggleBodyColorPrimary();  
-      const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
-      tabsets.forEach(function(tabset) {
-        const tabby = new Tabby('#' + tabset.id);
-      });
-      const isCodeAnnotation = (el) => {
-        for (const clz of el.classList) {
-          if (clz.startsWith('code-annotation-')) {                     
-            return true;
+      window.document.addEventListener("DOMContentLoaded", function (event) {
+        const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+        tabsets.forEach(function(tabset) {
+          const tabby = new Tabby('#' + tabset.id);
+        });
+        const isCodeAnnotation = (el) => {
+          for (const clz of el.classList) {
+            if (clz.startsWith('code-annotation-')) {                     
+              return true;
+            }
           }
+          return false;
         }
-        return false;
-      }
-      const onCopySuccess = function(e) {
-        // button target
-        const button = e.trigger;
-        // don't keep focus
-        button.blur();
-        // flash "checked"
-        button.classList.add('code-copy-button-checked');
-        var currentTitle = button.getAttribute("title");
-        button.setAttribute("title", "Copied!");
-        let tooltip;
-        if (window.bootstrap) {
-          button.setAttribute("data-bs-toggle", "tooltip");
-          button.setAttribute("data-bs-placement", "left");
-          button.setAttribute("data-bs-title", "Copied!");
-          tooltip = new bootstrap.Tooltip(button, 
-            { trigger: "manual", 
-              customClass: "code-copy-button-tooltip",
-              offset: [0, -8]});
-          tooltip.show();    
-        }
-        setTimeout(function() {
-          if (tooltip) {
-            tooltip.hide();
-            button.removeAttribute("data-bs-title");
-            button.removeAttribute("data-bs-toggle");
-            button.removeAttribute("data-bs-placement");
+        const onCopySuccess = function(e) {
+          // button target
+          const button = e.trigger;
+          // don't keep focus
+          button.blur();
+          // flash "checked"
+          button.classList.add('code-copy-button-checked');
+          var currentTitle = button.getAttribute("title");
+          button.setAttribute("title", "Copied!");
+          let tooltip;
+          if (window.bootstrap) {
+            button.setAttribute("data-bs-toggle", "tooltip");
+            button.setAttribute("data-bs-placement", "left");
+            button.setAttribute("data-bs-title", "Copied!");
+            tooltip = new bootstrap.Tooltip(button, 
+              { trigger: "manual", 
+                customClass: "code-copy-button-tooltip",
+                offset: [0, -8]});
+            tooltip.show();    
           }
-          button.setAttribute("title", currentTitle);
-          button.classList.remove('code-copy-button-checked');
-        }, 1000);
-        // clear code selection
-        e.clearSelection();
-      }
-      const getTextToCopy = function(trigger) {
-          const codeEl = trigger.previousElementSibling.cloneNode(true);
+          setTimeout(function() {
+            if (tooltip) {
+              tooltip.hide();
+              button.removeAttribute("data-bs-title");
+              button.removeAttribute("data-bs-toggle");
+              button.removeAttribute("data-bs-placement");
+            }
+            button.setAttribute("title", currentTitle);
+            button.classList.remove('code-copy-button-checked');
+          }, 1000);
+          // clear code selection
+          e.clearSelection();
+        }
+        const getTextToCopy = function(trigger) {
+          const outerScaffold = trigger.parentElement.cloneNode(true);
+          const codeEl = outerScaffold.querySelector('code');
           for (const childEl of codeEl.children) {
             if (isCodeAnnotation(childEl)) {
               childEl.remove();
             }
           }
           return codeEl.innerText;
-      }
-      const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-        text: getTextToCopy
-      });
-      clipboard.on('success', onCopySuccess);
-      if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-        const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-          text: getTextToCopy,
-          container: window.document.getElementById('quarto-embedded-source-code-modal')
-        });
-        clipboardModal.on('success', onCopySuccess);
-      }
-        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-        var mailtoRegex = new RegExp(/^mailto:/);
-          var filterRegex = new RegExp('/' + window.location.host + '/');
-        var isInternal = (href) => {
-            return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
         }
-        // Inspect non-navigation links and adorn them if external
-     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
-        for (var i=0; i<links.length; i++) {
-          const link = links[i];
-          if (!isInternal(link.href)) {
-            // undo the damage that might have been done by quarto-nav.js in the case of
-            // links that we want to consider external
-            if (link.dataset.originalHref !== undefined) {
-              link.href = link.dataset.originalHref;
+        const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+          text: getTextToCopy
+        });
+        clipboard.on('success', onCopySuccess);
+        if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+          const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+            text: getTextToCopy,
+            container: window.document.getElementById('quarto-embedded-source-code-modal')
+          });
+          clipboardModal.on('success', onCopySuccess);
+        }
+          var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+          var mailtoRegex = new RegExp(/^mailto:/);
+            var filterRegex = new RegExp("https:\/\/firasm\.github\.io\/cpsc330-slides\/");
+          var isInternal = (href) => {
+              return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+          }
+          // Inspect non-navigation links and adorn them if external
+         var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+          for (var i=0; i<links.length; i++) {
+            const link = links[i];
+            if (!isInternal(link.href)) {
+              // undo the damage that might have been done by quarto-nav.js in the case of
+              // links that we want to consider external
+              if (link.dataset.originalHref !== undefined) {
+                link.href = link.dataset.originalHref;
+              }
             }
           }
-        }
-      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
-        const config = {
-          allowHTML: true,
-          maxWidth: 500,
-          delay: 100,
-          arrow: false,
-          appendTo: function(el) {
-              return el.closest('section.slide') || el.parentElement;
-          },
-          interactive: true,
-          interactiveBorder: 10,
-          theme: 'light-border',
-          placement: 'bottom-start',
-        };
-        if (contentFn) {
-          config.content = contentFn;
-        }
-        if (onTriggerFn) {
-          config.onTrigger = onTriggerFn;
-        }
-        if (onUntriggerFn) {
-          config.onUntrigger = onUntriggerFn;
-        }
-          config['offset'] = [0,0];
-          config['maxWidth'] = 700;
-        window.tippy(el, config); 
-      }
-      const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
-      for (var i=0; i<noterefs.length; i++) {
-        const ref = noterefs[i];
-        tippyHover(ref, function() {
-          // use id or data attribute instead here
-          let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
-          try { href = new URL(href).hash; } catch {}
-          const id = href.replace(/^#\/?/, "");
-          const note = window.document.getElementById(id);
-          if (note) {
-            return note.innerHTML;
-          } else {
-            return "";
+        function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+          const config = {
+            allowHTML: true,
+            maxWidth: 500,
+            delay: 100,
+            arrow: false,
+            appendTo: function(el) {
+                return el.closest('section.slide') || el.parentElement;
+            },
+            interactive: true,
+            interactiveBorder: 10,
+            theme: 'light-border',
+            placement: 'bottom-start',
+          };
+          if (contentFn) {
+            config.content = contentFn;
           }
-        });
-      }
-      const findCites = (el) => {
-        const parentEl = el.parentElement;
-        if (parentEl) {
-          const cites = parentEl.dataset.cites;
-          if (cites) {
-            return {
-              el,
-              cites: cites.split(' ')
-            };
-          } else {
-            return findCites(el.parentElement)
+          if (onTriggerFn) {
+            config.onTrigger = onTriggerFn;
           }
-        } else {
-          return undefined;
+          if (onUntriggerFn) {
+            config.onUntrigger = onUntriggerFn;
+          }
+            config['offset'] = [0,0];
+            config['maxWidth'] = 700;
+          window.tippy(el, config); 
         }
-      };
-      var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-      for (var i=0; i<bibliorefs.length; i++) {
-        const ref = bibliorefs[i];
-        const citeInfo = findCites(ref);
-        if (citeInfo) {
-          tippyHover(citeInfo.el, function() {
-            var popup = window.document.createElement('div');
-            citeInfo.cites.forEach(function(cite) {
-              var citeDiv = window.document.createElement('div');
-              citeDiv.classList.add('hanging-indent');
-              citeDiv.classList.add('csl-entry');
-              var biblioDiv = window.document.getElementById('ref-' + cite);
-              if (biblioDiv) {
-                citeDiv.innerHTML = biblioDiv.innerHTML;
-              }
-              popup.appendChild(citeDiv);
-            });
-            return popup.innerHTML;
+        const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+        for (var i=0; i<noterefs.length; i++) {
+          const ref = noterefs[i];
+          tippyHover(ref, function() {
+            // use id or data attribute instead here
+            let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+            try { href = new URL(href).hash; } catch {}
+            const id = href.replace(/^#\/?/, "");
+            const note = window.document.getElementById(id);
+            if (note) {
+              return note.innerHTML;
+            } else {
+              return "";
+            }
           });
         }
-      }
-    });
-    </script>
+        const findCites = (el) => {
+          const parentEl = el.parentElement;
+          if (parentEl) {
+            const cites = parentEl.dataset.cites;
+            if (cites) {
+              return {
+                el,
+                cites: cites.split(' ')
+              };
+            } else {
+              return findCites(el.parentElement)
+            }
+          } else {
+            return undefined;
+          }
+        };
+        var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+        for (var i=0; i<bibliorefs.length; i++) {
+          const ref = bibliorefs[i];
+          const citeInfo = findCites(ref);
+          if (citeInfo) {
+            tippyHover(citeInfo.el, function() {
+              var popup = window.document.createElement('div');
+              citeInfo.cites.forEach(function(cite) {
+                var citeDiv = window.document.createElement('div');
+                citeDiv.classList.add('hanging-indent');
+                citeDiv.classList.add('csl-entry');
+                var biblioDiv = window.document.getElementById('ref-' + cite);
+                if (biblioDiv) {
+                  citeDiv.innerHTML = biblioDiv.innerHTML;
+                }
+                popup.appendChild(citeDiv);
+              });
+              return popup.innerHTML;
+            });
+          }
+        }
+      });
+      </script>
     
 
 </body></html>
