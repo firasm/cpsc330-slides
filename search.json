@@ -200,7 +200,7 @@
     "href": "slides-15.html#group-work-class-demo-live-coding",
     "title": "CPSC 330 Lecture 15: DBSCAN, Hierarchical Clustering",
     "section": "Group Work: Class Demo & Live Coding",
-    "text": "Group Work: Class Demo & Live Coding\nFor this demo, each student should click this link to create a new repo in their accounts, then clone that repo locally to follow along with the demo from today.\nAll credit to Dr. Varada Kolhatkar for putting this together!"
+    "text": "Group Work: Class Demo & Live Coding\nSuper cool Demo!\nFor this demo, each student should click this link to create a new repo in their accounts, then clone that repo locally to follow along with the demo from today.\nAll credit to Dr. Varada Kolhatkar for putting this together!"
   },
   {
     "objectID": "slides-02.html#announcements",
@@ -774,7 +774,7 @@
     "href": "slides-08.html#random-search-example",
     "title": "CPSC 330 Lecture 8: Hyperparameter Optimization",
     "section": "Random search example",
-    "text": "Random search example\n\nfrom sklearn.model_selection import RandomizedSearchCV\nfrom scipy.stats import randint\n\npipe_svc = make_pipeline(CountVectorizer(), SVC())\n\nparam_dist = {\n    \"countvectorizer__max_features\": randint(100, 2000), \n    \"svc__C\": uniform(0.1, 1e4),  # loguniform(1e-3, 1e3),\n    \"svc__gamma\": loguniform(1e-5, 1e3),\n}\nrandom_search = RandomizedSearchCV(pipe_svm,                                    \n                  param_distributions = param_dist, \n                  n_iter=10, \n                  n_jobs=-1, \n                  return_train_score=True)\n\n# Carry out the search\nrandom_search.fit(X_train, y_train)\nrandom_search.best_score_\n\nnp.float64(0.9832470651916505)"
+    "text": "Random search example\n\nfrom sklearn.model_selection import RandomizedSearchCV\nfrom scipy.stats import randint\n\npipe_svc = make_pipeline(CountVectorizer(), SVC())\n\nparam_dist = {\n    \"countvectorizer__max_features\": randint(100, 2000), \n    \"svc__C\": uniform(0.1, 1e4),  # loguniform(1e-3, 1e3),\n    \"svc__gamma\": loguniform(1e-5, 1e3),\n}\nrandom_search = RandomizedSearchCV(pipe_svm,                                    \n                  param_distributions = param_dist, \n                  n_iter=10, \n                  n_jobs=-1, \n                  return_train_score=True)\n\n# Carry out the search\nrandom_search.fit(X_train, y_train)\nrandom_search.best_score_\n\nnp.float64(0.9838450715717121)"
   },
   {
     "objectID": "slides-08.html#pizza-baking-competition-example",
