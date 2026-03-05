@@ -335,10 +335,8 @@ Let's take a break!
 
 ## Group Work: Class Demo & Live Coding
 
+**Super cool Demo!**
+
 For this demo, each student should [click this link](https://github.com/new?template_name=lecture15_demo&template_owner=ubc-cpsc330) to create a new repo in their accounts, then clone that repo locally to follow along with the demo from today.
 
 All credit to Dr. Varada Kolhatkar for putting this together!
-
-<!-- 
-# [Class demo](https://github.com/UBC-CS/cpsc330-2025S1/blob/main/lectures/102-Varada-lectures/class_demos/demo_16-dbscan-hierarchical.ipynb) 
--->
