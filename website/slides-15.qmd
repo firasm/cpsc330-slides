@@ -313,11 +313,11 @@ Discuss the following
 
 | **Clustering Method**  | **KMeans**                                           | **DBSCAN**                                          | **Hierarchical Clustering**                            |
 |------------------------|------------------------------------------------------|-----------------------------------------------------|-------------------------------------------------------|
-| **Approach**           | | |
-| **Hyperparameters**    | | |
-| **Shape of clusters**  | | |
-| **Handling noise**     | | | 
-| **Distance metric**    | | |
+| **Approach**           | | | |
+| **Hyperparameters**    | | | |
+| **Shape of clusters**  | | | |
+| **Handling noise**     | | | | 
+| **Distance metric**    | | | |
 
 ## Discussion question 
 

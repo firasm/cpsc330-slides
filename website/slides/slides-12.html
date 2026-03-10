@@ -6,8 +6,8 @@
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-8ea72dc5fed832574809a9c94082fbbb.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.6.40">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-b758ccaa5987ceb1b75504551e579abf.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.8.26">
 
   <title>CPSC 330 Slides – CPSC 330 Lecture 12: Feature importances</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -29,7 +29,7 @@
     }
     .display.math{display: block; text-align: center; margin: 0.5rem auto;}
   </style>
-  <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto-49e13e7374f23f473f2716d5a610a8f0.css">
+  <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto-4a5b24c8b3ae7b593930d61c52872a99.css">
   <link href="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -133,24 +133,48 @@
 </div>
 
 </section>
-<section class="slide level2 center">
-
-<!-- ## Announcements 
-
+<section id="announcements" class="slide level2 center">
+<h2>Announcements</h2>
+<ul>
+<li>Midterm 1 grades are released on PrairieLearn</li>
+<li>Please remember to view your midterm in the CBTF!</li>
+</ul>
+</section>
+<section id="midterm-debrief" class="slide level2 center">
+<h2>Midterm Debrief</h2>
+<p>How did you feel about the first midterm?</p>
+<ul>
+<li><ol type="A">
+<li>I felt well-prepared and it went smoothly</li>
+</ol></li>
+<li><ol start="2" type="A">
+<li>I think it went okay. We’ll see when grades come back</li>
+</ol></li>
+<li><ol start="3" type="A">
+<li>I struggled and didn’t feel fully prepared</li>
+</ol></li>
+<li><ol start="4" type="A">
+<li>I noticed some gaps between what we practiced and what appeared on the exam</li>
+</ol></li>
+<li><ol start="5" type="A">
+<li>It was a stressful experience for me 😔</li>
+</ol></li>
+</ul>
+<!--
 - HW4 grades are released 
 - HW5 is due next week Monday. Make use of office hours and tutorials this week.    -->
 </section>
-<section id="scenario-1-which-model-would-you-pick" class="slide level2 center">
-<h2>Scenario 1: Which model would you pick</h2>
+<section id="motivating-feature-importances" class="slide level2 center">
+<h2>Motivating Feature importances</h2>
+<p>Consider the following two scenarios:</p>
+<h3 id="scenario-1-which-model-would-you-pick">Scenario 1: Which model would you pick</h3>
 <p>Predicting whether a patient is likely to develop diabetes based on features such as age, blood pressure, glucose levels, and BMI. You have two models:</p>
 <ul>
 <li>LGBM which results in 0.9 f1 score</li>
 <li>Logistic regression which results in 0.84 f1 score</li>
 </ul>
 <p>Which model would you pick? Why?</p>
-</section>
-<section id="scenario-2" class="slide level2 center">
-<h2>Scenario 2</h2>
+<h3 id="scenario-2">Scenario 2</h3>
 <p>Predicting whether a user will purchase a product next based on their browsing history, previous purchases, and click behavior. You have two models:</p>
 <ul>
 <li>LGBM which results in 0.9 F1 score</li>
@@ -161,7 +185,7 @@
 <section id="transparency" class="slide level2 center">
 <h2>Transparency</h2>
 <ul>
-<li>In many domains understanding the relationship between features and predictions is critical for trust and regulatory compliance.</li>
+<li>In many domains understanding the <strong>relationship between features and predictions</strong> is critical for trust and regulatory compliance.</li>
 </ul>
 <h3 id="feature-importances">Feature importances</h3>
 <ul>
@@ -210,6 +234,11 @@
 </ul></li>
 </ul>
 </section>
+<section id="break" class="slide level2 center">
+<h2>Break</h2>
+<p>Let’s take a break!</p>
+
+<img data-src="img/eva-coffee.png" class="quarto-figure quarto-figure-center r-stretch"></section>
 <section id="pause-and-reflect" class="slide level2 center">
 <h2>Pause and Reflect</h2>
 <p>We are now just over half-way through CPSC 330!</p>
@@ -217,34 +246,24 @@
 </section>
 <section id="class-survey" class="slide level2 center">
 <h2>Class Survey</h2>
-<p>I’d love to hear how you think lectures are going, and how the course is going overall: <a href="https://bit.ly/cpsc330_2025S">bit.ly/cpsc330_25S</a>.</p>
+<p>I’d love to hear how you think lectures are going, and how the course is going overall: <a href="https://bit.ly/cpsc330_2025W2">bit.ly/cpsc330_2025W2</a>.</p>
+<p>Let’s take a couple of minutes to complete this before we get started on today’s content.</p>
 </section>
-<section id="iclicker-midterm-poll" class="slide level2 smaller center">
-<h2>(iClicker) Midterm poll</h2>
-<p><strong>Select all of the following statements which are TRUE.</strong></p>
-<ul>
-<li><ol type="A">
-<li>I’m happy with my progress and learning in this course.</li>
-</ol></li>
-<li><ol start="2" type="A">
-<li>I find the course content interesting, but the pace is a bit overwhelming. Balancing this course with other responsibilities is challenging</li>
-</ol></li>
-<li><ol start="3" type="A">
-<li>I’m doing okay, but I feel stressed and worried about upcoming assessments.</li>
-</ol></li>
-<li><ol start="4" type="A">
-<li>I’m confused about some concepts and would appreciate more clarification or review sessions.</li>
-</ol></li>
-<li><ol start="5" type="A">
-<li>I’m struggling to keep up with the material. I am not happy with my learning in this course and my morale is low ☹️.</li>
-</ol></li>
-</ul>
-</section>
-<section id="break" class="slide level2 center">
-<h2>Break</h2>
-<p>Let’s take a break!</p>
+<section id="group-work-class-demo-live-coding" class="slide level2 center">
+<h2>Group Work: Class Demo &amp; Live Coding</h2>
+<p>For this demo, each student should <a href="https://github.com/new?template_name=lecture12_demo&amp;template_owner=ubc-cpsc330">click this link</a> to create a new repo in their accounts, then clone that repo locally to follow along with the demo from today.</p>
+<!-- 
+## (iClicker) Midterm poll {.smaller}
 
-<img data-src="img/eva-coffee.png" class="quarto-figure quarto-figure-center r-stretch"></section>
+**Select all of the following statements which are TRUE.**
+
+- (A) I'm happy with my progress and learning in this course.
+- (B) I find the course content interesting, but the pace is a bit overwhelming. Balancing this course with other responsibilities is challenging
+- (C) I'm doing okay, but I feel stressed and worried about upcoming assessments.
+- (D) I'm confused about some concepts and would appreciate more clarification or review sessions.
+- (E) I'm struggling to keep up with the material. I am not happy with my learning in this course and my morale is low ☹️.
+ -->
+</section>
 <section id="group-work-class-demo-live-coding-if-time-permits" class="slide level2 center">
 <h2>Group Work: Class Demo &amp; Live Coding (if time permits)</h2>
 <p>For this demo, each student should <a href="https://github.com/new?template_name=lecture12_demo&amp;template_owner=ubc-cpsc330">click this link</a> to create a new repo in their accounts, then clone that repo locally to follow along with the demo from today.</p>
@@ -258,6 +277,40 @@
 
 <img data-src="img/shap_docs.png" class="quarto-figure quarto-figure-center r-stretch"><p>You might need to install <a href="https://shap.readthedocs.io/en/latest/example_notebooks/overviews/An%20introduction%20to%20explainable%20AI%20with%20Shapley%20values.html">SHAP</a> in your conda environment</p>
 <pre><code>conda install -c conda-forge shap</code></pre>
+<!-- 
+## Extending SHAP
+
+- Can also be used to explain text classification and image classification!
+
+## Extending SHAP 
+
+![](../img/shap_image_explainer.png)
+    
+[Source](https://github.com/slundberg/shap)
+
+## Extending SHAP
+
+![](../img/shap_image_explainer.png)
+
+- Example: In the picture below, red pixels represent positive SHAP values that increase the probability of the class, while blue pixels represent negative SHAP values the reduce the probability of the class. 
+
+## Finishing up Feature importances
+
+Why do we care about feature importances so much?
+
+- Identify features that are not useful and maybe remove them.
+- Get guidance on what new data to collect.
+  - New features related to useful features -> better results.
+  - Don’t bother collecting useless features -> save resources.
+
+## Finishing up Feature importances
+
+- Help explain why the model is making certain predictions.
+  - Debugging, if the model is behaving strangely.
+  - Regulatory requirements.
+  - Fairness / bias. See this.
+  - Keep in mind this can be used on deployment predictions!
+ -->
 
 
 </section></section>
@@ -459,190 +512,173 @@
       });
     </script>
     <script id="quarto-html-after-body" type="application/javascript">
-    window.document.addEventListener("DOMContentLoaded", function (event) {
-      const toggleBodyColorMode = (bsSheetEl) => {
-        const mode = bsSheetEl.getAttribute("data-mode");
-        const bodyEl = window.document.querySelector("body");
-        if (mode === "dark") {
-          bodyEl.classList.add("quarto-dark");
-          bodyEl.classList.remove("quarto-light");
-        } else {
-          bodyEl.classList.add("quarto-light");
-          bodyEl.classList.remove("quarto-dark");
-        }
-      }
-      const toggleBodyColorPrimary = () => {
-        const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
-        if (bsSheetEl) {
-          toggleBodyColorMode(bsSheetEl);
-        }
-      }
-      toggleBodyColorPrimary();  
-      const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
-      tabsets.forEach(function(tabset) {
-        const tabby = new Tabby('#' + tabset.id);
-      });
-      const isCodeAnnotation = (el) => {
-        for (const clz of el.classList) {
-          if (clz.startsWith('code-annotation-')) {                     
-            return true;
+      window.document.addEventListener("DOMContentLoaded", function (event) {
+        const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+        tabsets.forEach(function(tabset) {
+          const tabby = new Tabby('#' + tabset.id);
+        });
+        const isCodeAnnotation = (el) => {
+          for (const clz of el.classList) {
+            if (clz.startsWith('code-annotation-')) {                     
+              return true;
+            }
           }
+          return false;
         }
-        return false;
-      }
-      const onCopySuccess = function(e) {
-        // button target
-        const button = e.trigger;
-        // don't keep focus
-        button.blur();
-        // flash "checked"
-        button.classList.add('code-copy-button-checked');
-        var currentTitle = button.getAttribute("title");
-        button.setAttribute("title", "Copied!");
-        let tooltip;
-        if (window.bootstrap) {
-          button.setAttribute("data-bs-toggle", "tooltip");
-          button.setAttribute("data-bs-placement", "left");
-          button.setAttribute("data-bs-title", "Copied!");
-          tooltip = new bootstrap.Tooltip(button, 
-            { trigger: "manual", 
-              customClass: "code-copy-button-tooltip",
-              offset: [0, -8]});
-          tooltip.show();    
-        }
-        setTimeout(function() {
-          if (tooltip) {
-            tooltip.hide();
-            button.removeAttribute("data-bs-title");
-            button.removeAttribute("data-bs-toggle");
-            button.removeAttribute("data-bs-placement");
+        const onCopySuccess = function(e) {
+          // button target
+          const button = e.trigger;
+          // don't keep focus
+          button.blur();
+          // flash "checked"
+          button.classList.add('code-copy-button-checked');
+          var currentTitle = button.getAttribute("title");
+          button.setAttribute("title", "Copied!");
+          let tooltip;
+          if (window.bootstrap) {
+            button.setAttribute("data-bs-toggle", "tooltip");
+            button.setAttribute("data-bs-placement", "left");
+            button.setAttribute("data-bs-title", "Copied!");
+            tooltip = new bootstrap.Tooltip(button, 
+              { trigger: "manual", 
+                customClass: "code-copy-button-tooltip",
+                offset: [0, -8]});
+            tooltip.show();    
           }
-          button.setAttribute("title", currentTitle);
-          button.classList.remove('code-copy-button-checked');
-        }, 1000);
-        // clear code selection
-        e.clearSelection();
-      }
-      const getTextToCopy = function(trigger) {
-          const codeEl = trigger.previousElementSibling.cloneNode(true);
+          setTimeout(function() {
+            if (tooltip) {
+              tooltip.hide();
+              button.removeAttribute("data-bs-title");
+              button.removeAttribute("data-bs-toggle");
+              button.removeAttribute("data-bs-placement");
+            }
+            button.setAttribute("title", currentTitle);
+            button.classList.remove('code-copy-button-checked');
+          }, 1000);
+          // clear code selection
+          e.clearSelection();
+        }
+        const getTextToCopy = function(trigger) {
+          const outerScaffold = trigger.parentElement.cloneNode(true);
+          const codeEl = outerScaffold.querySelector('code');
           for (const childEl of codeEl.children) {
             if (isCodeAnnotation(childEl)) {
               childEl.remove();
             }
           }
           return codeEl.innerText;
-      }
-      const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-        text: getTextToCopy
-      });
-      clipboard.on('success', onCopySuccess);
-      if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-        const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-          text: getTextToCopy,
-          container: window.document.getElementById('quarto-embedded-source-code-modal')
-        });
-        clipboardModal.on('success', onCopySuccess);
-      }
-        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-        var mailtoRegex = new RegExp(/^mailto:/);
-          var filterRegex = new RegExp('/' + window.location.host + '/');
-        var isInternal = (href) => {
-            return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
         }
-        // Inspect non-navigation links and adorn them if external
-     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
-        for (var i=0; i<links.length; i++) {
-          const link = links[i];
-          if (!isInternal(link.href)) {
-            // undo the damage that might have been done by quarto-nav.js in the case of
-            // links that we want to consider external
-            if (link.dataset.originalHref !== undefined) {
-              link.href = link.dataset.originalHref;
+        const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+          text: getTextToCopy
+        });
+        clipboard.on('success', onCopySuccess);
+        if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+          const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+            text: getTextToCopy,
+            container: window.document.getElementById('quarto-embedded-source-code-modal')
+          });
+          clipboardModal.on('success', onCopySuccess);
+        }
+          var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+          var mailtoRegex = new RegExp(/^mailto:/);
+            var filterRegex = new RegExp('/' + window.location.host + '/');
+          var isInternal = (href) => {
+              return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+          }
+          // Inspect non-navigation links and adorn them if external
+         var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+          for (var i=0; i<links.length; i++) {
+            const link = links[i];
+            if (!isInternal(link.href)) {
+              // undo the damage that might have been done by quarto-nav.js in the case of
+              // links that we want to consider external
+              if (link.dataset.originalHref !== undefined) {
+                link.href = link.dataset.originalHref;
+              }
             }
           }
-        }
-      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
-        const config = {
-          allowHTML: true,
-          maxWidth: 500,
-          delay: 100,
-          arrow: false,
-          appendTo: function(el) {
-              return el.closest('section.slide') || el.parentElement;
-          },
-          interactive: true,
-          interactiveBorder: 10,
-          theme: 'light-border',
-          placement: 'bottom-start',
-        };
-        if (contentFn) {
-          config.content = contentFn;
-        }
-        if (onTriggerFn) {
-          config.onTrigger = onTriggerFn;
-        }
-        if (onUntriggerFn) {
-          config.onUntrigger = onUntriggerFn;
-        }
-          config['offset'] = [0,0];
-          config['maxWidth'] = 700;
-        window.tippy(el, config); 
-      }
-      const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
-      for (var i=0; i<noterefs.length; i++) {
-        const ref = noterefs[i];
-        tippyHover(ref, function() {
-          // use id or data attribute instead here
-          let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
-          try { href = new URL(href).hash; } catch {}
-          const id = href.replace(/^#\/?/, "");
-          const note = window.document.getElementById(id);
-          if (note) {
-            return note.innerHTML;
-          } else {
-            return "";
+        function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+          const config = {
+            allowHTML: true,
+            maxWidth: 500,
+            delay: 100,
+            arrow: false,
+            appendTo: function(el) {
+                return el.closest('section.slide') || el.parentElement;
+            },
+            interactive: true,
+            interactiveBorder: 10,
+            theme: 'light-border',
+            placement: 'bottom-start',
+          };
+          if (contentFn) {
+            config.content = contentFn;
           }
-        });
-      }
-      const findCites = (el) => {
-        const parentEl = el.parentElement;
-        if (parentEl) {
-          const cites = parentEl.dataset.cites;
-          if (cites) {
-            return {
-              el,
-              cites: cites.split(' ')
-            };
-          } else {
-            return findCites(el.parentElement)
+          if (onTriggerFn) {
+            config.onTrigger = onTriggerFn;
           }
-        } else {
-          return undefined;
+          if (onUntriggerFn) {
+            config.onUntrigger = onUntriggerFn;
+          }
+            config['offset'] = [0,0];
+            config['maxWidth'] = 700;
+          window.tippy(el, config); 
         }
-      };
-      var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-      for (var i=0; i<bibliorefs.length; i++) {
-        const ref = bibliorefs[i];
-        const citeInfo = findCites(ref);
-        if (citeInfo) {
-          tippyHover(citeInfo.el, function() {
-            var popup = window.document.createElement('div');
-            citeInfo.cites.forEach(function(cite) {
-              var citeDiv = window.document.createElement('div');
-              citeDiv.classList.add('hanging-indent');
-              citeDiv.classList.add('csl-entry');
-              var biblioDiv = window.document.getElementById('ref-' + cite);
-              if (biblioDiv) {
-                citeDiv.innerHTML = biblioDiv.innerHTML;
-              }
-              popup.appendChild(citeDiv);
-            });
-            return popup.innerHTML;
+        const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+        for (var i=0; i<noterefs.length; i++) {
+          const ref = noterefs[i];
+          tippyHover(ref, function() {
+            // use id or data attribute instead here
+            let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+            try { href = new URL(href).hash; } catch {}
+            const id = href.replace(/^#\/?/, "");
+            const note = window.document.getElementById(id);
+            if (note) {
+              return note.innerHTML;
+            } else {
+              return "";
+            }
           });
         }
-      }
-    });
-    </script>
+        const findCites = (el) => {
+          const parentEl = el.parentElement;
+          if (parentEl) {
+            const cites = parentEl.dataset.cites;
+            if (cites) {
+              return {
+                el,
+                cites: cites.split(' ')
+              };
+            } else {
+              return findCites(el.parentElement)
+            }
+          } else {
+            return undefined;
+          }
+        };
+        var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+        for (var i=0; i<bibliorefs.length; i++) {
+          const ref = bibliorefs[i];
+          const citeInfo = findCites(ref);
+          if (citeInfo) {
+            tippyHover(citeInfo.el, function() {
+              var popup = window.document.createElement('div');
+              citeInfo.cites.forEach(function(cite) {
+                var citeDiv = window.document.createElement('div');
+                citeDiv.classList.add('hanging-indent');
+                citeDiv.classList.add('csl-entry');
+                var biblioDiv = window.document.getElementById('ref-' + cite);
+                if (biblioDiv) {
+                  citeDiv.innerHTML = biblioDiv.innerHTML;
+                }
+                popup.appendChild(citeDiv);
+              });
+              return popup.innerHTML;
+            });
+          }
+        }
+      });
+      </script>
     
 
 </body></html>
