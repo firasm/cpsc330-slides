@@ -254,6 +254,6 @@ What tools would/should we use to create a recommender system?
 
 ## Group Work: Class Demo & Live Coding
 
-For this demo, each student should [click this link](https://github.com/new?template_name=lecture16_demo&template_owner=ubc-cpsc330) to create a new repo in their accounts, then clone that repo locally to follow along with the demo from today.
+For this demo, each student should [click this link](https://ubc-cs.github.io/cpsc330-2025W2/lectures/notes/recommender-systems/) to follow along with the demo from today.
 
 All credit to Dr. Varada Kolhatkar for putting this together!
