@@ -760,7 +760,7 @@
     "href": "slides-08.html#grid-search-example",
     "title": "CPSC 330 Lecture 8: Hyperparameter Optimization",
     "section": "Grid search example",
-    "text": "Grid search example\n\nfrom sklearn.model_selection import GridSearchCV\n\npipe_svm = make_pipeline(CountVectorizer(), SVC())\n\nparam_grid = {\n    \"countvectorizer__max_features\": [100, 200, 400],\n    \"svc__gamma\": [0.01, 0.1, 1.0],\n    \"svc__C\": [0.01, 0.1, 1.0],\n}\ngrid_search = GridSearchCV(pipe_svm, \n                  param_grid = param_grid, \n                  n_jobs=-1, \n                  return_train_score=True\n                 )\ngrid_search.fit(X_train, y_train)\ngrid_search.best_score_\n\nnp.float64(0.9780612255051213)"
+    "text": "Grid search example\n\nfrom sklearn.model_selection import GridSearchCV\n\npipe_svm = make_pipeline(CountVectorizer(), SVC())\n\nparam_grid = {\n    \"countvectorizer__max_features\": [100, 200, 400],\n    \"svc__gamma\": [0.01, 0.1, 1.0],\n    \"svc__C\": [0.01, 0.1, 1.0],\n}\ngrid_search = GridSearchCV(pipe_svm, \n                  param_grid = param_grid, \n                  n_jobs=-1, \n                  return_train_score=True\n                 )\ngrid_search.fit(X_train, y_train)\ngrid_search.best_score_\n\nnp.float64(0.9782606272997375)"
   },
   {
     "objectID": "slides-08.html#random-search",
@@ -774,7 +774,7 @@
     "href": "slides-08.html#random-search-example",
     "title": "CPSC 330 Lecture 8: Hyperparameter Optimization",
     "section": "Random search example",
-    "text": "Random search example\n\nfrom sklearn.model_selection import RandomizedSearchCV\nfrom scipy.stats import randint\n\npipe_svc = make_pipeline(CountVectorizer(), SVC())\n\nparam_dist = {\n    \"countvectorizer__max_features\": randint(100, 2000), \n    \"svc__C\": uniform(0.1, 1e4),  # loguniform(1e-3, 1e3),\n    \"svc__gamma\": loguniform(1e-5, 1e3),\n}\nrandom_search = RandomizedSearchCV(pipe_svm,                                    \n                  param_distributions = param_dist, \n                  n_iter=10, \n                  n_jobs=-1, \n                  return_train_score=True)\n\n# Carry out the search\nrandom_search.fit(X_train, y_train)\nrandom_search.best_score_\n\nnp.float64(0.9838450715717121)"
+    "text": "Random search example\n\nfrom sklearn.model_selection import RandomizedSearchCV\nfrom scipy.stats import randint\n\npipe_svc = make_pipeline(CountVectorizer(), SVC())\n\nparam_dist = {\n    \"countvectorizer__max_features\": randint(100, 2000), \n    \"svc__C\": uniform(0.1, 1e4),  # loguniform(1e-3, 1e3),\n    \"svc__gamma\": loguniform(1e-5, 1e3),\n}\nrandom_search = RandomizedSearchCV(pipe_svm,                                    \n                  param_distributions = param_dist, \n                  n_iter=10, \n                  n_jobs=-1, \n                  return_train_score=True)\n\n# Carry out the search\nrandom_search.fit(X_train, y_train)\nrandom_search.best_score_\n\nnp.float64(0.9822496582109957)"
   },
   {
     "objectID": "slides-08.html#pizza-baking-competition-example",
@@ -1183,130 +1183,172 @@
     "text": "Group Work: Class Demo & Live Coding (if time permits)\nFor this demo, each student should click this link to create a new repo in their accounts, then clone that repo locally to follow along with the demo from today."
   },
   {
-    "objectID": "slides-10.html#which-metric-fits-best",
-    "href": "slides-10.html#which-metric-fits-best",
-    "title": "CPSC 330 Lecture 10: Regression Metrics",
-    "section": "Which metric fits best?",
-    "text": "Which metric fits best?\n\n\n\nScenario\nData Imbalance\nMain Concern\nBest Metric(s) / Curve\n\n\n\n\nEmail Spam Detection\n10% spam\nAvoid false positives\n\n\n\nDisease Screening\n1 in 10,000\nAvoid false negatives\n\n\n\nCredit Card Fraud\n0.1% fraud\nFocus on rare positive class\n\n\n\nCustomer Churn\n20% churn\nBalance FP & FN\n\n\n\nSentiment Analysis\n50/50 balanced\nOverall correctness\n\n\n\nFace Recognition\nBalanced pairs\nTrade-off FP vs FN"
+    "objectID": "slides-16.html#announcements",
+    "href": "slides-16.html#announcements",
+    "title": "CPSC 330 Lecture 16: Recommender Systems",
+    "section": "Announcements",
+    "text": "Announcements"
   },
   {
-    "objectID": "slides-10.html#summary-choosing-the-right-metric",
-    "href": "slides-10.html#summary-choosing-the-right-metric",
-    "title": "CPSC 330 Lecture 10: Regression Metrics",
-    "section": "Summary: Choosing the right metric",
-    "text": "Summary: Choosing the right metric\n\n\n\n\n\n\n\n\nMetric / Plot\nWhen to Use\nWhy\n\n\n\n\nPrecision, Recall, F1\nWhen you care about specific error types (FP vs FN) or a fixed threshold.\nFocus on particular tradeoffs.\n\n\nPR Curve & AP Score\nWhen the dataset is highly imbalanced (rare positives).\nIgnores TNs; focuses on positives.\n\n\nROC Curve & AUC\nWhen classes are moderately imbalanced.\nMeasures ranking ability across thresholds."
+    "objectID": "slides-16.html#show-of-hands",
+    "href": "slides-16.html#show-of-hands",
+    "title": "CPSC 330 Lecture 16: Recommender Systems",
+    "section": "Show of Hands 💡",
+    "text": "Show of Hands 💡\nWhat percentage of watch time on YouTube do you think comes from recommendations?\n\n\n30%\n\n\n40%\n\n\n60%\n\n\n70%\n\n\n90%\n\n\nBased on YouTube Product Chief at CES 2024. The number may have changed since then!"
   },
   {
-    "objectID": "slides-10.html#questions-for-you",
-    "href": "slides-10.html#questions-for-you",
-    "title": "CPSC 330 Lecture 10: Regression Metrics",
-    "section": "Questions for you",
-    "text": "Questions for you\n\nWhat’s the difference between the average precision (AP) score and F1-score?\nWhich model would you pick?"
+    "objectID": "slides-16.html#what-is-a-recommendation-system",
+    "href": "slides-16.html#what-is-a-recommendation-system",
+    "title": "CPSC 330 Lecture 16: Recommender Systems",
+    "section": "What is a recommendation system?",
+    "text": "What is a recommendation system?\nA recommendation system suggests products, services, or content that a user is likely to consume or enjoy."
   },
   {
-    "objectID": "slides-10.html#roc-of-a-baseline-model",
-    "href": "slides-10.html#roc-of-a-baseline-model",
-    "title": "CPSC 330 Lecture 10: Regression Metrics",
-    "section": "ROC of a baseline model",
-    "text": "ROC of a baseline model\n\n\n\n\nAUC–ROC measures the probability that a randomly chosen positive example receives a higher score than a randomly chosen negative example.\n\nPerfect model: (AUC = 1.0). Always ranks positives above negatives.\n\nRandom model (AUC = 0.5): No discriminative ability (equivalent to random guessing).\n\n\n\nSource"
+    "objectID": "slides-16.html#example-recommender-systems",
+    "href": "slides-16.html#example-recommender-systems",
+    "title": "CPSC 330 Lecture 16: Recommender Systems",
+    "section": "Example: Recommender systems",
+    "text": "Example: Recommender systems\n\nA user visits Amazon to shop.\nAmazon knows:\n\nwhat the user viewed or purchased before\nwhat similar users bought\n\nThe goal: recommend items that maximize user engagement or sales.\nThere’s no single “right” label. The goal is to model user behaviour."
   },
   {
-    "objectID": "slides-10.html#questions-for-you-1",
-    "href": "slides-10.html#questions-for-you-1",
-    "title": "CPSC 330 Lecture 10: Regression Metrics",
-    "section": "Questions for you",
-    "text": "Questions for you\n\n\n\n\n\nWhich model would you pick?"
+    "objectID": "slides-16.html#why-should-we-care",
+    "href": "slides-16.html#why-should-we-care",
+    "title": "CPSC 330 Lecture 16: Recommender Systems",
+    "section": "Why should we care?",
+    "text": "Why should we care?\n\n\n\n\n\nRecommendations shape almost everything we buy or watch.\nCentral to the success of companies like Amazon, Netflix, YouTube, and Spotify."
   },
   {
-    "objectID": "slides-10.html#dealing-with-class-imbalance",
-    "href": "slides-10.html#dealing-with-class-imbalance",
-    "title": "CPSC 330 Lecture 10: Regression Metrics",
-    "section": "Dealing with class imbalance",
-    "text": "Dealing with class imbalance\n\nUnder sampling\nOversampling\nclass weight=\"balanced\" (preferred method for this course)\nSMOTE"
+    "objectID": "slides-16.html#why-recommendation-systems",
+    "href": "slides-16.html#why-recommendation-systems",
+    "title": "CPSC 330 Lecture 16: Recommender Systems",
+    "section": "Why recommendation systems?",
+    "text": "Why recommendation systems?\n\nThey help users navigate information overload.\nWithout them, finding the right item would require sifting through thousands of options.\nRecommendations reduce effort and improve user experience."
   },
   {
-    "objectID": "slides-10.html#handling-imbalance-by-chaning-class-weights",
-    "href": "slides-10.html#handling-imbalance-by-chaning-class-weights",
-    "title": "CPSC 330 Lecture 10: Regression Metrics",
-    "section": "Handling imbalance by chaning class weights",
-    "text": "Handling imbalance by chaning class weights\n\nWe can specify class_weight=“balanced” to give more importance to rare examples during training.\n\n\n\n\n\n\n\n\n\n\n\n\nThis sets the weights so that the classes are “equal”.\nWe have reduced false negatives but we have many more false positives now …\n\nDecreases false negatives, which improves recall.\nIncreases false positives, which might lower precision."
+    "objectID": "slides-16.html#the-other-side-filter-bubbles",
+    "href": "slides-16.html#the-other-side-filter-bubbles",
+    "title": "CPSC 330 Lecture 16: Recommender Systems",
+    "section": "The other side: Filter bubbles",
+    "text": "The other side: Filter bubbles\n\nRecommenders often amplify what users already like or what similar users like.\nThis can create filter bubbles, limiting exposure to diverse content.\nProbably harmless in shopping, but can have serious consequences in domains like news, politics, or science, where diverse viewpoints matter."
   },
   {
-    "objectID": "slides-10.html#ridge-and-ridgecv",
-    "href": "slides-10.html#ridge-and-ridgecv",
-    "title": "CPSC 330 Lecture 10: Regression Metrics",
-    "section": "Ridge and RidgeCV",
-    "text": "Ridge and RidgeCV\n\nRidge Regression: alpha hyperparameter controls model complexity.\nRidgeCV: Ridge regression with built-in cross-validation to find the optimal alpha."
+    "objectID": "slides-16.html#what-data-do-we-need",
+    "href": "slides-16.html#what-data-do-we-need",
+    "title": "CPSC 330 Lecture 16: Recommender Systems",
+    "section": "What data do we need?",
+    "text": "What data do we need?\nTo build a recommender, we typically use:\n\nUser–item interactions (ratings, clicks, views, purchases)\nItem or user features (e.g., genre, price, age)\nHistorical data (purchase or viewing history)"
   },
   {
-    "objectID": "slides-10.html#alpha-hyperparameter",
-    "href": "slides-10.html#alpha-hyperparameter",
-    "title": "CPSC 330 Lecture 10: Regression Metrics",
-    "section": "alpha hyperparameter",
-    "text": "alpha hyperparameter\n\nRole of alpha:\n\nControls model complexity\nHigher alpha: Simpler model, smaller coefficients.\nLower alpha: Complex model, larger coefficients."
+    "objectID": "slides-16.html#problem-formulation",
+    "href": "slides-16.html#problem-formulation",
+    "title": "CPSC 330 Lecture 16: Recommender Systems",
+    "section": "Problem formulation",
+    "text": "Problem formulation\n\nWe have N users and M items.\nObserved data = interactions:\n\nMovie ratings (Netflix)\nSong plays (Spotify)\nProduct purchases (Amazon)\n\n\nGoal: predict unobserved interactions."
   },
   {
-    "objectID": "slides-10.html#regression-metrics-mse-rmse-mape-r2_score",
-    "href": "slides-10.html#regression-metrics-mse-rmse-mape-r2_score",
-    "title": "CPSC 330 Lecture 10: Regression Metrics",
-    "section": "Regression metrics: MSE, RMSE, MAPE, r2_score",
-    "text": "Regression metrics: MSE, RMSE, MAPE, r2_score\n\nMean Squared Error (MSE): Average of the squares of the errors.\nRoot Mean Squared Error (RMSE): Square root of MSE, same units as the target variable.\nr2 measures how much of the variation in the target variable your model can explain.-\nMean Absolute Percentage Error (MAPE): Average of the absolute percentage errors."
+    "objectID": "slides-16.html#the-utility-matrix",
+    "href": "slides-16.html#the-utility-matrix",
+    "title": "CPSC 330 Lecture 16: Recommender Systems",
+    "section": "The utility matrix",
+    "text": "The utility matrix\n\nRows = users, columns = items\nEach entry yij = user i’s interaction (e.g., rating) with item j"
   },
   {
-    "objectID": "slides-10.html#applying-log-transformation-to-the-targets",
-    "href": "slides-10.html#applying-log-transformation-to-the-targets",
-    "title": "CPSC 330 Lecture 10: Regression Metrics",
-    "section": "Applying log transformation to the targets",
-    "text": "Applying log transformation to the targets\n\nSuitable when the target has a wide range and spans several orders of magnitude\n\nExample: counts data such as social media likes or price data\n\nHelps manage skewed data, making patterns more apparent and regression models more effective.\nTransformedTargetRegressor\n\nWraps a regression model and applies a transformation to the target values."
+    "objectID": "slides-16.html#sparsity",
+    "href": "slides-16.html#sparsity",
+    "title": "CPSC 330 Lecture 16: Recommender Systems",
+    "section": "Sparsity",
+    "text": "Sparsity\n\nThe utility matrix is mostly empty.\nEach user interacts with only a small fraction of all items.\nExamples:\n\nNetflix users rate only a few shows out of thousands.\nAmazon shoppers review only a handful of products."
   },
   {
-    "objectID": "slides-10.html#iclicker-exercise-10.1",
-    "href": "slides-10.html#iclicker-exercise-10.1",
-    "title": "CPSC 330 Lecture 10: Regression Metrics",
-    "section": "iClicker Exercise 10.1",
-    "text": "iClicker Exercise 10.1\niClicker cloud join link: https://join.iclicker.com/YJHS\nSelect all of the following statements which are TRUE.\n\n\nPrice per square foot would be a good feature to add in our X.\n\n\nThe alpha hyperparameter of Ridge has similar interpretation of C hyperparameter of LogisticRegression; higher alpha means more complex model.\n\n\nIn Ridge, smaller alpha means bigger coefficients whereas bigger alpha means smaller coefficients."
+    "objectID": "slides-16.html#what-do-we-predict",
+    "href": "slides-16.html#what-do-we-predict",
+    "title": "CPSC 330 Lecture 16: Recommender Systems",
+    "section": "What do we predict?",
+    "text": "What do we predict?\nWe aim to fill in the missing entries. In other words, predict ratings or preferences the user hasn’t expressed yet."
   },
   {
-    "objectID": "slides-10.html#group-work-class-demo-live-coding",
-    "href": "slides-10.html#group-work-class-demo-live-coding",
-    "title": "CPSC 330 Lecture 10: Regression Metrics",
+    "objectID": "slides-16.html#rating-prediction-neq-regression",
+    "href": "slides-16.html#rating-prediction-neq-regression",
+    "title": "CPSC 330 Lecture 16: Recommender Systems",
+    "section": "Rating prediction ≠ regression",
+    "text": "Rating prediction ≠ regression\n\n\nRegression\n$$\n\\begin{bmatrix}\n\\checkmark & \\checkmark & \\checkmark  & \\checkmark & \\checkmark\\\\\n\\checkmark & \\checkmark & \\checkmark  & \\checkmark & \\checkmark\\\\\n\\checkmark & \\checkmark & \\checkmark  & \\checkmark & \\checkmark\\\\\n\\checkmark & \\checkmark & \\checkmark  & \\checkmark & ?\\\\\n\\checkmark & \\checkmark & \\checkmark  & \\checkmark & ?\\\\\n\\checkmark & \\checkmark & \\checkmark  & \\checkmark & ?\\\\\n\\end{bmatrix}\n$$\n\nRating prediction\n$$\n\\begin{bmatrix}\n? & ? & \\checkmark  & ? & \\checkmark\\\\\n\\checkmark & ? & ?  & ? & ?\\\\\n? & \\checkmark & \\checkmark  & ? & \\checkmark\\\\\n? & ? & ?  & ? & ?\\\\\n? & ? & ? & \\checkmark & ?\\\\\n? & \\checkmark & \\checkmark  & ? & \\checkmark\n\\end{bmatrix}\n$$"
+  },
+  {
+    "objectID": "slides-16.html#main-approaches",
+    "href": "slides-16.html#main-approaches",
+    "title": "CPSC 330 Lecture 16: Recommender Systems",
+    "section": "Main approaches",
+    "text": "Main approaches\n\nCollaborative filtering\n\n“Unsupervised” learning\nWe only have labels yij (rating of user i for item j).\nWe learn latent features.\n\n\nContent-based recommenders (today’s focus)\n\nSupervised learning\nExtract features xi of users and/or items building a model to predict rating yi given xi.\nApply model to predict for new users/items.\n\nHybrid\n\nCombining collaborative filtering with content-based filtering"
+  },
+  {
+    "objectID": "slides-16.html#how-do-we-evaluate-recommendations",
+    "href": "slides-16.html#how-do-we-evaluate-recommendations",
+    "title": "CPSC 330 Lecture 16: Recommender Systems",
+    "section": "How do we evaluate recommendations?",
+    "text": "How do we evaluate recommendations?\n\nIs there a single correct answer for what should be recommended or what rating should be predicted?\n\nNot really!\n\nStill, we need ways to compare different methods and measure their usefulness."
+  },
+  {
+    "objectID": "slides-16.html#why-evaluation-matters",
+    "href": "slides-16.html#why-evaluation-matters",
+    "title": "CPSC 330 Lecture 16: Recommender Systems",
+    "section": "Why evaluation matters?",
+    "text": "Why evaluation matters?\n\nWe’ll experiment with different ways to fill in missing entries in the utility matrix.\n\nEven though recommendations are subjective, we still need quantitative metrics to judge:\n\nHow well do our predictions match real user behavior?\n\nWhich model performs better?"
+  },
+  {
+    "objectID": "slides-16.html#rmse-for-rating-prediction",
+    "href": "slides-16.html#rmse-for-rating-prediction",
+    "title": "CPSC 330 Lecture 16: Recommender Systems",
+    "section": "RMSE for rating prediction",
+    "text": "RMSE for rating prediction\n\nRMSE, which measures how close predicted ratings are to actual ratings, is one of the commonly used metric to evaluate recommendation systems\n\nIn 2006, Netflix launched the Netflix Prize competition.\n\nThey released a dataset of 100 million movie ratings and offered $1 million to the first team that improved Netflix’s existing algorithm by at least 10% in RMSE on a held-out test set.\n\n\n\n\n\n\nSource: Netflix Tech Blog"
+  },
+  {
+    "objectID": "slides-16.html#clicker-16.1",
+    "href": "slides-16.html#clicker-16.1",
+    "title": "CPSC 330 Lecture 16: Recommender Systems",
+    "section": "Clicker 16.1",
+    "text": "Clicker 16.1\nSelect all of the following statements which are True\n\n\nIn the context of recommendation systems, the shapes of validation utility matrix and train utility matrix are the same.\n\n\nRMSE perfectly captures what we want to measure in the context of recommendation systems.\n\n\nIt would be reasonable to impute missing values in the utility matrix by taking the average of the ratings given to an item by similar users.\n\n\n\nIn KNN type imputation, if a user has not rated any items yet, a reasonable strategy would be recommending them the most popular item."
+  },
+  {
+    "objectID": "slides-16.html#clicker-16.2",
+    "href": "slides-16.html#clicker-16.2",
+    "title": "CPSC 330 Lecture 16: Recommender Systems",
+    "section": "Clicker 16.2",
+    "text": "Clicker 16.2\nSelect all of the following statements which are True\n\nIn content-based filtering we leverage available item features in addition to similarity between users.\nIn content-based filtering you represent each user in terms of known features of items.\nIn the set up of content-based filtering we discussed, if you have a new movie, you would have problems predicting ratings for that movie.\nIn content-based filtering if a user has a number of ratings in the training utility matrix but does not have any ratings in the validation utility matrix then we won’t be able to calculate RMSE for the validation utility matrix."
+  },
+  {
+    "objectID": "slides-16.html#baseline-approaches",
+    "href": "slides-16.html#baseline-approaches",
+    "title": "CPSC 330 Lecture 16: Recommender Systems",
+    "section": "Baseline approaches",
+    "text": "Baseline approaches\n\nGlobal average baseline\nPer-user average baseline\nPer-item average baseline\nAverage of 2 and 3\n\nTake an average of per-user and per-item averages.\n\nk-Nearest Neighbours imputation"
+  },
+  {
+    "objectID": "slides-16.html#content-based-filtering",
+    "href": "slides-16.html#content-based-filtering",
+    "title": "CPSC 330 Lecture 16: Recommender Systems",
+    "section": "Content-based filtering",
+    "text": "Content-based filtering\n\n\n\n\n\niClicker\nSelect all of the following statements which are True\n\n\nIn content-based filtering we leverage available item features in addition to similarity between users.\n\n\nIn content-based filtering you represent each user in terms of known features of items.\n\n\nIn the set up of content-based filtering we discussed, if you have a new movie, you would have problems predicting ratings for that movie.\n\n\nIn content-based filtering if a user has a number of ratings in the training utility matrix but does not have any ratings in the validation utility matrix then we won’t be able to calculate RMSE for the validation utility matrix."
+  },
+  {
+    "objectID": "slides-16.html#ethics-of-recommender-systems",
+    "href": "slides-16.html#ethics-of-recommender-systems",
+    "title": "CPSC 330 Lecture 16: Recommender Systems",
+    "section": "Ethics of Recommender Systems",
+    "text": "Ethics of Recommender Systems\nWe should be very mindful of the drawbacks of relying on recommender systems.\nWhat are some ethical considerations of recommender systems?"
+  },
+  {
+    "objectID": "slides-16.html#what-comprises-a-recommender-system",
+    "href": "slides-16.html#what-comprises-a-recommender-system",
+    "title": "CPSC 330 Lecture 16: Recommender Systems",
+    "section": "What comprises a recommender system?",
+    "text": "What comprises a recommender system?\nWhat does the problem formulation look like?\nWhat tools would/should we use to create a recommender system?"
+  },
+  {
+    "objectID": "slides-16.html#group-work-class-demo-live-coding",
+    "href": "slides-16.html#group-work-class-demo-live-coding",
+    "title": "CPSC 330 Lecture 16: Recommender Systems",
     "section": "Group Work: Class Demo & Live Coding",
-    "text": "Group Work: Class Demo & Live Coding\nFor this demo, each student should click this link to create a new repo in their accounts, then clone that repo locally to follow along with the demo from today."
-  },
-  {
-    "objectID": "slides-10.html#which-metric-fits-the-scenario",
-    "href": "slides-10.html#which-metric-fits-the-scenario",
-    "title": "CPSC 330 Lecture 10: Regression Metrics",
-    "section": "Which metric fits the scenario?",
-    "text": "Which metric fits the scenario?\n\n\n\n\n\n\n\n\nScenario\nWhat matters most?\nBest metric(s)?\n\n\n\n\nPredicting house prices ranging from $60K–$800K.\nA $30K error is huge for a $60K house but small for a $500K house.\n\n\n\nPredicting exam scores (0–100).\nYou want an interpretable measure of average error in points.\n\n\n\nPredicting energy consumption in a large industrial system.\nLarge errors are very costly and should be penalized heavily.\n\n\n\nPredicting insurance claim amounts.\nYou want to compare how well different models explain the variation in claims."
-  },
-  {
-    "objectID": "slides-10.html#iclicker-exercise-10.2",
-    "href": "slides-10.html#iclicker-exercise-10.2",
-    "title": "CPSC 330 Lecture 10: Regression Metrics",
-    "section": "iClicker Exercise 10.2",
-    "text": "iClicker Exercise 10.2\niClicker cloud join link: https://join.iclicker.com/YJHS\nSelect all of the following statements which are TRUE.\n\n\nWe can use still use precision and recall for regression problems but now we have other metrics we can use as well.\n\n\nIn sklearn for regression problems, using r2_score() and .score() (with default values) will produce the same results.\n\n\nRMSE is always going to be non-negative.\n\n\nMSE does not directly provide the information about whether the model is underpredicting or overpredicting.\n\n\nWe can pass multiple scoring metrics to GridSearchCV or RandomizedSearchCV for regression as well as classification problems."
-  },
-  {
-    "objectID": "slides-10.html#which-metric-fits-the-scenario-1",
-    "href": "slides-10.html#which-metric-fits-the-scenario-1",
-    "title": "CPSC 330 Lecture 10: Regression Metrics",
-    "section": "Which metric fits the scenario?",
-    "text": "Which metric fits the scenario?\n\n\n\n\n\n\n\n\nScenario\nWhat matters most?\nBest metric(s)?\n\n\n\n\nPredicting house prices ranging from $60K–$800K.\nA $30K error is huge for a $60K house but small for a $500K house.\n\n\n\nPredicting exam scores (0–100).\nYou want an interpretable measure of average error in points.\n\n\n\nPredicting energy consumption in a large industrial system.\nLarge errors are very costly and should be penalized heavily.\n\n\n\nPredicting insurance claim amounts.\nYou want to compare how well different models explain the variation in claims."
-  },
-  {
-    "objectID": "slides-10.html#which-metric-fits-the-scenario-2",
-    "href": "slides-10.html#which-metric-fits-the-scenario-2",
-    "title": "CPSC 330 Lecture 10: Regression Metrics",
-    "section": "Which metric fits the scenario?",
-    "text": "Which metric fits the scenario?\n\nFor interpretability: prefer RMSE or MAPE\nWhen you want to discourage large error: MSE is common\nFor fair comparison: r2 provides a normalized score similar to accuracy in classification.\n\nFor imbalanced scales: MAPE helps when proportional error matters more than absolute error."
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Welcome",
-    "section": "",
-    "text": "Welcome to CPSC330! Here, you’ll find slides for CPSC 330. These slides are based on the notes presented here.\n\nClass times 🕘 3:30 PM to 5 PM, Tuesday and Thursday\nWhere? 📍 Hugh Dempster Pavillion 310, 6245 Agronomy Road, Vancouver, BC V6T 1Z4"
+    "text": "Group Work: Class Demo & Live Coding\nFor this demo, each student should click this link to create a new repo in their accounts, then clone that repo locally to follow along with the demo from today.\nAll credit to Dr. Varada Kolhatkar for putting this together!"
   },
   {
     "objectID": "slides-09.html#announcements",
@@ -1559,6 +1601,132 @@
     "title": "CPSC 330 Lecture 9: Classification Metrics",
     "section": "What did we learn?",
     "text": "What did we learn?\n\nWhy accuracy is not always a good metric?\nConfusion matrix\nPrecision, recall, & f1-score\nPrecision-recall curves & average precision\nReceiver Operator Characteristic (ROC) curves & AUC"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Welcome",
+    "section": "",
+    "text": "Welcome to CPSC330! Here, you’ll find slides for CPSC 330. These slides are based on the notes presented here.\n\nClass times 🕘 3:30 PM to 5 PM, Tuesday and Thursday\nWhere? 📍 Hugh Dempster Pavillion 310, 6245 Agronomy Road, Vancouver, BC V6T 1Z4"
+  },
+  {
+    "objectID": "slides-10.html#which-metric-fits-best",
+    "href": "slides-10.html#which-metric-fits-best",
+    "title": "CPSC 330 Lecture 10: Regression Metrics",
+    "section": "Which metric fits best?",
+    "text": "Which metric fits best?\n\n\n\nScenario\nData Imbalance\nMain Concern\nBest Metric(s) / Curve\n\n\n\n\nEmail Spam Detection\n10% spam\nAvoid false positives\n\n\n\nDisease Screening\n1 in 10,000\nAvoid false negatives\n\n\n\nCredit Card Fraud\n0.1% fraud\nFocus on rare positive class\n\n\n\nCustomer Churn\n20% churn\nBalance FP & FN\n\n\n\nSentiment Analysis\n50/50 balanced\nOverall correctness\n\n\n\nFace Recognition\nBalanced pairs\nTrade-off FP vs FN"
+  },
+  {
+    "objectID": "slides-10.html#summary-choosing-the-right-metric",
+    "href": "slides-10.html#summary-choosing-the-right-metric",
+    "title": "CPSC 330 Lecture 10: Regression Metrics",
+    "section": "Summary: Choosing the right metric",
+    "text": "Summary: Choosing the right metric\n\n\n\n\n\n\n\n\nMetric / Plot\nWhen to Use\nWhy\n\n\n\n\nPrecision, Recall, F1\nWhen you care about specific error types (FP vs FN) or a fixed threshold.\nFocus on particular tradeoffs.\n\n\nPR Curve & AP Score\nWhen the dataset is highly imbalanced (rare positives).\nIgnores TNs; focuses on positives.\n\n\nROC Curve & AUC\nWhen classes are moderately imbalanced.\nMeasures ranking ability across thresholds."
+  },
+  {
+    "objectID": "slides-10.html#questions-for-you",
+    "href": "slides-10.html#questions-for-you",
+    "title": "CPSC 330 Lecture 10: Regression Metrics",
+    "section": "Questions for you",
+    "text": "Questions for you\n\nWhat’s the difference between the average precision (AP) score and F1-score?\nWhich model would you pick?"
+  },
+  {
+    "objectID": "slides-10.html#roc-of-a-baseline-model",
+    "href": "slides-10.html#roc-of-a-baseline-model",
+    "title": "CPSC 330 Lecture 10: Regression Metrics",
+    "section": "ROC of a baseline model",
+    "text": "ROC of a baseline model\n\n\n\n\nAUC–ROC measures the probability that a randomly chosen positive example receives a higher score than a randomly chosen negative example.\n\nPerfect model: (AUC = 1.0). Always ranks positives above negatives.\n\nRandom model (AUC = 0.5): No discriminative ability (equivalent to random guessing).\n\n\n\nSource"
+  },
+  {
+    "objectID": "slides-10.html#questions-for-you-1",
+    "href": "slides-10.html#questions-for-you-1",
+    "title": "CPSC 330 Lecture 10: Regression Metrics",
+    "section": "Questions for you",
+    "text": "Questions for you\n\n\n\n\n\nWhich model would you pick?"
+  },
+  {
+    "objectID": "slides-10.html#dealing-with-class-imbalance",
+    "href": "slides-10.html#dealing-with-class-imbalance",
+    "title": "CPSC 330 Lecture 10: Regression Metrics",
+    "section": "Dealing with class imbalance",
+    "text": "Dealing with class imbalance\n\nUnder sampling\nOversampling\nclass weight=\"balanced\" (preferred method for this course)\nSMOTE"
+  },
+  {
+    "objectID": "slides-10.html#handling-imbalance-by-chaning-class-weights",
+    "href": "slides-10.html#handling-imbalance-by-chaning-class-weights",
+    "title": "CPSC 330 Lecture 10: Regression Metrics",
+    "section": "Handling imbalance by chaning class weights",
+    "text": "Handling imbalance by chaning class weights\n\nWe can specify class_weight=“balanced” to give more importance to rare examples during training.\n\n\n\n\n\n\n\n\n\n\n\n\nThis sets the weights so that the classes are “equal”.\nWe have reduced false negatives but we have many more false positives now …\n\nDecreases false negatives, which improves recall.\nIncreases false positives, which might lower precision."
+  },
+  {
+    "objectID": "slides-10.html#ridge-and-ridgecv",
+    "href": "slides-10.html#ridge-and-ridgecv",
+    "title": "CPSC 330 Lecture 10: Regression Metrics",
+    "section": "Ridge and RidgeCV",
+    "text": "Ridge and RidgeCV\n\nRidge Regression: alpha hyperparameter controls model complexity.\nRidgeCV: Ridge regression with built-in cross-validation to find the optimal alpha."
+  },
+  {
+    "objectID": "slides-10.html#alpha-hyperparameter",
+    "href": "slides-10.html#alpha-hyperparameter",
+    "title": "CPSC 330 Lecture 10: Regression Metrics",
+    "section": "alpha hyperparameter",
+    "text": "alpha hyperparameter\n\nRole of alpha:\n\nControls model complexity\nHigher alpha: Simpler model, smaller coefficients.\nLower alpha: Complex model, larger coefficients."
+  },
+  {
+    "objectID": "slides-10.html#regression-metrics-mse-rmse-mape-r2_score",
+    "href": "slides-10.html#regression-metrics-mse-rmse-mape-r2_score",
+    "title": "CPSC 330 Lecture 10: Regression Metrics",
+    "section": "Regression metrics: MSE, RMSE, MAPE, r2_score",
+    "text": "Regression metrics: MSE, RMSE, MAPE, r2_score\n\nMean Squared Error (MSE): Average of the squares of the errors.\nRoot Mean Squared Error (RMSE): Square root of MSE, same units as the target variable.\nr2 measures how much of the variation in the target variable your model can explain.-\nMean Absolute Percentage Error (MAPE): Average of the absolute percentage errors."
+  },
+  {
+    "objectID": "slides-10.html#applying-log-transformation-to-the-targets",
+    "href": "slides-10.html#applying-log-transformation-to-the-targets",
+    "title": "CPSC 330 Lecture 10: Regression Metrics",
+    "section": "Applying log transformation to the targets",
+    "text": "Applying log transformation to the targets\n\nSuitable when the target has a wide range and spans several orders of magnitude\n\nExample: counts data such as social media likes or price data\n\nHelps manage skewed data, making patterns more apparent and regression models more effective.\nTransformedTargetRegressor\n\nWraps a regression model and applies a transformation to the target values."
+  },
+  {
+    "objectID": "slides-10.html#iclicker-exercise-10.1",
+    "href": "slides-10.html#iclicker-exercise-10.1",
+    "title": "CPSC 330 Lecture 10: Regression Metrics",
+    "section": "iClicker Exercise 10.1",
+    "text": "iClicker Exercise 10.1\niClicker cloud join link: https://join.iclicker.com/YJHS\nSelect all of the following statements which are TRUE.\n\n\nPrice per square foot would be a good feature to add in our X.\n\n\nThe alpha hyperparameter of Ridge has similar interpretation of C hyperparameter of LogisticRegression; higher alpha means more complex model.\n\n\nIn Ridge, smaller alpha means bigger coefficients whereas bigger alpha means smaller coefficients."
+  },
+  {
+    "objectID": "slides-10.html#group-work-class-demo-live-coding",
+    "href": "slides-10.html#group-work-class-demo-live-coding",
+    "title": "CPSC 330 Lecture 10: Regression Metrics",
+    "section": "Group Work: Class Demo & Live Coding",
+    "text": "Group Work: Class Demo & Live Coding\nFor this demo, each student should click this link to create a new repo in their accounts, then clone that repo locally to follow along with the demo from today."
+  },
+  {
+    "objectID": "slides-10.html#which-metric-fits-the-scenario",
+    "href": "slides-10.html#which-metric-fits-the-scenario",
+    "title": "CPSC 330 Lecture 10: Regression Metrics",
+    "section": "Which metric fits the scenario?",
+    "text": "Which metric fits the scenario?\n\n\n\n\n\n\n\n\nScenario\nWhat matters most?\nBest metric(s)?\n\n\n\n\nPredicting house prices ranging from $60K–$800K.\nA $30K error is huge for a $60K house but small for a $500K house.\n\n\n\nPredicting exam scores (0–100).\nYou want an interpretable measure of average error in points.\n\n\n\nPredicting energy consumption in a large industrial system.\nLarge errors are very costly and should be penalized heavily.\n\n\n\nPredicting insurance claim amounts.\nYou want to compare how well different models explain the variation in claims."
+  },
+  {
+    "objectID": "slides-10.html#iclicker-exercise-10.2",
+    "href": "slides-10.html#iclicker-exercise-10.2",
+    "title": "CPSC 330 Lecture 10: Regression Metrics",
+    "section": "iClicker Exercise 10.2",
+    "text": "iClicker Exercise 10.2\niClicker cloud join link: https://join.iclicker.com/YJHS\nSelect all of the following statements which are TRUE.\n\n\nWe can use still use precision and recall for regression problems but now we have other metrics we can use as well.\n\n\nIn sklearn for regression problems, using r2_score() and .score() (with default values) will produce the same results.\n\n\nRMSE is always going to be non-negative.\n\n\nMSE does not directly provide the information about whether the model is underpredicting or overpredicting.\n\n\nWe can pass multiple scoring metrics to GridSearchCV or RandomizedSearchCV for regression as well as classification problems."
+  },
+  {
+    "objectID": "slides-10.html#which-metric-fits-the-scenario-1",
+    "href": "slides-10.html#which-metric-fits-the-scenario-1",
+    "title": "CPSC 330 Lecture 10: Regression Metrics",
+    "section": "Which metric fits the scenario?",
+    "text": "Which metric fits the scenario?\n\n\n\n\n\n\n\n\nScenario\nWhat matters most?\nBest metric(s)?\n\n\n\n\nPredicting house prices ranging from $60K–$800K.\nA $30K error is huge for a $60K house but small for a $500K house.\n\n\n\nPredicting exam scores (0–100).\nYou want an interpretable measure of average error in points.\n\n\n\nPredicting energy consumption in a large industrial system.\nLarge errors are very costly and should be penalized heavily.\n\n\n\nPredicting insurance claim amounts.\nYou want to compare how well different models explain the variation in claims."
+  },
+  {
+    "objectID": "slides-10.html#which-metric-fits-the-scenario-2",
+    "href": "slides-10.html#which-metric-fits-the-scenario-2",
+    "title": "CPSC 330 Lecture 10: Regression Metrics",
+    "section": "Which metric fits the scenario?",
+    "text": "Which metric fits the scenario?\n\nFor interpretability: prefer RMSE or MAPE\nWhen you want to discourage large error: MSE is common\nFor fair comparison: r2 provides a normalized score similar to accuracy in classification.\n\nFor imbalanced scales: MAPE helps when proportional error matters more than absolute error."
   },
   {
     "objectID": "slides-04.html#announcements",
@@ -2657,6 +2825,6 @@
     "href": "slides.html",
     "title": "Overview",
     "section": "",
-    "text": "Title\n\n\n\nDescription\n\n\n\n\n\n\n\n\nLecture 1: Introduction to CPSC 330\n\n\nWhat is machine learning, types of machine learning, learning to navigate through the course materials, getting familiar with the course policies\n\n\n\n\n\n\nLecture 2: Terminology, Baselines, Decision Trees\n\n\nTerminology and Decision Trees\n\n\n\n\n\n\nLecture 3: ML fundamentals\n\n\ngeneralization, data splitting, overfitting, underfitting, the fundamental tradeoff, the golden rule\n\n\n\n\n\n\nLecture 4: \\(k\\)-nearest neighbours and SVM RBFs\n\n\nintroduction to KNNs, hyperparameter n_neighbours or \\(k\\), C and gamma hyperparameters of SVM RBF, decision boundaries with different values of hyperparameters.\n\n\n\n\n\n\nLecture 5: Preprocessing and sklearn pipelines\n\n\nPre-processing, Transformations, and pipelines.\n\n\n\n\n\n\nCPSC 330 Lecture 8: Hyperparameter Optimization\n\n\nLinear regression, logistic regression, prediction probabilities, sigmoid, interpretation of coefficients\n\n\n\n\n\n\nCPSC 330 Lecture 9: Classification Metrics\n\n\nconfusion metrics, precision, recall, f1-score, PR curves, AP score, ROC curve, ROC AUC, class imbalance\n\n\n\n\n\n\nCPSC 330 Lecture 10: Regression Metrics\n\n\nRegression metrics\n\n\n\n\n\n\nCPSC 330 Lecture 11: Ensembles\n\n\n \n\n\n\n\n\n\nCPSC 330 Lecture 12: Feature importances\n\n\n \n\n\n\n\n\n\nCPSC 330 Lecture 13: Feature Engineering and Selection\n\n\n \n\n\n\n\n\n\nCPSC 330 Lecture 14: K-Means\n\n\n \n\n\n\n\n\n\nCPSC 330 Lecture 15: DBSCAN, Hierarchical Clustering\n\n\n \n\n\n\n\n\n\nNo matching items"
+    "text": "Title\n\n\n\nDescription\n\n\n\n\n\n\n\n\nLecture 1: Introduction to CPSC 330\n\n\nWhat is machine learning, types of machine learning, learning to navigate through the course materials, getting familiar with the course policies\n\n\n\n\n\n\nLecture 2: Terminology, Baselines, Decision Trees\n\n\nTerminology and Decision Trees\n\n\n\n\n\n\nLecture 3: ML fundamentals\n\n\ngeneralization, data splitting, overfitting, underfitting, the fundamental tradeoff, the golden rule\n\n\n\n\n\n\nLecture 4: \\(k\\)-nearest neighbours and SVM RBFs\n\n\nintroduction to KNNs, hyperparameter n_neighbours or \\(k\\), C and gamma hyperparameters of SVM RBF, decision boundaries with different values of hyperparameters.\n\n\n\n\n\n\nLecture 5: Preprocessing and sklearn pipelines\n\n\nPre-processing, Transformations, and pipelines.\n\n\n\n\n\n\nCPSC 330 Lecture 8: Hyperparameter Optimization\n\n\nLinear regression, logistic regression, prediction probabilities, sigmoid, interpretation of coefficients\n\n\n\n\n\n\nCPSC 330 Lecture 9: Classification Metrics\n\n\nconfusion metrics, precision, recall, f1-score, PR curves, AP score, ROC curve, ROC AUC, class imbalance\n\n\n\n\n\n\nCPSC 330 Lecture 10: Regression Metrics\n\n\nRegression metrics\n\n\n\n\n\n\nCPSC 330 Lecture 11: Ensembles\n\n\n \n\n\n\n\n\n\nCPSC 330 Lecture 12: Feature importances\n\n\n \n\n\n\n\n\n\nCPSC 330 Lecture 13: Feature Engineering and Selection\n\n\n \n\n\n\n\n\n\nCPSC 330 Lecture 14: K-Means\n\n\n \n\n\n\n\n\n\nCPSC 330 Lecture 15: DBSCAN, Hierarchical Clustering\n\n\n \n\n\n\n\n\n\nCPSC 330 Lecture 16: Recommender Systems\n\n\n \n\n\n\n\n\n\nNo matching items"
   }
 ]
