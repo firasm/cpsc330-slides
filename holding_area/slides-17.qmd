@@ -25,56 +25,74 @@ editor:
 - Reminder: Please double check your Midterm 2 CBTF booking!
  -->
 
-## Recap: Recommender Systems
+## Similarity metrics {.smaller}
+- Similarity based on Euclidean distance
 
-**How the heck did I split the data last time!?**
+$$distance(vec1, vec2) = \sqrt{\sum_{i =1}^{n} (vec1_i - vec2_i)^2}$$ 
 
-## Beyond Error Rate in Recommender Systems
+- Dot product similarity: 
 
-- If a system gives the best RMSE it doesn’t necessarily mean that it’s going to give best recommendations.
-- In recommendation systems we do not have ground truth in the sense that there is no notion of “perfect” recommendations.
-- Training your model and evaluating it offline is not ideal.
+$$similarity_{dot product}(vec1,vec2) = vec1.vec2$$
 
-## Beyond Error Rate in Recommender Systems
+- Cosine similarity: normalized version of dot product. 
 
-- Other aspects such as simplicity, interpretation, code maintainability are equally (if not more) important than best validation error.
-- Winning system of Netflix Challenge was never adopted.
-    - Big mess of ensembles was not really maintainable
-- There are also other considerations:
-    - diversity
-    - freshness
-    - trust
-    - persistence
+$$similarity_{cosine}(vec1,vec2) = \frac{vec1.vec2}{\left\lVert vec1\right\rVert_2 \left\lVert vec2\right\rVert_2}$$
 
-## iClicker Exercise 17.2
 
-**Select all of the following statements which are True (iClicker)**
+## Which metric in what context? {.smaller}
 
-- (A) In content-based filtering we leverage available item features in addition to similarity between users.
-- (B) In content-based filtering you represent each user in terms of known features of items.
-- (C) In the set up of content-based filtering we discussed, if you have a new movie, you would have problems predicting ratings for that movie.
-- (D) In content-based filtering if a user has a number of ratings in the training utility matrix but does not have any ratings in the validation utility matrix then we won’t be able to calculate RMSE for the validation utility matrix.
+::: {.columns}
 
-# Introduction to Natural Language Processing
+::: {.column width="50%"}
+Given a query vector "Query" in the picture below and the three item vectors, determine the ranking of the items for the three similarity measures below: 
 
-Natural Language Processing (NLP) is a branch of machine learning focused on enabling computers to understand, interpret, and generate human language.
+<img src="img/distance-metrics.png" alt="" height="400" width="500"> 
+:::
+::: {.column width="50%"}
+- Example: Similarity based on Euclidean distance: item B > item C > item A
+<br><br>
+- **Similarity based on dot product: ?**
+  
+**- Cosine similarity: ?** 
 
-## Motivation and Context
+<br><br>
 
-- Do large language models, such as ChatGPT, “understand” your questions to some extent and provide useful responses?
-- What is required for a machine to “understand” language?
-- So far we have been talking about sentence or document representations.
-- Today, we’ll go one step back and talk about word representations.
+Adapted from [here](https://developers.google.com/machine-learning/recommendation/overview/candidate-generation).
+:::
+::::
 
-## Referential Ambiguity
 
-Let's start with this picture:
+<br><br><br><br>
 
-![](img/referential_ambiguity.png)
 
-- How do we know what the `it` is referring to?
+## What is NLP?
 
-- How do we tell an algorithm that? 
+- **Natural Language Processing (NLP)** is a field at the intersection of **computer science, linguistics, and artificial intelligence**.  
+- It focuses on enabling computers to understand, interpret, and generate human language.
+
+## Examples of NLP applications
+
+![](img/annotation-image.png)
+
+## Key challenges in NLP
+
+- **Ambiguity**: words can have multiple meanings and meaning depends on previous words/sentences
+  - I had toast with _jam_ vs We got stuck in a traffic _jam_.
+  - If the **baby** does not thrive on raw **milk**, boil **it**.  
+- **Structure**: syntax and grammar vary widely
+  - Time flies like an arrow vs Fruit flies like a banana.   
+- **World knowledge**: understanding beyond text
+  - Olive oil: oil **made from** olives 
+  - Baby oil: oil **made for** babies 
+
+## Goal of this lecture
+
+NLP is a broad field. In this lecture I'll give you a high-level introduction to 
+
+- Topic Modeling
+- Word embeddings 
+
+We will look at Large Language Models (LLM) next class!
 
 ## Activity: Context and word meaning
 
@@ -84,6 +102,7 @@ Pair up with the person next to you and try to guess the meanings of two made-up
 
 Attribution: Thanks to ChatGPT 4o on Wed Nov. 6, 2024!
 
-## Demo
+<!-- ## Group Work: Class Demo & Live Coding
 
-[You can follow along here](https://ubc-cs.github.io/cpsc330-2025S1/lectures/notes/17_natural-language-processing.html)!
+For this demo, each student should [click this link](https://github.com/new?template_name=lecture17_demo&template_owner=ubc-cpsc330) to create a new repo in their accounts, then clone that repo locally to follow along with the demo from today.
+-->
