@@ -6,8 +6,8 @@
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-8ea72dc5fed832574809a9c94082fbbb.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.6.40">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-4d9afe2b8d18ee9fa5d0d57b5ed4214d.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.8.27">
 
   <title>CPSC 330 Slides – CPSC 330 Lecture 17: Natural Language Processing</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -29,7 +29,7 @@
     }
     .display.math{display: block; text-align: center; margin: 0.5rem auto;}
   </style>
-  <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto-d6a2e637423beed6a318cacc3341e7d6.css">
+  <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto-d44d78e70847a9a9b2b9b7a718eeef2f.css">
   <link href="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -143,88 +143,92 @@
 - Reminder: Please double check your Midterm 2 CBTF booking!
  -->
 </section>
-<section id="recap-recommender-systems" class="slide level2 center">
-<h2>Recap: Recommender Systems</h2>
-<p><strong>How the heck did I split the data last class!?</strong></p>
-</section>
-<section id="beyond-error-rate-in-recommender-systems" class="slide level2 center">
-<h2>Beyond Error Rate in Recommender Systems</h2>
+<section id="similarity-metrics" class="slide level2 smaller center">
+<h2>Similarity metrics</h2>
 <ul>
-<li>If a system gives the best RMSE it doesn’t necessarily mean that it’s going to give best recommendations.</li>
-<li>In recommendation systems we do not have ground truth in the sense that there is no notion of “perfect” recommendations.</li>
-<li>Training your model and evaluating it offline is not ideal.</li>
+<li>Similarity based on Euclidean distance</li>
+</ul>
+<p><span class="math display">$$distance(vec1, vec2) = \sqrt{\sum_{i =1}^{n} (vec1_i - vec2_i)^2}$$</span></p>
+<ul>
+<li>Dot product similarity:</li>
+</ul>
+<p><span class="math display"><em>s</em><em>i</em><em>m</em><em>i</em><em>l</em><em>a</em><em>r</em><em>i</em><em>t</em><em>y</em><sub><em>d</em><em>o</em><em>t</em><em>p</em><em>r</em><em>o</em><em>d</em><em>u</em><em>c</em><em>t</em></sub>(<em>v</em><em>e</em><em>c</em>1, <em>v</em><em>e</em><em>c</em>2) = <em>v</em><em>e</em><em>c</em>1.<em>v</em><em>e</em><em>c</em>2</span></p>
+<ul>
+<li>Cosine similarity: normalized version of dot product.</li>
+</ul>
+<p><span class="math display">$$similarity_{cosine}(vec1,vec2) = \frac{vec1.vec2}{\left\lVert vec1\right\rVert_2 \left\lVert vec2\right\rVert_2}$$</span></p>
+</section>
+<section id="which-metric-in-what-context" class="slide level2 smaller center">
+<h2>Which metric in what context?</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p>Given a query vector “Query” in the picture below and the three item vectors, determine the ranking of the items for the three similarity measures below:</p>
+<p><img src="img/distance-metrics.png" alt="" height="400" width="500"></p>
+</div><div class="column" style="width:50%;">
+<ul>
+<li>Example: Similarity based on Euclidean distance: item B &gt; item C &gt; item A <br><br></li>
+<li><strong>Similarity based on dot product: ?</strong></li>
+</ul>
+<p><strong>- Cosine similarity: ?</strong></p>
+<p><br><br></p>
+<p>Adapted from <a href="https://developers.google.com/machine-learning/recommendation/overview/candidate-generation">here</a>.</p>
+</div></div>
+<p><br><br><br><br></p>
+</section>
+<section id="what-is-nlp" class="slide level2 center">
+<h2>What is NLP?</h2>
+<ul>
+<li><strong>Natural Language Processing (NLP)</strong> is a field at the intersection of <strong>computer science, linguistics, and artificial intelligence</strong>.<br>
+</li>
+<li>It focuses on enabling computers to understand, interpret, and generate human language.</li>
 </ul>
 </section>
-<section id="beyond-error-rate-in-recommender-systems-1" class="slide level2 center">
-<h2>Beyond Error Rate in Recommender Systems</h2>
-<ul>
-<li>Other aspects such as simplicity, interpretation, code maintainability are equally (if not more) important than best validation error.</li>
-<li>Winning system of Netflix Challenge was never adopted.
-<ul>
-<li>Big mess of ensembles was not really maintainable</li>
-</ul></li>
-<li>There are also other considerations:
-<ul>
-<li>diversity</li>
-<li>freshness</li>
-<li>trust</li>
-<li>persistence</li>
-</ul></li>
-</ul>
-</section>
-<section id="iclicker-exercise-17.2" class="slide level2 center">
-<h2>iClicker Exercise 17.2</h2>
-<p><strong>Select all of the following statements which are True (iClicker)</strong></p>
-<ul>
-<li><ol type="A">
-<li>In content-based filtering we leverage available item features in addition to similarity between users.</li>
-</ol></li>
-<li><ol start="2" type="A">
-<li>In content-based filtering you represent each user in terms of known features of items.</li>
-</ol></li>
-<li><ol start="3" type="A">
-<li>In the set up of content-based filtering we discussed, if you have a new movie, you would have problems predicting ratings for that movie.</li>
-</ol></li>
-<li><ol start="4" type="A">
-<li>In content-based filtering if a user has a number of ratings in the training utility matrix but does not have any ratings in the validation utility matrix then we won’t be able to calculate RMSE for the validation utility matrix.</li>
-</ol></li>
-</ul>
-</section>
-<section>
-<section id="introduction-to-natural-language-processing" class="title-slide slide level1 center">
-<h1>Introduction to Natural Language Processing</h1>
-<p>Natural Language Processing (NLP) is a branch of machine learning focused on enabling computers to understand, interpret, and generate human language.</p>
-</section>
-<section id="motivation-and-context" class="slide level2 center">
-<h2>Motivation and Context</h2>
-<ul>
-<li>Do large language models, such as ChatGPT, “understand” your questions to some extent and provide useful responses?</li>
-<li>What is required for a machine to “understand” language?</li>
-<li>So far we have been talking about sentence or document representations.</li>
-<li>Today, we’ll go one step back and talk about word representations.</li>
-</ul>
-</section>
-<section id="referential-ambiguity" class="slide level2 center">
-<h2>Referential Ambiguity</h2>
-<p>Let’s start with this picture:</p>
+<section id="examples-of-nlp-applications" class="slide level2 center">
+<h2>Examples of NLP applications</h2>
 
-<img data-src="img/referential_ambiguity.png" class="r-stretch"><ul>
-<li><p>How do we know what the <code>it</code> is referring to?</p></li>
-<li><p>How do we tell an algorithm that?</p></li>
+<img data-src="img/annotation-image.png" class="r-stretch"></section>
+<section id="key-challenges-in-nlp" class="slide level2 center">
+<h2>Key challenges in NLP</h2>
+<ul>
+<li><strong>Ambiguity</strong>: words can have multiple meanings and meaning depends on previous words/sentences
+<ul>
+<li>I had toast with <em>jam</em> vs We got stuck in a traffic <em>jam</em>.</li>
+<li>If the <strong>baby</strong> does not thrive on raw <strong>milk</strong>, boil <strong>it</strong>.<br>
+</li>
+</ul></li>
+<li><strong>Structure</strong>: syntax and grammar vary widely
+<ul>
+<li>Time flies like an arrow vs Fruit flies like a banana.<br>
+</li>
+</ul></li>
+<li><strong>World knowledge</strong>: understanding beyond text
+<ul>
+<li>Olive oil: oil <strong>made from</strong> olives</li>
+<li>Baby oil: oil <strong>made for</strong> babies</li>
+</ul></li>
 </ul>
+</section>
+<section id="goal-of-this-lecture" class="slide level2 center">
+<h2>Goal of this lecture</h2>
+<p>NLP is a broad field. In this lecture I’ll give you a high-level introduction to</p>
+<ul>
+<li>Topic Modeling</li>
+<li>Word embeddings</li>
+</ul>
+<p>We will look at Large Language Models (LLM) next class!</p>
 </section>
 <section id="activity-context-and-word-meaning" class="slide level2 center">
 <h2>Activity: Context and word meaning</h2>
 <p>Pair up with the person next to you and try to guess the meanings of two made-up words: <code>flibbertigibbet</code> and <code>groak</code>.</p>
 
 <img data-src="img/flibbertigibbet.png" class="r-stretch"><p>Attribution: Thanks to ChatGPT 4o on Wed Nov.&nbsp;6, 2024!</p>
+<!-- ## Group Work: Class Demo & Live Coding
+
+For this demo, each student should [click this link](https://github.com/new?template_name=lecture17_demo&template_owner=ubc-cpsc330) to create a new repo in their accounts, then clone that repo locally to follow along with the demo from today.
+-->
+
+
 </section>
-<section id="demo" class="slide level2 center">
-<h2>Demo</h2>
-<p><a href="https://ubc-cs.github.io/cpsc330-2025S1/lectures/notes/18_natural-language-processing.html">You can follow along here</a>!</p>
-
-
-</section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <p><img src="img/UBC-CS-logo.png" class="slide-logo"></p>
@@ -423,190 +427,173 @@
       });
     </script>
     <script id="quarto-html-after-body" type="application/javascript">
-    window.document.addEventListener("DOMContentLoaded", function (event) {
-      const toggleBodyColorMode = (bsSheetEl) => {
-        const mode = bsSheetEl.getAttribute("data-mode");
-        const bodyEl = window.document.querySelector("body");
-        if (mode === "dark") {
-          bodyEl.classList.add("quarto-dark");
-          bodyEl.classList.remove("quarto-light");
-        } else {
-          bodyEl.classList.add("quarto-light");
-          bodyEl.classList.remove("quarto-dark");
-        }
-      }
-      const toggleBodyColorPrimary = () => {
-        const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
-        if (bsSheetEl) {
-          toggleBodyColorMode(bsSheetEl);
-        }
-      }
-      toggleBodyColorPrimary();  
-      const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
-      tabsets.forEach(function(tabset) {
-        const tabby = new Tabby('#' + tabset.id);
-      });
-      const isCodeAnnotation = (el) => {
-        for (const clz of el.classList) {
-          if (clz.startsWith('code-annotation-')) {                     
-            return true;
+      window.document.addEventListener("DOMContentLoaded", function (event) {
+        const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+        tabsets.forEach(function(tabset) {
+          const tabby = new Tabby('#' + tabset.id);
+        });
+        const isCodeAnnotation = (el) => {
+          for (const clz of el.classList) {
+            if (clz.startsWith('code-annotation-')) {                     
+              return true;
+            }
           }
+          return false;
         }
-        return false;
-      }
-      const onCopySuccess = function(e) {
-        // button target
-        const button = e.trigger;
-        // don't keep focus
-        button.blur();
-        // flash "checked"
-        button.classList.add('code-copy-button-checked');
-        var currentTitle = button.getAttribute("title");
-        button.setAttribute("title", "Copied!");
-        let tooltip;
-        if (window.bootstrap) {
-          button.setAttribute("data-bs-toggle", "tooltip");
-          button.setAttribute("data-bs-placement", "left");
-          button.setAttribute("data-bs-title", "Copied!");
-          tooltip = new bootstrap.Tooltip(button, 
-            { trigger: "manual", 
-              customClass: "code-copy-button-tooltip",
-              offset: [0, -8]});
-          tooltip.show();    
-        }
-        setTimeout(function() {
-          if (tooltip) {
-            tooltip.hide();
-            button.removeAttribute("data-bs-title");
-            button.removeAttribute("data-bs-toggle");
-            button.removeAttribute("data-bs-placement");
+        const onCopySuccess = function(e) {
+          // button target
+          const button = e.trigger;
+          // don't keep focus
+          button.blur();
+          // flash "checked"
+          button.classList.add('code-copy-button-checked');
+          var currentTitle = button.getAttribute("title");
+          button.setAttribute("title", "Copied!");
+          let tooltip;
+          if (window.bootstrap) {
+            button.setAttribute("data-bs-toggle", "tooltip");
+            button.setAttribute("data-bs-placement", "left");
+            button.setAttribute("data-bs-title", "Copied!");
+            tooltip = new bootstrap.Tooltip(button, 
+              { trigger: "manual", 
+                customClass: "code-copy-button-tooltip",
+                offset: [0, -8]});
+            tooltip.show();    
           }
-          button.setAttribute("title", currentTitle);
-          button.classList.remove('code-copy-button-checked');
-        }, 1000);
-        // clear code selection
-        e.clearSelection();
-      }
-      const getTextToCopy = function(trigger) {
-          const codeEl = trigger.previousElementSibling.cloneNode(true);
+          setTimeout(function() {
+            if (tooltip) {
+              tooltip.hide();
+              button.removeAttribute("data-bs-title");
+              button.removeAttribute("data-bs-toggle");
+              button.removeAttribute("data-bs-placement");
+            }
+            button.setAttribute("title", currentTitle);
+            button.classList.remove('code-copy-button-checked');
+          }, 1000);
+          // clear code selection
+          e.clearSelection();
+        }
+        const getTextToCopy = function(trigger) {
+          const outerScaffold = trigger.parentElement.cloneNode(true);
+          const codeEl = outerScaffold.querySelector('code');
           for (const childEl of codeEl.children) {
             if (isCodeAnnotation(childEl)) {
               childEl.remove();
             }
           }
           return codeEl.innerText;
-      }
-      const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-        text: getTextToCopy
-      });
-      clipboard.on('success', onCopySuccess);
-      if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-        const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-          text: getTextToCopy,
-          container: window.document.getElementById('quarto-embedded-source-code-modal')
-        });
-        clipboardModal.on('success', onCopySuccess);
-      }
-        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-        var mailtoRegex = new RegExp(/^mailto:/);
-          var filterRegex = new RegExp('/' + window.location.host + '/');
-        var isInternal = (href) => {
-            return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
         }
-        // Inspect non-navigation links and adorn them if external
-     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
-        for (var i=0; i<links.length; i++) {
-          const link = links[i];
-          if (!isInternal(link.href)) {
-            // undo the damage that might have been done by quarto-nav.js in the case of
-            // links that we want to consider external
-            if (link.dataset.originalHref !== undefined) {
-              link.href = link.dataset.originalHref;
+        const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+          text: getTextToCopy
+        });
+        clipboard.on('success', onCopySuccess);
+        if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+          const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+            text: getTextToCopy,
+            container: window.document.getElementById('quarto-embedded-source-code-modal')
+          });
+          clipboardModal.on('success', onCopySuccess);
+        }
+          var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+          var mailtoRegex = new RegExp(/^mailto:/);
+            var filterRegex = new RegExp("https:\/\/firasm\.github\.io\/cpsc330-slides\/");
+          var isInternal = (href) => {
+              return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+          }
+          // Inspect non-navigation links and adorn them if external
+         var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+          for (var i=0; i<links.length; i++) {
+            const link = links[i];
+            if (!isInternal(link.href)) {
+              // undo the damage that might have been done by quarto-nav.js in the case of
+              // links that we want to consider external
+              if (link.dataset.originalHref !== undefined) {
+                link.href = link.dataset.originalHref;
+              }
             }
           }
-        }
-      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
-        const config = {
-          allowHTML: true,
-          maxWidth: 500,
-          delay: 100,
-          arrow: false,
-          appendTo: function(el) {
-              return el.closest('section.slide') || el.parentElement;
-          },
-          interactive: true,
-          interactiveBorder: 10,
-          theme: 'light-border',
-          placement: 'bottom-start',
-        };
-        if (contentFn) {
-          config.content = contentFn;
-        }
-        if (onTriggerFn) {
-          config.onTrigger = onTriggerFn;
-        }
-        if (onUntriggerFn) {
-          config.onUntrigger = onUntriggerFn;
-        }
-          config['offset'] = [0,0];
-          config['maxWidth'] = 700;
-        window.tippy(el, config); 
-      }
-      const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
-      for (var i=0; i<noterefs.length; i++) {
-        const ref = noterefs[i];
-        tippyHover(ref, function() {
-          // use id or data attribute instead here
-          let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
-          try { href = new URL(href).hash; } catch {}
-          const id = href.replace(/^#\/?/, "");
-          const note = window.document.getElementById(id);
-          if (note) {
-            return note.innerHTML;
-          } else {
-            return "";
+        function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+          const config = {
+            allowHTML: true,
+            maxWidth: 500,
+            delay: 100,
+            arrow: false,
+            appendTo: function(el) {
+                return el.closest('section.slide') || el.parentElement;
+            },
+            interactive: true,
+            interactiveBorder: 10,
+            theme: 'light-border',
+            placement: 'bottom-start',
+          };
+          if (contentFn) {
+            config.content = contentFn;
           }
-        });
-      }
-      const findCites = (el) => {
-        const parentEl = el.parentElement;
-        if (parentEl) {
-          const cites = parentEl.dataset.cites;
-          if (cites) {
-            return {
-              el,
-              cites: cites.split(' ')
-            };
-          } else {
-            return findCites(el.parentElement)
+          if (onTriggerFn) {
+            config.onTrigger = onTriggerFn;
           }
-        } else {
-          return undefined;
+          if (onUntriggerFn) {
+            config.onUntrigger = onUntriggerFn;
+          }
+            config['offset'] = [0,0];
+            config['maxWidth'] = 700;
+          window.tippy(el, config); 
         }
-      };
-      var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-      for (var i=0; i<bibliorefs.length; i++) {
-        const ref = bibliorefs[i];
-        const citeInfo = findCites(ref);
-        if (citeInfo) {
-          tippyHover(citeInfo.el, function() {
-            var popup = window.document.createElement('div');
-            citeInfo.cites.forEach(function(cite) {
-              var citeDiv = window.document.createElement('div');
-              citeDiv.classList.add('hanging-indent');
-              citeDiv.classList.add('csl-entry');
-              var biblioDiv = window.document.getElementById('ref-' + cite);
-              if (biblioDiv) {
-                citeDiv.innerHTML = biblioDiv.innerHTML;
-              }
-              popup.appendChild(citeDiv);
-            });
-            return popup.innerHTML;
+        const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+        for (var i=0; i<noterefs.length; i++) {
+          const ref = noterefs[i];
+          tippyHover(ref, function() {
+            // use id or data attribute instead here
+            let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+            try { href = new URL(href).hash; } catch {}
+            const id = href.replace(/^#\/?/, "");
+            const note = window.document.getElementById(id);
+            if (note) {
+              return note.innerHTML;
+            } else {
+              return "";
+            }
           });
         }
-      }
-    });
-    </script>
+        const findCites = (el) => {
+          const parentEl = el.parentElement;
+          if (parentEl) {
+            const cites = parentEl.dataset.cites;
+            if (cites) {
+              return {
+                el,
+                cites: cites.split(' ')
+              };
+            } else {
+              return findCites(el.parentElement)
+            }
+          } else {
+            return undefined;
+          }
+        };
+        var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+        for (var i=0; i<bibliorefs.length; i++) {
+          const ref = bibliorefs[i];
+          const citeInfo = findCites(ref);
+          if (citeInfo) {
+            tippyHover(citeInfo.el, function() {
+              var popup = window.document.createElement('div');
+              citeInfo.cites.forEach(function(cite) {
+                var citeDiv = window.document.createElement('div');
+                citeDiv.classList.add('hanging-indent');
+                citeDiv.classList.add('csl-entry');
+                var biblioDiv = window.document.getElementById('ref-' + cite);
+                if (biblioDiv) {
+                  citeDiv.innerHTML = biblioDiv.innerHTML;
+                }
+                popup.appendChild(citeDiv);
+              });
+              return popup.innerHTML;
+            });
+          }
+        }
+      });
+      </script>
     
 
 </body></html>
