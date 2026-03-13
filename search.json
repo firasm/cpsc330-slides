@@ -1614,7 +1614,7 @@
     "href": "slides-17.html#similarity-metrics",
     "title": "CPSC 330 Lecture 17: Natural Language Processing",
     "section": "Similarity metrics",
-    "text": "Similarity metrics\n\nSimilarity based on Euclidean distance\n\n$$distance(vec1, vec2) = \\sqrt{\\sum_{i =1}^{n} (vec1_i - vec2_i)^2}$$\n$$\ndistance(vec1, vec2) = \\sqrt{\\sum_{i=1}^{n} (vec1_i - vec2_i)^2}\n$$\n\nDot product similarity:\n\nsimilaritydotproduct(vec1, vec2) = vec1.vec2\n\nCosine similarity: normalized version of dot product.\n\n$$similarity_{cosine}(vec1,vec2) = \\frac{vec1.vec2}{\\left\\lVert vec1\\right\\rVert_2 \\left\\lVert vec2\\right\\rVert_2}$$\n$$\n\\text{similarity}_{\\text{cosine}}(\\mathbf{v}_1,\\mathbf{v}_2) =\n\\frac{\\mathbf{v}_1 \\cdot \\mathbf{v}_2}{\\|\\mathbf{v}_1\\|_2 \\|\\mathbf{v}_2\\|_2}\n$$"
+    "text": "Similarity metrics\n\nSimilarity based on Euclidean distance\n\n$$distance(vec1, vec2) = \\sqrt{\\sum_{i =1}^{n} (vec1_i - vec2_i)^2}$$\n\nDot product similarity:\n\nsimilaritydotproduct(vec1, vec2) = vec1.vec2\n\nCosine similarity: normalized version of dot product.\n\n$$similarity_{cosine}(vec1,vec2) = \\frac{vec1.vec2}{\\left\\lVert vec1\\right\\rVert_2 \\left\\lVert vec2\\right\\rVert_2}$$"
   },
   {
     "objectID": "slides-17.html#which-metric-in-what-context",
