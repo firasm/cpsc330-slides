@@ -30,6 +30,10 @@ editor:
 
 $$distance(vec1, vec2) = \sqrt{\sum_{i =1}^{n} (vec1_i - vec2_i)^2}$$ 
 
+$$
+distance(vec1, vec2) = \sqrt{\sum_{i=1}^{n} (vec1_i - vec2_i)^2}
+$$
+
 - Dot product similarity: 
 
 $$similarity_{dot product}(vec1,vec2) = vec1.vec2$$
@@ -37,6 +41,11 @@ $$similarity_{dot product}(vec1,vec2) = vec1.vec2$$
 - Cosine similarity: normalized version of dot product. 
 
 $$similarity_{cosine}(vec1,vec2) = \frac{vec1.vec2}{\left\lVert vec1\right\rVert_2 \left\lVert vec2\right\rVert_2}$$
+
+$$
+\text{similarity}_{\text{cosine}}(\mathbf{v}_1,\mathbf{v}_2) =
+\frac{\mathbf{v}_1 \cdot \mathbf{v}_2}{\|\mathbf{v}_1\|_2 \|\mathbf{v}_2\|_2}
+$$
 
 
 ## Which metric in what context? {.smaller}
