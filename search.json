@@ -2578,350 +2578,350 @@
   {
     "objectID": "slides-19.html#announcements",
     "href": "slides-19.html#announcements",
-    "title": "CPSC 330 Lecture 18: Introduction to deep learning and computer vision",
+    "title": "CPSC 330 Lecture 19: Introduction to deep learning and computer vision",
     "section": "Announcements",
     "text": "Announcements\n\nFinal Exam reservations for the CBTF will open on June 16th at 10 AM\n\nReminder that final Exam window for CPSC 330 will be June 23 and June 24th\n\nHW7 is due June 14th at 10 PM\nHW8 has been released (due June 16th at 10 PM)\nHW9 has also been released (due June 18th at 10 PM)\n\nWe’re almost at the end of term! Hang in there 😊!"
   },
   {
     "objectID": "slides-19.html#iclicker-18.1-recap",
     "href": "slides-19.html#iclicker-18.1-recap",
-    "title": "CPSC 330 Lecture 18: Introduction to deep learning and computer vision",
+    "title": "CPSC 330 Lecture 19: Introduction to deep learning and computer vision",
     "section": "iClicker 18.1 (Recap)",
     "text": "iClicker 18.1 (Recap)\niClicker cloud join link: https://join.iclicker.com/YJHS\nSelect all of the following statements which are TRUE.\n\n\nIt’s possible to use word2vec embedding representations for text classification instead of bag-of-words representation.\n\n\nThe topic model approach we used in the last lecture, Latent Dirichlet Allocation (LDA), is an unsupervised approach.\n\n\nIn an LDA topic model, the same word can be associated with two different topics with high probability.\n\n\nIn an LDA topic model, a document is a mixture of multiple topics.\n\n\nIf I train a topic model on a large collection of news articles with K = 10, I would get 10 topic labels (e.g., sports, culture, politics, finance) as output."
   },
   {
     "objectID": "slides-19.html#what-is-multiclass-classification",
     "href": "slides-19.html#what-is-multiclass-classification",
-    "title": "CPSC 330 Lecture 18: Introduction to deep learning and computer vision",
+    "title": "CPSC 330 Lecture 19: Introduction to deep learning and computer vision",
     "section": "What is multiclass classification?",
     "text": "What is multiclass classification?\n\nSo far, we’ve focused on binary classification (two classes).\nBut many real-world problems have more than two classes:\n\nClassifying types of emotions in text\nIdentifying species of flowers\nRecognizing objects in an image\n\n\nGoal: assign each example to exactly one of \\(K\\) possible classes."
   },
   {
     "objectID": "slides-19.html#how-to-handle-multiple-classes",
     "href": "slides-19.html#how-to-handle-multiple-classes",
-    "title": "CPSC 330 Lecture 18: Introduction to deep learning and computer vision",
+    "title": "CPSC 330 Lecture 19: Introduction to deep learning and computer vision",
     "section": "How to handle multiple classes?",
     "text": "How to handle multiple classes?\nConsider this dataset with multiple classes.\n\n\n\n\n\n\n\n\n\noriginal_hm\ntarget\n\n\n\n\n0\nMeeting up with my nephew and niece at my brot...\naffection\n\n\n1\nThe prospect of weekend coming as it is Friday...\nleisure\n\n\n2\nWe bought a new rug for our family room.\nachievement\n\n\n3\nWe got a big federal and state tax refund. I w...\nachievement\n\n\n4\nI'm leaving work an hour early today!\nenjoy_the_moment"
   },
   {
     "objectID": "slides-19.html#section",
     "href": "slides-19.html#section",
-    "title": "CPSC 330 Lecture 18: Introduction to deep learning and computer vision",
+    "title": "CPSC 330 Lecture 19: Introduction to deep learning and computer vision",
     "section": "",
     "text": "hdb_df[\"target\"].value_counts(normalize=True)\n\ntarget\naffection           0.3415\nachievement         0.3043\nbonding             0.1240\nenjoy_the_moment    0.1036\nleisure             0.0933\nnature              0.0182\nexercise            0.0151\nName: proportion, dtype: float64\n\n\n\n❓ Can we use Decision Trees or KNNs for multiclass classification without any significant modifications?"
   },
   {
     "objectID": "slides-19.html#extending-logistic-regression",
     "href": "slides-19.html#extending-logistic-regression",
-    "title": "CPSC 330 Lecture 18: Introduction to deep learning and computer vision",
+    "title": "CPSC 330 Lecture 19: Introduction to deep learning and computer vision",
     "section": "Extending logistic regression",
     "text": "Extending logistic regression\n\nWhat about logistic regression? The binary version works only for two classes.\nFor multiclass problems, we use the multinomial (softmax) logistic regression model.\nIt learns a separate weight vector and bias for each class:\n\nParameters per class: \\(d\\) weights + 1 bias\n\nTotal parameters: \\((d + 1) \\times K\\)\n\n\n\nExample:\nIf we have 10,000 features (e.g., vocabulary size) and 7 moment classes, the model learns \\((10{,}000 + 1) \\times 7\\) parameters."
   },
   {
     "objectID": "slides-19.html#softmax-function",
     "href": "slides-19.html#softmax-function",
-    "title": "CPSC 330 Lecture 18: Introduction to deep learning and computer vision",
+    "title": "CPSC 330 Lecture 19: Introduction to deep learning and computer vision",
     "section": "Softmax function",
     "text": "Softmax function\n\nIn binary logistic regression, we use the sigmoid function to map scores to probabilities.\nIn multiclass, we need:\n\nProbabilities that are positive, and\nSum to 1 across all classes.\n\n\nThe softmax function does exactly that."
   },
   {
     "objectID": "slides-19.html#optional-softmax-function",
     "href": "slides-19.html#optional-softmax-function",
-    "title": "CPSC 330 Lecture 18: Introduction to deep learning and computer vision",
+    "title": "CPSC 330 Lecture 19: Introduction to deep learning and computer vision",
     "section": "(Optional) Softmax function",
     "text": "(Optional) Softmax function\nGiven an input, the probability that it belongs to class \\(j \\in \\{1, 2, \\dots, K\\}\\) is calculated using the softmax function:\n\\(P(y = j \\mid x_i) = \\frac{e^{w_j^\\top x_i + b_j}}{\\sum_{k=1}^{K} e^{w_k^\\top x_i + b_k}}\\)\n\n\\(x_i\\) is the \\(i^{th}\\) example\n\\(w_j\\) is the weight vector for class \\(j\\).\n\\(b_j\\) is the bias term for class \\(j\\).\n\\(K\\) is the total number of classes."
   },
   {
     "objectID": "slides-19.html#making-predictions",
     "href": "slides-19.html#making-predictions",
-    "title": "CPSC 330 Lecture 18: Introduction to deep learning and computer vision",
+    "title": "CPSC 330 Lecture 19: Introduction to deep learning and computer vision",
     "section": "Making predictions",
     "text": "Making predictions\n\nCompute Probabilities:\nFor each class \\(j\\), compute the probability \\(P(y = j \\mid x_i)\\) using the softmax function.\nSelect the Class with the Highest Probability:\nThe predicted class \\(\\hat{y}\\) is:\n\\(\\hat{y} = \\arg \\max_{j \\in \\{1, \\dots, K\\}} P(y = j \\mid x_i)\\)"
   },
   {
     "objectID": "slides-19.html#example-softmax-output",
     "href": "slides-19.html#example-softmax-output",
-    "title": "CPSC 330 Lecture 18: Introduction to deep learning and computer vision",
+    "title": "CPSC 330 Lecture 19: Introduction to deep learning and computer vision",
     "section": "Example: Softmax output",
     "text": "Example: Softmax output\nQuery: “I love my students!”\n\n\n\n\n\n\n\n\n\nClass\nRaw Score (Logit)\nExponentiated\nNormalized Probability\n\n\n\n\n❤️ affection\n2.1\n8.166\n0.4684\n\n\n🏆 achievement\n1.8\n6.050\n0.3472\n\n\n🤝 bonding\n1.0\n2.718\n0.1559\n\n\n🌅 enjoy_the_moment\n0.3\n1.350\n0.0775\n\n\n🎮 leisure\n-0.2\n0.819\n0.0470\n\n\n🌿 nature\n-1.0\n0.368\n0.0211\n\n\n🏃 exercise\n-1.5\n0.223\n0.0128\n\n\nTotal\n—\n—\n1.000"
   },
   {
     "objectID": "slides-19.html#binary-vs-multinomial-logistic-regression",
     "href": "slides-19.html#binary-vs-multinomial-logistic-regression",
-    "title": "CPSC 330 Lecture 18: Introduction to deep learning and computer vision",
+    "title": "CPSC 330 Lecture 19: Introduction to deep learning and computer vision",
     "section": "Binary vs multinomial logistic regression",
     "text": "Binary vs multinomial logistic regression\n\n\n\n\n\n\n\n\nAspect\nBinary Logistic Regression\nMultinomial Logistic Regression\n\n\n\n\nTarget variable\n2 classes (binary)\nMore than 2 classes (multi-class)\n\n\nGetting probabilities\nSigmoid\nSoftmax\n\n\nparameters\n\\(d\\) weights, one per feature and the bias term\n\\(d\\) weights and a bias term per class\n\n\nOutput\nSingle probability\nProbability distribution over classes\n\n\nUse case\nBinary classification (e.g., spam detection)\nMulti-class classification (e.g., flower species)"
   },
   {
     "objectID": "slides-19.html#remember-this-picture-we-saw-earlier",
     "href": "slides-19.html#remember-this-picture-we-saw-earlier",
-    "title": "CPSC 330 Lecture 18: Introduction to deep learning and computer vision",
+    "title": "CPSC 330 Lecture 19: Introduction to deep learning and computer vision",
     "section": "Remember this picture we saw earlier?",
     "text": "Remember this picture we saw earlier?\n\nDeep Learning (DL) is a subset of machine learning"
   },
   {
     "objectID": "slides-19.html#image-classification",
     "href": "slides-19.html#image-classification",
-    "title": "CPSC 330 Lecture 18: Introduction to deep learning and computer vision",
+    "title": "CPSC 330 Lecture 19: Introduction to deep learning and computer vision",
     "section": "Image classification",
     "text": "Image classification\n\n\nHave you used search in Google Photos? You can search for “my photos of cat” and it will retrieve photos from your libraries containing cats. This can be done using image classification, which is treated as a supervised learning problem, where we define a set of target classes (objects to identify in images), and train a model to recognize them using labeled example photos."
   },
   {
     "objectID": "slides-19.html#image-classification-1",
     "href": "slides-19.html#image-classification-1",
-    "title": "CPSC 330 Lecture 18: Introduction to deep learning and computer vision",
+    "title": "CPSC 330 Lecture 19: Introduction to deep learning and computer vision",
     "section": "Image classification",
     "text": "Image classification\n\n\nImage classification is not an easy problem because of the variations in the location of the object, lighting, background, camera angle, camera focus etc."
   },
   {
     "objectID": "slides-19.html#neural-networks",
     "href": "slides-19.html#neural-networks",
-    "title": "CPSC 330 Lecture 18: Introduction to deep learning and computer vision",
+    "title": "CPSC 330 Lecture 19: Introduction to deep learning and computer vision",
     "section": "Neural networks",
     "text": "Neural networks\n\n\n\nNeural networks are perfect for these types of problems where local structures are important.\nA significant advancement in image classification was the application of convolutional neural networks (ConvNets or CNNs) to this problem.\n\nImageNet Classification with Deep Convolutional Neural Networks\nAchieved a winning test error rate of 15.3%, compared to 26.2% achieved by the second-best entry in the ILSVRC-2012 competition.\n\nLet’s go over the basics of a neural network."
   },
   {
     "objectID": "slides-19.html#a-graphical-view-of-a-linear-model",
     "href": "slides-19.html#a-graphical-view-of-a-linear-model",
-    "title": "CPSC 330 Lecture 18: Introduction to deep learning and computer vision",
+    "title": "CPSC 330 Lecture 19: Introduction to deep learning and computer vision",
     "section": "A graphical view of a linear model",
     "text": "A graphical view of a linear model\n\n\n\n\n\n\n\n\n\n\n\n\n\nRemember this graphical view of linear models?\nWe have 4 features: x[0], x[1], x[2], x[3]\nThe output is calculated as \\(y = x[0]w[0] + x[1]w[1] + x[2]w[2] + x[3]w[3]\\)\nFor simplicity, we are ignoring the bias term."
   },
   {
     "objectID": "slides-19.html#introduction-to-neural-networks",
     "href": "slides-19.html#introduction-to-neural-networks",
-    "title": "CPSC 330 Lecture 18: Introduction to deep learning and computer vision",
+    "title": "CPSC 330 Lecture 19: Introduction to deep learning and computer vision",
     "section": "Introduction to neural networks",
     "text": "Introduction to neural networks\n\n\n\nNeural networks can be viewed a generalization of linear models where we apply a series of transformations.\nBelow we are adding one “layer” of transformations in between features and the target.\nWe are repeating the the process of computing the weighted sum multiple times.\n\nThe hidden units (e.g., h[1], h[2], …) represent the intermediate processing steps."
   },
   {
     "objectID": "slides-19.html#one-more-layer-of-transformations",
     "href": "slides-19.html#one-more-layer-of-transformations",
-    "title": "CPSC 330 Lecture 18: Introduction to deep learning and computer vision",
+    "title": "CPSC 330 Lecture 19: Introduction to deep learning and computer vision",
     "section": "One more layer of transformations",
     "text": "One more layer of transformations\n\n\n\nNow we are adding one more layer of transformations."
   },
   {
     "objectID": "slides-19.html#neural-networks-1",
     "href": "slides-19.html#neural-networks-1",
-    "title": "CPSC 330 Lecture 18: Introduction to deep learning and computer vision",
+    "title": "CPSC 330 Lecture 19: Introduction to deep learning and computer vision",
     "section": "Neural networks",
     "text": "Neural networks\n\n\n\nWith a neural net, you specify the number of features after each transformation.\n\nIn the above, it goes from 4 to 3 to 3 to 1.\n\nTo make them really powerful compared to the linear models, we apply a non-linear function to the weighted sum for each hidden node.\nNeural network = neural net\nDeep learning ~ using neural networks"
   },
   {
     "objectID": "slides-19.html#neural-networks-example-and-terminology",
     "href": "slides-19.html#neural-networks-example-and-terminology",
-    "title": "CPSC 330 Lecture 18: Introduction to deep learning and computer vision",
+    "title": "CPSC 330 Lecture 19: Introduction to deep learning and computer vision",
     "section": "Neural networks example and terminology",
     "text": "Neural networks example and terminology"
   },
   {
     "objectID": "slides-19.html#optional-how-does-training-work-in-neural-networks-high-level",
     "href": "slides-19.html#optional-how-does-training-work-in-neural-networks-high-level",
-    "title": "CPSC 330 Lecture 18: Introduction to deep learning and computer vision",
+    "title": "CPSC 330 Lecture 19: Introduction to deep learning and computer vision",
     "section": "(Optional) How does training work in neural networks? (High-Level)",
     "text": "(Optional) How does training work in neural networks? (High-Level)\nTraining a neural network has two main steps:\n\nForward pass:\nFeed the input through the network to calculate the predicted output using the current parameter values (weights).\nBackward pass:\n\nMeasure how far the predicted output is from the actual target (this is the loss).\nCalculate how to adjust each parameter to improve future predictions (gradients).\nUpdate the parameters using these gradients — this helps the model improve.\n\nSummary\n\nInput \\(\\rightarrow\\) Forward Pass \\(\\rightarrow\\) Loss \\(\\rightarrow\\) Backward Pass \\(\\rightarrow\\) Parameter Update \\(\\rightarrow\\) Repeat\nThe model repeats this process many times, gradually improving its predictions."
   },
   {
     "objectID": "slides-19.html#why-neural-networks",
     "href": "slides-19.html#why-neural-networks",
-    "title": "CPSC 330 Lecture 18: Introduction to deep learning and computer vision",
+    "title": "CPSC 330 Lecture 19: Introduction to deep learning and computer vision",
     "section": "Why neural networks?",
     "text": "Why neural networks?\n\nThey can learn very complex functions.\n\nThe fundamental tradeoff is primarily controlled by the number of layers and layer sizes.\nMore layers / bigger layers –&gt; more complex model.\nYou can generally get a model that will not underfit.\n\nThey work really well for structured data:\n\n1D sequence, e.g. timeseries, language\n2D image\n3D image or video\n\nThey’ve had some incredible successes in the last 12 years.\nTransfer learning (coming later today) is really useful."
   },
   {
     "objectID": "slides-19.html#why-not-neural-networks",
     "href": "slides-19.html#why-not-neural-networks",
-    "title": "CPSC 330 Lecture 18: Introduction to deep learning and computer vision",
+    "title": "CPSC 330 Lecture 19: Introduction to deep learning and computer vision",
     "section": "Why not neural networks?",
     "text": "Why not neural networks?\n\nOften they require a lot of data.\nThey require a lot of compute time, and, to be faster, specialized hardware called GPUs.\nThey have huge numbers of hyperparameters\n\nThink of each layer having hyperparameters, plus some overall hyperparameters.\nBeing slow compounds this problem.\n\nThey are not interpretable.\nI don’t recommend training them on your own without further training\nGood news\n\nYou don’t have to train your models from scratch in order to use them.\nI’ll show you some ways to use neural networks without training them yourselves."
   },
   {
     "objectID": "slides-19.html#deep-learning-software",
     "href": "slides-19.html#deep-learning-software",
-    "title": "CPSC 330 Lecture 18: Introduction to deep learning and computer vision",
+    "title": "CPSC 330 Lecture 19: Introduction to deep learning and computer vision",
     "section": "Deep learning software",
     "text": "Deep learning software\nThe current big players are:\n\nPyTorch\nTensorFlow\n\nBoth are heavily used in industry. If interested, see comparison of deep learning software."
   },
   {
     "objectID": "slides-19.html#introduction-to-computer-vision",
     "href": "slides-19.html#introduction-to-computer-vision",
-    "title": "CPSC 330 Lecture 18: Introduction to deep learning and computer vision",
+    "title": "CPSC 330 Lecture 19: Introduction to deep learning and computer vision",
     "section": "Introduction to computer vision",
     "text": "Introduction to computer vision\n\n\n\nComputer vision refers to understanding images/videos, usually using ML/AI.\nIn the last decade this field has been dominated by deep learning. We will explore image classification and object detection."
   },
   {
     "objectID": "slides-19.html#introduction-to-computer-vision-1",
     "href": "slides-19.html#introduction-to-computer-vision-1",
-    "title": "CPSC 330 Lecture 18: Introduction to deep learning and computer vision",
+    "title": "CPSC 330 Lecture 19: Introduction to deep learning and computer vision",
     "section": "Introduction to computer vision",
     "text": "Introduction to computer vision\n\n\n\nimage classification: is this a cat or a dog?\nobject localization: where is the cat in this image?\nobject detection: What are the various objects in the image?\ninstance segmentation: What are the shapes of these various objects in the image?\nand much more…"
   },
   {
     "objectID": "slides-19.html#convolutional-neural-networks-cnns",
     "href": "slides-19.html#convolutional-neural-networks-cnns",
-    "title": "CPSC 330 Lecture 18: Introduction to deep learning and computer vision",
+    "title": "CPSC 330 Lecture 19: Introduction to deep learning and computer vision",
     "section": "Convolutional Neural Networks (CNNs)",
     "text": "Convolutional Neural Networks (CNNs)\n\nNeural networks come in different shapes depending on the type of data and the task.\nCNNs are commonly used in image classification, object detection, and medical imaging.\nWhat’s the problem if we use the above feedforward architecture to learn patterns from images?"
   },
   {
     "objectID": "slides-19.html#filters",
     "href": "slides-19.html#filters",
-    "title": "CPSC 330 Lecture 18: Introduction to deep learning and computer vision",
+    "title": "CPSC 330 Lecture 19: Introduction to deep learning and computer vision",
     "section": "Filters",
     "text": "Filters\n\nCNNs use filters that “slide” over the input to detect local patterns.\n\n\n\nPlay around with filters: https://setosa.io/ev/image-kernels/"
   },
   {
     "objectID": "slides-19.html#cnns",
     "href": "slides-19.html#cnns",
-    "title": "CPSC 330 Lecture 18: Introduction to deep learning and computer vision",
+    "title": "CPSC 330 Lecture 19: Introduction to deep learning and computer vision",
     "section": "CNNs",
     "text": "CNNs"
   },
   {
     "objectID": "slides-19.html#cnns-big-picture",
     "href": "slides-19.html#cnns-big-picture",
-    "title": "CPSC 330 Lecture 18: Introduction to deep learning and computer vision",
+    "title": "CPSC 330 Lecture 19: Introduction to deep learning and computer vision",
     "section": "CNNs big picture",
     "text": "CNNs big picture\n\nsource"
   },
   {
     "objectID": "slides-19.html#pre-trained-models",
     "href": "slides-19.html#pre-trained-models",
-    "title": "CPSC 330 Lecture 18: Introduction to deep learning and computer vision",
+    "title": "CPSC 330 Lecture 19: Introduction to deep learning and computer vision",
     "section": "Pre-trained models",
     "text": "Pre-trained models\n\n\n\nIn practice, very few people train an entire CNN from scratch because it requires a large dataset, powerful computers, and a huge amount of human effort to train the model.\nInstead, a common practice is to download a pre-trained model and fine tune it for your task. This is called transfer learning.\nTransfer learning is one of the most common techniques used in the context of computer vision and natural language processing.\nIt refers to using a model already trained on one task as a starting point for learning to perform another task."
   },
   {
     "objectID": "slides-19.html#pre-trained-models-out-of-the-box",
     "href": "slides-19.html#pre-trained-models-out-of-the-box",
-    "title": "CPSC 330 Lecture 18: Introduction to deep learning and computer vision",
+    "title": "CPSC 330 Lecture 19: Introduction to deep learning and computer vision",
     "section": "Pre-trained models out-of-the-box",
     "text": "Pre-trained models out-of-the-box\n\n\n\n\n\nLet’s first apply one of these pre-trained models to our own problem right out of the box."
   },
   {
     "objectID": "slides-19.html#pre-trained-models-out-of-the-box-1",
     "href": "slides-19.html#pre-trained-models-out-of-the-box-1",
-    "title": "CPSC 330 Lecture 18: Introduction to deep learning and computer vision",
+    "title": "CPSC 330 Lecture 19: Introduction to deep learning and computer vision",
     "section": "Pre-trained models out-of-the-box",
     "text": "Pre-trained models out-of-the-box\n\n\n\nWe can easily download famous models using the torchvision.models module. All models are available with pre-trained weights (based on ImageNet’s 224 x 224 images)\nWe used a pre-trained model vgg16 which is trained on the ImageNet data.\nWe preprocess the given image.\nWe get prediction from this pre-trained model on a given image along with prediction probabilities.\n\nFor a given image, this model will spit out one of the 1000 classes from ImageNet."
   },
   {
     "objectID": "slides-19.html#pre-trained-models-out-of-the-box-2",
     "href": "slides-19.html#pre-trained-models-out-of-the-box-2",
-    "title": "CPSC 330 Lecture 18: Introduction to deep learning and computer vision",
+    "title": "CPSC 330 Lecture 19: Introduction to deep learning and computer vision",
     "section": "Pre-trained models out-of-the-box",
     "text": "Pre-trained models out-of-the-box\n\nLet’s predict labels with associated probabilities for unseen images\n\n\n\n\n\n\n\n\n\n\n\nDownloading: \"https://download.pytorch.org/models/vgg16-397923af.pth\" to /home/runner/.cache/torch/hub/checkpoints/vgg16-397923af.pth\n\n\n                         Class  Probability score\n                     tiger cat              0.353\n              tabby, tabby cat              0.207\n               lynx, catamount              0.050\nPembroke, Pembroke Welsh corgi              0.046\n--------------------------------------------------------------\n\n\n\n\n\n\n\n\n\n                                   Class  Probability score\n                                 macaque              0.714\npatas, hussar monkey, Erythrocebus patas              0.122\n      proboscis monkey, Nasalis larvatus              0.098\n                   guenon, guenon monkey              0.017\n--------------------------------------------------------------\n\n\n\n\n\n\n\n\n\n                                     Class  Probability score\n         cheetah, chetah, Acinonyx jubatus              0.983\n                  leopard, Panthera pardus              0.012\njaguar, panther, Panthera onca, Felis onca              0.004\n       snow leopard, ounce, Panthera uncia              0.001\n--------------------------------------------------------------\n\n\n\n\n\n\n\n\n\n                        Class  Probability score\nWalker hound, Walker foxhound              0.580\n             English foxhound              0.091\n                  EntleBucher              0.080\n                       beagle              0.065\n--------------------------------------------------------------"
   },
   {
     "objectID": "slides-19.html#pre-trained-models-out-of-the-box-3",
     "href": "slides-19.html#pre-trained-models-out-of-the-box-3",
-    "title": "CPSC 330 Lecture 18: Introduction to deep learning and computer vision",
+    "title": "CPSC 330 Lecture 19: Introduction to deep learning and computer vision",
     "section": "Pre-trained models out-of-the-box",
     "text": "Pre-trained models out-of-the-box\n\n\n\nWe got these predictions without “doing the ML ourselves”.\nWe are using pre-trained vgg16 model which is available in torchvision.\n\ntorchvision has many such pre-trained models available that have been very successful across a wide range of tasks: AlexNet, VGG, ResNet, Inception, MobileNet, etc.\n\nMany of these models have been pre-trained on famous datasets like ImageNet.\nSo if we use them out-of-the-box, they will give us one of the ImageNet classes as classification."
   },
   {
     "objectID": "slides-19.html#pre-trained-models-out-of-the-box-4",
     "href": "slides-19.html#pre-trained-models-out-of-the-box-4",
-    "title": "CPSC 330 Lecture 18: Introduction to deep learning and computer vision",
+    "title": "CPSC 330 Lecture 19: Introduction to deep learning and computer vision",
     "section": "Pre-trained models out-of-the-box",
     "text": "Pre-trained models out-of-the-box\n\n\n\nLet’s try some images which are unlikely to be there in ImageNet.\nIt’s not doing very well here because ImageNet doesn’t have proper classes for these images.\n\n\n\n\n\n\n\n\n\n\n\n                                               Class  Probability score\n                                         toilet seat              0.171\n                                          safety pin              0.060\nbannister, banister, balustrade, balusters, handrail              0.039\n                                              bubble              0.035\n--------------------------------------------------------------\n\n\n\n\n\n\n\n\n\n         Class  Probability score\ncucumber, cuke              0.146\n         plate              0.117\n     guacamole              0.099\n  Granny Smith              0.091\n--------------------------------------------------------------\n\n\n\n\n\n\n\n\n\n                      Class  Probability score\n           pizza, pizza pie              0.998\nfrying pan, frypan, skillet              0.001\n                     potpie              0.000\n                French loaf              0.000\n--------------------------------------------------------------\n\n\n\n\n\n\n\n\n\n                                      Class  Probability score\n                                        fig              0.637\n                                pomegranate              0.193\ngrocery store, grocery, food market, market              0.041\n                                      crate              0.023\n--------------------------------------------------------------\n\n\n\n\n\n\n\n\n\n                  Class  Probability score\n                   vase              0.078\n                thimble              0.074\n             plate rack              0.049\nsaltshaker, salt shaker              0.047\n--------------------------------------------------------------\n\n\n\n\n\n\n\n\n\n              Class  Probability score\n     patio, terrace              0.213\n           fountain              0.164\nlakeside, lakeshore              0.097\n            sundial              0.088\n--------------------------------------------------------------"
   },
   {
     "objectID": "slides-19.html#pre-trained-models-out-of-the-box-5",
     "href": "slides-19.html#pre-trained-models-out-of-the-box-5",
-    "title": "CPSC 330 Lecture 18: Introduction to deep learning and computer vision",
+    "title": "CPSC 330 Lecture 19: Introduction to deep learning and computer vision",
     "section": "Pre-trained models out-of-the-box",
     "text": "Pre-trained models out-of-the-box\n\n\n\nHere we used pre-trained models out-of-the-box.\nCan we use pre-trained models for our own classification problem with our classes?\nYes!! We have two options here:\n\nAdd some extra layers to the pre-trained network to suit our particular task\nPass training data through the network and save the output to use as features for training some other model"
   },
   {
     "objectID": "slides-19.html#pre-trained-models-to-extract-features",
     "href": "slides-19.html#pre-trained-models-to-extract-features",
-    "title": "CPSC 330 Lecture 18: Introduction to deep learning and computer vision",
+    "title": "CPSC 330 Lecture 19: Introduction to deep learning and computer vision",
     "section": "Pre-trained models to extract features",
     "text": "Pre-trained models to extract features\n\n\n\nLet’s use pre-trained models to extract features.\nWe will pass our specific data through a pre-trained network to get a feature vector for each example in the data.\nThe feature vector is usually extracted from the last layer, before the classification layer from the pre-trained network.\nYou can think of each layer a transformer applying some transformations on the input received to that later."
   },
   {
     "objectID": "slides-19.html#pre-trained-models-to-extract-features-1",
     "href": "slides-19.html#pre-trained-models-to-extract-features-1",
-    "title": "CPSC 330 Lecture 18: Introduction to deep learning and computer vision",
+    "title": "CPSC 330 Lecture 19: Introduction to deep learning and computer vision",
     "section": "Pre-trained models to extract features",
     "text": "Pre-trained models to extract features\n\n\n\nOnce we extract these feature vectors for all images in our training data, we can train a machine learning classifier such as logistic regression or random forest.\nThis classifier will be trained on our classes using feature representations extracted from the pre-trained models.\n\nLet’s try this out.\nIt’s better to train such models with GPU. Since our dataset is quite small, we won’t have problems running it on a CPU."
   },
   {
     "objectID": "slides-19.html#pre-trained-models-to-extract-features-2",
     "href": "slides-19.html#pre-trained-models-to-extract-features-2",
-    "title": "CPSC 330 Lecture 18: Introduction to deep learning and computer vision",
+    "title": "CPSC 330 Lecture 19: Introduction to deep learning and computer vision",
     "section": "Pre-trained models to extract features",
     "text": "Pre-trained models to extract features\n\n\nLet’s look at some sample images in the dataset."
   },
   {
     "objectID": "slides-19.html#dataset-statistics",
     "href": "slides-19.html#dataset-statistics",
-    "title": "CPSC 330 Lecture 18: Introduction to deep learning and computer vision",
+    "title": "CPSC 330 Lecture 19: Introduction to deep learning and computer vision",
     "section": "Dataset statistics",
     "text": "Dataset statistics\n\n\nHere is the stat of our toy dataset.\n\n\nClasses: ['beet_salad', 'chocolate_cake', 'edamame', 'french_fries', 'pizza', 'spring_rolls', 'sushi']\nClass count: 40, 38, 40\nSamples: 283\nFirst sample: ('data/food/train/beet_salad/104294.jpg', 0)"
   },
   {
     "objectID": "slides-19.html#pre-trained-models-to-extract-features-3",
     "href": "slides-19.html#pre-trained-models-to-extract-features-3",
-    "title": "CPSC 330 Lecture 18: Introduction to deep learning and computer vision",
+    "title": "CPSC 330 Lecture 19: Introduction to deep learning and computer vision",
     "section": "Pre-trained models to extract features",
     "text": "Pre-trained models to extract features\n\n\n\nNow for each image in our dataset, we’ll extract a feature vector from a pre-trained model called densenet121, which is trained on the ImageNet dataset.\n\n\n\nDownloading: \"https://download.pytorch.org/models/densenet121-a639ec97.pth\" to /home/runner/.cache/torch/hub/checkpoints/densenet121-a639ec97.pth"
   },
   {
     "objectID": "slides-19.html#shape-of-the-feature-vector",
     "href": "slides-19.html#shape-of-the-feature-vector",
-    "title": "CPSC 330 Lecture 18: Introduction to deep learning and computer vision",
+    "title": "CPSC 330 Lecture 19: Introduction to deep learning and computer vision",
     "section": "Shape of the feature vector",
     "text": "Shape of the feature vector\n\n\n\nNow we have extracted feature vectors for all examples. What’s the shape of these features?\n\n\n\ntorch.Size([283, 1024])\n\n\n\nThe size of each feature vector is 1024 because the size of the last layer in densenet architecture is 1024.\n\n\n\n\n\n\nSource"
   },
   {
     "objectID": "slides-19.html#a-feature-vector-given-by-densenet",
     "href": "slides-19.html#a-feature-vector-given-by-densenet",
-    "title": "CPSC 330 Lecture 18: Introduction to deep learning and computer vision",
+    "title": "CPSC 330 Lecture 19: Introduction to deep learning and computer vision",
     "section": "A feature vector given by densenet",
     "text": "A feature vector given by densenet\n \n\nLet’s examine the feature vectors.\n\n\n\n\n\n\n\n\n\n\n0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n...\n1014\n1015\n1016\n1017\n1018\n1019\n1020\n1021\n1022\n1023\n\n\n\n\n0\n0.000290\n0.003821\n0.005015\n0.001307\n0.052690\n0.063403\n0.000626\n0.001850\n0.256254\n0.000223\n...\n0.229935\n1.046363\n2.241251\n0.229644\n0.033676\n0.742794\n1.338701\n2.130872\n0.625470\n0.463095\n\n\n1\n0.000407\n0.005973\n0.003206\n0.001932\n0.090702\n0.438522\n0.001513\n0.003906\n0.166081\n0.000286\n...\n0.910675\n1.580820\n0.087190\n0.606906\n0.436105\n0.306453\n0.940104\n1.159829\n1.712703\n1.624745\n\n\n2\n0.000626\n0.005090\n0.002887\n0.001299\n0.091715\n0.548535\n0.000491\n0.003587\n0.266537\n0.000408\n...\n0.465153\n0.678282\n0.946385\n1.194697\n2.537744\n1.642388\n0.701204\n0.115618\n0.186434\n0.166608\n\n\n3\n0.000169\n0.006087\n0.002489\n0.002167\n0.087537\n0.623212\n0.000427\n0.000226\n0.460680\n0.000388\n...\n0.394085\n0.700154\n0.105199\n0.856320\n0.038457\n0.023949\n0.131834\n1.296365\n0.723328\n1.915224\n\n\n4\n0.000286\n0.005520\n0.001906\n0.001599\n0.186035\n0.850148\n0.000835\n0.003025\n0.036309\n0.000142\n...\n3.313759\n0.565744\n0.473563\n0.139444\n0.029284\n1.165937\n0.442323\n0.227594\n0.884270\n1.592693\n\n\n\n\n5 rows × 1024 columns\n\n\n\n\nThe features are hard to interpret but they have some important information about the images which can be useful for classification."
   },
   {
     "objectID": "slides-19.html#logistic-regression-with-the-extracted-features",
     "href": "slides-19.html#logistic-regression-with-the-extracted-features",
-    "title": "CPSC 330 Lecture 18: Introduction to deep learning and computer vision",
+    "title": "CPSC 330 Lecture 19: Introduction to deep learning and computer vision",
     "section": "Logistic regression with the extracted features",
     "text": "Logistic regression with the extracted features\n\n\n\nLet’s try out logistic regression on these extracted features.\n\n\n\nTraining score:  1.0\n\n\n\n\nValidation score:  0.835820895522388\n\n\n\nThis is great accuracy for so little data and little effort!!!"
   },
   {
     "objectID": "slides-19.html#sample-predictions",
     "href": "slides-19.html#sample-predictions",
-    "title": "CPSC 330 Lecture 18: Introduction to deep learning and computer vision",
+    "title": "CPSC 330 Lecture 19: Introduction to deep learning and computer vision",
     "section": "Sample predictions",
     "text": "Sample predictions\n\n\nLet’s examine some sample predictions on the validation set."
   },
   {
     "objectID": "slides-19.html#object-detection",
     "href": "slides-19.html#object-detection",
-    "title": "CPSC 330 Lecture 18: Introduction to deep learning and computer vision",
+    "title": "CPSC 330 Lecture 19: Introduction to deep learning and computer vision",
     "section": "Object detection",
     "text": "Object detection\n\n\n\nAnother useful task and tool to know is object detection using YOLO model.\nLet’s identify objects in a sample image using a pretrained model called YOLO8.\nList the objects present in this image."
   },
   {
     "objectID": "slides-19.html#object-detection-using-yolo",
     "href": "slides-19.html#object-detection-using-yolo",
-    "title": "CPSC 330 Lecture 18: Introduction to deep learning and computer vision",
+    "title": "CPSC 330 Lecture 19: Introduction to deep learning and computer vision",
     "section": "Object detection using YOLO",
-    "text": "Object detection using YOLO\n\n\nLet’s try this out using a pre-trained model.\n\nfrom ultralytics import YOLO\nmodel = YOLO(\"yolov8n.pt\")  # pretrained YOLOv8n model\n\nyolo_input = \"data/yolo_test/3356700488_183566145b.jpg\"\nyolo_result = \"data/yolo_result.jpg\"\n# Run batched inference on a list of images\nresult = model(yolo_input)  # return a list of Results objects\nresult[0].save(filename=yolo_result)\n\nCreating new Ultralytics Settings v0.0.6 file ✅ \nView Ultralytics Settings with 'yolo settings' or at '/home/runner/.config/Ultralytics/settings.json'\nUpdate Settings with 'yolo settings key=value', i.e. 'yolo settings runs_dir=path/to/dir'. For help see https://docs.ultralytics.com/quickstart/#ultralytics-settings.\n\nimage 1/1 /home/runner/work/cpsc330-slides/cpsc330-slides/website/data/yolo_test/3356700488_183566145b.jpg: 512x640 4 persons, 2 cars, 1 stop sign, 92.1ms\nSpeed: 1.4ms preprocess, 92.1ms inference, 1.2ms postprocess per image at shape (1, 3, 512, 640)\n\n\n'data/yolo_result.jpg'"
+    "text": "Object detection using YOLO\n\n\nLet’s try this out using a pre-trained model.\n\nfrom ultralytics import YOLO\nmodel = YOLO(\"yolov8n.pt\")  # pretrained YOLOv8n model\n\nyolo_input = \"data/yolo_test/3356700488_183566145b.jpg\"\nyolo_result = \"data/yolo_result.jpg\"\n# Run batched inference on a list of images\nresult = model(yolo_input)  # return a list of Results objects\nresult[0].save(filename=yolo_result)\n\nCreating new Ultralytics Settings v0.0.6 file ✅ \nView Ultralytics Settings with 'yolo settings' or at '/home/runner/.config/Ultralytics/settings.json'\nUpdate Settings with 'yolo settings key=value', i.e. 'yolo settings runs_dir=path/to/dir'. For help see https://docs.ultralytics.com/quickstart/#ultralytics-settings.\n\nimage 1/1 /home/runner/work/cpsc330-slides/cpsc330-slides/website/data/yolo_test/3356700488_183566145b.jpg: 512x640 4 persons, 2 cars, 1 stop sign, 89.2ms\nSpeed: 1.4ms preprocess, 89.2ms inference, 1.1ms postprocess per image at shape (1, 3, 512, 640)\n\n\n'data/yolo_result.jpg'"
   },
   {
     "objectID": "slides-19.html#object-detection-output",
     "href": "slides-19.html#object-detection-output",
-    "title": "CPSC 330 Lecture 18: Introduction to deep learning and computer vision",
+    "title": "CPSC 330 Lecture 19: Introduction to deep learning and computer vision",
     "section": "Object detection output",
     "text": "Object detection output"
   },
   {
     "objectID": "slides-19.html#summary",
     "href": "slides-19.html#summary",
-    "title": "CPSC 330 Lecture 18: Introduction to deep learning and computer vision",
+    "title": "CPSC 330 Lecture 19: Introduction to deep learning and computer vision",
     "section": "Summary",
     "text": "Summary\n\n\n\nNeural networks are a flexible class of models.\n\nThey are particular powerful for structured input like images, videos, audio, etc.\nThey can be challenging to train and often require significant computational resources.\n\nThe good news is we can use pre-trained neural networks.\n\nThis saves us a huge amount of time/cost/effort/resources.\nWe can use these pre-trained networks directly or use them as feature transformers."
   },
@@ -3224,6 +3224,6 @@
     "href": "slides.html",
     "title": "Overview",
     "section": "",
-    "text": "Title\n\n\n\nDescription\n\n\n\n\n\n\n\n\nLecture 1: Introduction to CPSC 330\n\n\nWhat is machine learning, types of machine learning, learning to navigate through the course materials, getting familiar with the course policies\n\n\n\n\n\n\nLecture 2: Terminology, Baselines, Decision Trees\n\n\nTerminology and Decision Trees\n\n\n\n\n\n\nLecture 3: ML fundamentals\n\n\ngeneralization, data splitting, overfitting, underfitting, the fundamental tradeoff, the golden rule\n\n\n\n\n\n\nLecture 4: \\(k\\)-nearest neighbours and SVM RBFs\n\n\nintroduction to KNNs, hyperparameter n_neighbours or \\(k\\), C and gamma hyperparameters of SVM RBF, decision boundaries with different values of hyperparameters.\n\n\n\n\n\n\nLecture 5: Preprocessing and sklearn pipelines\n\n\nPre-processing, Transformations, and pipelines.\n\n\n\n\n\n\nCPSC 330 Lecture 8: Hyperparameter Optimization\n\n\nLinear regression, logistic regression, prediction probabilities, sigmoid, interpretation of coefficients\n\n\n\n\n\n\nCPSC 330 Lecture 9: Classification Metrics\n\n\nconfusion metrics, precision, recall, f1-score, PR curves, AP score, ROC curve, ROC AUC, class imbalance\n\n\n\n\n\n\nCPSC 330 Lecture 10: Regression Metrics\n\n\nRegression metrics\n\n\n\n\n\n\nCPSC 330 Lecture 11: Ensembles\n\n\n \n\n\n\n\n\n\nCPSC 330 Lecture 12: Feature importances\n\n\n \n\n\n\n\n\n\nCPSC 330 Lecture 13: Feature Engineering and Selection\n\n\n \n\n\n\n\n\n\nCPSC 330 Lecture 14: K-Means\n\n\n \n\n\n\n\n\n\nCPSC 330 Lecture 15: DBSCAN, Hierarchical Clustering\n\n\n \n\n\n\n\n\n\nCPSC 330 Lecture 16: Recommender Systems\n\n\n \n\n\n\n\n\n\nCPSC 330 Lecture 17: Natural Language Processing\n\n\n \n\n\n\n\n\n\nCPSC 330 Lecture 18: Introduction to deep learning and computer vision\n\n\n \n\n\n\n\n\n\nNo matching items"
+    "text": "Title\n\n\n\nDescription\n\n\n\n\n\n\n\n\nLecture 1: Introduction to CPSC 330\n\n\nWhat is machine learning, types of machine learning, learning to navigate through the course materials, getting familiar with the course policies\n\n\n\n\n\n\nLecture 2: Terminology, Baselines, Decision Trees\n\n\nTerminology and Decision Trees\n\n\n\n\n\n\nLecture 3: ML fundamentals\n\n\ngeneralization, data splitting, overfitting, underfitting, the fundamental tradeoff, the golden rule\n\n\n\n\n\n\nLecture 4: \\(k\\)-nearest neighbours and SVM RBFs\n\n\nintroduction to KNNs, hyperparameter n_neighbours or \\(k\\), C and gamma hyperparameters of SVM RBF, decision boundaries with different values of hyperparameters.\n\n\n\n\n\n\nLecture 5: Preprocessing and sklearn pipelines\n\n\nPre-processing, Transformations, and pipelines.\n\n\n\n\n\n\nCPSC 330 Lecture 8: Hyperparameter Optimization\n\n\nLinear regression, logistic regression, prediction probabilities, sigmoid, interpretation of coefficients\n\n\n\n\n\n\nCPSC 330 Lecture 9: Classification Metrics\n\n\nconfusion metrics, precision, recall, f1-score, PR curves, AP score, ROC curve, ROC AUC, class imbalance\n\n\n\n\n\n\nCPSC 330 Lecture 10: Regression Metrics\n\n\nRegression metrics\n\n\n\n\n\n\nCPSC 330 Lecture 11: Ensembles\n\n\n \n\n\n\n\n\n\nCPSC 330 Lecture 12: Feature importances\n\n\n \n\n\n\n\n\n\nCPSC 330 Lecture 13: Feature Engineering and Selection\n\n\n \n\n\n\n\n\n\nCPSC 330 Lecture 14: K-Means\n\n\n \n\n\n\n\n\n\nCPSC 330 Lecture 15: DBSCAN, Hierarchical Clustering\n\n\n \n\n\n\n\n\n\nCPSC 330 Lecture 16: Recommender Systems\n\n\n \n\n\n\n\n\n\nCPSC 330 Lecture 17: Natural Language Processing\n\n\n \n\n\n\n\n\n\nCPSC 330 Lecture 19: Introduction to deep learning and computer vision\n\n\n \n\n\n\n\n\n\nNo matching items"
   }
 ]
