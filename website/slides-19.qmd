@@ -66,17 +66,58 @@ iClicker cloud join link: **https://join.iclicker.com/YJHS**
 - (D) In an LDA topic model, a document is a mixture of multiple topics. 
 - (E) If I train a topic model on a large collection of news articles with K = 10, I would get 10 topic labels (e.g., sports, culture, politics, finance) as output. 
 
-## Multiclass classification
+# Multiclass classification 
 
-- So far we have been talking about binary classification 
-- Can we use these classifiers when there are more than two classes? 
-    - ["ImageNet" computer vision competition](http://www.image-net.org/challenges/LSVRC/), for example, has 1000 classes 
-- Can we use decision trees or KNNs for multi-class classification?
-- What about logistic regression?
+## What is multiclass classification? 
 
-# Multinomial logistic regression
+- So far, we've focused on binary classification (two classes).
+- But many real-world problems have more than two classes:
+  - Classifying types of emotions in text
+  - Identifying species of flowers
+  - Recognizing objects in an image
 
-## Softmax Function for Probabilities
+**Goal: assign each example to exactly one of $K$ possible classes.**
+
+## How to handle multiple classes? {.smaller}
+
+Consider this dataset with multiple classes. 
+
+```{python} 
+hdb_df = pd.read_csv("data/cleaned_hm_10K_subset.csv")
+hdb_df.head()
+```
+
+## 
+
+```{python}
+#| echo: true
+hdb_df["target"].value_counts(normalize=True)
+```
+
+- ❓ Can we use Decision Trees or KNNs for multiclass classification without any significant modifications?
+
+## Extending logistic regression {.smaller}
+
+- What about logistic regression? The binary version works only for two classes.
+- For multiclass problems, we use the multinomial (softmax) logistic regression model.
+- It learns a separate weight vector and bias for each class:
+  - Parameters per class: $d$ weights + 1 bias
+	- Total parameters: $(d + 1) \times K$
+
+**Example:**
+
+If we have 10,000 features (e.g., vocabulary size) and 7 moment classes, the model learns $(10{,}000 + 1) \times 7$ parameters.
+
+## Softmax function
+
+- In binary logistic regression, we use the sigmoid function to map scores to probabilities.
+- In multiclass, we need:
+	- Probabilities that are positive, and
+	- Sum to 1 across all classes.
+
+The softmax function does exactly that.
+
+## (Optional) Softmax function 
 
 Given an input, the probability that it belongs to class $j \in \{1, 2, \dots, K\}$ is calculated using the **softmax function**:
 
@@ -87,16 +128,34 @@ $P(y = j \mid x_i) = \frac{e^{w_j^\top x_i + b_j}}{\sum_{k=1}^{K} e^{w_k^\top x_
 - $b_j$ is the bias term for class $j$.
 - $K$ is the total number of classes.
 
-## Making Predictions
+
+## Making predictions
 
 1. **Compute Probabilities**:  
    For each class $j$, compute the probability $P(y = j \mid x_i)$ using the softmax function.
 
 2. **Select the Class with the Highest Probability**:  
-   The predicted class \(\hat{y}\) is:  
+   The predicted class $\hat{y}$ is:  
    $\hat{y} = \arg \max_{j \in \{1, \dots, K\}} P(y = j \mid x_i)$
 
-## Binary vs multinomial logistic regression 
+## Example: Softmax output {.smaller}
+
+**Query: “I love my students!”**
+
+| Class              | Raw Score (Logit) | Exponentiated | Normalized Probability |
+|:-------------------|------------------:|---------------:|-----------------------:|
+| ❤️ affection        | 2.1  | 8.166 | 0.4684 |
+| 🏆 achievement      | 1.8  | 6.050 | 0.3472 |
+| 🤝 bonding          | 1.0  | 2.718 | 0.1559 |
+| 🌅 enjoy_the_moment | 0.3  | 1.350 | 0.0775 |
+| 🎮 leisure          | -0.2 | 0.819 | 0.0470 |
+| 🌿 nature           | -1.0 | 0.368 | 0.0211 |
+| 🏃 exercise         | -1.5 | 0.223 | 0.0128 |
+| **Total**           | —    | —     | **1.000** |
+
+
+
+## Binary vs multinomial logistic regression {.smaller}
 
 |   **Aspect**                       | **Binary Logistic Regression**              | **Multinomial Logistic Regression**  |
 |--------------------------|---------------------------------------------|--------------------------------------|
@@ -104,8 +163,16 @@ $P(y = j \mid x_i) = \frac{e^{w_j^\top x_i + b_j}}{\sum_{k=1}^{K} e^{w_k^\top x_
 | **Getting probabilities**  | Sigmoid                                   | Softmax                              |
 | parameters               | $d$ weights, one per feature and the bias term | $d$ weights and a bias term per class |  
 | **Output**               | Single probability                          | Probability distribution over classes |
-| **Use case**             | Binary classification (e.g., spam detection) | Multi-class classification (e.g., image classification) |
+| **Use case**             | Binary classification (e.g., spam detection) | Multi-class classification (e.g., flower species) |
 
+
+# Deep Learning 
+
+## Remember this picture we saw earlier? 
+
+- **Deep Learning (DL)** is a subset of machine learning 
+
+![](img/ai-ml-dl.png){.nostretch fig-align="center" width="700px"}
 
 ## Image classification
 \
@@ -121,31 +188,40 @@ Image classification is not an easy problem because of the variations in the loc
 ![](img/cat_variation.png)
 <!-- [Source](https://developers.google.com/machine-learning/practica/image-classification) -->
 
-## Neural networks
+## Neural networks {.smaller}
 \
 
 - Neural networks are perfect for these types of problems where local structures are important. 
 - A significant advancement in image classification was the application of **convolutional neural networks** (ConvNets or CNNs) to this problem. 
-  - [ImageNet Classification with Deep Convolutional Neural Networks](https://dl.acm.org/doi/10.1145/3065386)
+  - [ImageNet Classification with Deep Convolutional
+Neural Networks](https://dl.acm.org/doi/10.1145/3065386)
   - Achieved a winning test error rate of 15.3%, compared to 26.2% achieved by the second-best entry in the ILSVRC-2012 competition. 
 - Let's go over the basics of a neural network.
 
-## Introduction to neural networks
-\
+## A graphical view of a linear model
+:::: {.columns}
 
-- Neural networks can be viewed a generalization of linear models where we apply a series of transformations.
-- Here is graphical representation of a logistic regression model.
-- We have 4 features: x[0], x[1], x[2], x[3]
-
+:::{.column width="20%"}
 ```{python}
 import mglearn
 
 mglearn.plots.plot_logistic_regression_graph()
 ```
+:::
 
-## Adding a layer of transformations 
+:::{.column width="80%"}
+- Remember this graphical view of linear models? 
+- We have 4 features: x[0], x[1], x[2], x[3]
+- The output is calculated as $y = x[0]w[0] + x[1]w[1] + x[2]w[2] + x[3]w[3]$
+- For simplicity, we are ignoring the bias term. 
+:::
+::::
+
+
+## Introduction to neural networks {.smaller}
 \
 
+- Neural networks can be viewed a generalization of linear models where we apply a series of transformations.
 - Below we are adding one "layer" of transformations in between features and the target. 
 - We are repeating the the process of computing the weighted sum multiple times.  
 - The **hidden units** (e.g., h[1], h[2], ...) represent the intermediate processing steps. 
@@ -163,7 +239,7 @@ mglearn.plots.plot_single_hidden_layer_graph()
 mglearn.plots.plot_two_hidden_layer_graph()
 ```
 
-## Neural networks 
+## Neural networks {.smaller}
 \
 
 - With a neural net, you specify the number of features after each transformation.
@@ -173,20 +249,27 @@ mglearn.plots.plot_two_hidden_layer_graph()
 - Neural network = neural net
 - Deep learning ~ using neural networks
 
+## Neural networks example and terminology
 
-## Understanding Convolutional Neural Networks intuitively
+![](img/nn-10.png)
 
-[Link to video](https://youtu.be/oGvHtpJMO3M?feature=shared&t=326)
+## (Optional) How does training work in neural networks? (High-Level) {.smaller}
 
-## Highly (highly) recommend this video!
+Training a neural network has **two main steps:**
 
-![](img/neural_network_video.png)
+- **Forward pass:**  
+  Feed the input through the network to calculate the predicted output using the current parameter values (weights).
 
-[Linked here](https://www.youtube.com/playlist?list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi)
+- **Backward pass:**  
+  - Measure how far the predicted output is from the actual target (this is the **loss**).
+  - Calculate how to adjust each parameter to improve future predictions (**gradients**).
+  - Update the parameters using these gradients — this helps the model improve.
 
+- Summary
+  - **Input $\rightarrow$ Forward Pass $\rightarrow$ Loss $\rightarrow$ Backward Pass $\rightarrow$ Parameter Update $\rightarrow$ Repeat**
+  - The model repeats this process many times, gradually improving its predictions.
 
-## Why neural networks?
-\
+## Why neural networks? {.smaller}
 
 - They can learn very complex functions.
   - The fundamental tradeoff is primarily controlled by the **number of layers** and **layer sizes**.
@@ -200,8 +283,7 @@ mglearn.plots.plot_two_hidden_layer_graph()
 - They've had some incredible successes in the last 12 years.
 - Transfer learning (coming later today) is really useful.  
 
-## Why not neural networks?
-\
+## Why not neural networks? {.smaller}
 
 - Often they require a lot of data.
 - They require a lot of compute time, and, to be faster, specialized hardware called [GPUs](https://en.wikipedia.org/wiki/Graphics_processing_unit).
@@ -215,7 +297,6 @@ mglearn.plots.plot_two_hidden_layer_graph()
     - I'll show you some ways to use neural networks without training them yourselves. 
 
 ## Deep learning software
-\
 
 The current big players are:
 
@@ -232,7 +313,7 @@ Both are heavily used in industry. If interested, see [comparison of deep learni
 - [Computer vision](https://en.wikipedia.org/wiki/Computer_vision) refers to understanding images/videos, usually using ML/AI. 
 - In the last decade this field has been dominated by deep learning. We will explore **image classification** and **object detection**.
 
-## Introduction to computer vision
+## Introduction to computer vision {.smaller}
 \
 
 - image classification: is this a cat or a dog?
@@ -242,10 +323,35 @@ Both are heavily used in industry. If interested, see [comparison of deep learni
 - and much more...
 
 ![](img/vision-apps.jpeg)
+
 <!-- Source: https://learning.oreilly.com/library/view/python-advanced-guide/9781789957211/--> 
 
+## Convolutional Neural Networks (CNNs) {.smaller}
+- Neural networks come in different shapes depending on the type of data and the task.
+- CNNs are commonly used in **image classification, object detection, and medical imaging.**
+- What's the problem if we use the above feedforward architecture to learn patterns from images? 
 
-## Pre-trained models
+![](img/cnn-1.png){.nostretch fig-align="center" width="400px"}
+
+## Filters 
+
+- CNNs use filters that "slide" over the input to detect local patterns.
+
+![](img/cnn-4.png)
+
+- Play around with filters: https://setosa.io/ev/image-kernels/
+
+## CNNs 
+
+![](img/cnn-5.gif)
+
+## CNNs big picture
+
+![](img/cnn_big_picture.png)
+
+[source](https://developers.google.com/machine-learning/practica/image-classification/convolutional-neural-networks)
+
+## Pre-trained models {.smaller}
 \
 
 - In practice, very few people train an entire CNN from scratch because it requires a large dataset, powerful computers, and a huge amount of human effort to train the model.
@@ -263,7 +369,7 @@ Both are heavily used in industry. If interested, see [comparison of deep learni
 - Let's first apply one of these pre-trained models to our own problem right out of the box. 
 
 
-## Pre-trained models out-of-the-box 
+## Pre-trained models out-of-the-box {.smaller}
 \
 
 - We can easily download famous models using the `torchvision.models` module. All models are available with pre-trained weights (based on ImageNet's 224 x 224 images)
@@ -295,7 +401,7 @@ for image in images:
 :::
 
 
-## Pre-trained models out-of-the-box 
+## Pre-trained models out-of-the-box {.smaller}
 \
 
 - We got these predictions without "doing the ML ourselves".
@@ -328,14 +434,14 @@ for image in images:
 ## Pre-trained models out-of-the-box
 \
 
-- Here we are Pre-trained models out-of-the-box. 
+- Here we used pre-trained models out-of-the-box. 
 - Can we use pre-trained models for our own classification problem with our classes? 
 - Yes!! We have two options here:
     1. Add some extra layers to the pre-trained network to suit our particular task
     2. Pass training data through the network and save the output to use as features for training some other model
 
 
-## Pre-trained models to extract features 
+## Pre-trained models to extract features {.smaller}
 \
 
 - Let's use pre-trained models to extract features.
@@ -343,7 +449,7 @@ for image in images:
 - The feature vector is usually extracted from the last layer, before the classification layer from the pre-trained network. 
 - You can think of each layer a transformer applying some transformations on the input received to that later. 
 
-![](img/cnn-ex.png)
+![](img/cnn-ex.png){.nostretch fig-align="center" width="600px"}
 
 
 ## Pre-trained models to extract features 
@@ -397,7 +503,7 @@ Z_train, y_train, Z_valid, y_valid = get_features(
 )
 ```
 
-## Shape of the feature vector
+## Shape of the feature vector {.smaller}
 \
 
 - Now we have extracted feature vectors for all examples. What's the shape of these features?
@@ -408,7 +514,7 @@ Z_train.shape
 
 - The size of each feature vector is 1024 because the size of the last layer in densenet architecture is 1024.  
 
-![](img/densenet-architecture.png)
+![](img/densenet-architecture.png){.nostretch fig-align="center" width="700px"}
 
 [Source](https://towardsdatascience.com/understanding-and-visualizing-densenets-7f688092391a)
 
@@ -454,14 +560,14 @@ show_predictions(pipe, Z_valid, y_valid, dataloaders['valid'], class_names, num_
 :::
 
 
-## Object detection 
+## Object detection {.smaller}
 \
 
 - Another useful task and tool to know is object detection using YOLO model. 
 - Let's identify objects in a sample image using a pretrained model called YOLO8. 
 - List the objects present in this image.
 
-![](data/yolo_test/3356700488_183566145b.jpg)
+![](data/yolo_test/3356700488_183566145b.jpg){.nostretch fig-align="center" width="400px"}
 
 ## Object detection using [YOLO](https://docs.ultralytics.com/)
 \
@@ -512,8 +618,7 @@ plt.show()
 ```
 :::
 
-
-## Summary 
+## Summary {.smaller}
 \
 
 - Neural networks are a flexible class of models.
