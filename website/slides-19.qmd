@@ -1,5 +1,5 @@
 ---
-title: "CPSC 330 Lecture 18: Introduction to deep learning and computer vision"
+title: "CPSC 330 Lecture 19: Introduction to deep learning and computer vision"
 author: "Firas Moosvi"
 format: 
     revealjs:
