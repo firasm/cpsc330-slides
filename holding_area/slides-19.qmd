@@ -1,5 +1,5 @@
 ---
-title: "CPSC 330 Lecture 19: Time series"
+title: "CPSC 330 Lecture 20: Time series"
 author: "Firas Moosvi"
 format: 
     revealjs:
