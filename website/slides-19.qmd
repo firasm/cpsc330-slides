@@ -31,6 +31,8 @@ import matplotlib.image as mpimg
 %matplotlib inline
 ```
 
+<!-- 
+
 ## Announcements
 
 - Final Exam reservations for the CBTF will open on **June 16th at 10 AM**
@@ -40,7 +42,6 @@ import matplotlib.image as mpimg
 - HW9 has also been released (due June 18th at 10 PM)
   - We're almost at the end of term! Hang in there 😊!
 
-<!-- 
 # iClicker 18.0
 
 iClicker cloud join link: **https://join.iclicker.com/YJHS**
@@ -54,9 +55,7 @@ iClicker cloud join link: **https://join.iclicker.com/YJHS**
 - (E) I felt the midterm was a good reflection of what we cover in the lectures and homework assignments. 
 - -->
 
-## iClicker 18.1 (Recap)
-
-iClicker cloud join link: **https://join.iclicker.com/YJHS**
+## Clicker 18.1 (Recap)
 
 **Select all of the following statements which are TRUE.**
 
