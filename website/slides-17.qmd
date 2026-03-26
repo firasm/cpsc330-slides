@@ -25,6 +25,7 @@ editor:
 - Reminder: Please double check your Midterm 2 CBTF booking!
  -->
 
+<!-- 
 ## Similarity metrics {.smaller}
 - Similarity based on Euclidean distance
 
@@ -38,7 +39,7 @@ $$similarity_{dot product}(vec1,vec2) = vec1.vec2$$
 - Cosine similarity: normalized version of dot product. 
 
 $$similarity_{cosine}(vec1,vec2) = \frac{vec1.vec2}{\left\lVert vec1\right\rVert_2 \left\lVert vec2\right\rVert_2}$$
-
+ -->
 
 ## Which metric in what context? {.smaller}
 
