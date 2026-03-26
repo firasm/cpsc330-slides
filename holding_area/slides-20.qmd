@@ -14,13 +14,6 @@ format:
         - img/        
 ---
 
-## Announcements
-
-- Final Exam reservations are now open!
-- Midterm 2 grading is underway.
-- Exam Review Sessions (MT1 and MT2) will happen later this week.
-- Wednesdays's class will likely end by 12 PM, I'll stick around for questions for a (long) while.
-
 # iClicker Exercise 19.1
 
 Select all of the following statements which are TRUE.
