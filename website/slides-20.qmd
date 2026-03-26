@@ -20,15 +20,31 @@ format:
 - No new announcements today! 
 - -->
 
-## Motivation
+```{python}
+import matplotlib.pyplot as plt
+import os, sys
+import numpy as np
+import pandas as pd
+sys.path.append(os.path.join(os.path.abspath("."), "code"))
+from time_series_code import *
+from sklearn.compose import ColumnTransformer, make_column_transformer
+from sklearn.dummy import DummyClassifier
+from sklearn.ensemble import RandomForestRegressor
+from sklearn.impute import SimpleImputer
+from sklearn.linear_model import LogisticRegression, Ridge
 
-- **Time series** is a collection of data points indexed in time order. 
-- Time series is everywhere:
-    - Physical sciences (e.g., weather forecasting)  
-    - Economics, finance (e.g., stocks, market trends)
-    - Engineering (e.g., energy consumption)
-    - Social sciences 
-    - Sports analytics
+from sklearn.model_selection import (
+    TimeSeriesSplit,
+    cross_val_score,
+    cross_validate,
+    train_test_split,
+)
+from sklearn.pipeline import Pipeline, make_pipeline
+from sklearn.preprocessing import OneHotEncoder, OrdinalEncoder, StandardScaler
+
+from datetime import datetime
+```
+
 
 ## Lecture learning objectives 🎯
 
@@ -60,6 +76,16 @@ format:
 | You have a collection of documents without any labels and want to group them into themes. | ? |
 | You want to classify the emotion of a set of text messages, but you do not have any labeled data. | ? |
 | You have a small dataset with ~500 images containing pictures and names of 20 different Computer Science faculty members from UBC. Your goal is to develop a reasonably accurate multi-class classification model for this task.| ? |
+
+## Motivation
+
+- **Time series** is a collection of data points indexed in time order. 
+- Time series is everywhere:
+    - Physical sciences (e.g., weather forecasting)  
+    - Economics, finance (e.g., stocks, market trends)
+    - Engineering (e.g., energy consumption)
+    - Social sciences 
+    - Sports analytics
 
 ## Loan default prediction (tabular data) {.scrollable .smaller} 
 
