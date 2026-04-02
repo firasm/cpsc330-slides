@@ -60,12 +60,6 @@ DATA_DIR = os.path.join(os.path.abspath("."), "data/")
 
 ![](img/inukshuk.jpeg){.nostretch fig-align="center" width="500px"}
 
-## Announcements
-
-- HW9 has been released (due on December 5th)
-  - Almost there! You've got this! 😊
-- Next lecture on Ethics will be delivered by Giulia (Section 101 and 103 instructor)
-
 ## iClicker (Survival analysis recap) {.smaller}
 
 **Select all of the following statements which are TRUE.**

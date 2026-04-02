@@ -14,7 +14,7 @@ format:
         - img/        
 ---
 
-# iClicker Exercise 19.1
+# Clicker Exercise 20.1
 
 Select all of the following statements which are TRUE.
 
@@ -26,9 +26,7 @@ Select all of the following statements which are TRUE.
 
 ## Recap: Time Series Analysis
 
-# iClicker 20.1
-
-iClicker cloud join link: **https://join.iclicker.com/YJHS**
+# Clicker 21.1
 
 **Select all of the following statements which are TRUE.**
 
@@ -43,9 +41,7 @@ iClicker cloud join link: **https://join.iclicker.com/YJHS**
 
 For this demo, each student should [click this link](https://github.com/new?template_name=lecture20_demo&template_owner=ubc-cpsc330) to create a new repo in their accounts, then clone that repo locally to follow along with the demo from today.
 
-# iClicker 20.2
-
-iClicker cloud join link: **https://join.iclicker.com/YJHS**
+# Clicker 21.2
 
 **Select all of the following statements which are TRUE.**
 
