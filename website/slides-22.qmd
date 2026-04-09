@@ -56,11 +56,7 @@ warnings.filterwarnings("default")
 DATA_DIR = os.path.join(os.path.abspath("."), "data/")
 ```
 
-## Focus on the breath!
-
-![](img/inukshuk.jpeg){.nostretch fig-align="center" width="500px"}
-
-## iClicker (Survival analysis recap) {.smaller}
+## Clicker (Survival analysis recap) {.smaller}
 
 **Select all of the following statements which are TRUE.**
 
@@ -253,33 +249,6 @@ The first explanation shows the output of the code, whereas the second does not.
 5. [ ] What is the recommended next action?
 6. [ ] How will we monitor after deployment?
 
-
-# ML and decision making 
-
-## ❓❓ Questions for you
-
-Imagine you are tasked with developing a recommender system for YouTube. You possess data on which users clicked on which videos. After spending considerable time building a recommender system using this data, you realize it isn't producing high-quality recommendations. What could be the reasons for this?
-
-## Think beyond the data that's given to you
-
-Questions you have to consider:
-
-- Who is the decision maker?
-- What are their objectives?
-- What are their alternatives?
-- What is their context?
-- What data do I need?
-
-## Decisions involve a few key pieces
-
-- The **decision variable**: the variable that is manipulated through the decision.
-  - E.g. how much should I sell my house for? (numeric)
-  - E.g. should I sell my house? (categorical)
-- The decision-maker's **objectives**: the variables that the decision-maker ultimately cares about, and wishes to manipulate indirectly through the decision variable.
-  - E.g. my total profit, time to sale, etc.
-- The **context**: the variables that mediate the relationship between the decision variable and the objectives.
-  - E.g. the housing market, cost of marketing it, my timeline, etc.
-
 ## Poor vs. Effective communication {.smaller}
 
 Which one is poor and which one is effective? Why? 
@@ -337,7 +306,35 @@ Clear value, operational impact, required effort, and risks. Enables decision-ma
 Key difference:
 Shift from model-centric communication → decision-ready communication.
 
+## Break
 
+Let's take a 5-min break
+
+# ML and decision making 
+
+## ❓❓ Questions for you
+
+Imagine you are tasked with developing a recommender system for YouTube. You possess data on which users clicked on which videos. After spending considerable time building a recommender system using this data, you realize it isn't producing high-quality recommendations. What could be the reasons for this?
+
+## Think beyond the data that's given to you
+
+Questions you have to consider:
+
+- Who is the decision maker?
+- What are their objectives?
+- What are their alternatives?
+- What is their context?
+- What data do I need?
+
+## Decisions involve a few key pieces
+
+- The **decision variable**: the variable that is manipulated through the decision.
+  - E.g. how much should I sell my house for? (numeric)
+  - E.g. should I sell my house? (categorical)
+- The decision-maker's **objectives**: the variables that the decision-maker ultimately cares about, and wishes to manipulate indirectly through the decision variable.
+  - E.g. my total profit, time to sale, etc.
+- The **context**: the variables that mediate the relationship between the decision variable and the objectives.
+  - E.g. the housing market, cost of marketing it, my timeline, etc.
 
 # Confidence and `predict_proba`
 
@@ -451,7 +448,7 @@ Some examples from [Calling BS visualization videos](https://www.youtube.com/wat
 - The principle of proportional ink: [most read books](https://youtu.be/oNhusd3xFC4?t=147)
 
 
-# [Class demo](https://github.com/UBC-CS/cpsc330-2025W1/blob/main/lectures/102-Varada-lectures/class_demos/demo_21-communication.ipynb) 
+<!-- # [Class demo](https://github.com/UBC-CS/cpsc330-2025W1/blob/main/lectures/102-Varada-lectures/class_demos/demo_21-communication.ipynb)  -->
 
 ## Things to watch out for
 - Chopping off the x-axis
