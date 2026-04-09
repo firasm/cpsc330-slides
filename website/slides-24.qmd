@@ -14,26 +14,6 @@ format:
         - img/        
 ---
 
-## Announcements
-
-- Last class today 🎉 ! 
-- HW9 is due today June 18th at 9:59 PM
-- Last Learning Log (LL05) due June 19th at 9:59 PM
-- Bonus Learning Log (if you missed one) due June 19th at 9:59 PM
-- Ethics bonus assignment is due tomorrow (June 19th) at 11:59pm. 
-- Final Exam Study guide has been posted!
-
-# Ethics Class
-
-- See separate slides!
-
-## Course evaluations (~10 mins)
-
-https://canvas.ubc.ca/courses/165412/external_tools/53187
-
-## Break
-
-
 ## ❓❓ Questions for you
 
 Imagine you've created a machine learning model and are eager to share it with others. Consider the following scenarios for sharing your model:
@@ -79,7 +59,8 @@ For this demo, each student should [click this link](https://github.com/new?temp
 
 - Part 3: Communication, Ethics, and Deployment
 
-## What we didn't cover 
+## What we didn't cover
+
 - How do these models work under the hood 
 
 ![](img/modular-ML.png)
@@ -90,11 +71,10 @@ Lots of room for improvement. Here are some things on my mind.
 
 - Balance the pace of the course a bit more (too intense at the beginning, too relaxed at the end!)
 - Flipped classroom in a more effective way in the first part of the course. 
-- More demos during lecture time
-- Worksheets/practice questions during tutorials 
-- Add a course project !?!
 - Add more interactive components in the lectures
-- Some material to cover: dealing with outliers, data collection, large language models
+- More activities during lecture time
+- Add a course project !?!
+- Some material to cover: dealing with outliers, data collection, newer methods
 
 ## What next?
 
@@ -126,16 +106,19 @@ For each of the scenarios below
 |-------------------|--------------------------|
 | QueuePredictor app    |  Inform callers how long they'll wait on hold given the current call volume|
 | To-doList App    | Keep track of the tasks that a user inputs and organize them by date | 
-| SegmentSphere App | To segment customers to tailor marketing strategies based on purchasing behavior |
+| SegmentSphere App | To segment customers to tailor marketing strategies based on purchasing behaviour |
 | Video app	        | Recommend useful videos|
 | Dining app        | Identify cuisine by a restaurant's menu|
 | Weather app       | Calculate precipitation in six hour increments for a geographic region  |
-| EvoCarShare app   | Calculate number of car rentals in four increaments at a particular Evo parking spot |
+| EvoCarShare app   | Calculate number of car rentals in four increments at a particular Evo parking spot |
 | Pharma app| Understand the effect of a new drug on patient survival time |
-
 
 ## Conclusion & farewell
 
 That’s all, folks. We made it! Good luck on your final exam! When you get a chance, please let me know what worked for you and what didn’t work for you in this course.
 
 ![](img/eva-congrats.png)
+
+## Course evaluations (~10 mins)
+
+https://canvas.ubc.ca/courses/178047/external_tools/53187
