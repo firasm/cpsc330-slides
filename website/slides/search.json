@@ -1705,7 +1705,7 @@
     "href": "slides-01.html#cpsc-330-website",
     "title": "Lecture 1: Introduction to CPSC 330",
     "section": "CPSC 330 website",
-    "text": "CPSC 330 website\n\nCourse Jupyter book: https://ubc-cs.github.io/cpsc330-2025W2\nCourse GitHub repository: https://github.com/UBC-CS/cpsc330-2025W2\n\n\n\n\n\n\n\nImportant\n\n\nCourse website: https://ubc-cs.github.io/cpsc330-2025W2 is the most important link. You can access the course website from Canvas.\n\nPlease read everything on there!\nYou can find the source code for everything we do here: https://ubc-cs.github.io/cpsc330-2025W2.\n\n\n\n\n\n\n\n\n\nImportant\n\n\nMake sure you go through the syllabus thoroughly and complete the syllabus quiz before next class!"
+    "text": "CPSC 330 website\n\nCourse Jupyter book: https://ubc-cs.github.io/cpsc330-2026S1\nCourse GitHub repository: https://github.com/UBC-CS/cpsc330-2026S1\n\n\n\n\n\n\n\nImportant\n\n\nCourse website: https://ubc-cs.github.io/cpsc330-2026S1 is the most important link. You can access the course website from Canvas.\n\nPlease read everything on there!\nYou can find the source code for everything we do here: https://ubc-cs.github.io/cpsc330-2026S1.\n\n\n\n\n\n\n\n\n\nImportant\n\n\nMake sure you go through the syllabus thoroughly and complete the syllabus quiz before next class!"
   },
   {
     "objectID": "slides-01.html#asking-questions-during-class",
@@ -1775,7 +1775,7 @@
     "href": "slides-01.html#lecture-notes",
     "title": "Lecture 1: Introduction to CPSC 330",
     "section": "Lecture notes",
-    "text": "Lecture notes\n\nAll the lectures from last year are available here.\nWe cannot promise anything will stay the same from last year to this year, so read them in advance at your own risk.\nA “finalized” version will be pushed to GitHub and the Jupyter book right before each class.\nEach instructor will have slightly adapted versions of notes to present slides during lectures.\n\nYou will find the link to these slides in our repository: https://github.com/UBC-CS/cpsc330-2025W2/tree/main/lectures/103-Firas-lectures"
+    "text": "Lecture notes\n\nAll the lectures from last year are available here.\nWe cannot promise anything will stay the same from last year to this year, so read them in advance at your own risk.\nA “finalized” version will be pushed to GitHub and the Jupyter book right before each class.\nEach instructor will have slightly adapted versions of notes to present slides during lectures.\n\nYou will find the link to these slides in our repository: https://github.com/UBC-CS/cpsc330-2026S1/tree/main/lectures/103-Firas-lectures"
   },
   {
     "objectID": "slides-01.html#grades",
@@ -1817,7 +1817,7 @@
     "href": "slides-01.html#cpsc-330-vs.-340",
     "title": "Lecture 1: Introduction to CPSC 330",
     "section": "CPSC 330 vs. 340",
-    "text": "CPSC 330 vs. 340\nRead https://ubc-cs.github.io/cpsc330-2025W2/docs/330_vs_340.html which explains the difference between two courses.\nTLDR:\n\n340: how do ML models work?\n330: how do I use ML models?\nCPSC 340 has many prerequisites.\nCPSC 340 goes deeper but has a more narrow scope.\nI think CPSC 330 will be more useful if you just plan to apply basic ML."
+    "text": "CPSC 330 vs. 340\nRead https://ubc-cs.github.io/cpsc330-2026S1/docs/330_vs_340.html which explains the difference between two courses.\nTLDR:\n\n340: how do ML models work?\n330: how do I use ML models?\nCPSC 340 has many prerequisites.\nCPSC 340 goes deeper but has a more narrow scope.\nI think CPSC 330 will be more useful if you just plan to apply basic ML."
   },
   {
     "objectID": "slides-01.html#what-is-machine-learning-ml",
@@ -2097,7 +2097,7 @@
     "href": "slides-02.html#suggested-workflow-for-working-with-jupyter-notebooks",
     "title": "Lecture 2: Terminology, Baselines, Decision Trees",
     "section": "Suggested Workflow for working with Jupyter Notebooks",
-    "text": "Suggested Workflow for working with Jupyter Notebooks\n\nCreate a folder on your computer that will have all the CPSC 330 repos:\n\n~/School/Year3/CPSC330/ &lt;– Consider this your CPSC parent folder\n\nCreate subfolders for: hw, class, practice\nIn the hw folder, you will then clone hw1, hw2, hw3, etc…\nIn the class folder, you will clone the cpsc330-2025W2 repo which contains all the class jupyter notebooks\n\nDo not make any changes to files in this directory/repo, you will have trouble when you pull stuff during each class.\nIf you did make changes, you can reset to the last commit and DESTROY any changes you made (be careful with this command) using: git reset --hard\n\nIn the practice folder, you can copy any notebooks (.ipynb) and files (like data/*.csv) you want to try running locally and experiment"
+    "text": "Suggested Workflow for working with Jupyter Notebooks\n\nCreate a folder on your computer that will have all the CPSC 330 repos:\n\n~/School/Year3/CPSC330/ &lt;– Consider this your CPSC parent folder\n\nCreate subfolders for: hw, class, practice\nIn the hw folder, you will then clone hw1, hw2, hw3, etc…\nIn the class folder, you will clone the cpsc330-2026S1 repo which contains all the class jupyter notebooks\n\nDo not make any changes to files in this directory/repo, you will have trouble when you pull stuff during each class.\nIf you did make changes, you can reset to the last commit and DESTROY any changes you made (be careful with this command) using: git reset --hard\n\nIn the practice folder, you can copy any notebooks (.ipynb) and files (like data/*.csv) you want to try running locally and experiment"
   },
   {
     "objectID": "slides-02.html#recap-machine-learning-workflow",

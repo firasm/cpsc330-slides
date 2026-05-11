@@ -145,17 +145,17 @@ policies.
 
 ## CPSC 330 website
 
-- Course Jupyter book: https://ubc-cs.github.io/cpsc330-2025W2
-- Course GitHub repository: https://github.com/UBC-CS/cpsc330-2025W2
+- Course Jupyter book: https://ubc-cs.github.io/cpsc330-2026S1
+- Course GitHub repository: https://github.com/UBC-CS/cpsc330-2026S1
 
 ::: {.callout-important}
-Course website: [https://ubc-cs.github.io/cpsc330-2025W2](https://ubc-cs.github.io/cpsc330-2025W2) is the most important link. You can access the course website from Canvas.
+Course website: [https://ubc-cs.github.io/cpsc330-2026S1](https://ubc-cs.github.io/cpsc330-2026S1) is the most important link. You can access the course website from Canvas.
 
 ![](img/canvas.png)
 
 Please read everything on there!
 
-You can find the source code for everything we do here: https://ubc-cs.github.io/cpsc330-2025W2.
+You can find the source code for everything we do here: https://ubc-cs.github.io/cpsc330-2026S1.
 :::
 
 ::: {.callout-important}
@@ -171,7 +171,7 @@ If you would prefer to write notes and ask questions later, you are more than we
 ## Registration, waitlist and prerequisites
 
 ::: {.callout-important}
-Please go through [this document](https://ubc-cs.github.io/cpsc330-2025W2/syllabus/#registration) carefully before contacting your instructors about these issues. Even then, we are very unlikely to be able to help with registration, waitlist or prerequisite issues.
+Please go through [this document](https://ubc-cs.github.io/cpsc330-2026S1/syllabus/#registration) carefully before contacting your instructors about these issues. Even then, we are very unlikely to be able to help with registration, waitlist or prerequisite issues.
 :::
 
 - We are expecting that all students registered on the waitlist have already, or will soon get a notification to join the course!
@@ -180,7 +180,8 @@ Please go through [this document](https://ubc-cs.github.io/cpsc330-2025W2/syllab
 
 ## Lecture format
 
-- In person lectures Tuesday and Thursday from 3:30 PM - 5 PM
+- In person lectures Monday, Wednesday, and Friday from 10:00 AM to 12:20 PM
+- **WARNING**: This is Summer, things will be fast!!
 - There will be videos to watch before almost every lecture. You will find the list of pre-watch videos in the schedule on the course webpage.
 - We will also try to work on some questions and exercises together during the class. 
 - All materials will be posted in this GitHub repository. 
@@ -195,14 +196,15 @@ Please go through [this document](https://ubc-cs.github.io/cpsc330-2025W2/syllab
 
 ## Exams 
 
-- We'll have two self-scheduled midterms over a few day window and one final exam in Computer-based Testing Facility (CBTF). 
+- We'll have three self-scheduled midterms over a few days and one final exam.
+- All exams will be held in Computer-based Testing Facility (CBTF). 
 
 <!-- 
 ## Course calendar
 
 Here is our course Calendar. Make sure you check it on a regular basis: 
 
-[https://htmlpreview.github.io/?https://github.com/UBC-CS/cpsc330-2025W2/blob/main/docs/calendar.html](https://htmlpreview.github.io/?https://github.com/UBC-CS/cpsc330-2025W2/blob/main/docs/calendar.html)
+[https://htmlpreview.github.io/?https://github.com/UBC-CS/cpsc330-2026S1/blob/main/docs/calendar.html](https://htmlpreview.github.io/?https://github.com/UBC-CS/cpsc330-2026S1/blob/main/docs/calendar.html)
  -->
 
 ## Course structure
@@ -211,12 +213,13 @@ Here is our course Calendar. Make sure you check it on a regular basis:
 - Part II: Unsupervised learning, transfer learning, common special cases, midterm 1
 - Part III: Communication and ethics
   - ML skills are not beneficial if you can't use them responsibly and communicate your results. In this module we'll talk about these aspects. 
+  - 
 ## Code of conduct
 
-- Our main forum for getting help will be [Ed Discussion](https://edstem.org/us/join/rNVu2p).
+- Our main forum for getting help will be [Ed Discussion](https://edstem.org/us/join/BMH77Z).
 
 ::: {.callout-important}
-Please read [this entire document about asking for help](https://ubc-cs.github.io/cpsc330-2025W2/docs/asking_for_help.html).
+Please read [this entire document about asking for help](https://ubc-cs.github.io/cpsc330-2026S1/docs/asking_for_help.html).
 **TLDR:** Be nice.
 :::
 
@@ -228,14 +231,14 @@ We will use the following tools throughout the course:
 
 - **Coding:** `Python`, with either `Jupyter Lab` or `VS Code`
 - **Version Control:** `git` and `GitHub`
-- **Assignment Submission:** `Gradescope`
-- **Discussion Forum:** `Piazza`
-- **Exams and Final Grades:** `PrairieLearn` and `Canvas`
-- **Recommended Browsers:** [Google Chrome](https://www.google.com/chrome/) or [Mozilla Firefox](https://www.mozilla.org/en-US/firefox/new/)
+- **Assignment Submission:** `PrairieLearn`
+- **Discussion Forum:** `Ed Discussion`
+- **Exams and Final Grades:** `PrairieLearn`
+- **Recommended Browsers:** [Microsoft Edge](https://www.microsoft.com/en-us/edge/download), or [Mozilla Firefox](https://www.mozilla.org/en-US/firefox/new/)or [Safari](https://www.apple.com/ca/safari/). Google Chrome is *not* recommended for [reasons](https://www.zdnet.com/article/google-may-have-downloaded-a-4gb-chrome-file-to-your-pc-heres-why/)...
 
 ## Course `conda` environment
 
-- Follow the setup instructions [here](https://ubc-cs.github.io/cpsc330-2025W1/docs/setup.html) to create a course `conda` environment on your computer. 
+- Follow the setup instructions [here](https://ubc-cs.github.io/cpsc330-2026S1/docs/setup.html) to create a course `conda` environment on your computer. 
 - If you do not have your computer with you, you can partner up with someone and set up your own computer later.
 
 ## Python requirements/resources {.smaller}
@@ -253,7 +256,7 @@ Homework 1 is all about Python.
 
 :::{.callout-note}
 We do not have time to teach all the Python we need 
-but you can find some useful Python resources [here](https://github.com/UBC-CS/cpsc330-2025W1/blob/main/docs/resources.md).  
+but you can find some useful Python resources [here](https://github.com/UBC-CS/cpsc330-2026S1/blob/main/docs/resources.md).  
 :::
 
 <br><br>
@@ -262,10 +265,10 @@ but you can find some useful Python resources [here](https://github.com/UBC-CS/c
 What does a typical week look like?
 
 - **Before class:** Watch pre-lecture videos or preview notes  
-- **In class:** Two 80-minute lectures with iClicker questions, activities, and live demos  
+- **In class:** Interactive Lectures with questions, activities, and live demos  
 - **Support:** Weekly tutorials and office hours  
 
-- **Practice:** Weekly assignments (except exam weeks)  
+- **Practice:** Weekly assignments (x2)
 
 ## Tips for success:
 
@@ -306,36 +309,36 @@ x
 ## More about Jupyter lab
 
 - By default, Jupyter prints out the result of the last line of code, so you don't need as many `print` statements.
-- In addition to the "live" notebooks, Jupyter notebooks can be statically rendered in the web browser, e.g. [this](https://github.com/UBC-CS/cpsc330-2025W2/blob/main/lectures/01_intro.ipynb).
+- In addition to the "live" notebooks, Jupyter notebooks can be statically rendered in the web browser, e.g. [this](https://github.com/UBC-CS/cpsc330-2026S1/blob/main/lectures/01_intro.ipynb).
   - This can be convenient for quick read-only access, without needing to launch the Jupyter notebook/lab application.
   - But you need to launch the app properly to interact with the notebooks.
 
 ## Lecture notes
 
-- All the lectures from last year are [available here](https://ubc-cs.github.io/cpsc330-2024W2).
+- All the lectures from last year are [available here](https://ubc-cs.github.io/cpsc330-2025W2).
 - We cannot promise anything will stay the same from last year to this year, so read them in advance at your own risk.
-- A "finalized" version will be pushed to [GitHub](https://github.com/UBC-CS/cpsc330-2025W2) and the [Jupyter book](https://ubc-cs.github.io/cpsc330-2025W2) right before each class.
+- A "finalized" version will be pushed to [GitHub](https://github.com/UBC-CS/cpsc330-2026S1) and the [Jupyter book](https://ubc-cs.github.io/cpsc330-2026S1) right before each class.
 - Each instructor will have slightly adapted versions of notes to present slides during lectures.  
 - You will find the link to these slides in our repository: 
-https://github.com/UBC-CS/cpsc330-2025W2/tree/main/lectures/103-Firas-lectures
+https://github.com/UBC-CS/cpsc330-2026S1/tree/main/lectures/103-Firas-lectures
 
 ## Grades
 
-- The grading breakdown is [here](https://ubc-cs.github.io/cpsc330-2025W2/syllabus.html#grading-scheme). 
-- The policy on challenging grades is [here](https://ubc-cs.github.io/cpsc330-2025W2/docs/grades.html#reasonable-grading-concerns).
+- The grading breakdown is [here](https://ubc-cs.github.io/cpsc330-2026S1/syllabus.html#grading-scheme). 
+- The policy on challenging grades is [here](https://ubc-cs.github.io/cpsc330-2026S1/docs/grades.html#reasonable-grading-concerns).
 
 ## Setting up your computer for the course 
 
 ## Recommended browser and tools
 
-- You can install Chrome [here](https://www.google.com/chrome/).
 - You can install Firefox [here](https://www.mozilla.org/en-US/firefox/new/). 
+- You can install Edge [here](https://www.microsoft.com/en-us/edge/download).
 
 In this course, we will primarily be using `Python` , `git`, `GitHub`, `Canvas`, `Gradescope`, `Ed DIscussion`, and `PrairieLearn`. 
 
 ## Course `conda` environment
 
-- Follow the setup instructions [here](https://ubc-cs.github.io/cpsc330-2025W2/docs/setup.html) to create a course `conda` environment on your computer. 
+- Follow the setup instructions [here](https://ubc-cs.github.io/cpsc330-2026S1/docs/setup.html) to create a course `conda` environment on your computer. 
 - If you do not have your computer with you, you can partner up with someone and set up your own computer later.
 
 ## Python requirements/resources
@@ -354,14 +357,14 @@ Homework 1 is all about Python.
 
 :::{.callout-note}
 We do not have time to teach all the Python we need 
-but you can find some useful Python resources [here](https://github.com/UBC-CS/cpsc330-2025W2/blob/main/docs/resources.md).  
+but you can find some useful Python resources [here](https://github.com/UBC-CS/cpsc330-2026S1/blob/main/docs/resources.md).  
 :::
 
 <br><br>
 
 ## CPSC 330 vs. 340
 
-Read [https://ubc-cs.github.io/cpsc330-2025W2/docs/330_vs_340.html](https://ubc-cs.github.io/cpsc330-2025W2/docs 330_vs_340.html) which explains the difference between two courses.  
+Read [https://ubc-cs.github.io/cpsc330-2026S1/docs/330_vs_340.html](https://ubc-cs.github.io/cpsc330-2026S1/docs 330_vs_340.html) which explains the difference between two courses.  
 
 **TLDR:**
 
