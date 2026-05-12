@@ -219,7 +219,7 @@ Here is our course Calendar. Make sure you check it on a regular basis:
 - Our main forum for getting help will be [Ed Discussion](https://edstem.org/us/join/BMH77Z).
 
 ::: {.callout-important}
-Please read [this entire document about asking for help](https://ubc-cs.github.io/cpsc330-2026S1/docs/asking_for_help.html).
+Please read [this entire document about asking for help](https://ubc-cs.github.io/cpsc330-2026S1/docs/asking_for_help).
 **TLDR:** Be nice.
 :::
 
@@ -238,7 +238,7 @@ We will use the following tools throughout the course:
 
 ## Course `conda` environment
 
-- Follow the setup instructions [here](https://ubc-cs.github.io/cpsc330-2026S1/docs/setup.html) to create a course `conda` environment on your computer. 
+- Follow the setup instructions [here](https://ubc-cs.github.io/cpsc330-2026S1/docs/setup) to create a course `conda` environment on your computer. 
 - If you do not have your computer with you, you can partner up with someone and set up your own computer later.
 
 ## Python requirements/resources {.smaller}
@@ -324,8 +324,8 @@ https://github.com/UBC-CS/cpsc330-2026S1/tree/main/lectures/103-Firas-lectures
 
 ## Grades
 
-- The grading breakdown is [here](https://ubc-cs.github.io/cpsc330-2026S1/syllabus.html#grading-scheme). 
-- The policy on challenging grades is [here](https://ubc-cs.github.io/cpsc330-2026S1/docs/grades.html#reasonable-grading-concerns).
+- The grading breakdown is [here](https://ubc-cs.github.io/cpsc330-2026S1/syllabus/#grading-scheme). 
+- The policy on challenging grades is [here](https://ubc-cs.github.io/cpsc330-2026S1/docs/grades#reasonable-grading-concerns).
 
 ## Setting up your computer for the course 
 
@@ -338,7 +338,7 @@ In this course, we will primarily be using `Python` , `git`, `GitHub`, `Canvas`,
 
 ## Course `conda` environment
 
-- Follow the setup instructions [here](https://ubc-cs.github.io/cpsc330-2026S1/docs/setup.html) to create a course `conda` environment on your computer. 
+- Follow the setup instructions [here](https://ubc-cs.github.io/cpsc330-2026S1/docs/setup) to create a course `conda` environment on your computer. 
 - If you do not have your computer with you, you can partner up with someone and set up your own computer later.
 
 ## Python requirements/resources
@@ -364,7 +364,7 @@ but you can find some useful Python resources [here](https://github.com/UBC-CS/c
 
 ## CPSC 330 vs. 340
 
-Read [https://ubc-cs.github.io/cpsc330-2026S1/docs/330_vs_340.html](https://ubc-cs.github.io/cpsc330-2026S1/docs 330_vs_340.html) which explains the difference between two courses.  
+Read [https://ubc-cs.github.io/cpsc330-2026S1/docs/330_vs_340](https://ubc-cs.github.io/cpsc330-2026S1/docs 330_vs_340) which explains the difference between two courses.  
 
 **TLDR:**
 
