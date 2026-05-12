@@ -19,15 +19,15 @@ format:
 
 - My weekly office hours will be announced soon!
 
-- Homework 2 (hw2) was released on Monday, it is due Jan 19, 11:59 pm
+- Homework 2 (hw2) is released already!
   - You are welcome to broadly discuss it with your classmates but final answers and submissions must be your own.
   - Group submissions are not allowed for this assignment.
 - Advice on keeping up with the material
   - Practice!
-  - Make sure you run the lecture notes on your laptop and experiment with the code. 
+  - Reminder to run the lecture notes on your laptop and experiment with the code. 
   - Start early on homework assignments.
 
-- Last day to drop without a W standing is this Friday: **January 16, 2026**
+- Last day to drop without a W standing is this Friday: **May 15, 2026**
 
 ## Dropping lowest homework (Update)
 
