@@ -41,25 +41,20 @@ DATA_DIR = 'data/'
 ## Announcements 
 
 - Things due this week 
-    - Homework 1 (hw1): Due Jan 12 , 11:59 pm
+    - Homework 1
     - There are some assert statements in the notebook you can use to check your work! If they fail, you didn't get the exercise correct
-<!-- - Homework 2 (hw2) has been released (Due: Sept 16, 11:59pm)
+- Homework 2 (hw2) has been released
     - There is some autograding in this homework.
--->
+
 - You can find the tentative due dates for all deliverables [here](https://ubc-cs.github.io/cpsc330-2026S1/#deliverable-due-dates-tentative).
 - Please monitor Ed Discussion (especially pinned posts and instructor posts) for announcements. 
 - I'll assume that you've watched the pre-lecture videos.
 
-## Participation marks (5%) in Section 202
+## Participation marks (10%)
 
-- In this section (202) we will not be using iClickers for "attendance"
+- You will have weekly "Learning Logs" where you will reflect on the material covered for the week
 
-- Instead, you will have weekly "Learning Logs" where you will reflect on the material covered for the week
-
-- The first Learning Log will be released tonight, and will be due Sunday Jan 11, 11:59 PM
-
-- Only students registered in section 202 will see these on PrairieLearn 
-
+- The first Learning Log will be released soon!
 <br><br>
 
 <!-- 
@@ -69,29 +64,6 @@ DATA_DIR = 'data/'
 - Please complete the anonymous restaurant survey on Qualtrics [here](https://ubc.ca1.qualtrics.com/jfe/form/SV_73VuZiuwM1eDVrw).
 - We will try to analyze this data set in the coming weeks.
 -->
-
-## Gradescope
-
-Make sure you can submit your assignment before the hw1 due date!
-
-- It is **required** for you to work in a GitHub repository, please maintain your GitHub repo up-to-date.
-
-- Some students are having trouble getting registered on Gradescope, we're working on a fix - come see me in the break or after class!
-
-<!-- ## Demo: Submit hw1 on Gradescope
-
-We are going to practice submitting HW1 on Gradescope so you all do it at least once! -->
-
-## Checklist for you in the first week
-
-- [ ] Are you able to access course [Canvas](https://canvas.ubc.ca/courses/165412) shell? 
-- [ ] Are you able to access [course forum: Ed Discussion](https://canvas.ubc.ca/courses/178047/external_tools/61383)?
-- [ ] Are you able to access [Gradescope](https://canvas.ubc.ca/courses/178047/external_tools/64398)? (If not, refer to the [Gradescope Student Guide](https://lthub.ubc.ca/guides/gradescope-student-guide/).)
-<!-- - [ ] Are you able to access [iClicker Cloud](https://join.iclicker.com/YJHS) for this course? -->
-- [ ] Did you follow the setup instructions [here](https://ubc-cs.github.io/cpsc330-2026S1/docs/setup) to create a course conda environment on your computer?
-<!-- - [ ] Did you complete the "Getting to know you" survey on Canvas? -->
-<!-- - [ ] Did you complete the anonymous [restaurant survey on Qualtrics](https://ubc.ca1.qualtrics.com/jfe/form/SV_73VuZiuwM1eDVrw)? -->
-- [ ] Are you almost finished or at least started with homework 1?
 
 ## Suggested Workflow for working with Jupyter Notebooks
 
@@ -127,7 +99,7 @@ By the end of this lesson, you will be able to:
 
 - Visit: https://agora.students.cs.ubc.ca
 - Login with your UBC CWL
-- Use enrol code: agentic
+- Use enrol code: canvas
 
 ![](img/firas/agora.png)
 
@@ -170,7 +142,7 @@ In the first part of this course, we'll focus on supervised machine learning.
 
 ## Clicker 2.2: Supervised vs unsupervised {.smaller}
 
-Participate using [Agora](https://agora.students.cs.ubc.ca) (code: agentic)
+Participate using [Agora](https://agora.students.cs.ubc.ca) (code: canvas)
 
 Select all of the following statements which are examples of supervised machine learning
 
@@ -183,7 +155,7 @@ Select all of the following statements which are examples of supervised machine 
 
 ## Clicker 2.3: Classification vs. Regression {.smaller}
 
-Participate using [Agora](https://agora.students.cs.ubc.ca) (code: agentic)
+Participate using [Agora](https://agora.students.cs.ubc.ca) (code: canvas)
  
 Select all of the following statements which are examples of regression problems
 

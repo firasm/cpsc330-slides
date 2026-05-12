@@ -61,7 +61,7 @@ A typical sequence of steps to train supervised machine learning models
 
 ## Clicker 3.1
 
-Participate using [Agora](https://agora.students.cs.ubc.ca) (code: agentic)
+Participate using [Agora](https://agora.students.cs.ubc.ca) (code: canvas)
 
 **Select all of the following statements which are TRUE.**
 
@@ -74,7 +74,7 @@ Participate using [Agora](https://agora.students.cs.ubc.ca) (code: agentic)
 
 ## Clicker 3.2
 
-Participate using [Agora](https://agora.students.cs.ubc.ca) (code: agentic)
+Participate using [Agora](https://agora.students.cs.ubc.ca) (code: canvas)
 
 **Select all of the following statements which are TRUE.**
 

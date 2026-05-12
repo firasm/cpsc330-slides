@@ -42,7 +42,7 @@ For this demo, each student should [click this link](https://github.com/new?temp
 
 ## Recap: Clicker 4.0a
 
-Participate using [Agora](https://agora.students.cs.ubc.ca) (code: agentic)
+Participate using [Agora](https://agora.students.cs.ubc.ca) (code: canvas)
 
 Which of the following scenarios do **NOT necessarily imply overfitting**? 
 
@@ -54,7 +54,7 @@ Which of the following scenarios do **NOT necessarily imply overfitting**?
 
 ## Recap: Clicker 4.0b
 
-Participate using [Agora](https://agora.students.cs.ubc.ca) (code: agentic)
+Participate using [Agora](https://agora.students.cs.ubc.ca) (code: canvas)
 
 Which of the following statements about **overfitting** is true? 
 
@@ -65,7 +65,7 @@ Which of the following statements about **overfitting** is true?
 
 ## Recap: Clicker 4.0c
 
-Participate using [Agora](https://agora.students.cs.ubc.ca) (code: agentic)
+Participate using [Agora](https://agora.students.cs.ubc.ca) (code: canvas)
 
 How might one address the issue of **underfitting** in a machine learning model. 
 
@@ -102,7 +102,7 @@ How might one address the issue of **underfitting** in a machine learning model.
 
 ## Clicker 4.1
 
-Participate using [Agora](https://agora.students.cs.ubc.ca) (code: agentic)
+Participate using [Agora](https://agora.students.cs.ubc.ca) (code: canvas)
 
 **Select all of the following statements which are TRUE.**
 
@@ -115,7 +115,7 @@ Participate using [Agora](https://agora.students.cs.ubc.ca) (code: agentic)
 
 ## Clicker 4.2
 
-Participate using [Agora](https://agora.students.cs.ubc.ca) (code: agentic)
+Participate using [Agora](https://agora.students.cs.ubc.ca) (code: canvas)
 
 **Select all of the following statements which are TRUE.**
 
