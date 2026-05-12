@@ -418,7 +418,7 @@ plot_tree_decision_boundary_and_tree(
 
 ## Clicker 2.4: Baselines and Decision trees {.smaller}
 
-iParticipate using Agora (code: agentic) https://join.iclicker.com/FZMQ
+iParticipate using Agora (code: canvas) 
 
 Select all of the following statements which are TRUE.
 
