@@ -130,21 +130,21 @@
     "href": "slides-04.html#recap-clicker-4.0a",
     "title": "Lecture 4: \\(k\\)-nearest neighbours and SVM RBFs",
     "section": "Recap: Clicker 4.0a",
-    "text": "Recap: Clicker 4.0a\nParticipate using Agora (code: agentic)\nWhich of the following scenarios do NOT necessarily imply overfitting?\n\n\nTraining accuracy is very high (0.98) while validation accuracy is much lower (0.60).\n\n\nIn a wildlife classifier, the model predicts “wolf” whenever there”s snow in the background, because all wolf photos were taken in snowy regions.\n\n\nThe decision boundary of a classifier is wiggly and highly irregular.\n\n\nTraining and validation accuracies are both approximately 0.88.\n\n\nA cancer detection model learns that “a ruler in the corner of the X-ray” means positive, because doctors tended to measure suspicious cases."
+    "text": "Recap: Clicker 4.0a\nParticipate using Agora (code: canvas)\nWhich of the following scenarios do NOT necessarily imply overfitting?\n\n\nTraining accuracy is very high (0.98) while validation accuracy is much lower (0.60).\n\n\nIn a wildlife classifier, the model predicts “wolf” whenever there”s snow in the background, because all wolf photos were taken in snowy regions.\n\n\nThe decision boundary of a classifier is wiggly and highly irregular.\n\n\nTraining and validation accuracies are both approximately 0.88.\n\n\nA cancer detection model learns that “a ruler in the corner of the X-ray” means positive, because doctors tended to measure suspicious cases."
   },
   {
     "objectID": "slides-04.html#recap-clicker-4.0b",
     "href": "slides-04.html#recap-clicker-4.0b",
     "title": "Lecture 4: \\(k\\)-nearest neighbours and SVM RBFs",
     "section": "Recap: Clicker 4.0b",
-    "text": "Recap: Clicker 4.0b\nParticipate using Agora (code: agentic)\nWhich of the following statements about overfitting is true?\n\n\nOverfitting makes the model more accurate on both training and unseen data.\n\n\nOverfitting means the model captures noise or irrelevant details from the training data.\n\n\nOverfitting is desirable because it reduces both training and test error.\n\n\nIn real-world problems, models are always at risk of overfitting if not properly validated."
+    "text": "Recap: Clicker 4.0b\nParticipate using Agora (code: canvas)\nWhich of the following statements about overfitting is true?\n\n\nOverfitting makes the model more accurate on both training and unseen data.\n\n\nOverfitting means the model captures noise or irrelevant details from the training data.\n\n\nOverfitting is desirable because it reduces both training and test error.\n\n\nIn real-world problems, models are always at risk of overfitting if not properly validated."
   },
   {
     "objectID": "slides-04.html#recap-clicker-4.0c",
     "href": "slides-04.html#recap-clicker-4.0c",
     "title": "Lecture 4: \\(k\\)-nearest neighbours and SVM RBFs",
     "section": "Recap: Clicker 4.0c",
-    "text": "Recap: Clicker 4.0c\nParticipate using Agora (code: agentic)\nHow might one address the issue of underfitting in a machine learning model.\n\n\nIntroduce more noise to the training data.\n\n\nRemove features that might be relevant to the prediction.\n\n\nIncrease the model’s complexity (e.g., more parameters, features, or deeper trees)\n\n\nUse a smaller dataset for training."
+    "text": "Recap: Clicker 4.0c\nParticipate using Agora (code: canvas)\nHow might one address the issue of underfitting in a machine learning model.\n\n\nIntroduce more noise to the training data.\n\n\nRemove features that might be relevant to the prediction.\n\n\nIncrease the model’s complexity (e.g., more parameters, features, or deeper trees)\n\n\nUse a smaller dataset for training."
   },
   {
     "objectID": "slides-04.html#the-fundamental-tradeoff",
@@ -172,14 +172,14 @@
     "href": "slides-04.html#clicker-4.1",
     "title": "Lecture 4: \\(k\\)-nearest neighbours and SVM RBFs",
     "section": "Clicker 4.1",
-    "text": "Clicker 4.1\nParticipate using Agora (code: agentic)\nSelect all of the following statements which are TRUE.\n\n\nAnalogy-based models find examples from the test set that are most similar to the query example we are predicting.\n\n\nEuclidean distance will always have a non-negative value.\n\n\nWith \\(k\\)-NN, setting the hyperparameter \\(k\\) to larger values typically reduces training error.\n\n\nSimilar to decision trees, \\(k\\)-NNs finds a small set of good features.\n\n\nIn \\(k\\)-NN, with \\(k &gt; 1\\), the classification of the closest neighbour to the test example always contributes the most to the prediction."
+    "text": "Clicker 4.1\nParticipate using Agora (code: canvas)\nSelect all of the following statements which are TRUE.\n\n\nAnalogy-based models find examples from the test set that are most similar to the query example we are predicting.\n\n\nEuclidean distance will always have a non-negative value.\n\n\nWith \\(k\\)-NN, setting the hyperparameter \\(k\\) to larger values typically reduces training error.\n\n\nSimilar to decision trees, \\(k\\)-NNs finds a small set of good features.\n\n\nIn \\(k\\)-NN, with \\(k &gt; 1\\), the classification of the closest neighbour to the test example always contributes the most to the prediction."
   },
   {
     "objectID": "slides-04.html#clicker-4.2",
     "href": "slides-04.html#clicker-4.2",
     "title": "Lecture 4: \\(k\\)-nearest neighbours and SVM RBFs",
     "section": "Clicker 4.2",
-    "text": "Clicker 4.2\nParticipate using Agora (code: agentic)\nSelect all of the following statements which are TRUE.\n\n\n\\(k\\)-NN may perform poorly in high-dimensional space (say, d &gt; 1000).\n\n\nIn sklearn’s SVC classifier, large values of gamma tend to result in higher training score but probably lower validation score.\n\n\nIf we increase both gamma and C, we can’t be certain if the model becomes more complex or less complex."
+    "text": "Clicker 4.2\nParticipate using Agora (code: canvas)\nSelect all of the following statements which are TRUE.\n\n\n\\(k\\)-NN may perform poorly in high-dimensional space (say, d &gt; 1000).\n\n\nIn sklearn’s SVC classifier, large values of gamma tend to result in higher training score but probably lower validation score.\n\n\nIf we increase both gamma and C, we can’t be certain if the model becomes more complex or less complex."
   },
   {
     "objectID": "slides-04.html#similarity-based-algorithms",
@@ -858,28 +858,14 @@
     "href": "slides-02.html#announcements",
     "title": "Lecture 2: Terminology, Baselines, Decision Trees",
     "section": "Announcements",
-    "text": "Announcements\n\nThings due this week\n\nHomework 1 (hw1): Due Jan 12 , 11:59 pm\nThere are some assert statements in the notebook you can use to check your work! If they fail, you didn’t get the exercise correct &lt;!– - Homework 2 (hw2) has been released (Due: Sept 16, 11:59pm)\nThere is some autograding in this homework. –&gt;\n\nYou can find the tentative due dates for all deliverables here.\nPlease monitor Ed Discussion (especially pinned posts and instructor posts) for announcements.\nI’ll assume that you’ve watched the pre-lecture videos."
+    "text": "Announcements\n\nThings due this week\n\nHomework 1\nThere are some assert statements in the notebook you can use to check your work! If they fail, you didn’t get the exercise correct\n\nHomework 2 (hw2) has been released\n\nThere is some autograding in this homework.\n\nYou can find the tentative due dates for all deliverables here.\nPlease monitor Ed Discussion (especially pinned posts and instructor posts) for announcements.\nI’ll assume that you’ve watched the pre-lecture videos."
   },
   {
-    "objectID": "slides-02.html#participation-marks-5-in-section-202",
-    "href": "slides-02.html#participation-marks-5-in-section-202",
+    "objectID": "slides-02.html#participation-marks-10",
+    "href": "slides-02.html#participation-marks-10",
     "title": "Lecture 2: Terminology, Baselines, Decision Trees",
-    "section": "Participation marks (5%) in Section 202",
-    "text": "Participation marks (5%) in Section 202\n\nIn this section (202) we will not be using iClickers for “attendance”\nInstead, you will have weekly “Learning Logs” where you will reflect on the material covered for the week\nThe first Learning Log will be released tonight, and will be due Sunday Jan 11, 11:59 PM\nOnly students registered in section 202 will see these on PrairieLearn"
-  },
-  {
-    "objectID": "slides-02.html#gradescope",
-    "href": "slides-02.html#gradescope",
-    "title": "Lecture 2: Terminology, Baselines, Decision Trees",
-    "section": "Gradescope",
-    "text": "Gradescope\nMake sure you can submit your assignment before the hw1 due date!\n\nIt is required for you to work in a GitHub repository, please maintain your GitHub repo up-to-date.\nSome students are having trouble getting registered on Gradescope, we’re working on a fix - come see me in the break or after class!"
-  },
-  {
-    "objectID": "slides-02.html#checklist-for-you-in-the-first-week",
-    "href": "slides-02.html#checklist-for-you-in-the-first-week",
-    "title": "Lecture 2: Terminology, Baselines, Decision Trees",
-    "section": "Checklist for you in the first week",
-    "text": "Checklist for you in the first week\n\nAre you able to access course Canvas shell?\nAre you able to access course forum: Ed Discussion?\nAre you able to access Gradescope? (If not, refer to the Gradescope Student Guide.) \nDid you follow the setup instructions here to create a course conda environment on your computer?  \nAre you almost finished or at least started with homework 1?"
+    "section": "Participation marks (10%)",
+    "text": "Participation marks (10%)\n\nYou will have weekly “Learning Logs” where you will reflect on the material covered for the week\nThe first Learning Log will be released soon!"
   },
   {
     "objectID": "slides-02.html#suggested-workflow-for-working-with-jupyter-notebooks",
@@ -907,7 +893,7 @@
     "href": "slides-02.html#class-participation-using-agora",
     "title": "Lecture 2: Terminology, Baselines, Decision Trees",
     "section": "Class Participation using Agora",
-    "text": "Class Participation using Agora\n\nVisit: https://agora.students.cs.ubc.ca\nLogin with your UBC CWL\nUse enrol code: agentic"
+    "text": "Class Participation using Agora\n\nVisit: https://agora.students.cs.ubc.ca\nLogin with your UBC CWL\nUse enrol code: canvas"
   },
   {
     "objectID": "slides-02.html#clicker-2.1-ml-or-not",
@@ -949,14 +935,14 @@
     "href": "slides-02.html#clicker-2.2-supervised-vs-unsupervised",
     "title": "Lecture 2: Terminology, Baselines, Decision Trees",
     "section": "Clicker 2.2: Supervised vs unsupervised",
-    "text": "Clicker 2.2: Supervised vs unsupervised\nParticipate using Agora (code: agentic)\nSelect all of the following statements which are examples of supervised machine learning\n\n\nFinding groups of similar properties in a real estate data set.\n\n\nPredicting whether someone will have a heart attack or not on the basis of demographic, diet, and clinical measurement.\n\n\nGrouping articles on different topics from different news sources (something like the Google News app).\n\n\nDetecting credit card fraud based on examples of fraudulent and non-fraudulent transactions.\n\n\nGiven some measure of employee performance, identify the key factors which are likely to influence their performance."
+    "text": "Clicker 2.2: Supervised vs unsupervised\nParticipate using Agora (code: canvas)\nSelect all of the following statements which are examples of supervised machine learning\n\n\nFinding groups of similar properties in a real estate data set.\n\n\nPredicting whether someone will have a heart attack or not on the basis of demographic, diet, and clinical measurement.\n\n\nGrouping articles on different topics from different news sources (something like the Google News app).\n\n\nDetecting credit card fraud based on examples of fraudulent and non-fraudulent transactions.\n\n\nGiven some measure of employee performance, identify the key factors which are likely to influence their performance."
   },
   {
     "objectID": "slides-02.html#clicker-2.3-classification-vs.-regression",
     "href": "slides-02.html#clicker-2.3-classification-vs.-regression",
     "title": "Lecture 2: Terminology, Baselines, Decision Trees",
     "section": "Clicker 2.3: Classification vs. Regression",
-    "text": "Clicker 2.3: Classification vs. Regression\nParticipate using Agora (code: agentic)\nSelect all of the following statements which are examples of regression problems\n\n\nPredicting the price of a house based on features such as number of bedrooms and the year built.\n\n\nPredicting if a house will sell or not based on features like the price of the house, number of rooms, etc.\n\n\nPredicting percentage grade in CPSC 330 based on past grades.\n\n\nPredicting whether you should bicycle tomorrow or not based on the weather forecast.\n\n\nPredicting appropriate thermostat temperature based on the wind speed and the number of people in a room."
+    "text": "Clicker 2.3: Classification vs. Regression\nParticipate using Agora (code: canvas)\nSelect all of the following statements which are examples of regression problems\n\n\nPredicting the price of a house based on features such as number of bedrooms and the year built.\n\n\nPredicting if a house will sell or not based on features like the price of the house, number of rooms, etc.\n\n\nPredicting percentage grade in CPSC 330 based on past grades.\n\n\nPredicting whether you should bicycle tomorrow or not based on the weather forecast.\n\n\nPredicting appropriate thermostat temperature based on the wind speed and the number of people in a room."
   },
   {
     "objectID": "slides-02.html#todays-focus",
@@ -1173,14 +1159,14 @@
     "href": "slides-03.html#clicker-3.1",
     "title": "Lecture 3: ML fundamentals",
     "section": "Clicker 3.1",
-    "text": "Clicker 3.1\nParticipate using Agora (code: agentic)\nSelect all of the following statements which are TRUE.\n\n\nA decision tree model with no depth (the default max_depth in sklearn) is likely to perform very well on the deployment data.\n\n\nData splitting helps us assess how well our model would generalize.\n\n\nDeployment data is scored only once.\n\n\nValidation data could be used for hyperparameter optimization.\n\n\nIt’s recommended that data be shuffled before splitting it into train and test sets."
+    "text": "Clicker 3.1\nParticipate using Agora (code: canvas)\nSelect all of the following statements which are TRUE.\n\n\nA decision tree model with no depth (the default max_depth in sklearn) is likely to perform very well on the deployment data.\n\n\nData splitting helps us assess how well our model would generalize.\n\n\nDeployment data is scored only once.\n\n\nValidation data could be used for hyperparameter optimization.\n\n\nIt’s recommended that data be shuffled before splitting it into train and test sets."
   },
   {
     "objectID": "slides-03.html#clicker-3.2",
     "href": "slides-03.html#clicker-3.2",
     "title": "Lecture 3: ML fundamentals",
     "section": "Clicker 3.2",
-    "text": "Clicker 3.2\nParticipate using Agora (code: agentic)\nSelect all of the following statements which are TRUE.\n\n\n\\(k\\)-fold cross-validation calls fit \\(k\\) times\n\n\nWe use cross-validation to get a more robust estimate of model performance.\n\n\nIf the mean train accuracy is much higher than the mean cross-validation accuracy it’s likely to be a case of overfitting.\n\n\nThe fundamental tradeoff of ML states that as training error goes down, validation error goes up.\n\n\nA decision stump on a complicated classification problem is likely to underfit."
+    "text": "Clicker 3.2\nParticipate using Agora (code: canvas)\nSelect all of the following statements which are TRUE.\n\n\n\\(k\\)-fold cross-validation calls fit \\(k\\) times\n\n\nWe use cross-validation to get a more robust estimate of model performance.\n\n\nIf the mean train accuracy is much higher than the mean cross-validation accuracy it’s likely to be a case of overfitting.\n\n\nThe fundamental tradeoff of ML states that as training error goes down, validation error goes up.\n\n\nA decision stump on a complicated classification problem is likely to underfit."
   },
   {
     "objectID": "slides-03.html#recap-from-videos",
@@ -2475,7 +2461,7 @@
     "href": "slides-19.html#object-detection-using-yolo",
     "title": "CPSC 330 Lecture 19: Introduction to deep learning and computer vision",
     "section": "Object detection using YOLO",
-    "text": "Object detection using YOLO\n\n\nLet’s try this out using a pre-trained model.\n\nfrom ultralytics import YOLO\nmodel = YOLO(\"yolov8n.pt\")  # pretrained YOLOv8n model\n\nyolo_input = \"data/yolo_test/3356700488_183566145b.jpg\"\nyolo_result = \"data/yolo_result.jpg\"\n# Run batched inference on a list of images\nresult = model(yolo_input)  # return a list of Results objects\nresult[0].save(filename=yolo_result)\n\nCreating new Ultralytics Settings v0.0.6 file ✅ \nView Ultralytics Settings with 'yolo settings' or at '/home/runner/.config/Ultralytics/settings.json'\nUpdate Settings with 'yolo settings key=value', i.e. 'yolo settings runs_dir=path/to/dir'. For help see https://docs.ultralytics.com/quickstart/#ultralytics-settings.\n\nimage 1/1 /home/runner/work/cpsc330-slides/cpsc330-slides/website/data/yolo_test/3356700488_183566145b.jpg: 512x640 4 persons, 2 cars, 1 stop sign, 94.2ms\nSpeed: 1.6ms preprocess, 94.2ms inference, 1.2ms postprocess per image at shape (1, 3, 512, 640)\n\n\n'data/yolo_result.jpg'"
+    "text": "Object detection using YOLO\n\n\nLet’s try this out using a pre-trained model.\n\nfrom ultralytics import YOLO\nmodel = YOLO(\"yolov8n.pt\")  # pretrained YOLOv8n model\n\nyolo_input = \"data/yolo_test/3356700488_183566145b.jpg\"\nyolo_result = \"data/yolo_result.jpg\"\n# Run batched inference on a list of images\nresult = model(yolo_input)  # return a list of Results objects\nresult[0].save(filename=yolo_result)\n\nCreating new Ultralytics Settings v0.0.6 file ✅ \nView Ultralytics Settings with 'yolo settings' or at '/home/runner/.config/Ultralytics/settings.json'\nUpdate Settings with 'yolo settings key=value', i.e. 'yolo settings runs_dir=path/to/dir'. For help see https://docs.ultralytics.com/quickstart/#ultralytics-settings.\n\nimage 1/1 /home/runner/work/cpsc330-slides/cpsc330-slides/website/data/yolo_test/3356700488_183566145b.jpg: 512x640 4 persons, 2 cars, 1 stop sign, 93.8ms\nSpeed: 1.4ms preprocess, 93.8ms inference, 1.1ms postprocess per image at shape (1, 3, 512, 640)\n\n\n'data/yolo_result.jpg'"
   },
   {
     "objectID": "slides-19.html#object-detection-output",
@@ -2972,21 +2958,21 @@
     "href": "slides-05.html#clicker-5.1",
     "title": "Lecture 5: Preprocessing and sklearn pipelines",
     "section": "Clicker 5.1",
-    "text": "Clicker 5.1\nParticipate using Agora (code: agentic)\nTake a guess: In your machine learning project, how much time will you typically spend on data preparation and transformation?\n\n\n~80% of the project time\n\n\n~20% of the project time\n\n\n~50% of the project time\n\n\nNone. Most of the time will be spent on model building\n\n\nThe question is adapted from here."
+    "text": "Clicker 5.1\nParticipate using Agora (code: canvas)\nTake a guess: In your machine learning project, how much time will you typically spend on data preparation and transformation?\n\n\n~80% of the project time\n\n\n~20% of the project time\n\n\n~50% of the project time\n\n\nNone. Most of the time will be spent on model building\n\n\nThe question is adapted from here."
   },
   {
     "objectID": "slides-05.html#clicker-5.2",
     "href": "slides-05.html#clicker-5.2",
     "title": "Lecture 5: Preprocessing and sklearn pipelines",
     "section": "Clicker 5.2",
-    "text": "Clicker 5.2\nParticipate using Agora (code: agentic)\nSelect all of the following statements which are TRUE.\n\n\nStandardScaler ensures a fixed range (i.e., minimum and maximum values) for the features.\n\n\nStandardScaler calculates mean and standard deviation for each feature separately.\n\n\nIn general, it’s a good idea to apply scaling on numeric features before training \\(k\\)-NN or SVM RBF models.\n\n\nThe transformed feature values might be hard to interpret for humans.\n\n\nAfter applying SimpleImputer The transformed data has a different shape than the original data."
+    "text": "Clicker 5.2\nParticipate using Agora (code: canvas)\nSelect all of the following statements which are TRUE.\n\n\nStandardScaler ensures a fixed range (i.e., minimum and maximum values) for the features.\n\n\nStandardScaler calculates mean and standard deviation for each feature separately.\n\n\nIn general, it’s a good idea to apply scaling on numeric features before training \\(k\\)-NN or SVM RBF models.\n\n\nThe transformed feature values might be hard to interpret for humans.\n\n\nAfter applying SimpleImputer The transformed data has a different shape than the original data."
   },
   {
     "objectID": "slides-05.html#clicker-5.3",
     "href": "slides-05.html#clicker-5.3",
     "title": "Lecture 5: Preprocessing and sklearn pipelines",
     "section": "Clicker 5.3",
-    "text": "Clicker 5.3\nParticipate using Agora (code: agentic)\nSelect all of the following statements which are TRUE.\n\n\nYou can have scaling of numeric features, one-hot encoding of categorical features, and scikit-learn estimator within a single pipeline.\n\n\nOnce you have a scikit-learn pipeline object with an estimator as the last step, you can call fit, predict, and score on it.\n\n\nYou can carry out data splitting within scikit-learn pipeline.\n\n\nWe have to be careful of the order we put each transformation and model in a pipeline.\n\n\n\nA: False; It doesn’t make sense to apply one hot encoding to numeric features, and it doesn’t make sense to apply standard scalar to categorical features. Sequence doesn’t make sense, we need column transformers\nB: True; can do this as long as the estimator is the last step\nC: False\nD: True;"
+    "text": "Clicker 5.3\nParticipate using Agora (code: canvas)\nSelect all of the following statements which are TRUE.\n\n\nYou can have scaling of numeric features, one-hot encoding of categorical features, and scikit-learn estimator within a single pipeline.\n\n\nOnce you have a scikit-learn pipeline object with an estimator as the last step, you can call fit, predict, and score on it.\n\n\nYou can carry out data splitting within scikit-learn pipeline.\n\n\nWe have to be careful of the order we put each transformation and model in a pipeline.\n\n\n\nA: False; It doesn’t make sense to apply one hot encoding to numeric features, and it doesn’t make sense to apply standard scalar to categorical features. Sequence doesn’t make sense, we need column transformers\nB: True; can do this as long as the estimator is the last step\nC: False\nD: True;"
   },
   {
     "objectID": "slides-05.html#imputation-fill-the-gaps",
