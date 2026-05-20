@@ -18,13 +18,27 @@ format:
 
 ## Announcements 
 
+- Introducing [BrightSpace](https://ubc.brightspace.com/d2l/home/6706)!
+
+- HW solutions will be posted on BrightSpace
+- HW late tokens will be tracked on BrightSpace
+- Tutorial solutions will be posted on BrightSpace
+- Tutorial attendance will be shown on BrightSpace
+
+## Announcements (cont'd)
+
+- GitHub lecture demos, course videos, course notes  are now released for the whole term so you can look at things in advance!
+
+- Note: slides will have some slight changes (mostly announcements).
+
+<!--
 - I am away this Thursday and next Tuesday for EAAI 2026
   - EAAI is the Symposium on Educational Advances in Artificial Intelligence in Singapore
   - "Effective Strategies for Teaching Machine Learning"
 - Other instructors Dr. Giulia Toti (Thursday) and Dr. Mehrdad Oveisi (Tuesday) will teach !
 - Heads up: they won't use Agora (or iClicker) for class participation ; just show of hands
 
-<!-- - HW1 grades have been posted.
+ - HW1 grades have been posted.
 - Homework 1 solutions have been posted on Canvas under Files tab. Please do not share them with anyone or do not post them anywhere. -->
 
 ## Recap 
