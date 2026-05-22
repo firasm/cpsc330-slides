@@ -1,5 +1,5 @@
 ---
-title: "CPSC 330 Lecture 9: Classification Metrics" 
+title: "Lecture 9: Classification Metrics" 
 author: "Firas Moosvi (Slides adapted from Varada Kolhatkar)"
 description: "Metrics for classification"
 description-short: "confusion metrics, precision, recall, f1-score, PR curves, AP score, ROC curve, ROC AUC, class imbalance" 

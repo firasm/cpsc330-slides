@@ -1,5 +1,5 @@
 ---
-title: "CPSC 330 Lecture 10: Regression Metrics" 
+title: "Lecture 10: Regression Metrics" 
 author: "Firas Moosvi (Slides adapted from Varada Kolhatkar)"
 description: "Metrics for Regression"
 description-short: "Regression metrics" 

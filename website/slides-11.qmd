@@ -1,5 +1,5 @@
 ---
-title: 'CPSC 330 Lecture 11: Ensembles'
+title: 'Lecture 11: Ensembles'
 description: Ensembles
 
 format:

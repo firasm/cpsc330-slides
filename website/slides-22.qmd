@@ -1,5 +1,5 @@
 ---
-title: "CPSC 330 Lecture 22: Communication"
+title: "Lecture 22: Communication"
 author: "Firas Moosvi"
 format: 
     revealjs:

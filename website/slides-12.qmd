@@ -1,5 +1,5 @@
 ---
-title: 'CPSC 330 Lecture 12: Feature importances'
+title: 'Lecture 12: Feature importances'
 description: feature importances, interpreting ordinal, categorical, and numeric features, SHAP  
 
 format:

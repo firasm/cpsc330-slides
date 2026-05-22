@@ -1,5 +1,5 @@
 ---
-title: "CPSC 330 Lecture 8: Hyperparameter Optimization"
+title: "Lecture 8: Hyperparameter Optimization"
 author: "Firas Moosvi (Slides adapted from Varada Kolhatkar)"
 description: "Linear regression, logistic regression"
 description-short: "Linear regression, logistic regression, prediction probabilities, sigmoid, interpretation of coefficients"
