@@ -1761,7 +1761,7 @@
     "href": "slides-20.html#posix-time-feature",
     "title": "Lecture 20: Time series",
     "section": "POSIX time feature",
-    "text": "POSIX time feature\n\nLet’s start with a simplest encoding.\nA common way that dates are stored on computers is using POSIX time, which is the number of seconds since January 1970 00:00:00 (this is beginning of Unix time).\nLet’s start with encoding feature as a single integer representing this POSIX time.\n\n\n# convert to POSIX time by dividing by 10**9\nX = (\n    citibike.index.astype(\"int64\").values.reshape(-1, 1) // 10**9\n)  # convert to POSIX time by dividing by 10**9\ny = citibike.values\nX[:10]\n\narray([[1438387],\n       [1438398],\n       [1438408],\n       [1438419],\n       [1438430],\n       [1438441],\n       [1438452],\n       [1438462],\n       [1438473],\n       [1438484]])"
+    "text": "POSIX time feature\n\nLet’s start with a simplest encoding.\nA common way that dates are stored on computers is using POSIX time, which is the number of seconds since January 1970 00:00:00 (this is beginning of Unix time).\nLet’s start with encoding feature as a single integer representing this POSIX time.\n\n\n# convert to POSIX time by dividing by 10**9\nX = (\n    citibike.index.astype(\"int64\").values.reshape(-1, 1) // 10**9\n)  # convert to POSIX time by dividing by 10**9\ny = citibike.values\nX[:10]\n\narray([[1438387200],\n       [1438398000],\n       [1438408800],\n       [1438419600],\n       [1438430400],\n       [1438441200],\n       [1438452000],\n       [1438462800],\n       [1438473600],\n       [1438484400]])"
   },
   {
     "objectID": "slides-20.html#rf-on-posix-features",
@@ -2755,7 +2755,7 @@
     "href": "slides-19.html#pre-trained-models-out-of-the-box-2",
     "title": "Lecture 19: Introduction to deep learning and computer vision",
     "section": "Pre-trained models out-of-the-box",
-    "text": "Pre-trained models out-of-the-box\n\nLet’s predict labels with associated probabilities for unseen images\n\n\n\n\n\n\n\n\n\n\n\nDownloading: \"https://download.pytorch.org/models/vgg16-397923af.pth\" to /home/runner/.cache/torch/hub/checkpoints/vgg16-397923af.pth\n\n\n                         Class  Probability score\n                     tiger cat              0.353\n              tabby, tabby cat              0.207\n               lynx, catamount              0.050\nPembroke, Pembroke Welsh corgi              0.046\n--------------------------------------------------------------\n\n\n\n\n\n\n\n\n\n                                     Class  Probability score\n         cheetah, chetah, Acinonyx jubatus              0.983\n                  leopard, Panthera pardus              0.012\njaguar, panther, Panthera onca, Felis onca              0.004\n       snow leopard, ounce, Panthera uncia              0.001\n--------------------------------------------------------------\n\n\n\n\n\n\n\n\n\n                                   Class  Probability score\n                                 macaque              0.714\npatas, hussar monkey, Erythrocebus patas              0.122\n      proboscis monkey, Nasalis larvatus              0.098\n                   guenon, guenon monkey              0.017\n--------------------------------------------------------------\n\n\n\n\n\n\n\n\n\n                        Class  Probability score\nWalker hound, Walker foxhound              0.580\n             English foxhound              0.091\n                  EntleBucher              0.080\n                       beagle              0.065\n--------------------------------------------------------------"
+    "text": "Pre-trained models out-of-the-box\n\nLet’s predict labels with associated probabilities for unseen images\n\n\n\n\n\n\n\n\n\n\n\n                         Class  Probability score\n                     tiger cat              0.353\n              tabby, tabby cat              0.207\n               lynx, catamount              0.050\nPembroke, Pembroke Welsh corgi              0.046\n--------------------------------------------------------------\n\n\n\n\n\n\n\n\n\n                                     Class  Probability score\n         cheetah, chetah, Acinonyx jubatus              0.983\n                  leopard, Panthera pardus              0.012\njaguar, panther, Panthera onca, Felis onca              0.004\n       snow leopard, ounce, Panthera uncia              0.001\n--------------------------------------------------------------\n\n\n\n\n\n\n\n\n\n                                   Class  Probability score\n                                 macaque              0.714\npatas, hussar monkey, Erythrocebus patas              0.122\n      proboscis monkey, Nasalis larvatus              0.098\n                   guenon, guenon monkey              0.017\n--------------------------------------------------------------\n\n\n\n\n\n\n\n\n\n                        Class  Probability score\nWalker hound, Walker foxhound              0.580\n             English foxhound              0.091\n                  EntleBucher              0.080\n                       beagle              0.065\n--------------------------------------------------------------"
   },
   {
     "objectID": "slides-19.html#pre-trained-models-out-of-the-box-3",
@@ -2769,7 +2769,7 @@
     "href": "slides-19.html#pre-trained-models-out-of-the-box-4",
     "title": "Lecture 19: Introduction to deep learning and computer vision",
     "section": "Pre-trained models out-of-the-box",
-    "text": "Pre-trained models out-of-the-box\n\n\n\nLet’s try some images which are unlikely to be there in ImageNet.\nIt’s not doing very well here because ImageNet doesn’t have proper classes for these images.\n\n\n\n\n\n\n\n\n\n\n\n         Class  Probability score\ncucumber, cuke              0.146\n         plate              0.117\n     guacamole              0.099\n  Granny Smith              0.091\n--------------------------------------------------------------\n\n\n\n\n\n\n\n\n\n              Class  Probability score\n     patio, terrace              0.213\n           fountain              0.164\nlakeside, lakeshore              0.097\n            sundial              0.088\n--------------------------------------------------------------\n\n\n\n\n\n\n\n\n\n                      Class  Probability score\n           pizza, pizza pie              0.998\nfrying pan, frypan, skillet              0.001\n                     potpie              0.000\n                French loaf              0.000\n--------------------------------------------------------------\n\n\n\n\n\n\n\n\n\n                                               Class  Probability score\n                                         toilet seat              0.171\n                                          safety pin              0.060\nbannister, banister, balustrade, balusters, handrail              0.039\n                                              bubble              0.035\n--------------------------------------------------------------\n\n\n\n\n\n\n\n\n\n                  Class  Probability score\n                   vase              0.078\n                thimble              0.074\n             plate rack              0.049\nsaltshaker, salt shaker              0.047\n--------------------------------------------------------------\n\n\n\n\n\n\n\n\n\n                                      Class  Probability score\n                                        fig              0.637\n                                pomegranate              0.193\ngrocery store, grocery, food market, market              0.041\n                                      crate              0.023\n--------------------------------------------------------------"
+    "text": "Pre-trained models out-of-the-box\n\n\n\nLet’s try some images which are unlikely to be there in ImageNet.\nIt’s not doing very well here because ImageNet doesn’t have proper classes for these images.\n\n\n\n\n\n\n\n\n\n\n\n         Class  Probability score\ncucumber, cuke              0.146\n         plate              0.117\n     guacamole              0.099\n  Granny Smith              0.091\n--------------------------------------------------------------\n\n\n\n\n\n\n\n\n\n                                      Class  Probability score\n                                        fig              0.637\n                                pomegranate              0.193\ngrocery store, grocery, food market, market              0.041\n                                      crate              0.023\n--------------------------------------------------------------\n\n\n\n\n\n\n\n\n\n                                               Class  Probability score\n                                         toilet seat              0.171\n                                          safety pin              0.060\nbannister, banister, balustrade, balusters, handrail              0.039\n                                              bubble              0.035\n--------------------------------------------------------------\n\n\n\n\n\n\n\n\n\n                  Class  Probability score\n                   vase              0.078\n                thimble              0.074\n             plate rack              0.049\nsaltshaker, salt shaker              0.047\n--------------------------------------------------------------\n\n\n\n\n\n\n\n\n\n                      Class  Probability score\n           pizza, pizza pie              0.998\nfrying pan, frypan, skillet              0.001\n                     potpie              0.000\n                French loaf              0.000\n--------------------------------------------------------------\n\n\n\n\n\n\n\n\n\n              Class  Probability score\n     patio, terrace              0.213\n           fountain              0.164\nlakeside, lakeshore              0.097\n            sundial              0.088\n--------------------------------------------------------------"
   },
   {
     "objectID": "slides-19.html#pre-trained-models-out-of-the-box-5",
@@ -2811,7 +2811,7 @@
     "href": "slides-19.html#pre-trained-models-to-extract-features-3",
     "title": "Lecture 19: Introduction to deep learning and computer vision",
     "section": "Pre-trained models to extract features",
-    "text": "Pre-trained models to extract features\n\n\n\nNow for each image in our dataset, we’ll extract a feature vector from a pre-trained model called densenet121, which is trained on the ImageNet dataset.\n\n\n\nDownloading: \"https://download.pytorch.org/models/densenet121-a639ec97.pth\" to /home/runner/.cache/torch/hub/checkpoints/densenet121-a639ec97.pth"
+    "text": "Pre-trained models to extract features\n\n\n\nNow for each image in our dataset, we’ll extract a feature vector from a pre-trained model called densenet121, which is trained on the ImageNet dataset."
   },
   {
     "objectID": "slides-19.html#shape-of-the-feature-vector",
@@ -2825,7 +2825,7 @@
     "href": "slides-19.html#a-feature-vector-given-by-densenet",
     "title": "Lecture 19: Introduction to deep learning and computer vision",
     "section": "A feature vector given by densenet",
-    "text": "A feature vector given by densenet\n \n\nLet’s examine the feature vectors.\n\n\n\n\n\n\n\n\n\n\n0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n...\n1014\n1015\n1016\n1017\n1018\n1019\n1020\n1021\n1022\n1023\n\n\n\n\n0\n0.000290\n0.003821\n0.005015\n0.001307\n0.052690\n0.063403\n0.000626\n0.001850\n0.256254\n0.000223\n...\n0.229935\n1.046363\n2.241249\n0.229644\n0.033676\n0.742794\n1.338704\n2.130868\n0.625471\n0.463094\n\n\n1\n0.000407\n0.005973\n0.003206\n0.001932\n0.090702\n0.438522\n0.001513\n0.003906\n0.166081\n0.000286\n...\n0.910676\n1.580822\n0.087190\n0.606906\n0.436105\n0.306454\n0.940103\n1.159832\n1.712703\n1.624744\n\n\n2\n0.000626\n0.005090\n0.002887\n0.001299\n0.091715\n0.548536\n0.000491\n0.003587\n0.266537\n0.000408\n...\n0.465153\n0.678282\n0.946386\n1.194696\n2.537743\n1.642387\n0.701203\n0.115618\n0.186434\n0.166608\n\n\n3\n0.000169\n0.006087\n0.002489\n0.002167\n0.087537\n0.623212\n0.000427\n0.000226\n0.460680\n0.000388\n...\n0.394085\n0.700153\n0.105199\n0.856321\n0.038457\n0.023949\n0.131834\n1.296366\n0.723328\n1.915223\n\n\n4\n0.000286\n0.005520\n0.001906\n0.001599\n0.186034\n0.850148\n0.000835\n0.003025\n0.036309\n0.000142\n...\n3.313760\n0.565742\n0.473562\n0.139444\n0.029284\n1.165937\n0.442323\n0.227594\n0.884270\n1.592694\n\n\n\n\n5 rows × 1024 columns\n\n\n\n\nThe features are hard to interpret but they have some important information about the images which can be useful for classification."
+    "text": "A feature vector given by densenet\n \n\nLet’s examine the feature vectors.\n\n\n\n\n\n\n\n\n\n\n0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n...\n1014\n1015\n1016\n1017\n1018\n1019\n1020\n1021\n1022\n1023\n\n\n\n\n0\n0.000290\n0.003821\n0.005015\n0.001307\n0.052690\n0.063403\n0.000626\n0.001850\n0.256254\n0.000223\n...\n0.229935\n1.046375\n2.241259\n0.229641\n0.033674\n0.742792\n1.338698\n2.130880\n0.625475\n0.463088\n\n\n1\n0.000407\n0.005973\n0.003206\n0.001932\n0.090702\n0.438523\n0.001513\n0.003906\n0.166081\n0.000286\n...\n0.910680\n1.580815\n0.087191\n0.606904\n0.436106\n0.306456\n0.940102\n1.159818\n1.712705\n1.624753\n\n\n2\n0.000626\n0.005090\n0.002887\n0.001299\n0.091715\n0.548537\n0.000491\n0.003587\n0.266537\n0.000408\n...\n0.465152\n0.678276\n0.946387\n1.194697\n2.537747\n1.642383\n0.701200\n0.115620\n0.186433\n0.166605\n\n\n3\n0.000169\n0.006087\n0.002489\n0.002167\n0.087537\n0.623212\n0.000427\n0.000226\n0.460680\n0.000388\n...\n0.394083\n0.700158\n0.105200\n0.856323\n0.038457\n0.023948\n0.131838\n1.296370\n0.723323\n1.915215\n\n\n4\n0.000286\n0.005520\n0.001906\n0.001599\n0.186034\n0.850148\n0.000835\n0.003025\n0.036309\n0.000142\n...\n3.313760\n0.565744\n0.473564\n0.139446\n0.029283\n1.165938\n0.442319\n0.227593\n0.884266\n1.592698\n\n\n\n\n5 rows × 1024 columns\n\n\n\n\nThe features are hard to interpret but they have some important information about the images which can be useful for classification."
   },
   {
     "objectID": "slides-19.html#logistic-regression-with-the-extracted-features",
@@ -2853,7 +2853,7 @@
     "href": "slides-19.html#object-detection-using-yolo",
     "title": "Lecture 19: Introduction to deep learning and computer vision",
     "section": "Object detection using YOLO",
-    "text": "Object detection using YOLO\n\n\nLet’s try this out using a pre-trained model.\n\nfrom ultralytics import YOLO\nmodel = YOLO(\"yolov8n.pt\")  # pretrained YOLOv8n model\n\nyolo_input = \"data/yolo_test/3356700488_183566145b.jpg\"\nyolo_result = \"data/yolo_result.jpg\"\n# Run batched inference on a list of images\nresult = model(yolo_input)  # return a list of Results objects\nresult[0].save(filename=yolo_result)\n\nCreating new Ultralytics Settings v0.0.6 file ✅ \nView Ultralytics Settings with 'yolo settings' or at '/home/runner/.config/Ultralytics/settings.json'\nUpdate Settings with 'yolo settings key=value', i.e. 'yolo settings runs_dir=path/to/dir'. For help see https://docs.ultralytics.com/quickstart/#ultralytics-settings.\n\nimage 1/1 /home/runner/work/cpsc330-slides/cpsc330-slides/website/data/yolo_test/3356700488_183566145b.jpg: 512x640 4 persons, 2 cars, 1 stop sign, 96.0ms\nSpeed: 1.5ms preprocess, 96.0ms inference, 1.1ms postprocess per image at shape (1, 3, 512, 640)\n\n\n'data/yolo_result.jpg'"
+    "text": "Object detection using YOLO\n\n\nLet’s try this out using a pre-trained model.\n\nfrom ultralytics import YOLO\nmodel = YOLO(\"yolov8n.pt\")  # pretrained YOLOv8n model\n\nyolo_input = \"data/yolo_test/3356700488_183566145b.jpg\"\nyolo_result = \"data/yolo_result.jpg\"\n# Run batched inference on a list of images\nresult = model(yolo_input)  # return a list of Results objects\nresult[0].save(filename=yolo_result)\n\n\nimage 1/1 /Users/firasm/Sync/Teaching/courses/cpsc330-slides/website/data/yolo_test/3356700488_183566145b.jpg: 512x640 4 persons, 2 cars, 1 stop sign, 44.2ms\nSpeed: 2.2ms preprocess, 44.2ms inference, 4.2ms postprocess per image at shape (1, 3, 512, 640)\n\n\n'data/yolo_result.jpg'"
   },
   {
     "objectID": "slides-19.html#object-detection-output",
@@ -4067,18 +4067,18 @@
     "text": "Group Work: Class Demo & Live Coding\nIn some of the classes, we will do a bit of live coding to get your used to practical machine learning. You are highly encouraged to follow along - we won’t usually finish everything in the demo, but it should be a significant portion that you can finish off after class.\nFor this demo, each student should click this link to create a new repo in their accounts, then clone that repo locally to follow along with the demo from today."
   },
   {
-    "objectID": "slides-08.html#clicker-8.0a---logistic-regression-1",
-    "href": "slides-08.html#clicker-8.0a---logistic-regression-1",
+    "objectID": "slides-08.html#clicker-8.1---logistic-regression-1",
+    "href": "slides-08.html#clicker-8.1---logistic-regression-1",
     "title": "Lecture 8: Hyperparameter Optimization",
-    "section": "Clicker 8.0a - Logistic Regression 1",
-    "text": "Clicker 8.0a - Logistic Regression 1\nWhich of the following are True?\n\n\nLogistic regression can be used for binary as well as multi-class classification tasks.\n\n\n\nLogistic regression computes a weighted sum of features and applies the sigmoid function.\n\n\n\nThe sigmoid function ensures outputs between 0 and 1, interpreted as probabilities.\n\n\n\nThe decision boundary in logistic regression is linear, even though the sigmoid is applied.\n\n\nWhen the weighted sum is 0, \\(\\hat{p}\\) = 0.5."
+    "section": "Clicker 8.1 - Logistic Regression 1",
+    "text": "Clicker 8.1 - Logistic Regression 1\nWhich of the following are True?\n\n\nLogistic regression can be used for binary as well as multi-class classification tasks.\n\n\n\nLogistic regression computes a weighted sum of features and applies the sigmoid function.\n\n\n\nThe sigmoid function ensures outputs between 0 and 1, interpreted as probabilities.\n\n\n\nThe decision boundary in logistic regression is linear, even though the sigmoid is applied.\n\n\nWhen the weighted sum is 0, \\(\\hat{p}\\) = 0.5."
   },
   {
-    "objectID": "slides-08.html#clicker-8.0b---logistic-regression-2",
-    "href": "slides-08.html#clicker-8.0b---logistic-regression-2",
+    "objectID": "slides-08.html#clicker-8.2---logistic-regression-2",
+    "href": "slides-08.html#clicker-8.2---logistic-regression-2",
     "title": "Lecture 8: Hyperparameter Optimization",
-    "section": "Clicker 8.0b - Logistic Regression 2",
-    "text": "Clicker 8.0b - Logistic Regression 2\nWhich of the following are True?\n\n\nLogistic regression coefficients always have to be positive.\n\n\n\nLarger coefficients (in absolute value) indicate stronger feature influence on the prediction.\n\n\n\nFor \\(d\\) features, the decision boundary is a \\(d-1\\) dimensional hyperplane.\n\n\n\nIn sklearn, very small C value shrinks coefficients, often leading to underfitting.\n\n\n\nA larger C value allows larger coefficients and a more complex model."
+    "section": "Clicker 8.2 - Logistic Regression 2",
+    "text": "Clicker 8.2 - Logistic Regression 2\nWhich of the following are True?\n\n\nLogistic regression coefficients always have to be positive.\n\n\n\nLarger coefficients (in absolute value) indicate stronger feature influence on the prediction.\n\n\n\nFor \\(d\\) features, the decision boundary is a \\(d-1\\) dimensional hyperplane.\n\n\n\nIn sklearn, very small C value shrinks coefficients, often leading to underfitting.\n\n\n\nA larger C value allows larger coefficients and a more complex model."
   },
   {
     "objectID": "slides-08.html#recap-logistic-regression",
@@ -4141,7 +4141,7 @@
     "href": "slides-08.html#grid-search-example",
     "title": "Lecture 8: Hyperparameter Optimization",
     "section": "Grid search example",
-    "text": "Grid search example\n\nfrom sklearn.model_selection import GridSearchCV\n\npipe_svm = make_pipeline(CountVectorizer(), SVC())\n\nparam_grid = {\n    \"countvectorizer__max_features\": [100, 200, 400],\n    \"svc__gamma\": [0.01, 0.1, 1.0],\n    \"svc__C\": [0.01, 0.1, 1.0],\n}\ngrid_search = GridSearchCV(pipe_svm, \n                  param_grid = param_grid, \n                  n_jobs=-1, \n                  return_train_score=True\n                 )\ngrid_search.fit(X_train, y_train)\ngrid_search.best_score_\n\nnp.float64(0.9782606272997375)"
+    "text": "Grid search example\n\nfrom sklearn.model_selection import GridSearchCV\n\npipe_svm = make_pipeline(CountVectorizer(), SVC())\n\nparam_grid = {\n    \"countvectorizer__max_features\": [100, 200, 400],\n    \"svc__gamma\": [0.01, 0.1, 1.0],\n    \"svc__C\": [0.01, 0.1, 1.0],\n}\ngrid_search = GridSearchCV(pipe_svm, \n                  param_grid = param_grid, \n                  n_jobs=-1, \n                  return_train_score=True\n                 )\ngrid_search.fit(X_train, y_train)\ngrid_search.best_score_\n\nnp.float64(0.9780612255051213)"
   },
   {
     "objectID": "slides-08.html#random-search",
@@ -4155,7 +4155,7 @@
     "href": "slides-08.html#random-search-example",
     "title": "Lecture 8: Hyperparameter Optimization",
     "section": "Random search example",
-    "text": "Random search example\n\nfrom sklearn.model_selection import RandomizedSearchCV\nfrom scipy.stats import randint\n\npipe_svc = make_pipeline(CountVectorizer(), SVC())\n\nparam_dist = {\n    \"countvectorizer__max_features\": randint(100, 2000), \n    \"svc__C\": uniform(0.1, 1e4),  # loguniform(1e-3, 1e3),\n    \"svc__gamma\": loguniform(1e-5, 1e3),\n}\nrandom_search = RandomizedSearchCV(pipe_svm,                                    \n                  param_distributions = param_dist, \n                  n_iter=10, \n                  n_jobs=-1, \n                  return_train_score=True)\n\n# Carry out the search\nrandom_search.fit(X_train, y_train)\nrandom_search.best_score_\n\nnp.float64(0.9818506556179762)"
+    "text": "Random search example\n\nfrom sklearn.model_selection import RandomizedSearchCV\nfrom scipy.stats import randint\n\npipe_svc = make_pipeline(CountVectorizer(), SVC())\n\nparam_dist = {\n    \"countvectorizer__max_features\": randint(100, 2000), \n    \"svc__C\": uniform(0.1, 1e4),  # loguniform(1e-3, 1e3),\n    \"svc__gamma\": loguniform(1e-5, 1e3),\n}\nrandom_search = RandomizedSearchCV(pipe_svm,                                    \n                  param_distributions = param_dist, \n                  n_iter=10, \n                  n_jobs=-1, \n                  return_train_score=True)\n\n# Carry out the search\nrandom_search.fit(X_train, y_train)\nrandom_search.best_score_\n\nnp.float64(0.9844434759593476)"
   },
   {
     "objectID": "slides-08.html#pizza-baking-competition-example",
@@ -4186,18 +4186,18 @@
     "text": "Optimization bias\n\nWhy do we need separate validation and test datasets?"
   },
   {
-    "objectID": "slides-08.html#mitigating-optimization-bias.",
-    "href": "slides-08.html#mitigating-optimization-bias.",
+    "objectID": "slides-08.html#mitigating-optimization-bias",
+    "href": "slides-08.html#mitigating-optimization-bias",
     "title": "Lecture 8: Hyperparameter Optimization",
-    "section": "Mitigating optimization bias.",
-    "text": "Mitigating optimization bias.\n\nCross-validation\nEnsembles\nRegularization and choosing a simpler model"
+    "section": "Mitigating optimization bias",
+    "text": "Mitigating optimization bias\n\nCross-validation\nEnsembles\nRegularization and choosing a simpler model"
   },
   {
-    "objectID": "slides-08.html#clicker-8.1",
-    "href": "slides-08.html#clicker-8.1",
+    "objectID": "slides-08.html#clicker-8.3",
+    "href": "slides-08.html#clicker-8.3",
     "title": "Lecture 8: Hyperparameter Optimization",
-    "section": "Clicker 8.1",
-    "text": "Clicker 8.1\nSelect all of the following statements which are TRUE.\n\n\nIf you get best results at the edges of your parameter grid, it might be a good idea to adjust the range of values in your parameter grid.\n\n\nGrid search is guaranteed to find the best hyperparameter values.\n\n\nIt is possible to get different hyperparameters in different runs of RandomizedSearchCV."
+    "section": "Clicker 8.3",
+    "text": "Clicker 8.3\nSelect all of the following statements which are TRUE.\n\n\nIf you get best results at the edges of your parameter grid, it might be a good idea to adjust the range of values in your parameter grid.\n\n\nGrid search is guaranteed to find the best hyperparameter values.\n\n\nIt is possible to get different hyperparameters in different runs of RandomizedSearchCV."
   },
   {
     "objectID": "slides-08.html#questions-for-you",
