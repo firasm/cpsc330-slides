@@ -263,7 +263,7 @@
     "href": "slides-08.html#random-search-example",
     "title": "CPSC 330 Lecture 8: Hyperparameter Optimization",
     "section": "Random search example",
-    "text": "Random search example\n\nfrom sklearn.model_selection import RandomizedSearchCV\nfrom scipy.stats import randint\n\npipe_svc = make_pipeline(CountVectorizer(), SVC())\n\nparam_dist = {\n    \"countvectorizer__max_features\": randint(100, 2000), \n    \"svc__C\": uniform(0.1, 1e4),  # loguniform(1e-3, 1e3),\n    \"svc__gamma\": loguniform(1e-5, 1e3),\n}\nrandom_search = RandomizedSearchCV(pipe_svm,                                    \n                  param_distributions = param_dist, \n                  n_iter=10, \n                  n_jobs=-1, \n                  return_train_score=True)\n\n# Carry out the search\nrandom_search.fit(X_train, y_train)\nrandom_search.best_score_\n\nnp.float64(0.9824488610018249)"
+    "text": "Random search example\n\nfrom sklearn.model_selection import RandomizedSearchCV\nfrom scipy.stats import randint\n\npipe_svc = make_pipeline(CountVectorizer(), SVC())\n\nparam_dist = {\n    \"countvectorizer__max_features\": randint(100, 2000), \n    \"svc__C\": uniform(0.1, 1e4),  # loguniform(1e-3, 1e3),\n    \"svc__gamma\": loguniform(1e-5, 1e3),\n}\nrandom_search = RandomizedSearchCV(pipe_svm,                                    \n                  param_distributions = param_dist, \n                  n_iter=10, \n                  n_jobs=-1, \n                  return_train_score=True)\n\n# Carry out the search\nrandom_search.fit(X_train, y_train)\nrandom_search.best_score_\n\nnp.float64(0.983845071571712)"
   },
   {
     "objectID": "slides-08.html#optimization-bias",
