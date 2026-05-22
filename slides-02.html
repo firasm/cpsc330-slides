@@ -402,7 +402,7 @@ Firas Moosvi (Slides adapted from Varada Kolhatkar)
 <li>There are many frameworks to do do machine learning.</li>
 <li>We’ll mainly be using <a href="https://scikit-learn.org/stable/"><code>scikit-learn</code> framework</a>.</li>
 </ul>
-<div id="dd0b3e52" class="cell" data-execution_count="2">
+<div id="6469985c" class="cell" data-execution_count="2">
 <div class="cell-output cell-output-display" data-execution_count="2">
 
         <iframe width="1000" height="650" src="https://scikit-learn.org" frameborder="0" allowfullscreen=""></iframe>
@@ -420,7 +420,7 @@ Firas Moosvi (Slides adapted from Varada Kolhatkar)
 <section id="toy-job-happinees-dataset" class="slide level2 smaller center">
 <h2>Toy job happinees dataset</h2>
 <p>Here are the first few rows of a toy dataset.</p>
-<div id="231199bb" class="cell" data-execution_count="3">
+<div id="209a96a8" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a>toy_happiness_df <span class="op">=</span> pd.read_csv(DATA_DIR <span class="op">+</span> <span class="st">'toy_job_happiness.csv'</span>)</span>
 <span id="cb1-2"><a></a>toy_happiness_df</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="3">
@@ -538,7 +538,7 @@ Firas Moosvi (Slides adapted from Varada Kolhatkar)
 </ul>
 </div>
 <div id="tabset-1-2">
-<div id="b89b0035" class="cell" data-execution_count="4">
+<div id="cbbb5310" class="cell" data-execution_count="4">
 <div class="cell-output cell-output-display" data-execution_count="4">
 <div>
 <style scoped="">
@@ -638,7 +638,7 @@ Firas Moosvi (Slides adapted from Varada Kolhatkar)
 <ul>
 <li>Is this a <strong>classification</strong> problem or a <strong>regression</strong> problem?</li>
 </ul>
-<div id="0e62f1ce" class="cell" data-execution_count="5">
+<div id="2916634b" class="cell" data-execution_count="5">
 <div class="cell-output cell-output-display" data-execution_count="5">
 <div>
 <style scoped="">
@@ -784,7 +784,7 @@ Firas Moosvi (Slides adapted from Varada Kolhatkar)
 <ul>
 <li>In order to train a model we need to separate <span class="math inline">\(X\)</span> and <span class="math inline">\(y\)</span> from the dataframe.</li>
 </ul>
-<div id="bf3d1a40" class="cell" data-execution_count="6">
+<div id="1402bec0" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a></a>X <span class="op">=</span> toy_happiness_df.drop(columns<span class="op">=</span>[<span class="st">"happy?"</span>]) <span class="co"># Extract the feature set by removing the target column "happy?"</span></span>
 <span id="cb2-2"><a></a>y <span class="op">=</span> toy_happiness_df[<span class="st">"happy?"</span>] <span class="co"># Extract the target variable "happy?"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
@@ -794,7 +794,7 @@ Firas Moosvi (Slides adapted from Varada Kolhatkar)
 <ul>
 <li>Let’s try a simplest algorithm of predicting the most popular target!</li>
 </ul>
-<div id="bc64d2e0" class="cell" data-execution_count="7">
+<div id="8a5b1a5b" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a></a><span class="im">from</span> sklearn.dummy <span class="im">import</span> DummyClassifier</span>
 <span id="cb3-2"><a></a>model <span class="op">=</span> DummyClassifier(strategy<span class="op">=</span><span class="st">"most_frequent"</span>) <span class="co"># Initialize the DummyClassifier to always predict the most frequent class</span></span>
 <span id="cb3-3"><a></a>model.fit(X, y) <span class="co"># Train the model on the feature set X and target variable y</span></span>
@@ -908,7 +908,7 @@ Firas Moosvi (Slides adapted from Varada Kolhatkar)
 <li>Which question would help you best separate the <strong>happy</strong> and <strong>unhappy</strong> examples?</li>
 </ul>
 
-<img data-src="img/happy_unhappy_faces.png" class="r-stretch"><div id="d6c20d84" class="cell" data-execution_count="8">
+<img data-src="img/happy_unhappy_faces.png" class="r-stretch"><div id="ec13d0b7" class="cell" data-execution_count="8">
 <div class="cell-output cell-output-display" data-execution_count="8">
 <div>
 <style scoped="">
@@ -1009,7 +1009,7 @@ Firas Moosvi (Slides adapted from Varada Kolhatkar)
 <p><img data-src="img/decision_tree_intuition.png"></p>
 </div>
 <div id="tabset-2-2">
-<div id="f79f5d6c" class="cell" data-execution_count="9">
+<div id="aede0a39" class="cell" data-execution_count="9">
 <div class="cell-output cell-output-display" data-execution_count="9">
 <div>
 <style scoped="">
@@ -1110,7 +1110,7 @@ Firas Moosvi (Slides adapted from Varada Kolhatkar)
 <li>We want to learn which questions to ask and in what order.</li>
 <li>How many possible questions could we ask with these features?</li>
 </ul>
-<div id="59de6dfb" class="cell" data-execution_count="10">
+<div id="8fceebad" class="cell" data-execution_count="10">
 <div class="cell-output cell-output-display" data-execution_count="10">
 <div>
 <style scoped="">
@@ -1218,7 +1218,7 @@ Firas Moosvi (Slides adapted from Varada Kolhatkar)
 <section id="decision-tree-with-sklearn" class="slide level2 center">
 <h2>Decision tree with <code>sklearn</code></h2>
 <p>Let’s train a simple decision tree on our toy dataset using <code>sklearn</code></p>
-<div id="7f153c03" class="cell" data-execution_count="11">
+<div id="15040018" class="cell" data-execution_count="11">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a></a><span class="im">from</span> sklearn.tree <span class="im">import</span> DecisionTreeClassifier <span class="co"># import the classifier</span></span>
 <span id="cb4-2"><a></a><span class="im">from</span> sklearn.tree <span class="im">import</span> plot_tree</span>
 <span id="cb4-3"><a></a></span>
@@ -1244,7 +1244,7 @@ Firas Moosvi (Slides adapted from Varada Kolhatkar)
 <li>supportive_colleagues = 1, salary = 60000, coffee_machine = 0, vegan_boss = 1,</li>
 </ul></li>
 </ul>
-<div id="ef238495" class="cell" data-execution_count="12">
+<div id="f0ced421" class="cell" data-execution_count="12">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -1262,7 +1262,7 @@ Firas Moosvi (Slides adapted from Varada Kolhatkar)
 <li>supportive_colleagues = 1, salary = 60000, free_coffee = 0, vegan_boss = 1,</li>
 </ul></li>
 </ul>
-<div id="1c4a74b2" class="cell" data-execution_count="13">
+<div id="5a34a176" class="cell" data-execution_count="13">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a></a>test_example <span class="op">=</span> [[<span class="dv">1</span>, <span class="dv">60000</span>, <span class="dv">0</span>, <span class="dv">1</span>]]</span>
 <span id="cb5-2"><a></a><span class="bu">print</span>(<span class="st">"Model prediction: "</span>, model.predict(test_example))</span>
 <span id="cb5-3"><a></a>plot_tree(model, filled<span class="op">=</span><span class="va">True</span>, feature_names <span class="op">=</span> X.columns, class_names <span class="op">=</span> [<span class="st">"Happy"</span>, <span class="st">"Unhappy"</span>], impurity <span class="op">=</span> <span class="va">False</span>, fontsize<span class="op">=</span><span class="dv">9</span>)<span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -1304,7 +1304,7 @@ Firas Moosvi (Slides adapted from Varada Kolhatkar)
 </section>
 <section id="decision-boundary-with-max_depth1" class="slide level2 center">
 <h2>Decision boundary with <code>max_depth=1</code></h2>
-<div id="0b6fc9b5" class="cell" data-execution_count="14">
+<div id="c9391913" class="cell" data-execution_count="14">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -1316,7 +1316,7 @@ Firas Moosvi (Slides adapted from Varada Kolhatkar)
 </section>
 <section id="decision-boundary-with-max_depth2" class="slide level2 center">
 <h2>Decision boundary with <code>max_depth=2</code></h2>
-<div id="2c001b83" class="cell" data-execution_count="15">
+<div id="93a0e5e1" class="cell" data-execution_count="15">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
