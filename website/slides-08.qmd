@@ -35,7 +35,7 @@ DATA_DIR = 'data/'
 ```
 
 
-## Clicker 8.0a - Logistic Regression 1
+## Clicker 8.1 - Logistic Regression 1
 
 Which of the following are **True**?
 
@@ -45,7 +45,7 @@ Which of the following are **True**?
 - (D) The decision boundary in logistic regression is linear, even though the sigmoid is applied. 
 - (E) When the weighted sum is 0, $\hat{p}$ = 0.5.  
 
-## Clicker 8.0b - Logistic Regression 2
+## Clicker 8.2 - Logistic Regression 2
 
 Which of the following are **True**?
 
@@ -239,15 +239,18 @@ This is similar to reusing the same validation set again and again to perfect th
 - That's why we need a **separate test set** (like a group of tasters who never influenced your pizza).  
 
 ## Optimization bias
+
 - Why do we need separate validation and test datasets? 
+
 ![](img/optimization-bias.png)
 
-## Mitigating optimization bias.
+## Mitigating optimization bias
+
   - Cross-validation
   - Ensembles 
   - Regularization and choosing a simpler model  
 
-## Clicker 8.1
+## Clicker 8.3
 
 Select all of the following statements which are TRUE.
 

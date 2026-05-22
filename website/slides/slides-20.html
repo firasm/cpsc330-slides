@@ -444,7 +444,7 @@
   <meta name="generator" content="quarto-1.8.26">
 
   <meta name="author" content="Firas Moosvi">
-  <title>CPSC 330 Slides – CPSC 330 Lecture 20: Time series</title>
+  <title>CPSC 330 Slides – Lecture 20: Time series</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -1068,7 +1068,7 @@ var requirejs,require,define;(function(global,setTimeout){var req,s,head,baseEle
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">CPSC 330 Lecture 20: Time series</h1>
+  <h1 class="title">Lecture 20: Time series</h1>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -1301,7 +1301,7 @@ Firas Moosvi
 <h2>citibike data</h2>
 <div class="columns">
 <div class="column" style="width:40%;">
-<div id="e0fad37d" class="cell" data-execution_count="2">
+<div id="070b8c38" class="cell" data-execution_count="2">
 <div class="cell-output cell-output-display" data-execution_count="2">
 <pre><code>starttime
 2015-08-01 00:00:00     3
@@ -1341,7 +1341,7 @@ Freq: 3h, Name: one, dtype: int64</code></pre>
 <h2>Why different treatement?</h2>
 <div class="columns">
 <div class="column" style="width:40%;">
-<div id="05cdcf5b" class="cell" data-execution_count="3">
+<div id="8d69a973" class="cell" data-execution_count="3">
 <div class="cell-output cell-output-display" data-execution_count="3">
 <pre><code>starttime
 2015-08-01 00:00:00     3
@@ -1394,7 +1394,7 @@ Freq: 3h, Name: one, dtype: int64</code></pre>
 </section>
 <section id="citibike-data-visualization" class="slide level2 center">
 <h2>citibike data visualization</h2>
-<div id="2731b4ce" class="cell" data-execution_count="4">
+<div id="2ba423af" class="cell" data-execution_count="4">
 <div class="cell-output cell-output-stdout">
 <pre><code>Start date: 2015-08-01 00:00:00, End date: 2015-08-31 21:00:00</code></pre>
 </div>
@@ -1410,7 +1410,7 @@ Freq: 3h, Name: one, dtype: int64</code></pre>
 </section>
 <section id="incorrect-data-splitting" class="slide level2 center">
 <h2>⛔️ Incorrect data splitting</h2>
-<div id="7a29874b" class="cell" data-execution_count="5">
+<div id="ee4bab57" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a></a>train_df, test_df <span class="op">=</span> train_test_split(citibike, test_size<span class="op">=</span><span class="fl">0.2</span>, random_state<span class="op">=</span><span class="dv">123</span>)</span>
 <span id="cb4-2"><a></a><span class="bu">print</span>(<span class="st">&#39;Train largest date: &#39;</span>, train_df.index.<span class="bu">max</span>())</span>
 <span id="cb4-3"><a></a><span class="bu">print</span>(<span class="st">&#39;Test smallest date: &#39;</span>, test_df.index.<span class="bu">min</span>())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -1419,7 +1419,7 @@ Freq: 3h, Name: one, dtype: int64</code></pre>
 Test smallest date:  2015-08-01 12:00:00</code></pre>
 </div>
 </div>
-<div id="bfb9fcad" class="cell" data-execution_count="6">
+<div id="1056ca94" class="cell" data-execution_count="6">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -1433,12 +1433,12 @@ Test smallest date:  2015-08-01 12:00:00</code></pre>
 <section id="correct-data-splitting" class="slide level2 center">
 <h2>✅ Correct data splitting</h2>
 <p>In time series, the simplest split is: earlier data <span class="math inline">\(\rightarrow\)</span> training and later data <span class="math inline">\(\rightarrow\)</span> testing. For example:</p>
-<div id="c0242219" class="cell" data-execution_count="7">
+<div id="73bb5d73" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a></a>n_train <span class="op">=</span> <span class="dv">184</span> </span>
 <span id="cb6-2"><a></a>train_df <span class="op">=</span> citibike[:<span class="dv">184</span>] </span>
 <span id="cb6-3"><a></a>test_df <span class="op">=</span> citibike[<span class="dv">184</span>:]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="fd4f212d" class="cell" data-execution_count="8">
+<div id="d4edc95c" class="cell" data-execution_count="8">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -1468,7 +1468,7 @@ Test smallest date:  2015-08-01 12:00:00</code></pre>
 <li><p>A common way that dates are stored on computers is using POSIX time, which is the number of seconds since January 1970 00:00:00 (this is beginning of Unix time).</p></li>
 <li><p>Let’s start with encoding feature as a single integer representing this POSIX time.</p></li>
 </ul>
-<div id="fcc89b87" class="cell" data-execution_count="9">
+<div id="c2dd1daa" class="cell" data-execution_count="9">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a></a><span class="co"># convert to POSIX time by dividing by 10**9</span></span>
 <span id="cb7-2"><a></a>X <span class="op">=</span> (</span>
 <span id="cb7-3"><a></a>    citibike.index.astype(<span class="st">&quot;int64&quot;</span>).values.reshape(<span class="op">-</span><span class="dv">1</span>, <span class="dv">1</span>) <span class="op">//</span> <span class="dv">10</span><span class="op">**</span><span class="dv">9</span></span>
@@ -1491,7 +1491,7 @@ Test smallest date:  2015-08-01 12:00:00</code></pre>
 </section>
 <section id="rf-on-posix-features" class="slide level2 smaller center">
 <h2>RF on posix features</h2>
-<div id="df10c405" class="cell" data-execution_count="10">
+<div id="b21596b7" class="cell" data-execution_count="10">
 <div class="cell-output cell-output-stdout">
 <pre><code>Train-set R^2: 0.85
 Test-set R^2: -0.04</code></pre>
@@ -1524,7 +1524,7 @@ Test-set R^2: -0.04</code></pre>
 <ul>
 <li>Note that our index is of this special type: <a href="https://pandas.pydata.org/docs/reference/api/pandas.DatetimeIndex.html"><code>DateTimeIndex</code></a>. We can extract all kinds of interesting information from it.</li>
 </ul>
-<div id="0ca3d739" class="cell" data-execution_count="11">
+<div id="473cec32" class="cell" data-execution_count="11">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a></a><span class="bu">print</span>(citibike.index[<span class="dv">0</span>])</span>
 <span id="cb10-2"><a></a><span class="bu">print</span>(citibike.index[<span class="dv">0</span>].month_name())</span>
 <span id="cb10-3"><a></a><span class="bu">print</span>(citibike.index[<span class="dv">0</span>].dayofweek)</span>
@@ -1543,7 +1543,7 @@ August
 <li>We noted before that the hour of day and day of week seem quite important.</li>
 <li>Let’s start with hour of day.</li>
 </ul>
-<div id="13d7953c" class="cell" data-execution_count="12">
+<div id="49a8cf66" class="cell" data-execution_count="12">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a></a>X_hour <span class="op">=</span> citibike.index.hour.values.reshape(<span class="op">-</span><span class="dv">1</span>, <span class="dv">1</span>)</span>
 <span id="cb12-2"><a></a>X_hour[:<span class="dv">10</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="12">
@@ -1562,7 +1562,7 @@ August
 </section>
 <section id="rf-with-hour-of-day" class="slide level2 center">
 <h2>RF with hour of day</h2>
-<div id="48e7ddcc" class="cell" data-execution_count="13">
+<div id="255be284" class="cell" data-execution_count="13">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a></a>regressor <span class="op">=</span> RandomForestRegressor(n_estimators<span class="op">=</span><span class="dv">100</span>, random_state<span class="op">=</span><span class="dv">0</span>)</span>
 <span id="cb14-2"><a></a>eval_on_features(X_hour, y, regressor,  xtick_labels, feat_names<span class="op">=</span><span class="st">&quot;Hour of the day&quot;</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -1582,7 +1582,7 @@ Test-set R^2: 0.60</code></pre>
 <section id="hour-of-day-day-of-week" class="slide level2 center">
 <h2>hour of day + day of week</h2>
 <p>Now let’s add day of week along with hour of day.</p>
-<div id="0a844d2b" class="cell" data-execution_count="14">
+<div id="a6139e9b" class="cell" data-execution_count="14">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a></a>X_hour_week <span class="op">=</span> np.hstack(</span>
 <span id="cb16-2"><a></a>    [</span>
 <span id="cb16-3"><a></a>        citibike.index.dayofweek.values.reshape(<span class="op">-</span><span class="dv">1</span>, <span class="dv">1</span>),</span>
@@ -1844,7 +1844,7 @@ Test-set R^2: 0.60</code></pre>
 </section>
 <section id="rf-with-hour-of-day-day-of-week" class="slide level2 center">
 <h2>RF with hour of day + day of week</h2>
-<div id="e974cc46" class="cell" data-execution_count="15">
+<div id="e0e24039" class="cell" data-execution_count="15">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a></a>eval_on_features(X_hour_week, y, regressor,  xtick_labels, feat_names <span class="op">=</span> <span class="st">&quot;hour of day + day of week&quot;</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Train-set R^2: 0.89
@@ -1862,7 +1862,7 @@ Test-set R^2: 0.84</code></pre>
 </section>
 <section id="ridge-with-hour-of-day-day-of-week" class="slide level2 center">
 <h2>Ridge with Hour of day + Day of week</h2>
-<div id="1084aac6" class="cell" data-execution_count="16">
+<div id="5c048ebf" class="cell" data-execution_count="16">
 <div class="cell-output cell-output-stdout">
 <pre><code>Train-set R^2: 0.16
 Test-set R^2: 0.13</code></pre>
@@ -1879,7 +1879,7 @@ Test-set R^2: 0.13</code></pre>
 </section>
 <section id="encoding-hour-and-day-with-ohe" class="slide level2 center">
 <h2>Encoding hour and day with OHE</h2>
-<div id="e670a3da" class="cell" data-execution_count="17">
+<div id="6e246e99" class="cell" data-execution_count="17">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a></a>enc <span class="op">=</span> OneHotEncoder()</span>
 <span id="cb21-2"><a></a>X_hour_week_onehot <span class="op">=</span> enc.fit_transform(X_hour_week).toarray()</span>
 <span id="cb21-3"><a></a>hour <span class="op">=</span> [<span class="st">&quot;</span><span class="sc">%02d</span><span class="st">:00&quot;</span> <span class="op">%</span> i <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">0</span>, <span class="dv">24</span>, <span class="dv">3</span>)]</span>
@@ -2041,7 +2041,7 @@ text-align: right;
 <h2>Ridge with hour of day OHE + day of week OHE</h2>
 <div class="columns">
 <div class="column" style="width:70%;">
-<div id="76557654" class="cell" data-execution_count="18">
+<div id="c9be5b3b" class="cell" data-execution_count="18">
 <div class="cell-output cell-output-stdout">
 <pre><code>Train-set R^2: 0.53
 Test-set R^2: 0.62</code></pre>
@@ -2063,7 +2063,7 @@ Test-set R^2: 0.62</code></pre>
 </section>
 <section id="add-interaction-features" class="slide level2 center">
 <h2>Add interaction features</h2>
-<div id="b3f4373c" class="cell" data-execution_count="19">
+<div id="9fbaac4c" class="cell" data-execution_count="19">
 <div class="cell-output cell-output-display" data-execution_count="19">
 <div>
 <style scoped>
@@ -2189,7 +2189,7 @@ text-align: right;
 </section>
 <section id="ridge-with-hour-of-day-ohe-day-of-week-ohe-interaction-features" class="slide level2 center">
 <h2>Ridge with hour of day OHE + day of week OHE + interaction features</h2>
-<div id="c1010ab1" class="cell" data-execution_count="20">
+<div id="fd84b761" class="cell" data-execution_count="20">
 <div class="cell-output cell-output-stdout">
 <pre><code>Train-set R^2: 0.87
 Test-set R^2: 0.85</code></pre>
@@ -2209,7 +2209,7 @@ Test-set R^2: 0.85</code></pre>
 <p>Since we are using a linear model, we can examine the coefficients learned by <code>Ridge</code>.</p>
 <div class="columns">
 <div class="column" style="width:50%;">
-<div id="b3842b68" class="cell" data-execution_count="21">
+<div id="50616c8c" class="cell" data-execution_count="21">
 <div class="cell-output cell-output-display" data-execution_count="21">
 <div>
 <style scoped>
@@ -2306,7 +2306,7 @@ text-align: right;
 <h2>Lag-based features</h2>
 <div class="columns">
 <div class="column" style="width:40%;">
-<div id="5948dd75" class="cell" data-execution_count="22">
+<div id="76927626" class="cell" data-execution_count="22">
 <div class="cell-output cell-output-display" data-execution_count="22">
 <div>
 <style scoped>
@@ -2390,7 +2390,7 @@ text-align: right;
 </section>
 <section id="creating-lag-features" class="slide level2 smaller scrollable center">
 <h2>Creating lag features</h2>
-<div id="05b460bb" class="cell" data-execution_count="23">
+<div id="7e284845" class="cell" data-execution_count="23">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a></a><span class="kw">def</span> create_lag_df(df, lag, cols):</span>
 <span id="cb24-2"><a></a>    <span class="cf">return</span> df.assign(</span>
 <span id="cb24-3"><a></a>        <span class="op">**</span>{<span class="ss">f&quot;</span><span class="sc">{</span>col<span class="sc">}</span><span class="ss">-</span><span class="sc">{</span>n<span class="sc">}</span><span class="ss">&quot;</span>: df[col].shift(n) <span class="cf">for</span> n <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, lag <span class="op">+</span> <span class="dv">1</span>) <span class="cf">for</span> col <span class="kw">in</span> cols}</span>
@@ -2514,7 +2514,7 @@ text-align: right;
 </section>
 <section id="ridge-with-lag-features" class="slide level2 center">
 <h2>Ridge with lag features</h2>
-<div id="610d63aa" class="cell" data-execution_count="24">
+<div id="12a9c174" class="cell" data-execution_count="24">
 <div class="cell-output cell-output-stdout">
 <pre><code>Train-set R^2: 0.25
 Test-set R^2: 0.37</code></pre>
@@ -2531,7 +2531,7 @@ Test-set R^2: 0.37</code></pre>
 </section>
 <section id="random-forest-with-lag-features" class="slide level2 center">
 <h2>Random Forest with lag features</h2>
-<div id="8218adb8" class="cell" data-execution_count="25">
+<div id="1afbbec5" class="cell" data-execution_count="25">
 <div class="cell-output cell-output-stdout">
 <pre><code>Train-set R^2: 0.94
 Test-set R^2: 0.69</code></pre>
@@ -2548,7 +2548,7 @@ Test-set R^2: 0.69</code></pre>
 </section>
 <section id="ridge-with-all-features" class="slide level2 center">
 <h2>Ridge with all features</h2>
-<div id="8efaa623" class="cell" data-execution_count="26">
+<div id="30337e1b" class="cell" data-execution_count="26">
 <div class="cell-output cell-output-stdout">
 <pre><code>Train-set R^2: 0.87
 Test-set R^2: 0.84</code></pre>
@@ -2565,7 +2565,7 @@ Test-set R^2: 0.84</code></pre>
 </section>
 <section id="rf-with-all-features" class="slide level2 center">
 <h2>RF with all features</h2>
-<div id="3afe594d" class="cell" data-execution_count="27">
+<div id="2716093a" class="cell" data-execution_count="27">
 <div class="cell-output cell-output-stdout">
 <pre><code>Train-set R^2: 0.96
 Test-set R^2: 0.78</code></pre>
@@ -2586,7 +2586,7 @@ Test-set R^2: 0.78</code></pre>
 <li><p>We can’t do regular cross-validation if we don’t want to be predicting the past.</p></li>
 <li><p>There is <a href="https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.TimeSeriesSplit.html"><code>TimeSeriesSplit</code></a> for time series data.</p></li>
 </ul>
-<div id="67ae5803" class="cell" data-execution_count="28">
+<div id="7e56a26c" class="cell" data-execution_count="28">
 <div class="cell-output cell-output-stdout">
 <pre><code>[0 1 2] [3]
 [0 1 2 3] [4]
@@ -2666,7 +2666,7 @@ Test-set R^2: 0.78</code></pre>
 <section id="trends" class="slide level2 smaller center">
 <h2>Trends</h2>
 <p>Let’s consider another time series dataset, <a href="https://fred.stlouisfed.org/series/MRTSSM448USN">Retail Sales of Clothing and Clothing Accessory Stores dataset</a>.</p>
-<div id="5d7f8115" class="cell" data-execution_count="29">
+<div id="43905d28" class="cell" data-execution_count="29">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -2681,7 +2681,7 @@ Test-set R^2: 0.78</code></pre>
 <section id="days-since-feature" class="slide level2 scrollable smaller center">
 <h2>Days since feature</h2>
 <p>One idea is to create a feature such as “Days_since”</p>
-<div id="dbf27a87" class="cell" data-execution_count="30">
+<div id="7d483791" class="cell" data-execution_count="30">
 <div class="cell-output cell-output-display" data-execution_count="30">
 <div>
 <style scoped>
