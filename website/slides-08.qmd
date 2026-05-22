@@ -34,10 +34,6 @@ import mglearn
 DATA_DIR = 'data/' 
 ```
 
-## Announcements 
-
-- Important information about midterm 1 posted on Ed Discussion!
-- Reminder to book your CBTF Test reservation
 
 ## Clicker 8.0a - Logistic Regression 1
 
