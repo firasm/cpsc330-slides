@@ -184,8 +184,6 @@ plt.show()
 
 ## iClicker Exercise 10.1
 
-**iClicker cloud join link: https://join.iclicker.com/YJHS**
-
 **Select all of the following statements which are TRUE.**
 
 - (A) Price per square foot would be a good feature to add in our `X`. 
@@ -208,8 +206,6 @@ For this demo, each student should [click this link](https://github.com/new?temp
 | Predicting **insurance claim amounts**. | You want to compare how well different models explain the variation in claims. |  |
 
 ## iClicker Exercise 10.2
-
-**iClicker cloud join link: https://join.iclicker.com/YJHS**
 
 **Select all of the following statements which are TRUE.**
 

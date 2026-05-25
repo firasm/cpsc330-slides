@@ -28,8 +28,6 @@ Select all of the following statements which are TRUE.
 
 # iClicker 20.1
 
-iClicker cloud join link: **https://join.iclicker.com/YJHS**
-
 **Select all of the following statements which are TRUE.**
 
 - (A) We need to be careful when splitting the data when working with time series data.
@@ -44,8 +42,6 @@ iClicker cloud join link: **https://join.iclicker.com/YJHS**
 For this demo, each student should [click this link](https://github.com/new?template_name=lecture20_demo&template_owner=ubc-cpsc330) to create a new repo in their accounts, then clone that repo locally to follow along with the demo from today.
 
 # iClicker 20.2
-
-iClicker cloud join link: **https://join.iclicker.com/YJHS**
 
 **Select all of the following statements which are TRUE.**
 
