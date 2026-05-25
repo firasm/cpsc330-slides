@@ -83,7 +83,7 @@ DATA_DIR = 'data/'
 
 :::: {.columns}
 :::{.column width="60%"}
-![](img/roc-curve-which-model.png)
+![](img/ROC-curve-which-model.png)
 :::
 :::{.column width="40%"}
 - Which model would you pick? 
