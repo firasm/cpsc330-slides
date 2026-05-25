@@ -662,7 +662,7 @@
     "href": "slides-10.html#iclicker-exercise-10.1",
     "title": "Lecture 10: Regression Metrics",
     "section": "iClicker Exercise 10.1",
-    "text": "iClicker Exercise 10.1\niClicker cloud join link: https://join.iclicker.com/YJHS\nSelect all of the following statements which are TRUE.\n\n\nPrice per square foot would be a good feature to add in our X.\n\n\nThe alpha hyperparameter of Ridge has similar interpretation of C hyperparameter of LogisticRegression; higher alpha means more complex model.\n\n\nIn Ridge, smaller alpha means bigger coefficients whereas bigger alpha means smaller coefficients."
+    "text": "iClicker Exercise 10.1\nSelect all of the following statements which are TRUE.\n\n\nPrice per square foot would be a good feature to add in our X.\n\n\nThe alpha hyperparameter of Ridge has similar interpretation of C hyperparameter of LogisticRegression; higher alpha means more complex model.\n\n\nIn Ridge, smaller alpha means bigger coefficients whereas bigger alpha means smaller coefficients."
   },
   {
     "objectID": "slides-10.html#group-work-class-demo-live-coding",
@@ -683,7 +683,7 @@
     "href": "slides-10.html#iclicker-exercise-10.2",
     "title": "Lecture 10: Regression Metrics",
     "section": "iClicker Exercise 10.2",
-    "text": "iClicker Exercise 10.2\niClicker cloud join link: https://join.iclicker.com/YJHS\nSelect all of the following statements which are TRUE.\n\n\nWe can use still use precision and recall for regression problems but now we have other metrics we can use as well.\n\n\nIn sklearn for regression problems, using r2_score() and .score() (with default values) will produce the same results.\n\n\nRMSE is always going to be non-negative.\n\n\nMSE does not directly provide the information about whether the model is underpredicting or overpredicting.\n\n\nWe can pass multiple scoring metrics to GridSearchCV or RandomizedSearchCV for regression as well as classification problems."
+    "text": "iClicker Exercise 10.2\nSelect all of the following statements which are TRUE.\n\n\nWe can use still use precision and recall for regression problems but now we have other metrics we can use as well.\n\n\nIn sklearn for regression problems, using r2_score() and .score() (with default values) will produce the same results.\n\n\nRMSE is always going to be non-negative.\n\n\nMSE does not directly provide the information about whether the model is underpredicting or overpredicting.\n\n\nWe can pass multiple scoring metrics to GridSearchCV or RandomizedSearchCV for regression as well as classification problems."
   },
   {
     "objectID": "slides-10.html#which-metric-fits-the-scenario-1",
