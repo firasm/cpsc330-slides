@@ -18,9 +18,8 @@ format:
 
 ## Announcements
 
-- Reminder: Midterm 1 is next week!
-- Practice Midterm should be released soon
-- See the announcement on Ed Discussion for the details of resources you'll be provided on the exam
+- Reminder: Test 2 is this week!
+- Practice Test 2 should be released soon
 
 
 ```{python}

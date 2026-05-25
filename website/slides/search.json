@@ -4,7 +4,7 @@
     "href": "slides-09.html#announcements",
     "title": "Lecture 9: Classification Metrics",
     "section": "Announcements",
-    "text": "Announcements\n\nReminder: Midterm 1 is next week!\nPractice Midterm should be released soon\nSee the announcement on Ed Discussion for the details of resources you’ll be provided on the exam"
+    "text": "Announcements\n\nReminder: Test 2 is this week!\nPractice Test 2 should be released soon\nSee the announcement on Ed Discussion for the details of resources you’ll be provided on the exam"
   },
   {
     "objectID": "slides-09.html#group-work-class-demo-live-coding",
@@ -263,7 +263,7 @@
     "href": "slides-08.html#random-search-example",
     "title": "Lecture 8: Hyperparameter Optimization",
     "section": "Random search example",
-    "text": "Random search example\n\nfrom sklearn.model_selection import RandomizedSearchCV\nfrom scipy.stats import randint\n\npipe_svc = make_pipeline(CountVectorizer(), SVC())\n\nparam_dist = {\n    \"countvectorizer__max_features\": randint(100, 2000), \n    \"svc__C\": uniform(0.1, 1e4),  # loguniform(1e-3, 1e3),\n    \"svc__gamma\": loguniform(1e-5, 1e3),\n}\nrandom_search = RandomizedSearchCV(pipe_svm,                                    \n                  param_distributions = param_dist, \n                  n_iter=10, \n                  n_jobs=-1, \n                  return_train_score=True)\n\n# Carry out the search\nrandom_search.fit(X_train, y_train)\nrandom_search.best_score_\n\nnp.float64(0.9808536466448956)"
+    "text": "Random search example\n\nfrom sklearn.model_selection import RandomizedSearchCV\nfrom scipy.stats import randint\n\npipe_svc = make_pipeline(CountVectorizer(), SVC())\n\nparam_dist = {\n    \"countvectorizer__max_features\": randint(100, 2000), \n    \"svc__C\": uniform(0.1, 1e4),  # loguniform(1e-3, 1e3),\n    \"svc__gamma\": loguniform(1e-5, 1e3),\n}\nrandom_search = RandomizedSearchCV(pipe_svm,                                    \n                  param_distributions = param_dist, \n                  n_iter=10, \n                  n_jobs=-1, \n                  return_train_score=True)\n\n# Carry out the search\nrandom_search.fit(X_train, y_train)\nrandom_search.best_score_\n\nnp.float64(0.9806538468427053)"
   },
   {
     "objectID": "slides-08.html#optimization-bias",
@@ -5640,5 +5640,26 @@
     "title": "Lecture 8: Hyperparameter Optimization",
     "section": "Mitigating optimization bias",
     "text": "Mitigating optimization bias\n\nCross-validation\nEnsembles\nRegularization and choosing a simpler model"
+  },
+  {
+    "objectID": "slides-08.html#clicker-8.1---logistic-regression-1",
+    "href": "slides-08.html#clicker-8.1---logistic-regression-1",
+    "title": "Lecture 8: Hyperparameter Optimization",
+    "section": "Clicker 8.1 - Logistic Regression 1",
+    "text": "Clicker 8.1 - Logistic Regression 1\nWhich of the following are True?\n\n\nLogistic regression can be used for binary as well as multi-class classification tasks.\n\n\n\nLogistic regression computes a weighted sum of features and applies the sigmoid function.\n\n\n\nThe sigmoid function ensures outputs between 0 and 1, interpreted as probabilities.\n\n\n\nThe decision boundary in logistic regression is linear, even though the sigmoid is applied.\n\n\nWhen the weighted sum is 0, \\(\\hat{p}\\) = 0.5."
+  },
+  {
+    "objectID": "slides-08.html#clicker-8.2---logistic-regression-2",
+    "href": "slides-08.html#clicker-8.2---logistic-regression-2",
+    "title": "Lecture 8: Hyperparameter Optimization",
+    "section": "Clicker 8.2 - Logistic Regression 2",
+    "text": "Clicker 8.2 - Logistic Regression 2\nWhich of the following are True?\n\n\nLogistic regression coefficients always have to be positive.\n\n\n\nLarger coefficients (in absolute value) indicate stronger feature influence on the prediction.\n\n\n\nFor \\(d\\) features, the decision boundary is a \\(d-1\\) dimensional hyperplane.\n\n\n\nIn sklearn, very small C value shrinks coefficients, often leading to underfitting.\n\n\n\nA larger C value allows larger coefficients and a more complex model."
+  },
+  {
+    "objectID": "slides-08.html#clicker-8.3",
+    "href": "slides-08.html#clicker-8.3",
+    "title": "Lecture 8: Hyperparameter Optimization",
+    "section": "Clicker 8.3",
+    "text": "Clicker 8.3\nSelect all of the following statements which are TRUE.\n\n\nIf you get best results at the edges of your parameter grid, it might be a good idea to adjust the range of values in your parameter grid.\n\n\nGrid search is guaranteed to find the best hyperparameter values.\n\n\nIt is possible to get different hyperparameters in different runs of RandomizedSearchCV."
   }
 ]
