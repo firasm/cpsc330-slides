@@ -39,9 +39,9 @@ How did you feel about the first midterm?
 
 ## Motivating Feature importances
 
-Consider the following two scenarios:
+In the next few slides, consider the two scenarios and decide which model you would pick given the circumstances described.
 
-#### Scenario 1: Which model would you pick 
+## Scenario 1: Which model would you pick?
 
 Predicting whether a patient is likely to develop diabetes based on features such as age, blood pressure, glucose levels, and BMI. You have two models:
 
@@ -50,7 +50,8 @@ Predicting whether a patient is likely to develop diabetes based on features suc
 
 Which model would you pick? Why? 
 
-#### Scenario 2
+## Scenario 1: Which model would you pick?
+
 Predicting whether a user will purchase a product next based on their browsing history, previous purchases, and click behavior. You have two models:
 
 - LGBM which results in 0.9 F1 score
@@ -129,13 +130,6 @@ For this demo, each student should [click this link](https://github.com/new?temp
 - (E) I'm struggling to keep up with the material. I am not happy with my learning in this course and my morale is low ☹️.
  -->
 
-
-
-
-
-## Group Work: Class Demo & Live Coding (if time permits)
-
-For this demo, each student should [click this link](https://github.com/new?template_name=lecture12_demo&template_owner=ubc-cpsc330) to create a new repo in their accounts, then clone that repo locally to follow along with the demo from today.
 
 ## SHAP
 
