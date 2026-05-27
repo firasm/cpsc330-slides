@@ -135,46 +135,37 @@
 </section>
 <section id="announcements" class="slide level2 center">
 <h2>Announcements</h2>
-<ul>
-<li>Midterm 1 grades are released on PrairieLearn</li>
-<li>Please remember to view your midterm in the CBTF!</li>
-</ul>
-</section>
-<section id="midterm-debrief" class="slide level2 center">
-<h2>Midterm Debrief</h2>
-<p>How did you feel about the first midterm?</p>
-<ul>
-<li><ol type="A">
-<li>I felt well-prepared and it went smoothly</li>
-</ol></li>
-<li><ol start="2" type="A">
-<li>I think it went okay. We’ll see when grades come back</li>
-</ol></li>
-<li><ol start="3" type="A">
-<li>I struggled and didn’t feel fully prepared</li>
-</ol></li>
-<li><ol start="4" type="A">
-<li>I noticed some gaps between what we practiced and what appeared on the exam</li>
-</ol></li>
-<li><ol start="5" type="A">
-<li>It was a stressful experience for me 😔</li>
-</ol></li>
-</ul>
 <!--
+
+## Midterm Debrief
+
+How did you feel about the first midterm?
+
+- (A) I felt well-prepared and it went smoothly
+- (B) I think it went okay. We'll see when grades come back
+- (C) I struggled and didn't feel fully prepared
+- (D) I noticed some gaps between what we practiced and what appeared on the exam
+- (E) It was a stressful experience for me 😔
+
+
 - HW4 grades are released 
 - HW5 is due next week Monday. Make use of office hours and tutorials this week.    -->
 </section>
 <section id="motivating-feature-importances" class="slide level2 center">
 <h2>Motivating Feature importances</h2>
-<p>Consider the following two scenarios:</p>
-<h3 id="scenario-1-which-model-would-you-pick">Scenario 1: Which model would you pick</h3>
+<p>In the next few slides, consider the two scenarios and decide which model you would pick given the circumstances described.</p>
+</section>
+<section id="scenario-1-which-model-would-you-pick" class="slide level2 center">
+<h2>Scenario 1: Which model would you pick?</h2>
 <p>Predicting whether a patient is likely to develop diabetes based on features such as age, blood pressure, glucose levels, and BMI. You have two models:</p>
 <ul>
 <li>LGBM which results in 0.9 f1 score</li>
 <li>Logistic regression which results in 0.84 f1 score</li>
 </ul>
 <p>Which model would you pick? Why?</p>
-<h3 id="scenario-2">Scenario 2</h3>
+</section>
+<section id="scenario-1-which-model-would-you-pick-1" class="slide level2 center">
+<h2>Scenario 1: Which model would you pick?</h2>
 <p>Predicting whether a user will purchase a product next based on their browsing history, previous purchases, and click behavior. You have two models:</p>
 <ul>
 <li>LGBM which results in 0.9 F1 score</li>
@@ -264,53 +255,85 @@
 - (E) I'm struggling to keep up with the material. I am not happy with my learning in this course and my morale is low ☹️.
  -->
 </section>
-<section id="group-work-class-demo-live-coding-if-time-permits" class="slide level2 center">
-<h2>Group Work: Class Demo &amp; Live Coding (if time permits)</h2>
-<p>For this demo, each student should <a href="https://github.com/new?template_name=lecture12_demo&amp;template_owner=ubc-cpsc330">click this link</a> to create a new repo in their accounts, then clone that repo locally to follow along with the demo from today.</p>
+<section id="finishing-up-feature-importances-and-motivating-shap" class="slide level2 center">
+<h2>Finishing up Feature importances and motivating SHAP</h2>
+<p>Why do we care about feature importances so much?</p>
+<ul>
+<li>Identify features that are not useful and maybe remove them.</li>
+<li>Get guidance on what new data to collect.
+<ul>
+<li>New features related to useful features -&gt; better results.</li>
+<li>Don’t bother collecting useless features -&gt; save resources.</li>
+</ul></li>
+</ul>
+</section>
+<section id="finishing-up-feature-importances" class="slide level2 center">
+<h2>Finishing up Feature importances</h2>
+<ul>
+<li>Help explain why the model is making certain predictions.
+<ul>
+<li>Debugging, if the model is behaving strangely.</li>
+<li>Regulatory requirements.</li>
+<li>Fairness / bias. See this.</li>
+<li>Keep in mind this can be used on deployment predictions!</li>
+</ul></li>
+</ul>
+</section>
+<section id="why-bother-about-model-transparancey" class="slide level2 center">
+<h2>Why bother about model transparancey?</h2>
+
+<img data-src="img/shap_example.png" class="r-stretch"></section>
+<section id="shap-intuition" class="slide level2 center">
+<h2>SHAP intuition</h2>
+<ul>
+<li>Think of the model as a “black box” that outputs predictions.</li>
+<li>SHAP asks: If we treat each feature as a player contributing to the final prediction, how much credit does each one deserve?</li>
+<li>To answer this fairly, SHAP looks at all possible combinations of features and averages their marginal contributions.</li>
+<li>A marginal contribution is how much the prediction changes when you add that feature to a subset of other features.</li>
+</ul>
 </section>
 <section id="shap" class="slide level2 center">
 <h2>SHAP</h2>
 
-<img data-src="img/shap_example.png" class="quarto-figure quarto-figure-center r-stretch"></section>
-<section id="shap-1" class="slide level2 center">
-<h2>SHAP</h2>
+<img data-src="img/shap-explanation-example.png" class="r-stretch"></section>
+<section id="extending-shap" class="slide level2 center">
+<h2>Extending SHAP</h2>
+<ul>
+<li>Can also be used to explain text classification and image classification!</li>
+</ul>
+</section>
+<section id="extending-shap-1" class="slide level2 center">
+<h2>Extending SHAP</h2>
 
-<img data-src="img/shap_docs.png" class="quarto-figure quarto-figure-center r-stretch"><p>You might need to install <a href="https://shap.readthedocs.io/en/latest/example_notebooks/overviews/An%20introduction%20to%20explainable%20AI%20with%20Shapley%20values.html">SHAP</a> in your conda environment</p>
-<pre><code>conda install -c conda-forge shap</code></pre>
-<!-- 
-## Extending SHAP
+<img data-src="img/shap_image_explainer.png" class="r-stretch"><p><a href="https://github.com/slundberg/shap">Source</a></p>
+</section>
+<section id="extending-shap-2" class="slide level2 center">
+<h2>Extending SHAP</h2>
 
-- Can also be used to explain text classification and image classification!
-
-## Extending SHAP 
-
-![](../img/shap_image_explainer.png)
-    
-[Source](https://github.com/slundberg/shap)
-
-## Extending SHAP
-
-![](../img/shap_image_explainer.png)
-
-- Example: In the picture below, red pixels represent positive SHAP values that increase the probability of the class, while blue pixels represent negative SHAP values the reduce the probability of the class. 
-
-## Finishing up Feature importances
-
-Why do we care about feature importances so much?
-
-- Identify features that are not useful and maybe remove them.
-- Get guidance on what new data to collect.
-  - New features related to useful features -> better results.
-  - Don’t bother collecting useless features -> save resources.
-
-## Finishing up Feature importances
-
-- Help explain why the model is making certain predictions.
-  - Debugging, if the model is behaving strangely.
-  - Regulatory requirements.
-  - Fairness / bias. See this.
-  - Keep in mind this can be used on deployment predictions!
- -->
+<img data-src="img/shap_image_explainer.png" class="r-stretch"><ul>
+<li>Example: In the picture below, red pixels represent positive SHAP values that increase the probability of the class, while blue pixels represent negative SHAP values the reduce the probability of the class.</li>
+</ul>
+</section>
+<section id="practice-question-on-shap" class="slide level2 smaller center">
+<h2>Practice Question on SHAP</h2>
+<p>Select all the statements that are true:</p>
+<ul>
+<li><ol type="A">
+<li>SHAP values are model parameters learned during training.</li>
+</ol></li>
+<li><ol start="2" type="A">
+<li>Coefficients in a linear model and SHAP values both quantify how much each feature contributes to a prediction, but coefficients are global while SHAP values are local.</li>
+</ol></li>
+<li><ol start="3" type="A">
+<li>SHAP values can only be computed for tree-based models.</li>
+</ol></li>
+<li><ol start="4" type="A">
+<li>A waterfall plot shows how each feature’s SHAP value cumulatively contributes to a single prediction.</li>
+</ol></li>
+<li><ol start="5" type="A">
+<li>SHAP provides the same explanation for all examples in the dataset.</li>
+</ol></li>
+</ul>
 
 
 </section></section>

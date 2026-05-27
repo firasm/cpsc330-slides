@@ -133,91 +133,6 @@
 </div>
 
 </section>
-<section id="finishing-up-feature-importances-and-shap" class="slide level2">
-<h2>Finishing up Feature importances and SHAP</h2>
-<p>Why do we care about feature importances so much?</p>
-<ul>
-<li>Identify features that are not useful and maybe remove them.</li>
-<li>Get guidance on what new data to collect.
-<ul>
-<li>New features related to useful features -&gt; better results.</li>
-<li>Don’t bother collecting useless features -&gt; save resources.</li>
-</ul></li>
-</ul>
-</section>
-<section id="finishing-up-feature-importances" class="slide level2">
-<h2>Finishing up Feature importances</h2>
-<ul>
-<li>Help explain why the model is making certain predictions.
-<ul>
-<li>Debugging, if the model is behaving strangely.</li>
-<li>Regulatory requirements.</li>
-<li>Fairness / bias. See this.</li>
-<li>Keep in mind this can be used on deployment predictions!</li>
-</ul></li>
-</ul>
-</section>
-<section id="why-bother-about-model-transparancey" class="slide level2">
-<h2>Why bother about model transparancey?</h2>
-
-<img data-src="img/shap_example.png" class="r-stretch"></section>
-<section id="shap-intuition" class="slide level2">
-<h2>SHAP intuition</h2>
-<ul>
-<li>Think of the model as a “black box” that outputs predictions.</li>
-<li>SHAP asks: If we treat each feature as a player contributing to the final prediction, how much credit does each one deserve?</li>
-<li>To answer this fairly, SHAP looks at all possible combinations of features and averages their marginal contributions.</li>
-<li>A marginal contribution is how much the prediction changes when you add that feature to a subset of other features.</li>
-</ul>
-</section>
-<section id="shap" class="slide level2">
-<h2>SHAP</h2>
-
-<img data-src="img/shap-explanation-example.png" class="r-stretch"></section>
-<section id="extending-shap" class="slide level2">
-<h2>Extending SHAP</h2>
-<ul>
-<li>Can also be used to explain text classification and image classification!</li>
-</ul>
-</section>
-<section id="extending-shap-1" class="slide level2">
-<h2>Extending SHAP</h2>
-
-<img data-src="../img/shap_image_explainer.png" class="r-stretch"><p><a href="https://github.com/slundberg/shap">Source</a></p>
-</section>
-<section id="extending-shap-2" class="slide level2">
-<h2>Extending SHAP</h2>
-
-<img data-src="../img/shap_image_explainer.png" class="r-stretch"><ul>
-<li>Example: In the picture below, red pixels represent positive SHAP values that increase the probability of the class, while blue pixels represent negative SHAP values the reduce the probability of the class.</li>
-</ul>
-</section>
-<section id="practice-question-on-shap" class="slide level2 smaller">
-<h2>Practice Question on SHAP</h2>
-<p>Select all the statements that are true:</p>
-<ul>
-<li><ol type="A">
-<li>SHAP values are model parameters learned during training.</li>
-</ol></li>
-<li><ol start="2" type="A">
-<li>Coefficients in a linear model and SHAP values both quantify how much each feature contributes to a prediction, but coefficients are global while SHAP values are local.</li>
-</ol></li>
-<li><ol start="3" type="A">
-<li>SHAP values can only be computed for tree-based models.</li>
-</ol></li>
-<li><ol start="4" type="A">
-<li>A waterfall plot shows how each feature’s SHAP value cumulatively contributes to a single prediction.</li>
-</ol></li>
-<li><ol start="5" type="A">
-<li>SHAP provides the same explanation for all examples in the dataset.</li>
-</ol></li>
-</ul>
-</section>
-<section id="break" class="slide level2">
-<h2>Break</h2>
-<p>Let’s take a break!</p>
-
-<img data-src="img/eva-coffee.png" class="quarto-figure quarto-figure-center r-stretch"></section>
 <section id="clicker-question-14.0" class="slide level2">
 <h2>Clicker Question 14.0</h2>
 <p>Suppose you are working on a machine learning project. If you have to prioritize one of the following in your project which of the following would it be?</p>
@@ -358,7 +273,7 @@ Coming up with features is difficult, time-consuming, requires expert knowledge.
 
 <img data-src="img/spectogram.png" class="r-stretch"><p><a href="https://en.wikipedia.org/wiki/Spectrogram">Source</a></p>
 </section>
-<section id="break-1" class="slide level2">
+<section id="break" class="slide level2">
 <h2>Break</h2>
 <p>Let’s take a break!</p>
 

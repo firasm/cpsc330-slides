@@ -1019,14 +1019,14 @@
     "href": "slides-10.html#iclicker-exercise-10.1",
     "title": "Lecture 10: Regression Metrics",
     "section": "iClicker Exercise 10.1",
-    "text": "iClicker Exercise 10.1\niClicker cloud join link: https://join.iclicker.com/YJHS\nSelect all of the following statements which are TRUE.\n\n\nPrice per square foot would be a good feature to add in our X.\n\n\nThe alpha hyperparameter of Ridge has similar interpretation of C hyperparameter of LogisticRegression; higher alpha means more complex model.\n\n\nIn Ridge, smaller alpha means bigger coefficients whereas bigger alpha means smaller coefficients."
+    "text": "iClicker Exercise 10.1\nSelect all of the following statements which are TRUE.\n\n\nPrice per square foot would be a good feature to add in our X.\n\n\nThe alpha hyperparameter of Ridge has similar interpretation of C hyperparameter of LogisticRegression; higher alpha means more complex model.\n\n\nIn Ridge, smaller alpha means bigger coefficients whereas bigger alpha means smaller coefficients."
   },
   {
     "objectID": "slides-10.html#iclicker-exercise-10.2",
     "href": "slides-10.html#iclicker-exercise-10.2",
     "title": "Lecture 10: Regression Metrics",
     "section": "iClicker Exercise 10.2",
-    "text": "iClicker Exercise 10.2\niClicker cloud join link: https://join.iclicker.com/YJHS\nSelect all of the following statements which are TRUE.\n\n\nWe can use still use precision and recall for regression problems but now we have other metrics we can use as well.\n\n\nIn sklearn for regression problems, using r2_score() and .score() (with default values) will produce the same results.\n\n\nRMSE is always going to be non-negative.\n\n\nMSE does not directly provide the information about whether the model is underpredicting or overpredicting.\n\n\nWe can pass multiple scoring metrics to GridSearchCV or RandomizedSearchCV for regression as well as classification problems."
+    "text": "iClicker Exercise 10.2\nSelect all of the following statements which are TRUE.\n\n\nWe can use still use precision and recall for regression problems but now we have other metrics we can use as well.\n\n\nIn sklearn for regression problems, using r2_score() and .score() (with default values) will produce the same results.\n\n\nRMSE is always going to be non-negative.\n\n\nMSE does not directly provide the information about whether the model is underpredicting or overpredicting.\n\n\nWe can pass multiple scoring metrics to GridSearchCV or RandomizedSearchCV for regression as well as classification problems."
   },
   {
     "objectID": "slides-10.html#group-work-class-demo-live-coding",
@@ -1038,9 +1038,9 @@
   {
     "objectID": "slides-12.html#scenario-1-which-model-would-you-pick",
     "href": "slides-12.html#scenario-1-which-model-would-you-pick",
-    "title": "CPSC 330 Lecture 12: Feature importances",
-    "section": "Scenario 1: Which model would you pick",
-    "text": "Scenario 1: Which model would you pick\nPredicting whether a patient is likely to develop diabetes based on features such as age, blood pressure, glucose levels, and BMI. You have two models:\n\nLGBM which results in 0.9 f1 score\nLogistic regression which results in 0.84 f1 score\n\nWhich model would you pick? Why?"
+    "title": "Lecture 12: Feature importances",
+    "section": "Scenario 1: Which model would you pick?",
+    "text": "Scenario 1: Which model would you pick?\nPredicting whether a patient is likely to develop diabetes based on features such as age, blood pressure, glucose levels, and BMI. You have two models:\n\nLGBM which results in 0.9 f1 score\nLogistic regression which results in 0.84 f1 score\n\nWhich model would you pick? Why?"
   },
   {
     "objectID": "slides-12.html#scenario-2",
@@ -5387,7 +5387,7 @@
     "href": "slides-12.html#announcements",
     "title": "Lecture 12: Feature importances",
     "section": "Announcements",
-    "text": "Announcements\n\nMidterm 1 grades are released on PrairieLearn\nPlease remember to view your midterm in the CBTF!"
+    "text": "Announcements"
   },
   {
     "objectID": "slides-12.html#midterm-debrief",
@@ -5401,7 +5401,7 @@
     "href": "slides-12.html#motivating-feature-importances",
     "title": "Lecture 12: Feature importances",
     "section": "Motivating Feature importances",
-    "text": "Motivating Feature importances\nConsider the following two scenarios:\nScenario 1: Which model would you pick\nPredicting whether a patient is likely to develop diabetes based on features such as age, blood pressure, glucose levels, and BMI. You have two models:\n\nLGBM which results in 0.9 f1 score\nLogistic regression which results in 0.84 f1 score\n\nWhich model would you pick? Why?\nScenario 2\nPredicting whether a user will purchase a product next based on their browsing history, previous purchases, and click behavior. You have two models:\n\nLGBM which results in 0.9 F1 score\nLogistic regression which results in 0.84 F1 score\n\nWhich model would you pick? Why?"
+    "text": "Motivating Feature importances\nIn the next few slides, consider the two scenarios and decide which model you would pick given the circumstances described."
   },
   {
     "objectID": "slides-12.html#group-work-class-demo-live-coding",
@@ -5661,5 +5661,75 @@
     "title": "Lecture 8: Hyperparameter Optimization",
     "section": "Clicker 8.3",
     "text": "Clicker 8.3\nSelect all of the following statements which are TRUE.\n\n\nIf you get best results at the edges of your parameter grid, it might be a good idea to adjust the range of values in your parameter grid.\n\n\nGrid search is guaranteed to find the best hyperparameter values.\n\n\nIt is possible to get different hyperparameters in different runs of RandomizedSearchCV."
+  },
+  {
+    "objectID": "slides-12.html#scenario-1-which-model-would-you-pick-1",
+    "href": "slides-12.html#scenario-1-which-model-would-you-pick-1",
+    "title": "Lecture 12: Feature importances",
+    "section": "Scenario 1: Which model would you pick?",
+    "text": "Scenario 1: Which model would you pick?\nPredicting whether a user will purchase a product next based on their browsing history, previous purchases, and click behavior. You have two models:\n\nLGBM which results in 0.9 F1 score\nLogistic regression which results in 0.84 F1 score\n\nWhich model would you pick? Why?"
+  },
+  {
+    "objectID": "slides-12.html#finishing-up-feature-importances-and-motivating-shap",
+    "href": "slides-12.html#finishing-up-feature-importances-and-motivating-shap",
+    "title": "Lecture 12: Feature importances",
+    "section": "Finishing up Feature importances and motivating SHAP",
+    "text": "Finishing up Feature importances and motivating SHAP\nWhy do we care about feature importances so much?\n\nIdentify features that are not useful and maybe remove them.\nGet guidance on what new data to collect.\n\nNew features related to useful features -&gt; better results.\nDon’t bother collecting useless features -&gt; save resources."
+  },
+  {
+    "objectID": "slides-12.html#finishing-up-feature-importances",
+    "href": "slides-12.html#finishing-up-feature-importances",
+    "title": "Lecture 12: Feature importances",
+    "section": "Finishing up Feature importances",
+    "text": "Finishing up Feature importances\n\nHelp explain why the model is making certain predictions.\n\nDebugging, if the model is behaving strangely.\nRegulatory requirements.\nFairness / bias. See this.\nKeep in mind this can be used on deployment predictions!"
+  },
+  {
+    "objectID": "slides-12.html#why-bother-about-model-transparancey",
+    "href": "slides-12.html#why-bother-about-model-transparancey",
+    "title": "Lecture 12: Feature importances",
+    "section": "Why bother about model transparancey?",
+    "text": "Why bother about model transparancey?"
+  },
+  {
+    "objectID": "slides-12.html#shap-intuition",
+    "href": "slides-12.html#shap-intuition",
+    "title": "Lecture 12: Feature importances",
+    "section": "SHAP intuition",
+    "text": "SHAP intuition\n\nThink of the model as a “black box” that outputs predictions.\nSHAP asks: If we treat each feature as a player contributing to the final prediction, how much credit does each one deserve?\nTo answer this fairly, SHAP looks at all possible combinations of features and averages their marginal contributions.\nA marginal contribution is how much the prediction changes when you add that feature to a subset of other features."
+  },
+  {
+    "objectID": "slides-12.html#extending-shap",
+    "href": "slides-12.html#extending-shap",
+    "title": "Lecture 12: Feature importances",
+    "section": "Extending SHAP",
+    "text": "Extending SHAP\n\nCan also be used to explain text classification and image classification!"
+  },
+  {
+    "objectID": "slides-12.html#extending-shap-1",
+    "href": "slides-12.html#extending-shap-1",
+    "title": "Lecture 12: Feature importances",
+    "section": "Extending SHAP",
+    "text": "Extending SHAP\n\nSource"
+  },
+  {
+    "objectID": "slides-12.html#extending-shap-2",
+    "href": "slides-12.html#extending-shap-2",
+    "title": "Lecture 12: Feature importances",
+    "section": "Extending SHAP",
+    "text": "Extending SHAP\n\n\nExample: In the picture below, red pixels represent positive SHAP values that increase the probability of the class, while blue pixels represent negative SHAP values the reduce the probability of the class."
+  },
+  {
+    "objectID": "slides-12.html#practice-question-on-shap",
+    "href": "slides-12.html#practice-question-on-shap",
+    "title": "Lecture 12: Feature importances",
+    "section": "Practice Question on SHAP",
+    "text": "Practice Question on SHAP\nSelect all the statements that are true:\n\n\nSHAP values are model parameters learned during training.\n\n\nCoefficients in a linear model and SHAP values both quantify how much each feature contributes to a prediction, but coefficients are global while SHAP values are local.\n\n\nSHAP values can only be computed for tree-based models.\n\n\nA waterfall plot shows how each feature’s SHAP value cumulatively contributes to a single prediction.\n\n\nSHAP provides the same explanation for all examples in the dataset."
+  },
+  {
+    "objectID": "slides-11.html#announcements",
+    "href": "slides-11.html#announcements",
+    "title": "Lecture 11: Ensembles",
+    "section": "Announcements",
+    "text": "Announcements\n\nFinal Exam Dates"
   }
 ]

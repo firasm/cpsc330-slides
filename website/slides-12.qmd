@@ -151,15 +151,20 @@ Why do we care about feature importances so much?
 
 ![](img/shap_example.png)
 
+
+## SHAP 
+
+![](img/shap-explanation-example.png)
+
 ## SHAP intuition 
 - Think of the model as a "black box" that outputs predictions.
 - SHAP asks: If we treat each feature as a player contributing to the final prediction, how much credit does each one deserve?
 - To answer this fairly, SHAP looks at all possible combinations of features and averages their marginal contributions.
 - A marginal contribution is how much the prediction changes when you add that feature to a subset of other features.
 
-## SHAP 
+## SHAP
 
-![](img/shap-explanation-example.png)
+![](img/shap_docs.png){fig-align="center"}
 
 ## Extending SHAP
 
