@@ -18,11 +18,10 @@ editor:
   render-on-save: true
 ---
 
-<!-- ## Announcements 
+## Announcements 
 
-- Midterm is being graded this week - we hope to have the results for you soon.
+- Final Exam Dates
 
--->
 
 ## iClicker Exercise 11.0
 

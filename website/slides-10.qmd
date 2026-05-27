@@ -62,7 +62,7 @@ DATA_DIR = 'data/'
 - What's the difference between the average precision (AP) score and F1-score? 
 - Which model would you pick? 
 
-![](img/pr-curve-which-model.png)
+![](img/PR-curve-which-model.png)
 
 ## ROC of a baseline model
 :::: {.columns}

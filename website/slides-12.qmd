@@ -20,8 +20,8 @@ editor:
 
 ## Announcements 
 
-- Midterm 1 grades are released on PrairieLearn
-- Please remember to view your midterm in the CBTF! 
+
+<!--
 
 ## Midterm Debrief
 
@@ -33,7 +33,7 @@ How did you feel about the first midterm?
 - (D) I noticed some gaps between what we practiced and what appeared on the exam
 - (E) It was a stressful experience for me 😔
 
-<!--
+
 - HW4 grades are released 
 - HW5 is due next week Monday. Make use of office hours and tutorials this week.    -->
 
