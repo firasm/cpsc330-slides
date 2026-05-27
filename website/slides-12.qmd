@@ -130,38 +130,7 @@ For this demo, each student should [click this link](https://github.com/new?temp
 - (E) I'm struggling to keep up with the material. I am not happy with my learning in this course and my morale is low ☹️.
  -->
 
-
-## SHAP
-
-![](img/shap_example.png){fig-align="center"}
-
-## SHAP
-
-![](img/shap_docs.png){fig-align="center"}
-
-You might need to install [SHAP](https://shap.readthedocs.io/en/latest/example_notebooks/overviews/An%20introduction%20to%20explainable%20AI%20with%20Shapley%20values.html) in your conda environment
-
-```
-conda install -c conda-forge shap
-```
-<!-- 
-## Extending SHAP
-
-- Can also be used to explain text classification and image classification!
-
-## Extending SHAP 
-
-![](../img/shap_image_explainer.png)
-    
-[Source](https://github.com/slundberg/shap)
-
-## Extending SHAP
-
-![](../img/shap_image_explainer.png)
-
-- Example: In the picture below, red pixels represent positive SHAP values that increase the probability of the class, while blue pixels represent negative SHAP values the reduce the probability of the class. 
-
-## Finishing up Feature importances
+## Finishing up Feature importances and motivating SHAP
 
 Why do we care about feature importances so much?
 
@@ -177,4 +146,43 @@ Why do we care about feature importances so much?
   - Regulatory requirements.
   - Fairness / bias. See this.
   - Keep in mind this can be used on deployment predictions!
- -->
+
+## Why bother about model transparancey? 
+
+![](img/shap_example.png)
+
+## SHAP intuition 
+- Think of the model as a "black box" that outputs predictions.
+- SHAP asks: If we treat each feature as a player contributing to the final prediction, how much credit does each one deserve?
+- To answer this fairly, SHAP looks at all possible combinations of features and averages their marginal contributions.
+- A marginal contribution is how much the prediction changes when you add that feature to a subset of other features.
+
+## SHAP 
+
+![](img/shap-explanation-example.png)
+
+## Extending SHAP
+
+- Can also be used to explain text classification and image classification!
+
+## Extending SHAP 
+
+![](../img/shap_image_explainer.png)
+    
+[Source](https://github.com/slundberg/shap)
+
+## Extending SHAP
+
+![](../img/shap_image_explainer.png)
+
+- Example: In the picture below, red pixels represent positive SHAP values that increase the probability of the class, while blue pixels represent negative SHAP values the reduce the probability of the class.
+
+## Practice Question on SHAP {.smaller}
+
+Select all the statements that are true:
+
+- (A) SHAP values are model parameters learned during training.
+- (B) Coefficients in a linear model and SHAP values both quantify how much each feature contributes to a prediction, but coefficients are global while SHAP values are local.
+- (C) SHAP values can only be computed for tree-based models.
+- (D) A waterfall plot shows how each feature's SHAP value cumulatively contributes to a single prediction.
+- (E) SHAP provides the same explanation for all examples in the dataset.
