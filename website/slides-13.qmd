@@ -20,12 +20,6 @@ editor:
   render-on-save: true
 ---
 
-## Break
-
-Let's take a break!
-
-![](img/eva-coffee.png){fig-align="center"}
-
 ## Clicker Question 14.0
 
 Suppose you are working on a machine learning project. If you have to prioritize one of the following in your project which of the following would it be?
