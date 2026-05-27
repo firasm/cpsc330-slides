@@ -41,7 +41,7 @@ How did you feel about the first midterm?
 
 Consider the following two scenarios:
 
-### Scenario 1: Which model would you pick 
+#### Scenario 1: Which model would you pick 
 
 Predicting whether a patient is likely to develop diabetes based on features such as age, blood pressure, glucose levels, and BMI. You have two models:
 
@@ -50,7 +50,7 @@ Predicting whether a patient is likely to develop diabetes based on features suc
 
 Which model would you pick? Why? 
 
-### Scenario 2
+#### Scenario 2
 Predicting whether a user will purchase a product next based on their browsing history, previous purchases, and click behavior. You have two models:
 
 - LGBM which results in 0.9 F1 score
