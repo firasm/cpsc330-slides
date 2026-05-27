@@ -1442,6 +1442,13 @@
     "text": "Why bother about model transparancey?"
   },
   {
+    "objectID": "slides-12.html#shap",
+    "href": "slides-12.html#shap",
+    "title": "Lecture 12: Feature importances",
+    "section": "SHAP",
+    "text": "SHAP"
+  },
+  {
     "objectID": "slides-12.html#shap-intuition",
     "href": "slides-12.html#shap-intuition",
     "title": "Lecture 12: Feature importances",
@@ -1449,8 +1456,8 @@
     "text": "SHAP intuition\n\nThink of the model as a “black box” that outputs predictions.\nSHAP asks: If we treat each feature as a player contributing to the final prediction, how much credit does each one deserve?\nTo answer this fairly, SHAP looks at all possible combinations of features and averages their marginal contributions.\nA marginal contribution is how much the prediction changes when you add that feature to a subset of other features."
   },
   {
-    "objectID": "slides-12.html#shap",
-    "href": "slides-12.html#shap",
+    "objectID": "slides-12.html#shap-1",
+    "href": "slides-12.html#shap-1",
     "title": "Lecture 12: Feature importances",
     "section": "SHAP",
     "text": "SHAP"
