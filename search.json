@@ -46,14 +46,14 @@
     "href": "slides-14.html#supervised-learning",
     "title": "Lecture 14: K-Means",
     "section": "Supervised learning",
-    "text": "Supervised learning\n\nTraining data comprises a set of observations (X) and their corresponding targets (y).\nWe wish to find a model function f that relates X to y.\nThen use that model function to predict the targets of new examples.\nWe have been working with this set up so far."
+    "text": "Supervised learning\n\nTraining data comprises a set of observations (\\(X\\)) and their corresponding targets (\\(y\\)).\nWe wish to find a model function \\(f\\) that relates \\(X\\) to \\(y\\).\nThen use that model function to predict the targets of new examples.\nWe have been working with this set up so far."
   },
   {
     "objectID": "slides-14.html#unsupervised-learning",
     "href": "slides-14.html#unsupervised-learning",
     "title": "Lecture 14: K-Means",
     "section": "Unsupervised learning",
-    "text": "Unsupervised learning\n\nTraining data consists of observations (X) without any corresponding targets.\nUnsupervised learning could be used to group similar things together in X or to find underlying structure in the data."
+    "text": "Unsupervised learning\n\nTraining data consists of observations (\\(X\\)) without any corresponding targets.\nUnsupervised learning could be used to group similar things together in \\(X\\) or to find underlying structure in the data."
   },
   {
     "objectID": "slides-14.html#clustering-activity",
@@ -137,14 +137,14 @@
     "href": "slides-14.html#k-means-pros-and-cons",
     "title": "Lecture 14: K-Means",
     "section": "K-Means pros and cons",
-    "text": "K-Means pros and cons\n\nAdvantages:\n\nSimple and efficient for large datasets.\nWorks well with spherical clusters.\n\nLimitations:\n\nNeeds pre-defined k.\nSensitive to outliers and initial centroid placement."
+    "text": "K-Means pros and cons\n\nAdvantages:\n\nSimple and efficient for large datasets.\nWorks well with spherical clusters.\n\nLimitations:\n\nNeeds pre-defined \\(k\\).\nSensitive to outliers and initial centroid placement."
   },
   {
     "objectID": "slides-14.html#clicker-question-14.1",
     "href": "slides-14.html#clicker-question-14.1",
     "title": "Lecture 14: K-Means",
     "section": "Clicker Question 14.1",
-    "text": "Clicker Question 14.1\nSelect all of the following statements which are True\n\n\nK-Means algorithm always converges to the same solution.\n\n\nK in K-Means should always be ≤ # of features.\n\n\nIn K-Means, it makes sense to have K ≤ # of examples.\n\n\nIn K-Means, in some iterations some points may be left unassigned."
+    "text": "Clicker Question 14.1\nSelect all of the following statements which are True\n\n\nK-Means algorithm always converges to the same solution.\n\n\n\\(K\\) in K-Means should always be \\(\\leq\\) # of features.\n\n\nIn K-Means, it makes sense to have \\(K\\) \\(\\leq\\) # of examples.\n\n\nIn K-Means, in some iterations some points may be left unassigned."
   },
   {
     "objectID": "slides-14.html#clicker-question-14.2",
@@ -158,7 +158,7 @@
     "href": "slides-14.html#how-many-clusters",
     "title": "Lecture 14: K-Means",
     "section": "How many clusters?",
-    "text": "How many clusters?\n\nClustering is not about perfect scores, but insight.\nTypically we do not want too few or way too many clusters.\nThere’s no single “correct” value of k – only useful ones that make sense for your problem.\nSome preferred values may exist (e.g., based on domain knowledge).\nThe goal is to find interpretable, meaningful clusters. So pick k that helps tell a useful story about your data.\nWe typically go with quantitative and qualitative approaches."
+    "text": "How many clusters?\n\nClustering is not about perfect scores, but insight.\nTypically we do not want too few or way too many clusters.\nThere’s no single “correct” value of \\(k\\) – only useful ones that make sense for your problem.\nSome preferred values may exist (e.g., based on domain knowledge).\nThe goal is to find interpretable, meaningful clusters. So pick \\(k\\) that helps tell a useful story about your data.\nWe typically go with quantitative and qualitative approaches."
   },
   {
     "objectID": "slides-14.html#section",
@@ -172,21 +172,21 @@
     "href": "slides-14.html#the-elbow-method",
     "title": "Lecture 14: K-Means",
     "section": "The Elbow method",
-    "text": "The Elbow method\n\nPurpose: Identify the optimal number of clusters k.\nHow it Works:\n\nPlot intra-cluster distances for different values of k.\nLook for the “elbow” point where the intra-cluster reduction slows.\n\nInterpretation:\n\nThe point of diminishing returns suggests a good k."
+    "text": "The Elbow method\n\nPurpose: Identify the optimal number of clusters \\(k\\).\nHow it Works:\n\nPlot intra-cluster distances for different values of \\(k\\).\nLook for the “elbow” point where the intra-cluster reduction slows.\n\nInterpretation:\n\nThe point of diminishing returns suggests a good \\(k\\)."
   },
   {
     "objectID": "slides-14.html#the-elbow-method-example",
     "href": "slides-14.html#the-elbow-method-example",
     "title": "Lecture 14: K-Means",
     "section": "The Elbow method example",
-    "text": "The Elbow method example\n\n\n\n\nWhat would be the intracluster distance when\n\nk = 1\nk= # number of data points?"
+    "text": "The Elbow method example\n\n\n\n\nWhat would be the intracluster distance when\n\n\\(k=1\\)\n\\(k=\\) # number of data points?"
   },
   {
     "objectID": "slides-14.html#the-silhouette-method",
     "href": "slides-14.html#the-silhouette-method",
     "title": "Lecture 14: K-Means",
     "section": "The Silhouette method",
-    "text": "The Silhouette method\n\nSilhouette Score: Measures how well data points fit within their cluster.\n\n$s(i) = \\frac{b(i) - a(i)}{\\max (a(i), b(i))}$\n\na(i): Mean distance to other points in the same cluster.\nb(i): Mean distance to points in the nearest neighboring cluster."
+    "text": "The Silhouette method\n\nSilhouette Score: Measures how well data points fit within their cluster.\n\n\\(s(i) = \\frac{b(i) - a(i)}{\\max (a(i), b(i))}\\)\n\n\\(a(i)\\): Mean distance to other points in the same cluster.\n\\(b(i)\\): Mean distance to points in the nearest neighboring cluster."
   },
   {
     "objectID": "slides-14.html#the-silhouette-method-1",

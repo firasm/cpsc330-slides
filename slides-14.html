@@ -30,7 +30,6 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
-    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
   </style>
   <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto-fd2040cb6a2f1fc17fb2913b5bdbd07f.css">
   <link href="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -237,8 +236,8 @@
 <section id="supervised-learning" class="slide level2 smaller center">
 <h2>Supervised learning</h2>
 <ul>
-<li>Training data comprises a set of observations (<span class="math inline"><em>X</em></span>) and their corresponding targets (<span class="math inline"><em>y</em></span>).</li>
-<li>We wish to find a model function <span class="math inline"><em>f</em></span> that relates <span class="math inline"><em>X</em></span> to <span class="math inline"><em>y</em></span>.</li>
+<li>Training data comprises a set of observations (<span class="math inline">\(X\)</span>) and their corresponding targets (<span class="math inline">\(y\)</span>).</li>
+<li>We wish to find a model function <span class="math inline">\(f\)</span> that relates <span class="math inline">\(X\)</span> to <span class="math inline">\(y\)</span>.</li>
 <li>Then use that model function to predict the targets of new examples.</li>
 <li>We have been working with this set up so far.</li>
 </ul>
@@ -247,8 +246,8 @@
 <section id="unsupervised-learning" class="slide level2 smaller center">
 <h2>Unsupervised learning</h2>
 <ul>
-<li>Training data consists of observations (<span class="math inline"><em>X</em></span>) without any corresponding targets.</li>
-<li>Unsupervised learning could be used to group similar things together in <span class="math inline"><em>X</em></span> or to find underlying structure in the data.</li>
+<li>Training data consists of observations (<span class="math inline">\(X\)</span>) without any corresponding targets.</li>
+<li>Unsupervised learning could be used to group similar things together in <span class="math inline">\(X\)</span> or to find underlying structure in the data.</li>
 </ul>
 
 <img data-src="img/unsup-learning.png" class="r-stretch"></section>
@@ -362,7 +361,7 @@
 </ul></li>
 <li><strong>Limitations</strong>:
 <ul>
-<li>Needs pre-defined <span class="math inline"><em>k</em></span>.</li>
+<li>Needs pre-defined <span class="math inline">\(k\)</span>.</li>
 <li>Sensitive to outliers and initial centroid placement.</li>
 </ul></li>
 </ul>
@@ -375,10 +374,10 @@
 <li>K-Means algorithm always converges to the same solution.</li>
 </ol></li>
 <li><ol start="2" type="A">
-<li><span class="math inline"><em>K</em></span> in K-Means should always be <span class="math inline">≤</span> # of features.</li>
+<li><span class="math inline">\(K\)</span> in K-Means should always be <span class="math inline">\(\leq\)</span> # of features.</li>
 </ol></li>
 <li><ol start="3" type="A">
-<li>In K-Means, it makes sense to have <span class="math inline"><em>K</em></span> <span class="math inline">≤</span> # of examples.</li>
+<li>In K-Means, it makes sense to have <span class="math inline">\(K\)</span> <span class="math inline">\(\leq\)</span> # of examples.</li>
 </ol></li>
 <li><ol start="4" type="A">
 <li>In K-Means, in some iterations some points may be left unassigned.</li>
@@ -405,7 +404,7 @@
 </section></section>
 <section>
 <section id="choosing-k-the-number-of-clusters" class="title-slide slide level1 center">
-<h1>Choosing <span class="math inline"><em>k</em></span> (the number of clusters)</h1>
+<h1>Choosing <span class="math inline">\(k\)</span> (the number of clusters)</h1>
 
 </section>
 <section id="how-many-clusters" class="slide level2 smaller center">
@@ -413,9 +412,9 @@
 <ul>
 <li>Clustering is not about perfect scores, but <strong>insight</strong>.</li>
 <li>Typically we do not want too few or way too many clusters.</li>
-<li>There’s no single <strong>“correct” value of <span class="math inline"><em>k</em></span></strong> – only <em>useful</em> ones that make sense for your problem.</li>
+<li>There’s no single <strong>“correct” value of <span class="math inline">\(k\)</span></strong> – only <em>useful</em> ones that make sense for your problem.</li>
 <li>Some <strong>preferred</strong> values may exist (e.g., based on domain knowledge).</li>
-<li>The goal is to find <strong>interpretable, meaningful</strong> clusters. So pick <span class="math inline"><em>k</em></span> that helps tell a <strong>useful story</strong> about your data.</li>
+<li>The goal is to find <strong>interpretable, meaningful</strong> clusters. So pick <span class="math inline">\(k\)</span> that helps tell a <strong>useful story</strong> about your data.</li>
 <li>We typically go with <strong>quantitative</strong> and <strong>qualitative</strong> approaches.</li>
 </ul>
 </section>
@@ -456,15 +455,15 @@
 <section id="the-elbow-method" class="slide level2 center">
 <h2>The Elbow method</h2>
 <ul>
-<li><strong>Purpose</strong>: Identify the optimal number of clusters <span class="math inline"><em>k</em></span>.</li>
+<li><strong>Purpose</strong>: Identify the optimal number of clusters <span class="math inline">\(k\)</span>.</li>
 <li><strong>How it Works</strong>:
 <ul>
-<li>Plot intra-cluster distances for different values of <span class="math inline"><em>k</em></span>.</li>
+<li>Plot intra-cluster distances for different values of <span class="math inline">\(k\)</span>.</li>
 <li>Look for the “elbow” point where the intra-cluster reduction slows.</li>
 </ul></li>
 <li><strong>Interpretation</strong>:
 <ul>
-<li>The point of diminishing returns suggests a good <span class="math inline"><em>k</em></span>.</li>
+<li>The point of diminishing returns suggests a good <span class="math inline">\(k\)</span>.</li>
 </ul></li>
 </ul>
 </section>
@@ -476,8 +475,8 @@
 </div><div class="column" style="width:40%;">
 <p>What would be the intracluster distance when</p>
 <ul>
-<li><span class="math inline"><em>k</em> = 1</span></li>
-<li><span class="math inline"><em>k</em>=</span> # number of data points?<br>
+<li><span class="math inline">\(k=1\)</span></li>
+<li><span class="math inline">\(k=\)</span> # number of data points?<br>
 </li>
 </ul>
 </div></div>
@@ -487,10 +486,10 @@
 <ul>
 <li><strong>Silhouette Score</strong>: Measures how well data points fit within their cluster.
 <ul>
-<li><span class="math inline">$s(i) = \frac{b(i) - a(i)}{\max (a(i), b(i))}$</span>
+<li><span class="math inline">\(s(i) = \frac{b(i) - a(i)}{\max (a(i), b(i))}\)</span>
 <ul>
-<li><span class="math inline"><em>a</em>(<em>i</em>)</span>: Mean distance to other points in the same cluster.</li>
-<li><span class="math inline"><em>b</em>(<em>i</em>)</span>: Mean distance to points in the nearest neighboring cluster.</li>
+<li><span class="math inline">\(a(i)\)</span>: Mean distance to other points in the same cluster.</li>
+<li><span class="math inline">\(b(i)\)</span>: Mean distance to points in the nearest neighboring cluster.</li>
 </ul></li>
 </ul></li>
 </ul>
@@ -562,6 +561,7 @@
   <script src="site_libs/revealjs/plugin/notes/notes.js"></script>
   <script src="site_libs/revealjs/plugin/search/search.js"></script>
   <script src="site_libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="site_libs/revealjs/plugin/math/math.js"></script>
   <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
 
   <script>
@@ -729,9 +729,27 @@
         // Factor of the display size that should remain empty around the content
         margin: 0.1,
 
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
         // reveal.js plugins
         plugins: [QuartoLineHighlight, PdfExport, RevealMenu, QuartoSupport,
 
+          RevealMath,
           RevealNotes,
           RevealSearch,
           RevealZoom
