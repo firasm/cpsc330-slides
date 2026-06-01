@@ -17,6 +17,29 @@ editor:
   render-on-save: true
 ---
 
+## Test 2 Debrief
+
+How did you feel about the second Test?
+
+- (A) I felt well-prepared and it went smoothly
+- (B) I think it went okay. We'll see when grades come back
+- (C) I struggled and didn't feel fully prepared
+- (D) I noticed some gaps between what we practised and what appeared on the exam
+- (E) It was a stressful experience for me 😔
+
+## Pause and Reflect 
+
+We are now just over half-way through CPSC 330!
+
+You had a midterm already a couple of weeks ago, I'd like some feedback on how things are going in class (as the instructor).
+
+## Class Survey
+
+I'd love to hear how you think lectures are going, and how the course is going overall: [bit.ly/cpsc330_2026S1](https://bit.ly/cpsc330_2026S1).
+
+Let's take a couple of minutes to complete this before we get started on today's content.
+
+
 <!-- 
 ## Announcements 
 
