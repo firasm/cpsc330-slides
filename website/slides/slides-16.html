@@ -27,7 +27,6 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
-    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
   </style>
   <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto-4a5b24c8b3ae7b593930d61c52872a99.css">
   <link href="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -238,7 +237,7 @@
 <section id="problem-formulation" class="slide level2 center">
 <h2>Problem formulation</h2>
 <ul>
-<li>We have <span class="math inline"><em>N</em></span> users and <span class="math inline"><em>M</em></span> items.</li>
+<li>We have <span class="math inline">\(N\)</span> users and <span class="math inline">\(M\)</span> items.</li>
 <li>Observed data = interactions:
 <ul>
 <li>Movie ratings (Netflix)</li>
@@ -252,7 +251,7 @@
 <h2>The utility matrix</h2>
 <ul>
 <li>Rows = users, columns = items</li>
-<li>Each entry <span class="math inline"><em>y</em><sub><em>i</em><em>j</em></sub></span> = user <span class="math inline"><em>i</em></span>’s interaction (e.g., rating) with item <span class="math inline"><em>j</em></span></li>
+<li>Each entry <span class="math inline">\(y_{ij}\)</span> = user <span class="math inline">\(i\)</span>’s interaction (e.g., rating) with item <span class="math inline">\(j\)</span></li>
 </ul>
 
 <!-- <img src="img/utility_matrix.png" alt="" height="900" width="900">  -->
@@ -275,11 +274,11 @@
 
 <img data-src="img/utility_matrix.png" class="r-stretch"></section>
 <section id="rating-prediction-neq-regression" class="slide level2 center">
-<h2>Rating prediction <span class="math inline">≠</span> regression</h2>
+<h2>Rating prediction <span class="math inline">\(\neq\)</span> regression</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
 <h3 id="regression">Regression</h3>
-<p><span class="math display">$$
+<p><span class="math display">\[
 \begin{bmatrix}
 \checkmark &amp; \checkmark &amp; \checkmark  &amp; \checkmark &amp; \checkmark\\
 \checkmark &amp; \checkmark &amp; \checkmark  &amp; \checkmark &amp; \checkmark\\
@@ -288,10 +287,10 @@
 \checkmark &amp; \checkmark &amp; \checkmark  &amp; \checkmark &amp; ?\\
 \checkmark &amp; \checkmark &amp; \checkmark  &amp; \checkmark &amp; ?\\
 \end{bmatrix}
-$$</span></p>
+\]</span></p>
 </div><div class="column" style="width:50%;">
 <h3 id="rating-prediction">Rating prediction</h3>
-<p><span class="math display">$$
+<p><span class="math display">\[
 \begin{bmatrix}
 ? &amp; ? &amp; \checkmark  &amp; ? &amp; \checkmark\\
 \checkmark &amp; ? &amp; ?  &amp; ? &amp; ?\\
@@ -300,7 +299,7 @@ $$</span></p>
 ? &amp; ? &amp; ? &amp; \checkmark &amp; ?\\
 ? &amp; \checkmark &amp; \checkmark  &amp; ? &amp; \checkmark
 \end{bmatrix}
-$$</span></p>
+\]</span></p>
 </div></div>
 </section>
 <section id="main-approaches" class="slide level2 smaller center">
@@ -309,14 +308,14 @@ $$</span></p>
 <li>Collaborative filtering
 <ul>
 <li>“Unsupervised” learning</li>
-<li>We only have labels <span class="math inline"><em>y</em><sub><em>i</em><em>j</em></sub></span> (rating of user <span class="math inline"><em>i</em></span> for item <span class="math inline"><em>j</em></span>).</li>
+<li>We only have labels <span class="math inline">\(y_{ij}\)</span> (rating of user <span class="math inline">\(i\)</span> for item <span class="math inline">\(j\)</span>).</li>
 <li>We learn latent features.<br>
 </li>
 </ul></li>
 <li><strong>Content-based recommenders</strong> (today’s focus)
 <ul>
 <li>Supervised learning</li>
-<li>Extract features <span class="math inline"><em>x</em><sub><em>i</em></sub></span> of users and/or items building a model to predict rating <span class="math inline"><em>y</em><sub><em>i</em></sub></span> given <span class="math inline"><em>x</em><sub><em>i</em></sub></span>.</li>
+<li>Extract features <span class="math inline">\(x_i\)</span> of users and/or items building a model to predict rating <span class="math inline">\(y_i\)</span> given <span class="math inline">\(x_i\)</span>.</li>
 <li>Apply model to predict for new users/items.</li>
 </ul></li>
 <li>Hybrid
@@ -408,7 +407,7 @@ $$</span></p>
 <ul>
 <li>Take an average of per-user and per-item averages.</li>
 </ul></li>
-<li><a href="https://scikit-learn.org/stable/modules/generated/sklearn.impute.KNNImputer.html"><span class="math inline"><em>k</em></span>-Nearest Neighbours imputation</a></li>
+<li><a href="https://scikit-learn.org/stable/modules/generated/sklearn.impute.KNNImputer.html"><span class="math inline">\(k\)</span>-Nearest Neighbours imputation</a></li>
 </ul>
 </section>
 <section id="content-based-filtering" class="slide level2 center">
@@ -473,6 +472,7 @@ $$</span></p>
   <script src="site_libs/revealjs/plugin/notes/notes.js"></script>
   <script src="site_libs/revealjs/plugin/search/search.js"></script>
   <script src="site_libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="site_libs/revealjs/plugin/math/math.js"></script>
   <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
 
   <script>
@@ -640,9 +640,27 @@ $$</span></p>
         // Factor of the display size that should remain empty around the content
         margin: 0.1,
 
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
         // reveal.js plugins
         plugins: [QuartoLineHighlight, PdfExport, RevealMenu, QuartoSupport,
 
+          RevealMath,
           RevealNotes,
           RevealSearch,
           RevealZoom

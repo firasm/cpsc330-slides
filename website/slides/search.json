@@ -1124,7 +1124,7 @@
     "href": "slides-12.html#shap-1",
     "title": "Lecture 12: Feature importances",
     "section": "SHAP",
-    "text": "SHAP\n\nYou might need to install SHAP in your conda environment\nconda install -c conda-forge shap"
+    "text": "SHAP"
   },
   {
     "objectID": "slides-07.html#announcements",
@@ -1927,16 +1927,16 @@
   {
     "objectID": "slides-14.html#pause-and-reflect",
     "href": "slides-14.html#pause-and-reflect",
-    "title": "CPSC 330 Lecture 14: K-Means",
+    "title": "Lecture 14: K-Means",
     "section": "Pause and Reflect",
     "text": "Pause and Reflect\nWe are now just over half-way through CPSC 330!\nYou had a midterm already a couple of weeks ago, I’d like some feedback on how things are going in class (as the instructor)."
   },
   {
     "objectID": "slides-14.html#class-survey",
     "href": "slides-14.html#class-survey",
-    "title": "CPSC 330 Lecture 14: K-Means",
+    "title": "Lecture 14: K-Means",
     "section": "Class Survey",
-    "text": "Class Survey\nI’d love to hear how you think lectures are going, and how the course is going overall: bit.ly/cpsc330_24W1."
+    "text": "Class Survey\nI’d love to hear how you think lectures are going, and how the course is going overall: bit.ly/cpsc330_2026S1.\nLet’s take a couple of minutes to complete this before we get started on today’s content."
   },
   {
     "objectID": "slides-14.html#iclicker-midterm-poll",
@@ -1950,14 +1950,14 @@
     "href": "slides-14.html#supervised-learning",
     "title": "Lecture 14: K-Means",
     "section": "Supervised learning",
-    "text": "Supervised learning\n\nTraining data comprises a set of observations (X) and their corresponding targets (y).\nWe wish to find a model function f that relates X to y.\nThen use that model function to predict the targets of new examples.\nWe have been working with this set up so far."
+    "text": "Supervised learning\n\nTraining data comprises a set of observations (\\(X\\)) and their corresponding targets (\\(y\\)).\nWe wish to find a model function \\(f\\) that relates \\(X\\) to \\(y\\).\nThen use that model function to predict the targets of new examples.\nWe have been working with this set up so far."
   },
   {
     "objectID": "slides-14.html#unsupervised-learning",
     "href": "slides-14.html#unsupervised-learning",
     "title": "Lecture 14: K-Means",
     "section": "Unsupervised learning",
-    "text": "Unsupervised learning\n\nTraining data consists of observations (X) without any corresponding targets.\nUnsupervised learning could be used to group similar things together in X or to find underlying structure in the data."
+    "text": "Unsupervised learning\n\nTraining data consists of observations (\\(X\\)) without any corresponding targets.\nUnsupervised learning could be used to group similar things together in \\(X\\) or to find underlying structure in the data."
   },
   {
     "objectID": "slides-14.html#clustering-activity",
@@ -2006,7 +2006,7 @@
     "href": "slides-14.html#k-means-pros-and-cons",
     "title": "Lecture 14: K-Means",
     "section": "K-Means pros and cons",
-    "text": "K-Means pros and cons\n\nAdvantages:\n\nSimple and efficient for large datasets.\nWorks well with spherical clusters.\n\nLimitations:\n\nNeeds pre-defined k.\nSensitive to outliers and initial centroid placement."
+    "text": "K-Means pros and cons\n\nAdvantages:\n\nSimple and efficient for large datasets.\nWorks well with spherical clusters.\n\nLimitations:\n\nNeeds pre-defined \\(k\\).\nSensitive to outliers and initial centroid placement."
   },
   {
     "objectID": "slides-14.html#iclicker-exercise-15.1",
@@ -2027,21 +2027,21 @@
     "href": "slides-14.html#the-elbow-method",
     "title": "Lecture 14: K-Means",
     "section": "The Elbow method",
-    "text": "The Elbow method\n\nPurpose: Identify the optimal number of clusters k.\nHow it Works:\n\nPlot intra-cluster distances for different values of k.\nLook for the “elbow” point where the intra-cluster reduction slows.\n\nInterpretation:\n\nThe point of diminishing returns suggests a good k."
+    "text": "The Elbow method\n\nPurpose: Identify the optimal number of clusters \\(k\\).\nHow it Works:\n\nPlot intra-cluster distances for different values of \\(k\\).\nLook for the “elbow” point where the intra-cluster reduction slows.\n\nInterpretation:\n\nThe point of diminishing returns suggests a good \\(k\\)."
   },
   {
     "objectID": "slides-14.html#the-elbow-method-example",
     "href": "slides-14.html#the-elbow-method-example",
     "title": "Lecture 14: K-Means",
     "section": "The Elbow method example",
-    "text": "The Elbow method example\n\n\n\n\nWhat would be the intracluster distance when\n\nk = 1\nk= # number of data points?"
+    "text": "The Elbow method example\n\n\n\n\nWhat would be the intracluster distance when\n\n\\(k=1\\)\n\\(k=\\) # number of data points?"
   },
   {
     "objectID": "slides-14.html#the-silhouette-method",
     "href": "slides-14.html#the-silhouette-method",
     "title": "Lecture 14: K-Means",
     "section": "The Silhouette method",
-    "text": "The Silhouette method\n\nSilhouette Score: Measures how well data points fit within their cluster.\n\n$s(i) = \\frac{b(i) - a(i)}{\\max (a(i), b(i))}$\n\na(i): Mean distance to other points in the same cluster.\nb(i): Mean distance to points in the nearest neighboring cluster."
+    "text": "The Silhouette method\n\nSilhouette Score: Measures how well data points fit within their cluster.\n\n\\(s(i) = \\frac{b(i) - a(i)}{\\max (a(i), b(i))}\\)\n\n\\(a(i)\\): Mean distance to other points in the same cluster.\n\\(b(i)\\): Mean distance to points in the nearest neighboring cluster."
   },
   {
     "objectID": "slides-14.html#the-silhouette-method-1",
@@ -4022,14 +4022,14 @@
     "href": "slides-16.html#problem-formulation",
     "title": "Lecture 16: Recommender Systems",
     "section": "Problem formulation",
-    "text": "Problem formulation\n\nWe have N users and M items.\nObserved data = interactions:\n\nMovie ratings (Netflix)\nSong plays (Spotify)\nProduct purchases (Amazon)\n\n\nGoal: predict unobserved interactions."
+    "text": "Problem formulation\n\nWe have \\(N\\) users and \\(M\\) items.\nObserved data = interactions:\n\nMovie ratings (Netflix)\nSong plays (Spotify)\nProduct purchases (Amazon)\n\n\nGoal: predict unobserved interactions."
   },
   {
     "objectID": "slides-16.html#the-utility-matrix",
     "href": "slides-16.html#the-utility-matrix",
     "title": "Lecture 16: Recommender Systems",
     "section": "The utility matrix",
-    "text": "The utility matrix\n\nRows = users, columns = items\nEach entry yij = user i’s interaction (e.g., rating) with item j"
+    "text": "The utility matrix\n\nRows = users, columns = items\nEach entry \\(y_{ij}\\) = user \\(i\\)’s interaction (e.g., rating) with item \\(j\\)"
   },
   {
     "objectID": "slides-16.html#sparsity",
@@ -4049,15 +4049,15 @@
     "objectID": "slides-16.html#rating-prediction-neq-regression",
     "href": "slides-16.html#rating-prediction-neq-regression",
     "title": "Lecture 16: Recommender Systems",
-    "section": "Rating prediction ≠ regression",
-    "text": "Rating prediction ≠ regression\n\n\nRegression\n$$\n\\begin{bmatrix}\n\\checkmark & \\checkmark & \\checkmark  & \\checkmark & \\checkmark\\\\\n\\checkmark & \\checkmark & \\checkmark  & \\checkmark & \\checkmark\\\\\n\\checkmark & \\checkmark & \\checkmark  & \\checkmark & \\checkmark\\\\\n\\checkmark & \\checkmark & \\checkmark  & \\checkmark & ?\\\\\n\\checkmark & \\checkmark & \\checkmark  & \\checkmark & ?\\\\\n\\checkmark & \\checkmark & \\checkmark  & \\checkmark & ?\\\\\n\\end{bmatrix}\n$$\n\nRating prediction\n$$\n\\begin{bmatrix}\n? & ? & \\checkmark  & ? & \\checkmark\\\\\n\\checkmark & ? & ?  & ? & ?\\\\\n? & \\checkmark & \\checkmark  & ? & \\checkmark\\\\\n? & ? & ?  & ? & ?\\\\\n? & ? & ? & \\checkmark & ?\\\\\n? & \\checkmark & \\checkmark  & ? & \\checkmark\n\\end{bmatrix}\n$$"
+    "section": "Rating prediction \\(\\neq\\) regression",
+    "text": "Rating prediction \\(\\neq\\) regression\n\n\nRegression\n\\[\n\\begin{bmatrix}\n\\checkmark & \\checkmark & \\checkmark  & \\checkmark & \\checkmark\\\\\n\\checkmark & \\checkmark & \\checkmark  & \\checkmark & \\checkmark\\\\\n\\checkmark & \\checkmark & \\checkmark  & \\checkmark & \\checkmark\\\\\n\\checkmark & \\checkmark & \\checkmark  & \\checkmark & ?\\\\\n\\checkmark & \\checkmark & \\checkmark  & \\checkmark & ?\\\\\n\\checkmark & \\checkmark & \\checkmark  & \\checkmark & ?\\\\\n\\end{bmatrix}\n\\]\n\nRating prediction\n\\[\n\\begin{bmatrix}\n? & ? & \\checkmark  & ? & \\checkmark\\\\\n\\checkmark & ? & ?  & ? & ?\\\\\n? & \\checkmark & \\checkmark  & ? & \\checkmark\\\\\n? & ? & ?  & ? & ?\\\\\n? & ? & ? & \\checkmark & ?\\\\\n? & \\checkmark & \\checkmark  & ? & \\checkmark\n\\end{bmatrix}\n\\]"
   },
   {
     "objectID": "slides-16.html#main-approaches",
     "href": "slides-16.html#main-approaches",
     "title": "Lecture 16: Recommender Systems",
     "section": "Main approaches",
-    "text": "Main approaches\n\nCollaborative filtering\n\n“Unsupervised” learning\nWe only have labels yij (rating of user i for item j).\nWe learn latent features.\n\n\nContent-based recommenders (today’s focus)\n\nSupervised learning\nExtract features xi of users and/or items building a model to predict rating yi given xi.\nApply model to predict for new users/items.\n\nHybrid\n\nCombining collaborative filtering with content-based filtering"
+    "text": "Main approaches\n\nCollaborative filtering\n\n“Unsupervised” learning\nWe only have labels \\(y_{ij}\\) (rating of user \\(i\\) for item \\(j\\)).\nWe learn latent features.\n\n\nContent-based recommenders (today’s focus)\n\nSupervised learning\nExtract features \\(x_i\\) of users and/or items building a model to predict rating \\(y_i\\) given \\(x_i\\).\nApply model to predict for new users/items.\n\nHybrid\n\nCombining collaborative filtering with content-based filtering"
   },
   {
     "objectID": "slides-16.html#how-do-we-evaluate-recommendations",
@@ -4099,7 +4099,7 @@
     "href": "slides-16.html#baseline-approaches",
     "title": "Lecture 16: Recommender Systems",
     "section": "Baseline approaches",
-    "text": "Baseline approaches\n\nGlobal average baseline\nPer-user average baseline\nPer-item average baseline\nAverage of 2 and 3\n\nTake an average of per-user and per-item averages.\n\nk-Nearest Neighbours imputation"
+    "text": "Baseline approaches\n\nGlobal average baseline\nPer-user average baseline\nPer-item average baseline\nAverage of 2 and 3\n\nTake an average of per-user and per-item averages.\n\n\\(k\\)-Nearest Neighbours imputation"
   },
   {
     "objectID": "slides-16.html#content-based-filtering",
@@ -4498,7 +4498,7 @@
     "href": "slides-17.html#goal-of-this-lecture",
     "title": "Lecture 17: Natural Language Processing",
     "section": "Goal of this lecture",
-    "text": "Goal of this lecture\nNLP is a broad field. In this lecture I’ll give you a high-level introduction to\n\nTopic Modeling\nWord embeddings\n\nWe will look at Large Language Models (LLM) next class!"
+    "text": "Goal of this lecture\nNLP is a broad field. In this lecture I’ll give you a high-level introduction to\n\nTopic Modeling\nWord embeddings\n\nWe will defer Large Language Models (LLM) to “Notes only”"
   },
   {
     "objectID": "slides-24.html#group-work-class-demo-live-coding",
@@ -5170,7 +5170,7 @@
     "href": "slides-14.html#clicker-question-14.1",
     "title": "Lecture 14: K-Means",
     "section": "Clicker Question 14.1",
-    "text": "Clicker Question 14.1\nSelect all of the following statements which are True\n\n\nK-Means algorithm always converges to the same solution.\n\n\nK in K-Means should always be ≤ # of features.\n\n\nIn K-Means, it makes sense to have K ≤ # of examples.\n\n\nIn K-Means, in some iterations some points may be left unassigned."
+    "text": "Clicker Question 14.1\nSelect all of the following statements which are True\n\n\nK-Means algorithm always converges to the same solution.\n\n\n\\(K\\) in K-Means should always be \\(\\leq\\) # of features.\n\n\nIn K-Means, it makes sense to have \\(K\\) \\(\\leq\\) # of examples.\n\n\nIn K-Means, in some iterations some points may be left unassigned."
   },
   {
     "objectID": "slides-14.html#clicker-question-14.2",
@@ -5184,7 +5184,7 @@
     "href": "slides-14.html#how-many-clusters",
     "title": "Lecture 14: K-Means",
     "section": "How many clusters?",
-    "text": "How many clusters?\n\nClustering is not about perfect scores, but insight.\nTypically we do not want too few or way too many clusters.\nThere’s no single “correct” value of k – only useful ones that make sense for your problem.\nSome preferred values may exist (e.g., based on domain knowledge).\nThe goal is to find interpretable, meaningful clusters. So pick k that helps tell a useful story about your data.\nWe typically go with quantitative and qualitative approaches."
+    "text": "How many clusters?\n\nClustering is not about perfect scores, but insight.\nTypically we do not want too few or way too many clusters.\nThere’s no single “correct” value of \\(k\\) – only useful ones that make sense for your problem.\nSome preferred values may exist (e.g., based on domain knowledge).\nThe goal is to find interpretable, meaningful clusters. So pick \\(k\\) that helps tell a useful story about your data.\nWe typically go with quantitative and qualitative approaches."
   },
   {
     "objectID": "slides-14.html#section",
@@ -5731,5 +5731,12 @@
     "title": "Lecture 11: Ensembles",
     "section": "Announcements",
     "text": "Announcements\n\nFinal Exam Dates"
+  },
+  {
+    "objectID": "slides-14.html#test-2-debrief",
+    "href": "slides-14.html#test-2-debrief",
+    "title": "Lecture 14: K-Means",
+    "section": "Test 2 Debrief",
+    "text": "Test 2 Debrief\nHow did you feel about the second Test?\n\n\nI felt well-prepared and it went smoothly\n\n\nI think it went okay. We’ll see when grades come back\n\n\nI struggled and didn’t feel fully prepared\n\n\nI noticed some gaps between what we practised and what appeared on the exam\n\n\nIt was a stressful experience for me 😔"
   }
 ]

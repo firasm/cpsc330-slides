@@ -94,7 +94,7 @@ NLP is a broad field. In this lecture I'll give you a high-level introduction to
 - Topic Modeling
 - Word embeddings 
 
-We will look at Large Language Models (LLM) next class!
+We will defer Large Language Models (LLM) to "Notes only"
 
 ## Activity: Context and word meaning
 

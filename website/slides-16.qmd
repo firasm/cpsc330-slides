@@ -3,7 +3,6 @@ title: 'Lecture 16: Recommender Systems'
 description: "Recommender systems with a focus on content-based recommenders."
 format:
     revealjs:
-        html-math-method: plain
         slide-number: true
         slide-level: 2
         center: true
