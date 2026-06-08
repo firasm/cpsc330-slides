@@ -104,7 +104,6 @@ Pair up with the person next to you and try to guess the meanings of two made-up
 
 Attribution: Thanks to ChatGPT 4o on Wed Nov. 6, 2024!
 
-<!-- ## Group Work: Class Demo & Live Coding
+## Group Work: Class Demo & Live Coding
 
 For this demo, each student should [click this link](https://github.com/new?template_name=lecture17_demo&template_owner=ubc-cpsc330) to create a new repo in their accounts, then clone that repo locally to follow along with the demo from today.
--->
