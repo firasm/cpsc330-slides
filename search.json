@@ -543,14 +543,14 @@
     "href": "slides-16.html#problem-formulation",
     "title": "Lecture 16: Recommender Systems",
     "section": "Problem formulation",
-    "text": "Problem formulation\n\nWe have N users and M items.\nObserved data = interactions:\n\nMovie ratings (Netflix)\nSong plays (Spotify)\nProduct purchases (Amazon)\n\n\nGoal: predict unobserved interactions."
+    "text": "Problem formulation\n\nWe have \\(N\\) users and \\(M\\) items.\nObserved data = interactions:\n\nMovie ratings (Netflix)\nSong plays (Spotify)\nProduct purchases (Amazon)\n\n\nGoal: predict unobserved interactions."
   },
   {
     "objectID": "slides-16.html#the-utility-matrix",
     "href": "slides-16.html#the-utility-matrix",
     "title": "Lecture 16: Recommender Systems",
     "section": "The utility matrix",
-    "text": "The utility matrix\n\nRows = users, columns = items\nEach entry yij = user i’s interaction (e.g., rating) with item j"
+    "text": "The utility matrix\n\nRows = users, columns = items\nEach entry \\(y_{ij}\\) = user \\(i\\)’s interaction (e.g., rating) with item \\(j\\)"
   },
   {
     "objectID": "slides-16.html#sparsity",
@@ -570,15 +570,15 @@
     "objectID": "slides-16.html#rating-prediction-neq-regression",
     "href": "slides-16.html#rating-prediction-neq-regression",
     "title": "Lecture 16: Recommender Systems",
-    "section": "Rating prediction ≠ regression",
-    "text": "Rating prediction ≠ regression\n\n\nRegression\n$$\n\\begin{bmatrix}\n\\checkmark & \\checkmark & \\checkmark  & \\checkmark & \\checkmark\\\\\n\\checkmark & \\checkmark & \\checkmark  & \\checkmark & \\checkmark\\\\\n\\checkmark & \\checkmark & \\checkmark  & \\checkmark & \\checkmark\\\\\n\\checkmark & \\checkmark & \\checkmark  & \\checkmark & ?\\\\\n\\checkmark & \\checkmark & \\checkmark  & \\checkmark & ?\\\\\n\\checkmark & \\checkmark & \\checkmark  & \\checkmark & ?\\\\\n\\end{bmatrix}\n$$\n\nRating prediction\n$$\n\\begin{bmatrix}\n? & ? & \\checkmark  & ? & \\checkmark\\\\\n\\checkmark & ? & ?  & ? & ?\\\\\n? & \\checkmark & \\checkmark  & ? & \\checkmark\\\\\n? & ? & ?  & ? & ?\\\\\n? & ? & ? & \\checkmark & ?\\\\\n? & \\checkmark & \\checkmark  & ? & \\checkmark\n\\end{bmatrix}\n$$"
+    "section": "Rating prediction \\(\\neq\\) regression",
+    "text": "Rating prediction \\(\\neq\\) regression\n\n\nRegression\n\\[\n\\begin{bmatrix}\n\\checkmark & \\checkmark & \\checkmark  & \\checkmark & \\checkmark\\\\\n\\checkmark & \\checkmark & \\checkmark  & \\checkmark & \\checkmark\\\\\n\\checkmark & \\checkmark & \\checkmark  & \\checkmark & \\checkmark\\\\\n\\checkmark & \\checkmark & \\checkmark  & \\checkmark & ?\\\\\n\\checkmark & \\checkmark & \\checkmark  & \\checkmark & ?\\\\\n\\checkmark & \\checkmark & \\checkmark  & \\checkmark & ?\\\\\n\\end{bmatrix}\n\\]\n\nRating prediction\n\\[\n\\begin{bmatrix}\n? & ? & \\checkmark  & ? & \\checkmark\\\\\n\\checkmark & ? & ?  & ? & ?\\\\\n? & \\checkmark & \\checkmark  & ? & \\checkmark\\\\\n? & ? & ?  & ? & ?\\\\\n? & ? & ? & \\checkmark & ?\\\\\n? & \\checkmark & \\checkmark  & ? & \\checkmark\n\\end{bmatrix}\n\\]"
   },
   {
     "objectID": "slides-16.html#main-approaches",
     "href": "slides-16.html#main-approaches",
     "title": "Lecture 16: Recommender Systems",
     "section": "Main approaches",
-    "text": "Main approaches\n\nCollaborative filtering\n\n“Unsupervised” learning\nWe only have labels yij (rating of user i for item j).\nWe learn latent features.\n\n\nContent-based recommenders (today’s focus)\n\nSupervised learning\nExtract features xi of users and/or items building a model to predict rating yi given xi.\nApply model to predict for new users/items.\n\nHybrid\n\nCombining collaborative filtering with content-based filtering"
+    "text": "Main approaches\n\nCollaborative filtering\n\n“Unsupervised” learning\nWe only have labels \\(y_{ij}\\) (rating of user \\(i\\) for item \\(j\\)).\nWe learn latent features.\n\n\nContent-based recommenders (today’s focus)\n\nSupervised learning\nExtract features \\(x_i\\) of users and/or items building a model to predict rating \\(y_i\\) given \\(x_i\\).\nApply model to predict for new users/items.\n\nHybrid\n\nCombining collaborative filtering with content-based filtering"
   },
   {
     "objectID": "slides-16.html#how-do-we-evaluate-recommendations",
@@ -620,7 +620,7 @@
     "href": "slides-16.html#baseline-approaches",
     "title": "Lecture 16: Recommender Systems",
     "section": "Baseline approaches",
-    "text": "Baseline approaches\n\nGlobal average baseline\nPer-user average baseline\nPer-item average baseline\nAverage of 2 and 3\n\nTake an average of per-user and per-item averages.\n\nk-Nearest Neighbours imputation"
+    "text": "Baseline approaches\n\nGlobal average baseline\nPer-user average baseline\nPer-item average baseline\nAverage of 2 and 3\n\nTake an average of per-user and per-item averages.\n\n\\(k\\)-Nearest Neighbours imputation"
   },
   {
     "objectID": "slides-16.html#content-based-filtering",
@@ -4106,7 +4106,7 @@
     "href": "slides-17.html#goal-of-this-lecture",
     "title": "Lecture 17: Natural Language Processing",
     "section": "Goal of this lecture",
-    "text": "Goal of this lecture\nNLP is a broad field. In this lecture I’ll give you a high-level introduction to\n\nTopic Modeling\nWord embeddings\n\nWe will look at Large Language Models (LLM) next class!"
+    "text": "Goal of this lecture\nNLP is a broad field. In this lecture I’ll give you a high-level introduction to\n\nTopic Modeling\nWord embeddings\n\nWe will defer Large Language Models (LLM) to “Notes only”"
   },
   {
     "objectID": "slides-17.html#activity-context-and-word-meaning",
