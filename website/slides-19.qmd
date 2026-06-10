@@ -245,6 +245,7 @@ mglearn.plots.plot_two_hidden_layer_graph()
 - To make them really powerful compared to the linear models, we apply a non-linear function to the weighted sum for each hidden node. 
 - Neural network = neural net
 - Deep learning ~ using neural networks
+- A fantastic explanation of [Neural Networks](https://youtu.be/aircAruvnKk?si=p6zUZbdPzAdEfdlo) from 3Blue1Brown.
 
 ## Neural networks example and terminology
 
