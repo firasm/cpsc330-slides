@@ -14,6 +14,45 @@ format:
         - img/        
 ---
 
+```{python}
+import os
+import sys
+
+import matplotlib.pyplot as plt
+import numpy as np
+import pandas as pd
+from sklearn.compose import ColumnTransformer, make_column_transformer
+from sklearn.dummy import DummyClassifier
+from sklearn.ensemble import RandomForestClassifier, RandomForestRegressor
+from sklearn.impute import SimpleImputer
+from sklearn.linear_model import LogisticRegression, Ridge
+from sklearn.metrics import confusion_matrix
+from sklearn.model_selection import (
+    cross_val_predict,
+    cross_val_score,
+    cross_validate,
+    train_test_split,
+)
+from sklearn.pipeline import Pipeline, make_pipeline
+from sklearn.preprocessing import (
+    FunctionTransformer,
+    OneHotEncoder,
+    OrdinalEncoder,
+    StandardScaler,
+)
+
+sys.path.append(os.path.join(os.path.abspath("."), "code"))
+from utils import *
+
+plt.rcParams["font.size"] = 12
+
+import warnings
+
+warnings.filterwarnings("default")
+DATA_DIR = os.path.join(os.path.abspath("."), "data/")
+```
+
+
 ## Announcements
 
 - Test 3 update
