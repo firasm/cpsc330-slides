@@ -18,14 +18,126 @@
     "href": "slides-21.html#wrap-up-time-series-from-last-class",
     "title": "Lecture 21: Survival analysis",
     "section": "Wrap-up Time Series from last class",
-    "text": "Wrap-up Time Series from last class"
+    "text": "Wrap-up Time Series from last class\n…"
   },
   {
-    "objectID": "slides-21.html#recap-time-series-analysis",
-    "href": "slides-21.html#recap-time-series-analysis",
+    "objectID": "slides-21.html#customer-churn",
+    "href": "slides-21.html#customer-churn",
     "title": "Lecture 21: Survival analysis",
-    "section": "Recap: Time Series Analysis",
-    "text": "Recap: Time Series Analysis"
+    "section": "Customer churn",
+    "text": "Customer churn\nCustomer churn, also known as customer attrition, refers to the phenomenon where customers or subscribers stop doing business with a company or service."
+  },
+  {
+    "objectID": "slides-21.html#monthly-subscriber-churn-rates-for-various-streaming-services",
+    "href": "slides-21.html#monthly-subscriber-churn-rates-for-various-streaming-services",
+    "title": "Lecture 21: Survival analysis",
+    "section": "Monthly subscriber churn rates for various streaming services",
+    "text": "Monthly subscriber churn rates for various streaming services\n\n\n Source\n\nQuestion: Is a smaller or a larger churn rate more desirable for a subscription-based company?\n\nA smaller churn rate is better (means fewer customers leaving)\nLower churn = higher customer retention = more stable revenue"
+  },
+  {
+    "objectID": "slides-21.html#the-challenge-predicting-when-not-just-whether",
+    "href": "slides-21.html#the-challenge-predicting-when-not-just-whether",
+    "title": "Lecture 21: Survival analysis",
+    "section": "The challenge: Predicting when, not just whether",
+    "text": "The challenge: Predicting when, not just whether\nImagine you work for a subscription-based telecom company.\n\nYour team wants to predict when a customer will churn, not just whether they churn.\nThis helps the company:\n\nTarget retention strategies at the right time\nAllocate resources efficiently to high-risk customers\nUnderstand which factors accelerate or delay churn\n\nOur goal: model time to churn while accounting for customers who haven’t churned yet."
+  },
+  {
+    "objectID": "slides-21.html#customer-churn-dataset",
+    "href": "slides-21.html#customer-churn-dataset",
+    "title": "Lecture 21: Survival analysis",
+    "section": "Customer Churn Dataset",
+    "text": "Customer Churn Dataset\nIf you wanted to predict whether a customer churns, what kind of model from your ML toolbox would you use?\n\n\n\n\n\n\n\n\n\ncustomerID\ngender\nSeniorCitizen\nPartner\nDependents\ntenure\nPhoneService\nMultipleLines\nInternetService\nOnlineSecurity\n...\nDeviceProtection\nTechSupport\nStreamingTV\nStreamingMovies\nContract\nPaperlessBilling\nPaymentMethod\nMonthlyCharges\nTotalCharges\nChurn\n\n\n\n\n6464\n4726-DLWQN\nMale\n1\nNo\nNo\n50\nYes\nYes\nDSL\nYes\n...\nNo\nNo\nYes\nNo\nMonth-to-month\nYes\nBank transfer (automatic)\n70.35\n3454.6\nNo\n\n\n5707\n4537-DKTAL\nFemale\n0\nNo\nNo\n2\nYes\nNo\nDSL\nNo\n...\nNo\nNo\nNo\nNo\nMonth-to-month\nNo\nElectronic check\n45.55\n84.4\nNo\n\n\n3442\n0468-YRPXN\nMale\n0\nNo\nNo\n29\nYes\nNo\nFiber optic\nNo\n...\nYes\nYes\nYes\nYes\nMonth-to-month\nYes\nCredit card (automatic)\n98.80\n2807.1\nNo\n\n\n3932\n1304-NECVQ\nFemale\n1\nNo\nNo\n2\nYes\nYes\nFiber optic\nNo\n...\nYes\nNo\nNo\nNo\nMonth-to-month\nYes\nElectronic check\n78.55\n149.55\nYes\n\n\n6124\n7153-CHRBV\nFemale\n0\nYes\nYes\n57\nYes\nNo\nDSL\nYes\n...\nYes\nYes\nNo\nNo\nOne year\nYes\nMailed check\n59.30\n3274.35\nNo\n\n\n\n\n5 rows × 21 columns"
+  },
+  {
+    "objectID": "slides-21.html#churn-prediction-as-binary-classification",
+    "href": "slides-21.html#churn-prediction-as-binary-classification",
+    "title": "Lecture 21: Survival analysis",
+    "section": "Churn prediction as binary classification",
+    "text": "Churn prediction as binary classification\n\nWhen we treat churn as a binary classification problem, we only ask: Has the customer churned by the time of data collection?\nLimitations of this approach:\n\nAnswers only “Yes/No” and discards when churn occurred\nTreats a customer who churned after 1 month the same as one who churned after 5 years\nIgnores the time dimension entirely\n\nIs that what we want? Not if timing matters for business decisions!"
+  },
+  {
+    "objectID": "slides-21.html#predicting-tenure",
+    "href": "slides-21.html#predicting-tenure",
+    "title": "Lecture 21: Survival analysis",
+    "section": "Predicting tenure",
+    "text": "Predicting tenure\n\n\n\n\n\n\n\n\n\n\n\ntenure\nChurn\n\n\n\n\n6464\n50\nNo\n\n\n5707\n2\nNo\n\n\n3442\n29\nNo\n\n\n3932\n2\nYes\n\n\n6124\n57\nNo\n\n\n301\n4\nYes\n\n\n3552\n68\nNo\n\n\n2874\n64\nNo\n\n\n\n\n\n\n\n\nIn our dataset, the tenure column is the number of months the customer has stayed with the company. Can we use the techniques you learned so far (e.g., regression models) to predict the time (tenure in our case)?"
+  },
+  {
+    "objectID": "slides-21.html#the-problem-incomplete-information",
+    "href": "slides-21.html#the-problem-incomplete-information",
+    "title": "Lecture 21: Survival analysis",
+    "section": "The problem: Incomplete information",
+    "text": "The problem: Incomplete information\n\n\n\n\n\n\n\n\n\n\n\ntenure\nChurn\n\n\n\n\n6464\n50\nNo\n\n\n5707\n2\nNo\n\n\n3442\n29\nNo\n\n\n3932\n2\nYes\n\n\n6124\n57\nNo\n\n\n301\n4\nYes\n\n\n3552\n68\nNo\n\n\n2874\n64\nNo\n\n\n\n\n\n\n\n\n\nWe only have information about tenure up to the point we collected the data.\nFor customers who haven’t churned:\n\nWe don’t know their true “time to churn”\nWe only know they lasted at least this long\nTheir actual churn time is unknown (incomplete information)\n\nThis is called right-censoring - the event hasn’t occurred yet"
+  },
+  {
+    "objectID": "slides-21.html#types-of-censoring",
+    "href": "slides-21.html#types-of-censoring",
+    "title": "Lecture 21: Survival analysis",
+    "section": "Types of censoring",
+    "text": "Types of censoring\n\nRight-censoring: Event hasn’t occurred yet (most common in practice)\nLeft-censoring: Event occurred before observation started\nInterval-censoring: Event occurred within a time interval"
+  },
+  {
+    "objectID": "slides-21.html#time-to-event-and-censoring",
+    "href": "slides-21.html#time-to-event-and-censoring",
+    "title": "Lecture 21: Survival analysis",
+    "section": "Time to event and censoring",
+    "text": "Time to event and censoring\n\n\n\n\n\n\n\n\n\n\n\ntenure\nChurn\n\n\n\n\n6464\n50\nNo\n\n\n5707\n2\nNo\n\n\n3442\n29\nNo\n\n\n3932\n2\nYes\n\n\n6124\n57\nNo\n\n\n301\n4\nYes\n\n\n3552\n68\nNo\n\n\n2874\n64\nNo\n\n\n\n\n\n\n\n\n\nMany customers in the dataset are still active (Churn = “No”).\nThey are right-censored: we only know their tenure so far, not their final tenure."
+  },
+  {
+    "objectID": "slides-21.html#time-to-event-problems",
+    "href": "slides-21.html#time-to-event-problems",
+    "title": "Lecture 21: Survival analysis",
+    "section": "Time-to-event problems",
+    "text": "Time-to-event problems\nTime-to-event problems appear everywhere. Examples include:\n\nTime until a customer leaves a subscription service\nTime until a disease causes death\nTime until equipment fails\nDuration of unemployment until finding a job\nWaiting time until a scheduled surgery\n\nThese all follow the same pattern: the event happens once, and we care about how long it takes."
+  },
+  {
+    "objectID": "slides-21.html#approach-1-only-use-churned-customers",
+    "href": "slides-21.html#approach-1-only-use-churned-customers",
+    "title": "Lecture 21: Survival analysis",
+    "section": "Approach 1: Only use churned customers ⛔️",
+    "text": "Approach 1: Only use churned customers ⛔️\nSuppose we only consider rows where Churn == “Yes” and throw away all right-censored customers.\n\n\n\n\n\n\n\n\n\ncustomerID\ngender\nSeniorCitizen\nPartner\nDependents\ntenure\nPhoneService\nMultipleLines\nInternetService\nOnlineSecurity\n...\nDeviceProtection\nTechSupport\nStreamingTV\nStreamingMovies\nContract\nPaperlessBilling\nPaymentMethod\nMonthlyCharges\nTotalCharges\nChurn\n\n\n\n\n3932\n1304-NECVQ\nFemale\n1\nNo\nNo\n2\nYes\nYes\nFiber optic\nNo\n...\nYes\nNo\nNo\nNo\nMonth-to-month\nYes\nElectronic check\n78.55\n149.55\nYes\n\n\n301\n8098-LLAZX\nFemale\n1\nNo\nNo\n4\nYes\nYes\nFiber optic\nNo\n...\nNo\nNo\nYes\nYes\nMonth-to-month\nYes\nElectronic check\n95.45\n396.1\nYes\n\n\n5540\n3803-KMQFW\nFemale\n0\nYes\nYes\n1\nYes\nNo\nNo\nNo internet service\n...\nNo internet service\nNo internet service\nNo internet service\nNo internet service\nMonth-to-month\nNo\nMailed check\n20.55\n20.55\nYes\n\n\n4084\n2777-PHDEI\nFemale\n0\nNo\nNo\n1\nYes\nNo\nFiber optic\nNo\n...\nNo\nNo\nYes\nNo\nMonth-to-month\nNo\nElectronic check\n78.05\n78.05\nYes\n\n\n\n\n4 rows × 21 columns\n\n\n\nThis throws away valuable information from active customers!"
+  },
+  {
+    "objectID": "slides-21.html#clicker",
+    "href": "slides-21.html#clicker",
+    "title": "Lecture 21: Survival analysis",
+    "section": "Clicker",
+    "text": "Clicker\nWould only considering rows where Churn == “Yes” and throwing away all right-censored customers overestimate or underestimate the average survival time?\n\n\nOverestimate\n\n\nUnderestimate\n\n\nCannot tell based on the provided information"
+  },
+  {
+    "objectID": "slides-21.html#approach-2-assume-everyone-churns-now",
+    "href": "slides-21.html#approach-2-assume-everyone-churns-now",
+    "title": "Lecture 21: Survival analysis",
+    "section": "Approach 2: Assume everyone churns now ⛔️",
+    "text": "Approach 2: Assume everyone churns now ⛔️\nTreat all current tenure values as final, even for active customers.\n\n\n\n\n\n\n\n\n\ntenure\nChurn\n\n\n\n\n6464\n50\nNo\n\n\n5707\n2\nNo\n\n\n3442\n29\nNo\n\n\n3932\n2\nYes\n\n\n6124\n57\nNo\n\n\n\n\n\n\n\nThis assumes active customers (Churn = “No”) will churn immediately."
+  },
+  {
+    "objectID": "slides-21.html#question-for-you",
+    "href": "slides-21.html#question-for-you",
+    "title": "Lecture 21: Survival analysis",
+    "section": "Question for you:",
+    "text": "Question for you:\nWould assuming everyone churns now underestimate or overestimate tenure?\n\n\nOverestimate\n\n\nUnderestimate\n\n\nCannot tell based on the provided information"
+  },
+  {
+    "objectID": "slides-21.html#section",
+    "href": "slides-21.html#section",
+    "title": "Lecture 21: Survival analysis",
+    "section": "",
+    "text": "Key insight: Ignoring or removing censored cases will bias our estimates:"
+  },
+  {
+    "objectID": "slides-21.html#approach-3-survival-analysis",
+    "href": "slides-21.html#approach-3-survival-analysis",
+    "title": "Lecture 21: Survival analysis",
+    "section": "Approach 3: Survival analysis ✅",
+    "text": "Approach 3: Survival analysis ✅\nSurvival analysis explicitly models time until an event and properly handles censoring.\nCommon methods:\n\nKaplan–Meier estimator: Non-parametric method for estimating survival curves\nCox proportional hazards model: Semi-parametric regression model for survival data\nSurvival forests: Random forest variant adapted for censored data"
+  },
+  {
+    "objectID": "slides-21.html#survival-analysis",
+    "href": "slides-21.html#survival-analysis",
+    "title": "Lecture 21: Survival analysis",
+    "section": "Survival analysis",
+    "text": "Survival analysis\nThese methods allow estimation of:\nSurvival function:\n\n\\(S(t) = P(T &gt; t)\\) (probability of surviving past time \\(t\\))\nImagine starting with 100 customers on Day 0. The survival function tells you: What fraction of them are still active (have not churned) at time \\(t\\)?\n\\(S(3) = 0.80\\) (80% haven’t churned by month 3)\n\\(S(12) = 0.40\\) (40% haven’t churned by month 12)\n\nHazard function: \\(h(t)\\) (instantaneous risk of the event at time \\(t\\))\n\nImagine a customer who has not churned yet and is still active at month 10.\nThe hazard tells us: How likely are they to churn right now, at month 10?\nHuman mortality: hazard is low at age 20, higher at 80"
   },
   {
     "objectID": "slides-21.html#group-work-class-demo-live-coding",
@@ -1544,7 +1656,7 @@
     "href": "slides-19.html#object-detection-using-yolo",
     "title": "Lecture 19: Introduction to deep learning and computer vision",
     "section": "Object detection using YOLO",
-    "text": "Object detection using YOLO\n\n\nLet’s try this out using a pre-trained model.\n\nfrom ultralytics import YOLO\nmodel = YOLO(\"yolov8n.pt\")  # pretrained YOLOv8n model\n\nyolo_input = \"data/yolo_test/3356700488_183566145b.jpg\"\nyolo_result = \"data/yolo_result.jpg\"\n# Run batched inference on a list of images\nresult = model(yolo_input)  # return a list of Results objects\nresult[0].save(filename=yolo_result)\n\nCreating new Ultralytics Settings v0.0.6 file ✅ \nView Ultralytics Settings with 'yolo settings' or at '/home/runner/.config/Ultralytics/settings.json'\nUpdate Settings with 'yolo settings key=value', i.e. 'yolo settings runs_dir=path/to/dir'. For help see https://docs.ultralytics.com/quickstart/#ultralytics-settings.\n\nimage 1/1 /home/runner/work/cpsc330-slides/cpsc330-slides/website/data/yolo_test/3356700488_183566145b.jpg: 512x640 4 persons, 2 cars, 1 stop sign, 92.8ms\nSpeed: 1.4ms preprocess, 92.8ms inference, 1.2ms postprocess per image at shape (1, 3, 512, 640)\n\n\n'data/yolo_result.jpg'"
+    "text": "Object detection using YOLO\n\n\nLet’s try this out using a pre-trained model.\n\nfrom ultralytics import YOLO\nmodel = YOLO(\"yolov8n.pt\")  # pretrained YOLOv8n model\n\nyolo_input = \"data/yolo_test/3356700488_183566145b.jpg\"\nyolo_result = \"data/yolo_result.jpg\"\n# Run batched inference on a list of images\nresult = model(yolo_input)  # return a list of Results objects\nresult[0].save(filename=yolo_result)\n\nCreating new Ultralytics Settings v0.0.6 file ✅ \nView Ultralytics Settings with 'yolo settings' or at '/home/runner/.config/Ultralytics/settings.json'\nUpdate Settings with 'yolo settings key=value', i.e. 'yolo settings runs_dir=path/to/dir'. For help see https://docs.ultralytics.com/quickstart/#ultralytics-settings.\n\nimage 1/1 /home/runner/work/cpsc330-slides/cpsc330-slides/website/data/yolo_test/3356700488_183566145b.jpg: 512x640 4 persons, 2 cars, 1 stop sign, 93.4ms\nSpeed: 1.5ms preprocess, 93.4ms inference, 0.9ms postprocess per image at shape (1, 3, 512, 640)\n\n\n'data/yolo_result.jpg'"
   },
   {
     "objectID": "slides-19.html#object-detection-output",
