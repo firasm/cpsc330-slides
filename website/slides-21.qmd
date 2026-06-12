@@ -30,9 +30,9 @@ format:
 - NO tutorials on Thurs/Fri
 - Office hours as usual next week
 
-## Wrap-up Time Series from last class 
+## Wrap-up Time Series from last class
 
-## Recap: Time Series Analysis
+...
 
 # Clicker 21.1
 
@@ -43,7 +43,202 @@ format:
 - (C) In time series forecasting, the future value of a series can only be predicted based on its past values and cannot incorporate other variables.
 - (D) When we used RandomForestRegressor model on the POSIX time feature, it predicted a straight line on the test data because tree-based models are inherently unable to extrapolate (i.e., make predictions outside the - range of the training data).
 
-# Introduction to Survival Analysis
+## Customer churn 
+
+Customer churn, also known as customer attrition, refers to the phenomenon where customers or subscribers stop doing business with a company or service.
+
+## Monthly subscriber churn rates for various streaming services
+
+:::: {.columns}
+:::{.column width="50%"}
+![](img/subscriber-churn.png)
+[Source](https://sherwood.news/tech/could-mergers-help-streaming-sites-turn-the-churning-tides/)
+::: 
+
+:::{.column width="50%"}
+
+**Question:** Is a smaller or a larger churn rate more desirable for a subscription-based company?
+
+- A smaller churn rate is better (means fewer customers leaving)
+- Lower churn = higher customer retention = more stable revenue
+
+:::
+::::
+
+## The challenge: Predicting *when*, not just *whether*
+
+Imagine you work for a subscription-based telecom company.
+
+- Your team wants to predict **when a customer will churn**, not just whether they churn.
+- This helps the company:
+  - Target retention strategies at the right time
+  - Allocate resources efficiently to high-risk customers
+  - Understand which factors accelerate or delay churn
+- Our goal: **model time to churn** while accounting for customers who haven't churned yet.
+
+## [Customer Churn Dataset](https://www.kaggle.com/blastchar/telco-customer-churn) {.scrollable .smaller}
+
+If you wanted to predict whether a customer churns, what kind of model from your ML toolbox would you use?
+
+```{python}
+df = pd.read_csv(DATA_DIR + "WA_Fn-UseC_-Telco-Customer-Churn.csv")
+train_df, test_df = train_test_split(df, random_state=123)
+train_df.head()
+```
+## Churn prediction as binary classification
+
+- When we treat churn as a binary classification problem, we only ask: **Has the customer churned by the time of data collection?**
+
+- Limitations of this approach:
+  - Answers only "Yes/No" and discards **when** churn occurred
+  - Treats a customer who churned after 1 month the same as one who churned after 5 years
+  - Ignores the time dimension entirely
+
+- **Is that what we want?** Not if timing matters for business decisions! 
+
+## Predicting tenure
+
+:::: {.columns}
+:::{.column width="40%"}
+```{python}
+train_df[["tenure", "Churn"]].head(8)
+```
+:::
+:::{.column width="60%"}
+
+In our dataset, the tenure column is the number of months the customer has stayed with the company. Can we use the techniques you learned so far (e.g., regression models) to predict the time (tenure in our case)? 
+:::
+::::
+
+## The problem: Incomplete information
+
+:::: {.columns}
+:::{.column width="40%"}
+```{python}
+train_df[["tenure", "Churn"]].head(8)
+```
+:::
+:::{.column width="60%"}
+- We only have information about tenure **up to the point we collected the data**. 
+- For customers who haven't churned:
+  - We don't know their true "time to churn"
+  - We only know they lasted **at least** this long
+  - Their actual churn time is unknown (incomplete information)
+- This is called **right-censoring** - the event hasn't occurred yet
+:::
+::::
+
+## Types of censoring {.smaller}
+- **Right-censoring**: Event hasn't occurred yet (most common in practice)
+- **Left-censoring**: Event occurred before observation started
+- **Interval-censoring**: Event occurred within a time interval
+
+![](img/censoring.png)
+
+## Time to event and censoring 
+
+:::: {.columns}
+:::{.column width="40%"}
+```{python}
+train_df[["tenure", "Churn"]].head(8)
+```
+:::
+:::{.column width="60%"}
+- Many customers in the dataset are still active (Churn = "No"). 
+- They are **right-censored**: we only know their tenure **so far**, not their final tenure. 
+:::
+::::
+
+
+## Time-to-event problems
+
+Time-to-event problems appear everywhere. Examples include:
+
+- Time until a customer leaves a subscription service
+- Time until a disease causes death
+- Time until equipment fails
+- Duration of unemployment until finding a job
+- Waiting time until a scheduled surgery
+
+These all follow the same pattern: the event happens once, and we care about how long it takes.
+
+
+# Approaches 
+
+## Approach 1: Only use churned customers ⛔️ {.smaller}
+
+Suppose we only consider rows where Churn == "Yes" and throw away all right-censored customers. 
+
+```{python}
+train_df_churn = train_df.query(
+    "Churn == 'Yes'"
+)  # Consider only examples where the customers churned.
+test_df_churn = test_df.query(
+    "Churn == 'Yes'"
+)  # Consider only examples where the customers churned.
+train_df_churn.head(4)
+```
+
+This throws away valuable information from active customers!
+
+## Clicker 
+
+Would only considering rows where Churn == "Yes" and throwing away all right-censored customers overestimate or underestimate the average survival time?
+
+- (A) Overestimate 
+- (B) Underestimate 
+- (C) Cannot tell based on the provided information
+
+
+## Approach 2: Assume everyone churns now ⛔️
+
+Treat all current tenure values as final, even for active customers.
+
+```{python}
+train_df[["tenure", "Churn"]].head()
+```
+
+This assumes active customers (Churn = "No") will churn immediately. 
+
+## Question for you: 
+
+Would assuming everyone churns now underestimate or overestimate tenure?
+
+- (A) Overestimate 
+- (B) Underestimate 
+- (C) Cannot tell based on the provided information
+
+
+## 
+
+- **Key insight**: Ignoring or removing censored cases will bias our estimates:
+
+## Approach 3: Survival analysis ✅
+
+Survival analysis explicitly models time until an event **and properly handles censoring**.
+
+**Common methods:**
+
+- **Kaplan–Meier estimator**: Non-parametric method for estimating survival curves
+- **Cox proportional hazards model**: Semi-parametric regression model for survival data
+- **Survival forests**: Random forest variant adapted for censored data
+
+## Survival analysis {.smaller}
+
+These methods allow estimation of:
+
+**Survival function**: 
+
+- $S(t) = P(T > t)$ (probability of surviving past time $t$)
+- Imagine starting with 100 customers on Day 0. The survival function tells you: What fraction of them are still active (have not churned) at time $t$? 
+- $S(3) = 0.80$ (80% haven't churned by month 3)
+- $S(12) = 0.40$ (40% haven't churned by month 12)
+
+**Hazard function**: $h(t)$ (instantaneous risk of the event at time $t$)
+
+- Imagine a customer who has not churned yet and is still active at month 10.
+- The hazard tells us: How likely are they to churn right now, at month 10?
+- Human mortality: hazard is low at age 20, higher at 80
 
 ## Group Work: Class Demo & Live Coding
 
