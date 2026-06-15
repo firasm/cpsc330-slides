@@ -1103,7 +1103,7 @@
     "href": "slides.html",
     "title": "Overview",
     "section": "",
-    "text": "Title\n\n\n\nDescription\n\n\n\n\n\n\n\n\nLecture 1: Introduction to CPSC 330\n\n\nWhat is machine learning, types of machine learning, learning to navigate through the course materials, getting familiar with the course policies\n\n\n\n\n\n\nLecture 2: Terminology, Baselines, Decision Trees\n\n\nTerminology and Decision Trees\n\n\n\n\n\n\nLecture 3: ML fundamentals\n\n\ngeneralization, data splitting, overfitting, underfitting, the fundamental tradeoff, the golden rule\n\n\n\n\n\n\nLecture 4: \\(k\\)-nearest neighbours and SVM RBFs\n\n\nintroduction to KNNs, hyperparameter n_neighbours or \\(k\\), C and gamma hyperparameters of SVM RBF, decision boundaries with different values of hyperparameters.\n\n\n\n\n\n\nLecture 5: Preprocessing and sklearn pipelines\n\n\nPre-processing, Transformations, and pipelines.\n\n\n\n\n\n\nLecture 6: Column transformer and text features\n\n\nPreprocessing and sklearn pipelines\n\n\n\n\n\n\nLecture 7: Linear models\n\n\nLinear regression, logistic regression, prediction probabilities, sigmoid, interpretation of coefficients\n\n\n\n\n\n\nLecture 8: Hyperparameter Optimization\n\n\nLinear regression, logistic regression, prediction probabilities, sigmoid, interpretation of coefficients\n\n\n\n\n\n\nLecture 9: Classification Metrics\n\n\nconfusion metrics, precision, recall, f1-score, PR curves, AP score, ROC curve, ROC AUC, class imbalance\n\n\n\n\n\n\nLecture 10: Regression Metrics\n\n\nRegression metrics\n\n\n\n\n\n\nLecture 11: Ensembles\n\n\n \n\n\n\n\n\n\nLecture 12: Feature importances\n\n\n \n\n\n\n\n\n\nLecture 13: Feature Engineering and Selection\n\n\n \n\n\n\n\n\n\nLecture 14: K-Means\n\n\n \n\n\n\n\n\n\nLecture 15: DBSCAN, Hierarchical Clustering\n\n\n \n\n\n\n\n\n\nLecture 16: Recommender Systems\n\n\n \n\n\n\n\n\n\nLecture 17: Natural Language Processing\n\n\n \n\n\n\n\n\n\nLecture 19: Introduction to deep learning and computer vision\n\n\n \n\n\n\n\n\n\nLecture 20: Time series\n\n\n \n\n\n\n\n\n\nLecture 21: Survival analysis\n\n\n \n\n\n\n\n\n\nLecture 22: Communication\n\n\n \n\n\n\n\n\n\nLecture 24: Deployment and conclusion\n\n\n \n\n\n\n\n\n\nNo matching items"
+    "text": "Title\n\n\n\nDescription\n\n\n\n\n\n\n\n\nLecture 1: Introduction to CPSC 330\n\n\nWhat is machine learning, types of machine learning, learning to navigate through the course materials, getting familiar with the course policies\n\n\n\n\n\n\nLecture 2: Terminology, Baselines, Decision Trees\n\n\nTerminology and Decision Trees\n\n\n\n\n\n\nLecture 3: ML fundamentals\n\n\ngeneralization, data splitting, overfitting, underfitting, the fundamental tradeoff, the golden rule\n\n\n\n\n\n\nLecture 4: \\(k\\)-nearest neighbours and SVM RBFs\n\n\nintroduction to KNNs, hyperparameter n_neighbours or \\(k\\), C and gamma hyperparameters of SVM RBF, decision boundaries with different values of hyperparameters.\n\n\n\n\n\n\nLecture 5: Preprocessing and sklearn pipelines\n\n\nPre-processing, Transformations, and pipelines.\n\n\n\n\n\n\nLecture 6: Column transformer and text features\n\n\nPreprocessing and sklearn pipelines\n\n\n\n\n\n\nLecture 7: Linear models\n\n\nLinear regression, logistic regression, prediction probabilities, sigmoid, interpretation of coefficients\n\n\n\n\n\n\nLecture 8: Hyperparameter Optimization\n\n\nLinear regression, logistic regression, prediction probabilities, sigmoid, interpretation of coefficients\n\n\n\n\n\n\nLecture 9: Classification Metrics\n\n\nconfusion metrics, precision, recall, f1-score, PR curves, AP score, ROC curve, ROC AUC, class imbalance\n\n\n\n\n\n\nLecture 10: Regression Metrics\n\n\nRegression metrics\n\n\n\n\n\n\nLecture 11: Ensembles\n\n\n \n\n\n\n\n\n\nLecture 12: Feature importances\n\n\n \n\n\n\n\n\n\nLecture 13: Feature Engineering and Selection\n\n\n \n\n\n\n\n\n\nLecture 14: K-Means\n\n\n \n\n\n\n\n\n\nLecture 15: DBSCAN, Hierarchical Clustering\n\n\n \n\n\n\n\n\n\nLecture 16: Recommender Systems\n\n\n \n\n\n\n\n\n\nLecture 17: Natural Language Processing\n\n\n \n\n\n\n\n\n\nLecture 19: Introduction to deep learning and computer vision\n\n\n \n\n\n\n\n\n\nLecture 20: Time series\n\n\n \n\n\n\n\n\n\nLecture 21: Survival analysis\n\n\n \n\n\n\n\n\n\nLecture 22: Communication and Conclusion\n\n\n \n\n\n\n\n\n\nLecture 24: Deployment and conclusion\n\n\n \n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "slides-14.html#test-2-debrief",
@@ -1558,7 +1558,7 @@
     "href": "slides-19.html#pre-trained-models-out-of-the-box-2",
     "title": "Lecture 19: Introduction to deep learning and computer vision",
     "section": "Pre-trained models out-of-the-box",
-    "text": "Pre-trained models out-of-the-box\n\nLet’s predict labels with associated probabilities for unseen images\n\n\n\n\n\n\n\n\n\n\n\nDownloading: \"https://download.pytorch.org/models/vgg16-397923af.pth\" to /home/runner/.cache/torch/hub/checkpoints/vgg16-397923af.pth\n\n\n                                   Class  Probability score\n                                 macaque              0.714\npatas, hussar monkey, Erythrocebus patas              0.122\n      proboscis monkey, Nasalis larvatus              0.098\n                   guenon, guenon monkey              0.017\n--------------------------------------------------------------\n\n\n\n\n\n\n\n\n\n                        Class  Probability score\nWalker hound, Walker foxhound              0.580\n             English foxhound              0.091\n                  EntleBucher              0.080\n                       beagle              0.065\n--------------------------------------------------------------\n\n\n\n\n\n\n\n\n\n                         Class  Probability score\n                     tiger cat              0.353\n              tabby, tabby cat              0.207\n               lynx, catamount              0.050\nPembroke, Pembroke Welsh corgi              0.046\n--------------------------------------------------------------\n\n\n\n\n\n\n\n\n\n                                     Class  Probability score\n         cheetah, chetah, Acinonyx jubatus              0.983\n                  leopard, Panthera pardus              0.012\njaguar, panther, Panthera onca, Felis onca              0.004\n       snow leopard, ounce, Panthera uncia              0.001\n--------------------------------------------------------------"
+    "text": "Pre-trained models out-of-the-box\n\nLet’s predict labels with associated probabilities for unseen images\n\n\n\n\n\n\n\n\n\n\n\n                         Class  Probability score\n                     tiger cat              0.353\n              tabby, tabby cat              0.207\n               lynx, catamount              0.050\nPembroke, Pembroke Welsh corgi              0.046\n--------------------------------------------------------------\n\n\n\n\n\n\n\n\n\n                                     Class  Probability score\n         cheetah, chetah, Acinonyx jubatus              0.983\n                  leopard, Panthera pardus              0.012\njaguar, panther, Panthera onca, Felis onca              0.004\n       snow leopard, ounce, Panthera uncia              0.001\n--------------------------------------------------------------\n\n\n\n\n\n\n\n\n\n                                   Class  Probability score\n                                 macaque              0.714\npatas, hussar monkey, Erythrocebus patas              0.122\n      proboscis monkey, Nasalis larvatus              0.098\n                   guenon, guenon monkey              0.017\n--------------------------------------------------------------\n\n\n\n\n\n\n\n\n\n                        Class  Probability score\nWalker hound, Walker foxhound              0.580\n             English foxhound              0.091\n                  EntleBucher              0.080\n                       beagle              0.065\n--------------------------------------------------------------"
   },
   {
     "objectID": "slides-19.html#pre-trained-models-out-of-the-box-3",
@@ -1572,7 +1572,7 @@
     "href": "slides-19.html#pre-trained-models-out-of-the-box-4",
     "title": "Lecture 19: Introduction to deep learning and computer vision",
     "section": "Pre-trained models out-of-the-box",
-    "text": "Pre-trained models out-of-the-box\n\n\n\nLet’s try some images which are unlikely to be there in ImageNet.\nIt’s not doing very well here because ImageNet doesn’t have proper classes for these images.\n\n\n\n\n\n\n\n\n\n\n\n                                               Class  Probability score\n                                         toilet seat              0.171\n                                          safety pin              0.060\nbannister, banister, balustrade, balusters, handrail              0.039\n                                              bubble              0.035\n--------------------------------------------------------------\n\n\n\n\n\n\n\n\n\n                                      Class  Probability score\n                                        fig              0.637\n                                pomegranate              0.193\ngrocery store, grocery, food market, market              0.041\n                                      crate              0.023\n--------------------------------------------------------------\n\n\n\n\n\n\n\n\n\n         Class  Probability score\ncucumber, cuke              0.146\n         plate              0.117\n     guacamole              0.099\n  Granny Smith              0.091\n--------------------------------------------------------------\n\n\n\n\n\n\n\n\n\n              Class  Probability score\n     patio, terrace              0.213\n           fountain              0.164\nlakeside, lakeshore              0.097\n            sundial              0.088\n--------------------------------------------------------------\n\n\n\n\n\n\n\n\n\n                  Class  Probability score\n                   vase              0.078\n                thimble              0.074\n             plate rack              0.049\nsaltshaker, salt shaker              0.047\n--------------------------------------------------------------\n\n\n\n\n\n\n\n\n\n                      Class  Probability score\n           pizza, pizza pie              0.998\nfrying pan, frypan, skillet              0.001\n                     potpie              0.000\n                French loaf              0.000\n--------------------------------------------------------------"
+    "text": "Pre-trained models out-of-the-box\n\n\n\nLet’s try some images which are unlikely to be there in ImageNet.\nIt’s not doing very well here because ImageNet doesn’t have proper classes for these images.\n\n\n\n\n\n\n\n\n\n\n\n         Class  Probability score\ncucumber, cuke              0.146\n         plate              0.117\n     guacamole              0.099\n  Granny Smith              0.091\n--------------------------------------------------------------\n\n\n\n\n\n\n\n\n\n                                      Class  Probability score\n                                        fig              0.637\n                                pomegranate              0.193\ngrocery store, grocery, food market, market              0.041\n                                      crate              0.023\n--------------------------------------------------------------\n\n\n\n\n\n\n\n\n\n                                               Class  Probability score\n                                         toilet seat              0.171\n                                          safety pin              0.060\nbannister, banister, balustrade, balusters, handrail              0.039\n                                              bubble              0.035\n--------------------------------------------------------------\n\n\n\n\n\n\n\n\n\n                  Class  Probability score\n                   vase              0.078\n                thimble              0.074\n             plate rack              0.049\nsaltshaker, salt shaker              0.047\n--------------------------------------------------------------\n\n\n\n\n\n\n\n\n\n                      Class  Probability score\n           pizza, pizza pie              0.998\nfrying pan, frypan, skillet              0.001\n                     potpie              0.000\n                French loaf              0.000\n--------------------------------------------------------------\n\n\n\n\n\n\n\n\n\n              Class  Probability score\n     patio, terrace              0.213\n           fountain              0.164\nlakeside, lakeshore              0.097\n            sundial              0.088\n--------------------------------------------------------------"
   },
   {
     "objectID": "slides-19.html#pre-trained-models-out-of-the-box-5",
@@ -1614,7 +1614,7 @@
     "href": "slides-19.html#pre-trained-models-to-extract-features-3",
     "title": "Lecture 19: Introduction to deep learning and computer vision",
     "section": "Pre-trained models to extract features",
-    "text": "Pre-trained models to extract features\n\n\n\nNow for each image in our dataset, we’ll extract a feature vector from a pre-trained model called densenet121, which is trained on the ImageNet dataset.\n\n\n\nDownloading: \"https://download.pytorch.org/models/densenet121-a639ec97.pth\" to /home/runner/.cache/torch/hub/checkpoints/densenet121-a639ec97.pth"
+    "text": "Pre-trained models to extract features\n\n\n\nNow for each image in our dataset, we’ll extract a feature vector from a pre-trained model called densenet121, which is trained on the ImageNet dataset."
   },
   {
     "objectID": "slides-19.html#shape-of-the-feature-vector",
@@ -1628,7 +1628,7 @@
     "href": "slides-19.html#a-feature-vector-given-by-densenet",
     "title": "Lecture 19: Introduction to deep learning and computer vision",
     "section": "A feature vector given by densenet",
-    "text": "A feature vector given by densenet\n \n\nLet’s examine the feature vectors.\n\n\n\n\n\n\n\n\n\n\n0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n...\n1014\n1015\n1016\n1017\n1018\n1019\n1020\n1021\n1022\n1023\n\n\n\n\n0\n0.000290\n0.003821\n0.005015\n0.001307\n0.052690\n0.063403\n0.000626\n0.001850\n0.256254\n0.000223\n...\n0.229935\n1.046363\n2.241251\n0.229644\n0.033676\n0.742794\n1.338701\n2.130872\n0.625470\n0.463095\n\n\n1\n0.000407\n0.005973\n0.003206\n0.001932\n0.090702\n0.438522\n0.001513\n0.003906\n0.166081\n0.000286\n...\n0.910675\n1.580820\n0.087190\n0.606906\n0.436105\n0.306453\n0.940104\n1.159829\n1.712703\n1.624745\n\n\n2\n0.000626\n0.005090\n0.002887\n0.001299\n0.091715\n0.548535\n0.000491\n0.003587\n0.266537\n0.000408\n...\n0.465153\n0.678282\n0.946385\n1.194697\n2.537744\n1.642388\n0.701204\n0.115618\n0.186434\n0.166608\n\n\n3\n0.000169\n0.006087\n0.002489\n0.002167\n0.087537\n0.623212\n0.000427\n0.000226\n0.460680\n0.000388\n...\n0.394085\n0.700154\n0.105199\n0.856320\n0.038457\n0.023949\n0.131834\n1.296365\n0.723328\n1.915224\n\n\n4\n0.000286\n0.005520\n0.001906\n0.001599\n0.186035\n0.850148\n0.000835\n0.003025\n0.036309\n0.000142\n...\n3.313759\n0.565744\n0.473563\n0.139444\n0.029284\n1.165937\n0.442323\n0.227594\n0.884270\n1.592693\n\n\n\n\n5 rows × 1024 columns\n\n\n\n\nThe features are hard to interpret but they have some important information about the images which can be useful for classification."
+    "text": "A feature vector given by densenet\n \n\nLet’s examine the feature vectors.\n\n\n\n\n\n\n\n\n\n\n0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n...\n1014\n1015\n1016\n1017\n1018\n1019\n1020\n1021\n1022\n1023\n\n\n\n\n0\n0.000290\n0.003821\n0.005015\n0.001307\n0.052690\n0.063403\n0.000626\n0.001850\n0.256254\n0.000223\n...\n0.229935\n1.046375\n2.241259\n0.229641\n0.033674\n0.742792\n1.338698\n2.130880\n0.625475\n0.463088\n\n\n1\n0.000407\n0.005973\n0.003206\n0.001932\n0.090702\n0.438523\n0.001513\n0.003906\n0.166081\n0.000286\n...\n0.910680\n1.580815\n0.087191\n0.606904\n0.436106\n0.306456\n0.940102\n1.159818\n1.712705\n1.624753\n\n\n2\n0.000626\n0.005090\n0.002887\n0.001299\n0.091715\n0.548537\n0.000491\n0.003587\n0.266537\n0.000408\n...\n0.465152\n0.678276\n0.946387\n1.194697\n2.537747\n1.642383\n0.701200\n0.115620\n0.186433\n0.166605\n\n\n3\n0.000169\n0.006087\n0.002489\n0.002167\n0.087537\n0.623212\n0.000427\n0.000226\n0.460680\n0.000388\n...\n0.394083\n0.700158\n0.105200\n0.856323\n0.038457\n0.023948\n0.131838\n1.296370\n0.723323\n1.915215\n\n\n4\n0.000286\n0.005520\n0.001906\n0.001599\n0.186034\n0.850148\n0.000835\n0.003025\n0.036309\n0.000142\n...\n3.313760\n0.565744\n0.473564\n0.139446\n0.029283\n1.165938\n0.442319\n0.227593\n0.884266\n1.592698\n\n\n\n\n5 rows × 1024 columns\n\n\n\n\nThe features are hard to interpret but they have some important information about the images which can be useful for classification."
   },
   {
     "objectID": "slides-19.html#logistic-regression-with-the-extracted-features",
@@ -1656,7 +1656,7 @@
     "href": "slides-19.html#object-detection-using-yolo",
     "title": "Lecture 19: Introduction to deep learning and computer vision",
     "section": "Object detection using YOLO",
-    "text": "Object detection using YOLO\n\n\nLet’s try this out using a pre-trained model.\n\nfrom ultralytics import YOLO\nmodel = YOLO(\"yolov8n.pt\")  # pretrained YOLOv8n model\n\nyolo_input = \"data/yolo_test/3356700488_183566145b.jpg\"\nyolo_result = \"data/yolo_result.jpg\"\n# Run batched inference on a list of images\nresult = model(yolo_input)  # return a list of Results objects\nresult[0].save(filename=yolo_result)\n\nCreating new Ultralytics Settings v0.0.6 file ✅ \nView Ultralytics Settings with 'yolo settings' or at '/home/runner/.config/Ultralytics/settings.json'\nUpdate Settings with 'yolo settings key=value', i.e. 'yolo settings runs_dir=path/to/dir'. For help see https://docs.ultralytics.com/quickstart/#ultralytics-settings.\n\nimage 1/1 /home/runner/work/cpsc330-slides/cpsc330-slides/website/data/yolo_test/3356700488_183566145b.jpg: 512x640 4 persons, 2 cars, 1 stop sign, 93.4ms\nSpeed: 1.5ms preprocess, 93.4ms inference, 0.9ms postprocess per image at shape (1, 3, 512, 640)\n\n\n'data/yolo_result.jpg'"
+    "text": "Object detection using YOLO\n\n\nLet’s try this out using a pre-trained model.\n\nfrom ultralytics import YOLO\nmodel = YOLO(\"yolov8n.pt\")  # pretrained YOLOv8n model\n\nyolo_input = \"data/yolo_test/3356700488_183566145b.jpg\"\nyolo_result = \"data/yolo_result.jpg\"\n# Run batched inference on a list of images\nresult = model(yolo_input)  # return a list of Results objects\nresult[0].save(filename=yolo_result)\n\n\nimage 1/1 /Users/firasm/Sync/Teaching/courses/cpsc330-slides/website/data/yolo_test/3356700488_183566145b.jpg: 512x640 4 persons, 2 cars, 1 stop sign, 69.9ms\nSpeed: 2.7ms preprocess, 69.9ms inference, 4.8ms postprocess per image at shape (1, 3, 512, 640)\n\n\n'data/yolo_result.jpg'"
   },
   {
     "objectID": "slides-19.html#object-detection-output",
@@ -3523,261 +3523,352 @@
   {
     "objectID": "slides-22.html#clicker-survival-analysis-recap",
     "href": "slides-22.html#clicker-survival-analysis-recap",
-    "title": "Lecture 22: Communication",
+    "title": "Lecture 22: Communication and Conclusion",
     "section": "Clicker (Survival analysis recap)",
     "text": "Clicker (Survival analysis recap)\nSelect all of the following statements which are TRUE.\n\n\nRight censoring occurs when the endpoint of event has not been observed for all study subjects by the end of the study period.\n\n\nRight censoring implies that the data is missing completely at random.\n\n\nIn the presence of right-censored data, binary classification models can be applied directly without any modifications or special considerations.\n\n\nIf we apply the Ridge regression model to predict tenure in right censored data, we are likely to underestimate it because the tenure observed in our data is shorter than what it would be in reality."
   },
   {
     "objectID": "slides-22.html#recap",
     "href": "slides-22.html#recap",
-    "title": "Lecture 22: Communication",
+    "title": "Lecture 22: Communication and Conclusion",
     "section": "Recap",
     "text": "Recap\n\nWhat is right-censored data?\nWhat happens when we treat right-censored data the same as “regular” data?\n\nPredicting churn vs. no churn\nPredicting tenure\n\nThrow away people who haven’t churned\nAssume everyone churns today\n\n\nSurvival analysis encompasses predicting both churn and tenure and deals with censoring and can make rich and interesting predictions!\n\nWe can get survival curves which show the probability of survival over time.\nKM model \\(\\rightarrow\\) doesn’t look at features\nCPH model \\(\\rightarrow\\) like linear regression, does look at the features and provides coefficients associated with each feature"
   },
   {
     "objectID": "slides-22.html#why-communication",
     "href": "slides-22.html#why-communication",
-    "title": "Lecture 22: Communication",
+    "title": "Lecture 22: Communication and Conclusion",
     "section": "Why communication?",
     "text": "Why communication?\nWhy spend a whole lecture on this?\n\nGreat technical work often dies silently due to poor communication. \nMost ML work happens in teams with diverse backgrounds.\nDecisions, budgets, and user trust depend on how you present results.\nEffective communication \\(\\rightarrow\\) adoption and impact"
   },
   {
     "objectID": "slides-22.html#is-this-misleading",
     "href": "slides-22.html#is-this-misleading",
-    "title": "Lecture 22: Communication",
+    "title": "Lecture 22: Communication and Conclusion",
     "section": "Is this misleading?",
     "text": "Is this misleading?\n\n\n\n\n\nWhat additional information would you need to evaluate the validity of this claim?"
   },
   {
     "objectID": "slides-22.html#main-issues-in-ml-related-communication",
     "href": "slides-22.html#main-issues-in-ml-related-communication",
-    "title": "Lecture 22: Communication",
+    "title": "Lecture 22: Communication and Conclusion",
     "section": "Main issues in ML-related communication",
     "text": "Main issues in ML-related communication\n\nOverclaiming and unclear limitations\nNo baseline or missing context for metrics\nMetric dumping without a narrative or decision link\nJargon/abstraction mismatch to the audience\nUnexplained predictions; weak explainability path\nHidden assumptions or data leakage\nProbability misinterpretation (e.g., predict_proba=0.9 ≠ 90% certain)\nUnreliable test error due to weak validation"
   },
   {
     "objectID": "slides-22.html#scenario-discussion-what-happens-if",
     "href": "slides-22.html#scenario-discussion-what-happens-if",
-    "title": "Lecture 22: Communication",
+    "title": "Lecture 22: Communication and Conclusion",
     "section": "Scenario discussion: What happens if…",
     "text": "Scenario discussion: What happens if…\nPick one scenario: Discuss 2 negative consequences and 1 thing you’d do to prevent them.\n\nYou build an amazing model but fail to clearly communicate its value or results to your manager.\nYou present a 98% accuracy without mentioning the trivial baseline is 97.5%.\nYou say: “SHAP values show nonlinear feature interactions” to a non-technical stakeholder and stop there.\nA user asks why they were denied a loan; you give no explanation of the model’s decision.\nYou hide uncertainty and overpromise deployment success."
   },
   {
     "objectID": "slides-22.html#grid-search-activity",
     "href": "slides-22.html#grid-search-activity",
-    "title": "Lecture 22: Communication",
+    "title": "Lecture 22: Communication and Conclusion",
     "section": "Grid search activity",
     "text": "Grid search activity\nGo to this Google doc: https://tinyurl.com/5n8xf5yj\n\n\nExplanation 1: https://tinyurl.com/msk2cfkb\n\n\nExplanation 2: https://tinyurl.com/mt2z9ey5"
   },
   {
     "objectID": "slides-22.html#discussion-questions",
     "href": "slides-22.html#discussion-questions",
-    "title": "Lecture 22: Communication",
+    "title": "Lecture 22: Communication and Conclusion",
     "section": "Discussion questions",
     "text": "Discussion questions\n\nWhat do you like about each explanation?\nWhat do you dislike about each explanation?\nWhat do you think is the intended audience for each explanation?\nWhich explanation do you think is more effective overall for someone on Day 1 of CPSC 330?\nEach explanation has an image. Which one is more effective? What are the pros/cons?\nEach explanation has some sample code. Which one is more effective? What are the pros/cons?"
   },
   {
     "objectID": "slides-22.html#concepts-then-labels-not-the-other-way-around",
     "href": "slides-22.html#concepts-then-labels-not-the-other-way-around",
-    "title": "Lecture 22: Communication",
+    "title": "Lecture 22: Communication and Conclusion",
     "section": "Concepts then labels, not the other way around",
     "text": "Concepts then labels, not the other way around\n\n\nExplanation 1: Machine learning algorithms, like an airplane’s cockpit, typically involve a bunch of knobs and switches that need to be set.\n\nExplanation 2: Grid search is the process of performing hyper parameter tuning in order to determine the optimal values for a given model.\n\nThe effectiveness of these different statements depend on your audience."
   },
   {
     "objectID": "slides-22.html#concepts-then-labels-not-the-other-way-around-1",
     "href": "slides-22.html#concepts-then-labels-not-the-other-way-around-1",
-    "title": "Lecture 22: Communication",
+    "title": "Lecture 22: Communication and Conclusion",
     "section": "Concepts then labels, not the other way around",
     "text": "Concepts then labels, not the other way around"
   },
   {
     "objectID": "slides-22.html#top-down-vs.-bottom-up",
     "href": "slides-22.html#top-down-vs.-bottom-up",
-    "title": "Lecture 22: Communication",
+    "title": "Lecture 22: Communication and Conclusion",
     "section": "Top down vs. bottom up",
     "text": "Top down vs. bottom up\n\n\n\nStart with the big picture\nThen gradually reveal the structure and key components\n\n\n\n\nStart with the details\nBuild to the big picture\n\n\n\nIn the previous explanations, which one represented a bottom-up explanation and which one a top-down explanation?"
   },
   {
     "objectID": "slides-22.html#new-ideas-in-small-chunks",
     "href": "slides-22.html#new-ideas-in-small-chunks",
-    "title": "Lecture 22: Communication",
+    "title": "Lecture 22: Communication and Conclusion",
     "section": "New ideas in small chunks",
     "text": "New ideas in small chunks\nThe hidden structure in the first explanation\n\nThe concept of setting a bunch of values.\nRandom forest example.\nThe problem / pain point.\nThe solution.\nHow it works - high level.\nHow it works - written example.\nHow it works - code example.\nThe name of what we were discussing all this time."
   },
   {
     "objectID": "slides-22.html#reuse-running-examples",
     "href": "slides-22.html#reuse-running-examples",
-    "title": "Lecture 22: Communication",
+    "title": "Lecture 22: Communication and Conclusion",
     "section": "Reuse running examples",
     "text": "Reuse running examples\nEffective explanations often use the same example throughout the text and code. This helps readers follow the line of reasoning."
   },
   {
     "objectID": "slides-22.html#approach-from-all-angles",
     "href": "slides-22.html#approach-from-all-angles",
-    "title": "Lecture 22: Communication",
+    "title": "Lecture 22: Communication and Conclusion",
     "section": "Approach from all angles",
     "text": "Approach from all angles\n\nWhen we’re trying to draw mental boundaries around a concept, it’s helpful to see examples on all sides of those boundaries\nIt would have been nice to include\n\nPerformance with and without hyperparameter tuning.\nOther types of hyperparameter tuning (e.g. RandomizedSearchCV)."
   },
   {
     "objectID": "slides-22.html#when-experimenting-show-the-results-asap",
     "href": "slides-22.html#when-experimenting-show-the-results-asap",
-    "title": "Lecture 22: Communication",
+    "title": "Lecture 22: Communication and Conclusion",
     "section": "When experimenting, show the results asap",
     "text": "When experimenting, show the results asap\nThe first explanation shows the output of the code, whereas the second does not. This is easy to do and makes a big difference."
   },
   {
     "objectID": "slides-22.html#its-not-about-you",
     "href": "slides-22.html#its-not-about-you",
-    "title": "Lecture 22: Communication",
+    "title": "Lecture 22: Communication and Conclusion",
     "section": "It’s not about you",
     "text": "It’s not about you\n\nInteresting to you != useful to the reader (aka it’s not about you)\nExamine the hidden intention of wanting to include something that’s not important\n\nAm I trying to sound smart or prove I know something?\nAm I afraid that leaving it out makes the work look too simple?\nAm I adding it because I spent time on it and want that effort to be visible?\nAm I overexplaining because I’m worried the audience will judge me?\n\n\n\nIf it doesn’t serve the audience, it’s noise."
   },
   {
     "objectID": "slides-22.html#core-questions-you-must-be-ready-to-answer",
     "href": "slides-22.html#core-questions-you-must-be-ready-to-answer",
-    "title": "Lecture 22: Communication",
+    "title": "Lecture 22: Communication and Conclusion",
     "section": "Core questions you must be ready to answer",
     "text": "Core questions you must be ready to answer\n\nWhat does this result mean (in plain language)?\nWhen does the model work? When does it fail? (failure modes)\nWhy did it make this prediction? (explainability path)\nWhat are the risks & consequences of using it?\nHow does it compare to doing nothing or current practice?\nWhat is the cost to maintain / retrain / monitor?"
   },
   {
     "objectID": "slides-22.html#quick-checklist-use-before-presenting",
     "href": "slides-22.html#quick-checklist-use-before-presenting",
-    "title": "Lecture 22: Communication",
+    "title": "Lecture 22: Communication and Conclusion",
     "section": "Quick checklist (use before presenting)",
     "text": "Quick checklist (use before presenting)\n\nWho is my audience and what do they care about?\nWhat decision do I want them to make?\nWhat baseline(s) am I comparing against?\nWhat caveats or limitations must I disclose?\nWhat is the recommended next action?\nHow will we monitor after deployment?"
   },
   {
     "objectID": "slides-22.html#poor-vs.-effective-communication",
     "href": "slides-22.html#poor-vs.-effective-communication",
-    "title": "Lecture 22: Communication",
+    "title": "Lecture 22: Communication and Conclusion",
     "section": "Poor vs. Effective communication",
     "text": "Poor vs. Effective communication\nWhich one is poor and which one is effective? Why?\n\n\nCommunication 1\n“I built a model to predict next week’s avocado prices. The ridge model had an RMSE of 0.79, but the random forest performed better with tuned hyperparameters. The cross-validation score improved after adding lag features. We should use the random forest.”\n\nCommunication 2\n“Our avocado price forecast reduces weekly price uncertainty by 15%. This lets the procurement team lock in contracts earlier and avoid overpaying during high-volatility weeks, saving an estimated $45k per month.\nTo deploy: we need 2 days to automate data updates and a weekly accuracy review.\nRisk: model performance drops during holiday spikes. Here’s our mitigation plan.”"
   },
   {
     "objectID": "slides-22.html#poor-vs.-effective-communication-1",
     "href": "slides-22.html#poor-vs.-effective-communication-1",
-    "title": "Lecture 22: Communication",
+    "title": "Lecture 22: Communication and Conclusion",
     "section": "Poor vs. Effective communication",
     "text": "Poor vs. Effective communication\n\n\n❌ Poor communication:\n“I built a model to predict next week’s avocado prices. The ridge model had an RMSE of 0.79, but the random forest performed better with tuned hyperparameters. The cross-validation score improved after adding lag features. We should use the random forest.”\nResult: The manager doesn’t know why this matters, how it affects decisions, or what to do next. No adoption.\n\n✅ Effective reframe:\n“Our avocado price forecast reduces weekly price uncertainty by 15%. This lets the procurement team lock in contracts earlier and avoid overpaying during high-volatility weeks, saving an estimated $45k per month.\nTo deploy: we need 2 days to automate data updates and a weekly accuracy review.\nRisk: model performance drops during holiday spikes. Here’s our mitigation plan.”\nResult: Clear value, operational impact, required effort, and risks. Enables decision-making.\n\nKey difference: Shift from model-centric communication → decision-ready communication."
   },
   {
-    "objectID": "slides-22.html#break",
-    "href": "slides-22.html#break",
-    "title": "Lecture 22: Communication",
-    "section": "Break",
-    "text": "Break\nLet’s take a 5-min break"
+    "objectID": "slides-22.html#course-evaluations-10-mins",
+    "href": "slides-22.html#course-evaluations-10-mins",
+    "title": "Lecture 22: Communication and Conclusion",
+    "section": "Course evaluations (~10 mins)",
+    "text": "Course evaluations (~10 mins)\nComplete the SEoI for this course here"
   },
   {
     "objectID": "slides-22.html#questions-for-you",
     "href": "slides-22.html#questions-for-you",
-    "title": "Lecture 22: Communication",
+    "title": "Lecture 22: Communication and Conclusion",
     "section": "❓❓ Questions for you",
     "text": "❓❓ Questions for you\nImagine you are tasked with developing a recommender system for YouTube. You possess data on which users clicked on which videos. After spending considerable time building a recommender system using this data, you realize it isn’t producing high-quality recommendations. What could be the reasons for this?"
   },
   {
     "objectID": "slides-22.html#think-beyond-the-data-thats-given-to-you",
     "href": "slides-22.html#think-beyond-the-data-thats-given-to-you",
-    "title": "Lecture 22: Communication",
+    "title": "Lecture 22: Communication and Conclusion",
     "section": "Think beyond the data that’s given to you",
     "text": "Think beyond the data that’s given to you\nQuestions you have to consider:\n\nWho is the decision maker?\nWhat are their objectives?\nWhat are their alternatives?\nWhat is their context?\nWhat data do I need?"
   },
   {
     "objectID": "slides-22.html#decisions-involve-a-few-key-pieces",
     "href": "slides-22.html#decisions-involve-a-few-key-pieces",
-    "title": "Lecture 22: Communication",
+    "title": "Lecture 22: Communication and Conclusion",
     "section": "Decisions involve a few key pieces",
     "text": "Decisions involve a few key pieces\n\nThe decision variable: the variable that is manipulated through the decision.\n\nE.g. how much should I sell my house for? (numeric)\nE.g. should I sell my house? (categorical)\n\nThe decision-maker’s objectives: the variables that the decision-maker ultimately cares about, and wishes to manipulate indirectly through the decision variable.\n\nE.g. my total profit, time to sale, etc.\n\nThe context: the variables that mediate the relationship between the decision variable and the objectives.\n\nE.g. the housing market, cost of marketing it, my timeline, etc."
   },
   {
     "objectID": "slides-22.html#section",
     "href": "slides-22.html#section",
-    "title": "Lecture 22: Communication",
+    "title": "Lecture 22: Communication and Conclusion",
     "section": "",
     "text": "What does it mean to be “confident” in your results?\nWhen you perform analysis, you are responsible for many judgment calls.\nYour results will be different than others.\nAs you make these judgments and start to form conclusions, how can you recognize your own uncertainties about the data so that you can communicate confidently?"
   },
   {
     "objectID": "slides-22.html#section-1",
     "href": "slides-22.html#section-1",
-    "title": "Lecture 22: Communication",
+    "title": "Lecture 22: Communication and Conclusion",
     "section": "",
     "text": "Let’s imagine that the following claim is true:\n\nVancouver has the highest cost of living of all cities in Canada.\n\nNow let’s consider a few beliefs we could hold:\n\nVancouver has the highest cost of living of all cities in Canada. I am 95% sure of this.\nVancouver has the highest cost of living of all cities in Canada. I am 55% sure of this.\n\nThe part is bold is called a credence. Which belief is better?"
   },
   {
     "objectID": "slides-22.html#section-2",
     "href": "slides-22.html#section-2",
-    "title": "Lecture 22: Communication",
+    "title": "Lecture 22: Communication and Conclusion",
     "section": "",
     "text": "But what if it’s actually Toronto that has the highest cost of living in Canada?\n\nVancouver has the highest cost of living of all cities in Canada. I am 95% sure of this.\nVancouver has the highest cost of living of all cities in Canada. I am 55% sure of this.\n\nWhich belief is better now?\nWe don’t just want to be right. We want to be confident when we’re right and hesitant when we’re wrong."
   },
   {
     "objectID": "slides-22.html#section-3",
     "href": "slides-22.html#section-3",
-    "title": "Lecture 22: Communication",
+    "title": "Lecture 22: Communication and Conclusion",
     "section": "",
     "text": "In our final exam, imagine if, along with your answers, we ask you to also provide a confidence score for each. This would involve rating how sure you are about each answer, perhaps on a percentage scale from 0% (completely unsure) to 100% (completely sure). This method not only assesses your knowledge but also your awareness of your own understanding, potentially impacting the grading process and highlighting areas for improvement. Who supports this idea 😉?"
   },
   {
     "objectID": "slides-22.html#loss-in-machine-learning",
     "href": "slides-22.html#loss-in-machine-learning",
-    "title": "Lecture 22: Communication",
+    "title": "Lecture 22: Communication and Conclusion",
     "section": "Loss in machine learning",
     "text": "Loss in machine learning\nWhen you call fit for LogisticRegression it has similar preferences:  correct and confident  &gt;  correct and hesitant   &gt; incorrect and hesitant  &gt; incorrect and confident\n\nThis is a “loss” or “error” function like mean squared error, so lower values are better.\nWhen you call fit it tries to minimize this metric."
   },
   {
     "objectID": "slides-22.html#what-should-be-the-loss",
     "href": "slides-22.html#what-should-be-the-loss",
-    "title": "Lecture 22: Communication",
+    "title": "Lecture 22: Communication and Conclusion",
     "section": "What should be the loss?",
     "text": "What should be the loss?\nConsider the following made-up classification example where target (true y) is binary: -1 or 1. The true \\(y\\) (y_true) and models raw scores (\\(w^Tx_i\\)) are given to you. You want to figure out how do you want to punish the mistakes made by the current model. How will you punish the model in each case?\n\n\n\n\n\n\n\n\n\ny_true\nraw score ($w^Tx_i$)\ncorrect? (yes/no)\nconfident/hesitant?\npunishment\n\n\n\n\n0\n1\n10.00\nyes\nconfident\nNone\n\n\n1\n1\n0.51\nyes\nhesitant\nsmall punishment\n\n\n2\n1\n-0.10\nno\nhesitant\n\n\n\n3\n1\n-10.00\nno\nconfident\n\n\n\n4\n-1\n-12.00\nyes\nconfident\n\n\n\n5\n-1\n-1.00\nyes\nhesistant\n\n\n\n6\n-1\n0.40\nno\nhesitant\n\n\n\n7\n-1\n18.00\nno\nconfident"
   },
   {
     "objectID": "slides-22.html#logistic-regression-loss",
     "href": "slides-22.html#logistic-regression-loss",
-    "title": "Lecture 22: Communication",
+    "title": "Lecture 22: Communication and Conclusion",
     "section": "Logistic regression loss",
     "text": "Logistic regression loss\n\n\n\n\n\n\n\n\n\n\n\n\n\nconfident and correct \\(\\rightarrow\\) smaller loss\nhesitant and correct \\(\\rightarrow\\) a bit higher loss\nhesitant and incorrect \\(\\rightarrow\\) even higher loss\nconfident and incorrect \\(\\rightarrow\\) high loss"
   },
   {
     "objectID": "slides-22.html#misleding-visualizations",
     "href": "slides-22.html#misleding-visualizations",
-    "title": "Lecture 22: Communication",
+    "title": "Lecture 22: Communication and Conclusion",
     "section": "Misleding visualizations",
     "text": "Misleding visualizations\nThis chart is attempting to suggest a relationship between childhood MMR vaccination rates and the prevalence of autism spectrum disorders (AD/ASD) across several countries.\n\n\n\n\n\nDo you see any problems with this visualization?"
   },
   {
     "objectID": "slides-22.html#section-4",
     "href": "slides-22.html#section-4",
-    "title": "Lecture 22: Communication",
+    "title": "Lecture 22: Communication and Conclusion",
     "section": "",
     "text": "Visualizing your data and results could be very powerful but at the same time can be misleading if not done properly."
   },
   {
     "objectID": "slides-22.html#examples",
     "href": "slides-22.html#examples",
-    "title": "Lecture 22: Communication",
+    "title": "Lecture 22: Communication and Conclusion",
     "section": "Examples",
     "text": "Examples\nSome examples from Calling BS visualization videos:\n\nDataviz in the popular media: modern NYT\nMisleading axes: vaccines\nManipulating bin sizes: tax dollars\nDataviz ducks: drinking water\nGlass slippers: internet marketing tree\nThe principle of proportional ink: most read books"
   },
   {
     "objectID": "slides-22.html#things-to-watch-out-for",
     "href": "slides-22.html#things-to-watch-out-for",
-    "title": "Lecture 22: Communication",
+    "title": "Lecture 22: Communication and Conclusion",
     "section": "Things to watch out for",
     "text": "Things to watch out for\n\nChopping off the x-axis\n\nthe practice of starting the x-axis (or sometimes the y-axis) at a value other than zero to exaggerate the changes in the data\n\n\nSaturate the axes\n\nwhere the axes are set to ranges that are too narrow or too wide for the data being presented making it difficult to identify patterns\n\nBar chart for a cherry-picked values\nDifferent y-axes"
   },
   {
     "objectID": "slides-22.html#what-did-we-learn-today",
     "href": "slides-22.html#what-did-we-learn-today",
-    "title": "Lecture 22: Communication",
+    "title": "Lecture 22: Communication and Conclusion",
     "section": "What did we learn today?",
     "text": "What did we learn today?\nPrinciples of effective communication\n\nConcepts then labels, not the other way around\nBottom-up explanations\nNew ideas in small chunks\nReuse your running examples\nApproaches from all angles\n\nWhen experimenting, show the results asap\nIt’s not about you.\nDecision variables, objectives, and context.\nExpressing your confidence about the results\nMisleading visualizations."
   },
   {
-    "objectID": "slides-22.html#have-a-great-weekend",
-    "href": "slides-22.html#have-a-great-weekend",
-    "title": "Lecture 22: Communication",
-    "section": "Have a great weekend!",
-    "text": "Have a great weekend!"
+    "objectID": "slides-22.html#questions-for-you-1",
+    "href": "slides-22.html#questions-for-you-1",
+    "title": "Lecture 22: Communication and Conclusion",
+    "section": "❓❓ Questions for you",
+    "text": "❓❓ Questions for you\nImagine you’ve created a machine learning model and are eager to share it with others. Consider the following scenarios for sharing your model:\n\nTo a non-technical Audience: How would you present your model to friends and family who may not have a technical background?\nTo a technical audience: How would you share your model with peers or professionals in the field who have a technical understanding of machine learning?\nIn an academic or research setting: How would you disseminate your model within academic or research communities?"
+  },
+  {
+    "objectID": "slides-22.html#try-out-this-moment-predictor",
+    "href": "slides-22.html#try-out-this-moment-predictor",
+    "title": "Lecture 22: Communication and Conclusion",
+    "section": "Try out this moment predictor",
+    "text": "Try out this moment predictor\nhttps://cpsc330-moment-predictor.onrender.com/\n\nIn this lecture, I will show you how to set up/develop this."
+  },
+  {
+    "objectID": "slides-22.html#what-is-deployment",
+    "href": "slides-22.html#what-is-deployment",
+    "title": "Lecture 22: Communication and Conclusion",
+    "section": "What is deployment?",
+    "text": "What is deployment?\n\nAfter we train a model, we want to use it!\nThe user likely does not want to install your Python stack, train your model.\nYou don’t necessarily want to share their dataset.\nSo we need to do two things:\n\nSave/store your model for later use.\nMake the saved model conveniently accessible."
+  },
+  {
+    "objectID": "slides-22.html#we-will-use-the-tools-below-for",
+    "href": "slides-22.html#we-will-use-the-tools-below-for",
+    "title": "Lecture 22: Communication and Conclusion",
+    "section": "We will use the tools below for",
+    "text": "We will use the tools below for\n\nSaving the model: We will use Joblib\nMaking the saved model conveniently accessible: Flask & render"
+  },
+  {
+    "objectID": "slides-22.html#full-examples-of-deploying-an-app",
+    "href": "slides-22.html#full-examples-of-deploying-an-app",
+    "title": "Lecture 22: Communication and Conclusion",
+    "section": "Full examples of deploying an app",
+    "text": "Full examples of deploying an app\nFor this demo, each student should click this link to create a new repo in their accounts, then clone that repo locally to follow the steps to deloy an app."
+  },
+  {
+    "objectID": "slides-22.html#web-app",
+    "href": "slides-22.html#web-app",
+    "title": "Lecture 22: Communication and Conclusion",
+    "section": "Web App",
+    "text": "Web App\nSee notes fom class as well as the lecture demo."
+  },
+  {
+    "objectID": "slides-22.html#api",
+    "href": "slides-22.html#api",
+    "title": "Lecture 22: Communication and Conclusion",
+    "section": "API",
+    "text": "API"
+  },
+  {
+    "objectID": "slides-22.html#what-did-we-cover",
+    "href": "slides-22.html#what-did-we-cover",
+    "title": "Lecture 22: Communication and Conclusion",
+    "section": "What did we cover",
+    "text": "What did we cover\n\nPart 1: Supervised learning on tabular data: ML fundamentals, preprocessing and data encoding, a bunch of models, evaluation metrics, feature importances and model transparency, feature selection, hyperparameter optimization\nPart 2: Dealing with other non-tabular data types: Clustering, recommender systems, computer vision with pre-trained deep learning models (high level), language data, text preprocessing, embeddings, topic modeling, time series, right-censored data / survival analysis\nPart 3: Communication, Ethics, and Deployment"
+  },
+  {
+    "objectID": "slides-22.html#what-we-didnt-cover",
+    "href": "slides-22.html#what-we-didnt-cover",
+    "title": "Lecture 22: Communication and Conclusion",
+    "section": "What we didn’t cover",
+    "text": "What we didn’t cover\n\nHow do these models work under the hood"
+  },
+  {
+    "objectID": "slides-22.html#what-would-i-do-differently",
+    "href": "slides-22.html#what-would-i-do-differently",
+    "title": "Lecture 22: Communication and Conclusion",
+    "section": "What would I do differently?",
+    "text": "What would I do differently?\nLots of room for improvement. Here are some things on my mind.\n\nBalance the pace of the course a bit more (too intense at the beginning, too relaxed at the end!)\nFlipped classroom in a more effective way in the first part of the course.\nAdd more interactive components in the lectures\nMore activities during lecture time\nAdd a course project !?!\nSome material to cover: dealing with outliers, data collection, newer methods"
+  },
+  {
+    "objectID": "slides-22.html#what-next",
+    "href": "slides-22.html#what-next",
+    "title": "Lecture 22: Communication and Conclusion",
+    "section": "What next?",
+    "text": "What next?\nIf you want to further develop your machine learning skills: - Practice! - Work on your own projects - Work hard and be consistent.\n\nIf you are interested in research in machine learning\n\nTake CPSC 340. If you do not have the required prereqs you can try to audit it.\n\nGet into the habit of reading papers and replicating results"
+  },
+  {
+    "objectID": "slides-22.html#questions-for-you-2",
+    "href": "slides-22.html#questions-for-you-2",
+    "title": "Lecture 22: Communication and Conclusion",
+    "section": "❓❓ Questions for you",
+    "text": "❓❓ Questions for you\nFor each of the scenarios below\n\nIdentify if ML is a good solution for a problem.\nIf yes\n\nFrame the problem to a ML problem.\nDiscuss what kind of features you would need to effectively solve the problem\nWhat would be a reasonable baseline?\nWhich model would be a suitable model for the given scenario?\nWhat would be the appropriate success metrics."
+  },
+  {
+    "objectID": "slides-22.html#practice-questions-for-you",
+    "href": "slides-22.html#practice-questions-for-you",
+    "title": "Lecture 22: Communication and Conclusion",
+    "section": "❓❓ (Practice) Questions for you",
+    "text": "❓❓ (Practice) Questions for you\n\n\n\n\n\n\n\nApp\nGoal\n\n\n\n\nQueuePredictor app\nInform callers how long they’ll wait on hold given the current call volume\n\n\nTo-doList App\nKeep track of the tasks that a user inputs and organize them by date\n\n\nSegmentSphere App\nTo segment customers to tailor marketing strategies based on purchasing behaviour\n\n\nVideo app\nRecommend useful videos\n\n\nDining app\nIdentify cuisine by a restaurant’s menu\n\n\nWeather app\nCalculate precipitation in six hour increments for a geographic region\n\n\nEvoCarShare app\nCalculate number of car rentals in four increments at a particular Evo parking spot\n\n\nPharma app\nUnderstand the effect of a new drug on patient survival time"
+  },
+  {
+    "objectID": "slides-22.html#conclusion-farewell",
+    "href": "slides-22.html#conclusion-farewell",
+    "title": "Lecture 22: Communication and Conclusion",
+    "section": "Conclusion & farewell",
+    "text": "Conclusion & farewell\nThat’s all, folks. We made it! Good luck on your final exam! When you get a chance, please let me know what worked for you and what didn’t work for you in this course."
   },
   {
     "objectID": "slides-12.html#announcements",
@@ -4380,12 +4471,5 @@
     "title": "Lecture 24: Deployment and conclusion",
     "section": "Conclusion & farewell",
     "text": "Conclusion & farewell\nThat’s all, folks. We made it! Good luck on your final exam! When you get a chance, please let me know what worked for you and what didn’t work for you in this course."
-  },
-  {
-    "objectID": "slides-24.html#course-evaluations-10-mins",
-    "href": "slides-24.html#course-evaluations-10-mins",
-    "title": "Lecture 24: Deployment and conclusion",
-    "section": "Course evaluations (~10 mins)",
-    "text": "Course evaluations (~10 mins)\nhttps://canvas.ubc.ca/courses/178047/external_tools/53187"
   }
 ]
