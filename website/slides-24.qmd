@@ -118,7 +118,3 @@ For each of the scenarios below
 That’s all, folks. We made it! Good luck on your final exam! When you get a chance, please let me know what worked for you and what didn’t work for you in this course.
 
 ![](img/eva-congrats.png)
-
-## Course evaluations (~10 mins)
-
-https://canvas.ubc.ca/courses/178047/external_tools/53187
