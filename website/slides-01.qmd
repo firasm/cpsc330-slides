@@ -346,31 +346,6 @@ We will use the following tools throughout the course:
 - **Exams and Final Grades:** `PrairieLearn`
 - **Recommended Browsers:** [Microsoft Edge](https://www.microsoft.com/en-us/edge/download), or [Mozilla Firefox](https://www.mozilla.org/en-US/firefox/new/)or [Safari](https://www.apple.com/ca/safari/). Google Chrome is *not* recommended for [reasons](https://www.zdnet.com/article/google-may-have-downloaded-a-4gb-chrome-file-to-your-pc-heres-why/)...
 
-## Course `conda` environment
-
-- Follow the setup instructions [here](https://ubc-cs.github.io/cpsc330-2026W1/docs/setup) to create a course `conda` environment on your computer. 
-- If you do not have your computer with you, you can partner up with someone and set up your own computer later.
-
-## Python requirements/resources {.smaller}
-
-We will primarily use Python in this course.
-
-Here is the basic Python knowledge you'll need for the course: 
-
-- Basic Python programming
-- Numpy
-- Pandas
-- Basic matplotlib
-
-Homework 1 is all about Python.
-
-:::{.callout-note}
-We do not have time to teach all the Python we need 
-but you can find some useful Python resources [here](https://github.com/UBC-CS/cpsc330-2026W1/blob/main/docs/resources.md).  
-:::
-
-<br><br>
-
 ## Workload 
 What does a typical week look like?
 
