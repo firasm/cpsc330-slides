@@ -145,7 +145,9 @@ policies.
 
 ## CPSC 330 website
 
-- Course Jupyter book: https://ubc-cs.github.io/cpsc330-2026W1
+- Course Jupyter book: https://ubc-cs.github.io/cpsc330-book/
+- Course Website: https://ubc-cs.github.io/cpsc330-2026W1
+
 - Course GitHub repository: https://github.com/UBC-CS/cpsc330-2026W1
 
 ::: {.callout-important}
@@ -175,19 +177,20 @@ Please go through [this document](https://ubc-cs.github.io/cpsc330-2026W1/syllab
 :::
 
 - We are expecting that all students registered on the waitlist have already, or will soon get a notification to join the course!
-- The waitlist will close on Friday at 3 PM and no more students will be able to register after that!
+- The waitlist will close at the end of the day on Wednesday September 16 at 3 PM; after this, no more students will be able to register after that!
 - It is your responsibility to catch up on any missed work.
 
 ## Lecture format
 
-- In person lectures Monday, Wednesday, and Friday from 10:00 AM to 12:20 PM
-- **WARNING**: This is Summer, things will be fast!!
+- In person lectures Tuesday and Thursday from 3:30 PM to 5 PM
+<!-- - **WARNING**: This is Summer, things will be fast!! -->
 - There will be videos to watch before almost every lecture. You will find the list of pre-watch videos in the schedule on the course webpage.
 - We will also try to work on some questions and exercises together during the class. 
 - All materials will be posted in this GitHub repository. 
 <!-- - Weekly tutorials will be **office hour format** run by the TAs and are **completely optional**. -->
-  <!-- - You do not need to be registered in a tutorial. -->
-  - You may attend any tutorials or office hours your want, regardless of in which/whether you're registered.
+ <!-- - You do not need to be registered in a tutorial. -->
+- You may attend any tutorials or office hours your want, regardless of in which/whether you're registered.
+- Lectures are not recorded
 
 ## Home work assignments
 - First homework assignment is due soon, it will be released to you today.
@@ -197,8 +200,7 @@ Please go through [this document](https://ubc-cs.github.io/cpsc330-2026W1/syllab
 ## Exams 
 
 - We'll have three self-scheduled midterms over a few days and one final exam.
-- All exams will be held in Computer-based Testing Facility (CBTF). 
-
+- All exams will be held in Open Resource Centre for Assessments (ORCA)
 <!-- 
 ## Course calendar
 
@@ -209,11 +211,15 @@ Here is our course Calendar. Make sure you check it on a regular basis:
 
 ## Course structure
 
-- Part I: Introduction, ML fundamentals, preprocessing, midterm 1
-- Part II: Unsupervised learning, transfer learning, common special cases, midterm 1
-- Part III: Communication and ethics
-  - ML skills are not beneficial if you can't use them responsibly and communicate your results. In this module we'll talk about these aspects. 
-  - 
+- Part I: Foundations and Supervised Learning
+  - Weeks 2, 3, 4, 5, 6, 7
+- Unsupervised Learning and Recommendation
+  - Weeks 8, 9
+- Working with Different Data Types
+  - Weeks 9, 11, 12 
+- Responsible Machine Learning in Practice 
+  - Weeks 12, 13 
+
 ## Code of conduct
 
 - Our main forum for getting help will be [Ed Discussion](https://edstem.org/us/join/BMH77Z).
@@ -313,14 +319,13 @@ x
   - This can be convenient for quick read-only access, without needing to launch the Jupyter notebook/lab application.
   - But you need to launch the app properly to interact with the notebooks.
 
-## Lecture notes
+## Lecture notes and slides
 
-- All the lectures from last year are [available here](https://ubc-cs.github.io/cpsc330-2025W2).
-- We cannot promise anything will stay the same from last year to this year, so read them in advance at your own risk.
-- A "finalized" version will be pushed to [GitHub](https://github.com/UBC-CS/cpsc330-2026W1) and the [Jupyter book](https://ubc-cs.github.io/cpsc330-2026W1) right before each class.
-- Each instructor will have slightly adapted versions of notes to present slides during lectures.  
-- You will find the link to these slides in our repository: 
-https://github.com/UBC-CS/cpsc330-2026W1/tree/main/lectures/103-Firas-lectures
+
+- Read the shared notes in the [CPSC 330 course book](https://ubc-cs.github.io/cpsc330-book/).
+- For this lecture, read [Chapter 1: Course Introduction](https://ubc-cs.github.io/cpsc330-book/book/01_intro.html).
+- Each instructor prepares slides and demos based on the book.
+- Use the [2026W1 course website](https://ubc-cs.github.io/cpsc330-2026W1/) for deadlines and policies.
 
 ## Grades
 
@@ -336,12 +341,12 @@ https://github.com/UBC-CS/cpsc330-2026W1/tree/main/lectures/103-Firas-lectures
 
 In this course, we will primarily be using `Python` , `git`, `GitHub`, `Canvas`, `Gradescope`, `Ed DIscussion`, and `PrairieLearn`. 
 
-## Course `conda` environment
+## Course Python environment
 
-- Follow the setup instructions [here](https://ubc-cs.github.io/cpsc330-2026W1/docs/setup) to create a course `conda` environment on your computer. 
+- Follow the setup instructions [here](https://ubc-cs.github.io/cpsc330-2026W1/docs/setup.html) to set up the course Python environment with `uv` on your computer. 
 - If you do not have your computer with you, you can partner up with someone and set up your own computer later.
 
-## Python requirements/resources
+## Python requirements/resources {.smaller}
 
 We will primarily use Python in this course.
 
