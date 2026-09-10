@@ -6,8 +6,8 @@
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-0a6b7249c26820e032cb0bd839ff02b1.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.9.38">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-b85bc7c33db8c58e0ec93c3465666fed.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.10.18">
 
   <title>CPSC 330 Slides – Lecture 15: DBSCAN, Hierarchical Clustering</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -19,10 +19,13 @@
     /* Default styles provided by pandoc.
     ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
     */
-    code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
-    div.columns{display: flex; gap: min(4vw, 1.5em);}
-    div.column{flex: auto; overflow-x: auto;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
     ul.task-list li input[type="checkbox"] {
@@ -313,10 +316,10 @@
 <li>A density-based clustering algorithm</li>
 </ul>
 <div id="035fafa9" class="cell" data-execution_count="5">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a>X, y <span class="op">=</span> make_moons(n_samples<span class="op">=</span><span class="dv">200</span>, noise<span class="op">=</span><span class="fl">0.08</span>, random_state<span class="op">=</span><span class="dv">42</span>)</span>
-<span id="cb1-2"><a></a>dbscan <span class="op">=</span> DBSCAN(eps<span class="op">=</span><span class="fl">0.2</span>)</span>
-<span id="cb1-3"><a></a>dbscan.fit(X)</span>
-<span id="cb1-4"><a></a>plot_original_clustered(X, dbscan, dbscan.labels_)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a aria-label="1"></a>X, y <span class="op">=</span> make_moons(n_samples<span class="op">=</span><span class="dv">200</span>, noise<span class="op">=</span><span class="fl">0.08</span>, random_state<span class="op">=</span><span class="dv">42</span>)</span>
+<span id="cb1-2"><a aria-label="2"></a>dbscan <span class="op">=</span> DBSCAN(eps<span class="op">=</span><span class="fl">0.2</span>)</span>
+<span id="cb1-3"><a aria-label="3"></a>dbscan.fit(X)</span>
+<span id="cb1-4"><a aria-label="4"></a>plot_original_clustered(X, dbscan, dbscan.labels_)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -512,10 +515,10 @@
 <section id="flat-clusters-1" class="slide level2 center">
 <h2>Flat clusters</h2>
 <div id="5b8219da" class="cell" data-execution_count="10">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a></a><span class="im">from</span> scipy.cluster.hierarchy <span class="im">import</span> fcluster</span>
-<span id="cb3-2"><a></a><span class="co"># flattening the dendrogram based on maximum number of clusters. </span></span>
-<span id="cb3-3"><a></a>hier_labels1 <span class="op">=</span> fcluster(linkage_array, <span class="dv">3</span>, criterion<span class="op">=</span><span class="st">"maxclust"</span>) </span>
-<span id="cb3-4"><a></a>plot_dendrogram_clusters(X, linkage_array, hier_labels1, title<span class="op">=</span><span class="st">"flattened with max_clusts=3"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a aria-label="1"></a><span class="im">from</span> scipy.cluster.hierarchy <span class="im">import</span> fcluster</span>
+<span id="cb3-2"><a aria-label="2"></a><span class="co"># flattening the dendrogram based on maximum number of clusters. </span></span>
+<span id="cb3-3"><a aria-label="3"></a>hier_labels1 <span class="op">=</span> fcluster(linkage_array, <span class="dv">3</span>, criterion<span class="op">=</span><span class="st">"maxclust"</span>) </span>
+<span id="cb3-4"><a aria-label="4"></a>plot_dendrogram_clusters(X, linkage_array, hier_labels1, title<span class="op">=</span><span class="st">"flattened with max_clusts=3"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -543,11 +546,11 @@
 <h2>Example: Single linkage</h2>
 <p>Suppose you want to go from 3 clusters to 2 clusters. Which clusters would you merge?</p>
 <div id="d59f2ba3" class="cell" data-execution_count="11">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a></a>X_orig, y <span class="op">=</span> make_blobs(random_state<span class="op">=</span><span class="dv">0</span>, n_samples<span class="op">=</span><span class="dv">11</span>)</span>
-<span id="cb4-2"><a></a>X <span class="op">=</span> StandardScaler().fit_transform(X_orig)</span>
-<span id="cb4-3"><a></a>linkage_array <span class="op">=</span> single(X)</span>
-<span id="cb4-4"><a></a>hier_labels <span class="op">=</span> fcluster(linkage_array, <span class="dv">3</span>, criterion<span class="op">=</span><span class="st">"maxclust"</span>) </span>
-<span id="cb4-5"><a></a>plot_dendrogram_clusters(X, linkage_array, hier_labels, title<span class="op">=</span><span class="st">"maxclust 3"</span>, color_threshold<span class="op">=</span><span class="fl">1.0</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a aria-label="1"></a>X_orig, y <span class="op">=</span> make_blobs(random_state<span class="op">=</span><span class="dv">0</span>, n_samples<span class="op">=</span><span class="dv">11</span>)</span>
+<span id="cb4-2"><a aria-label="2"></a>X <span class="op">=</span> StandardScaler().fit_transform(X_orig)</span>
+<span id="cb4-3"><a aria-label="3"></a>linkage_array <span class="op">=</span> single(X)</span>
+<span id="cb4-4"><a aria-label="4"></a>hier_labels <span class="op">=</span> fcluster(linkage_array, <span class="dv">3</span>, criterion<span class="op">=</span><span class="st">"maxclust"</span>) </span>
+<span id="cb4-5"><a aria-label="5"></a>plot_dendrogram_clusters(X, linkage_array, hier_labels, title<span class="op">=</span><span class="st">"maxclust 3"</span>, color_threshold<span class="op">=</span><span class="fl">1.0</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -560,8 +563,8 @@
 <section id="example-single-linkage-1" class="slide level2 smaller center">
 <h2>Example: Single linkage</h2>
 <div id="c88fae1a" class="cell" data-execution_count="12">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a></a>hier_labels <span class="op">=</span> fcluster(linkage_array, <span class="dv">2</span>, criterion<span class="op">=</span><span class="st">"maxclust"</span>) </span>
-<span id="cb5-2"><a></a>plot_dendrogram_clusters(X, linkage_array, hier_labels, title<span class="op">=</span><span class="st">"maxclust 2"</span>, color_threshold<span class="op">=</span><span class="fl">1.0</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a aria-label="1"></a>hier_labels <span class="op">=</span> fcluster(linkage_array, <span class="dv">2</span>, criterion<span class="op">=</span><span class="st">"maxclust"</span>) </span>
+<span id="cb5-2"><a aria-label="2"></a>plot_dendrogram_clusters(X, linkage_array, hier_labels, title<span class="op">=</span><span class="st">"maxclust 2"</span>, color_threshold<span class="op">=</span><span class="fl">1.0</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure>
