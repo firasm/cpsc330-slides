@@ -164,9 +164,45 @@ You can find the source code for everything we do here: https://ubc-cs.github.io
 Make sure you go through the syllabus thoroughly and complete the syllabus quiz before next class! 
 :::
 
-## Asking questions during class
+## Course website 
+::: {.callout-important}
+Use the [2026W1 course website](https://ubc-cs.github.io/cpsc330-2026W1/) for schedules, announcements, and policies. Read the syllabus carefully. The [separate course book](https://ubc-cs.github.io/cpsc330-book/) contains our shared notes.
+:::
 
-You are welcome to ask questions by raising your hand!
+::: {.callout-important}
+Make sure you go through the syllabus thoroughly and complete the syllabus quiz before Sept 19th at 11:59pm. 
+:::
+
+## What do we cover {.smaller}
+
+- Designed for a **diverse group of students** (CS, Statistics, and beyond)  
+- **Gentle introduction** to machine learning, but also valuable for those with prior experience  
+- Covers **foundational concepts** in ML and data science:  
+  - Data preprocessing, supervised learning, clustering  
+  - Recommendation systems, text processing  
+  - Intro to neural networks, time series, survival analysis  
+- Emphasis on **hands-on skills**:  
+  - Model development, evaluation, interpretation  
+  - Ethical considerations and clear communication  
+
+## Course structure
+
+- Part I: Foundations and Supervised Learning
+  - Weeks 2, 3, 4, 5, 6, 7
+- Unsupervised Learning and Recommendation
+  - Weeks 8, 9
+- Working with Different Data Types
+  - Weeks 9, 11, 12 
+- Responsible Machine Learning in Practice 
+  - Weeks 12, 13 
+
+## Asking questions during class {.smaller}
+
+- You are encouraged to ask questions by raising your hand.
+- No question is a stupid question. 
+- Recommended reading as you begin your learning journey: [The Fear of Publicly Not Knowing](https://medium.com/bucknell-hci/the-fear-of-publicly-not-knowing-239e1b7a39f3)
+
+> What I quickly came to realize was that publicly not knowing wasn't a indicator of stupidity, it was an indicator of understanding. And from what I’ve seen, it is one of the clearest indicators of success in people — more than school prestige, more than GPA.
 
 If you would prefer to write notes and ask questions later, you are more than welcome to do that also! Use Ed Discussion.
 
@@ -192,15 +228,12 @@ Please go through [this document](https://ubc-cs.github.io/cpsc330-2026W1/syllab
 - You may attend any tutorials or office hours your want, regardless of in which/whether you're registered.
 - Lectures are not recorded
 
-## Home work assignments
-- First homework assignment is due soon, it will be released to you today.
-- This is a relatively straightforward assignment on Python. If you struggle with this assignment then that could be a sign that you will struggle later on in the course.    
-- You must do the first two homework assignments on your own.
-
 ## Exams 
 
-- We'll have three self-scheduled midterms over a few days and one final exam.
-- All exams will be held in Open Resource Centre for Assessments (ORCA)
+- Two midterms, conducted in ORCA by self-reservation over a multi-day period.
+- A comprehensive final exam during the exam period.
+- Check the [course website](https://ubc-cs.github.io/cpsc330-2026W1/) for dates and assessment instructions.
+
 <!-- 
 ## Course calendar
 
@@ -209,16 +242,87 @@ Here is our course Calendar. Make sure you check it on a regular basis:
 [https://htmlpreview.github.io/?https://github.com/UBC-CS/cpsc330-2026W1/blob/main/docs/calendar.html](https://htmlpreview.github.io/?https://github.com/UBC-CS/cpsc330-2026W1/blob/main/docs/calendar.html)
  -->
 
-## Course structure
+## Homework assignments {.smaller}
 
-- Part I: Foundations and Supervised Learning
-  - Weeks 2, 3, 4, 5, 6, 7
-- Unsupervised Learning and Recommendation
-  - Weeks 8, 9
-- Working with Different Data Types
-  - Weeks 9, 11, 12 
-- Responsible Machine Learning in Practice 
-  - Weeks 12, 13 
+- Our notes are created in a [Jupyter notebook](https://jupyter.org/), with file extension `.ipynb`.
+- Also, you will complete your homework assignments using Jupyter notebooks.
+- Confusingly, "Jupyter notebook" is also the original application that opens `.ipynb` files - but has since been replaced by **Jupyter Lab**.
+  - I am using Jupyter Lab, some things might not work with the Jupyter notebook application.
+  - You can also open these files in Visual Studio Code.
+
+## Important note 
+- Note that your first homework assignment is due **Monday, September 14, 11:59 PM** (check the [course schedule](https://ubc-cs.github.io/cpsc330-2026W1/README.html#deliverable-due-dates-tentative)). This is a relatively straightforward assignment on Python. 
+- If you struggle with this assignment then that could be a sign that you will struggle later on in the course.    
+- Write your own answers and code unless the assignment explicitly permits group work.
+
+## Plagiarism 
+
+Raise your hand if you've ever copied code from StackOverflow.
+
+:::: {.columns}
+
+::: {.column width="50%"}
+<img src="img/helpful-vs-harmful-paths.png" height="500">
+:::
+
+::: {.column width="50%"}
+- Copying isn't always wrong but not acknowledging it is. 
+- Plagiarism may lead to serious consequences
+:::
+::::
+
+## Using generative AI in this course {.smaller}
+**Please read our [full Generative AI usage policy](https://ubc-cs.github.io/cpsc330-2026W1/syllabus.html#use-of-generative-ai-genai).**
+
+TL;DR: use AI to support, not substitute, your work. If you use a tool:
+
+- Name the tool and briefly explain how you used it.
+- Be able to explain and reproduce your work without the tool.
+- Do not share instructor-provided course materials or sensitive information without permission.
+- GenAI is not permitted during exams or timed assessments unless explicitly allowed.
+- Follow group-work rules and be extra careful when collaborating.
+- You are responsible for any errors (“hallucinations”) the tool produces.
+
+## Who to contact: Grading concerns? 
+- Start by opening a regrade request.   
+- If not resolved in two weeks, reach out to your section instructor on Ed Discussion 
+
+## Who to contact: admin stuff/concessions?
+- Read [Frequently Asked Questions](https://ubc-cs.github.io/cpsc330-2026W1/docs/faq.html) before contacting. 
+- Contact our [course co-ordinator](https://ubc-cs.github.io/cpsc330-2026W1/README.html#course-co-ordinator)
+
+## Who to contact: Questions on the content? 
+- Make sure to read [our guide on asking for help](https://ubc-cs.github.io/cpsc330-2026W1/docs/asking_for_help.html) before reaching out.  
+- Post your question on Ed Discussion.
+- Make use of instructor and TA office hours and tutorials 
+- I am open to answering questions after class.  
+
+## Code of conduct
+
+- Our main forum for getting help will be [Ed Discussion](https://edstem.org/us/courses/104703/discussion).
+
+::: {.callout-important}
+Please read [this entire document about asking for help](https://github.com/UBC-CS/cpsc330-2026W1/blob/main/docs/asking_for_help.md).
+**TLDR:** Be respectful.
+:::
+
+## Asking questions during class {.smaller}
+
+- You are encouraged to ask questions by raising your hand.
+- No question is a stupid question. 
+- Recommended reading as you begin your learning journey: [The Fear of Publicly Not Knowing](https://medium.com/bucknell-hci/the-fear-of-publicly-not-knowing-239e1b7a39f3)
+
+> What I quickly came to realize was that publicly not knowing wasn't a indicator of stupidity, it was an indicator of understanding. And from what I’ve seen, it is one of the clearest indicators of success in people — more than school prestige, more than GPA.
+
+## Checklist for you before the next class {.smaller}
+
+- [ ] Have you read [the syllabus](https://ubc-cs.github.io/cpsc330-2026W1/syllabus.html) and course policies carefully? 
+- [ ] Are you able to access course [Canvas](https://canvas.ubc.ca/courses/190981) shell? 
+- [ ] Are you able to access [course Ed Discussion](https://edstem.org/us/courses/104703/discussion)?
+- [ ] Are you able to access [iClicker Cloud for Section 102](https://join.iclicker.com/GHJB) for this course? 
+- [ ] Did you follow the setup instructions [here](https://ubc-cs.github.io/cpsc330-2026W1/docs/setup.html) to set up the course Python environment with `uv` on your computer?
+- [ ] Have you read [Chapter 1 in the course book](https://ubc-cs.github.io/cpsc330-book/book/01_intro.html)?
+- [ ] Are you almost finished or at least started with homework 1?
 
 ## Code of conduct
 
@@ -320,7 +424,6 @@ x
   - But you need to launch the app properly to interact with the notebooks.
 
 ## Lecture notes and slides
-
 
 - Read the shared notes in the [CPSC 330 course book](https://ubc-cs.github.io/cpsc330-book/).
 - For this lecture, read [Chapter 1: Course Introduction](https://ubc-cs.github.io/cpsc330-book/book/01_intro.html).
@@ -671,7 +774,7 @@ pred_df = pd.DataFrame(pred_dict)
 pred_df.style.set_properties(**{"text-align": "left"})
 ```
 
-## Examplel: Text classification with LLMs
+## Example: Text classification with LLMs
 \ 
 
 - LLMs = Large Language Models
