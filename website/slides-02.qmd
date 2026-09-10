@@ -46,7 +46,7 @@ DATA_DIR = 'data/'
 - Homework 2 (hw2) has been released
     - There is some autograding in this homework.
 
-- You can find the tentative due dates for all deliverables [here](https://ubc-cs.github.io/cpsc330-2026S1/#deliverable-due-dates-tentative).
+- You can find the tentative due dates for all deliverables [here](https://ubc-cs.github.io/cpsc330-2026W1/#deliverable-due-dates-tentative).
 - Please monitor Ed Discussion (especially pinned posts and instructor posts) for announcements. 
 - I'll assume that you've watched the pre-lecture videos.
 
@@ -71,7 +71,7 @@ DATA_DIR = 'data/'
   - `~/School/Year3/CPSC330/` <-- Consider this your CPSC parent folder
 - Create subfolders for: `hw`, `class`, `practice`
 - In the `hw` folder, you will then clone `hw1`, `hw2`, `hw3`, etc...
-- In the `class` folder, you will clone the `cpsc330-2026S1` repo which contains all the class jupyter notebooks
+- In the `class` folder, you will clone the `cpsc330-2026W1` repo which contains all the class jupyter notebooks
   - Do **not** make any changes to files in this directory/repo, you will have trouble when you pull stuff during each class.
   - If you did make changes, you can reset to the last commit and DESTROY any changes you made (be careful with this command) using: `git reset --hard`
 - In the `practice` folder, you can **copy** any notebooks (`.ipynb`) and files (like data/*.csv) you want to try running locally and experiment

@@ -110,7 +110,7 @@ You had a midterm already a couple of weeks ago, I'd like some feedback on how t
 
 ## Class Survey
 
-I'd love to hear how you think lectures are going, and how the course is going overall: [bit.ly/cpsc330_2026S1](https://bit.ly/cpsc330_2026S1).
+I'd love to hear how you think lectures are going, and how the course is going overall: [bit.ly/cpsc330_2026W1](https://bit.ly/cpsc330_2026W1).
 
 Let's take a couple of minutes to complete this before we get started on today's content.
 
