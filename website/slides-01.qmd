@@ -881,7 +881,7 @@ for cluster in range(k):
 
 - Visit: https://agora.students.cs.ubc.ca
 - Login with your UBC CWL
-- Use enrol code: canvas
+- Use enrol code: cpsc330-2026W1
 
 ![](img/firas/agora.png)
 
