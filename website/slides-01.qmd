@@ -877,6 +877,14 @@ for cluster in range(k):
 ```
 :::
 
+## Class Participation using **Agora**
+
+- Visit: https://agora.students.cs.ubc.ca
+- Login with your UBC CWL
+- Use enrol code: canvas
+
+![](img/firas/agora.png)
+
 # Interactive: Is ML appropriate?
 
 ## ❓❓ Questions for you {.smaller}
