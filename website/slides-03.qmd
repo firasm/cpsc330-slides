@@ -27,7 +27,8 @@ format:
   - Reminder to run the lecture notes on your laptop and experiment with the code. 
   - Start early on homework assignments.
 
-- Last day to drop without a W standing is this Friday: **May 15, 2026**
+- Last day to drop without a W standing is this Friday: **September 21, 2026**
+<!-- 
 
 ## Dropping lowest homework (Update)
 
@@ -37,7 +38,8 @@ format:
 
 > **With the exception of HW5,** we will drop your lowest homework grade - all students must complete HW5.
 
-- This is to encourage all students to complete HW5! It's important!
+- This is to encourage all students to complete HW5! It's important! 
+- -->
 
 ## Recap
 
@@ -61,7 +63,7 @@ A typical sequence of steps to train supervised machine learning models
 
 ## Clicker 3.1
 
-Participate using [Agora](https://agora.students.cs.ubc.ca) (code: canvas)
+Participate using [Agora](https://agora.students.cs.ubc.ca) (code: cpsc330-2026W1)
 
 **Select all of the following statements which are TRUE.**
 
@@ -74,7 +76,7 @@ Participate using [Agora](https://agora.students.cs.ubc.ca) (code: canvas)
 
 ## Clicker 3.2
 
-Participate using [Agora](https://agora.students.cs.ubc.ca) (code: canvas)
+Participate using [Agora](https://agora.students.cs.ubc.ca) (code: cpsc330-2026W1)
 
 **Select all of the following statements which are TRUE.**
 
