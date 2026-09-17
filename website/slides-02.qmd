@@ -50,6 +50,7 @@ DATA_DIR = 'data/'
 - Please monitor Ed Discussion (especially pinned posts and instructor posts) for announcements. 
 - I'll assume that you've watched the pre-lecture videos.
 
+<!-- 
 ## Participation marks (10%)
 
 - You will have weekly "Learning Logs" where you will reflect on the material covered for the week
@@ -57,7 +58,7 @@ DATA_DIR = 'data/'
 - The first Learning Log will be released soon!
 <br><br>
 
-<!-- 
+
 ## Surveys
 
 - Please complete the "Getting to know you" survey on [Canvas]().
