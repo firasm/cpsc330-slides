@@ -142,7 +142,7 @@ What's the problem here?
 
 
 ## Clicker 5.1
-Participate using [Agora](https://agora.students.cs.ubc.ca) (code: canvas)
+Participate using [Agora](https://agora.students.cs.ubc.ca) (code: cpsc330-2026W1)
 
 Take a guess: In your machine learning project, how much time will you typically spend on data preparation and transformation?
 
@@ -154,7 +154,7 @@ Take a guess: In your machine learning project, how much time will you typically
 The question is adapted from [here](https://developers.google.com/machine-learning/crash-course/overfitting).
 
 ## Clicker 5.2
-Participate using [Agora](https://agora.students.cs.ubc.ca) (code: canvas)
+Participate using [Agora](https://agora.students.cs.ubc.ca) (code: cpsc330-2026W1)
 
 Select all of the following statements which are TRUE.
 
@@ -166,7 +166,7 @@ Select all of the following statements which are TRUE.
 
 
 ## Clicker 5.3
-Participate using [Agora](https://agora.students.cs.ubc.ca) (code: canvas)
+Participate using [Agora](https://agora.students.cs.ubc.ca) (code: cpsc330-2026W1)
 
 Select all of the following statements which are TRUE.
 
