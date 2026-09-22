@@ -67,14 +67,14 @@
     "href": "slides-02.html#clicker-2.2-supervised-vs-unsupervised",
     "title": "Lecture 2: Terminology, Baselines, Decision Trees",
     "section": "Clicker 2.2: Supervised vs unsupervised",
-    "text": "Clicker 2.2: Supervised vs unsupervised\nParticipate using Agora (code: canvas)\nSelect all of the following statements which are examples of supervised machine learning\n\n\nFinding groups of similar properties in a real estate data set.\n\n\nPredicting whether someone will have a heart attack or not on the basis of demographic, diet, and clinical measurement.\n\n\nGrouping articles on different topics from different news sources (something like the Google News app).\n\n\nDetecting credit card fraud based on examples of fraudulent and non-fraudulent transactions.\n\n\nGiven some measure of employee performance, identify the key factors which are likely to influence their performance."
+    "text": "Clicker 2.2: Supervised vs unsupervised\nParticipate using Agora (code: cpsc330-2026W1)\nSelect all of the following statements which are examples of supervised machine learning\n\n\nFinding groups of similar properties in a real estate data set.\n\n\nPredicting whether someone will have a heart attack or not on the basis of demographic, diet, and clinical measurement.\n\n\nGrouping articles on different topics from different news sources (something like the Google News app).\n\n\nDetecting credit card fraud based on examples of fraudulent and non-fraudulent transactions.\n\n\nGiven some measure of employee performance, identify the key factors which are likely to influence their performance."
   },
   {
     "objectID": "slides-02.html#clicker-2.3-classification-vs.-regression",
     "href": "slides-02.html#clicker-2.3-classification-vs.-regression",
     "title": "Lecture 2: Terminology, Baselines, Decision Trees",
     "section": "Clicker 2.3: Classification vs. Regression",
-    "text": "Clicker 2.3: Classification vs. Regression\nParticipate using Agora (code: canvas)\nSelect all of the following statements which are examples of regression problems\n\n\nPredicting the price of a house based on features such as number of bedrooms and the year built.\n\n\nPredicting if a house will sell or not based on features like the price of the house, number of rooms, etc.\n\n\nPredicting percentage grade in CPSC 330 based on past grades.\n\n\nPredicting whether you should bicycle tomorrow or not based on the weather forecast.\n\n\nPredicting appropriate thermostat temperature based on the wind speed and the number of people in a room."
+    "text": "Clicker 2.3: Classification vs. Regression\nParticipate using Agora (code: cpsc330-2026W1)\nSelect all of the following statements which are examples of regression problems\n\n\nPredicting the price of a house based on features such as number of bedrooms and the year built.\n\n\nPredicting if a house will sell or not based on features like the price of the house, number of rooms, etc.\n\n\nPredicting percentage grade in CPSC 330 based on past grades.\n\n\nPredicting whether you should bicycle tomorrow or not based on the weather forecast.\n\n\nPredicting appropriate thermostat temperature based on the wind speed and the number of people in a room."
   },
   {
     "objectID": "slides-02.html#todays-focus",
@@ -312,21 +312,21 @@
     "href": "slides-05.html#clicker-5.1",
     "title": "Lecture 5: Preprocessing and sklearn pipelines",
     "section": "Clicker 5.1",
-    "text": "Clicker 5.1\nParticipate using Agora (code: canvas)\nTake a guess: In your machine learning project, how much time will you typically spend on data preparation and transformation?\n\n\n~80% of the project time\n\n\n~20% of the project time\n\n\n~50% of the project time\n\n\nNone. Most of the time will be spent on model building\n\n\nThe question is adapted from here."
+    "text": "Clicker 5.1\nParticipate using Agora (code: cpsc330-2026W1)\nTake a guess: In your machine learning project, how much time will you typically spend on data preparation and transformation?\n\n\n~80% of the project time\n\n\n~20% of the project time\n\n\n~50% of the project time\n\n\nNone. Most of the time will be spent on model building\n\n\nThe question is adapted from here."
   },
   {
     "objectID": "slides-05.html#clicker-5.2",
     "href": "slides-05.html#clicker-5.2",
     "title": "Lecture 5: Preprocessing and sklearn pipelines",
     "section": "Clicker 5.2",
-    "text": "Clicker 5.2\nParticipate using Agora (code: canvas)\nSelect all of the following statements which are TRUE.\n\n\nStandardScaler ensures a fixed range (i.e., minimum and maximum values) for the features.\n\n\nStandardScaler calculates mean and standard deviation for each feature separately.\n\n\nIn general, it’s a good idea to apply scaling on numeric features before training \\(k\\)-NN or SVM RBF models.\n\n\nThe transformed feature values might be hard to interpret for humans.\n\n\nAfter applying SimpleImputer The transformed data has a different shape than the original data."
+    "text": "Clicker 5.2\nParticipate using Agora (code: cpsc330-2026W1)\nSelect all of the following statements which are TRUE.\n\n\nStandardScaler ensures a fixed range (i.e., minimum and maximum values) for the features.\n\n\nStandardScaler calculates mean and standard deviation for each feature separately.\n\n\nIn general, it’s a good idea to apply scaling on numeric features before training \\(k\\)-NN or SVM RBF models.\n\n\nThe transformed feature values might be hard to interpret for humans.\n\n\nAfter applying SimpleImputer The transformed data has a different shape than the original data."
   },
   {
     "objectID": "slides-05.html#clicker-5.3",
     "href": "slides-05.html#clicker-5.3",
     "title": "Lecture 5: Preprocessing and sklearn pipelines",
     "section": "Clicker 5.3",
-    "text": "Clicker 5.3\nParticipate using Agora (code: canvas)\nSelect all of the following statements which are TRUE.\n\n\nYou can have scaling of numeric features, one-hot encoding of categorical features, and scikit-learn estimator within a single pipeline.\n\n\nOnce you have a scikit-learn pipeline object with an estimator as the last step, you can call fit, predict, and score on it.\n\n\nYou can carry out data splitting within scikit-learn pipeline.\n\n\nWe have to be careful of the order we put each transformation and model in a pipeline.\n\n\n\nA: False; It doesn’t make sense to apply one hot encoding to numeric features, and it doesn’t make sense to apply standard scalar to categorical features. Sequence doesn’t make sense, we need column transformers\nB: True; can do this as long as the estimator is the last step\nC: False\nD: True;"
+    "text": "Clicker 5.3\nParticipate using Agora (code: cpsc330-2026W1)\nSelect all of the following statements which are TRUE.\n\n\nYou can have scaling of numeric features, one-hot encoding of categorical features, and scikit-learn estimator within a single pipeline.\n\n\nOnce you have a scikit-learn pipeline object with an estimator as the last step, you can call fit, predict, and score on it.\n\n\nYou can carry out data splitting within scikit-learn pipeline.\n\n\nWe have to be careful of the order we put each transformation and model in a pipeline.\n\n\n\nA: False; It doesn’t make sense to apply one hot encoding to numeric features, and it doesn’t make sense to apply standard scalar to categorical features. Sequence doesn’t make sense, we need column transformers\nB: True; can do this as long as the estimator is the last step\nC: False\nD: True;"
   },
   {
     "objectID": "slides-05.html#imputation-fill-the-gaps",
@@ -816,7 +816,7 @@
     "href": "slides-01.html#model-training",
     "title": "Lecture 1: Introduction to CPSC 330",
     "section": "Model training",
-    "text": "Model training\n\nfrom lightgbm.sklearn import LGBMClassifier\nmodel = LGBMClassifier(random_state=123, verbose=-1)\nmodel.fit(X_train, y_train)\n\nLGBMClassifier(random_state=123, verbose=-1)In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.LGBMClassifieriFitted\n        \n            \n                Parameters\n                \n\n\n\n\n\n\n\n\n\n\nrandom_state\n123\n\n\n\n\nverbose\n-1\n\n\n\n\nboosting_type\n'gbdt'\n\n\n\n\nnum_leaves\n31\n\n\n\n\nmax_depth\n-1\n\n\n\n\nlearning_rate\n0.1\n\n\n\n\nn_estimators\n100\n\n\n\n\nsubsample_for_bin\n200000\n\n\n\n\nobjective\nNone\n\n\n\n\nclass_weight\nNone\n\n\n\n\nmin_split_gain\n0.0\n\n\n\n\nmin_child_weight\n0.001\n\n\n\n\nmin_child_samples\n20\n\n\n\n\nsubsample\n1.0\n\n\n\n\nsubsample_freq\n0\n\n\n\n\ncolsample_bytree\n1.0\n\n\n\n\nreg_alpha\n0.0\n\n\n\n\nreg_lambda\n0.0\n\n\n\n\nn_jobs\nNone\n\n\n\n\nimportance_type\n'split'\n\n\n\n\n            \n        \n    \n        \n            \n                Fitted attributes\n                \n\n\n\nName\nType\nValue\n\n\nbest_iteration_\nint\n0\n\n\nbest_score_\ndefaultdict\ndefaultdict(&lt;...redDict'&gt;, {})\n\n\nbooster_\nBooster\n&lt;lightgbm.bas...x7fb541a0ea50&gt;\n\n\nclasses_\nndarray[object](2,)\n['Disease','No Disease']\n\n\nevals_result_\ndict\n{}\n\n\nfeature_importances_\nndarray[int32](9,)\n[356,178,127,...,209,240,176]\n\n\nfeature_name_\nlist\n['Age', 'To...in', 'Di...in', 'Al...se', ...]\n\n\nfeature_names_in_\nndarray[&lt;U26](9,)\n['Age','Total_Bilirubin','Direct_Bilirubin',...,'Total_Protiens','Albumin', 'Albumin_and_Globulin_Ratio']\n\n\nfitted_\nbool\nTrue\n\n\nn_classes_\nint\n2\n\n\nn_estimators_\nint\n100\n\n\nn_features_\nint\n9\n\n\nn_features_in_\nint\n9\n\n\nn_iter_\nint\n100\n\n\nobjective_\nstr\n'binary'"
+    "text": "Model training\n\nfrom lightgbm.sklearn import LGBMClassifier\nmodel = LGBMClassifier(random_state=123, verbose=-1)\nmodel.fit(X_train, y_train)\n\nLGBMClassifier(random_state=123, verbose=-1)In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.LGBMClassifieriFitted\n        \n            \n                Parameters\n                \n\n\n\n\n\n\n\n\n\n\nrandom_state\n123\n\n\n\n\nverbose\n-1\n\n\n\n\nboosting_type\n'gbdt'\n\n\n\n\nnum_leaves\n31\n\n\n\n\nmax_depth\n-1\n\n\n\n\nlearning_rate\n0.1\n\n\n\n\nn_estimators\n100\n\n\n\n\nsubsample_for_bin\n200000\n\n\n\n\nobjective\nNone\n\n\n\n\nclass_weight\nNone\n\n\n\n\nmin_split_gain\n0.0\n\n\n\n\nmin_child_weight\n0.001\n\n\n\n\nmin_child_samples\n20\n\n\n\n\nsubsample\n1.0\n\n\n\n\nsubsample_freq\n0\n\n\n\n\ncolsample_bytree\n1.0\n\n\n\n\nreg_alpha\n0.0\n\n\n\n\nreg_lambda\n0.0\n\n\n\n\nn_jobs\nNone\n\n\n\n\nimportance_type\n'split'\n\n\n\n\n            \n        \n    \n        \n            \n                Fitted attributes\n                \n\n\n\nName\nType\nValue\n\n\nbest_iteration_\nint\n0\n\n\nbest_score_\ndefaultdict\ndefaultdict(&lt;...redDict'&gt;, {})\n\n\nbooster_\nBooster\n&lt;lightgbm.bas...x7f19d0476a50&gt;\n\n\nclasses_\nndarray[object](2,)\n['Disease','No Disease']\n\n\nevals_result_\ndict\n{}\n\n\nfeature_importances_\nndarray[int32](9,)\n[356,178,127,...,209,240,176]\n\n\nfeature_name_\nlist\n['Age', 'To...in', 'Di...in', 'Al...se', ...]\n\n\nfeature_names_in_\nndarray[&lt;U26](9,)\n['Age','Total_Bilirubin','Direct_Bilirubin',...,'Total_Protiens','Albumin', 'Albumin_and_Globulin_Ratio']\n\n\nfitted_\nbool\nTrue\n\n\nn_classes_\nint\n2\n\n\nn_estimators_\nint\n100\n\n\nn_features_\nint\n9\n\n\nn_features_in_\nint\n9\n\n\nn_iter_\nint\n100\n\n\nobjective_\nstr\n'binary'"
   },
   {
     "objectID": "slides-01.html#new-examples",
@@ -1194,21 +1194,21 @@
     "href": "slides-04.html#recap-clicker-4.0a",
     "title": "Lecture 4: \\(k\\)-nearest neighbours and SVM RBFs",
     "section": "Recap: Clicker 4.0a",
-    "text": "Recap: Clicker 4.0a\nParticipate using Agora (code: canvas)\nWhich of the following scenarios do NOT necessarily imply overfitting?\n\n\nTraining accuracy is very high (0.98) while validation accuracy is much lower (0.60).\n\n\nIn a wildlife classifier, the model predicts “wolf” whenever there”s snow in the background, because all wolf photos were taken in snowy regions.\n\n\nThe decision boundary of a classifier is wiggly and highly irregular.\n\n\nTraining and validation accuracies are both approximately 0.88.\n\n\nA cancer detection model learns that “a ruler in the corner of the X-ray” means positive, because doctors tended to measure suspicious cases."
+    "text": "Recap: Clicker 4.0a\nParticipate using Agora (code: cpsc330-2026W1)\nWhich of the following scenarios do NOT necessarily imply overfitting?\n\n\nTraining accuracy is very high (0.98) while validation accuracy is much lower (0.60).\n\n\nIn a wildlife classifier, the model predicts “wolf” whenever there”s snow in the background, because all wolf photos were taken in snowy regions.\n\n\nThe decision boundary of a classifier is wiggly and highly irregular.\n\n\nTraining and validation accuracies are both approximately 0.88.\n\n\nA cancer detection model learns that “a ruler in the corner of the X-ray” means positive, because doctors tended to measure suspicious cases."
   },
   {
     "objectID": "slides-04.html#recap-clicker-4.0b",
     "href": "slides-04.html#recap-clicker-4.0b",
     "title": "Lecture 4: \\(k\\)-nearest neighbours and SVM RBFs",
     "section": "Recap: Clicker 4.0b",
-    "text": "Recap: Clicker 4.0b\nParticipate using Agora (code: canvas)\nWhich of the following statements about overfitting is true?\n\n\nOverfitting makes the model more accurate on both training and unseen data.\n\n\nOverfitting means the model captures noise or irrelevant details from the training data.\n\n\nOverfitting is desirable because it reduces both training and test error.\n\n\nIn real-world problems, models are always at risk of overfitting if not properly validated."
+    "text": "Recap: Clicker 4.0b\nParticipate using Agora (code: cpsc330-2026W1)\nWhich of the following statements about overfitting is true?\n\n\nOverfitting makes the model more accurate on both training and unseen data.\n\n\nOverfitting means the model captures noise or irrelevant details from the training data.\n\n\nOverfitting is desirable because it reduces both training and test error.\n\n\nIn real-world problems, models are always at risk of overfitting if not properly validated."
   },
   {
     "objectID": "slides-04.html#recap-clicker-4.0c",
     "href": "slides-04.html#recap-clicker-4.0c",
     "title": "Lecture 4: \\(k\\)-nearest neighbours and SVM RBFs",
     "section": "Recap: Clicker 4.0c",
-    "text": "Recap: Clicker 4.0c\nParticipate using Agora (code: canvas)\nHow might one address the issue of underfitting in a machine learning model.\n\n\nIntroduce more noise to the training data.\n\n\nRemove features that might be relevant to the prediction.\n\n\nIncrease the model’s complexity (e.g., more parameters, features, or deeper trees)\n\n\nUse a smaller dataset for training."
+    "text": "Recap: Clicker 4.0c\nParticipate using Agora (code: cpsc330-2026W1)\nHow might one address the issue of underfitting in a machine learning model.\n\n\nIntroduce more noise to the training data.\n\n\nRemove features that might be relevant to the prediction.\n\n\nIncrease the model’s complexity (e.g., more parameters, features, or deeper trees)\n\n\nUse a smaller dataset for training."
   },
   {
     "objectID": "slides-04.html#the-fundamental-tradeoff",
@@ -1236,14 +1236,14 @@
     "href": "slides-04.html#clicker-4.1",
     "title": "Lecture 4: \\(k\\)-nearest neighbours and SVM RBFs",
     "section": "Clicker 4.1",
-    "text": "Clicker 4.1\nParticipate using Agora (code: canvas)\nSelect all of the following statements which are TRUE.\n\n\nAnalogy-based models find examples from the test set that are most similar to the query example we are predicting.\n\n\nEuclidean distance will always have a non-negative value.\n\n\nWith \\(k\\)-NN, setting the hyperparameter \\(k\\) to larger values typically reduces training error.\n\n\nSimilar to decision trees, \\(k\\)-NNs finds a small set of good features.\n\n\nIn \\(k\\)-NN, with \\(k &gt; 1\\), the classification of the closest neighbour to the test example always contributes the most to the prediction."
+    "text": "Clicker 4.1\nParticipate using Agora (code: cpsc330-2026W1)\nSelect all of the following statements which are TRUE.\n\n\nAnalogy-based models find examples from the test set that are most similar to the query example we are predicting.\n\n\nEuclidean distance will always have a non-negative value.\n\n\nWith \\(k\\)-NN, setting the hyperparameter \\(k\\) to larger values typically reduces training error.\n\n\nSimilar to decision trees, \\(k\\)-NNs finds a small set of good features.\n\n\nIn \\(k\\)-NN, with \\(k &gt; 1\\), the classification of the closest neighbour to the test example always contributes the most to the prediction."
   },
   {
     "objectID": "slides-04.html#clicker-4.2",
     "href": "slides-04.html#clicker-4.2",
     "title": "Lecture 4: \\(k\\)-nearest neighbours and SVM RBFs",
     "section": "Clicker 4.2",
-    "text": "Clicker 4.2\nParticipate using Agora (code: canvas)\nSelect all of the following statements which are TRUE.\n\n\n\\(k\\)-NN may perform poorly in high-dimensional space (say, d &gt; 1000).\n\n\nIn sklearn’s SVC classifier, large values of gamma tend to result in higher training score but probably lower validation score.\n\n\nIf we increase both gamma and C, we can’t be certain if the model becomes more complex or less complex."
+    "text": "Clicker 4.2\nParticipate using Agora (code: cpsc330-2026W1)\nSelect all of the following statements which are TRUE.\n\n\n\\(k\\)-NN may perform poorly in high-dimensional space (say, d &gt; 1000).\n\n\nIn sklearn’s SVC classifier, large values of gamma tend to result in higher training score but probably lower validation score.\n\n\nIf we increase both gamma and C, we can’t be certain if the model becomes more complex or less complex."
   },
   {
     "objectID": "slides-04.html#similarity-based-algorithms",
