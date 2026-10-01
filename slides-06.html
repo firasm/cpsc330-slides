@@ -1085,7 +1085,7 @@ Firas Moosvi (Slides adapted from Varada Kolhatkar)
 </section>
 <section id="data" class="slide level2 center">
 <h2>Data</h2>
-<div id="839cc047" class="cell" data-execution_count="2">
+<div id="75564a40" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a aria-label="1"></a>X, y <span class="op">=</span> make_blobs(n_samples<span class="op">=</span><span class="dv">100</span>, centers<span class="op">=</span><span class="dv">3</span>, random_state<span class="op">=</span><span class="dv">12</span>, cluster_std<span class="op">=</span><span class="dv">5</span>) <span class="co"># make synthetic data</span></span>
 <span id="cb1-2"><a aria-label="2"></a>X_train_toy, X_test_toy, y_train_toy, y_test_toy <span class="op">=</span> train_test_split(</span>
 <span id="cb1-3"><a aria-label="3"></a>    X, y, random_state<span class="op">=</span><span class="dv">5</span>, test_size<span class="op">=</span><span class="fl">0.4</span>) <span class="co"># split it into training and test sets</span></span>
@@ -1109,7 +1109,7 @@ Firas Moosvi (Slides adapted from Varada Kolhatkar)
 <ul>
 <li>What’s wrong with scaling data separately?</li>
 </ul>
-<div id="6fb3fee7" class="cell" data-execution_count="3">
+<div id="a81a7033" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a aria-label="1"></a>scaler <span class="op">=</span> StandardScaler() <span class="co"># Creating a scalert object </span></span>
 <span id="cb2-2"><a aria-label="2"></a>scaler.fit(X_train_toy) <span class="co"># Calling fit on the training data </span></span>
 <span id="cb2-3"><a aria-label="3"></a>train_scaled <span class="op">=</span> scaler.transform(</span>
@@ -1134,7 +1134,7 @@ Test score: 0.60</code></pre>
 </section>
 <section id="scaling-train-and-test-data-separately" class="slide level2 center">
 <h2>Scaling train and test data separately</h2>
-<div id="2cc9b948" class="cell" data-execution_count="4">
+<div id="a899e40a" class="cell" data-execution_count="4">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -1149,7 +1149,7 @@ Test score: 0.60</code></pre>
 <ul>
 <li>What’s wrong with the approach below?</li>
 </ul>
-<div id="6711009c" class="cell" data-execution_count="5">
+<div id="b6cd1cca" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a aria-label="1"></a><span class="co"># join the train and test sets back together</span></span>
 <span id="cb4-2"><a aria-label="2"></a>XX <span class="op">=</span> np.vstack((X_train_toy, X_test_toy))</span>
 <span id="cb4-3"><a aria-label="3"></a></span>
@@ -1175,7 +1175,7 @@ Test score: 0.55</code></pre>
 <ul>
 <li>What’s wrong with the approach below?</li>
 </ul>
-<div id="118bd82f" class="cell" data-execution_count="6">
+<div id="5c386553" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a aria-label="1"></a>knn <span class="op">=</span> KNeighborsClassifier()</span>
 <span id="cb6-2"><a aria-label="2"></a></span>
 <span id="cb6-3"><a aria-label="3"></a>scaler <span class="op">=</span> StandardScaler()</span>
@@ -1190,7 +1190,7 @@ Test score: 0.55</code></pre>
 </section>
 <section id="improper-preprocessing" class="slide level2 scroll-container center" style="overflow-y: scroll; height: 500px;">
 <h2>Improper preprocessing</h2>
-<div id="e4824b66" class="cell" data-execution_count="7">
+<div id="6bcdcf24" class="cell" data-execution_count="7">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -1202,7 +1202,7 @@ Test score: 0.55</code></pre>
 </section>
 <section id="proper-preprocessing" class="slide level2 scroll-container center" style="overflow-y: scroll; height: 500px;">
 <h2>Proper preprocessing</h2>
-<div id="33d68f01" class="cell" data-execution_count="8">
+<div id="a95dcdb1" class="cell" data-execution_count="8">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -1255,7 +1255,7 @@ Test score: 0.55</code></pre>
 <li>Chaining a <code>StandardScaler</code> with a <code>KNeighborsClassifier</code> model.</li>
 </ul></li>
 </ul>
-<div id="5857d499" class="cell" data-execution_count="9">
+<div id="bffa6097" class="cell" data-execution_count="9">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a aria-label="1"></a><span class="im">from</span> sklearn.pipeline <span class="im">import</span> make_pipeline</span>
 <span id="cb8-2"><a aria-label="2"></a></span>
 <span id="cb8-3"><a aria-label="3"></a>pipe_knn <span class="op">=</span> make_pipeline(StandardScaler(), KNeighborsClassifier())</span>
