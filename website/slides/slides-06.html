@@ -1073,18 +1073,6 @@ Firas Moosvi (Slides adapted from Varada Kolhatkar)
 - HW3 is due next week Tuesday, Oct 1st, 11:59 pm. 
   - You can work in pairs for this assignment. 
  -->
-<!-- 
-## Quick Correction on Exercise 5.3
-
-> I accidentally said *only D is true*, but **B** is also true!
-
-Select all of the following statements which are TRUE.
-
-- (A) You can have scaling of numeric features, one-hot encoding of categorical features, and scikit-learn estimator within a single pipeline.
-- (B) Once you have a scikit-learn pipeline object with an estimator as the last step, you can call fit, predict, and score on it.
-- (C) You can carry out data splitting within scikit-learn pipeline.
-- (D) We have to be careful of the order we put each transformation and model in a pipeline.
-- -->
 </section>
 <section>
 <section id="recap-preprocessing-mistakes" class="title-slide slide level1 center">
@@ -1093,7 +1081,7 @@ Select all of the following statements which are TRUE.
 </section>
 <section id="data" class="slide level2 center">
 <h2>Data</h2>
-<div id="30534d0b" class="cell" data-execution_count="2">
+<div id="5844d978" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a>X, y <span class="op">=</span> make_blobs(n_samples<span class="op">=</span><span class="dv">100</span>, centers<span class="op">=</span><span class="dv">3</span>, random_state<span class="op">=</span><span class="dv">12</span>, cluster_std<span class="op">=</span><span class="dv">5</span>) <span class="co"># make synthetic data</span></span>
 <span id="cb1-2"><a></a>X_train_toy, X_test_toy, y_train_toy, y_test_toy <span class="op">=</span> train_test_split(</span>
 <span id="cb1-3"><a></a>    X, y, random_state<span class="op">=</span><span class="dv">5</span>, test_size<span class="op">=</span><span class="fl">0.4</span>) <span class="co"># split it into training and test sets</span></span>
@@ -1117,7 +1105,7 @@ Select all of the following statements which are TRUE.
 <ul>
 <li>What’s wrong with scaling data separately?</li>
 </ul>
-<div id="a1684d62" class="cell" data-execution_count="3">
+<div id="462e59ef" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a></a>scaler <span class="op">=</span> StandardScaler() <span class="co"># Creating a scalert object </span></span>
 <span id="cb2-2"><a></a>scaler.fit(X_train_toy) <span class="co"># Calling fit on the training data </span></span>
 <span id="cb2-3"><a></a>train_scaled <span class="op">=</span> scaler.transform(</span>
@@ -1142,7 +1130,7 @@ Test score: 0.60</code></pre>
 </section>
 <section id="scaling-train-and-test-data-separately" class="slide level2 center">
 <h2>Scaling train and test data separately</h2>
-<div id="beabe9b7" class="cell" data-execution_count="4">
+<div id="b0181539" class="cell" data-execution_count="4">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -1157,7 +1145,7 @@ Test score: 0.60</code></pre>
 <ul>
 <li>What’s wrong with the approach below?</li>
 </ul>
-<div id="3ea82274" class="cell" data-execution_count="5">
+<div id="1652f0cc" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a></a><span class="co"># join the train and test sets back together</span></span>
 <span id="cb4-2"><a></a>XX <span class="op">=</span> np.vstack((X_train_toy, X_test_toy))</span>
 <span id="cb4-3"><a></a></span>
@@ -1183,7 +1171,7 @@ Test score: 0.55</code></pre>
 <ul>
 <li>What’s wrong with the approach below?</li>
 </ul>
-<div id="16bf0c75" class="cell" data-execution_count="6">
+<div id="e646ccaf" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a></a>knn <span class="op">=</span> KNeighborsClassifier()</span>
 <span id="cb6-2"><a></a></span>
 <span id="cb6-3"><a></a>scaler <span class="op">=</span> StandardScaler()</span>
@@ -1198,7 +1186,7 @@ Test score: 0.55</code></pre>
 </section>
 <section id="improper-preprocessing" class="slide level2 scroll-container center" style="overflow-y: scroll; height: 500px;">
 <h2>Improper preprocessing</h2>
-<div id="f8f8ef60" class="cell" data-execution_count="7">
+<div id="7c3390c1" class="cell" data-execution_count="7">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -1210,7 +1198,7 @@ Test score: 0.55</code></pre>
 </section>
 <section id="proper-preprocessing" class="slide level2 scroll-container center" style="overflow-y: scroll; height: 500px;">
 <h2>Proper preprocessing</h2>
-<div id="6956d8f6" class="cell" data-execution_count="8">
+<div id="802adfac" class="cell" data-execution_count="8">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -1263,7 +1251,7 @@ Test score: 0.55</code></pre>
 <li>Chaining a <code>StandardScaler</code> with a <code>KNeighborsClassifier</code> model.</li>
 </ul></li>
 </ul>
-<div id="97d0a195" class="cell" data-execution_count="9">
+<div id="148031bb" class="cell" data-execution_count="9">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a></a><span class="im">from</span> sklearn.pipeline <span class="im">import</span> make_pipeline</span>
 <span id="cb8-2"><a></a></span>
 <span id="cb8-3"><a></a>pipe_knn <span class="op">=</span> make_pipeline(StandardScaler(), KNeighborsClassifier())</span>
@@ -1285,8 +1273,8 @@ Test score: 0.55</code></pre>
 <li>Use a column transformer with sklearn pipelines.</li>
 </ul>
 </section>
-<section id="iclicker-exercise-6.1" class="slide level2 center">
-<h2>(iClicker) Exercise 6.1</h2>
+<section id="clicker-exercise-6.1" class="slide level2 center">
+<h2>(Clicker) Exercise 6.1</h2>
 <p><strong>Select all of the following statements which are TRUE.</strong></p>
 <ul>
 <li><ol type="A">
@@ -1437,8 +1425,8 @@ Test score: 0.55</code></pre>
 <span id="cb10-7"><a></a>    SVC()</span>
 <span id="cb10-8"><a></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="iclicker-exercise-6.2" class="slide level2 center">
-<h2>(iClicker) Exercise 6.2</h2>
+<section id="clicker-exercise-6.2" class="slide level2 center">
+<h2>(Clicker) Exercise 6.2</h2>
 <p>Select all of the following statements which are TRUE.</p>
 <ul>
 <li><ol type="A">
@@ -1454,7 +1442,7 @@ Test score: 0.55</code></pre>
 <li>In the code below, inside <code>cross_validate</code>, each fold might have slightly different number of features (columns) in the fold.</li>
 </ol></li>
 </ul>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a></a>pipe <span class="op">=</span> (CountVectorizer(), SVC())</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a></a>pipe <span class="op">=</span> make_pipeline(CountVectorizer(), SVC())</span>
 <span id="cb11-2"><a></a>cross_validate(pipe, X_train, y_train)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 
 

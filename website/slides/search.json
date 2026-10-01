@@ -592,14 +592,14 @@
     "href": "slides.html",
     "title": "Overview",
     "section": "",
-    "text": "Title\n\n\n\nDescription\n\n\n\n\n\n\n\n\nLecture 1: Introduction to CPSC 330\n\n\nWhat is machine learning, types of machine learning, learning to navigate through the course materials, getting familiar with the course policies\n\n\n\n\n\n\nLecture 2: Terminology, Baselines, Decision Trees\n\n\nTerminology and Decision Trees\n\n\n\n\n\n\nLecture 3: ML fundamentals\n\n\ngeneralization, data splitting, overfitting, underfitting, the fundamental tradeoff, the golden rule\n\n\n\n\n\n\nLecture 4: \\(k\\)-nearest neighbours and SVM RBFs\n\n\nintroduction to KNNs, hyperparameter n_neighbours or \\(k\\), C and gamma hyperparameters of SVM RBF, decision boundaries with different values of hyperparameters.\n\n\n\n\n\n\nLecture 5: Preprocessing and sklearn pipelines\n\n\nPre-processing, Transformations, and pipelines.\n\n\n\n\n\n\nLecture 6: Column transformer and text features\n\n\nPreprocessing and sklearn pipelines\n\n\n\n\n\n\nLecture 7: Linear models\n\n\nLinear regression, logistic regression, prediction probabilities, sigmoid, interpretation of coefficients\n\n\n\n\n\n\nLecture 8: Hyperparameter Optimization\n\n\nLinear regression, logistic regression, prediction probabilities, sigmoid, interpretation of coefficients\n\n\n\n\n\n\nLecture 9: Classification Metrics\n\n\nconfusion metrics, precision, recall, f1-score, PR curves, AP score, ROC curve, ROC AUC, class imbalance\n\n\n\n\n\n\nLecture 10: Regression Metrics\n\n\nRegression metrics\n\n\n\n\n\n\nLecture 11: Ensembles\n\n\n \n\n\n\n\n\n\nLecture 12: Feature importances\n\n\n \n\n\n\n\n\n\nLecture 13: Feature Engineering and Selection\n\n\n \n\n\n\n\n\n\nLecture 14: K-Means\n\n\n \n\n\n\n\n\n\nLecture 15: DBSCAN, Hierarchical Clustering\n\n\n \n\n\n\n\n\n\nLecture 16: Recommender Systems\n\n\n \n\n\n\n\n\n\nLecture 17: Natural Language Processing\n\n\n \n\n\n\n\n\n\nLecture 19: Introduction to deep learning and computer vision\n\n\n \n\n\n\n\n\n\nLecture 20: Time series\n\n\n \n\n\n\n\n\n\nLecture 21: Survival analysis\n\n\n \n\n\n\n\n\n\nLecture 22: Communication\n\n\n \n\n\n\n\n\n\nLecture 24: Deployment and conclusion\n\n\n \n\n\n\n\n\n\nNo matching items"
+    "text": "Title\n\n\n\nDescription\n\n\n\n\n\n\n\n\nLecture 1: Introduction to CPSC 330\n\n\nWhat is machine learning, types of machine learning, learning to navigate through the course materials, getting familiar with the course policies\n\n\n\n\n\n\nLecture 2: Terminology, Baselines, Decision Trees\n\n\nTerminology and Decision Trees\n\n\n\n\n\n\nLecture 3: ML fundamentals\n\n\ngeneralization, data splitting, overfitting, underfitting, the fundamental tradeoff, the golden rule\n\n\n\n\n\n\nLecture 4: \\(k\\)-nearest neighbours and SVM RBFs\n\n\nintroduction to KNNs, hyperparameter n_neighbours or \\(k\\), C and gamma hyperparameters of SVM RBF, decision boundaries with different values of hyperparameters.\n\n\n\n\n\n\nLecture 5: Preprocessing and sklearn pipelines\n\n\nPre-processing, Transformations, and pipelines.\n\n\n\n\n\n\nLecture 6: Column transformer and text features\n\n\nPreprocessing and sklearn pipelines\n\n\n\n\n\n\nLecture 7: Linear models\n\n\nLinear regression, logistic regression, prediction probabilities, sigmoid, interpretation of coefficients\n\n\n\n\n\n\nLecture 8: Hyperparameter Optimization\n\n\nLinear regression, logistic regression, prediction probabilities, sigmoid, interpretation of coefficients\n\n\n\n\n\n\nLecture 9: Classification Metrics\n\n\nconfusion metrics, precision, recall, f1-score, PR curves, AP score, ROC curve, ROC AUC, class imbalance\n\n\n\n\n\n\nLecture 10: Regression Metrics\n\n\nRegression metrics\n\n\n\n\n\n\nLecture 11: Ensembles\n\n\n \n\n\n\n\n\n\nLecture 12: Feature importances\n\n\n \n\n\n\n\n\n\nLecture 13: Feature Engineering and Selection\n\n\n \n\n\n\n\n\n\nLecture 14: K-Means\n\n\n \n\n\n\n\n\n\nLecture 15: DBSCAN, Hierarchical Clustering\n\n\n \n\n\n\n\n\n\nLecture 16: Recommender Systems\n\n\n \n\n\n\n\n\n\nLecture 17: Natural Language Processing\n\n\n \n\n\n\n\n\n\nLecture 19: Introduction to deep learning and computer vision\n\n\n \n\n\n\n\n\n\nLecture 20: Time series\n\n\n \n\n\n\n\n\n\nLecture 21: Survival analysis\n\n\n \n\n\n\n\n\n\nLecture 22: Communication and Conclusion\n\n\n \n\n\n\n\n\n\nLecture 24: Deployment and conclusion\n\n\n \n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "slides-03.html#announcements",
     "href": "slides-03.html#announcements",
     "title": "Lecture 3: ML fundamentals",
     "section": "Announcements",
-    "text": "Announcements\n\nMy weekly office hours will be announced soon!\nHomework 2 (hw2) is released already!\n\nYou are welcome to broadly discuss it with your classmates but final answers and submissions must be your own.\nGroup submissions are not allowed for this assignment.\n\nAdvice on keeping up with the material\n\nPractice!\nReminder to run the lecture notes on your laptop and experiment with the code.\nStart early on homework assignments.\n\nLast day to drop without a W standing is this Friday: May 15, 2026"
+    "text": "Announcements\n\nMy weekly office hours will be announced soon!\nHomework 2 (hw2) is released already!\n\nYou are welcome to broadly discuss it with your classmates but final answers and submissions must be your own.\nGroup submissions are not allowed for this assignment.\n\nAdvice on keeping up with the material\n\nPractice!\nReminder to run the lecture notes on your laptop and experiment with the code.\nStart early on homework assignments.\n\nLast day to drop without a W standing is this Friday: September 21, 2026"
   },
   {
     "objectID": "slides-03.html#dropping-lowest-homework-update",
@@ -1089,7 +1089,7 @@
     "href": "slides-12.html#class-survey",
     "title": "Lecture 12: Feature importances",
     "section": "Class Survey",
-    "text": "Class Survey\nI’d love to hear how you think lectures are going, and how the course is going overall: bit.ly/cpsc330_2026S1.\nLet’s take a couple of minutes to complete this before we get started on today’s content."
+    "text": "Class Survey\nI’d love to hear how you think lectures are going, and how the course is going overall: bit.ly/cpsc330_2026W1.\nLet’s take a couple of minutes to complete this before we get started on today’s content."
   },
   {
     "objectID": "slides-12.html#iclicker-midterm-poll",
@@ -1131,7 +1131,7 @@
     "href": "slides-07.html#announcements",
     "title": "Lecture 7: Linear models",
     "section": "Announcements",
-    "text": "Announcements\n\nCPSC 330 Office Hours are now posted on Ed Discussion\nReminder: Test 1 window is ongoing, so:\n\nforums will be closed,\nOH are cancelled,\nTutorials are still running, but do not cover testable content\n\nTest 2 & 3 reservations are open!"
+    "text": "Announcements\n\nHW3 is due on Monday, Oct 5th, 11:59 pm.\nMidterm 1 Announcement post is now on Ed Discussion!\nPractice Midterm to be released later today…"
   },
   {
     "objectID": "slides-07.html#iclicker-exercise-6.1",
@@ -1243,7 +1243,7 @@
     "href": "slides-07.html#recap-dealing-with-text-features",
     "title": "Lecture 7: Linear models",
     "section": "Recap: Dealing with text features",
-    "text": "Recap: Dealing with text features\n\nPreprocessing text to fit into machine learning models using text vectorization.\nBag of words representation"
+    "text": "Recap: Dealing with text features\n\nPreprocessing text to fit into machine learning models using text vectorization.\nBag of words representation\n\n\n\n\n\n\n\nLast time we turned text into numerical features. In bag of words, each vocabulary term becomes a feature, and an example is represented by counts or indicators of those terms. We lose word order, but we gain a feature matrix that our models can use. Today we will see how a linear model combines those features using learned weights."
   },
   {
     "objectID": "slides-07.html#recap-sklearn-countvectorizer",
@@ -1285,7 +1285,7 @@
     "href": "slides-07.html#logistic-regression-decision-boundary",
     "title": "Lecture 7: Linear models",
     "section": "Logistic regression: Decision boundary",
-    "text": "Logistic regression: Decision boundary\n\n\n\n\n\n\n\n\n\n\n\n\n\nSigmoid Function: \\(\\hat{y} = \\sigma(w^\\top x_i + b) = \\frac{1}{1 + e^{-(w^\\top x_i + b)}}\\)\nThe decision boundary is the point on the x-axis where the corresponding predicted probability on the y-axis is 0.5."
+    "text": "Logistic regression: Decision boundary\n\n\n\n\n\n\n\n\n\n\n\n\n\nProbability of passing: \\(p = \\sigma(w^\\top x_i + b) = \\frac{1}{1 + e^{-(w^\\top x_i + b)}}\\)\nThe decision boundary is the point on the x-axis where the corresponding predicted probability on the y-axis is 0.5.\n\n\n\nHere we reuse hours studied to make the sigmoid easy to visualize. The red points are observed pass-or-fail outcomes, while the blue curve is the model’s probability of passing. The curve crosses probability one half at the decision boundary. Below that point the usual rule predicts fail; above it, pass. The data need not follow the probabilities perfectly: a student can pass where the model predicts a low probability, or fail where it predicts a high one."
   },
   {
     "objectID": "slides-07.html#parametric-vs.-non-parametric-models-high-level",
@@ -1306,14 +1306,14 @@
     "href": "slides-07.html#iclicker-exercise-7.1",
     "title": "Lecture 7: Linear models",
     "section": "(iClicker) Exercise 7.1",
-    "text": "(iClicker) Exercise 7.1\nSelect all of the following statements which are TRUE.\n\n\nIncreasing the hyperparameter alpha of Ridge is likely to decrease model complexity.\n\n\nRidge can be used with datasets that have multiple features.\n\n\nWith Ridge, we learn one coefficient per training example.\n\n\nIf you train a linear regression model on a 2-dimensional problem (2 features), the model will learn 3 parameters: one for each feature and one for the bias term."
+    "text": "(iClicker) Exercise 7.1\nSelect all of the following statements which are TRUE.\n\n\nIncreasing the hyperparameter alpha of Ridge is likely to decrease model complexity.\n\n\nRidge can be used with datasets that have multiple features.\n\n\nWith Ridge, we learn one coefficient per training example.\n\n\nIf you train a linear regression model on a 2-dimensional problem (2 features), the model will learn 3 parameters: one for each feature and one for the bias term.\n\n\n\nSelect all the true statements, and think about learned parameters versus hyperparameters. [Pause for voting.] A, B, and D are true. Increasing alpha strengthens the penalty and usually reduces effective complexity. Ridge supports multiple features. It learns one coefficient per feature, not per example, so C is false. Two features give two weights and one intercept, for three parameters. Ask yourself whether changing the number of examples would change that count."
   },
   {
     "objectID": "slides-07.html#iclicker-exercise-7.2",
     "href": "slides-07.html#iclicker-exercise-7.2",
     "title": "Lecture 7: Linear models",
     "section": "(iClicker) Exercise 7.2",
-    "text": "(iClicker) Exercise 7.2\nSelect all of the following statements which are TRUE.\n\n\nIncreasing logistic regression’s C hyperparameter increases model complexity.\n\n\nThe raw output score can be used to calculate the probability score for a given prediction.\n\n\nFor linear classifier trained on \\(d\\) features, the decision boundary is a \\(d-1\\)-dimensional hyperparlane.\n\n\nA linear model is likely to be uncertain about the data points close to the decision boundary."
+    "text": "(iClicker) Exercise 7.2\nSelect all of the following statements which are TRUE.\n\n\nIncreasing logistic regression’s C hyperparameter increases model complexity.\n\n\nThe raw output score can be used to calculate the probability score for a given prediction.\n\n\nFor linear classifier trained on \\(d\\) features, the decision boundary is a \\(d-1\\)-dimensional hyperplane.\n\n\nA linear model is likely to be uncertain about the data points close to the decision boundary.\n\n\n\nAgain, select all true statements. [Pause for voting.] All four statements are true in the binary linear-classification setting we have discussed. Larger C weakens regularization and allows greater effective complexity. The raw score becomes a probability through the sigmoid. The nondegenerate linear boundary in d feature dimensions has dimension d minus one. Near that boundary, the score is near zero and the probability is near one half. Increasing C permits a more flexible fit, although a particular dataset need not show a change in its predictions."
   },
   {
     "objectID": "slides-07.html#group-work-class-demo-live-coding",
@@ -1705,28 +1705,28 @@
     "href": "slides-01.html#cpsc-330-website",
     "title": "Lecture 1: Introduction to CPSC 330",
     "section": "CPSC 330 website",
-    "text": "CPSC 330 website\n\nCourse Jupyter book: https://ubc-cs.github.io/cpsc330-2026S1\nCourse GitHub repository: https://github.com/UBC-CS/cpsc330-2026S1\n\n\n\n\n\n\n\nImportant\n\n\nCourse website: https://ubc-cs.github.io/cpsc330-2026S1 is the most important link. You can access the course website from Canvas.\n\nPlease read everything on there!\nYou can find the source code for everything we do here: https://ubc-cs.github.io/cpsc330-2026S1.\n\n\n\n\n\n\n\n\n\nImportant\n\n\nMake sure you go through the syllabus thoroughly and complete the syllabus quiz before next class!"
+    "text": "CPSC 330 website\n\nCourse Jupyter book: https://ubc-cs.github.io/cpsc330-book/\nCourse Website: https://ubc-cs.github.io/cpsc330-2026W1\nCourse GitHub repository: https://github.com/UBC-CS/cpsc330-2026W1\n\n\n\n\n\n\n\nImportant\n\n\nCourse website: https://ubc-cs.github.io/cpsc330-2026W1 is the most important link. You can access the course website from Canvas.\n\nPlease read everything on there!\nYou can find the source code for everything we do here: https://ubc-cs.github.io/cpsc330-2026W1.\n\n\n\n\n\n\n\n\n\nImportant\n\n\nMake sure you go through the syllabus thoroughly and complete the syllabus quiz before next class!"
   },
   {
     "objectID": "slides-01.html#asking-questions-during-class",
     "href": "slides-01.html#asking-questions-during-class",
     "title": "Lecture 1: Introduction to CPSC 330",
     "section": "Asking questions during class",
-    "text": "Asking questions during class\nYou are welcome to ask questions by raising your hand!\nIf you would prefer to write notes and ask questions later, you are more than welcome to do that also! Use Ed Discussion."
+    "text": "Asking questions during class\n\nYou are encouraged to ask questions by raising your hand.\nNo question is a stupid question.\nRecommended reading as you begin your learning journey: The Fear of Publicly Not Knowing\n\n\nWhat I quickly came to realize was that publicly not knowing wasn’t a indicator of stupidity, it was an indicator of understanding. And from what I’ve seen, it is one of the clearest indicators of success in people — more than school prestige, more than GPA.\n\nIf you would prefer to write notes and ask questions later, you are more than welcome to do that also! Use Ed Discussion."
   },
   {
     "objectID": "slides-01.html#registration-waitlist-and-prerequisites",
     "href": "slides-01.html#registration-waitlist-and-prerequisites",
     "title": "Lecture 1: Introduction to CPSC 330",
     "section": "Registration, waitlist and prerequisites",
-    "text": "Registration, waitlist and prerequisites\n\n\n\n\n\n\nImportant\n\n\nPlease go through this document carefully before contacting your instructors about these issues. Even then, we are very unlikely to be able to help with registration, waitlist or prerequisite issues.\n\n\n\n\nWe are expecting that all students registered on the waitlist have already, or will soon get a notification to join the course!\nThe waitlist will close on Friday at 3 PM and no more students will be able to register after that!\nIt is your responsibility to catch up on any missed work."
+    "text": "Registration, waitlist and prerequisites\n\n\n\n\n\n\nImportant\n\n\nPlease go through this document carefully before contacting your instructors about these issues. Even then, we are very unlikely to be able to help with registration, waitlist or prerequisite issues.\n\n\n\n\nWe are expecting that all students registered on the waitlist have already, or will soon get a notification to join the course!\nThe waitlist will close at the end of the day on Wednesday September 16 at 3 PM; after this, no more students will be able to register after that!\nIt is your responsibility to catch up on any missed work."
   },
   {
     "objectID": "slides-01.html#lecture-format",
     "href": "slides-01.html#lecture-format",
     "title": "Lecture 1: Introduction to CPSC 330",
     "section": "Lecture format",
-    "text": "Lecture format\n\nIn person lectures Monday, Wednesday, and Friday from 10:00 AM to 12:20 PM\nWARNING: This is Summer, things will be fast!!\nThere will be videos to watch before almost every lecture. You will find the list of pre-watch videos in the schedule on the course webpage.\nWe will also try to work on some questions and exercises together during the class.\nAll materials will be posted in this GitHub repository.  \n\nYou may attend any tutorials or office hours your want, regardless of in which/whether you’re registered."
+    "text": "Lecture format\n\nIn person lectures Tuesday and Thursday from 3:30 PM to 5 PM \nThere will be videos to watch before almost every lecture. You will find the list of pre-watch videos in the schedule on the course webpage.\nWe will also try to work on some questions and exercises together during the class.\nAll materials will be posted in this GitHub repository.  \nYou may attend any tutorials or office hours your want, regardless of in which/whether you’re registered.\nLectures are not recorded"
   },
   {
     "objectID": "slides-01.html#home-work-assignments",
@@ -1740,14 +1740,14 @@
     "href": "slides-01.html#exams",
     "title": "Lecture 1: Introduction to CPSC 330",
     "section": "Exams",
-    "text": "Exams\n\nWe’ll have three self-scheduled midterms over a few days and one final exam.\nAll exams will be held in Computer-based Testing Facility (CBTF)."
+    "text": "Exams\n\nTwo midterms, conducted in ORCA by self-reservation over a multi-day period.\nA comprehensive final exam during the exam period.\nCheck the course website for dates and assessment instructions."
   },
   {
     "objectID": "slides-01.html#course-structure",
     "href": "slides-01.html#course-structure",
     "title": "Lecture 1: Introduction to CPSC 330",
     "section": "Course structure",
-    "text": "Course structure\n\nPart I: Introduction, ML fundamentals, preprocessing, midterm 1\nPart II: Unsupervised learning, transfer learning, common special cases, midterm 1\nPart III: Communication and ethics\n\nML skills are not beneficial if you can’t use them responsibly and communicate your results. In this module we’ll talk about these aspects.\nCode of conduct\n\nOur main forum for getting help will be Ed Discussion.\n\n\n\n\n\n\n\nImportant\n\n\nPlease read this entire document about asking for help. TLDR: Be nice."
+    "text": "Course structure\n\nPart I: Foundations and Supervised Learning\n\nWeeks 2, 3, 4, 5, 6, 7\n\nUnsupervised Learning and Recommendation\n\nWeeks 8, 9\n\nWorking with Different Data Types\n\nWeeks 9, 11, 12\n\nResponsible Machine Learning in Practice\n\nWeeks 12, 13"
   },
   {
     "objectID": "slides-01.html#homework-format-jupyter-lab-notebooks",
@@ -1810,14 +1810,14 @@
     "href": "slides-01.html#python-requirementsresources",
     "title": "Lecture 1: Introduction to CPSC 330",
     "section": "Python requirements/resources",
-    "text": "Python requirements/resources\nWe will primarily use Python in this course.\nHere is the basic Python knowledge you’ll need for the course:\n\nBasic Python programming\nNumpy\nPandas\nBasic matplotlib\n\nHomework 1 is all about Python.\n\n\n\n\n\n\nNote\n\n\nWe do not have time to teach all the Python we need but you can find some useful Python resources here."
+    "text": "Python requirements/resources\nWe will primarily use Python in this course.\nHere is the basic Python knowledge you’ll need for the course:\n\nBasic Python programming\nNumpy\nPandas\nBasic matplotlib\nSparse matrices\n\nHomework 1 is all about Python.\n\n\n\n\n\n\nNote\n\n\nWe do not have time to teach all the Python we need but you can find some useful Python resources here."
   },
   {
     "objectID": "slides-01.html#cpsc-330-vs.-340",
     "href": "slides-01.html#cpsc-330-vs.-340",
     "title": "Lecture 1: Introduction to CPSC 330",
     "section": "CPSC 330 vs. 340",
-    "text": "CPSC 330 vs. 340\nRead https://ubc-cs.github.io/cpsc330-2026S1/docs/330_vs_340 which explains the difference between two courses.\nTLDR:\n\n340: how do ML models work?\n330: how do I use ML models?\nCPSC 340 has many prerequisites.\nCPSC 340 goes deeper but has a more narrow scope.\nI think CPSC 330 will be more useful if you just plan to apply basic ML."
+    "text": "CPSC 330 vs. 340\nRead https://ubc-cs.github.io/cpsc330-2026W1/docs/330_vs_340 which explains the difference between two courses.\nTLDR:\n\n340: how do ML models work?\n330: how do I use ML models?\nCPSC 340 has many prerequisites.\nCPSC 340 goes deeper but has a more narrow scope.\nI think CPSC 330 will be more useful if you just plan to apply basic ML."
   },
   {
     "objectID": "slides-01.html#what-is-machine-learning-ml",
@@ -1936,7 +1936,7 @@
     "href": "slides-14.html#class-survey",
     "title": "Lecture 14: K-Means",
     "section": "Class Survey",
-    "text": "Class Survey\nI’d love to hear how you think lectures are going, and how the course is going overall: bit.ly/cpsc330_2026S1.\nLet’s take a couple of minutes to complete this before we get started on today’s content."
+    "text": "Class Survey\nI’d love to hear how you think lectures are going, and how the course is going overall: bit.ly/cpsc330_2026W1.\nLet’s take a couple of minutes to complete this before we get started on today’s content."
   },
   {
     "objectID": "slides-14.html#iclicker-midterm-poll",
@@ -2097,7 +2097,7 @@
     "href": "slides-02.html#suggested-workflow-for-working-with-jupyter-notebooks",
     "title": "Lecture 2: Terminology, Baselines, Decision Trees",
     "section": "Suggested Workflow for working with Jupyter Notebooks",
-    "text": "Suggested Workflow for working with Jupyter Notebooks\n\nCreate a folder on your computer that will have all the CPSC 330 repos:\n\n~/School/Year3/CPSC330/ &lt;– Consider this your CPSC parent folder\n\nCreate subfolders for: hw, class, practice\nIn the hw folder, you will then clone hw1, hw2, hw3, etc…\nIn the class folder, you will clone the cpsc330-2026S1 repo which contains all the class jupyter notebooks\n\nDo not make any changes to files in this directory/repo, you will have trouble when you pull stuff during each class.\nIf you did make changes, you can reset to the last commit and DESTROY any changes you made (be careful with this command) using: git reset --hard\n\nIn the practice folder, you can copy any notebooks (.ipynb) and files (like data/*.csv) you want to try running locally and experiment"
+    "text": "Suggested Workflow for working with Jupyter Notebooks\n\nCreate a folder on your computer that will have all the CPSC 330 repos:\n\n~/School/Year3/CPSC330/ &lt;– Consider this your CPSC parent folder\n\nCreate subfolders for: hw, class, practice\nIn the hw folder, you will then clone hw1, hw2, hw3, etc…\nIn the class folder, you will clone the cpsc330-2026W1 repo which contains all the class jupyter notebooks\n\nDo not make any changes to files in this directory/repo, you will have trouble when you pull stuff during each class.\nIf you did make changes, you can reset to the last commit and DESTROY any changes you made (be careful with this command) using: git reset --hard\n\nIn the practice folder, you can copy any notebooks (.ipynb) and files (like data/*.csv) you want to try running locally and experiment"
   },
   {
     "objectID": "slides-02.html#recap-machine-learning-workflow",
@@ -3084,14 +3084,14 @@
     "href": "slides-02.html#clicker-2.2-supervised-vs-unsupervised",
     "title": "Lecture 2: Terminology, Baselines, Decision Trees",
     "section": "Clicker 2.2: Supervised vs unsupervised",
-    "text": "Clicker 2.2: Supervised vs unsupervised\nParticipate using Agora (code: canvas)\nSelect all of the following statements which are examples of supervised machine learning\n\n\nFinding groups of similar properties in a real estate data set.\n\n\nPredicting whether someone will have a heart attack or not on the basis of demographic, diet, and clinical measurement.\n\n\nGrouping articles on different topics from different news sources (something like the Google News app).\n\n\nDetecting credit card fraud based on examples of fraudulent and non-fraudulent transactions.\n\n\nGiven some measure of employee performance, identify the key factors which are likely to influence their performance."
+    "text": "Clicker 2.2: Supervised vs unsupervised\nParticipate using Agora (code: cpsc330-2026W1)\nSelect all of the following statements which are examples of supervised machine learning\n\n\nFinding groups of similar properties in a real estate data set.\n\n\nPredicting whether someone will have a heart attack or not on the basis of demographic, diet, and clinical measurement.\n\n\nGrouping articles on different topics from different news sources (something like the Google News app).\n\n\nDetecting credit card fraud based on examples of fraudulent and non-fraudulent transactions.\n\n\nGiven some measure of employee performance, identify the key factors which are likely to influence their performance."
   },
   {
     "objectID": "slides-02.html#clicker-2.3-classification-vs.-regression",
     "href": "slides-02.html#clicker-2.3-classification-vs.-regression",
     "title": "Lecture 2: Terminology, Baselines, Decision Trees",
     "section": "Clicker 2.3: Classification vs. Regression",
-    "text": "Clicker 2.3: Classification vs. Regression\nParticipate using Agora (code: canvas)\nSelect all of the following statements which are examples of regression problems\n\n\nPredicting the price of a house based on features such as number of bedrooms and the year built.\n\n\nPredicting if a house will sell or not based on features like the price of the house, number of rooms, etc.\n\n\nPredicting percentage grade in CPSC 330 based on past grades.\n\n\nPredicting whether you should bicycle tomorrow or not based on the weather forecast.\n\n\nPredicting appropriate thermostat temperature based on the wind speed and the number of people in a room."
+    "text": "Clicker 2.3: Classification vs. Regression\nParticipate using Agora (code: cpsc330-2026W1)\nSelect all of the following statements which are examples of regression problems\n\n\nPredicting the price of a house based on features such as number of bedrooms and the year built.\n\n\nPredicting if a house will sell or not based on features like the price of the house, number of rooms, etc.\n\n\nPredicting percentage grade in CPSC 330 based on past grades.\n\n\nPredicting whether you should bicycle tomorrow or not based on the weather forecast.\n\n\nPredicting appropriate thermostat temperature based on the wind speed and the number of people in a room."
   },
   {
     "objectID": "slides-02.html#todays-focus",
@@ -3161,7 +3161,7 @@
     "href": "slides-02.html#clicker-2.4-baselines-and-decision-trees",
     "title": "Lecture 2: Terminology, Baselines, Decision Trees",
     "section": "Clicker 2.4: Baselines and Decision trees",
-    "text": "Clicker 2.4: Baselines and Decision trees\niParticipate using Agora (code: canvas)\nSelect all of the following statements which are TRUE.\n\n\nChange in features (i.e., binarizing features above) would change DummyClassifier predictions.\n\n\npredict takes only X as argument whereas fit and score take both X and y as arguments.\n\n\nFor the decision tree algorithm to work, the feature values must be binary.\n\n\nThe prediction in a decision tree works by routing the example from the root to the leaf."
+    "text": "Clicker 2.4: Baselines and Decision trees\nParticipate using Agora (code: cpsc330-2026W1)\nSelect all of the following statements which are TRUE.\n\n\nChange in features (i.e., binarizing features above) would change DummyClassifier predictions.\n\n\npredict takes only X as argument whereas fit and score take both X and y as arguments.\n\n\nFor the decision tree algorithm to work, the feature values must be binary.\n\n\nThe prediction in a decision tree works by routing the example from the root to the leaf."
   },
   {
     "objectID": "slides-02.html#summary",
@@ -3182,21 +3182,21 @@
     "href": "slides-04.html#recap-clicker-4.0a",
     "title": "Lecture 4: \\(k\\)-nearest neighbours and SVM RBFs",
     "section": "Recap: Clicker 4.0a",
-    "text": "Recap: Clicker 4.0a\nParticipate using Agora (code: canvas)\nWhich of the following scenarios do NOT necessarily imply overfitting?\n\n\nTraining accuracy is very high (0.98) while validation accuracy is much lower (0.60).\n\n\nIn a wildlife classifier, the model predicts “wolf” whenever there”s snow in the background, because all wolf photos were taken in snowy regions.\n\n\nThe decision boundary of a classifier is wiggly and highly irregular.\n\n\nTraining and validation accuracies are both approximately 0.88.\n\n\nA cancer detection model learns that “a ruler in the corner of the X-ray” means positive, because doctors tended to measure suspicious cases."
+    "text": "Recap: Clicker 4.0a\nParticipate using Agora (code: cpsc330-2026W1)\nWhich of the following scenarios do NOT necessarily imply overfitting?\n\n\nTraining accuracy is very high (0.98) while validation accuracy is much lower (0.60).\n\n\nIn a wildlife classifier, the model predicts “wolf” whenever there”s snow in the background, because all wolf photos were taken in snowy regions.\n\n\nThe decision boundary of a classifier is wiggly and highly irregular.\n\n\nTraining and validation accuracies are both approximately 0.88.\n\n\nA cancer detection model learns that “a ruler in the corner of the X-ray” means positive, because doctors tended to measure suspicious cases."
   },
   {
     "objectID": "slides-04.html#recap-clicker-4.0b",
     "href": "slides-04.html#recap-clicker-4.0b",
     "title": "Lecture 4: \\(k\\)-nearest neighbours and SVM RBFs",
     "section": "Recap: Clicker 4.0b",
-    "text": "Recap: Clicker 4.0b\nParticipate using Agora (code: canvas)\nWhich of the following statements about overfitting is true?\n\n\nOverfitting makes the model more accurate on both training and unseen data.\n\n\nOverfitting means the model captures noise or irrelevant details from the training data.\n\n\nOverfitting is desirable because it reduces both training and test error.\n\n\nIn real-world problems, models are always at risk of overfitting if not properly validated."
+    "text": "Recap: Clicker 4.0b\nParticipate using Agora (code: cpsc330-2026W1)\nWhich of the following statements about overfitting is true?\n\n\nOverfitting makes the model more accurate on both training and unseen data.\n\n\nOverfitting means the model captures noise or irrelevant details from the training data.\n\n\nOverfitting is desirable because it reduces both training and test error.\n\n\nIn real-world problems, models are always at risk of overfitting if not properly validated."
   },
   {
     "objectID": "slides-04.html#recap-clicker-4.0c",
     "href": "slides-04.html#recap-clicker-4.0c",
     "title": "Lecture 4: \\(k\\)-nearest neighbours and SVM RBFs",
     "section": "Recap: Clicker 4.0c",
-    "text": "Recap: Clicker 4.0c\nParticipate using Agora (code: canvas)\nHow might one address the issue of underfitting in a machine learning model.\n\n\nIntroduce more noise to the training data.\n\n\nRemove features that might be relevant to the prediction.\n\n\nIncrease the model’s complexity (e.g., more parameters, features, or deeper trees)\n\n\nUse a smaller dataset for training."
+    "text": "Recap: Clicker 4.0c\nParticipate using Agora (code: cpsc330-2026W1)\nHow might one address the issue of underfitting in a machine learning model.\n\n\nIntroduce more noise to the training data.\n\n\nRemove features that might be relevant to the prediction.\n\n\nIncrease the model’s complexity (e.g., more parameters, features, or deeper trees)\n\n\nUse a smaller dataset for training."
   },
   {
     "objectID": "slides-04.html#the-fundamental-tradeoff",
@@ -3210,14 +3210,14 @@
     "href": "slides-04.html#clicker-4.1",
     "title": "Lecture 4: \\(k\\)-nearest neighbours and SVM RBFs",
     "section": "Clicker 4.1",
-    "text": "Clicker 4.1\nParticipate using Agora (code: canvas)\nSelect all of the following statements which are TRUE.\n\n\nAnalogy-based models find examples from the test set that are most similar to the query example we are predicting.\n\n\nEuclidean distance will always have a non-negative value.\n\n\nWith \\(k\\)-NN, setting the hyperparameter \\(k\\) to larger values typically reduces training error.\n\n\nSimilar to decision trees, \\(k\\)-NNs finds a small set of good features.\n\n\nIn \\(k\\)-NN, with \\(k &gt; 1\\), the classification of the closest neighbour to the test example always contributes the most to the prediction."
+    "text": "Clicker 4.1\nParticipate using Agora (code: cpsc330-2026W1)\nSelect all of the following statements which are TRUE.\n\n\nAnalogy-based models find examples from the test set that are most similar to the query example we are predicting.\n\n\nEuclidean distance will always have a non-negative value.\n\n\nWith \\(k\\)-NN, setting the hyperparameter \\(k\\) to larger values typically reduces training error.\n\n\nSimilar to decision trees, \\(k\\)-NNs finds a small set of good features.\n\n\nIn \\(k\\)-NN, with \\(k &gt; 1\\), the classification of the closest neighbour to the test example always contributes the most to the prediction."
   },
   {
     "objectID": "slides-04.html#clicker-4.2",
     "href": "slides-04.html#clicker-4.2",
     "title": "Lecture 4: \\(k\\)-nearest neighbours and SVM RBFs",
     "section": "Clicker 4.2",
-    "text": "Clicker 4.2\nParticipate using Agora (code: canvas)\nSelect all of the following statements which are TRUE.\n\n\n\\(k\\)-NN may perform poorly in high-dimensional space (say, d &gt; 1000).\n\n\nIn sklearn’s SVC classifier, large values of gamma tend to result in higher training score but probably lower validation score.\n\n\nIf we increase both gamma and C, we can’t be certain if the model becomes more complex or less complex."
+    "text": "Clicker 4.2\nParticipate using Agora (code: cpsc330-2026W1)\nSelect all of the following statements which are TRUE.\n\n\n\\(k\\)-NN may perform poorly in high-dimensional space (say, d &gt; 1000).\n\n\nIn sklearn’s SVC classifier, large values of gamma tend to result in higher training score but probably lower validation score.\n\n\nIf we increase both gamma and C, we can’t be certain if the model becomes more complex or less complex."
   },
   {
     "objectID": "slides-04.html#group-work-class-demo-live-coding",
@@ -3252,14 +3252,14 @@
     "href": "slides-03.html#clicker-3.1",
     "title": "Lecture 3: ML fundamentals",
     "section": "Clicker 3.1",
-    "text": "Clicker 3.1\nParticipate using Agora (code: canvas)\nSelect all of the following statements which are TRUE.\n\n\nA decision tree model with no depth (the default max_depth in sklearn) is likely to perform very well on the deployment data.\n\n\nData splitting helps us assess how well our model would generalize.\n\n\nDeployment data is scored only once.\n\n\nValidation data could be used for hyperparameter optimization.\n\n\nIt’s recommended that data be shuffled before splitting it into train and test sets."
+    "text": "Clicker 3.1\nParticipate using Agora (code: cpsc330-2026W1)\nSelect all of the following statements which are TRUE.\n\n\nA decision tree model with no depth (the default max_depth in sklearn) is likely to perform very well on the deployment data.\n\n\nData splitting helps us assess how well our model would generalize.\n\n\nDeployment data is scored only once.\n\n\nValidation data could be used for hyperparameter optimization.\n\n\nIt’s recommended that data be shuffled before splitting it into train and test sets."
   },
   {
     "objectID": "slides-03.html#clicker-3.2",
     "href": "slides-03.html#clicker-3.2",
     "title": "Lecture 3: ML fundamentals",
     "section": "Clicker 3.2",
-    "text": "Clicker 3.2\nParticipate using Agora (code: canvas)\nSelect all of the following statements which are TRUE.\n\n\n\\(k\\)-fold cross-validation calls fit \\(k\\) times\n\n\nWe use cross-validation to get a more robust estimate of model performance.\n\n\nIf the mean train accuracy is much higher than the mean cross-validation accuracy it’s likely to be a case of overfitting.\n\n\nThe fundamental tradeoff of ML states that as training error goes down, validation error goes up.\n\n\nA decision stump on a complicated classification problem is likely to underfit."
+    "text": "Clicker 3.2\nParticipate using Agora (code: cpsc330-2026W1)\nSelect all of the following statements which are TRUE.\n\n\n\\(k\\)-fold cross-validation calls fit \\(k\\) times\n\n\nWe use cross-validation to get a more robust estimate of model performance.\n\n\nIf the mean train accuracy is much higher than the mean cross-validation accuracy it’s likely to be a case of overfitting.\n\n\nThe fundamental tradeoff of ML states that as training error goes down, validation error goes up.\n\n\nA decision stump on a complicated classification problem is likely to underfit."
   },
   {
     "objectID": "slides-03.html#recap-from-videos",
@@ -3350,21 +3350,21 @@
     "href": "slides-05.html#clicker-5.1",
     "title": "Lecture 5: Preprocessing and sklearn pipelines",
     "section": "Clicker 5.1",
-    "text": "Clicker 5.1\nParticipate using Agora (code: canvas)\nTake a guess: In your machine learning project, how much time will you typically spend on data preparation and transformation?\n\n\n~80% of the project time\n\n\n~20% of the project time\n\n\n~50% of the project time\n\n\nNone. Most of the time will be spent on model building\n\n\nThe question is adapted from here."
+    "text": "Clicker 5.1\nParticipate using Agora (code: cpsc330-2026W1)\nTake a guess: In your machine learning project, how much time will you typically spend on data preparation and transformation?\n\n\n~80% of the project time\n\n\n~20% of the project time\n\n\n~50% of the project time\n\n\nNone. Most of the time will be spent on model building\n\n\nThe question is adapted from here."
   },
   {
     "objectID": "slides-05.html#clicker-5.2",
     "href": "slides-05.html#clicker-5.2",
     "title": "Lecture 5: Preprocessing and sklearn pipelines",
     "section": "Clicker 5.2",
-    "text": "Clicker 5.2\nParticipate using Agora (code: canvas)\nSelect all of the following statements which are TRUE.\n\n\nStandardScaler ensures a fixed range (i.e., minimum and maximum values) for the features.\n\n\nStandardScaler calculates mean and standard deviation for each feature separately.\n\n\nIn general, it’s a good idea to apply scaling on numeric features before training \\(k\\)-NN or SVM RBF models.\n\n\nThe transformed feature values might be hard to interpret for humans.\n\n\nAfter applying SimpleImputer The transformed data has a different shape than the original data."
+    "text": "Clicker 5.2\nParticipate using Agora (code: cpsc330-2026W1)\nSelect all of the following statements which are TRUE.\n\n\nStandardScaler ensures a fixed range (i.e., minimum and maximum values) for the features.\n\n\nStandardScaler calculates mean and standard deviation for each feature separately.\n\n\nIn general, it’s a good idea to apply scaling on numeric features before training \\(k\\)-NN or SVM RBF models.\n\n\nThe transformed feature values might be hard to interpret for humans.\n\n\nAfter applying SimpleImputer The transformed data has a different shape than the original data."
   },
   {
     "objectID": "slides-05.html#clicker-5.3",
     "href": "slides-05.html#clicker-5.3",
     "title": "Lecture 5: Preprocessing and sklearn pipelines",
     "section": "Clicker 5.3",
-    "text": "Clicker 5.3\nParticipate using Agora (code: canvas)\nSelect all of the following statements which are TRUE.\n\n\nYou can have scaling of numeric features, one-hot encoding of categorical features, and scikit-learn estimator within a single pipeline.\n\n\nOnce you have a scikit-learn pipeline object with an estimator as the last step, you can call fit, predict, and score on it.\n\n\nYou can carry out data splitting within scikit-learn pipeline.\n\n\nWe have to be careful of the order we put each transformation and model in a pipeline.\n\n\n\nA: False; It doesn’t make sense to apply one hot encoding to numeric features, and it doesn’t make sense to apply standard scalar to categorical features. Sequence doesn’t make sense, we need column transformers\nB: True; can do this as long as the estimator is the last step\nC: False\nD: True;"
+    "text": "Clicker 5.3\nParticipate using Agora (code: cpsc330-2026W1)\nSelect all of the following statements which are TRUE.\n\n\nYou can have scaling of numeric features, one-hot encoding of categorical features, and scikit-learn estimator within a single pipeline.\n\n\nOnce you have a scikit-learn pipeline object with an estimator as the last step, you can call fit, predict, and score on it.\n\n\nYou can carry out data splitting within scikit-learn pipeline.\n\n\nWe have to be careful of the order we put each transformation and model in a pipeline.\n\n\n\nA: False; It doesn’t make sense to apply one hot encoding to numeric features, and it doesn’t make sense to apply standard scalar to categorical features. Sequence doesn’t make sense, we need column transformers\nB: True; can do this as long as the estimator is the last step\nC: False\nD: True;"
   },
   {
     "objectID": "slides-05.html#ordinal-encoding-ranking-matters-3",
@@ -4127,14 +4127,14 @@
     "href": "slides-07.html#linear-models",
     "title": "Lecture 7: Linear models",
     "section": "Linear models",
-    "text": "Linear models\n\n\n\nLinear models make an assumption that the relationship between X and y is linear.\nIn this case, with only one feature, our model is a straight line.\nWhat do we need to represent a line?\n\nSlope (\\(w_1\\)): Determines the angle of the line.\nY-intercept (\\(w_0\\)): Where the line crosses the y-axis.\n\n\n\n\n\n\n\n\n\n\n\n\n\nMaking predictions: \\(y_{hat} = w_1 \\times \\text{\\# hours studied} + w_0\\)"
+    "text": "Linear models\n\n\n\nLinear regression models a numeric target using a weighted sum of the features and an intercept.\nIn this case, with only one feature, our model is a straight line.\nWhat do we need to represent a line?\n\nSlope (\\(w_1\\)): Determines the angle of the line.\nY-intercept (\\(b\\)): Where the line crosses the y-axis.\n\n\n\n\n\n\n\n\n\n\n\n\n\nMaking predictions: \\(\\hat{y} = w_1 \\times \\text{\\# hours studied} + b\\)\n\n\n\nLet’s start with a numeric target: a quiz grade. Each point shows hours studied and an observed grade. A linear model predicts a grade using a straight line. The slope tells us how much the predicted grade changes for an additional hour; the intercept is the prediction at zero hours. The line does not need to pass through every point. We need a way to choose a useful line, and that will lead us to loss."
   },
   {
     "objectID": "slides-07.html#sentiment-analysis-example",
     "href": "slides-07.html#sentiment-analysis-example",
     "title": "Lecture 7: Linear models",
     "section": "Sentiment analysis example",
-    "text": "Sentiment analysis example\n\n\n\n\n\nLogistic regression learns coefficients for each word from training data.\n\nPositive coefficients \\(\\rightarrow\\) push prediction toward positive class.\n\nNegative coefficients \\(\\rightarrow\\) push prediction toward negative class.\n\nIn this example, positive words (fun, rewarding) outweigh the negative word (long), so the overall sentiment is likely positive."
+    "text": "Sentiment analysis example\nClass demo\n\n\n\n\n\nLogistic regression learns coefficients for each word from training data.\n\nPositive coefficients \\(\\rightarrow\\) push prediction toward positive class.\n\nNegative coefficients \\(\\rightarrow\\) push prediction toward negative class.\n\nIn this example, positive words (fun, rewarding) outweigh the negative word (long), so the overall sentiment is likely positive.\n\n\n\n\nNow connect this back to bag of words. Each word feature has a learned coefficient. A positive coefficient increases the score toward the designated positive class; a negative coefficient decreases it. In the illustrated sentence, the contributions from fun and rewarding outweigh the negative contribution from long. The intercept and all represented features also contribute. These weights are learned associations, and a bag-of-words model can miss word order, negation, or context.\nLet’s connect these ideas to the notebook. [Open the linked class demo.] As we work through the prepared examples, watch for the feature representation, the estimator’s fitted coefficients, and the distinction between predictions, probabilities, and evaluation scores. When comparing regularization settings, predict the direction of the effect before looking at the result. Use the notebook’s examples to check the ideas we have just discussed."
   },
   {
     "objectID": "slides-07.html#break",
@@ -4148,21 +4148,21 @@
     "href": "slides-07.html#softmax-function-for-probabilities",
     "title": "Lecture 7: Linear models",
     "section": "Softmax Function for Probabilities",
-    "text": "Softmax Function for Probabilities\nGiven an input, the probability that it belongs to class \\(j \\in \\{1, 2, \\dots, K\\}\\) is calculated using the softmax function:\n\\(P(y = j \\mid x_i) = \\frac{e^{w_j^\\top x_i + b_j}}{\\sum_{k=1}^{K} e^{w_k^\\top x_i + b_k}}\\)\n\n\\(x_i\\) is the \\(i^{th}\\) example\n\\(w_j\\) is the weight vector for class \\(j\\).\n\\(b_j\\) is the bias term for class \\(j\\).\n\\(K\\) is the total number of classes."
+    "text": "Softmax Function for Probabilities\nGiven an input, the probability that it belongs to class \\(j \\in \\{1, 2, \\dots, K\\}\\) is calculated using the softmax function:\n\\(P(y = j \\mid x_i) = \\frac{e^{w_j^\\top x_i + b_j}}{\\sum_{k=1}^{K} e^{w_k^\\top x_i + b_k}}\\)\n\n\\(x_i\\) is the \\(i^{th}\\) example\n\\(w_j\\) is the weight vector for class \\(j\\).\n\\(b_j\\) is the bias term for class \\(j\\).\n\\(K\\) is the total number of classes.\n\n\nFor each class, compute a separate linear score using that class’s weights and intercept. Softmax exponentiates the scores, making them positive, and divides by their total. The resulting probabilities sum to one. A class’s probability depends on its score relative to the others, not just its score in isolation. You do not need to memorize every index to understand the process: score each class, exponentiate, and normalize."
   },
   {
     "objectID": "slides-07.html#making-predictions",
     "href": "slides-07.html#making-predictions",
     "title": "Lecture 7: Linear models",
     "section": "Making Predictions",
-    "text": "Making Predictions\n\nCompute Probabilities:\nFor each class \\(j\\), compute the probability \\(P(y = j \\mid x_i)\\) using the softmax function.\nSelect the Class with the Highest Probability:\nThe predicted class \\(\\hat{y}\\) is:\n\\(\\hat{y} = \\arg \\max_{j \\in \\{1, \\dots, K\\}} P(y = j \\mid x_i)\\)"
+    "text": "Making Predictions\n\nCompute Probabilities:\nFor each class \\(j\\), compute the probability \\(P(y = j \\mid x_i)\\) using the softmax function.\nSelect the Class with the Highest Probability:\nThe predicted class \\(\\hat{y}\\) is:\n\\(\\hat{y} = \\arg \\max_{j \\in \\{1, \\dots, K\\}} P(y = j \\mid x_i)\\)\n\n\nOnce we have one probability per class, the usual prediction rule chooses the class with the largest probability. Arg max means the class index attaining that maximum. For probabilities zero point nine, zero point zero seven, and zero point zero three in cat-dog-wild order, we predict cat. We keep the whole probability vector when evaluating log loss, because the winning label alone discards confidence information."
   },
   {
     "objectID": "slides-07.html#binary-vs-multinomial-logistic-regression",
     "href": "slides-07.html#binary-vs-multinomial-logistic-regression",
     "title": "Lecture 7: Linear models",
     "section": "Binary vs multinomial logistic regression",
-    "text": "Binary vs multinomial logistic regression\n\n\n\n\n\n\n\n\nAspect\nBinary Logistic Regression\nMultinomial Logistic Regression\n\n\n\n\nTarget variable\n2 classes (binary)\nMore than 2 classes (multi-class)\n\n\nGetting probabilities\nSigmoid\nSoftmax\n\n\nparameters\n\\(d\\) weights, one per feature and the bias term\n\\(d\\) weights and a bias term per class\n\n\nOutput\nSingle probability\nProbability distribution over classes\n\n\nUse case\nBinary classification (e.g., spam detection)\nMulti-class classification (e.g., flower species)"
+    "text": "Binary vs multinomial logistic regression\n\n\n\n\n\n\n\n\nAspect\nBinary Logistic Regression\nMultinomial Logistic Regression\n\n\n\n\nTarget variable\n2 classes (binary)\nMore than 2 classes (multi-class)\n\n\nGetting probabilities\nSigmoid\nSoftmax\n\n\nparameters\n\\(d\\) weights, one per feature and the bias term\n\\(d\\) weights and a bias term per class\n\n\nOutput\nSingle probability\nProbability distribution over classes\n\n\nUse case\nBinary classification (e.g., spam detection)\nMulti-class classification (e.g., flower species)\n\n\n\n\nCompare the two settings. In binary logistic regression, one weighted score and the sigmoid give the probability of the designated class; the other probability is one minus that value. Multinomial logistic regression uses class-specific scores and softmax to obtain a distribution. In a common full representation, each class has a weight vector and intercept, although alternative parameterizations can use a reference class. Both are linear models in the represented features, and both use the probability of the true class when computing log loss."
   },
   {
     "objectID": "slides-07.html#activity-time-permitting",
@@ -4176,7 +4176,7 @@
     "href": "slides-07.html#activity-description",
     "title": "Lecture 7: Linear models",
     "section": "Activity description",
-    "text": "Activity description\n\nYour task is to engage in group discussions and fill in the designated row in this Google document.\nFor strengths and weaknesses, some things to consider are:\n\nconcerns about underfitting\nconcerns about overfitting\nspeed\nscalability for large data sets\n\ninterpretability\neffectiveness on sparse data\nease of use for multi-class classification\n\nability to represent uncertainty\ntime/space complexity\netc."
+    "text": "Activity description\nFor strengths and weaknesses, some things to consider are:\n\nconcerns about underfitting\nconcerns about overfitting\nspeed\nscalability for large data sets\n\ninterpretability\neffectiveness on sparse data\nease of use for multi-class classification\n\nability to represent uncertainty\ntime/space complexity\netc.\n\n\nFor each model, consider how well it can fit simple or complex patterns, how costly training and prediction are, and what kinds of features it handles well. Think about interpretability and whether it offers probability estimates. Avoid blanket claims like always fast or always accurate. State the conditions behind the strength or weakness, such as dataset size, feature dimension, scaling, or sparsity."
   },
   {
     "objectID": "slides-07.html#estimators",
@@ -4190,14 +4190,14 @@
     "href": "slides-07.html#transformers",
     "title": "Lecture 7: Linear models",
     "section": "Transformers",
-    "text": "Transformers\n\n\n\n\n\n\n\n\n\nTransformation\nPurpose\nUse cases\nKey consideration\n\n\n\n\nImputation\n\n\n\n\n\nScaling\n\n\n\n\n\nOne-hot encoding\n\n\n\n\n\nOrdinal encoding\n\n\n\n\n\nBag-of-words encoding"
+    "text": "Transformers\n\n\n\n\n\n\n\n\n\nTransformation\nPurpose\nUse cases\nKey consideration\n\n\n\n\nImputation\n\n\n\n\n\nScaling\n\n\n\n\n\nOne-hot encoding\n\n\n\n\n\nOrdinal encoding\n\n\n\n\n\nBag-of-words encoding\n\n\n\n\n\n\n\nNow distinguish preprocessing from prediction. Imputation handles missing values, with a strategy suited to the feature and context. Scaling makes numeric magnitudes comparable and must be fitted on training data. One-hot encoding represents unordered categories but can create many columns. Ordinal encoding suits genuinely ordered categories, while arbitrary numeric codes can impose misleading relationships. Bag of words turns text into count or indicator features but loses word order. Fit these transformations within the pipeline and consider unseen categories or vocabulary at prediction time."
   },
   {
     "objectID": "slides-07.html#coming-up",
     "href": "slides-07.html#coming-up",
     "title": "Lecture 7: Linear models",
     "section": "Coming up",
-    "text": "Coming up\nA few big questions remain:\n\nHow do we tune hyperparameters?\nHow do we choose our features? (feature selection, dimensionality reduction, regularization etc.)\nHow do we come up with new useful features (feature engineering)\nHow do we choose between different models? (different evaluation metrics, what happens if we’re not happy with our test error?)\nHow to deal with class imbalance?\nWhat do we do if we do not have targets (unsupervised learning)\nHow to build models for more interesting data such as images, user preferences, or sequential data?)"
+    "text": "Coming up\nA few big questions remain:\n\nHow do we tune hyperparameters?\nHow do we choose our features? (feature selection, dimensionality reduction, regularization etc.)\nHow do we come up with new useful features (feature engineering)\nHow do we choose between different models? (different evaluation metrics, what happens if we’re not happy with our test error?)\nHow to deal with class imbalance?\nWhat do we do if we do not have targets (unsupervised learning)\nHow to build models for more interesting data such as images, user preferences, or sequential data?)\n\n\nThese models leave several practical questions open. We need ways to tune hyperparameters, choose or construct features, and compare models using appropriate metrics. We also need to handle class imbalance and work with data beyond the tabular examples we have used so far. These questions guide the next parts of the course. Keep today’s distinction between fitting objectives and evaluation metrics in mind as we move forward."
   },
   {
     "objectID": "slides-06.html#bad-methodology-1",
@@ -4846,140 +4846,140 @@
   {
     "objectID": "slides-22.html#clicker-survival-analysis-recap",
     "href": "slides-22.html#clicker-survival-analysis-recap",
-    "title": "Lecture 22: Communication",
+    "title": "Lecture 22: Communication and Conclusion",
     "section": "Clicker (Survival analysis recap)",
     "text": "Clicker (Survival analysis recap)\nSelect all of the following statements which are TRUE.\n\n\nRight censoring occurs when the endpoint of event has not been observed for all study subjects by the end of the study period.\n\n\nRight censoring implies that the data is missing completely at random.\n\n\nIn the presence of right-censored data, binary classification models can be applied directly without any modifications or special considerations.\n\n\nIf we apply the Ridge regression model to predict tenure in right censored data, we are likely to underestimate it because the tenure observed in our data is shorter than what it would be in reality."
   },
   {
     "objectID": "slides-22.html#recap",
     "href": "slides-22.html#recap",
-    "title": "Lecture 22: Communication",
+    "title": "Lecture 22: Communication and Conclusion",
     "section": "Recap",
     "text": "Recap\n\nWhat is right-censored data?\nWhat happens when we treat right-censored data the same as “regular” data?\n\nPredicting churn vs. no churn\nPredicting tenure\n\nThrow away people who haven’t churned\nAssume everyone churns today\n\n\nSurvival analysis encompasses predicting both churn and tenure and deals with censoring and can make rich and interesting predictions!\n\nWe can get survival curves which show the probability of survival over time.\nKM model \\(\\rightarrow\\) doesn’t look at features\nCPH model \\(\\rightarrow\\) like linear regression, does look at the features and provides coefficients associated with each feature"
   },
   {
     "objectID": "slides-22.html#why-communication",
     "href": "slides-22.html#why-communication",
-    "title": "Lecture 22: Communication",
+    "title": "Lecture 22: Communication and Conclusion",
     "section": "Why communication?",
     "text": "Why communication?\nWhy spend a whole lecture on this?\n\nGreat technical work often dies silently due to poor communication. \nMost ML work happens in teams with diverse backgrounds.\nDecisions, budgets, and user trust depend on how you present results.\nEffective communication \\(\\rightarrow\\) adoption and impact"
   },
   {
     "objectID": "slides-22.html#is-this-misleading",
     "href": "slides-22.html#is-this-misleading",
-    "title": "Lecture 22: Communication",
+    "title": "Lecture 22: Communication and Conclusion",
     "section": "Is this misleading?",
     "text": "Is this misleading?\n\n\n\n\n\nWhat additional information would you need to evaluate the validity of this claim?"
   },
   {
     "objectID": "slides-22.html#main-issues-in-ml-related-communication",
     "href": "slides-22.html#main-issues-in-ml-related-communication",
-    "title": "Lecture 22: Communication",
+    "title": "Lecture 22: Communication and Conclusion",
     "section": "Main issues in ML-related communication",
     "text": "Main issues in ML-related communication\n\nOverclaiming and unclear limitations\nNo baseline or missing context for metrics\nMetric dumping without a narrative or decision link\nJargon/abstraction mismatch to the audience\nUnexplained predictions; weak explainability path\nHidden assumptions or data leakage\nProbability misinterpretation (e.g., predict_proba=0.9 ≠ 90% certain)\nUnreliable test error due to weak validation"
   },
   {
     "objectID": "slides-22.html#scenario-discussion-what-happens-if",
     "href": "slides-22.html#scenario-discussion-what-happens-if",
-    "title": "Lecture 22: Communication",
+    "title": "Lecture 22: Communication and Conclusion",
     "section": "Scenario discussion: What happens if…",
     "text": "Scenario discussion: What happens if…\nPick one scenario: Discuss 2 negative consequences and 1 thing you’d do to prevent them.\n\nYou build an amazing model but fail to clearly communicate its value or results to your manager.\nYou present a 98% accuracy without mentioning the trivial baseline is 97.5%.\nYou say: “SHAP values show nonlinear feature interactions” to a non-technical stakeholder and stop there.\nA user asks why they were denied a loan; you give no explanation of the model’s decision.\nYou hide uncertainty and overpromise deployment success."
   },
   {
     "objectID": "slides-22.html#grid-search-activity",
     "href": "slides-22.html#grid-search-activity",
-    "title": "Lecture 22: Communication",
+    "title": "Lecture 22: Communication and Conclusion",
     "section": "Grid search activity",
     "text": "Grid search activity\nGo to this Google doc: https://tinyurl.com/5n8xf5yj\n\n\nExplanation 1: https://tinyurl.com/msk2cfkb\n\n\nExplanation 2: https://tinyurl.com/mt2z9ey5"
   },
   {
     "objectID": "slides-22.html#discussion-questions",
     "href": "slides-22.html#discussion-questions",
-    "title": "Lecture 22: Communication",
+    "title": "Lecture 22: Communication and Conclusion",
     "section": "Discussion questions",
     "text": "Discussion questions\n\nWhat do you like about each explanation?\nWhat do you dislike about each explanation?\nWhat do you think is the intended audience for each explanation?\nWhich explanation do you think is more effective overall for someone on Day 1 of CPSC 330?\nEach explanation has an image. Which one is more effective? What are the pros/cons?\nEach explanation has some sample code. Which one is more effective? What are the pros/cons?"
   },
   {
     "objectID": "slides-22.html#concepts-then-labels-not-the-other-way-around",
     "href": "slides-22.html#concepts-then-labels-not-the-other-way-around",
-    "title": "Lecture 22: Communication",
+    "title": "Lecture 22: Communication and Conclusion",
     "section": "Concepts then labels, not the other way around",
     "text": "Concepts then labels, not the other way around\n\n\nExplanation 1: Machine learning algorithms, like an airplane’s cockpit, typically involve a bunch of knobs and switches that need to be set.\n\nExplanation 2: Grid search is the process of performing hyper parameter tuning in order to determine the optimal values for a given model.\n\nThe effectiveness of these different statements depend on your audience."
   },
   {
     "objectID": "slides-22.html#concepts-then-labels-not-the-other-way-around-1",
     "href": "slides-22.html#concepts-then-labels-not-the-other-way-around-1",
-    "title": "Lecture 22: Communication",
+    "title": "Lecture 22: Communication and Conclusion",
     "section": "Concepts then labels, not the other way around",
     "text": "Concepts then labels, not the other way around"
   },
   {
     "objectID": "slides-22.html#top-down-vs.-bottom-up",
     "href": "slides-22.html#top-down-vs.-bottom-up",
-    "title": "Lecture 22: Communication",
+    "title": "Lecture 22: Communication and Conclusion",
     "section": "Top down vs. bottom up",
     "text": "Top down vs. bottom up\n\n\n\nStart with the big picture\nThen gradually reveal the structure and key components\n\n\n\n\nStart with the details\nBuild to the big picture\n\n\n\nIn the previous explanations, which one represented a bottom-up explanation and which one a top-down explanation?"
   },
   {
     "objectID": "slides-22.html#new-ideas-in-small-chunks",
     "href": "slides-22.html#new-ideas-in-small-chunks",
-    "title": "Lecture 22: Communication",
+    "title": "Lecture 22: Communication and Conclusion",
     "section": "New ideas in small chunks",
     "text": "New ideas in small chunks\nThe hidden structure in the first explanation\n\nThe concept of setting a bunch of values.\nRandom forest example.\nThe problem / pain point.\nThe solution.\nHow it works - high level.\nHow it works - written example.\nHow it works - code example.\nThe name of what we were discussing all this time."
   },
   {
     "objectID": "slides-22.html#reuse-running-examples",
     "href": "slides-22.html#reuse-running-examples",
-    "title": "Lecture 22: Communication",
+    "title": "Lecture 22: Communication and Conclusion",
     "section": "Reuse running examples",
     "text": "Reuse running examples\nEffective explanations often use the same example throughout the text and code. This helps readers follow the line of reasoning."
   },
   {
     "objectID": "slides-22.html#approach-from-all-angles",
     "href": "slides-22.html#approach-from-all-angles",
-    "title": "Lecture 22: Communication",
+    "title": "Lecture 22: Communication and Conclusion",
     "section": "Approach from all angles",
     "text": "Approach from all angles\n\nWhen we’re trying to draw mental boundaries around a concept, it’s helpful to see examples on all sides of those boundaries\nIt would have been nice to include\n\nPerformance with and without hyperparameter tuning.\nOther types of hyperparameter tuning (e.g. RandomizedSearchCV)."
   },
   {
     "objectID": "slides-22.html#when-experimenting-show-the-results-asap",
     "href": "slides-22.html#when-experimenting-show-the-results-asap",
-    "title": "Lecture 22: Communication",
+    "title": "Lecture 22: Communication and Conclusion",
     "section": "When experimenting, show the results asap",
     "text": "When experimenting, show the results asap\nThe first explanation shows the output of the code, whereas the second does not. This is easy to do and makes a big difference."
   },
   {
     "objectID": "slides-22.html#its-not-about-you",
     "href": "slides-22.html#its-not-about-you",
-    "title": "Lecture 22: Communication",
+    "title": "Lecture 22: Communication and Conclusion",
     "section": "It’s not about you",
     "text": "It’s not about you\n\nInteresting to you != useful to the reader (aka it’s not about you)\nExamine the hidden intention of wanting to include something that’s not important\n\nAm I trying to sound smart or prove I know something?\nAm I afraid that leaving it out makes the work look too simple?\nAm I adding it because I spent time on it and want that effort to be visible?\nAm I overexplaining because I’m worried the audience will judge me?\n\n\n\nIf it doesn’t serve the audience, it’s noise."
   },
   {
     "objectID": "slides-22.html#core-questions-you-must-be-ready-to-answer",
     "href": "slides-22.html#core-questions-you-must-be-ready-to-answer",
-    "title": "Lecture 22: Communication",
+    "title": "Lecture 22: Communication and Conclusion",
     "section": "Core questions you must be ready to answer",
     "text": "Core questions you must be ready to answer\n\nWhat does this result mean (in plain language)?\nWhen does the model work? When does it fail? (failure modes)\nWhy did it make this prediction? (explainability path)\nWhat are the risks & consequences of using it?\nHow does it compare to doing nothing or current practice?\nWhat is the cost to maintain / retrain / monitor?"
   },
   {
     "objectID": "slides-22.html#quick-checklist-use-before-presenting",
     "href": "slides-22.html#quick-checklist-use-before-presenting",
-    "title": "Lecture 22: Communication",
+    "title": "Lecture 22: Communication and Conclusion",
     "section": "Quick checklist (use before presenting)",
     "text": "Quick checklist (use before presenting)\n\nWho is my audience and what do they care about?\nWhat decision do I want them to make?\nWhat baseline(s) am I comparing against?\nWhat caveats or limitations must I disclose?\nWhat is the recommended next action?\nHow will we monitor after deployment?"
   },
   {
     "objectID": "slides-22.html#poor-vs.-effective-communication",
     "href": "slides-22.html#poor-vs.-effective-communication",
-    "title": "Lecture 22: Communication",
+    "title": "Lecture 22: Communication and Conclusion",
     "section": "Poor vs. Effective communication",
     "text": "Poor vs. Effective communication\nWhich one is poor and which one is effective? Why?\n\n\nCommunication 1\n“I built a model to predict next week’s avocado prices. The ridge model had an RMSE of 0.79, but the random forest performed better with tuned hyperparameters. The cross-validation score improved after adding lag features. We should use the random forest.”\n\nCommunication 2\n“Our avocado price forecast reduces weekly price uncertainty by 15%. This lets the procurement team lock in contracts earlier and avoid overpaying during high-volatility weeks, saving an estimated $45k per month.\nTo deploy: we need 2 days to automate data updates and a weekly accuracy review.\nRisk: model performance drops during holiday spikes. Here’s our mitigation plan.”"
   },
   {
     "objectID": "slides-22.html#poor-vs.-effective-communication-1",
     "href": "slides-22.html#poor-vs.-effective-communication-1",
-    "title": "Lecture 22: Communication",
+    "title": "Lecture 22: Communication and Conclusion",
     "section": "Poor vs. Effective communication",
     "text": "Poor vs. Effective communication\n\n\n❌ Poor communication:\n“I built a model to predict next week’s avocado prices. The ridge model had an RMSE of 0.79, but the random forest performed better with tuned hyperparameters. The cross-validation score improved after adding lag features. We should use the random forest.”\nResult: The manager doesn’t know why this matters, how it affects decisions, or what to do next. No adoption.\n\n✅ Effective reframe:\n“Our avocado price forecast reduces weekly price uncertainty by 15%. This lets the procurement team lock in contracts earlier and avoid overpaying during high-volatility weeks, saving an estimated $45k per month.\nTo deploy: we need 2 days to automate data updates and a weekly accuracy review.\nRisk: model performance drops during holiday spikes. Here’s our mitigation plan.”\nResult: Clear value, operational impact, required effort, and risks. Enables decision-making.\n\nKey difference: Shift from model-centric communication → decision-ready communication."
   },
@@ -4993,105 +4993,105 @@
   {
     "objectID": "slides-22.html#questions-for-you",
     "href": "slides-22.html#questions-for-you",
-    "title": "Lecture 22: Communication",
+    "title": "Lecture 22: Communication and Conclusion",
     "section": "❓❓ Questions for you",
     "text": "❓❓ Questions for you\nImagine you are tasked with developing a recommender system for YouTube. You possess data on which users clicked on which videos. After spending considerable time building a recommender system using this data, you realize it isn’t producing high-quality recommendations. What could be the reasons for this?"
   },
   {
     "objectID": "slides-22.html#think-beyond-the-data-thats-given-to-you",
     "href": "slides-22.html#think-beyond-the-data-thats-given-to-you",
-    "title": "Lecture 22: Communication",
+    "title": "Lecture 22: Communication and Conclusion",
     "section": "Think beyond the data that’s given to you",
     "text": "Think beyond the data that’s given to you\nQuestions you have to consider:\n\nWho is the decision maker?\nWhat are their objectives?\nWhat are their alternatives?\nWhat is their context?\nWhat data do I need?"
   },
   {
     "objectID": "slides-22.html#decisions-involve-a-few-key-pieces",
     "href": "slides-22.html#decisions-involve-a-few-key-pieces",
-    "title": "Lecture 22: Communication",
+    "title": "Lecture 22: Communication and Conclusion",
     "section": "Decisions involve a few key pieces",
     "text": "Decisions involve a few key pieces\n\nThe decision variable: the variable that is manipulated through the decision.\n\nE.g. how much should I sell my house for? (numeric)\nE.g. should I sell my house? (categorical)\n\nThe decision-maker’s objectives: the variables that the decision-maker ultimately cares about, and wishes to manipulate indirectly through the decision variable.\n\nE.g. my total profit, time to sale, etc.\n\nThe context: the variables that mediate the relationship between the decision variable and the objectives.\n\nE.g. the housing market, cost of marketing it, my timeline, etc."
   },
   {
     "objectID": "slides-22.html#section",
     "href": "slides-22.html#section",
-    "title": "Lecture 22: Communication",
+    "title": "Lecture 22: Communication and Conclusion",
     "section": "",
     "text": "What does it mean to be “confident” in your results?\nWhen you perform analysis, you are responsible for many judgment calls.\nYour results will be different than others.\nAs you make these judgments and start to form conclusions, how can you recognize your own uncertainties about the data so that you can communicate confidently?"
   },
   {
     "objectID": "slides-22.html#section-1",
     "href": "slides-22.html#section-1",
-    "title": "Lecture 22: Communication",
+    "title": "Lecture 22: Communication and Conclusion",
     "section": "",
     "text": "Let’s imagine that the following claim is true:\n\nVancouver has the highest cost of living of all cities in Canada.\n\nNow let’s consider a few beliefs we could hold:\n\nVancouver has the highest cost of living of all cities in Canada. I am 95% sure of this.\nVancouver has the highest cost of living of all cities in Canada. I am 55% sure of this.\n\nThe part is bold is called a credence. Which belief is better?"
   },
   {
     "objectID": "slides-22.html#section-2",
     "href": "slides-22.html#section-2",
-    "title": "Lecture 22: Communication",
+    "title": "Lecture 22: Communication and Conclusion",
     "section": "",
     "text": "But what if it’s actually Toronto that has the highest cost of living in Canada?\n\nVancouver has the highest cost of living of all cities in Canada. I am 95% sure of this.\nVancouver has the highest cost of living of all cities in Canada. I am 55% sure of this.\n\nWhich belief is better now?\nWe don’t just want to be right. We want to be confident when we’re right and hesitant when we’re wrong."
   },
   {
     "objectID": "slides-22.html#section-3",
     "href": "slides-22.html#section-3",
-    "title": "Lecture 22: Communication",
+    "title": "Lecture 22: Communication and Conclusion",
     "section": "",
     "text": "In our final exam, imagine if, along with your answers, we ask you to also provide a confidence score for each. This would involve rating how sure you are about each answer, perhaps on a percentage scale from 0% (completely unsure) to 100% (completely sure). This method not only assesses your knowledge but also your awareness of your own understanding, potentially impacting the grading process and highlighting areas for improvement. Who supports this idea 😉?"
   },
   {
     "objectID": "slides-22.html#loss-in-machine-learning",
     "href": "slides-22.html#loss-in-machine-learning",
-    "title": "Lecture 22: Communication",
+    "title": "Lecture 22: Communication and Conclusion",
     "section": "Loss in machine learning",
     "text": "Loss in machine learning\nWhen you call fit for LogisticRegression it has similar preferences:  correct and confident  &gt;  correct and hesitant   &gt; incorrect and hesitant  &gt; incorrect and confident\n\nThis is a “loss” or “error” function like mean squared error, so lower values are better.\nWhen you call fit it tries to minimize this metric."
   },
   {
     "objectID": "slides-22.html#what-should-be-the-loss",
     "href": "slides-22.html#what-should-be-the-loss",
-    "title": "Lecture 22: Communication",
+    "title": "Lecture 22: Communication and Conclusion",
     "section": "What should be the loss?",
     "text": "What should be the loss?\nConsider the following made-up classification example where target (true y) is binary: -1 or 1. The true \\(y\\) (y_true) and models raw scores (\\(w^Tx_i\\)) are given to you. You want to figure out how do you want to punish the mistakes made by the current model. How will you punish the model in each case?\n\n\n\n\n\n\n\n\n\ny_true\nraw score ($w^Tx_i$)\ncorrect? (yes/no)\nconfident/hesitant?\npunishment\n\n\n\n\n0\n1\n10.00\nyes\nconfident\nNone\n\n\n1\n1\n0.51\nyes\nhesitant\nsmall punishment\n\n\n2\n1\n-0.10\nno\nhesitant\n\n\n\n3\n1\n-10.00\nno\nconfident\n\n\n\n4\n-1\n-12.00\nyes\nconfident\n\n\n\n5\n-1\n-1.00\nyes\nhesistant\n\n\n\n6\n-1\n0.40\nno\nhesitant\n\n\n\n7\n-1\n18.00\nno\nconfident"
   },
   {
     "objectID": "slides-22.html#logistic-regression-loss",
     "href": "slides-22.html#logistic-regression-loss",
-    "title": "Lecture 22: Communication",
+    "title": "Lecture 22: Communication and Conclusion",
     "section": "Logistic regression loss",
     "text": "Logistic regression loss\n\n\n\n\n\n\n\n\n\n\n\n\n\nconfident and correct \\(\\rightarrow\\) smaller loss\nhesitant and correct \\(\\rightarrow\\) a bit higher loss\nhesitant and incorrect \\(\\rightarrow\\) even higher loss\nconfident and incorrect \\(\\rightarrow\\) high loss"
   },
   {
     "objectID": "slides-22.html#misleding-visualizations",
     "href": "slides-22.html#misleding-visualizations",
-    "title": "Lecture 22: Communication",
+    "title": "Lecture 22: Communication and Conclusion",
     "section": "Misleding visualizations",
     "text": "Misleding visualizations\nThis chart is attempting to suggest a relationship between childhood MMR vaccination rates and the prevalence of autism spectrum disorders (AD/ASD) across several countries.\n\n\n\n\n\nDo you see any problems with this visualization?"
   },
   {
     "objectID": "slides-22.html#section-4",
     "href": "slides-22.html#section-4",
-    "title": "Lecture 22: Communication",
+    "title": "Lecture 22: Communication and Conclusion",
     "section": "",
     "text": "Visualizing your data and results could be very powerful but at the same time can be misleading if not done properly."
   },
   {
     "objectID": "slides-22.html#examples",
     "href": "slides-22.html#examples",
-    "title": "Lecture 22: Communication",
+    "title": "Lecture 22: Communication and Conclusion",
     "section": "Examples",
     "text": "Examples\nSome examples from Calling BS visualization videos:\n\nDataviz in the popular media: modern NYT\nMisleading axes: vaccines\nManipulating bin sizes: tax dollars\nDataviz ducks: drinking water\nGlass slippers: internet marketing tree\nThe principle of proportional ink: most read books"
   },
   {
     "objectID": "slides-22.html#things-to-watch-out-for",
     "href": "slides-22.html#things-to-watch-out-for",
-    "title": "Lecture 22: Communication",
+    "title": "Lecture 22: Communication and Conclusion",
     "section": "Things to watch out for",
     "text": "Things to watch out for\n\nChopping off the x-axis\n\nthe practice of starting the x-axis (or sometimes the y-axis) at a value other than zero to exaggerate the changes in the data\n\n\nSaturate the axes\n\nwhere the axes are set to ranges that are too narrow or too wide for the data being presented making it difficult to identify patterns\n\nBar chart for a cherry-picked values\nDifferent y-axes"
   },
   {
     "objectID": "slides-22.html#what-did-we-learn-today",
     "href": "slides-22.html#what-did-we-learn-today",
-    "title": "Lecture 22: Communication",
+    "title": "Lecture 22: Communication and Conclusion",
     "section": "What did we learn today?",
     "text": "What did we learn today?\nPrinciples of effective communication\n\nConcepts then labels, not the other way around\nBottom-up explanations\nNew ideas in small chunks\nReuse your running examples\nApproaches from all angles\n\nWhen experimenting, show the results asap\nIt’s not about you.\nDecision variables, objectives, and context.\nExpressing your confidence about the results\nMisleading visualizations."
   },
@@ -5906,5 +5906,439 @@
     "title": "Lecture 21: Survival analysis",
     "section": "Survival analysis",
     "text": "Survival analysis\nThese methods allow estimation of:\nSurvival function:\n\n\\(S(t) = P(T &gt; t)\\) (probability of surviving past time \\(t\\))\nImagine starting with 100 customers on Day 0. The survival function tells you: What fraction of them are still active (have not churned) at time \\(t\\)?\n\\(S(3) = 0.80\\) (80% haven’t churned by month 3)\n\\(S(12) = 0.40\\) (40% haven’t churned by month 12)\n\nHazard function: \\(h(t)\\) (instantaneous risk of the event at time \\(t\\))\n\nImagine a customer who has not churned yet and is still active at month 10.\nThe hazard tells us: How likely are they to churn right now, at month 10?\nHuman mortality: hazard is low at age 20, higher at 80"
+  },
+  {
+    "objectID": "slides-07.html#todays-big-questions",
+    "href": "slides-07.html#todays-big-questions",
+    "title": "Lecture 7: Linear models",
+    "section": "Today’s big questions",
+    "text": "Today’s big questions\n\nHow do linear models turn features into predictions and probabilities?\nHow do loss functions and regularization guide what a model learns?\nWhat can coefficients and prediction probabilities tell us and where can they mislead us?\n\n\nToday we will connect three ideas. First, how does a weighted sum become a prediction or a probability? Second, how do we decide which predictions are better, and how does regularization affect learning? Finally, how should we interpret coefficients and confidence? Keep these questions in mind as we move from regression to classification."
+  },
+  {
+    "objectID": "slides-07.html#predictions-with-multiple-features",
+    "href": "slides-07.html#predictions-with-multiple-features",
+    "title": "Lecture 7: Linear models",
+    "section": "Predictions with multiple features",
+    "text": "Predictions with multiple features\n\n\n\nFeature\nValue\nCoefficient\nContribution\n\n\n\n\nHours studied (\\(x_1\\))\n5\n4\n20\n\n\nPractice sets (\\(x_2\\))\n6\n2\n12\n\n\nIntercept (\\(b\\))\n\n\n45\n\n\n\nThe predicted grade is \\(20+12+45=77\\).\n\\[\\hat{y}=w_1x_1+\\cdots+w_dx_d+b=\\mathbf{w}^{\\mathsf T}\\mathbf{x}+b\\]\n\nThe dot product means multiply corresponding entries and add.\nWe learn one coefficient per feature and an intercept, shared across examples.\n\n\nWith multiple features, the prediction is still a weighted sum. Five hours contributes twenty points, six practice sets contributes twelve, and the intercept adds forty-five. Together, the prediction is seventy-seven. The dot product is just shorthand for multiplying corresponding feature values and coefficients and adding the results. The model learns one shared coefficient per feature, rather than a separate coefficient for each student."
+  },
+  {
+    "objectID": "slides-07.html#what-happens-during-fit",
+    "href": "slides-07.html#what-happens-during-fit",
+    "title": "Lecture 7: Linear models",
+    "section": "What happens during fit",
+    "text": "What happens during fit\n\n\n\n\n\nFeatures enter a model; predictions and observed targets enter a loss function; optimization updates the model parameters.\n\n\n\nFor a linear model, fit learns the coefficients and intercept:\n\nPredict: use candidate parameters to compute \\(\\hat{y}\\) from the training features.\nMeasure error: compare \\(\\hat{y}\\) with the observed targets \\(y\\) using a loss function.\nOptimize: choose parameters that minimize the fitting objective.\n\nThe objective includes the loss and, when used, a regularization penalty.\n\n\nWe know how to make a prediction once we have the weights and intercept. The next question is: how does fit choose those values? For a linear model, these are the parameters we learn from the training data.\nFollow the diagram from left to right. With candidate parameter values, the model turns training features into predictions. The loss function compares those predictions with the observed targets and measures their disagreement. Lower loss means better agreement according to that particular loss function. Different losses can favor different predictions.\nOptimization chooses parameters that minimize the fitting objective. For ordinary linear regression, that objective is squared-error loss. Later we will add regularization, so the objective will balance prediction error against a penalty on the coefficients. This is why we distinguish the loss from the full fitting objective.\nThe loop illustrates an iterative optimizer: predict, measure error, update parameters, and repeat. Some linear models can instead be fitted using direct numerical methods, so not every fit literally follows this loop. Other model families learn differently: k-NN mainly stores training examples, while a decision tree chooses splits. Here we are focusing on how linear models learn their parameters.\nDuring training, observed targets provide the feedback. At prediction time, a new example only follows the features-to-prediction path; we do not need its target. Next, let’s make the loss concrete by looking at residuals and squared error."
+  },
+  {
+    "objectID": "slides-07.html#residuals-and-squared-error-loss",
+    "href": "slides-07.html#residuals-and-squared-error-loss",
+    "title": "Lecture 7: Linear models",
+    "section": "Residuals and squared-error loss",
+    "text": "Residuals and squared-error loss\nA residual is the observed target minus the prediction: \\(y-\\hat{y}\\).\n\n\n\nObserved grade \\(y\\)\nPrediction \\(\\hat{y}\\)\nResidual\nSquared error\n\n\n\n\n70\n68\n2\n4\n\n\n70\n66\n4\n16\n\n\n\n\\[\\mathrm{MSE}=\\frac{1}{n}\\sum_{i=1}^{n}(y_i-\\hat{y}_i)^2=\\frac{4+16}{2}=10\\]\n\nPositive residual: prediction too low. Negative residual: prediction too high.\nOrdinary least squares (OLS) chooses coefficients to minimize squared-error loss.\nSquared error penalizes large prediction errors more heavily than small ones.\n\n\nA residual is observed minus predicted. Predicting sixty-eight when the grade is seventy gives a residual of two. Predicting sixty-six gives a residual of four. Squaring gives four and sixteen, so the larger mistake contributes disproportionately more. Averaging these squared errors gives an MSE of ten. Squaring also prevents positive and negative residuals from cancelling. Ordinary least squares chooses coefficients to minimize squared error."
+  },
+  {
+    "objectID": "slides-07.html#your-turn-trace-a-prediction-and-its-loss",
+    "href": "slides-07.html#your-turn-trace-a-prediction-and-its-loss",
+    "title": "Lecture 7: Linear models",
+    "section": "Your turn: Trace a prediction and its loss",
+    "text": "Your turn: Trace a prediction and its loss\nA linear model uses \\(\\hat{y}=3x+10\\).\n\n\n\n\n\n\n\n\n\n\nInput \\(x\\)\nObserved target \\(y\\)\nPrediction\nResidual\nSquared error\n\n\n\n\n2\n18\n?\n?\n?\n\n\n5\n20\n?\n?\n?\n\n\n\n\nFill in the missing values and calculate the mean squared error.\nWhich example contributes more to the loss?\n\n\nTry this calculation yourself before we discuss it. First substitute each input into three x plus ten. Then calculate observed minus predicted, square each residual, and average. [Allow a minute, then invite answers.] The predictions are sixteen and twenty-five. The residuals are two and minus five, giving squared errors four and twenty-five. The MSE is fourteen point five. The second example contributes more, even though its residual is negative, because squaring measures error magnitude.\nPredictions: 16 and 25. Residuals: 2 and -5. Squared errors: 4 and 25. MSE = 14.5. The second example contributes more because its error magnitude is larger."
+  },
+  {
+    "objectID": "slides-07.html#ridge-loss-plus-regularization",
+    "href": "slides-07.html#ridge-loss-plus-regularization",
+    "title": "Lecture 7: Linear models",
+    "section": "Ridge: Loss plus regularization",
+    "text": "Ridge: Loss plus regularization\n\nLinearRegression minimizes squared-error loss.\nCorrelated features can lead to large, unstable coefficients.\nRidge adds regularization: a penalty that discourages large coefficients.\nFitting balances agreement with training targets against the penalty.\nRegularization can reduce overfitting; it keeps the same prediction rule.\n\nIn this course, we’ll use Ridge for linear regression.\n\nMinimizing training error alone can produce coefficients that are sensitive to the particular training sample, especially when features overlap in the information they provide. Ridge adds a cost for large coefficients. It balances fitting the training targets against keeping coefficients smaller. This can reduce overfitting, although it is not guaranteed to improve every dataset. The prediction rule remains a weighted sum. Ridge will be our standard linear regression estimator in this course."
+  },
+  {
+    "objectID": "slides-07.html#optional-what-ridge-minimizes",
+    "href": "slides-07.html#optional-what-ridge-minimizes",
+    "title": "Lecture 7: Linear models",
+    "section": "(Optional) What Ridge minimizes",
+    "text": "(Optional) What Ridge minimizes\n\\[\\underbrace{\\sum_{i=1}^{n}(y_i-\\hat{y}_i)^2}_{\\text{fit the training targets}}\n+\\underbrace{\\alpha\\sum_{j=1}^{d}w_j^2}_{\\text{discourage large coefficients}}\\]\n\n\\(n\\): training examples; \\(d\\): features. The intercept is not penalized.\nalpha controls the strength of the penalty.\nThis uses the sum of squared errors. Using the mean changes its balance with the penalty unless alpha is adjusted too.\n\n\nThis optional formula makes the tradeoff explicit. The first term is the sum of squared residuals. The second is alpha times the sum of squared feature coefficients; the intercept is not penalized here. Alpha determines how expensive large coefficients are. Notice that this formula uses a sum, not a mean. Changing that scaling while keeping alpha fixed changes the balance between the two terms."
+  },
+  {
+    "objectID": "slides-07.html#regularization-and-scaling",
+    "href": "slides-07.html#regularization-and-scaling",
+    "title": "Lecture 7: Linear models",
+    "section": "Regularization and scaling",
+    "text": "Regularization and scaling\n\nLarger alpha \\(\\rightarrow\\) stronger regularization \\(\\rightarrow\\) smaller coefficients; greater risk of underfitting.\nSmaller alpha \\(\\rightarrow\\) weaker regularization; greater risk of overfitting.\nChoose alpha using cross-validation on training data; reserve the test set for final evaluation.\nScale numeric features: their units affect coefficient sizes and hence the penalty.\n\nridge_pipe = make_pipeline(StandardScaler(), Ridge(alpha=1.0))\ncross_validate(ridge_pipe, X_train, y_train)\nThe pipeline fits the scaler separately within each cross-validation fold.\n\nIncreasing alpha makes the coefficient penalty stronger. If it is too strong, the model can underfit; if too weak, it may overfit. We choose alpha using cross-validation on training data. Scaling matters because the same predictive effect can require very different coefficient sizes in different units. The pipeline keeps scaling inside each fold, so the validation fold does not influence the fitted scaler. The code shows evaluating one setting; selecting alpha requires comparing candidate settings."
+  },
+  {
+    "objectID": "slides-07.html#interpreting-regression-coefficients",
+    "href": "slides-07.html#interpreting-regression-coefficients",
+    "title": "Lecture 7: Linear models",
+    "section": "Interpreting regression coefficients",
+    "text": "Interpreting regression coefficients\n\nA coefficient describes the change in the model’s prediction for a one-unit feature increase, holding other represented features fixed.\nAfter StandardScaler, one unit corresponds to one training-set standard deviation of the original feature.\nCorrelated features can share predictive information, making individual coefficients unstable.\nCoefficients describe the fitted model; they do not establish causal effects.\nA constant change per unit may miss curves or interactions. Extrapolation can give implausible predictions, such as grades above 100%.\n\n\nA regression coefficient tells us how the model’s prediction changes for a one-unit feature increase while other represented features stay fixed. If we standardized the feature, that unit is one training-set standard deviation. This is a statement about the fitted prediction rule, not a causal claim about the world. Correlated features can divide the same information between their coefficients. Also remember the constant-rate assumption: a straight line can miss curvature and make implausible predictions outside the observed range."
+  },
+  {
+    "objectID": "slides-07.html#section",
+    "href": "slides-07.html#section",
+    "title": "Lecture 7: Linear models",
+    "section": "",
+    "text": "Suppose your target is binary: pass or fail\nLogistic regression is used for such binary classification tasks.\n\nLogistic regression predicts a probability that the given example belongs to a particular class.\nIt uses Sigmoid function to map any real-valued input into a value between 0 and 1, representing the probability of a specific outcome.\nA threshold (usually 0.5) is applied to the predicted probability to decide the final class label.\n\n\nSuppose the target is pass or fail. We want a probability of passing, rather than an unrestricted numeric prediction. Logistic regression first computes a weighted score, then applies the sigmoid to map it into the interval from zero to one. To produce a class label, we usually compare that probability with a threshold of one half. The probability and the final class are different outputs, and that distinction will matter when we discuss loss."
+  },
+  {
+    "objectID": "slides-07.html#decision-scores-probabilities-and-classes",
+    "href": "slides-07.html#decision-scores-probabilities-and-classes",
+    "title": "Lecture 7: Linear models",
+    "section": "Decision scores, probabilities, and classes",
+    "text": "Decision scores, probabilities, and classes\n\\[z=\\mathbf{w}^{\\mathsf T}\\mathbf{x}+b\n\\qquad p=\\sigma(z)=\\frac{1}{1+e^{-z}}\\]\n\ndecision_function returns the raw score \\(z\\).\npredict_proba returns probabilities in the order given by classes_; \\(p\\) corresponds to classes_[1].\n\\(z=0\\) corresponds to \\(p=0.5\\), the default classification boundary.\nThe sigmoid is nonlinear, but the boundary remains linear: \\(\\mathbf{w}^{\\mathsf T}\\mathbf{x}+b=0\\).\nWith two features the boundary is a line; with \\(d\\) features it is a \\((d-1)\\)-dimensional hyperplane.\n\n\nLet’s separate three quantities. The decision function gives the raw weighted score z. The sigmoid turns z into a probability, and the threshold turns that probability into a class. A zero score maps to probability one half. Although the probability transformation is nonlinear, the boundary is where the weighted sum equals zero, so it is linear in the represented features. With two features it is a line. Always check classes underscore to see which class each probability column refers to."
+  },
+  {
+    "objectID": "slides-07.html#iclicker-ranking-prediction-penalties",
+    "href": "slides-07.html#iclicker-ranking-prediction-penalties",
+    "title": "Lecture 7: Linear models",
+    "section": "iClicker: Ranking prediction penalties",
+    "text": "iClicker: Ranking prediction penalties\nWe want to classify an image as cat or dog. The true class is cat.\n\n\n\n\n\nTrue class: cat\n\n\n\nImage created by GPT-6.1 Sol Light\n\n\n\n\n\nModel\n\\(P(\\text{cat})\\)\n\\(P(\\text{dog})\\)\n\n\n\n\nA\n0.50\n0.50\n\n\nB\n0.03\n0.97\n\n\nC\n0.90\n0.10\n\n\n\nWhich ranking is most appropriate for the penalties these models should receive? Order penalties from smallest to largest.\n\nA. penalty(A) &lt; penalty(B) &lt; penalty(C)\nB. penalty(C) &lt; penalty(A) &lt; penalty(B)\nC. penalty(B) &lt; penalty(A) &lt; penalty(C)\nD. All three receive the same penalty.\n\n\n\nWe used study hours to visualize the sigmoid. Now let’s use an image example to think about how probabilities should be evaluated. This image is a cat, and three models give different cat-versus-dog probabilities. Before seeing a formula, choose the most appropriate penalty ranking, from smallest to largest. [Pause for voting.] The answer is option B. Model C puts high probability on the true class, A is uncertain, and model B is confidently wrong. Why should B receive a larger penalty than A? We want the loss to capture that distinction.\nCorrect answer: B. C &lt; A &lt; B. A is uncertain; B is confidently wrong; C is confidently correct. A’s probabilities are tied, so avoid assigning it a predicted label. After voting, ask students why model B should receive a larger penalty than model A. Option D invites discussion of whether confidence should affect the penalty. Ask students to propose what a loss should reward before introducing the formula."
+  },
+  {
+    "objectID": "slides-07.html#log-loss",
+    "href": "slides-07.html#log-loss",
+    "title": "Lecture 7: Linear models",
+    "section": "Log loss",
+    "text": "Log loss\nLet \\(p_{\\text{true}}\\) be the probability assigned to the true class.\n\\[L=-\\log(p_{\\text{true}})\\]\n\nHigh probability for the true class \\(\\rightarrow\\) small loss.\nProbability near zero for the true class \\(\\rightarrow\\) very large loss.\nA confident incorrect prediction receives a particularly large penalty.\n\nHere and throughout, \\(\\log\\) is the natural logarithm.\n\nLog loss captures the intuition from our vote. Take the probability assigned to the class that actually occurred, then take its negative natural logarithm. A probability close to one gives a small loss. A probability near zero gives a very large loss. We are evaluating how much probability the model gave to the truth, rather than only whether its final label was correct."
+  },
+  {
+    "objectID": "slides-07.html#log-loss-for-our-cat-example",
+    "href": "slides-07.html#log-loss-for-our-cat-example",
+    "title": "Lecture 7: Linear models",
+    "section": "Log loss for our cat example",
+    "text": "Log loss for our cat example\nThe true class is cat, so \\(L=-\\log(P(\\text{cat}))\\).\n\n\n\nModel\n\\(P(\\text{cat})\\)\nLog loss\nInterpretation\n\n\n\n\nA\n0.50\n0.69\nUncertain\n\n\nB\n0.03\n3.51\nConfidently wrong\n\n\nC\n0.90\n0.11\nConfidently correct\n\n\n\n\nAssigning probability 1 to the true class gives loss 0.\nAs the probability assigned to the true class approaches 0, the loss grows without bound.\n\n\nLet’s apply the formula to the same cat. A gives cat probability one half, so its loss is about zero point six nine. B gives only zero point zero three, producing about three point five one. C gives zero point nine, producing about zero point one one. These reproduce our ranking. Probability one on the true class gives zero loss, while probabilities approaching zero produce losses that grow without bound."
+  },
+  {
+    "objectID": "slides-07.html#log-loss-penalizes-confident-mistakes",
+    "href": "slides-07.html#log-loss-penalizes-confident-mistakes",
+    "title": "Lecture 7: Linear models",
+    "section": "Log loss penalizes confident mistakes",
+    "text": "Log loss penalizes confident mistakes\n\n\n\n\n\n\n\n\n\nIncreasing the probability assigned to the true class reduces the loss.\n\nRead the horizontal axis carefully: it is probability of the true class, whether that class is cat or dog. The vertical axis is the loss for that example. Moving right reduces loss; near zero the curve rises sharply. Our three models sit on this same curve. Notice that there is no special break at one half. Log loss changes continuously with the probability, even when the predicted label stays the same."
+  },
+  {
+    "objectID": "slides-07.html#optional-binary-log-loss",
+    "href": "slides-07.html#optional-binary-log-loss",
+    "title": "Lecture 7: Linear models",
+    "section": "(Optional) Binary log loss",
+    "text": "(Optional) Binary log loss\nEncode cat as \\(y=1\\) and dog as \\(y=0\\). Let \\(p=P(y=1\\mid\\mathbf{x})\\).\n\\[L=-\\left[y\\log(p)+(1-y)\\log(1-p)\\right]\\]\n\nTrue class is cat (\\(y=1\\)): \\(L=-\\log(p)\\).\nTrue class is dog (\\(y=0\\)): \\(L=-\\log(1-p)\\).\nIn both cases, this is negative log probability of the true class.\n\nDataset log loss is the average loss across examples. Logistic regression minimizes training log loss plus a regularization penalty.\n\nHere is the usual binary formula. We encode cat as one and dog as zero, and p is the probability of cat. If the true class is cat, y equals one and only negative log p remains. If the true class is dog, y equals zero and only negative log of one minus p remains. Both cases select the probability of the true class. We average these losses across examples, and logistic regression fits the training data using log loss together with a regularization penalty.\nFor endpoint probabilities, interpret the formula by limits: probability 1 on the true class gives zero loss; probability 0 on the true class gives infinite loss. The unused term contributes zero."
+  },
+  {
+    "objectID": "slides-07.html#optional-extending-log-loss-to-multiclass-classification",
+    "href": "slides-07.html#optional-extending-log-loss-to-multiclass-classification",
+    "title": "Lecture 7: Linear models",
+    "section": "(Optional) Extending log loss to multiclass classification",
+    "text": "(Optional) Extending log loss to multiclass classification\nFor \\(K\\) classes, let \\(\\hat p_k\\) be the predicted probability of class \\(k\\). The one-hot target has \\(y_k=1\\) for the true class and 0 otherwise.\n\\[L=-\\sum_{k=1}^{K} y_k\\log(\\hat p_k)=-\\log(\\hat p_{\\text{true}})\\]\nFor class order cat, dog, wild:\n\nTrue class cat: \\(\\mathbf{y}=[1,0,0]\\).\nPredicted probabilities: \\(\\hat{\\mathbf{p}}=[0.9,0.07,0.03]\\).\nOnly the cat term contributes: \\(L=-\\log(0.9)\\approx0.11\\).\n\nThe same idea applies: reward probability assigned to the true class.\n\nTo extend this to more classes, suppose our categories are cat, dog, and wild. Treat these as mutually exclusive labels in this toy example, with wild meaning the third category rather than cats or dogs. A one-hot target has one in the true class position and zero elsewhere. The sum looks more complicated, but only the true-class term contributes. For this cat, we select probability zero point nine, and the loss is still about zero point one one. The central idea has not changed."
+  },
+  {
+    "objectID": "slides-07.html#your-turn-is-a-log-loss-of-0.69-good",
+    "href": "slides-07.html#your-turn-is-a-log-loss-of-0.69-good",
+    "title": "Lecture 7: Linear models",
+    "section": "Your turn: Is a log loss of 0.69 good?",
+    "text": "Your turn: Is a log loss of 0.69 good?\nA binary classifier has a mean training log loss of 0.69. Has it learned much?\n\nassigning 0.5 to each class gives \\(-\\log(0.5) \\approx0.69\\), so the model has not improved on the uniform-probability baseline, even on its training data. This does not mean the model necessarily predicts uniform probabilities on every example or has learned nothing at all; different predictions can produce the same average loss. Describe the baseline as assigning uniform probabilities, rather than randomly choosing a class label. The key takeaway is that a loss value becomes meaningful when we compare it with a reference."
+  },
+  {
+    "objectID": "slides-07.html#regularization-alpha-vs.-c",
+    "href": "slides-07.html#regularization-alpha-vs.-c",
+    "title": "Lecture 7: Linear models",
+    "section": "Regularization: alpha vs. C",
+    "text": "Regularization: alpha vs. C\n\n\n\nModel\nStronger regularization\nWeaker regularization\n\n\n\n\nRidge\nIncrease alpha\nDecrease alpha\n\n\nLogisticRegression\nDecrease C\nIncrease C\n\n\n\n\nC controls inverse regularization strength.\nToo much regularization can cause underfitting; more is not always better.\nSelect hyperparameters using cross-validation.\nProbabilities and log loss can change even when class predictions and accuracy stay the same.\n\n\nBoth estimators regularize, but their controls point in opposite directions. Larger alpha makes Ridge regularization stronger. Smaller C makes logistic regression regularization stronger, because C controls inverse strength. Think carefully about that direction when tuning. We use cross-validation to choose settings rather than assuming more regularization is always better. Changing regularization can alter the predicted probabilities and log loss even if no examples cross the classification boundary."
+  },
+  {
+    "objectID": "slides-07.html#prediction-probabilities-and-model-limitations",
+    "href": "slides-07.html#prediction-probabilities-and-model-limitations",
+    "title": "Lecture 7: Linear models",
+    "section": "Prediction probabilities and model limitations",
+    "text": "Prediction probabilities and model limitations\n\nNear the decision boundary: scores near zero, probabilities near 0.5.\nFarther from the boundary: more extreme probabilities.\nA model can be confidently wrong if its linear boundary cannot represent the actual relationship.\nExample: a straight Canada–USA boundary can confidently misclassify cities in Alaska.\nA high predict_proba value reflects the model’s estimate, not a guarantee.\n\n\nFor binary logistic regression, scores near zero give probabilities near one half. Larger positive or negative scores give more extreme probabilities. But that confidence is produced by the model’s rule. If the rule has the wrong shape, it can confidently make mistakes. Imagine trying to separate Canada and the USA with one straight geographic boundary: Alaska exposes the limitation. A high probability is an estimate from the model, not a guarantee that its assumptions fit the example."
+  },
+  {
+    "objectID": "slides-07.html#training-loss-vs.-evaluation-score",
+    "href": "slides-07.html#training-loss-vs.-evaluation-score",
+    "title": "Lecture 7: Linear models",
+    "section": "Training loss vs. evaluation score",
+    "text": "Training loss vs. evaluation score\n\n\n\nModel\nFitting objective\nDefault .score()\n\n\n\n\nRidge\nSquared-error loss + penalty\n\\(R^2\\)\n\n\nLogisticRegression\nLog loss + penalty\nAccuracy\n\n\n\n\nfit uses its objective to learn coefficients from the training data.\nscore evaluates predictions; it need not report the fitting loss.\nBy default, cross_validate uses the estimator’s .score().\nLow training loss does not guarantee good predictions on new examples.\n\n\nThere are two different questions here: what does fit optimize, and what does score report? Ridge fits squared error plus a penalty, but its default score is R squared. Logistic regression, which we will introduce next, fits log loss plus a penalty but reports accuracy by default. Cross-validate uses that default score unless we specify another metric. Losses are minimized; these default scores are maximized. Evaluating on held-out data tells us more about generalization than training loss alone.\nWe will introduce log loss shortly and study regression metrics in more detail later. Losses are minimized; the default scores here are maximized."
+  },
+  {
+    "objectID": "slides-07.html#your-turn-how-many-parameters",
+    "href": "slides-07.html#your-turn-how-many-parameters",
+    "title": "Lecture 7: Linear models",
+    "section": "Your turn: How many parameters?",
+    "text": "Your turn: How many parameters?\n\nImagine you are training a binary logistic regression model. For each of the following scenarios, identify how many parameters (weights and biases) will be learned.\nScenario 1: 100 features and 1,000 examples\nScenario 2: 100 features and 1 million examples\n\n\nHow many learned parameters do we need with one hundred features? Consider both one thousand training examples and one million. [Pause and ask for answers.] Binary logistic regression learns one hundred feature weights and one intercept in both cases, so one hundred and one parameters. More examples can change the fitted values and improve their estimation, but they do not add a separate coefficient for every example."
+  },
+  {
+    "objectID": "slides-07.html#section-1",
+    "href": "slides-07.html#section-1",
+    "title": "Lecture 7: Linear models",
+    "section": "",
+    "text": "Parametric\n\nExamples: Logistic regression, linear regression, linear SVM\n\nModels with a fixed number of parameters, regardless of the dataset size\nFast predictions; useful for large, sparse feature matrices\nLess flexible, may not capture complex relationships\n\n\nNon parametric\n\nExamples: KNN, SVM RBF, Decision tree with no specific depth specified\nThe stored representation can grow with the training set; \\(k\\)-NN retains training examples.\nFlexible, can adapt to complex patterns\nPrediction can be expensive; local structure and distances must be useful.\n\n\n\nThis distinction is what we mean by parametric versus non-parametric here. With a fixed feature representation, a parametric model has a fixed number of learned parameters even as we add examples. That often makes prediction efficient, including for sparse text features. A non-parametric model can grow its representation with the training data: nearest neighbors stores examples, for instance. That flexibility can help capture patterns, but storage and prediction may be costly. Neither category automatically wins on every task."
+  },
+  {
+    "objectID": "slides-07.html#parametric-does-not-mean-assumption-free-or-unable-to-overfit",
+    "href": "slides-07.html#parametric-does-not-mean-assumption-free-or-unable-to-overfit",
+    "title": "Lecture 7: Linear models",
+    "section": "Parametric does not mean assumption-free or unable to overfit",
+    "text": "Parametric does not mean assumption-free or unable to overfit\n\nWith 100 features, binary logistic regression learns 101 parameters in both scenarios.\nWith 100,000 features, it learns 100,001 parameters and may overfit.\nNon-parametric models still have assumptions and hyperparameters, such as \\(k\\) and the distance measure in \\(k\\)-NN.\nA linear model assumes its represented features support a useful linear rule; it does not require normally distributed features or targets.\n\n\nFixed parameter count does not mean a model cannot overfit. With one hundred thousand features, binary logistic regression has one hundred thousand and one parameters, which can be a lot relative to the available data. Non-parametric models also make assumptions, such as choosing useful distances for nearest neighbors. For linear models, the main predictive restriction is the linear rule in the represented features. We do not require normally distributed features or targets simply to use these prediction models."
+  },
+  {
+    "objectID": "slides-07.html#summary",
+    "href": "slides-07.html#summary",
+    "title": "Lecture 7: Linear models",
+    "section": "Summary",
+    "text": "Summary\n\nLinear models use a weighted sum of features and an intercept.\nLoss tells fit what counts as a better prediction.\nSquared-error loss emphasizes large residuals; log loss emphasizes confident mistakes.\nRegularization balances fit against coefficient size: larger alpha or smaller C means a stronger penalty.\nTraining loss and evaluation score serve different purposes; use validation to assess generalization.\nCoefficients describe the model, and high predicted probabilities do not guarantee correctness.\n\n\nReturn to our three big questions. A linear model combines feature values with weights and an intercept. Its fitting objective defines which predictions are preferred, and regularization adds a cost for large coefficients. Squared error emphasizes large residuals, while log loss strongly penalizes assigning very little probability to the truth. Validation checks generalization. Finally, coefficients explain the model’s rule, and probabilities express its estimates; neither automatically gives a causal explanation or a correctness guarantee."
+  },
+  {
+    "objectID": "slides-07.html#exit-activity-time-permitting",
+    "href": "slides-07.html#exit-activity-time-permitting",
+    "title": "Lecture 7: Linear models",
+    "section": "Exit activity (time-permitting)",
+    "text": "Exit activity (time-permitting)\n\nSo far, we have worked with various transformers and supervised machine learning models. The goal of this activity is collaboratively complete tables that provide an overview of\n\nthe strengths, weaknesses, key hyperparameters of different machine learning models\nthe purpose, use cases, and key considerations of various transformers\n\n(This will serve as a handy reference for your upcoming exam and beyond!)\n\nIf time permits, let’s finish by building a shared reference. Working together, summarize the models and transformers we have used so far. Aim for a resource you can explain, rather than a list of memorized labels. For each claim, think of a situation where it matters. The next slides give you the prompts and tables. This is our final activity for the main lecture; the softmax material afterward is optional."
+  },
+  {
+    "objectID": "slides-07.html#predictive-estimators",
+    "href": "slides-07.html#predictive-estimators",
+    "title": "Lecture 7: Linear models",
+    "section": "Predictive estimators",
+    "text": "Predictive estimators\nFill in the following table with at least one entry per box.\n\n\n\n\n\n\n\n\n\nModel\nStrengths\nWeaknesses\nKey hyperparameters\n\n\n\n\ndecision tree\n\n\n\n\n\n\\(k\\)-NN\n\n\n\n\n\nRBF SVM\n\n\n\n\n\nlinear models\n\n\n\n\n\n\n\nWork with a partner and put at least one entry in each box. [Allow discussion, then collect examples.] A tree captures nonlinear rules but can overfit when deep; depth and leaf-size controls matter. Nearest neighbors is flexible but stores training examples and depends on scaling, distance, and k. An RBF SVM captures nonlinear boundaries but can be expensive on large datasets; C and gamma matter. Linear models often work well with sparse features and predict efficiently, but may underfit curved patterns; alpha or C controls regularization for the models we used."
+  },
+  {
+    "objectID": "slides-06.html#clicker-exercise-6.1",
+    "href": "slides-06.html#clicker-exercise-6.1",
+    "title": "Lecture 6: Column transformer and text features",
+    "section": "(Clicker) Exercise 6.1",
+    "text": "(Clicker) Exercise 6.1\nSelect all of the following statements which are TRUE.\n\n\nYou could carry out cross-validation by passing a ColumnTransformer object to cross_validate.\n\n\nAfter applying column transformer, the order of the columns in the transformed data has to be the same as the order of the columns in the original data.\n\n\nAfter applying a column transformer, the transformed data is always going to be of different shape than the original data.\n\n\nWhen you call fit_transform on a ColumnTransformer object, you get a numpy ndarray."
+  },
+  {
+    "objectID": "slides-06.html#clicker-exercise-6.2",
+    "href": "slides-06.html#clicker-exercise-6.2",
+    "title": "Lecture 6: Column transformer and text features",
+    "section": "(Clicker) Exercise 6.2",
+    "text": "(Clicker) Exercise 6.2\nSelect all of the following statements which are TRUE.\n\n\nhandle_unknown=\"ignore\" would treat all unknown categories equally.\n\n\nAs you increase the value for max_features hyperparameter of CountVectorizer the training score is likely to go up.\n\n\nSuppose you are encoding text data using CountVectorizer. If you encounter a word in the validation or the test split that’s not available in the training data, we’ll get an error.\n\n\nIn the code below, inside cross_validate, each fold might have slightly different number of features (columns) in the fold.\n\n\npipe = make_pipeline(CountVectorizer(), SVC())\ncross_validate(pipe, X_train, y_train)"
+  },
+  {
+    "objectID": "slides-01.html#course-website",
+    "href": "slides-01.html#course-website",
+    "title": "Lecture 1: Introduction to CPSC 330",
+    "section": "Course website",
+    "text": "Course website\n\n\n\n\n\n\nImportant\n\n\nUse the 2026W1 course website for schedules, announcements, and policies. Read the syllabus carefully. The separate course book contains our shared notes.\n\n\n\n\n\n\n\n\n\nImportant\n\n\nMake sure you go through the syllabus thoroughly and complete the syllabus quiz before Sept 19th at 11:59pm."
+  },
+  {
+    "objectID": "slides-01.html#what-do-we-cover",
+    "href": "slides-01.html#what-do-we-cover",
+    "title": "Lecture 1: Introduction to CPSC 330",
+    "section": "What do we cover",
+    "text": "What do we cover\n\nDesigned for a diverse group of students (CS, Statistics, and beyond)\n\nGentle introduction to machine learning, but also valuable for those with prior experience\n\nCovers foundational concepts in ML and data science:\n\nData preprocessing, supervised learning, clustering\n\nRecommendation systems, text processing\n\nIntro to neural networks, time series, survival analysis\n\n\nEmphasis on hands-on skills:\n\nModel development, evaluation, interpretation\n\nEthical considerations and clear communication"
+  },
+  {
+    "objectID": "slides-01.html#homework-assignments",
+    "href": "slides-01.html#homework-assignments",
+    "title": "Lecture 1: Introduction to CPSC 330",
+    "section": "Homework assignments",
+    "text": "Homework assignments\n\nOur notes are created in a Jupyter notebook, with file extension .ipynb.\nAlso, you will complete your homework assignments using Jupyter notebooks.\nConfusingly, “Jupyter notebook” is also the original application that opens .ipynb files - but has since been replaced by Jupyter Lab.\n\nI am using Jupyter Lab, some things might not work with the Jupyter notebook application.\nYou can also open these files in Visual Studio Code."
+  },
+  {
+    "objectID": "slides-01.html#important-note",
+    "href": "slides-01.html#important-note",
+    "title": "Lecture 1: Introduction to CPSC 330",
+    "section": "Important note",
+    "text": "Important note\n\nNote that your first homework assignment is due Monday, September 14, 11:59 PM (check the course schedule). This is a relatively straightforward assignment on Python.\nIf you struggle with this assignment then that could be a sign that you will struggle later on in the course.\n\nWrite your own answers and code unless the assignment explicitly permits group work."
+  },
+  {
+    "objectID": "slides-01.html#plagiarism",
+    "href": "slides-01.html#plagiarism",
+    "title": "Lecture 1: Introduction to CPSC 330",
+    "section": "Plagiarism",
+    "text": "Plagiarism\nRaise your hand if you’ve ever copied code from StackOverflow.\n\n\n\n\n\nCopying isn’t always wrong but not acknowledging it is.\nPlagiarism may lead to serious consequences"
+  },
+  {
+    "objectID": "slides-01.html#using-generative-ai-in-this-course",
+    "href": "slides-01.html#using-generative-ai-in-this-course",
+    "title": "Lecture 1: Introduction to CPSC 330",
+    "section": "Using generative AI in this course",
+    "text": "Using generative AI in this course\nPlease read our full Generative AI usage policy.\nTL;DR: use AI to support, not substitute, your work. If you use a tool:\n\nName the tool and briefly explain how you used it.\nBe able to explain and reproduce your work without the tool.\nDo not share instructor-provided course materials or sensitive information without permission.\nGenAI is not permitted during exams or timed assessments unless explicitly allowed.\nFollow group-work rules and be extra careful when collaborating.\nYou are responsible for any errors (“hallucinations”) the tool produces."
+  },
+  {
+    "objectID": "slides-01.html#who-to-contact-grading-concerns",
+    "href": "slides-01.html#who-to-contact-grading-concerns",
+    "title": "Lecture 1: Introduction to CPSC 330",
+    "section": "Who to contact: Grading concerns?",
+    "text": "Who to contact: Grading concerns?\n\nStart by opening a regrade request.\n\nIf not resolved in two weeks, reach out to your section instructor on Ed Discussion"
+  },
+  {
+    "objectID": "slides-01.html#who-to-contact-admin-stuffconcessions",
+    "href": "slides-01.html#who-to-contact-admin-stuffconcessions",
+    "title": "Lecture 1: Introduction to CPSC 330",
+    "section": "Who to contact: admin stuff/concessions?",
+    "text": "Who to contact: admin stuff/concessions?\n\nRead Frequently Asked Questions before contacting.\nContact our course co-ordinator"
+  },
+  {
+    "objectID": "slides-01.html#who-to-contact-questions-on-the-content",
+    "href": "slides-01.html#who-to-contact-questions-on-the-content",
+    "title": "Lecture 1: Introduction to CPSC 330",
+    "section": "Who to contact: Questions on the content?",
+    "text": "Who to contact: Questions on the content?\n\nMake sure to read our guide on asking for help before reaching out.\n\nPost your question on Ed Discussion.\nMake use of instructor and TA office hours and tutorials\nI am open to answering questions after class."
+  },
+  {
+    "objectID": "slides-01.html#code-of-conduct",
+    "href": "slides-01.html#code-of-conduct",
+    "title": "Lecture 1: Introduction to CPSC 330",
+    "section": "Code of conduct",
+    "text": "Code of conduct\n\nOur main forum for getting help will be Ed Discussion.\n\n\n\n\n\n\n\nImportant\n\n\nPlease read this entire document about asking for help. TLDR: Be respectful."
+  },
+  {
+    "objectID": "slides-01.html#asking-questions-during-class-1",
+    "href": "slides-01.html#asking-questions-during-class-1",
+    "title": "Lecture 1: Introduction to CPSC 330",
+    "section": "Asking questions during class",
+    "text": "Asking questions during class\n\nYou are encouraged to ask questions by raising your hand.\nNo question is a stupid question.\nRecommended reading as you begin your learning journey: The Fear of Publicly Not Knowing\n\n\nWhat I quickly came to realize was that publicly not knowing wasn’t a indicator of stupidity, it was an indicator of understanding. And from what I’ve seen, it is one of the clearest indicators of success in people — more than school prestige, more than GPA."
+  },
+  {
+    "objectID": "slides-01.html#checklist-for-you-before-the-next-class",
+    "href": "slides-01.html#checklist-for-you-before-the-next-class",
+    "title": "Lecture 1: Introduction to CPSC 330",
+    "section": "Checklist for you before the next class",
+    "text": "Checklist for you before the next class\n\nHave you read the syllabus and course policies carefully?\nAre you able to access course Canvas shell?\nAre you able to access course Ed Discussion?\nAre you able to access iClicker Cloud for Section 102 for this course?\nDid you follow the setup instructions here to set up the course Python environment with uv on your computer?\nHave you read Chapter 1 in the course book?\nAre you almost finished or at least started with homework 1?"
+  },
+  {
+    "objectID": "slides-01.html#code-of-conduct-1",
+    "href": "slides-01.html#code-of-conduct-1",
+    "title": "Lecture 1: Introduction to CPSC 330",
+    "section": "Code of conduct",
+    "text": "Code of conduct\n\nOur main forum for getting help will be Ed Discussion.\n\n\n\n\n\n\n\nImportant\n\n\nPlease read this entire document about asking for help. TLDR: Be nice."
+  },
+  {
+    "objectID": "slides-01.html#lecture-notes-and-slides",
+    "href": "slides-01.html#lecture-notes-and-slides",
+    "title": "Lecture 1: Introduction to CPSC 330",
+    "section": "Lecture notes and slides",
+    "text": "Lecture notes and slides\n\nRead the shared notes in the CPSC 330 course book.\nFor this lecture, read Chapter 1: Course Introduction.\nEach instructor prepares slides and demos based on the book.\nUse the 2026W1 course website for deadlines and policies."
+  },
+  {
+    "objectID": "slides-01.html#course-python-environment",
+    "href": "slides-01.html#course-python-environment",
+    "title": "Lecture 1: Introduction to CPSC 330",
+    "section": "Course Python environment",
+    "text": "Course Python environment\n\nFollow the setup instructions here to set up the course Python environment with uv on your computer.\nIf you do not have your computer with you, you can partner up with someone and set up your own computer later."
+  },
+  {
+    "objectID": "slides-01.html#example-text-classification-with-llms",
+    "href": "slides-01.html#example-text-classification-with-llms",
+    "title": "Lecture 1: Introduction to CPSC 330",
+    "section": "Example: Text classification with LLMs",
+    "text": "Example: Text classification with LLMs\n \n\nLLMs = Large Language Models\n\n\nfrom transformers import pipeline, AutoModelForTokenClassification, AutoTokenizer\n# Sentiment analysis pipeline\nanalyzer = pipeline(\"sentiment-analysis\", model='distilbert-base-uncased-finetuned-sst-2-english')\nanalyzer([\"I asked my model to predict my future, and it said '404: Life not found.'\",\n          '''Machine learning is just like cooking—sometimes you follow the recipe, \n            and other times you just hope for the best!.'''])\n\n[{'label': 'NEGATIVE', 'score': 0.995707631111145},\n {'label': 'POSITIVE', 'score': 0.9994770884513855}]"
+  },
+  {
+    "objectID": "slides-01.html#class-participation-using-agora",
+    "href": "slides-01.html#class-participation-using-agora",
+    "title": "Lecture 1: Introduction to CPSC 330",
+    "section": "Class Participation using Agora",
+    "text": "Class Participation using Agora\n\nVisit: https://agora.students.cs.ubc.ca\nLogin with your UBC CWL\nUse enrol code: cpsc330-2026W1"
+  },
+  {
+    "objectID": "slides-02.html#toy-job-happiness-dataset",
+    "href": "slides-02.html#toy-job-happiness-dataset",
+    "title": "Lecture 2: Terminology, Baselines, Decision Trees",
+    "section": "Toy job happiness dataset",
+    "text": "Toy job happiness dataset\nHere are the first few rows of a toy dataset.\n\ntoy_happiness_df = pd.read_csv(DATA_DIR + 'toy_job_happiness.csv')\ntoy_happiness_df\n\n\n\n\n\n\n\n\nsupportive_colleagues\nsalary\nfree_coffee\nboss_vegan\nhappy?\n\n\n\n\n0\n0\n70000\n0\n1\nUnhappy\n\n\n1\n1\n60000\n0\n0\nUnhappy\n\n\n2\n1\n80000\n1\n0\nHappy\n\n\n3\n1\n110000\n0\n1\nHappy\n\n\n4\n1\n120000\n1\n0\nHappy\n\n\n5\n1\n150000\n1\n1\nHappy\n\n\n6\n0\n150000\n1\n0\nUnhappy"
+  },
+  {
+    "objectID": "slides-22.html#course-evaluations-10-mins",
+    "href": "slides-22.html#course-evaluations-10-mins",
+    "title": "Lecture 22: Communication and Conclusion",
+    "section": "Course evaluations (~10 mins)",
+    "text": "Course evaluations (~10 mins)\nComplete the SEoI for this course here"
+  },
+  {
+    "objectID": "slides-22.html#questions-for-you-1",
+    "href": "slides-22.html#questions-for-you-1",
+    "title": "Lecture 22: Communication and Conclusion",
+    "section": "❓❓ Questions for you",
+    "text": "❓❓ Questions for you\nImagine you’ve created a machine learning model and are eager to share it with others. Consider the following scenarios for sharing your model:\n\nTo a non-technical Audience: How would you present your model to friends and family who may not have a technical background?\nTo a technical audience: How would you share your model with peers or professionals in the field who have a technical understanding of machine learning?\nIn an academic or research setting: How would you disseminate your model within academic or research communities?"
+  },
+  {
+    "objectID": "slides-22.html#try-out-this-moment-predictor",
+    "href": "slides-22.html#try-out-this-moment-predictor",
+    "title": "Lecture 22: Communication and Conclusion",
+    "section": "Try out this moment predictor",
+    "text": "Try out this moment predictor\nhttps://cpsc330-moment-predictor.onrender.com/\n\nIn this lecture, I will show you how to set up/develop this."
+  },
+  {
+    "objectID": "slides-22.html#what-is-deployment",
+    "href": "slides-22.html#what-is-deployment",
+    "title": "Lecture 22: Communication and Conclusion",
+    "section": "What is deployment?",
+    "text": "What is deployment?\n\nAfter we train a model, we want to use it!\nThe user likely does not want to install your Python stack, train your model.\nYou don’t necessarily want to share their dataset.\nSo we need to do two things:\n\nSave/store your model for later use.\nMake the saved model conveniently accessible."
+  },
+  {
+    "objectID": "slides-22.html#we-will-use-the-tools-below-for",
+    "href": "slides-22.html#we-will-use-the-tools-below-for",
+    "title": "Lecture 22: Communication and Conclusion",
+    "section": "We will use the tools below for",
+    "text": "We will use the tools below for\n\nSaving the model: We will use Joblib\nMaking the saved model conveniently accessible: Flask & render"
+  },
+  {
+    "objectID": "slides-22.html#full-examples-of-deploying-an-app",
+    "href": "slides-22.html#full-examples-of-deploying-an-app",
+    "title": "Lecture 22: Communication and Conclusion",
+    "section": "Full examples of deploying an app",
+    "text": "Full examples of deploying an app\nFor this demo, each student should click this link to create a new repo in their accounts, then clone that repo locally to follow the steps to deloy an app."
+  },
+  {
+    "objectID": "slides-22.html#web-app",
+    "href": "slides-22.html#web-app",
+    "title": "Lecture 22: Communication and Conclusion",
+    "section": "Web App",
+    "text": "Web App\nSee notes fom class as well as the lecture demo."
+  },
+  {
+    "objectID": "slides-22.html#api",
+    "href": "slides-22.html#api",
+    "title": "Lecture 22: Communication and Conclusion",
+    "section": "API",
+    "text": "API"
+  },
+  {
+    "objectID": "slides-22.html#what-did-we-cover",
+    "href": "slides-22.html#what-did-we-cover",
+    "title": "Lecture 22: Communication and Conclusion",
+    "section": "What did we cover",
+    "text": "What did we cover\n\nPart 1: Supervised learning on tabular data: ML fundamentals, preprocessing and data encoding, a bunch of models, evaluation metrics, feature importances and model transparency, feature selection, hyperparameter optimization\nPart 2: Dealing with other non-tabular data types: Clustering, recommender systems, computer vision with pre-trained deep learning models (high level), language data, text preprocessing, embeddings, topic modeling, time series, right-censored data / survival analysis\nPart 3: Communication, Ethics, and Deployment"
+  },
+  {
+    "objectID": "slides-22.html#what-we-didnt-cover",
+    "href": "slides-22.html#what-we-didnt-cover",
+    "title": "Lecture 22: Communication and Conclusion",
+    "section": "What we didn’t cover",
+    "text": "What we didn’t cover\n\nHow do these models work under the hood"
+  },
+  {
+    "objectID": "slides-22.html#what-would-i-do-differently",
+    "href": "slides-22.html#what-would-i-do-differently",
+    "title": "Lecture 22: Communication and Conclusion",
+    "section": "What would I do differently?",
+    "text": "What would I do differently?\nLots of room for improvement. Here are some things on my mind.\n\nBalance the pace of the course a bit more (too intense at the beginning, too relaxed at the end!)\nFlipped classroom in a more effective way in the first part of the course.\nAdd more interactive components in the lectures\nMore activities during lecture time\nAdd a course project !?!\nSome material to cover: dealing with outliers, data collection, newer methods"
+  },
+  {
+    "objectID": "slides-22.html#what-next",
+    "href": "slides-22.html#what-next",
+    "title": "Lecture 22: Communication and Conclusion",
+    "section": "What next?",
+    "text": "What next?\nIf you want to further develop your machine learning skills: - Practice! - Work on your own projects - Work hard and be consistent.\n\nIf you are interested in research in machine learning\n\nTake CPSC 340. If you do not have the required prereqs you can try to audit it.\n\nGet into the habit of reading papers and replicating results"
+  },
+  {
+    "objectID": "slides-22.html#questions-for-you-2",
+    "href": "slides-22.html#questions-for-you-2",
+    "title": "Lecture 22: Communication and Conclusion",
+    "section": "❓❓ Questions for you",
+    "text": "❓❓ Questions for you\nFor each of the scenarios below\n\nIdentify if ML is a good solution for a problem.\nIf yes\n\nFrame the problem to a ML problem.\nDiscuss what kind of features you would need to effectively solve the problem\nWhat would be a reasonable baseline?\nWhich model would be a suitable model for the given scenario?\nWhat would be the appropriate success metrics."
+  },
+  {
+    "objectID": "slides-22.html#practice-questions-for-you",
+    "href": "slides-22.html#practice-questions-for-you",
+    "title": "Lecture 22: Communication and Conclusion",
+    "section": "❓❓ (Practice) Questions for you",
+    "text": "❓❓ (Practice) Questions for you\n\n\n\n\n\n\n\nApp\nGoal\n\n\n\n\nQueuePredictor app\nInform callers how long they’ll wait on hold given the current call volume\n\n\nTo-doList App\nKeep track of the tasks that a user inputs and organize them by date\n\n\nSegmentSphere App\nTo segment customers to tailor marketing strategies based on purchasing behaviour\n\n\nVideo app\nRecommend useful videos\n\n\nDining app\nIdentify cuisine by a restaurant’s menu\n\n\nWeather app\nCalculate precipitation in six hour increments for a geographic region\n\n\nEvoCarShare app\nCalculate number of car rentals in four increments at a particular Evo parking spot\n\n\nPharma app\nUnderstand the effect of a new drug on patient survival time"
+  },
+  {
+    "objectID": "slides-22.html#conclusion-farewell",
+    "href": "slides-22.html#conclusion-farewell",
+    "title": "Lecture 22: Communication and Conclusion",
+    "section": "Conclusion & farewell",
+    "text": "Conclusion & farewell\nThat’s all, folks. We made it! Good luck on your final exam! When you get a chance, please let me know what worked for you and what didn’t work for you in this course."
   }
 ]
