@@ -18,9 +18,8 @@ format:
 
 ## Announcements
 
-- Reminder: Test 2 is this week!
-- Practice Test 2 should be released soon
-
+- Remember Midterm 1!
+- Have a great thanksgiving break!
 
 ```{python}
 import os
