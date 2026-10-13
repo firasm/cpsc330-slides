@@ -260,7 +260,7 @@ Let's take a break!
 **Select all of the following statements which are TRUE.**
 
 - (A) In medical diagnosis, false positives are more damaging than false negatives (assume "positive" means the person has a disease, "negative" means they don't).
-- (B) In spam classification, false positives are more damaging than false negatives (assume "positive" means the email is spam, "negative" means they it's not).
+- (B) In spam classification, false positives are more damaging than false negatives (assume "positive" means the email is spam, "negative" means that it's not).
 - (C) If method A gets a higher accuracy than method B, that means its precision is also higher.
 - (D) If method A gets a higher accuracy than method B, that means its recall is also higher.
 

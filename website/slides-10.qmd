@@ -96,7 +96,7 @@ DATA_DIR = 'data/'
 - `class weight="balanced"` (preferred method for this course)
 - SMOTE
 
-## Handling imbalance by chaning class weights
+## Handling imbalance by chahing class weights
 
 - We can specify class_weight="balanced" to give more importance to rare examples during training.
 
@@ -209,7 +209,7 @@ For this demo, each student should [click this link](https://github.com/new?temp
 
 **Select all of the following statements which are TRUE.**
 
-- (A) We can use still use precision and recall for regression problems but now we have other metrics we can use as well.
+- (A) We can still use precision and recall for regression problems but now we have other metrics we can use as well.
 - (B) In `sklearn` for regression problems, using `r2_score()` and `.score()` (with default values) will produce the same results.
 - (C) RMSE is always going to be non-negative.
 - (D) MSE does not directly provide the information about whether the model is underpredicting or overpredicting.
