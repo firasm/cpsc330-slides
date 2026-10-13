@@ -1974,11 +1974,11 @@
     "text": "Dealing with class imbalance\n\nUnder sampling\nOversampling\nclass weight=\"balanced\" (preferred method for this course)\nSMOTE"
   },
   {
-    "objectID": "slides-10.html#handling-imbalance-by-chaning-class-weights",
-    "href": "slides-10.html#handling-imbalance-by-chaning-class-weights",
+    "objectID": "slides-10.html#handling-imbalance-by-chahing-class-weights",
+    "href": "slides-10.html#handling-imbalance-by-chahing-class-weights",
     "title": "Lecture 10: Regression Metrics",
-    "section": "Handling imbalance by chaning class weights",
-    "text": "Handling imbalance by chaning class weights\n\nWe can specify class_weight=“balanced” to give more importance to rare examples during training.\n\n\n\n\n\n\n\n\n\n\n\n\nThis sets the weights so that the classes are “equal”.\nWe have reduced false negatives but we have many more false positives now …\n\nDecreases false negatives, which improves recall.\nIncreases false positives, which might lower precision."
+    "section": "Handling imbalance by chahing class weights",
+    "text": "Handling imbalance by chahing class weights\n\nWe can specify class_weight=“balanced” to give more importance to rare examples during training.\n\n\n\n\n\n\n\n\n\n\n\n\nThis sets the weights so that the classes are “equal”.\nWe have reduced false negatives but we have many more false positives now …\n\nDecreases false negatives, which improves recall.\nIncreases false positives, which might lower precision."
   },
   {
     "objectID": "slides-10.html#ridge-and-ridgecv",
@@ -2034,7 +2034,7 @@
     "href": "slides-10.html#iclicker-exercise-10.2",
     "title": "Lecture 10: Regression Metrics",
     "section": "iClicker Exercise 10.2",
-    "text": "iClicker Exercise 10.2\nSelect all of the following statements which are TRUE.\n\n\nWe can use still use precision and recall for regression problems but now we have other metrics we can use as well.\n\n\nIn sklearn for regression problems, using r2_score() and .score() (with default values) will produce the same results.\n\n\nRMSE is always going to be non-negative.\n\n\nMSE does not directly provide the information about whether the model is underpredicting or overpredicting.\n\n\nWe can pass multiple scoring metrics to GridSearchCV or RandomizedSearchCV for regression as well as classification problems."
+    "text": "iClicker Exercise 10.2\nSelect all of the following statements which are TRUE.\n\n\nWe can still use precision and recall for regression problems but now we have other metrics we can use as well.\n\n\nIn sklearn for regression problems, using r2_score() and .score() (with default values) will produce the same results.\n\n\nRMSE is always going to be non-negative.\n\n\nMSE does not directly provide the information about whether the model is underpredicting or overpredicting.\n\n\nWe can pass multiple scoring metrics to GridSearchCV or RandomizedSearchCV for regression as well as classification problems."
   },
   {
     "objectID": "slides-10.html#which-metric-fits-the-scenario-1",
@@ -3469,7 +3469,7 @@
     "href": "slides-09.html#clicker-exercise-9.1",
     "title": "Lecture 9: Classification Metrics",
     "section": "Clicker Exercise 9.1",
-    "text": "Clicker Exercise 9.1\nSelect all of the following statements which are TRUE.\n\n\nIn medical diagnosis, false positives are more damaging than false negatives (assume “positive” means the person has a disease, “negative” means they don’t).\n\n\nIn spam classification, false positives are more damaging than false negatives (assume “positive” means the email is spam, “negative” means they it’s not).\n\n\nIf method A gets a higher accuracy than method B, that means its precision is also higher.\n\n\nIf method A gets a higher accuracy than method B, that means its recall is also higher."
+    "text": "Clicker Exercise 9.1\nSelect all of the following statements which are TRUE.\n\n\nIn medical diagnosis, false positives are more damaging than false negatives (assume “positive” means the person has a disease, “negative” means they don’t).\n\n\nIn spam classification, false positives are more damaging than false negatives (assume “positive” means the email is spam, “negative” means that it’s not).\n\n\nIf method A gets a higher accuracy than method B, that means its precision is also higher.\n\n\nIf method A gets a higher accuracy than method B, that means its recall is also higher."
   },
   {
     "objectID": "slides-09.html#counter-examples",
