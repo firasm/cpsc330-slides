@@ -16,7 +16,7 @@ editor:
   render-on-save: true
 ---
 
-## Test 2 Debrief
+## Midterm Debrief
 
 How did you feel about the second Test?
 
