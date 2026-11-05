@@ -4,7 +4,7 @@
     "href": "slides-09.html#announcements",
     "title": "Lecture 9: Classification Metrics",
     "section": "Announcements",
-    "text": "Announcements\n\nReminder: Test 2 is this week!\nPractice Test 2 should be released soon\nSee the announcement on Ed Discussion for the details of resources you’ll be provided on the exam"
+    "text": "Announcements\n\nRemember Midterm 1!\nHave a great thanksgiving break!"
   },
   {
     "objectID": "slides-09.html#group-work-class-demo-live-coding",
@@ -592,7 +592,7 @@
     "href": "slides.html",
     "title": "Overview",
     "section": "",
-    "text": "Title\n\n\n\nDescription\n\n\n\n\n\n\n\n\nLecture 1: Introduction to CPSC 330\n\n\nWhat is machine learning, types of machine learning, learning to navigate through the course materials, getting familiar with the course policies\n\n\n\n\n\n\nLecture 2: Terminology, Baselines, Decision Trees\n\n\nTerminology and Decision Trees\n\n\n\n\n\n\nLecture 3: ML fundamentals\n\n\ngeneralization, data splitting, overfitting, underfitting, the fundamental tradeoff, the golden rule\n\n\n\n\n\n\nLecture 4: \\(k\\)-nearest neighbours and SVM RBFs\n\n\nintroduction to KNNs, hyperparameter n_neighbours or \\(k\\), C and gamma hyperparameters of SVM RBF, decision boundaries with different values of hyperparameters.\n\n\n\n\n\n\nLecture 5: Preprocessing and sklearn pipelines\n\n\nPre-processing, Transformations, and pipelines.\n\n\n\n\n\n\nLecture 6: Column transformer and text features\n\n\nPreprocessing and sklearn pipelines\n\n\n\n\n\n\nLecture 7: Linear models\n\n\nLinear regression, logistic regression, prediction probabilities, sigmoid, interpretation of coefficients\n\n\n\n\n\n\nLecture 8: Hyperparameter Optimization\n\n\nLinear regression, logistic regression, prediction probabilities, sigmoid, interpretation of coefficients\n\n\n\n\n\n\nLecture 9: Classification Metrics\n\n\nconfusion metrics, precision, recall, f1-score, PR curves, AP score, ROC curve, ROC AUC, class imbalance\n\n\n\n\n\n\nLecture 10: Regression Metrics\n\n\nRegression metrics\n\n\n\n\n\n\nLecture 11: Ensembles\n\n\n \n\n\n\n\n\n\nLecture 12: Feature importances\n\n\n \n\n\n\n\n\n\nLecture 13: Feature Engineering and Selection\n\n\n \n\n\n\n\n\n\nLecture 14: K-Means\n\n\n \n\n\n\n\n\n\nLecture 15: DBSCAN, Hierarchical Clustering\n\n\n \n\n\n\n\n\n\nLecture 16: Recommender Systems\n\n\n \n\n\n\n\n\n\nLecture 17: Natural Language Processing\n\n\n \n\n\n\n\n\n\nLecture 19: Introduction to deep learning and computer vision\n\n\n \n\n\n\n\n\n\nLecture 20: Time series\n\n\n \n\n\n\n\n\n\nLecture 21: Survival analysis\n\n\n \n\n\n\n\n\n\nLecture 22: Communication and Conclusion\n\n\n \n\n\n\n\n\n\nLecture 24: Deployment and conclusion\n\n\n \n\n\n\n\n\n\nNo matching items"
+    "text": "Title\n\n\n\nDescription\n\n\n\n\n\n\n\n\nLecture 1: Introduction to CPSC 330\n\n\nWhat is machine learning, types of machine learning, learning to navigate through the course materials, getting familiar with the course policies\n\n\n\n\n\n\nLecture 2: Terminology, Baselines, Decision Trees\n\n\nTerminology and Decision Trees\n\n\n\n\n\n\nLecture 3: ML fundamentals\n\n\ngeneralization, data splitting, overfitting, underfitting, the fundamental tradeoff, the golden rule\n\n\n\n\n\n\nLecture 4: \\(k\\)-nearest neighbours and SVM RBFs\n\n\nintroduction to KNNs, hyperparameter n_neighbours or \\(k\\), C and gamma hyperparameters of SVM RBF, decision boundaries with different values of hyperparameters.\n\n\n\n\n\n\nLecture 5: Preprocessing and sklearn pipelines\n\n\nPre-processing, Transformations, and pipelines.\n\n\n\n\n\n\nLecture 6: Column transformer and text features\n\n\nPreprocessing and sklearn pipelines\n\n\n\n\n\n\nLecture 7: Linear models\n\n\nLinear regression, logistic regression, prediction probabilities, sigmoid, interpretation of coefficients\n\n\n\n\n\n\nLecture 8: Hyperparameter Optimization\n\n\nLinear regression, logistic regression, prediction probabilities, sigmoid, interpretation of coefficients\n\n\n\n\n\n\nLecture 9: Classification Metrics\n\n\nconfusion metrics, precision, recall, f1-score, PR curves, AP score, ROC curve, ROC AUC, class imbalance\n\n\n\n\n\n\nLecture 10: Regression Metrics\n\n\nRegression metrics\n\n\n\n\n\n\nLecture 11: Ensembles\n\n\n \n\n\n\n\n\n\nLecture 12: Feature importances\n\n\n \n\n\n\n\n\n\nLecture 13: Feature Engineering and Selection\n\n\n \n\n\n\n\n\n\nLecture 14: K-Means\n\n\n \n\n\n\n\n\n\nLecture 15: DBSCAN, Hierarchical Clustering\n\n\n \n\n\n\n\n\n\nLecture 16: Recommender Systems\n\n\n \n\n\n\n\n\n\nLecture 17: Introduction to computer vision\n\n\nComputer vision and transfer learning\n\n\n\n\n\n\nLecture 17: Natural Language Processing\n\n\n \n\n\n\n\n\n\nLecture 19: Introduction to deep learning and computer vision\n\n\n \n\n\n\n\n\n\nLecture 20: Time series\n\n\n \n\n\n\n\n\n\nLecture 21: Survival analysis\n\n\n \n\n\n\n\n\n\nLecture 22: Communication and Conclusion\n\n\n \n\n\n\n\n\n\nLecture 24: Deployment and conclusion\n\n\n \n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "slides-03.html#announcements",
@@ -1026,7 +1026,7 @@
     "href": "slides-10.html#iclicker-exercise-10.2",
     "title": "Lecture 10: Regression Metrics",
     "section": "iClicker Exercise 10.2",
-    "text": "iClicker Exercise 10.2\nSelect all of the following statements which are TRUE.\n\n\nWe can use still use precision and recall for regression problems but now we have other metrics we can use as well.\n\n\nIn sklearn for regression problems, using r2_score() and .score() (with default values) will produce the same results.\n\n\nRMSE is always going to be non-negative.\n\n\nMSE does not directly provide the information about whether the model is underpredicting or overpredicting.\n\n\nWe can pass multiple scoring metrics to GridSearchCV or RandomizedSearchCV for regression as well as classification problems."
+    "text": "iClicker Exercise 10.2\nSelect all of the following statements which are TRUE.\n\n\nWe can still use precision and recall for regression problems but now we have other metrics we can use as well.\n\n\nIn sklearn for regression problems, using r2_score() and .score() (with default values) will produce the same results.\n\n\nRMSE is always going to be non-negative.\n\n\nMSE does not directly provide the information about whether the model is underpredicting or overpredicting.\n\n\nWe can pass multiple scoring metrics to GridSearchCV or RandomizedSearchCV for regression as well as classification problems."
   },
   {
     "objectID": "slides-10.html#group-work-class-demo-live-coding",
@@ -3476,7 +3476,7 @@
     "href": "slides-09.html#clicker-exercise-9.1",
     "title": "Lecture 9: Classification Metrics",
     "section": "Clicker Exercise 9.1",
-    "text": "Clicker Exercise 9.1\nSelect all of the following statements which are TRUE.\n\n\nIn medical diagnosis, false positives are more damaging than false negatives (assume “positive” means the person has a disease, “negative” means they don’t).\n\n\nIn spam classification, false positives are more damaging than false negatives (assume “positive” means the email is spam, “negative” means they it’s not).\n\n\nIf method A gets a higher accuracy than method B, that means its precision is also higher.\n\n\nIf method A gets a higher accuracy than method B, that means its recall is also higher."
+    "text": "Clicker Exercise 9.1\nSelect all of the following statements which are TRUE.\n\n\nIn medical diagnosis, false positives are more damaging than false negatives (assume “positive” means the person has a disease, “negative” means they don’t).\n\n\nIn spam classification, false positives are more damaging than false negatives (assume “positive” means the email is spam, “negative” means that it’s not).\n\n\nIf method A gets a higher accuracy than method B, that means its precision is also higher.\n\n\nIf method A gets a higher accuracy than method B, that means its recall is also higher."
   },
   {
     "objectID": "slides-09.html#takeaway",
@@ -6340,5 +6340,320 @@
     "title": "Lecture 22: Communication and Conclusion",
     "section": "Conclusion & farewell",
     "text": "Conclusion & farewell\nThat’s all, folks. We made it! Good luck on your final exam! When you get a chance, please let me know what worked for you and what didn’t work for you in this course."
+  },
+  {
+    "objectID": "slides-14.html#midterm-debrief",
+    "href": "slides-14.html#midterm-debrief",
+    "title": "Lecture 14: K-Means",
+    "section": "Midterm Debrief",
+    "text": "Midterm Debrief\nHow did you feel about the second Test?\n\n\nI felt well-prepared and it went smoothly\n\n\nI think it went okay. We’ll see when grades come back\n\n\nI struggled and didn’t feel fully prepared\n\n\nI noticed some gaps between what we practised and what appeared on the exam\n\n\nIt was a stressful experience for me 😔"
+  },
+  {
+    "objectID": "slides-10.html#handling-imbalance-by-chahing-class-weights",
+    "href": "slides-10.html#handling-imbalance-by-chahing-class-weights",
+    "title": "Lecture 10: Regression Metrics",
+    "section": "Handling imbalance by chahing class weights",
+    "text": "Handling imbalance by chahing class weights\n\nWe can specify class_weight=“balanced” to give more importance to rare examples during training.\n\n\n\n\n\n\n\n\n\n\n\n\nThis sets the weights so that the classes are “equal”.\nWe have reduced false negatives but we have many more false positives now …\n\nDecreases false negatives, which improves recall.\nIncreases false positives, which might lower precision."
+  },
+  {
+    "objectID": "slides-17_old.html#which-metric-in-what-context",
+    "href": "slides-17_old.html#which-metric-in-what-context",
+    "title": "Lecture 17: Natural Language Processing",
+    "section": "Which metric in what context?",
+    "text": "Which metric in what context?\n\n\nGiven a query vector “Query” in the picture below and the three item vectors, determine the ranking of the items for the three similarity measures below:\n\n\n\nExample: Similarity based on Euclidean distance: item B &gt; item C &gt; item A \nSimilarity based on dot product: ?\n\n- Cosine similarity: ?\n\nAdapted from here."
+  },
+  {
+    "objectID": "slides-17_old.html#what-is-nlp",
+    "href": "slides-17_old.html#what-is-nlp",
+    "title": "Lecture 17: Natural Language Processing",
+    "section": "What is NLP?",
+    "text": "What is NLP?\n\nNatural Language Processing (NLP) is a field at the intersection of computer science, linguistics, and artificial intelligence.\n\nIt focuses on enabling computers to understand, interpret, and generate human language."
+  },
+  {
+    "objectID": "slides-17_old.html#examples-of-nlp-applications",
+    "href": "slides-17_old.html#examples-of-nlp-applications",
+    "title": "Lecture 17: Natural Language Processing",
+    "section": "Examples of NLP applications",
+    "text": "Examples of NLP applications"
+  },
+  {
+    "objectID": "slides-17_old.html#key-challenges-in-nlp",
+    "href": "slides-17_old.html#key-challenges-in-nlp",
+    "title": "Lecture 17: Natural Language Processing",
+    "section": "Key challenges in NLP",
+    "text": "Key challenges in NLP\n\nAmbiguity: words can have multiple meanings and meaning depends on previous words/sentences\n\nI had toast with jam vs We got stuck in a traffic jam.\nIf the baby does not thrive on raw milk, boil it.\n\n\nStructure: syntax and grammar vary widely\n\nTime flies like an arrow vs Fruit flies like a banana.\n\n\nWorld knowledge: understanding beyond text\n\nOlive oil: oil made from olives\nBaby oil: oil made for babies"
+  },
+  {
+    "objectID": "slides-17_old.html#goal-of-this-lecture",
+    "href": "slides-17_old.html#goal-of-this-lecture",
+    "title": "Lecture 17: Natural Language Processing",
+    "section": "Goal of this lecture",
+    "text": "Goal of this lecture\nNLP is a broad field. In this lecture I’ll give you a high-level introduction to\n\nTopic Modeling\nWord embeddings\n\nWe will defer Large Language Models (LLM) to “Notes only”"
+  },
+  {
+    "objectID": "slides-17_old.html#activity-context-and-word-meaning",
+    "href": "slides-17_old.html#activity-context-and-word-meaning",
+    "title": "Lecture 17: Natural Language Processing",
+    "section": "Activity: Context and word meaning",
+    "text": "Activity: Context and word meaning\nPair up with the person next to you and try to guess the meanings of two made-up words: flibbertigibbet and groak.\n\nAttribution: Thanks to ChatGPT 4o on Wed Nov. 6, 2024!"
+  },
+  {
+    "objectID": "slides-17_old.html#group-work-class-demo-live-coding",
+    "href": "slides-17_old.html#group-work-class-demo-live-coding",
+    "title": "Lecture 17: Natural Language Processing",
+    "section": "Group Work: Class Demo & Live Coding",
+    "text": "Group Work: Class Demo & Live Coding\nFor this demo, each student should click this link to create a new repo in their accounts, then clone that repo locally to follow along with the demo from today."
+  },
+  {
+    "objectID": "slides-17.html#announcements",
+    "href": "slides-17.html#announcements",
+    "title": "Lecture 17: Introduction to computer vision",
+    "section": "Announcements",
+    "text": "Announcements"
+  },
+  {
+    "objectID": "slides-17.html#clicker-shopping-recommendations-for-eva",
+    "href": "slides-17.html#clicker-shopping-recommendations-for-eva",
+    "title": "Lecture 17: Introduction to computer vision",
+    "section": "Clicker: shopping recommendations for Eva",
+    "text": "Clicker: shopping recommendations for Eva\nA shop uses content-based filtering with backpack attributes: Waterproof, Laptop compartment, and Recycled material. Eva has rated 12 backpacks.\nHow should the shop predict Eva’s rating for a new backpack?\n\n(A) Fit Ridge using the 12 backpacks’ attributes and Eva’s ratings, then pass the new backpack’s attributes to that model.\n(B) Fit Ridge using other shoppers’ ratings as features and Eva’s ratings as targets.\n(C) Fit Ridge using backpack attributes and all shoppers’ ratings together, without identifying the shoppers.\n(D) Recommend only backpacks Eva has already rated because a new backpack has no rating.\n\n\nCorrect answer: A.\nUse Eva’s training ratings only. X has 12 rows (backpacks) and three columns (attributes). y contains Eva’s 12 corresponding ratings. Fit a separate Ridge model for Eva, then supply the new backpack’s three attributes in the same column order to predict her rating.\nB uses other shoppers’ rating patterns rather than product attributes, moving toward collaborative filtering. C pools different shoppers’ preferences without representing whose rating we want to predict. D misses the benefit of content features: a new item can receive a prediction even without ratings, provided its attributes are available and Eva already has a fitted model. A shopper without training ratings would need a fallback.\nNumerical follow-up: Suppose Eva’s fitted coefficients for Waterproof, Laptop compartment, and Recycled material are (0.8, -0.4, 0.6), with intercept 3.0. What rating does her model predict for a backpack with attributes (1, 0, 1)?\n\\[\\hat r_{\\mathrm{Eva},j}=3.0+1(0.8)+0(-0.4)+1(0.6)=4.4.\\]\nThese are hypothetical fitted values. Eva’s model learns three feature coefficients and an intercept. The number of training backpacks determines the number of rows, not the number of coefficients. Coefficients describe associations in Eva’s ratings, not causal effects on enjoyment."
+  },
+  {
+    "objectID": "slides-17.html#todays-big-questions",
+    "href": "slides-17.html#todays-big-questions",
+    "title": "Lecture 17: Introduction to computer vision",
+    "section": "Today’s big questions",
+    "text": "Today’s big questions\n\nHow do neural networks learn useful features?\nWhy do CNNs use local, shared filters for images?\nHow can a pretrained model help us classify new labels?\nHow do we evaluate the resulting classifier?"
+  },
+  {
+    "objectID": "slides-17.html#one-label-many-appearances",
+    "href": "slides-17.html#one-label-many-appearances",
+    "title": "Lecture 17: Introduction to computer vision",
+    "section": "One label, many appearances",
+    "text": "One label, many appearances\n\n\n\nCats with different appearances, poses, and backgrounds\n\n\nWhich differences matter for the label cat?\n\nPause and ask: “What changes across these pictures, and what stays the same?” Invite a few observations: coat colour and pattern, pose, viewpoint, lighting, and background vary, but every image still has the label cat.\nTo a computer, these images are arrays of numbers. Two cat images can have very different pixel values. Even moving the same cat within an image changes which pixels contain its ears, eyes, or fur. Recognizing a cat therefore requires more than matching an exact pixel pattern.\nAsk: “Would coat colour change our answer?” For cat classification, usually no. If our task were to classify coat colours, it would matter. Which differences we want a model to tolerate depends on the target label.\nA useful image representation should retain evidence that helps distinguish cats from other categories while tolerating variation within the cat category. We will use neural networks to produce learned features rather than try to list every useful visual feature ourselves. This does not guarantee that the model ignores backgrounds or other shortcuts, so representative evaluation images still matter.\nTransition: “What model from our current toolbox would you try for image classification? What features would you give it?” Invite students to connect this task to familiar supervised-learning methods before introducing CNNs."
+  },
+  {
+    "objectID": "slides-17.html#image-classification-with-our-current-toolbox",
+    "href": "slides-17.html#image-classification-with-our-current-toolbox",
+    "title": "Lecture 17: Introduction to computer vision",
+    "section": "Image classification with our current toolbox",
+    "text": "Image classification with our current toolbox\nWhat model would you try for image classification?\nWhat features would you give it?\nThink about logistic regression, KNN, or random forests.\n\nAllow a brief discussion. Several familiar classifiers can accept numerical image features. Ask students what one row of X would contain and what y would represent.\nPixel values are one possible starting point. Connect back to the cat images: changes in pose, lighting, or background can change many pixels without changing the label. The choice of representation matters as well as the choice of classifier."
+  },
+  {
+    "objectID": "slides-17.html#cnns-for-image-classification",
+    "href": "slides-17.html#cnns-for-image-classification",
+    "title": "Lecture 17: Introduction to computer vision",
+    "section": "CNNs for image classification",
+    "text": "CNNs for image classification\nA convolutional neural network (CNN) is a neural network architecture designed to work with images.\n\nWe will build high-level intuition for how CNNs work.\nWe can use pretrained CNNs for our own tasks without studying every architectural or training detail.\n\nLet’s begin with a brief introduction to neural networks.\n\nCNNs are a common approach to image classification. Their layers learn useful image features from training examples, reducing the need to hand-design those features.\nWe will not derive the full architecture or train a CNN from scratch. Our practical goal is to use a pretrained model and understand enough of the workflow to apply it appropriately.\nBefore discussing what makes a CNN suited to images, introduce the neural-network idea using a model students already know: logistic regression."
+  },
+  {
+    "objectID": "slides-17.html#a-graphical-view-of-logistic-regression",
+    "href": "slides-17.html#a-graphical-view-of-logistic-regression",
+    "title": "Lecture 17: Introduction to computer vision",
+    "section": "A graphical view of logistic regression",
+    "text": "A graphical view of logistic regression\n\n\n\nFour inputs, weighted sum and bias, sigmoid, and threshold\n\n\n\nWeights and an intercept produce a score.\nSigmoid converts the score into a binary class probability.\nA threshold converts that probability into a label."
+  },
+  {
+    "objectID": "slides-17.html#a-neural-network-with-one-hidden-layer",
+    "href": "slides-17.html#a-neural-network-with-one-hidden-layer",
+    "title": "Lecture 17: Introduction to computer vision",
+    "section": "A neural network with one hidden layer",
+    "text": "A neural network with one hidden layer\n\n\n\nFour inputs, three nonlinear hidden units, and a binary output\n\n\nEach hidden unit computes its own weighted sum and bias, then applies a nonlinear activation. Its output becomes a feature for the next layer."
+  },
+  {
+    "objectID": "slides-17.html#how-many-parameters-do-we-learn",
+    "href": "slides-17.html#how-many-parameters-do-we-learn",
+    "title": "Lecture 17: Introduction to computer vision",
+    "section": "How many parameters do we learn?",
+    "text": "How many parameters do we learn?\n\n\n\nFour inputs, three nonlinear hidden units, and a binary output\n\n\nWith 4 inputs, 3 hidden units, and 1 output unit:\n\nHow many weights do we learn?\nHow many biases do we learn?\n\n\nGive students a moment to count. Ask them to distinguish connections (weights) from units with an intercept (biases).\nInput to hidden layer: each of the three hidden units receives four inputs, giving 4 × 3 = 12 weights and 3 biases.\nHidden layer to output: the output unit receives three hidden features, giving 3 × 1 = 3 weights and 1 bias.\nTotal: 15 weights and 4 biases, or 19 learned parameters.\nThe input nodes simply supply feature values, so they have no learned biases. Each hidden unit and the output unit has one bias. The sigmoid activation and threshold add no learned parameters here.\nCompare with logistic regression on the same four inputs: 4 weights and 1 bias, or 5 parameters. Adding the hidden layer introduces intermediate learned features and increases the parameter count."
+  },
+  {
+    "objectID": "slides-17.html#computing-the-first-hidden-feature",
+    "href": "slides-17.html#computing-the-first-hidden-feature",
+    "title": "Lecture 17: Introduction to computer vision",
+    "section": "Computing the first hidden feature",
+    "text": "Computing the first hidden feature\n\n\n\nFour inputs, three nonlinear hidden units, and a binary output\n\n\n\\[\n\\begin{aligned}\nz_1^{(1)} &= w_{11}^{(1)}x_1 + w_{12}^{(1)}x_2\n             + w_{13}^{(1)}x_3 + w_{14}^{(1)}x_4 + b_1^{(1)} \\\\\nh_1 &= \\operatorname{sigmoid}\\!\\left(z_1^{(1)}\\right)\n\\end{aligned}\n\\]\n\nSuperscript \\((1)\\) identifies the first layer, not a power.\n\\(w_{12}^{(1)}\\) connects input 2 to hidden unit 1.\nRepeat with different weights and biases to obtain \\(h_2\\) and \\(h_3\\).\n\n\nTrace the four incoming connections to the first hidden unit in the diagram. Each input is multiplied by its own weight. Add these contributions and the unit’s bias to obtain its score, z_1^(1). Apply sigmoid to obtain h_1.\nIn w_12^(1), the first subscript identifies the receiving hidden unit and the second identifies the input. The superscript identifies the layer. The bias also belongs to this specific hidden unit.\nThe other hidden units receive the same four inputs but use their own weights and biases. Their outputs can therefore represent different transformations of those inputs. We now have three learned features, h_1, h_2, and h_3. We do not threshold them."
+  },
+  {
+    "objectID": "slides-17.html#computing-the-output",
+    "href": "slides-17.html#computing-the-output",
+    "title": "Lecture 17: Introduction to computer vision",
+    "section": "Computing the output",
+    "text": "Computing the output\n\n\n\nFour inputs, three nonlinear hidden units, and a binary output\n\n\n\\[\n\\begin{aligned}\nz^{(2)} &= w_1^{(2)}h_1 + w_2^{(2)}h_2 + w_3^{(2)}h_3 + b^{(2)} \\\\\n\\hat p &= \\operatorname{sigmoid}\\!\\left(z^{(2)}\\right)\n\\end{aligned}\n\\]\n\nLayer \\((2)\\) combines the three hidden features using its own weights and bias.\n\\(\\hat p\\) is the predicted probability of the positive class.\nComputing the hidden features and prediction is a forward pass.\n\n\nTrace the three connections from the hidden units to the output unit. This is the same weighted-sum-and-sigmoid computation as binary logistic regression, now using h_1, h_2, and h_3 as inputs instead of the original features.\nThe superscript (2) identifies the output layer. Since there is only one output unit, we use one subscript on each output weight to identify its incoming hidden feature.\nDistinguish the roles of the sigmoid outputs: the hidden outputs are learned features, while the final output is the predicted probability of the positive class. With a decision threshold of 0.5, predict class 1 when p-hat is at least 0.5 and class 0 otherwise. Thresholding is the final decision step, not part of computing the hidden features.\nA forward pass uses the current parameter values without updating them. Training is what adjusts the weights and biases."
+  },
+  {
+    "objectID": "slides-17.html#why-nonlinear-activations",
+    "href": "slides-17.html#why-nonlinear-activations",
+    "title": "Lecture 17: Introduction to computer vision",
+    "section": "Why nonlinear activations?",
+    "text": "Why nonlinear activations?\nStacking weighted sums without nonlinear activations still gives a linear model.\n\nNonlinear hidden activations allow nonlinear decision boundaries.\nReLU is another activation: \\(\\operatorname{ReLU}(z)=\\max(0,z)\\).\nMultiple hidden layers repeatedly transform the representation.\n\nThis is the idea behind deep learning."
+  },
+  {
+    "objectID": "slides-17.html#how-does-a-network-learn",
+    "href": "slides-17.html#how-does-a-network-learn",
+    "title": "Lecture 17: Introduction to computer vision",
+    "section": "How does a network learn?",
+    "text": "How does a network learn?\n\n\n\nSupervised learning uses labelled examples to fit a model\n\n\nA loss measures disagreement with known targets. Training adjusts weights to reduce that loss.\nWe’ll use a pretrained model with fixed weights to extract image features, then train a familiar model, such as logistic regression, on those features."
+  },
+  {
+    "objectID": "slides-17.html#introduction-to-computer-vision",
+    "href": "slides-17.html#introduction-to-computer-vision",
+    "title": "Lecture 17: Introduction to computer vision",
+    "section": "Introduction to computer vision",
+    "text": "Introduction to computer vision"
+  },
+  {
+    "objectID": "slides-17.html#computer-vision-tasks",
+    "href": "slides-17.html#computer-vision-tasks",
+    "title": "Lecture 17: Introduction to computer vision",
+    "section": "Computer vision tasks",
+    "text": "Computer vision tasks\n\n\n\nClassification, localization, object detection, and instance segmentation\n\n\nToday we focus on image classification: one category for an entire image."
+  },
+  {
+    "objectID": "slides-17.html#images-as-numerical-arrays",
+    "href": "slides-17.html#images-as-numerical-arrays",
+    "title": "Lecture 17: Introduction to computer vision",
+    "section": "Images as numerical arrays",
+    "text": "Images as numerical arrays\n\nGrayscale: height × width intensity values.\nRGB: height × width × 3 colour channels.\nA 340 × 512 RGB image has 522,240 values."
+  },
+  {
+    "objectID": "slides-17.html#why-use-local-image-structure",
+    "href": "slides-17.html#why-use-local-image-structure",
+    "title": "Lecture 17: Introduction to computer vision",
+    "section": "Why use local image structure?",
+    "text": "Why use local image structure?\nFlattening preserves pixel values, but an ordinary classifier does not automatically use the fact that nearby pixels form patterns.\n\nMoving an object can change many input values.\nConnecting every pixel to every hidden unit creates many parameters.\nA CNN uses local filters and shares their weights across locations."
+  },
+  {
+    "objectID": "slides-17.html#convolutions-and-shared-filters",
+    "href": "slides-17.html#convolutions-and-shared-filters",
+    "title": "Lecture 17: Introduction to computer vision",
+    "section": "Convolutions and shared filters",
+    "text": "Convolutions and shared filters\n\n\n\nA filter moves across an input array to produce a feature map\n\n\nA filter computes a weighted sum over a local patch. Reusing it across locations produces a feature map.\nExplore image kernels"
+  },
+  {
+    "objectID": "slides-17.html#convolutional-neural-networks",
+    "href": "slides-17.html#convolutional-neural-networks",
+    "title": "Lecture 17: Introduction to computer vision",
+    "section": "Convolutional neural networks",
+    "text": "Convolutional neural networks\n\n\n\nConvolutions, ReLU, pooling, and a classification head\n\n\nConvolutions and activations build features. Pooling reduces spatial dimensions. A classification head maps features to scores.\n\nFigure reused from the book chapter. Original source: Google Developers, https://developers.google.com/machine-learning."
+  },
+  {
+    "objectID": "slides-17.html#why-start-with-a-pretrained-model",
+    "href": "slides-17.html#why-start-with-a-pretrained-model",
+    "title": "Lecture 17: Introduction to computer vision",
+    "section": "Why start with a pretrained model?",
+    "text": "Why start with a pretrained model?\nTraining a CNN from scratch can require substantial labelled data, computing power, and time.\nCompanies and research groups have already trained models on large image datasets.\nA pretrained model gives us a starting point: an architecture with weights already learned from data.\n\nConnect to the CNN diagram: the filter weights and classification weights all have to be learned during training. For large models, doing this from scratch can be expensive, particularly when we have little labelled data for our own task.\nWe can reuse weights that another team has already learned and released. Loading the architecture alone would give us a network structure, but pretrained weights supply the learned parameter values.\nPretraining does not guarantee success on a new task. Its usefulness depends on the source data, our target images, and how we evaluate the resulting workflow."
+  },
+  {
+    "objectID": "slides-17.html#three-ways-to-use-a-pretrained-model",
+    "href": "slides-17.html#three-ways-to-use-a-pretrained-model",
+    "title": "Lecture 17: Introduction to computer vision",
+    "section": "Three ways to use a pretrained model",
+    "text": "Three ways to use a pretrained model\n\nUse it directly: predict its original categories with its weights fixed.\nExtract features: keep the pretrained weights fixed and train a new classifier, such as logistic regression, on its features.\nFine-tune it: update some or all pretrained weights using our task’s training data.\n\nWe’ll focus on direct prediction and frozen feature extraction.\n\nFor direct prediction, retain the original classification head and label vocabulary. This is useful when those labels answer our question.\nFor frozen feature extraction, take the representation before the original classification head. Keep the CNN fixed and fit a new classifier for our own labels. The scaler and logistic regression learn from our training data, while the CNN does not.\nFor fine-tuning, training changes some or all of the pretrained network’s weights. This requires additional modelling choices and computation, and it can overfit a small dataset. We will not implement it in this course.\nTransition: First, inspect what a pretrained ImageNet classifier can predict without any additional training. Later, reuse its features for a new classification task."
+  },
+  {
+    "objectID": "slides-17.html#imagenet-classification",
+    "href": "slides-17.html#imagenet-classification",
+    "title": "Lecture 17: Introduction to computer vision",
+    "section": "ImageNet classification",
+    "text": "ImageNet classification\n\nWe use MobileNet V3 Small, trained for 1,000 ImageNet categories.\nIts original classifier chooses among those categories.\nIt cannot invent a new output label.\n\nMulticlass classification: each example receives one of several labels. Multilabel classification allows several labels per example."
+  },
+  {
+    "objectID": "slides-17.html#imagenet-classes",
+    "href": "slides-17.html#imagenet-classes",
+    "title": "Lecture 17: Introduction to computer vision",
+    "section": "Imagenet classes",
+    "text": "Imagenet classes\n\nweights = models.MobileNet_V3_Small_Weights.IMAGENET1K_V1\nimagenet_model = models.mobilenet_v3_small(weights=weights).eval()\nimagenet_preprocess = weights.transforms()\nimagenet_labels = weights.meta[\"categories\"]\nimagenet_labels[700:715]\n\nDownloading: \"https://download.pytorch.org/models/mobilenet_v3_small-047dcff4.pth\" to /Users/firasm/.cache/torch/hub/checkpoints/mobilenet_v3_small-047dcff4.pth\n\n\n['paper towel',\n 'parachute',\n 'parallel bars',\n 'park bench',\n 'parking meter',\n 'passenger car',\n 'patio',\n 'pay-phone',\n 'pedestal',\n 'pencil box',\n 'pencil sharpener',\n 'perfume',\n 'Petri dish',\n 'photocopier',\n 'pick']"
+  },
+  {
+    "objectID": "slides-17.html#multinomial-logistic-regression",
+    "href": "slides-17.html#multinomial-logistic-regression",
+    "title": "Lecture 17: Introduction to computer vision",
+    "section": "Multinomial logistic regression",
+    "text": "Multinomial logistic regression\n\nBinary: one score, converted into the positive-class probability using sigmoid.\nMultinomial: one score per class, each computed using that class’s own coefficients and intercept.\nSoftmax converts those scores into class probabilities that sum to one.\n\nPredict the class with the highest probability.\nA CNN’s classification head applies the same score-to-probability idea to learned image features.\n\nRecall that a binary logistic regression score is a weighted sum of features plus an intercept. For multinomial logistic regression, repeat that computation with a separate set of coefficients and an intercept for each class.\nThe scores can be negative and do not sum to one. Softmax converts the whole set of scores into a probability distribution over the available classes. We choose one class, so this is multiclass rather than multilabel classification.\nA CNN’s feature extractor is more complex than logistic regression, but its output can follow this same pattern: one score per class followed by softmax. The next slide illustrates this with four classes instead of ImageNet’s 1,000."
+  },
+  {
+    "objectID": "slides-17.html#softmax-probabilities",
+    "href": "slides-17.html#softmax-probabilities",
+    "title": "Lecture 17: Introduction to computer vision",
+    "section": "Softmax probabilities",
+    "text": "Softmax probabilities\nSuppose a classifier produces these scores for four classes:\n\nimport pandas as pd\nscores = torch.tensor([1.2, -0.4, 2.0, 0.7])\nprobabilities = torch.softmax(scores, dim=0)\npd.DataFrame({\n    \"Class\": [0, 1, 2, 3],\n    \"Score\": scores.numpy(),\n    \"Probability\": probabilities.numpy(),\n}).round(3)\n\n\n\n\n\n\n\n\nClass\nScore\nProbability\n\n\n\n\n0\n0\n1.2\n0.248\n\n\n1\n1\n-0.4\n0.050\n\n\n2\n2\n2.0\n0.552\n\n\n3\n3\n0.7\n0.150\n\n\n\n\n\n\n\nClass 2 wins: it has the highest score and probability.\nSoftmax preserves the score ordering. A high probability does not guarantee a correct prediction.\n\nRead across a row to connect each score to its probability. The unrounded probabilities sum to one. Displayed values may differ slightly from one when summed because of rounding.\nClass labels here are numbered from zero, so class 2 is the third row. Softmax preserves the ordering of the scores, so we could identify the winning class directly from its score. Softmax also gives a probability distribution over all four classes.\nThese probabilities are relative to the available labels. A model still assigns them when an image does not belong to any useful category in its vocabulary. Return to this limitation when inspecting pretrained predictions."
+  },
+  {
+    "objectID": "slides-17.html#softmax",
+    "href": "slides-17.html#softmax",
+    "title": "Lecture 17: Introduction to computer vision",
+    "section": "Softmax",
+    "text": "Softmax\nFor scores \\(z_1,\\ldots,z_K\\),\n\\[P(y=k)=\\frac{e^{z_k}}{\\sum_{j=1}^{K}e^{z_j}}.\\]\nExponentiation makes values positive. Dividing by their sum makes probabilities add to one.\nEvery probability depends on all class scores."
+  },
+  {
+    "objectID": "slides-17.html#section",
+    "href": "slides-17.html#section",
+    "title": "Lecture 17: Introduction to computer vision",
+    "section": "",
+    "text": "We reuse an image classifier trained elsewhere to predict labels for new photos.\nThe model learned from labeled images during its original training; we do not train it here.\n\nClass demo"
+  },
+  {
+    "objectID": "slides-17.html#when-the-labels-do-not-answer-our-question",
+    "href": "slides-17.html#when-the-labels-do-not-answer-our-question",
+    "title": "Lecture 17: Introduction to computer vision",
+    "section": "When the labels do not answer our question",
+    "text": "When the labels do not answer our question\nSuppose our task is to identify UBC landmarks.\nThe model predicts an ImageNet category with high confidence.\n\nDoes confidence establish that the landmark is correct?\nCan the model predict a landmark absent from its output vocabulary?\nHow could we adapt it to our own labels?"
+  },
+  {
+    "objectID": "slides-17.html#frozen-feature-extraction",
+    "href": "slides-17.html#frozen-feature-extraction",
+    "title": "Lecture 17: Introduction to computer vision",
+    "section": "Frozen feature extraction",
+    "text": "Frozen feature extraction\nUse the pretrained CNN to produce a representation for each image.\n\nApply the preprocessing expected by the pretrained weights.\nRemove the original classification head.\nKeep the CNN weights fixed.\nTrain a scaler and logistic regression for our food labels.\n\nOur seven labels can differ from ImageNet’s labels."
+  },
+  {
+    "objectID": "slides-17.html#food-classification-live-demo",
+    "href": "slides-17.html#food-classification-live-demo",
+    "title": "Lecture 17: Introduction to computer vision",
+    "section": "Food classification: live demo",
+    "text": "Food classification: live demo\nClass demo"
+  },
+  {
+    "objectID": "slides-17.html#image-preprocessing-versus-feature-scaling",
+    "href": "slides-17.html#image-preprocessing-versus-feature-scaling",
+    "title": "Lecture 17: Introduction to computer vision",
+    "section": "Image preprocessing versus feature scaling",
+    "text": "Image preprocessing versus feature scaling\n\n\n\n\n\n\n\n\nOperation\nWhat it does\nWhere its settings come from\n\n\n\n\nImage preprocessing\nResize, crop, normalize RGB input\nPretrained weight specification\n\n\nFeature extraction\nProduce 576 learned features\nFrozen ImageNet weights\n\n\nFeature scaling\nLearn feature means and scales\nCurrent training rows\n\n\nLogistic regression\nLearn food class coefficients\nTraining features and labels\n\n\n\nKeep scaling inside the scikit-learn pipeline.\nThe classifier always chooses a known food category, even for an unrelated image. One prediction does not measure accuracy."
+  },
+  {
+    "objectID": "slides-17.html#what-learns-from-our-labels",
+    "href": "slides-17.html#what-learns-from-our-labels",
+    "title": "Lecture 17: Introduction to computer vision",
+    "section": "What learns from our labels?",
+    "text": "What learns from our labels?\nWe extract frozen ImageNet features from 300 plant photographs and train a classifier for five species.\n\nWhich components learned from ImageNet? Which learn from the plants?\nMust the species appear in ImageNet’s original labels?\nIf we change only C, must we run the CNN again?\nWhat if we change the image preprocessing?\n\n\nThe CNN stays fixed. The scaler learns training feature statistics, and logistic regression learns coefficients and intercepts. The species need not match ImageNet labels. Changing C reuses features. Changing preprocessing requires new features."
+  },
+  {
+    "objectID": "slides-17.html#connection-to-hw7",
+    "href": "slides-17.html#connection-to-hw7",
+    "title": "Lecture 17: Introduction to computer vision",
+    "section": "Connection to HW7",
+    "text": "Connection to HW7\n\n\n\n\n\n\n\nFood demo\nHW7\n\n\n\n\nSeven food categories\nSix waste categories\n\n\nFixed training/validation folders\nTraining data with stratified CV, reserved test set\n\n\nDummy versus pretrained features\nAlso compare low-resolution pixel features\n\n\nOne logistic regression setting\nChoose C using GridSearchCV\n\n\nValidation mistakes\nFinal test metrics and application limits\n\n\n\nBoth use frozen MobileNet features and a scaler inside the pipeline."
+  },
+  {
+    "objectID": "slides-17.html#the-golden-rule-still-applies",
+    "href": "slides-17.html#the-golden-rule-still-applies",
+    "title": "Lecture 17: Introduction to computer vision",
+    "section": "The Golden Rule still applies",
+    "text": "The Golden Rule still applies\n\nFit scaling and logistic regression using only the current fitting rows.\nUse validation data or CV to choose settings.\nEvaluate the selected workflow once on the reserved test set.\nKeep related images, such as frames from the same video, together when splitting.\n\nExtracting deterministic frozen features does not fit to held-out images. Using their results to choose settings does."
+  },
+  {
+    "objectID": "slides-17.html#practical-limitations",
+    "href": "slides-17.html#practical-limitations",
+    "title": "Lecture 17: Introduction to computer vision",
+    "section": "Practical limitations",
+    "text": "Practical limitations\n\nDomain shift: features from everyday photos may transfer poorly to other image conditions.\nPretrained models inherit gaps and biases from their source data.\nLarger extractors cost more time and memory.\nFine-tuning updates CNN weights on the new data. It is outside our scope and may overfit a small dataset.\n\nEvaluate on images representative of the intended use."
+  },
+  {
+    "objectID": "slides-17.html#summary",
+    "href": "slides-17.html#summary",
+    "title": "Lecture 17: Introduction to computer vision",
+    "section": "Summary",
+    "text": "Summary\n\nNeural networks combine weighted sums and nonlinear activations to learn features.\nCNNs use local filters shared across image locations.\nPretrained predictions use the original label vocabulary.\nFrozen feature extraction supports new labels with a familiar classifier.\nCompare baselines, inspect errors, and protect the data splits."
   }
 ]

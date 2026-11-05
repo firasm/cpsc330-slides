@@ -1082,9 +1082,8 @@ Firas Moosvi (Slides adapted from Varada Kolhatkar)
 <section id="announcements" class="slide level2 center">
 <h2>Announcements</h2>
 <ul>
-<li>Reminder: Test 2 is this week!</li>
-<li>Practice Test 2 should be released soon</li>
-<li>See the announcement on Ed Discussion for the details of resources you’ll be provided on the exam</li>
+<li>Remember Midterm 1!</li>
+<li>Have a great thanksgiving break!</li>
 </ul>
 </section>
 <section id="ml-workflow" class="slide level2 center">
@@ -1107,7 +1106,7 @@ Firas Moosvi (Slides adapted from Varada Kolhatkar)
 </section>
 <section id="a-fraud-classification-example" class="slide level2 center">
 <h2>A fraud classification example</h2>
-<div id="a958af13" class="cell" data-execution_count="2">
+<div id="a8122571" class="cell" data-execution_count="2">
 <div class="cell-output cell-output-stdout">
 <pre><code>(139554, 29)</code></pre>
 </div>
@@ -1284,7 +1283,7 @@ text-align: right;
 <section id="dummyclassifier" class="slide level2 center">
 <h2><code>DummyClassifier</code></h2>
 <p>Let’s try a DummyClassifier, which makes predictions without learning any patterns.</p>
-<div id="37e2de05" class="cell" data-execution_count="3">
+<div id="57f7be92" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a></a>dummy <span class="op">=</span> DummyClassifier()</span>
 <span id="cb2-2"><a></a>cross_val_score(dummy, X_train, y_train).mean()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="3">
@@ -1298,7 +1297,7 @@ text-align: right;
 </section>
 <section id="problem-class-imbalance" class="slide level2 center">
 <h2>Problem: Class imbalance</h2>
-<div id="4ef389f6" class="cell" data-execution_count="4">
+<div id="f9d60d91" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a></a>y_train.value_counts()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="4">
 <pre><code>Class
@@ -1317,7 +1316,7 @@ Name: count, dtype: int64</code></pre>
 <section id="dummyclassifier-confusion-matrix" class="slide level2 center">
 <h2><code>DummyClassifier</code>: Confusion matrix</h2>
 <p>Which types of errors would be most critical for the bank to address? Missing a fraud case or flagging a legitimate transaction as fraud?</p>
-<div id="e6ccb88c" class="cell" data-execution_count="5">
+<div id="c59a3ad9" class="cell" data-execution_count="5">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -1330,7 +1329,7 @@ Name: count, dtype: int64</code></pre>
 <section id="logisticregression-confusion-matrix" class="slide level2 center">
 <h2><code>LogisticRegression</code>: Confusion matrix</h2>
 <p>Are we doing better with logistic regression?</p>
-<div id="5d556592" class="cell" data-execution_count="6">
+<div id="7e29c36d" class="cell" data-execution_count="6">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -1549,7 +1548,7 @@ F1 = 2 \times \frac{\text{Precision} \times \text{Recall}}{\text{Precision} + \t
 <li>In medical diagnosis, false positives are more damaging than false negatives (assume “positive” means the person has a disease, “negative” means they don’t).</li>
 </ol></li>
 <li><ol start="2" type="A">
-<li>In spam classification, false positives are more damaging than false negatives (assume “positive” means the email is spam, “negative” means they it’s not).</li>
+<li>In spam classification, false positives are more damaging than false negatives (assume “positive” means the email is spam, “negative” means that it’s not).</li>
 </ol></li>
 <li><ol start="3" type="A">
 <li>If method A gets a higher accuracy than method B, that means its precision is also higher.</li>
@@ -1664,7 +1663,7 @@ display:block!important;
 <li>Top left <span class="math inline">\(\rightarrow\)</span> Very high threshold (strict model = high precision)</li>
 <li>Bottom right <span class="math inline">\(\rightarrow\)</span> Very low threshold (linient model = high recall)</li>
 </ul>
-<div id="c594d7de" class="cell" data-execution_count="7">
+<div id="c5f0c856" class="cell" data-execution_count="7">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -1718,7 +1717,7 @@ display:block!important;
 <li>It measures the ranking ability of a model; how well it assigns higher probabilities to positive examples than to negative ones, regardless of the specific threshold.</li>
 </ul>
 </div><div class="column" style="width:40%;">
-<div id="f1d72124" class="cell" data-execution_count="8">
+<div id="7f3f2d09" class="cell" data-execution_count="8">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -2665,47 +2664,34 @@ window.QuartoSupport = function () {
     }
   }
 
-  // dispatch for htmlwidgets
-  // they use slideenter event to trigger resize
-  const fireSlideEnter = () => {
-    const event = window.document.createEvent("Event");
-    event.initEvent("slideenter", true, true);
-    window.document.dispatchEvent(event);
-  };
-
-  // dispatch for shiny
-  // they use BS shown and hidden events to trigger rendering
-  const distpatchShinyEvents = (previous, current) => {
-    if (window.jQuery) {
-      if (previous) {
-        window.jQuery(previous).trigger("hidden");
-      }
-      if (current) {
-        window.jQuery(current).trigger("shown");
-      }
-    }
-  };
-
   function handleSlideChanges(deck) {
+    // dispatch for htmlwidgets
+    const fireSlideEnter = () => {
+      const event = window.document.createEvent("Event");
+      event.initEvent("slideenter", true, true);
+      window.document.dispatchEvent(event);
+    };
 
     const fireSlideChanged = (previousSlide, currentSlide) => {
       fireSlideEnter();
-      distpatchShinyEvents(previousSlide, currentSlide);
+
+      // dispatch for shiny
+      if (window.jQuery) {
+        if (previousSlide) {
+          window.jQuery(previousSlide).trigger("hidden");
+        }
+        if (currentSlide) {
+          window.jQuery(currentSlide).trigger("shown");
+        }
+      }
     };
+
+    // fire slideEnter for tabby tab activations (for htmlwidget resize behavior)
+    document.addEventListener("tabby", fireSlideEnter, false);
 
     deck.on("slidechanged", function (event) {
       fireSlideChanged(event.previousSlide, event.currentSlide);
     });
-  }
-
-  function handleTabbyChanges() {
-    const fireTabChanged = (previousTab, currentTab) => {
-      fireSlideEnter()
-      distpatchShinyEvents(previousTab, currentTab);
-    };
-    document.addEventListener("tabby", function(event) {
-      fireTabChanged(event.detail.previousTab, event.detail.tab);
-    }, false);
   }
 
   function workaroundMermaidDistance(deck) {
@@ -2787,7 +2773,6 @@ window.QuartoSupport = function () {
       addFooter(deck);
       addChalkboardButtons(deck);
       handleTabbyClicks();
-      handleTabbyChanges();
       handleSlideChanges(deck);
       workaroundMermaidDistance(deck);
       handleWhiteSpaceInColumns(deck);
