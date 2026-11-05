@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2" crossorigin="anonymous"></script><script src="site_libs/clipboard/clipboard.min.js"></script>
 <script src="site_libs/quarto-html/tabby.min.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-b626d73c4c936ccc3cb08be7d45d1df6.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.10.19">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-447e42e69aaa9833c0ba1b986f430b20.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.11.9">
 
-  <title>CPSC 330 Slides – Lecture 17: Natural Language Processing</title>
+  <title>CPSC 330 Slides – Lecture 17: Introduction to computer vision</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="site_libs/revealjs/dist/reset.css">
   <link rel="stylesheet" href="site_libs/revealjs/dist/reveal.css">
   <style>
@@ -33,9 +33,74 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
-    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+      }
+    pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+    div.sourceCode
+      { color: #f8f8f2;  }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #f8f8f2; } /* Normal */
+    code span.al { color: #f07178; } /* Alert */
+    code span.an { color: #d4d0ab; } /* Annotation */
+    code span.at { color: #00e0e0; } /* Attribute */
+    code span.bn { color: #d4d0ab; } /* BaseN */
+    code span.bu { color: #abe338; } /* BuiltIn */
+    code span.cf { color: #ffa07a; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #abe338; } /* Char */
+    code span.cn { color: #ffd700; } /* Constant */
+    code span.co { color: #f8f8f2; font-style: italic; } /* Comment */
+    code span.cv { color: #ffd700; } /* CommentVar */
+    code span.do { color: #f8f8f2; } /* Documentation */
+    code span.dt { color: #ffa07a; } /* DataType */
+    code span.dv { color: #d4d0ab; } /* DecVal */
+    code span.er { color: #f07178; text-decoration: underline; } /* Error */
+    code span.ex { color: #00e0e0; font-weight: bold; } /* Extension */
+    code span.fl { color: #d4d0ab; } /* Float */
+    code span.fu { color: #ffa07a; } /* Function */
+    code span.im { color: #abe338; } /* Import */
+    code span.in { color: #d4d0ab; } /* Information */
+    code span.kw { color: #ffa07a; font-weight: bold; } /* Keyword */
+    code span.op { color: #ffa07a; } /* Operator */
+    code span.ot { color: #00e0e0; } /* Other */
+    code span.pp { color: #dcc6e0; } /* Preprocessor */
+    code span.re { color: #00e0e0; background-color: #f8f8f2; } /* RegionMarker */
+    code span.sc { color: #abe338; } /* SpecialChar */
+    code span.ss { color: #abe338; } /* SpecialString */
+    code span.st { color: #abe338; } /* String */
+    code span.va { color: #00e0e0; } /* Variable */
+    code span.vs { color: #abe338; } /* VerbatimString */
+    code span.wa { color: #dcc6e0; } /* Warning */
   </style>
-  <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto-fd2040cb6a2f1fc17fb2913b5bdbd07f.css">
+  <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto-045d0a7101572368fe0bf72bf176ec5c.css">
   <link href="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -127,114 +192,735 @@
       margin-right: 0; 
     }
   </style>
+  <script src="https://cdn.jsdelivr.net/npm/requirejs@2.3.6/require.min.js" integrity="sha384-c9c+LnTbwQ3aujuU7ULEPVvgLs+Fn6fJUvIGTsuu1ZcCf11fiEubah0ttpca4ntM sha384-6V1/AdqZRWk1KAlWbKBlGhN7VG4iE/yAZcO6NZPMF8od0vukrvr0tg4qY6NSrItx" crossorigin="anonymous"></script>
+  
+  <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 </head>
 <body class="quarto-dark">
   <div class="reveal">
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Lecture 17: Natural Language Processing</h1>
+  <h1 class="title">Lecture 17: Introduction to computer vision</h1>
 
 <div class="quarto-title-authors">
 </div>
 
 </section>
-<section class="slide level2 center">
-
-<!-- 
-## Announcements 
-
-- Midterm 2 is next week (Nov 14/15)
-- More information on Midterm 2, including a practice midterm will be released later tonight
-- Reminder: Please double check your Midterm 2 CBTF booking!
- -->
-<!-- 
-## Similarity metrics {.smaller}
-- Similarity based on Euclidean distance
-
-$$distance(vec1, vec2) = \sqrt{\sum_{i =1}^{n} (vec1_i - vec2_i)^2}$$ 
-
-
-- Dot product similarity: 
-
-$$similarity_{dot product}(vec1,vec2) = vec1.vec2$$
-
-- Cosine similarity: normalized version of dot product. 
-
-$$similarity_{cosine}(vec1,vec2) = \frac{vec1.vec2}{\left\lVert vec1\right\rVert_2 \left\lVert vec2\right\rVert_2}$$
- -->
+<section id="announcements" class="slide level2 center">
+<h2>Announcements</h2>
 </section>
-<section id="which-metric-in-what-context" class="slide level2 smaller center">
-<h2>Which metric in what context?</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<p>Given a query vector “Query” in the picture below and the three item vectors, determine the ranking of the items for the three similarity measures below:</p>
-<p><img src="img/distance-metrics.png" alt="" height="400" width="500"></p>
-</div><div class="column" style="width:50%;">
+<section id="clicker-shopping-recommendations-for-eva" class="slide level2 slide-your-turn smaller center">
+<h2>Clicker: shopping recommendations for Eva</h2>
+<p>A shop uses <strong>content-based filtering</strong> with backpack attributes: Waterproof, Laptop compartment, and Recycled material. Eva has rated <strong>12 backpacks</strong>.</p>
+<p><strong>How should the shop predict Eva’s rating for a new backpack?</strong></p>
 <ul>
-<li>Example: Similarity based on Euclidean distance: item B &gt; item C &gt; item A <br><br></li>
-<li><strong>Similarity based on dot product: ?</strong></li>
+<li><strong>(A)</strong> Fit Ridge using the 12 backpacks’ attributes and Eva’s ratings, then pass the new backpack’s attributes to that model.</li>
+<li><strong>(B)</strong> Fit Ridge using other shoppers’ ratings as features and Eva’s ratings as targets.</li>
+<li><strong>(C)</strong> Fit Ridge using backpack attributes and all shoppers’ ratings together, without identifying the shoppers.</li>
+<li><strong>(D)</strong> Recommend only backpacks Eva has already rated because a new backpack has no rating.</li>
 </ul>
-<p><strong>- Cosine similarity: ?</strong></p>
-<p><br><br></p>
-<p>Adapted from <a href="https://developers.google.com/machine-learning/recommendation/overview/candidate-generation">here</a>.</p>
-</div></div>
-<p><br><br><br><br></p>
+<aside class="notes">
+<p>Correct answer: A.</p>
+<p>Use Eva’s training ratings only. X has 12 rows (backpacks) and three columns (attributes). y contains Eva’s 12 corresponding ratings. Fit a separate Ridge model for Eva, then supply the new backpack’s three attributes in the same column order to predict her rating.</p>
+<p>B uses other shoppers’ rating patterns rather than product attributes, moving toward collaborative filtering. C pools different shoppers’ preferences without representing whose rating we want to predict. D misses the benefit of content features: a new item can receive a prediction even without ratings, provided its attributes are available and Eva already has a fitted model. A shopper without training ratings would need a fallback.</p>
+<p>Numerical follow-up: Suppose Eva’s fitted coefficients for Waterproof, Laptop compartment, and Recycled material are (0.8, -0.4, 0.6), with intercept 3.0. What rating does her model predict for a backpack with attributes (1, 0, 1)?</p>
+<p><span class="math display">\[\hat r_{\mathrm{Eva},j}=3.0+1(0.8)+0(-0.4)+1(0.6)=4.4.\]</span></p>
+<p>These are hypothetical fitted values. Eva’s model learns three feature coefficients and an intercept. The number of training backpacks determines the number of rows, not the number of coefficients. Coefficients describe associations in Eva’s ratings, not causal effects on enjoyment.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
-<section id="what-is-nlp" class="slide level2 center">
-<h2>What is NLP?</h2>
+<section id="todays-big-questions" class="slide level2 slide-goals center">
+<h2>Today’s big questions</h2>
+<ol type="1">
+<li>How do neural networks learn useful <strong>features</strong>?</li>
+<li>Why do CNNs use <strong>local, shared filters</strong> for images?</li>
+<li>How can a pretrained model help us classify <strong>new labels</strong>?</li>
+<li>How do we evaluate the resulting classifier?</li>
+</ol>
+</section>
+<section id="one-label-many-appearances" class="slide level2 center">
+<h2>One label, many appearances</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="img/cat-variations.png" class="" height="400"></p>
+<figcaption>Cats with different appearances, poses, and backgrounds</figcaption>
+</figure>
+</div>
+<p>Which differences matter for the label <strong>cat</strong>?</p>
+<aside class="notes">
+<p>Pause and ask: “What changes across these pictures, and what stays the same?” Invite a few observations: coat colour and pattern, pose, viewpoint, lighting, and background vary, but every image still has the label cat.</p>
+<p>To a computer, these images are arrays of numbers. Two cat images can have very different pixel values. Even moving the same cat within an image changes which pixels contain its ears, eyes, or fur. Recognizing a cat therefore requires more than matching an exact pixel pattern.</p>
+<p>Ask: “Would coat colour change our answer?” For cat classification, usually no. If our task were to classify coat colours, it would matter. Which differences we want a model to tolerate depends on the target label.</p>
+<p>A useful image representation should retain evidence that helps distinguish cats from other categories while tolerating variation within the cat category. We will use neural networks to produce learned features rather than try to list every useful visual feature ourselves. This does not guarantee that the model ignores backgrounds or other shortcuts, so representative evaluation images still matter.</p>
+<p>Transition: “What model from our current toolbox would you try for image classification? What features would you give it?” Invite students to connect this task to familiar supervised-learning methods before introducing CNNs.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="image-classification-with-our-current-toolbox" class="slide level2 slide-your-turn center">
+<h2>Image classification with our current toolbox</h2>
+<p><strong>What model would you try for image classification?</strong></p>
+<p><strong>What features would you give it?</strong></p>
+<p>Think about logistic regression, KNN, or random forests.</p>
+<aside class="notes">
+<p>Allow a brief discussion. Several familiar classifiers can accept numerical image features. Ask students what one row of X would contain and what y would represent.</p>
+<p>Pixel values are one possible starting point. Connect back to the cat images: changes in pose, lighting, or background can change many pixels without changing the label. The choice of representation matters as well as the choice of classifier.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="cnns-for-image-classification" class="slide level2 center">
+<h2>CNNs for image classification</h2>
+<p>A <strong>convolutional neural network (CNN)</strong> is a neural network architecture designed to work with images.</p>
 <ul>
-<li><strong>Natural Language Processing (NLP)</strong> is a field at the intersection of <strong>computer science, linguistics, and artificial intelligence</strong>.<br>
-</li>
-<li>It focuses on enabling computers to understand, interpret, and generate human language.</li>
+<li>We will build <strong>high-level intuition</strong> for how CNNs work.</li>
+<li>We can use <strong>pretrained CNNs</strong> for our own tasks without studying every architectural or training detail.</li>
+</ul>
+<p>Let’s begin with a brief introduction to <strong>neural networks</strong>.</p>
+<aside class="notes">
+<p>CNNs are a common approach to image classification. Their layers learn useful image features from training examples, reducing the need to hand-design those features.</p>
+<p>We will not derive the full architecture or train a CNN from scratch. Our practical goal is to use a pretrained model and understand enough of the workflow to apply it appropriately.</p>
+<p>Before discussing what makes a CNN suited to images, introduce the neural-network idea using a model students already know: logistic regression.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="a-graphical-view-of-logistic-regression" class="slide level2 center">
+<h2>A graphical view of logistic regression</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="img/lr-graphical.png" class="" height="300"></p>
+<figcaption>Four inputs, weighted sum and bias, sigmoid, and threshold</figcaption>
+</figure>
+</div>
+<ul>
+<li>Weights and an intercept produce a score.</li>
+<li>Sigmoid converts the score into a binary class probability.</li>
+<li>A threshold converts that probability into a label.</li>
 </ul>
 </section>
-<section id="examples-of-nlp-applications" class="slide level2 center">
-<h2>Examples of NLP applications</h2>
-
-<img data-src="img/annotation-image.png" class="r-stretch"></section>
-<section id="key-challenges-in-nlp" class="slide level2 center">
-<h2>Key challenges in NLP</h2>
+<section id="a-neural-network-with-one-hidden-layer" class="slide level2 smaller center">
+<h2>A neural network with one hidden layer</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="img/nn-1-hidden.png" class="" height="300"></p>
+<figcaption>Four inputs, three nonlinear hidden units, and a binary output</figcaption>
+</figure>
+</div>
+<p>Each hidden unit computes its own weighted sum and bias, then applies a <strong>nonlinear activation</strong>. Its output becomes a feature for the next layer.</p>
+</section>
+<section id="how-many-parameters-do-we-learn" class="slide level2 slide-your-turn center">
+<h2>How many parameters do we learn?</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="img/nn-1-hidden.png" class="" height="300"></p>
+<figcaption>Four inputs, three nonlinear hidden units, and a binary output</figcaption>
+</figure>
+</div>
+<p>With <strong>4 inputs, 3 hidden units, and 1 output unit</strong>:</p>
 <ul>
-<li><strong>Ambiguity</strong>: words can have multiple meanings and meaning depends on previous words/sentences
+<li>How many <strong>weights</strong> do we learn?</li>
+<li>How many <strong>biases</strong> do we learn?</li>
+</ul>
+<aside class="notes">
+<p>Give students a moment to count. Ask them to distinguish connections (weights) from units with an intercept (biases).</p>
+<p>Input to hidden layer: each of the three hidden units receives four inputs, giving 4 × 3 = 12 weights and 3 biases.</p>
+<p>Hidden layer to output: the output unit receives three hidden features, giving 3 × 1 = 3 weights and 1 bias.</p>
+<p>Total: 15 weights and 4 biases, or 19 learned parameters.</p>
+<p>The input nodes simply supply feature values, so they have no learned biases. Each hidden unit and the output unit has one bias. The sigmoid activation and threshold add no learned parameters here.</p>
+<p>Compare with logistic regression on the same four inputs: 4 weights and 1 bias, or 5 parameters. Adding the hidden layer introduces intermediate learned features and increases the parameter count.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="computing-the-first-hidden-feature" class="slide level2 smaller center">
+<h2>Computing the first hidden feature</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="img/nn-1-hidden.png" class="" height="250"></p>
+<figcaption>Four inputs, three nonlinear hidden units, and a binary output</figcaption>
+</figure>
+</div>
+<p><span class="math display">\[
+\begin{aligned}
+z_1^{(1)} &amp;= w_{11}^{(1)}x_1 + w_{12}^{(1)}x_2
+             + w_{13}^{(1)}x_3 + w_{14}^{(1)}x_4 + b_1^{(1)} \\
+h_1 &amp;= \operatorname{sigmoid}\!\left(z_1^{(1)}\right)
+\end{aligned}
+\]</span></p>
 <ul>
-<li>I had toast with <em>jam</em> vs We got stuck in a traffic <em>jam</em>.</li>
-<li>If the <strong>baby</strong> does not thrive on raw <strong>milk</strong>, boil <strong>it</strong>.<br>
-</li>
-</ul></li>
-<li><strong>Structure</strong>: syntax and grammar vary widely
+<li>Superscript <span class="math inline">\((1)\)</span> identifies the <strong>first layer</strong>, not a power.</li>
+<li><span class="math inline">\(w_{12}^{(1)}\)</span> connects <strong>input 2 to hidden unit 1</strong>.</li>
+<li>Repeat with different weights and biases to obtain <span class="math inline">\(h_2\)</span> and <span class="math inline">\(h_3\)</span>.</li>
+</ul>
+<aside class="notes">
+<p>Trace the four incoming connections to the first hidden unit in the diagram. Each input is multiplied by its own weight. Add these contributions and the unit’s bias to obtain its score, z_1^(1). Apply sigmoid to obtain h_1.</p>
+<p>In w_12^(1), the first subscript identifies the receiving hidden unit and the second identifies the input. The superscript identifies the layer. The bias also belongs to this specific hidden unit.</p>
+<p>The other hidden units receive the same four inputs but use their own weights and biases. Their outputs can therefore represent different transformations of those inputs. We now have three learned features, h_1, h_2, and h_3. We do not threshold them.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="computing-the-output" class="slide level2 smaller center">
+<h2>Computing the output</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="img/nn-1-hidden.png" class="" height="250"></p>
+<figcaption>Four inputs, three nonlinear hidden units, and a binary output</figcaption>
+</figure>
+</div>
+<p><span class="math display">\[
+\begin{aligned}
+z^{(2)} &amp;= w_1^{(2)}h_1 + w_2^{(2)}h_2 + w_3^{(2)}h_3 + b^{(2)} \\
+\hat p &amp;= \operatorname{sigmoid}\!\left(z^{(2)}\right)
+\end{aligned}
+\]</span></p>
 <ul>
-<li>Time flies like an arrow vs Fruit flies like a banana.<br>
-</li>
-</ul></li>
-<li><strong>World knowledge</strong>: understanding beyond text
+<li>Layer <span class="math inline">\((2)\)</span> combines the <strong>three hidden features</strong> using its own weights and bias.</li>
+<li><span class="math inline">\(\hat p\)</span> is the predicted probability of the <strong>positive class</strong>.</li>
+<li>Computing the hidden features and prediction is a <strong>forward pass</strong>.</li>
+</ul>
+<aside class="notes">
+<p>Trace the three connections from the hidden units to the output unit. This is the same weighted-sum-and-sigmoid computation as binary logistic regression, now using h_1, h_2, and h_3 as inputs instead of the original features.</p>
+<p>The superscript (2) identifies the output layer. Since there is only one output unit, we use one subscript on each output weight to identify its incoming hidden feature.</p>
+<p>Distinguish the roles of the sigmoid outputs: the hidden outputs are learned features, while the final output is the predicted probability of the positive class. With a decision threshold of 0.5, predict class 1 when p-hat is at least 0.5 and class 0 otherwise. Thresholding is the final decision step, not part of computing the hidden features.</p>
+<p>A forward pass uses the current parameter values without updating them. Training is what adjusts the weights and biases.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="why-nonlinear-activations" class="slide level2 center">
+<h2>Why nonlinear activations?</h2>
+<p>Stacking weighted sums without nonlinear activations still gives a linear model.</p>
 <ul>
-<li>Olive oil: oil <strong>made from</strong> olives</li>
-<li>Baby oil: oil <strong>made for</strong> babies</li>
-</ul></li>
+<li>Nonlinear hidden activations allow nonlinear decision boundaries.</li>
+<li><strong>ReLU</strong> is another activation: <span class="math inline">\(\operatorname{ReLU}(z)=\max(0,z)\)</span>.</li>
+<li>Multiple hidden layers repeatedly transform the representation.</li>
+</ul>
+<p>This is the idea behind <strong>deep learning</strong>.</p>
+</section>
+<section id="how-does-a-network-learn" class="slide level2 smaller center">
+<h2>How does a network learn?</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="img/cv-supervised-learning-training.png" class="" height="300"></p>
+<figcaption>Supervised learning uses labelled examples to fit a model</figcaption>
+</figure>
+</div>
+<p>A loss measures disagreement with known targets. Training adjusts weights to reduce that loss.</p>
+<p>We’ll use a pretrained model with fixed weights to extract image features, then train a familiar model, such as logistic regression, on those features.</p>
+</section>
+<section id="introduction-to-computer-vision" class="slide level2 center">
+<h2>Introduction to computer vision</h2>
+</section>
+<section id="computer-vision-tasks" class="slide level2 center">
+<h2>Computer vision tasks</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="img/vision-apps.jpeg" class="" height="360"></p>
+<figcaption>Classification, localization, object detection, and instance segmentation</figcaption>
+</figure>
+</div>
+<p>Today we focus on <strong>image classification</strong>: one category for an entire image.</p>
+</section>
+<section id="images-as-numerical-arrays" class="slide level2 center">
+<h2>Images as numerical arrays</h2>
+<ul>
+<li>Grayscale: height × width intensity values.</li>
+<li>RGB: height × width × 3 colour channels.</li>
+<li>A 340 × 512 RGB image has <strong>522,240 values</strong>.</li>
+</ul>
+<div id="7923d89d" class="cell" data-fig-height="3.5" data-fig-width="5" data-execution_count="2">
+<div class="cell-output cell-output-display">
+<div>
+<figure>
+<p><img data-src="slides-17_files/figure-revealjs/cell-3-output-1.png" width="434" height="333"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="why-use-local-image-structure" class="slide level2 center">
+<h2>Why use local image structure?</h2>
+<p>Flattening preserves pixel values, but an ordinary classifier does not automatically use the fact that nearby pixels form patterns.</p>
+<ul>
+<li>Moving an object can change many input values.</li>
+<li>Connecting every pixel to every hidden unit creates many parameters.</li>
+<li>A CNN uses local filters and shares their weights across locations.</li>
 </ul>
 </section>
-<section id="goal-of-this-lecture" class="slide level2 center">
-<h2>Goal of this lecture</h2>
-<p>NLP is a broad field. In this lecture I’ll give you a high-level introduction to</p>
+<section id="convolutions-and-shared-filters" class="slide level2 center">
+<h2>Convolutions and shared filters</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="img/cnn-5.gif" class="" height="320"></p>
+<figcaption>A filter moves across an input array to produce a feature map</figcaption>
+</figure>
+</div>
+<p>A <strong>filter</strong> computes a weighted sum over a local patch. Reusing it across locations produces a <strong>feature map</strong>.</p>
+<p><a href="https://setosa.io/ev/image-kernels/">Explore image kernels</a></p>
+</section>
+<section id="convolutional-neural-networks" class="slide level2 center">
+<h2>Convolutional neural networks</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="img/cnn_big_picture.png" class="" height="330"></p>
+<figcaption>Convolutions, ReLU, pooling, and a classification head</figcaption>
+</figure>
+</div>
+<p>Convolutions and activations build features. Pooling reduces spatial dimensions. A <strong>classification head</strong> maps features to scores.</p>
+<aside class="notes">
+<p>Figure reused from the book chapter. Original source: Google Developers, https://developers.google.com/machine-learning.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section>
+<section id="pretrained-cnns" class="title-slide slide level1 center">
+<h1>Pretrained CNNs</h1>
+
+</section>
+<section id="why-start-with-a-pretrained-model" class="slide level2 center">
+<h2>Why start with a pretrained model?</h2>
+<p>Training a CNN from scratch can require substantial <strong>labelled data, computing power, and time</strong>.</p>
+<p>Companies and research groups have already trained models on large image datasets.</p>
+<p>A <strong>pretrained model</strong> gives us a starting point: an architecture with weights already learned from data.</p>
+<aside class="notes">
+<p>Connect to the CNN diagram: the filter weights and classification weights all have to be learned during training. For large models, doing this from scratch can be expensive, particularly when we have little labelled data for our own task.</p>
+<p>We can reuse weights that another team has already learned and released. Loading the architecture alone would give us a network structure, but pretrained weights supply the learned parameter values.</p>
+<p>Pretraining does not guarantee success on a new task. Its usefulness depends on the source data, our target images, and how we evaluate the resulting workflow.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="three-ways-to-use-a-pretrained-model" class="slide level2 center">
+<h2>Three ways to use a pretrained model</h2>
+<ol type="1">
+<li><strong>Use it directly:</strong> predict its original categories with its weights fixed.</li>
+<li><strong>Extract features:</strong> keep the pretrained weights fixed and train a new classifier, such as logistic regression, on its features.</li>
+<li><strong>Fine-tune it:</strong> update some or all pretrained weights using our task’s training data.</li>
+</ol>
+<p>We’ll focus on <strong>direct prediction and frozen feature extraction</strong>.</p>
+<aside class="notes">
+<p>For direct prediction, retain the original classification head and label vocabulary. This is useful when those labels answer our question.</p>
+<p>For frozen feature extraction, take the representation before the original classification head. Keep the CNN fixed and fit a new classifier for our own labels. The scaler and logistic regression learn from our training data, while the CNN does not.</p>
+<p>For fine-tuning, training changes some or all of the pretrained network’s weights. This requires additional modelling choices and computation, and it can overfit a small dataset. We will not implement it in this course.</p>
+<p>Transition: First, inspect what a pretrained ImageNet classifier can predict without any additional training. Later, reuse its features for a new classification task.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="imagenet-classification" class="slide level2 center">
+<h2>ImageNet classification</h2>
 <ul>
-<li>Topic Modeling</li>
-<li>Word embeddings</li>
+<li>We use <strong>MobileNet V3 Small</strong>, trained for 1,000 ImageNet categories.</li>
+<li>Its original classifier chooses among those categories.</li>
+<li>It cannot invent a new output label.</li>
 </ul>
-<p>We will defer Large Language Models (LLM) to “Notes only”</p>
+<p><strong>Multiclass classification:</strong> each example receives one of several labels. Multilabel classification allows several labels per example.</p>
 </section>
-<section id="activity-context-and-word-meaning" class="slide level2 center">
-<h2>Activity: Context and word meaning</h2>
-<p>Pair up with the person next to you and try to guess the meanings of two made-up words: <code>flibbertigibbet</code> and <code>groak</code>.</p>
-
-<img data-src="img/flibbertigibbet.png" class="r-stretch"><p>Attribution: Thanks to ChatGPT 4o on Wed Nov.&nbsp;6, 2024!</p>
+<section id="imagenet-classes" class="slide level2 center">
+<h2>Imagenet classes</h2>
+<div id="77280afe" class="cell" data-execution_count="3">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a aria-label="1"></a>weights <span class="op">=</span> models.MobileNet_V3_Small_Weights.IMAGENET1K_V1</span>
+<span id="cb1-2"><a aria-label="2"></a>imagenet_model <span class="op">=</span> models.mobilenet_v3_small(weights<span class="op">=</span>weights).<span class="bu">eval</span>()</span>
+<span id="cb1-3"><a aria-label="3"></a>imagenet_preprocess <span class="op">=</span> weights.transforms()</span>
+<span id="cb1-4"><a aria-label="4"></a>imagenet_labels <span class="op">=</span> weights.meta[<span class="st">"categories"</span>]</span>
+<span id="cb1-5"><a aria-label="5"></a>imagenet_labels[<span class="dv">700</span>:<span class="dv">715</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Downloading: "https://download.pytorch.org/models/mobilenet_v3_small-047dcff4.pth" to /Users/firasm/.cache/torch/hub/checkpoints/mobilenet_v3_small-047dcff4.pth</code></pre>
+</div>
+<div class="cell-output cell-output-display" data-execution_count="3">
+<pre><code>['paper towel',
+ 'parachute',
+ 'parallel bars',
+ 'park bench',
+ 'parking meter',
+ 'passenger car',
+ 'patio',
+ 'pay-phone',
+ 'pedestal',
+ 'pencil box',
+ 'pencil sharpener',
+ 'perfume',
+ 'Petri dish',
+ 'photocopier',
+ 'pick']</code></pre>
+</div>
+</div>
 </section>
-<section id="group-work-class-demo-live-coding" class="slide level2 center">
-<h2>Group Work: Class Demo &amp; Live Coding</h2>
-<p>For this demo, each student should <a href="https://github.com/new?template_name=lecture17_demo&amp;template_owner=ubc-cpsc330">click this link</a> to create a new repo in their accounts, then clone that repo locally to follow along with the demo from today.</p>
+<section id="multinomial-logistic-regression" class="slide level2 center">
+<h2>Multinomial logistic regression</h2>
+<ul>
+<li><strong>Binary:</strong> one score, converted into the positive-class probability using <strong>sigmoid</strong>.</li>
+<li><strong>Multinomial:</strong> one score per class, each computed using that class’s own coefficients and intercept.</li>
+<li><strong>Softmax</strong> converts those scores into class probabilities that sum to one.</li>
+</ul>
+<p>Predict the class with the <strong>highest probability</strong>.</p>
+<p>A CNN’s classification head applies the same score-to-probability idea to <strong>learned image features</strong>.</p>
+<aside class="notes">
+<p>Recall that a binary logistic regression score is a weighted sum of features plus an intercept. For multinomial logistic regression, repeat that computation with a separate set of coefficients and an intercept for each class.</p>
+<p>The scores can be negative and do not sum to one. Softmax converts the whole set of scores into a probability distribution over the available classes. We choose one class, so this is multiclass rather than multilabel classification.</p>
+<p>A CNN’s feature extractor is more complex than logistic regression, but its output can follow this same pattern: one score per class followed by softmax. The next slide illustrates this with four classes instead of ImageNet’s 1,000.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="softmax-probabilities" class="slide level2 center">
+<h2>Softmax probabilities</h2>
+<p>Suppose a classifier produces these scores for <strong>four classes</strong>:</p>
+<div id="13503d4a" class="cell" data-execution_count="4">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a aria-label="1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb4-2"><a aria-label="2"></a>scores <span class="op">=</span> torch.tensor([<span class="fl">1.2</span>, <span class="op">-</span><span class="fl">0.4</span>, <span class="fl">2.0</span>, <span class="fl">0.7</span>])</span>
+<span id="cb4-3"><a aria-label="3"></a>probabilities <span class="op">=</span> torch.softmax(scores, dim<span class="op">=</span><span class="dv">0</span>)</span>
+<span id="cb4-4"><a aria-label="4"></a>pd.DataFrame({</span>
+<span id="cb4-5"><a aria-label="5"></a>    <span class="st">"Class"</span>: [<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>],</span>
+<span id="cb4-6"><a aria-label="6"></a>    <span class="st">"Score"</span>: scores.numpy(),</span>
+<span id="cb4-7"><a aria-label="7"></a>    <span class="st">"Probability"</span>: probabilities.numpy(),</span>
+<span id="cb4-8"><a aria-label="8"></a>}).<span class="bu">round</span>(<span class="dv">3</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="4">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+
+<table class="dataframe caption-top" data-border="1">
+<thead>
+<tr class="header" style="text-align: right;">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Class</th>
+<th data-quarto-table-cell-role="th">Score</th>
+<th data-quarto-table-cell-role="th">Probability</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">0</th>
+<td>0</td>
+<td>1.2</td>
+<td>0.248</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">1</th>
+<td>1</td>
+<td>-0.4</td>
+<td>0.050</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">2</th>
+<td>2</td>
+<td>2.0</td>
+<td>0.552</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">3</th>
+<td>3</td>
+<td>0.7</td>
+<td>0.150</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<p><strong>Class 2 wins:</strong> it has the highest score and probability.</p>
+<p>Softmax preserves the score ordering. A high probability does not guarantee a correct prediction.</p>
+<aside class="notes">
+<p>Read across a row to connect each score to its probability. The unrounded probabilities sum to one. Displayed values may differ slightly from one when summed because of rounding.</p>
+<p>Class labels here are numbered from zero, so class 2 is the third row. Softmax preserves the ordering of the scores, so we could identify the winning class directly from its score. Softmax also gives a probability distribution over all four classes.</p>
+<p>These probabilities are relative to the available labels. A model still assigns them when an image does not belong to any useful category in its vocabulary. Return to this limitation when inspecting pretrained predictions.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="softmax" class="slide level2 center">
+<h2>Softmax</h2>
+<p>For scores <span class="math inline">\(z_1,\ldots,z_K\)</span>,</p>
+<p><span class="math display">\[P(y=k)=\frac{e^{z_k}}{\sum_{j=1}^{K}e^{z_j}}.\]</span></p>
+<p>Exponentiation makes values positive. Dividing by their sum makes probabilities add to one.</p>
+<p>Every probability depends on all class scores.</p>
+</section></section>
+<section>
+<section id="using-pretrained-models-out-of-the-box" class="title-slide slide level1 center">
+<h1>Using pretrained models out of the box</h1>
 
 </section>
+<section id="section" class="slide level2 smaller center">
+<h2></h2>
+<ul>
+<li>We reuse an image classifier trained elsewhere to predict labels for new photos.</li>
+<li>The model learned from labeled images during its original training; we do not train it here.</li>
+</ul>
+<p><a href="https://github.com/UBC-CS/cpsc330-2026W1/blob/main/content/classes/varada/lecture-17-transfer-learning.ipynb">Class demo</a></p>
+</section>
+<section id="when-the-labels-do-not-answer-our-question" class="slide level2 slide-your-turn center">
+<h2>When the labels do not answer our question</h2>
+<p>Suppose our task is to identify UBC landmarks.</p>
+<p>The model predicts an ImageNet category with high confidence.</p>
+<ul>
+<li>Does confidence establish that the landmark is correct?</li>
+<li>Can the model predict a landmark absent from its output vocabulary?</li>
+<li>How could we adapt it to our own labels?</li>
+</ul>
+</section>
+<section id="frozen-feature-extraction" class="slide level2 center">
+<h2>Frozen feature extraction</h2>
+<p>Use the pretrained CNN to produce a representation for each image.</p>
+<ol type="1">
+<li>Apply the preprocessing expected by the pretrained weights.</li>
+<li>Remove the original classification head.</li>
+<li>Keep the CNN weights fixed.</li>
+<li>Train a scaler and logistic regression for our food labels.</li>
+</ol>
+<p>Our seven labels can differ from ImageNet’s labels.</p>
+</section>
+<section id="food-classification-live-demo" class="slide level2 center">
+<h2>Food classification: live demo</h2>
+<p><a href="https://github.com/UBC-CS/cpsc330-2026W1/blob/main/content/classes/varada/lecture-17-transfer-learning.ipynb">Class demo</a></p>
+</section>
+<section id="image-preprocessing-versus-feature-scaling" class="slide level2 smaller center">
+<h2>Image preprocessing versus feature scaling</h2>
+<table class="caption-top">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Operation</th>
+<th>What it does</th>
+<th>Where its settings come from</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Image preprocessing</td>
+<td>Resize, crop, normalize RGB input</td>
+<td>Pretrained weight specification</td>
+</tr>
+<tr class="even">
+<td>Feature extraction</td>
+<td>Produce 576 learned features</td>
+<td>Frozen ImageNet weights</td>
+</tr>
+<tr class="odd">
+<td>Feature scaling</td>
+<td>Learn feature means and scales</td>
+<td>Current training rows</td>
+</tr>
+<tr class="even">
+<td>Logistic regression</td>
+<td>Learn food class coefficients</td>
+<td>Training features and labels</td>
+</tr>
+</tbody>
+</table>
+<p>Keep scaling inside the scikit-learn pipeline.</p>
+<p>The classifier always chooses a known food category, even for an unrelated image. One prediction does not measure accuracy.</p>
+</section>
+<section id="what-learns-from-our-labels" class="slide level2 slide-your-turn center">
+<h2>What learns from our labels?</h2>
+<p>We extract frozen ImageNet features from 300 plant photographs and train a classifier for five species.</p>
+<ol type="1">
+<li>Which components learned from ImageNet? Which learn from the plants?</li>
+<li>Must the species appear in ImageNet’s original labels?</li>
+<li>If we change only <code>C</code>, must we run the CNN again?</li>
+<li>What if we change the image preprocessing?</li>
+</ol>
+<aside class="notes">
+<p>The CNN stays fixed. The scaler learns training feature statistics, and logistic regression learns coefficients and intercepts. The species need not match ImageNet labels. Changing C reuses features. Changing preprocessing requires new features.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="connection-to-hw7" class="slide level2 smaller center">
+<h2>Connection to HW7</h2>
+<table class="caption-top">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Food demo</th>
+<th>HW7</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Seven food categories</td>
+<td>Six waste categories</td>
+</tr>
+<tr class="even">
+<td>Fixed training/validation folders</td>
+<td>Training data with stratified CV, reserved test set</td>
+</tr>
+<tr class="odd">
+<td>Dummy versus pretrained features</td>
+<td>Also compare low-resolution pixel features</td>
+</tr>
+<tr class="even">
+<td>One logistic regression setting</td>
+<td>Choose <code>C</code> using <code>GridSearchCV</code></td>
+</tr>
+<tr class="odd">
+<td>Validation mistakes</td>
+<td>Final test metrics and application limits</td>
+</tr>
+</tbody>
+</table>
+<p>Both use frozen MobileNet features and a scaler inside the pipeline.</p>
+</section>
+<section id="the-golden-rule-still-applies" class="slide level2 center">
+<h2>The Golden Rule still applies</h2>
+<ul>
+<li>Fit scaling and logistic regression using only the current fitting rows.</li>
+<li>Use validation data or CV to choose settings.</li>
+<li>Evaluate the selected workflow once on the reserved test set.</li>
+<li>Keep related images, such as frames from the same video, together when splitting.</li>
+</ul>
+<p>Extracting deterministic frozen features does not fit to held-out images. Using their results to choose settings does.</p>
+</section>
+<section id="practical-limitations" class="slide level2 center">
+<h2>Practical limitations</h2>
+<ul>
+<li><strong>Domain shift:</strong> features from everyday photos may transfer poorly to other image conditions.</li>
+<li>Pretrained models inherit gaps and biases from their source data.</li>
+<li>Larger extractors cost more time and memory.</li>
+<li><strong>Fine-tuning</strong> updates CNN weights on the new data. It is outside our scope and may overfit a small dataset.</li>
+</ul>
+<p>Evaluate on images representative of the intended use.</p>
+</section>
+<section id="summary" class="slide level2 slide-summary center">
+<h2>Summary</h2>
+<ul>
+<li>Neural networks combine weighted sums and nonlinear activations to learn features.</li>
+<li>CNNs use local filters shared across image locations.</li>
+<li>Pretrained predictions use the original label vocabulary.</li>
+<li>Frozen feature extraction supports new labels with a familiar classifier.</li>
+<li>Compare baselines, inspect errors, and protect the data splits.</li>
+</ul>
+
+
+</section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <p><img src="img/UBC-CS-logo.png" class="slide-logo"></p>
@@ -256,6 +942,7 @@ $$similarity_{cosine}(vec1,vec2) = \frac{vec1.vec2}{\left\lVert vec1\right\rVert
   <script src="site_libs/revealjs/plugin/notes/notes.js"></script>
   <script src="site_libs/revealjs/plugin/search/search.js"></script>
   <script src="site_libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="site_libs/revealjs/plugin/math/math.js"></script>
   <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
 
   <script>
@@ -270,7 +957,7 @@ $$similarity_{cosine}(vec1,vec2) = \frac{vec1.vec2}{\left\lVert vec1\right\rVert
 'autoAnimateDuration': 1,
 'autoAnimateUnmatched': true,
 'jumpToSlide': true,
-'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"\u003ci class=\"fas fa-gear\">\u003c/i>","content":"\u003cul class=\"slide-menu-items\">\n\u003cli class=\"slide-tool-item active\" data-item=\"0\">\u003ca href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\">\u003ckbd>f\u003c/kbd> Fullscreen\u003c/a>\u003c/li>\n\u003cli class=\"slide-tool-item\" data-item=\"1\">\u003ca href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\">\u003ckbd>s\u003c/kbd> Speaker View\u003c/a>\u003c/li>\n\u003cli class=\"slide-tool-item\" data-item=\"2\">\u003ca href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\">\u003ckbd>o\u003c/kbd> Slide Overview\u003c/a>\u003c/li>\n\u003cli class=\"slide-tool-item\" data-item=\"3\">\u003ca href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\">\u003ckbd>e\u003c/kbd> PDF Export Mode\u003c/a>\u003c/li>\n\u003cli class=\"slide-tool-item\" data-item=\"4\">\u003ca href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\">\u003ckbd>r\u003c/kbd> Scroll View Mode\u003c/a>\u003c/li>\n\u003cli class=\"slide-tool-item\" data-item=\"5\">\u003ca href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\">\u003ckbd>?\u003c/kbd> Keyboard Help\u003c/a>\u003c/li>\n\u003c/ul>"}],"openButton":true,"openButtonLabel":"Slide menu"},
 'smaller': false,
  
         // Display controls in the bottom right corner
@@ -423,9 +1110,27 @@ $$similarity_{cosine}(vec1,vec2) = \frac{vec1.vec2}{\left\lVert vec1\right\rVert
         // Factor of the display size that should remain empty around the content
         margin: 0.1,
 
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
         // reveal.js plugins
         plugins: [QuartoLineHighlight, PdfExport, RevealMenu, QuartoSupport,
 
+          RevealMath,
           RevealNotes,
           RevealSearch,
           RevealZoom
@@ -507,7 +1212,8 @@ $$similarity_{cosine}(vec1,vec2) = \frac{vec1.vec2}{\left\lVert vec1\right\rVert
               return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
           }
           // Inspect non-navigation links and adorn them if external
-         var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+          window.quartoDecorateExternalLinks = function (root) {
+         var links = (root || window.document).querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
           for (var i=0; i<links.length; i++) {
             const link = links[i];
             if (!isInternal(link.href)) {
@@ -516,8 +1222,69 @@ $$similarity_{cosine}(vec1,vec2) = \frac{vec1.vec2}{\left\lVert vec1\right\rVert
               if (link.dataset.originalHref !== undefined) {
                 link.href = link.dataset.originalHref;
               }
+              if (!link.classList.contains('no-external-icon')) {
+              }
             }
           }
+          };
+          window.quartoDecorateExternalLinks(window.document);
+        // Esc closes the popup (WCAG 1.4.13) and focus leaving both trigger and
+        // popup closes it (WCAG 2.4.11); tippy handles neither for interactive popups.
+        const hideOnEscAndFocusOut = {
+          name: 'hideOnEscAndFocusOut',
+          defaultValue: true,
+          fn(instance) {
+            const dismiss = () => {
+              // A show scheduled by the trigger delay would otherwise reopen it
+              instance.clearDelayTimeouts();
+              instance.hide();
+            };
+            const onKeyDown = (event) => {
+              if (event.key !== 'Escape') {
+                return;
+              }
+              // Keep Esc from also reaching page handlers (e.g. reveal.js overview),
+              // except an open reveal.js slide menu, which Esc should close too.
+              // The menu handles keys only when its keyboard option is on.
+              const menuHandlesEsc = window.Reveal?.getPlugin?.('menu')?.isOpen() &&
+                window.Reveal.getConfig().menu?.keyboard !== false;
+              if (!menuHandlesEsc) {
+                event.stopPropagation();
+              }
+              if (instance.popper.contains(window.document.activeElement)) {
+                // Disabled while refocusing so the focus trigger does not reopen it
+                instance.disable();
+                instance.reference.focus();
+                instance.enable();
+              }
+              dismiss();
+            };
+            const onFocusOut = (event) => {
+              const target = event.relatedTarget;
+              if (target && !instance.reference.contains(target) &&
+                  !instance.popper.contains(target)) {
+                dismiss();
+              }
+            };
+            // On the trigger too: a click trigger (code-annotations: select) has no
+            // blur handling. Attached for the instance's lifetime so leaving the
+            // trigger also cancels a show still pending on the trigger delay.
+            instance.reference.addEventListener('focusout', onFocusOut);
+            return {
+              onShow() {
+                window.document.addEventListener('keydown', onKeyDown, true);
+                instance.popper.addEventListener('focusout', onFocusOut);
+              },
+              onHide() {
+                window.document.removeEventListener('keydown', onKeyDown, true);
+                instance.popper.removeEventListener('focusout', onFocusOut);
+              },
+              onDestroy() {
+                instance.reference.removeEventListener('focusout', onFocusOut);
+              },
+            };
+          },
+        };
         function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
           const config = {
             allowHTML: true,
@@ -531,6 +1298,7 @@ $$similarity_{cosine}(vec1,vec2) = \frac{vec1.vec2}{\left\lVert vec1\right\rVert
             interactiveBorder: 10,
             theme: 'light-border',
             placement: 'bottom-start',
+            plugins: [hideOnEscAndFocusOut],
           };
           if (contentFn) {
             config.content = contentFn;
