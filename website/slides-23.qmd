@@ -1,5 +1,5 @@
 ---
-title: "Lecture 24: Deployment and conclusion"
+title: "Lecture 23: Deployment and conclusion"
 author: "Firas Moosvi"
 format: 
     revealjs:

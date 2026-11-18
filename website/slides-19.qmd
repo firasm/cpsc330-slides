@@ -1,5 +1,5 @@
 ---
-title: "Lecture 19: Introduction to deep learning and computer vision"
+title: "Lecture 19: Time series"
 author: "Firas Moosvi"
 format: 
     revealjs:
@@ -14,622 +14,675 @@ format:
         - img/        
 ---
 
-```{python}
-import mglearn
-import json
-import numpy as np
-import pandas as pd
-import sys, os
-sys.path.append(os.path.join(os.path.abspath("."), "code"))
-from deep_learning_code import *
-import matplotlib.pyplot as plt
-from sklearn.linear_model import LogisticRegression
-from torchvision import datasets, models, transforms, utils
-from sklearn.pipeline import Pipeline, make_pipeline
-from sklearn.preprocessing import StandardScaler
-import matplotlib.image as mpimg
-%matplotlib inline
-```
-
 <!-- 
-
 ## Announcements
 
-- Final Exam reservations for the CBTF will open on **June 16th at 10 AM**
-  - Reminder that final Exam window for CPSC 330 will be June 23 and June 24th
-- HW7 is due June 14th at 10 PM 
-- HW8 has been released (due June 16th at 10 PM)
-- HW9 has also been released (due June 18th at 10 PM)
-  - We're almost at the end of term! Hang in there 😊!
-
-# iClicker 18.0
-
-iClicker cloud join link: **https://join.iclicker.com/YJHS**
-
-**Select all of the following statements which are TRUE for you.**
-
-- (A) I found the multiple-choice questions challenging.
-- (B) The coding questions took a lot of time.
-- (C) I didn't like the format of the midterm.
-- (D) I appreciated the mix of coding, conceptual, and multiple-choice questions.
-- (E) I felt the midterm was a good reflection of what we cover in the lectures and homework assignments. 
+- No new announcements today! 
 - -->
 
-## Practice Question
+```{python}
+import matplotlib.pyplot as plt
+import os, sys
+import numpy as np
+import pandas as pd
+sys.path.append(os.path.join(os.path.abspath("."), "code"))
+from time_series_code import *
+from sklearn.compose import ColumnTransformer, make_column_transformer
+from sklearn.dummy import DummyClassifier
+from sklearn.ensemble import RandomForestRegressor
+from sklearn.impute import SimpleImputer
+from sklearn.linear_model import LogisticRegression, Ridge
+
+from sklearn.model_selection import (
+    TimeSeriesSplit,
+    cross_val_score,
+    cross_validate,
+    train_test_split,
+)
+from sklearn.pipeline import Pipeline, make_pipeline
+from sklearn.preprocessing import OneHotEncoder, OrdinalEncoder, StandardScaler
+
+from datetime import datetime
+```
+
+
+## Lecture learning objectives 🎯
+
+- Recognize when a problem is a time series problem and what makes time-ordered data unique.
+
+- Apply proper train/test splits for time series.
+
+- Engineer key time-based features
+
+- Understand strategies for multi-step forecasting
+
+- Describe trend and its impact on time series behavior
+
+## Recap: iClicker questions {.smaller}
 
 **Select all of the following statements which are TRUE.**
 
-- (A) It's possible to use word2vec embedding representations for text classification instead of bag-of-words representation. 
-- (B) The topic model approach we used in the last lecture, Latent Dirichlet Allocation (LDA), is an unsupervised approach. 
-- (C) In an LDA topic model, the same word can be associated with two different topics with high probability.
-- (D) In an LDA topic model, a document is a mixture of multiple topics. 
-- (E) If I train a topic model on a large collection of news articles with K = 10, I would get 10 topic labels (e.g., sports, culture, politics, finance) as output. 
+- (A) In multinomial logistic regression, the model learns a separate weight vector and bias for each class.
+- (B) Neural networks are powerful models, so it's usually a good idea to start with them on any new machine learning problem.
+- (C) The main reason we add hidden layers is to allow the model to learn increasingly complex representations.
+- (D) Convolutional neural networks (CNNs) use filters that slide over the image to detect local patterns.
+- (E) Using a pre-trained network as a feature extractor typically requires less data than training a deep network from scratch.
 
-# Multiclass classification 
+## Recap: What type of model would be appropriate? {.smaller}
 
-## What is multiclass classification? 
+| Scenario |  Model/Method |
+|-------------------------------------------------------|-------|
+| You have user–item ratings (e.g., movie ratings) and want to predict missing ratings. | ? |
+| You have a collection of documents without any labels and want to group them into themes. | ? |
+| You want to classify the emotion of a set of text messages, but you do not have any labeled data. | ? |
+| You have a small dataset with ~500 images containing pictures and names of 20 different Computer Science faculty members from UBC. Your goal is to develop a reasonably accurate multi-class classification model for this task.| ? |
 
-- So far, we've focused on binary classification (two classes).
-- But many real-world problems have more than two classes:
-  - Classifying types of emotions in text
-  - Identifying species of flowers
-  - Recognizing objects in an image
+## Motivation
 
-**Goal: assign each example to exactly one of $K$ possible classes.**
+- **Time series** is a collection of data points indexed in time order. 
+- Time series is everywhere:
+    - Physical sciences (e.g., weather forecasting)  
+    - Economics, finance (e.g., stocks, market trends)
+    - Engineering (e.g., energy consumption)
+    - Social sciences 
+    - Sports analytics
 
-## How to handle multiple classes? {.smaller}
+## Loan default prediction (tabular data) {.scrollable .smaller} 
 
-Consider this dataset with multiple classes. 
+You work for a financial institution and have a dataset where each row represents a customer applying for a loan. What type of model would you use? 
 
-```{python} 
-hdb_df = pd.read_csv("data/cleaned_hm_10K_subset.csv")
-hdb_df.head()
-```
+| customer_id | income_k | credit_utilization | late_payments | employment_length | employment_type | home_ownership | loan_purpose        | default |
+|----|---|---|---|---|---|---|---|---|
+| 1           | 95       | 22                 | 0             | 9                 | salaried        | mortgage       | home_improvement    | 0       |
+| 2           | 45       | 78                 | 3             | 2                 | contract        | rent           | debt_consolidation  | 1       |
+| 3           | 120      | 30                 | 1             | 7                 | salaried        | own            | car                 | 0       |
+| 4           | 60       | 65                 | 2             | 3                 | self_employed   | rent           | debt_consolidation  | 1       |
+| 5           | 85       | 40                 | 0             | 10                | salaried        | mortgage       | education           | 0       |
+| 6           | 55       | 90                 | 4             | 1                 | contract        | rent           | debt_consolidation  | 1       |
+| 7           | 130      | 28                 | 0             | 6                 | salaried        | own            | car                 | 0       |
+| 8           | 40       | 82                 | 2             | 1                 | self_employed   | rent           | debt_consolidation  | 1       |
 
-## 
+Rows are independent $\rightarrow$ order does not matter $\rightarrow$ time does not matter
 
-```{python}
-#| echo: true
-hdb_df["target"].value_counts(normalize=True)
-```
+## Predict demand for bike rentals
 
-- ❓ Can we use Decision Trees or KNNs for multiclass classification without any significant modifications?
+Suppose you want to predict the bike rental demand for the next three-hour period at a station in New York City.
 
-## Extending logistic regression {.smaller}
-
-- What about logistic regression? The binary version works only for two classes.
-- For multiclass problems, we use the multinomial (softmax) logistic regression model.
-- It learns a separate weight vector and bias for each class:
-  - Parameters per class: $d$ weights + 1 bias
-	- Total parameters: $(d + 1) \times K$
-
-**Example:**
-
-If we have 10,000 features (e.g., vocabulary size) and 7 moment classes, the model learns $(10{,}000 + 1) \times 7$ parameters.
-
-## Softmax function
-
-- In binary logistic regression, we use the sigmoid function to map scores to probabilities.
-- In multiclass, we need:
-	- Probabilities that are positive, and
-	- Sum to 1 across all classes.
-
-The softmax function does exactly that.
-
-## (Optional) Softmax function 
-
-Given an input, the probability that it belongs to class $j \in \{1, 2, \dots, K\}$ is calculated using the **softmax function**:
-
-$P(y = j \mid x_i) = \frac{e^{w_j^\top x_i + b_j}}{\sum_{k=1}^{K} e^{w_k^\top x_i + b_k}}$
-
-- $x_i$ is the $i^{th}$ example 
-- $w_j$ is the weight vector for class $j$.
-- $b_j$ is the bias term for class $j$.
-- $K$ is the total number of classes.
-
-
-## Making predictions
-
-1. **Compute Probabilities**:  
-   For each class $j$, compute the probability $P(y = j \mid x_i)$ using the softmax function.
-
-2. **Select the Class with the Highest Probability**:  
-   The predicted class $\hat{y}$ is:  
-   $\hat{y} = \arg \max_{j \in \{1, \dots, K\}} P(y = j \mid x_i)$
-
-## Example: Softmax output {.smaller}
-
-**Query: “I love my students!”**
-
-| Class              | Raw Score (Logit) | Exponentiated | Normalized Probability |
-|:-------------------|------------------:|---------------:|-----------------------:|
-| ❤️ affection        | 2.1  | 8.166 | 0.4684 |
-| 🏆 achievement      | 1.8  | 6.050 | 0.3472 |
-| 🤝 bonding          | 1.0  | 2.718 | 0.1559 |
-| 🌅 enjoy_the_moment | 0.3  | 1.350 | 0.0775 |
-| 🎮 leisure          | -0.2 | 0.819 | 0.0470 |
-| 🌿 nature           | -1.0 | 0.368 | 0.0211 |
-| 🏃 exercise         | -1.5 | 0.223 | 0.0128 |
-| **Total**           | —    | —     | **1.000** |
-
-## Binary vs multinomial logistic regression {.smaller}
-
-|   **Aspect**                       | **Binary Logistic Regression**              | **Multinomial Logistic Regression**  |
-|--------------------------|---------------------------------------------|--------------------------------------|
-| **Target variable**      | 2 classes (binary)                          | More than 2 classes (multi-class)    |
-| **Getting probabilities**  | Sigmoid                                   | Softmax                              |
-| parameters               | $d$ weights, one per feature and the bias term | $d$ weights and a bias term per class |  
-| **Output**               | Single probability                          | Probability distribution over classes |
-| **Use case**             | Binary classification (e.g., spam detection) | Multi-class classification (e.g., flower species) |
-
-
-# Deep Learning 
-
-## Remember this picture we saw earlier? 
-
-- **Deep Learning (DL)** is a subset of machine learning 
-
-![](img/ai-ml-dl.png){.nostretch fig-align="center" width="700px"}
-
-## Image classification
-\
-
-Have you used search in Google Photos? You can search for "my photos of cat" and it will retrieve photos from your libraries containing cats.
-This can be done using **image classification**, which is treated as a supervised learning problem, where we define a set of target classes (objects to identify in images), and train a model to recognize them using labeled example photos.
-
-## Image classification
-\
-
-Image classification is not an easy problem because of the variations in the location of the object, lighting, background, camera angle, camera focus etc.
-
-![](img/cat_variation.png)
-<!-- [Source](https://developers.google.com/machine-learning/practica/image-classification) -->
-
-## Neural networks {.smaller}
-\
-
-- Neural networks are perfect for these types of problems where local structures are important. 
-- A significant advancement in image classification was the application of **convolutional neural networks** (ConvNets or CNNs) to this problem. 
-  - [ImageNet Classification with Deep Convolutional
-Neural Networks](https://dl.acm.org/doi/10.1145/3065386)
-  - Achieved a winning test error rate of 15.3%, compared to 26.2% achieved by the second-best entry in the ILSVRC-2012 competition. 
-- Let's go over the basics of a neural network.
-
-## A graphical view of a linear model
 :::: {.columns}
-
-:::{.column width="20%"}
-```{python}
-import mglearn
-
-mglearn.plots.plot_logistic_regression_graph()
-```
+:::{.column width="60%"}
+![](img/citibike.jpg)
 :::
 
-:::{.column width="80%"}
-- Remember this graphical view of linear models? 
-- We have 4 features: x[0], x[1], x[2], x[3]
-- The output is calculated as $y = x[0]w[0] + x[1]w[1] + x[2]w[2] + x[3]w[3]$
-- For simplicity, we are ignoring the bias term. 
+:::{.column width="40%"}
+What features might help us make an accurate prediction?
 :::
 ::::
 
+## citibike data
 
-## Introduction to neural networks {.smaller}
-\
+:::: {.columns}
 
-- Neural networks can be viewed a generalization of linear models where we apply a series of transformations.
-- Below we are adding one "layer" of transformations in between features and the target. 
-- We are repeating the the process of computing the weighted sum multiple times.  
-- The **hidden units** (e.g., h[1], h[2], ...) represent the intermediate processing steps. 
-
+:::{.column width="40%"}
 ```{python}
-mglearn.plots.plot_single_hidden_layer_graph()
-```
+import mglearn
 
-## One more layer of transformations 
-\
-
-- Now we are adding one more layer of transformations. 
-
-```{python}
-mglearn.plots.plot_two_hidden_layer_graph()
-```
-
-## Neural networks {.smaller}
-\
-
-- With a neural net, you specify the number of features after each transformation.
-  - In the above, it goes from 4 to 3 to 3 to 1.
-
-- To make them really powerful compared to the linear models, we apply a non-linear function to the weighted sum for each hidden node. 
-- Neural network = neural net
-- Deep learning ~ using neural networks
-- A fantastic explanation of [Neural Networks](https://youtu.be/aircAruvnKk?si=p6zUZbdPzAdEfdlo) from 3Blue1Brown.
-
-## Neural networks example and terminology
-
-![](img/nn-10.png)
-
-## (Optional) How does training work in neural networks? {.smaller}
-
-This is a high-level overview of Neural Networks.
-
-Training a neural network has **two main steps:**
-
-- **Forward pass:**  
-  Feed the input through the network to calculate the predicted output using the current parameter values (weights).
-
-- **Backward pass:**  
-  - Measure how far the predicted output is from the actual target (this is the **loss**).
-  - Calculate how to adjust each parameter to improve future predictions (**gradients**).
-  - Update the parameters using these gradients — this helps the model improve.
-
-- Summary
-  - **Input $\rightarrow$ Forward Pass $\rightarrow$ Loss $\rightarrow$ Backward Pass $\rightarrow$ Parameter Update $\rightarrow$ Repeat**
-  - The model repeats this process many times, gradually improving its predictions.
-
-## Why neural networks? {.smaller}
-
-- They can learn very complex functions.
-  - The fundamental tradeoff is primarily controlled by the **number of layers** and **layer sizes**.
-  - More layers / bigger layers --> more complex model.
-  - You can generally get a model that will not underfit. 
-
-- They work really well for structured data:
-  - 1D sequence, e.g. timeseries, language
-  - 2D image
-  - 3D image or video
-- They've had some incredible successes in the last 12 years.
-- Transfer learning (coming later today) is really useful.  
-
-## Why not neural networks? {.smaller}
-
-- Often they require a lot of data.
-- They require a lot of compute time, and, to be faster, specialized hardware called [GPUs](https://en.wikipedia.org/wiki/Graphics_processing_unit).
-- They have huge numbers of hyperparameters
-  - Think of each layer having hyperparameters, plus some overall hyperparameters.
-  - Being slow compounds this problem.
-- They are not interpretable.
-- I don't recommend training them on your own without further training
-- Good news
-    - You don't have to train your models from scratch in order to use them.
-    - I'll show you some ways to use neural networks without training them yourselves. 
-
-## Deep learning software
-
-The current big players are:
-
-1. [PyTorch](http://pytorch.org)
-2. [TensorFlow](https://www.tensorflow.org)
-
-Both are heavily used in industry. If interested, see [comparison of deep learning software](https://en.wikipedia.org/wiki/Comparison_of_deep_learning_software).
-
-<br><br>
-
-## Introduction to computer vision
-\
-
-- [Computer vision](https://en.wikipedia.org/wiki/Computer_vision) refers to understanding images/videos, usually using ML/AI. 
-- In the last decade this field has been dominated by deep learning. We will explore **image classification** and **object detection**.
-
-## Introduction to computer vision {.smaller}
-\
-
-- image classification: is this a cat or a dog?
-- object localization: where is the cat in this image?
-- object detection: What are the various objects in the image? 
-- instance segmentation: What are the shapes of these various objects in the image? 
-- and much more...
-
-![](img/vision-apps.jpeg)
-
-<!-- Source: https://learning.oreilly.com/library/view/python-advanced-guide/9781789957211/--> 
-
-## Convolutional Neural Networks (CNNs) {.smaller}
-- Neural networks come in different shapes depending on the type of data and the task.
-- CNNs are commonly used in **image classification, object detection, and medical imaging.**
-- What's the problem if we use the above feedforward architecture to learn patterns from images? 
-
-![](img/cnn-1.png){.nostretch fig-align="center" width="400px"}
-
-## Convolutional Neural Network Explainer
-
-This is a great explainer of CNNs: [poloclub.github.io/cnn-explainer/](https://poloclub.github.io/cnn-explainer/)
-
-![](img/cnn_explainer.gif)
-
-## Filters 
-
-- CNNs use filters that "slide" over the input to detect local patterns.
-
-![](img/cnn-4.png)
-
-- Play around with filters: https://setosa.io/ev/image-kernels/
-
-## CNNs 
-
-![](img/cnn-5.gif)
-
-## CNNs big picture
-
-![](img/cnn_big_picture.png)
-
-[source](https://developers.google.com/machine-learning/practica/image-classification/convolutional-neural-networks)
-
-## Pre-trained models {.smaller}
-\
-
-- In practice, very few people train an entire CNN from scratch because it requires a large dataset, powerful computers, and a huge amount of human effort to train the model.
-- Instead, a common practice is to download a pre-trained model and fine tune it for your task. This is called **transfer learning**.
-- Transfer learning is one of the most common techniques used in the context of computer vision and natural language processing.
-- It refers to using a model already trained on one task as a starting point for learning to perform another task.
-
-## Pre-trained models out-of-the-box 
-\
-
-![](img/cnn-ex.png)
-
-<!-- Source: https://cezannec.github.io/Convolutional_Neural_Networks/ -->
-
-- Let's first apply one of these pre-trained models to our own problem right out of the box. 
-
-
-## Pre-trained models out-of-the-box {.smaller}
-\
-
-- We can easily download famous models using the `torchvision.models` module. All models are available with pre-trained weights (based on ImageNet's 224 x 224 images)
-- We used a pre-trained model vgg16 which is trained on the ImageNet data. 
-- We preprocess the given image. 
-- We get prediction from this pre-trained model on a given image along with prediction probabilities.  
-- For a given image, this model will spit out one of the 1000 classes from ImageNet. 
-
-## Pre-trained models out-of-the-box {.scrollable}
-
-- Let's predict labels with associated probabilities for unseen images
-
-::: {.scroll-container style="overflow-y: scroll; height: 400px;"}
-```{python}
-import glob
-import matplotlib.pyplot as plt
-images = glob.glob("data/test_images/*.*")
-plt.figure(figsize=(5, 5));
-for image in images:
-    img = Image.open(image)
-    img.load()
-    
-    plt.imshow(img)
-    plt.show()
-    df = classify_image(img)
-    print(df.to_string(index=False))
-    print("--------------------------------------------------------------")
+citibike = mglearn.datasets.load_citibike()
+citibike.head(20)
 ```
 :::
 
+:::{.column width="60%"}
+- Only feature: datetime
+- The data is collected at regular intervals (every three hours) 
+- Target: rentals in the next 3-hour period
+- Goal: Given past rental counts, predict the number of rentals at a specific future time.
+:::
+::::
 
-## Pre-trained models out-of-the-box {.smaller}
-\
+**Using only the tools in your current toolbox, what model would you choose, and what challenges might you run into?**
 
-- We got these predictions without "doing the ML ourselves".
-- We are using **pre-trained** `vgg16` model which is available in `torchvision`.
-  - `torchvision` has many such pre-trained models available that have been very successful across a wide range of tasks: AlexNet, VGG, ResNet, Inception, MobileNet, etc.
-- Many of these models have been pre-trained on famous datasets like **ImageNet**. 
-- So if we use them out-of-the-box, they will give us one of the ImageNet classes as classification. 
+## Why different treatement?
 
-## Pre-trained models out-of-the-box {.smaller}
-\
+:::: {.columns}
 
-- Let's try some images which are unlikely to be there in ImageNet. 
-- It's not doing very well here because ImageNet doesn't have proper classes for these images.
-
-::: {.scroll-container style="overflow-y: scroll; height: 400px;"}
+:::{.column width="40%"}
 ```{python}
-# Predict labels with associated probabilities for unseen images
-images = glob.glob("data/random_img/*.*")
-for image in images:
-    img = Image.open(image)
-    img.load()
-    plt.imshow(img)
-    plt.show()
-    df = classify_image(img)    
-    print(df.to_string(index=False))
-    print("--------------------------------------------------------------")
+import mglearn
+
+citibike = mglearn.datasets.load_citibike()
+citibike.head(20)
 ```
 :::
-
-## Pre-trained models out-of-the-box
-\
-
-- Here we used pre-trained models out-of-the-box. 
-- Can we use pre-trained models for our own classification problem with our classes? 
-- Yes!! We have two options here:
-    1. Add some extra layers to the pre-trained network to suit our particular task
-    2. Pass training data through the network and save the output to use as features for training some other model
-
-
-## Pre-trained models to extract features {.smaller}
-\
-
-- Let's use pre-trained models to extract features.
-- We will pass our specific data through a pre-trained network to get a feature vector for each example in the data. 
-- The feature vector is usually extracted from the last layer, before the classification layer from the pre-trained network. 
-- You can think of each layer a transformer applying some transformations on the input received to that later. 
-
-![](img/cnn-ex.png){.nostretch fig-align="center" width="600px"}
-
-
-## Pre-trained models to extract features 
-\
-
-- Once we extract these feature vectors for all images in our training data, we can train a machine learning classifier such as logistic regression or random forest. 
-- This classifier will be trained on our classes using feature representations extracted from the pre-trained models.  
-- Let's try this out. 
-- It's better to train such models with GPU. Since our dataset is quite small, we won't have problems running it on a CPU. 
-
-## Pre-trained models to extract features 
-\
-
-Let's look at some sample images in the dataset. 
-
-::: {.scroll-container style="overflow-y: scroll; height: 400px;"}
-```{python}
-    data_dir = 'data/food/'
-    image_datasets, dataloaders = read_data(data_dir)
-    dataset_sizes = {x: len(image_datasets[x]) for x in ["train", "valid"]}
-    class_names = image_datasets["train"].classes
-    inputs, classes = next(iter(dataloaders["valid"]))
-    plt.figure(figsize=(10, 8)); plt.axis("off"); plt.title("Sample valid Images")
-    plt.imshow(np.transpose(utils.make_grid(inputs, padding=1, normalize=True),(1, 2, 0)));
-```
+:::{.column width="60%"}
+- This type of data is distinctive because it is **inherently sequential**. 
+- The number of bikes available at a station at one point in time is often related to the number of bikes at earlier times. 
+- This is a **time-series forecasting** problem.
 :::
+::::
 
-## Dataset statistics
-\
+## Today's lecture 
 
-Here is the stat of our toy dataset. 
+- What is time series? 
+- How do we know a problem is a time series problem?
+- Why do standard ML models struggle with time-dependent data?
+- How can we adapt ML models to handle time series?
 
-```{python}
-    print(f"Classes: {image_datasets['train'].classes}")
-    print(f"Class count: {image_datasets['train'].targets.count(0)}, {image_datasets['train'].targets.count(1)}, {image_datasets['train'].targets.count(2)}")
-    print(f"Samples:", len(image_datasets["train"]))
-    print(f"First sample: {image_datasets['train'].samples[0]}")
-```
+## Models for time series
 
+The ML models we've used so far **do not have a built-in concept of time**. There are **two broad strategies** for modeling time series:
 
-## Pre-trained models to extract features 
-\
+- Use models designed for sequential data which explicitly capture temporal dependencies (e.g., Hidden Markov Models, Transformer architectures etc.) 
 
-- Now for each image in our dataset, we'll extract a feature vector from a pre-trained model called densenet121, which is trained on the ImageNet dataset.  
+- **Use tabular ML models with engineered temporal features (e.g., Linear models, Random Forests, Gradient Boosted Trees)**    
 
-```{python}
-densenet = models.densenet121(weights="DenseNet121_Weights.IMAGENET1K_V1")
-densenet.classifier = nn.Identity()  # remove that last "classification" layer
-Z_train, y_train, Z_valid, y_valid = get_features(
-    densenet, dataloaders["train"], dataloaders["valid"]
-)
-```
-
-## Shape of the feature vector {.smaller}
-\
-
-- Now we have extracted feature vectors for all examples. What's the shape of these features?
+## citibike data visualization
 
 ```{python}
-Z_train.shape
+print(f"Start date: {citibike.index.min()}, End date: {citibike.index.max()}")
+
+plt.figure(figsize=(10, 4))
+xtick_labels = pd.date_range(start=citibike.index.min(), end=citibike.index.max(), freq="D")
+plt.xticks(xtick_labels,  xtick_labels.strftime("%a %m-%d"), rotation=90, ha="left")
+plt.plot(citibike, linewidth=1)
+plt.xlabel("Date")
+plt.ylabel("Rentals");
+plt.title("Number of bike rentals over time for a selected bike station");
 ```
 
-- The size of each feature vector is 1024 because the size of the last layer in densenet architecture is 1024.  
+Do you see any daily patterns? Weekly patterns? Noise? 
 
-![](img/densenet-architecture.png){.nostretch fig-align="center" width="700px"}
-
-[Source](https://towardsdatascience.com/understanding-and-visualizing-densenets-7f688092391a)
-
-## A feature vector given by densenet 
-\ 
-
-- Let's examine the feature vectors. 
-
-```{python}
-pd.DataFrame(Z_train).head()
-```
-- The features are hard to interpret but they have some important information about the images which can be useful for classification.  
-
-## Logistic regression with the extracted features 
-\
-
-- Let's try out logistic regression on these extracted features. 
-
-```{python}
-pipe = make_pipeline(StandardScaler(), LogisticRegression(max_iter=2000))
-pipe.fit(Z_train, y_train)
-print("Training score: ", pipe.score(Z_train, y_train))
-```
-
-```{python}
-pipe.score(Z_valid, y_valid)
-print("Validation score: ", pipe.score(Z_valid, y_valid))
-```
-
-- This is great accuracy for so little data and little effort!!!
-
-
-## Sample predictions
-\
-
-Let's examine some sample predictions on the validation set.  
-
-::: {.scroll-container style="overflow-y: scroll; height: 400px;"}
-```{python}
-# Show predictions for 25 images in the validation set (5 rows of 5 images)
-show_predictions(pipe, Z_valid, y_valid, dataloaders['valid'], class_names, num_images=40)
-```
-:::
-
-
-## Object detection {.smaller}
-\
-
-- Another useful task and tool to know is object detection using YOLO model. 
-- Let's identify objects in a sample image using a pretrained model called YOLO8. 
-- List the objects present in this image.
-
-![](data/yolo_test/3356700488_183566145b.jpg){.nostretch fig-align="center" width="400px"}
-
-## Object detection using [YOLO](https://docs.ultralytics.com/)
-\
-
-Let's try this out using a pre-trained model. 
-
+## ⛔️ Incorrect data splitting
 
 ```{python}
 #| echo: true
-from ultralytics import YOLO
-model = YOLO("yolov8n.pt")  # pretrained YOLOv8n model
+train_df, test_df = train_test_split(citibike, test_size=0.2, random_state=123)
+print('Train largest date: ', train_df.index.max())
+print('Test smallest date: ', test_df.index.min())
+```
+```{python}
+plt.figure(figsize=(10, 3))
+train_df_sort = train_df.sort_index()
+test_df_sort = test_df.sort_index()
 
-yolo_input = "data/yolo_test/3356700488_183566145b.jpg"
-yolo_result = "data/yolo_result.jpg"
-# Run batched inference on a list of images
-result = model(yolo_input)  # return a list of Results objects
-result[0].save(filename=yolo_result)
+plt.plot(train_df_sort, "b", label="train")
+plt.plot(test_df_sort, "r", label="test")
+plt.xticks(rotation="vertical")
+plt.legend();
 ```
 
-## Object detection output 
-\
+⛔️ We should never train on the future to predict the past!
 
-::: {.scroll-container style="overflow-y: scroll; height: 400px;"}
+## ✅ Correct data splitting
+
+In time series, the simplest split is: earlier data $\rightarrow$ training and later data $\rightarrow$ testing. For example: 
+
 ```{python}
-import matplotlib.pyplot as plt
-import matplotlib.image as mpimg
+#| echo: true
+n_train = 184 
+train_df = citibike[:184] 
+test_df = citibike[184:]
+```
+```{python}
 
-# Load the images
-input_img = mpimg.imread(yolo_input)
-result_img = mpimg.imread(yolo_result)
+plt.figure(figsize=(10, 3))
+train_df_sort = train_df.sort_index()
+test_df_sort = test_df.sort_index()
 
-# Create a figure to display the images side by side
-fig, axes = plt.subplots(1, 2, figsize=(10, 5))
+plt.plot(train_df_sort, "b", label="train")
+plt.plot(test_df_sort, "r", label="test")
+plt.xticks(rotation="vertical")
+plt.legend();
+```
+# Feature engineering for time series 
 
-# Display the first image
-axes[0].imshow(input_img)
-axes[0].axis('off')  # Hide the axes
-axes[0].set_title('Original Image')
+## Motivation 
 
-# Display the second image
-axes[1].imshow(result_img)
-axes[1].axis('off')  # Hide the axes
-axes[1].set_title('Result Image')
+- In this toy data, we just have a single feature: the date time feature. 
+- Note that ML models do not have a built-in concept of time. We have to give it to them.
+- We will explore different ways to extract informative features from time.
 
-# Show the images
-plt.tight_layout()
-plt.show()
+## POSIX time feature {.smaller}
+- Let's start with a simplest encoding. 
+- A common way that dates are stored on computers is using POSIX time, which is the number of seconds since January 1970 00:00:00 (this is beginning of Unix time). 
+
+- Let's start with encoding feature as a single integer representing this POSIX time. 
+
+```{python}
+#| echo: true
+# convert to POSIX time by dividing by 10**9
+X = (
+    citibike.index.astype("int64").values.reshape(-1, 1) // 10**9
+)  # convert to POSIX time by dividing by 10**9
+y = citibike.values
+X[:10]
+```
+
+## RF on posix features {.smaller}
+
+```{python}
+regressor = RandomForestRegressor(n_estimators=100, random_state=0)
+eval_on_features(X, y, regressor,  xtick_labels, feat_names="POSIX time")
+```
+- The predictions on the training data and training score are pretty good 
+- But for the test data, a constant line is predicted ...
+- What's going on?
+
+## Trees cannot extrapolate! 
+- Tree-based models only make predictions within the range of values they've seen during training.
+- Trees partition the feature space into fixed regions and predictions inside each region are averages of training labels.
+- If your future timestamps are larger than the ones in the training set trees cannot "see beyond" the training range and they will flatline or behave unpredictably.
+
+This is exactly what happens with POSIX time encoded as a single numeric feature! 
+
+## Extracting date and time information
+
+- Note that our index is of this special type: [`DateTimeIndex`](https://pandas.pydata.org/docs/reference/api/pandas.DatetimeIndex.html). We can extract all kinds of interesting information from it.   
+
+```{python}
+#| echo: true
+print(citibike.index[0])
+print(citibike.index[0].month_name())
+print(citibike.index[0].dayofweek)
+print(citibike.index[0].hour)
+```
+
+## Hour of day 
+- We noted before that the hour of day and day of week seem quite important. 
+- Let's start with hour of day. 
+
+```{python}
+#| echo: true
+X_hour = citibike.index.hour.values.reshape(-1, 1)
+X_hour[:10]
+```
+
+## RF with hour of day
+
+```{python}
+#| echo: true
+regressor = RandomForestRegressor(n_estimators=100, random_state=0)
+eval_on_features(X_hour, y, regressor,  xtick_labels, feat_names="Hour of the day")
+```
+
+The scores are better when we add hour of day feature! 
+
+## hour of day + day of week 
+
+Now let's add day of week along with hour of day. 
+```{python}
+#| echo: true
+X_hour_week = np.hstack(
+    [
+        citibike.index.dayofweek.values.reshape(-1, 1),
+        citibike.index.hour.values.reshape(-1, 1),
+    ]
+)
+X_hour_week
+```
+## RF with hour of day + day of week 
+```{python}
+#| echo: true
+eval_on_features(X_hour_week, y, regressor,  xtick_labels, feat_names = "hour of day + day of week")
+```
+
+The time of the day and day of the week features are clearly helping. 
+
+## Ridge with Hour of day + Day of week 
+
+```{python}
+lr = Ridge();
+eval_on_features(X_hour_week, y, lr,  xtick_labels, feat_names = "hour of day + day of week")
+
+```
+
+Why is `Ridge` performing poorly on the training data as well as test data?
+
+## Encoding hour and day with OHE 
+
+```{python}
+#| echo: true
+enc = OneHotEncoder()
+X_hour_week_onehot = enc.fit_transform(X_hour_week).toarray()
+hour = ["%02d:00" % i for i in range(0, 24, 3)]
+day = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
+features = day + hour
+pd.DataFrame(X_hour_week_onehot, columns=features).head(6)
+```
+
+## Ridge with hour of day OHE + day of week OHE
+
+:::: {.columns}
+
+:::{.column width="70%"}
+```{python}
+eval_on_features(X_hour_week_onehot, y, Ridge(),  xtick_labels, feat_names="hour of day OHE + day of week OHE")
 ```
 :::
 
-## Summary {.smaller}
-\
+:::{.column width="30%"}
+- The scores are a bit better! 
+- Can we improve them further? 
+:::
+::::
 
-- Neural networks are a flexible class of models.
-  - They are particular powerful for structured input like images, videos, audio, etc.
-  - They can be challenging to train and often require significant computational resources.
-- The good news is we can use pre-trained neural networks.
-  - This saves us a huge amount of time/cost/effort/resources.
-  - We can use these pre-trained networks directly or use them as feature transformers. 
+## Add interaction features 
+```{python }
+from sklearn.preprocessing import PolynomialFeatures
+
+poly_transformer = PolynomialFeatures(
+    interaction_only=True, include_bias=False
+)
+X_hour_week_onehot_poly = poly_transformer.fit_transform(X_hour_week_onehot)
+hour = ["%02d:00" % i for i in range(0, 24, 3)]
+day = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
+features = day + hour
+features_poly = poly_transformer.get_feature_names_out(features)
+df_hour_week_ohe_poly = pd.DataFrame(X_hour_week_onehot_poly, columns = features_poly)
+df_hour_week_ohe_poly.iloc[:, [0, 1, 2, 3, 4, 5, 34, 35, 36, 37, 40]].head(6)
+```
+
+## Ridge with hour of day OHE + day of week OHE + interaction features
+
+```{python}
+eval_on_features(X_hour_week_onehot_poly, y, lr,  xtick_labels, feat_names = "hour of day OHE + day of week OHE + interaction feats")
+```
+The scores are much better now!! 
+
+## Interpretation {.scrollable .smaller}
+
+Since we are using a linear model, we can examine the coefficients learned by `Ridge`. 
+
+:::: {.columns}
+:::{.column width="50%"}
+
+```{python}
+features_nonzero = np.array(features_poly)[lr.coef_ != 0]
+coef_nonzero = lr.coef_[lr.coef_ != 0]
+pd.DataFrame(coef_nonzero, index=features_nonzero, columns=["Coefficient"]).sort_values(
+    "Coefficient", ascending=False
+)
+```
+:::
+
+:::{.column width="50%"}
+
+**Do these coefficients make sense?**
+
+:::
+::::
+
+## iClicker 19.2 
+
+**Select all of the following statements which are TRUE.**
+
+- (A) One-hot encoding the hour of day allows linear models to treat each hour as a separate category and capture cyclic patterns effectively.
+- (B) Success in time-series modeling often depends more on choosing the right features and right encoding for the given model. 
+- (C) Tree-based models are good at predicting values beyond the range of the training set because they can extrapolate trends.
+
+
+## Lag-based features {.smaller .scrollable}
+
+:::: {.columns}
+
+:::{.column width="40%"}
+```{python}
+rentals_df = pd.DataFrame(citibike)
+rentals_df = rentals_df.rename(columns={"one":"n_rentals"})
+rentals_df.head(10)
+```
+:::
+
+:::{.column width="60%"}
+- In time series data there is temporal dependence; observations close in time tend to be correlated.
+- Currently we're using current time to predict the number of bike rentals in the next three hours.
+- But, what if the number of bike rentals is also related to bike rentals three hours ago or 6 hours ago and so on?
+- Such features are called lagged features.
+:::
+:::: 
+
+
+
+## Creating lag features {.smaller .scrollable}
+
+```{python}
+#| echo: true
+def create_lag_df(df, lag, cols):
+    return df.assign(
+        **{f"{col}-{n}": df[col].shift(n) for n in range(1, lag + 1) for col in cols}
+    )
+rentals_lag5 = create_lag_df(rentals_df, 5, ['n_rentals'] )
+rentals_lag5.head(8)
+```
+
+## Ridge with lag features
+
+```{python}
+X_lag_features = rentals_lag5.drop(columns = ['n_rentals']).to_numpy()
+eval_on_features(X_lag_features, y, lr,  xtick_labels, feat_names="Lag features", impute="yes")
+```
+
+The model is performing poorly. 
+
+
+## Random Forest with lag features
+
+```{python}
+imp = SimpleImputer()
+X_lag_features_imp = imp.fit_transform(X_lag_features)
+eval_on_features(X_lag_features_imp, y, regressor,  xtick_labels, feat_names="Lag features")
+```
+
+Better than the linear model but worse than our best model. 
+
+## Ridge with all features
+```{python}
+X_hour_week_onehot_poly_lag = np.hstack([X_hour_week_onehot_poly, X_lag_features])
+eval_on_features(X_hour_week_onehot_poly_lag, y, lr, xtick_labels, feat_names = "hour of day OHE + day of week OHE + interaction feats + Lag feats")
+```
+
+Good scores. But lag features don't seem to help much in this case. 
+
+
+## RF with all features
+
+```{python}
+X_hour_week_lag = np.hstack([X_hour_week, X_lag_features])
+eval_on_features(X_hour_week_lag, y, regressor,  xtick_labels, feat_names = "hour of day + day of week + Lag feats")
+```
+
+Lag features seem to make things a bit worse in this case.
+
+## Cross-validation with time series
+
+- We can't do regular cross-validation if we don't want to be predicting the past.
+
+- There is [`TimeSeriesSplit`](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.TimeSeriesSplit.html) for time series data. 
+
+```{python}
+from sklearn.model_selection import TimeSeriesSplit
+# Code from sklearn documentation
+X_toy = np.array([[1, 2], [3, 4], [1, 2], [3, 4], [1, 2], [3, 4]])
+y_toy = np.array([1, 2, 3, 4, 5, 6])
+tscv = TimeSeriesSplit(n_splits=3)
+for train, test in tscv.split(X_toy):
+    print("%s %s" % (train, test))
+```
+
+# Forecasting further into the future 
+
+## Problem
+- So far, our lag features let us predict 3 hours ahead. 
+- What if we want to predict 15 hours in the future? 
+
+- Problem: We do not yet know the rental counts for the required lag timestamps:
+    - 2015-09-01 00:00:00
+    - 2015-09-01 03:00:00
+    - 2015-09-01 06:00:00
+    - 2015-09-01 09:00:00
+- Without those values, our lag features break 😢
+
+## Approach 1: Iterative forecasting {.smaller}
+
+Train one model that predicts 3 hours ahead. At prediction time, move forward step by step, using your own predictions as future lag inputs.
+
+**Example:**
+
+- Predict rentals at 00:00 on 2015-09-01.
+- Use that prediction as the lag to predict rentals at 03:00.
+- Use both predictions to predict rentals at 06:00.
+- Continue until you reach 12:00.
+
+This method works, but errors accumulate as we step forward. The longer the horizon, the more uncertainty grows. 
+
+## Approach 2: Direct forecasting (multiple horizons)
+
+- Train separate models for each horizon:
+  - Model 1 $\rightarrow$ predict 3 hours ahead
+  - Model 2 $\rightarrow$ predict 6 hours ahead
+  - Model 3 $\rightarrow$ predict 9 hours ahead
+
+Each model uses lag features that match the required horizon.
+
+
+## (Optional) Approach 3: Multi-output models (joint forecasting)
+
+- Train one model that predicts several future steps at once, e.g.:
+
+  ```y = [rentals_in_3h, rentals_in_6h, rentals_in_9h, ...]```
+
+- These models learn relationships across future time steps.
+- Note: Multi-output forecasting is powerful, but outside the scope of CPSC 330.
+
+# Seasonality and trends 
+
+**Time series often show recognizable patterns over time**, which we want our models to capture.
+
+## Seasonality
+
+**Seasonality** refers to a **repeating pattern** that occurs at regular, predictable intervals.
+
+- **Example 1:** Bike rentals tend to peak at the same hours each day (daily seasonality).  
+- **Example 2:** Retail sales consistently spike before the December holidays (annual seasonality).
+- Recognizing seasonality helps a model **anticipate recurring patterns** rather than mistake them for noise.
+- We can capture seasonality by adding features such as: `rush_hour`, `is_weekend`, and `is_holiday`
+
+
+## Trends {.smaller}
+
+Let's consider another time series dataset, [Retail Sales of Clothing and Clothing Accessory Stores dataset](https://fred.stlouisfed.org/series/MRTSSM448USN). 
+
+```{python}
+retail_df = pd.read_csv("data/MRTSSM448USN.csv", parse_dates=["DATE"])
+retail_df.columns = ["date", "sales"]
+retail_df.plot(x="date", y="sales", figsize=(8, 4));
+```
+It looks like there's a clear trend; retail sales gradually increase over time. A **trend** is a long-term upward or downward movement in a time series.
+
+Question: How might we encode this trend information so our models can use it?
+
+## Days since feature {.scrollable .smaller}
+
+One idea is to create a feature such as "Days_since"
+
+```{python}
+def lag_df(df, lag, cols):
+    return df.assign(
+        **{f"{col}-{n}": df[col].shift(n) for n in range(1, lag + 1) for col in cols}
+    )
+retail_lag_5 = lag_df(retail_df, 5, ["sales"])
+retail_train_5 = retail_lag_5.query("date <= 20160101")
+retail_test_5 = retail_lag_5.query("date >  20160101")
+retail_train_5_date = retail_lag_5.query("date <= 20160101")
+first_day_retail = retail_train_5_date["date"].min()
+
+retail_train_5_date = retail_train_5_date.assign(
+    Days_since=retail_train_5_date["date"].apply(lambda x: (x - first_day_retail).days)
+)
+retail_train_5_date.head(10)
+```
+
+# Types of time series 
+
+## Univariate time series: Bike rentals
+
+A **univariate time series** tracks *one* variable over time. Here, we only measure the number of bike rentals at each timestamp.
+
+| starttime            | rentals |
+|----------------------|---------|
+| 2015-08-26 12:00:00  |   30    |
+| 2015-08-12 09:00:00  |   10    |
+| 2015-08-19 03:00:00  |    2    |
+| 2015-08-07 12:00:00  |   22    |
+| 2015-08-03 09:00:00  |    9    |
+
+
+## Multivariate time series: Bike rentals with weather + traffic {.smaller}
+
+A **multivariate time series** records several variables at each timestamp.  
+Here, we track bike rentals along with weather and local traffic conditions.
+
+| datetime            | rentals | temp_C | humidity | wind_kmh | traffic_level |
+|---------------------|---------|--------|----------|----------|----------------|
+| 2015-08-01 09:00    |   12    |   18   |    65    |    10    |       2        |
+| 2015-08-01 12:00    |   28    |   22   |    55    |     8    |       3        |
+| 2015-08-01 15:00    |   35    |   24   |    50    |    12    |       4        |
+| 2015-08-01 18:00    |   30    |   21    |    60    |    20    |       3        |
+| 2015-08-02 09:00    |   10    |   17   |    70    |    15    |       1        |
+
+## Hierarchical time series: Bike sales across cities and stores {.smaller}
+
+Consists of multiple variables from multiple observations, nested within the larger group categories, recorded sequentially over time (e.g., bike sales from multiple stores over time)
+
+:::: {.columns}
+:::{.column width="60%"}
+
+| city      | store_id | date        | bike_sales |
+|-----------|----------|-------------|------------|
+| Vancouver | S1       | 2024-01-01  |     12     |
+| Vancouver | S1       | 2024-01-02  |     15     |
+| Vancouver | S2       | 2024-01-01  |      9     |
+| Vancouver | S2       | 2024-01-02  |     11     |
+| Victoria | M1       | 2024-01-01  |      7     |
+| Victoria | M1       | 2024-01-02  |      8     |
+| Victoria | M2       | 2024-01-01  |     14     |
+| Victoria | M2       | 2024-01-02  |     13     |
+
+:::
+:::{.column width="40%"}
+
+```
+Company
+ ├── Vancouver
+ │    ├── S1 time series
+ │    └── S2 time series
+ └── Victoria
+      ├── M1 time series
+      └── M2 time series
+```
+:::
+::::
+
+### Demo
+
+We'll be starting with the [CitiBike dataset](https://ride.citibikenyc.com/system-data) today
+![](img/citibike.png)
+
+## Group Work: Class Demo & Live Coding
+
+For this demo, each student should [click this link](https://github.com/new?template_name=lecture20_demo&template_owner=ubc-cpsc330) to create a new repo in their accounts, then clone that repo locally to follow along with the demo from today.
+
+
+## What did we learn today? {.smaller}
+
+- **Time series** data has an inherent order. 
+- Correct **train/test splitting** must respect time (no shuffling!).
+- **Modeling considerations:**
+  - ML models can handle time series *if we engineer meaningful temporal features*.
+  - **Linear models** struggle with cyclic numeric features unless encoded properly.
+  - **Tree-based models** cannot extrapolate beyond the training range.
+- Forecasting further ahead with iterative forecasting 
+- **Seasonality** = repeating patterns (daily, weekly, annual). 
+- **Trends** = long-term upward/downward movement
+
+**The key to successful time-series modeling: Choose the right features + choose the right model for the temporal structure.**
+

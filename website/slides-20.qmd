@@ -1,5 +1,5 @@
 ---
-title: "Lecture 20: Time series"
+title: "Lecture 20: Survival analysis"
 author: "Firas Moosvi"
 format: 
     revealjs:
@@ -14,675 +14,280 @@ format:
         - img/        
 ---
 
-<!-- 
-## Announcements
-
-- No new announcements today! 
-- -->
-
 ```{python}
+import os
+import sys
+
 import matplotlib.pyplot as plt
-import os, sys
 import numpy as np
 import pandas as pd
-sys.path.append(os.path.join(os.path.abspath("."), "code"))
-from time_series_code import *
 from sklearn.compose import ColumnTransformer, make_column_transformer
 from sklearn.dummy import DummyClassifier
-from sklearn.ensemble import RandomForestRegressor
+from sklearn.ensemble import RandomForestClassifier, RandomForestRegressor
 from sklearn.impute import SimpleImputer
 from sklearn.linear_model import LogisticRegression, Ridge
-
+from sklearn.metrics import confusion_matrix
 from sklearn.model_selection import (
-    TimeSeriesSplit,
+    cross_val_predict,
     cross_val_score,
     cross_validate,
     train_test_split,
 )
 from sklearn.pipeline import Pipeline, make_pipeline
-from sklearn.preprocessing import OneHotEncoder, OrdinalEncoder, StandardScaler
+from sklearn.preprocessing import (
+    FunctionTransformer,
+    OneHotEncoder,
+    OrdinalEncoder,
+    StandardScaler,
+)
 
-from datetime import datetime
+sys.path.append(os.path.join(os.path.abspath("."), "code"))
+from utils import *
+
+plt.rcParams["font.size"] = 12
+
+import warnings
+
+warnings.filterwarnings("default")
+DATA_DIR = os.path.join(os.path.abspath("."), "data/")
 ```
 
 
-## Lecture learning objectives 🎯
+## Announcements
 
-- Recognize when a problem is a time series problem and what makes time-ordered data unique.
+- Test 3 update
+  - One of the MCQ was mistakenly set to 4 marks instead of 1, need to fix that
+  - Resolution will mean everyone's score will increase 
+  - Scores will be released after
+- HW9 has been released!
+- Practice Workspace question for the final exam will be posted on PrairieLearn this weekend to help you prepare
 
-- Apply proper train/test splits for time series.
+## Announcements (cont'd)
 
-- Engineer key time-based features
+- We are in the home stretch now! Monday will be the last class
+- Tutorials are ON Tues/Wed
+- NO tutorials on Thurs/Fri
+- Office hours as usual next week
 
-- Understand strategies for multi-step forecasting
+## Wrap-up Time Series from last class
 
-- Describe trend and its impact on time series behavior
+...
 
-## Recap: iClicker questions {.smaller}
+# Clicker 21.1
 
 **Select all of the following statements which are TRUE.**
 
-- (A) In multinomial logistic regression, the model learns a separate weight vector and bias for each class.
-- (B) Neural networks are powerful models, so it's usually a good idea to start with them on any new machine learning problem.
-- (C) The main reason we add hidden layers is to allow the model to learn increasingly complex representations.
-- (D) Convolutional neural networks (CNNs) use filters that slide over the image to detect local patterns.
-- (E) Using a pre-trained network as a feature extractor typically requires less data than training a deep network from scratch.
+- (A) We need to be careful when splitting the data when working with time series data.
+- (B) Cross-validation in time series can be randomly applied like in other machine learning tasks.
+- (C) In time series forecasting, the future value of a series can only be predicted based on its past values and cannot incorporate other variables.
+- (D) When we used RandomForestRegressor model on the POSIX time feature, it predicted a straight line on the test data because tree-based models are inherently unable to extrapolate (i.e., make predictions outside the - range of the training data).
 
-## Recap: What type of model would be appropriate? {.smaller}
+## Customer churn 
 
-| Scenario |  Model/Method |
-|-------------------------------------------------------|-------|
-| You have user–item ratings (e.g., movie ratings) and want to predict missing ratings. | ? |
-| You have a collection of documents without any labels and want to group them into themes. | ? |
-| You want to classify the emotion of a set of text messages, but you do not have any labeled data. | ? |
-| You have a small dataset with ~500 images containing pictures and names of 20 different Computer Science faculty members from UBC. Your goal is to develop a reasonably accurate multi-class classification model for this task.| ? |
+Customer churn, also known as customer attrition, refers to the phenomenon where customers or subscribers stop doing business with a company or service.
 
-## Motivation
-
-- **Time series** is a collection of data points indexed in time order. 
-- Time series is everywhere:
-    - Physical sciences (e.g., weather forecasting)  
-    - Economics, finance (e.g., stocks, market trends)
-    - Engineering (e.g., energy consumption)
-    - Social sciences 
-    - Sports analytics
-
-## Loan default prediction (tabular data) {.scrollable .smaller} 
-
-You work for a financial institution and have a dataset where each row represents a customer applying for a loan. What type of model would you use? 
-
-| customer_id | income_k | credit_utilization | late_payments | employment_length | employment_type | home_ownership | loan_purpose        | default |
-|----|---|---|---|---|---|---|---|---|
-| 1           | 95       | 22                 | 0             | 9                 | salaried        | mortgage       | home_improvement    | 0       |
-| 2           | 45       | 78                 | 3             | 2                 | contract        | rent           | debt_consolidation  | 1       |
-| 3           | 120      | 30                 | 1             | 7                 | salaried        | own            | car                 | 0       |
-| 4           | 60       | 65                 | 2             | 3                 | self_employed   | rent           | debt_consolidation  | 1       |
-| 5           | 85       | 40                 | 0             | 10                | salaried        | mortgage       | education           | 0       |
-| 6           | 55       | 90                 | 4             | 1                 | contract        | rent           | debt_consolidation  | 1       |
-| 7           | 130      | 28                 | 0             | 6                 | salaried        | own            | car                 | 0       |
-| 8           | 40       | 82                 | 2             | 1                 | self_employed   | rent           | debt_consolidation  | 1       |
-
-Rows are independent $\rightarrow$ order does not matter $\rightarrow$ time does not matter
-
-## Predict demand for bike rentals
-
-Suppose you want to predict the bike rental demand for the next three-hour period at a station in New York City.
-
-:::: {.columns}
-:::{.column width="60%"}
-![](img/citibike.jpg)
-:::
-
-:::{.column width="40%"}
-What features might help us make an accurate prediction?
-:::
-::::
-
-## citibike data
-
-:::: {.columns}
-
-:::{.column width="40%"}
-```{python}
-import mglearn
-
-citibike = mglearn.datasets.load_citibike()
-citibike.head(20)
-```
-:::
-
-:::{.column width="60%"}
-- Only feature: datetime
-- The data is collected at regular intervals (every three hours) 
-- Target: rentals in the next 3-hour period
-- Goal: Given past rental counts, predict the number of rentals at a specific future time.
-:::
-::::
-
-**Using only the tools in your current toolbox, what model would you choose, and what challenges might you run into?**
-
-## Why different treatement?
-
-:::: {.columns}
-
-:::{.column width="40%"}
-```{python}
-import mglearn
-
-citibike = mglearn.datasets.load_citibike()
-citibike.head(20)
-```
-:::
-:::{.column width="60%"}
-- This type of data is distinctive because it is **inherently sequential**. 
-- The number of bikes available at a station at one point in time is often related to the number of bikes at earlier times. 
-- This is a **time-series forecasting** problem.
-:::
-::::
-
-## Today's lecture 
-
-- What is time series? 
-- How do we know a problem is a time series problem?
-- Why do standard ML models struggle with time-dependent data?
-- How can we adapt ML models to handle time series?
-
-## Models for time series
-
-The ML models we've used so far **do not have a built-in concept of time**. There are **two broad strategies** for modeling time series:
-
-- Use models designed for sequential data which explicitly capture temporal dependencies (e.g., Hidden Markov Models, Transformer architectures etc.) 
-
-- **Use tabular ML models with engineered temporal features (e.g., Linear models, Random Forests, Gradient Boosted Trees)**    
-
-## citibike data visualization
-
-```{python}
-print(f"Start date: {citibike.index.min()}, End date: {citibike.index.max()}")
-
-plt.figure(figsize=(10, 4))
-xtick_labels = pd.date_range(start=citibike.index.min(), end=citibike.index.max(), freq="D")
-plt.xticks(xtick_labels,  xtick_labels.strftime("%a %m-%d"), rotation=90, ha="left")
-plt.plot(citibike, linewidth=1)
-plt.xlabel("Date")
-plt.ylabel("Rentals");
-plt.title("Number of bike rentals over time for a selected bike station");
-```
-
-Do you see any daily patterns? Weekly patterns? Noise? 
-
-## ⛔️ Incorrect data splitting
-
-```{python}
-#| echo: true
-train_df, test_df = train_test_split(citibike, test_size=0.2, random_state=123)
-print('Train largest date: ', train_df.index.max())
-print('Test smallest date: ', test_df.index.min())
-```
-```{python}
-plt.figure(figsize=(10, 3))
-train_df_sort = train_df.sort_index()
-test_df_sort = test_df.sort_index()
-
-plt.plot(train_df_sort, "b", label="train")
-plt.plot(test_df_sort, "r", label="test")
-plt.xticks(rotation="vertical")
-plt.legend();
-```
-
-⛔️ We should never train on the future to predict the past!
-
-## ✅ Correct data splitting
-
-In time series, the simplest split is: earlier data $\rightarrow$ training and later data $\rightarrow$ testing. For example: 
-
-```{python}
-#| echo: true
-n_train = 184 
-train_df = citibike[:184] 
-test_df = citibike[184:]
-```
-```{python}
-
-plt.figure(figsize=(10, 3))
-train_df_sort = train_df.sort_index()
-test_df_sort = test_df.sort_index()
-
-plt.plot(train_df_sort, "b", label="train")
-plt.plot(test_df_sort, "r", label="test")
-plt.xticks(rotation="vertical")
-plt.legend();
-```
-# Feature engineering for time series 
-
-## Motivation 
-
-- In this toy data, we just have a single feature: the date time feature. 
-- Note that ML models do not have a built-in concept of time. We have to give it to them.
-- We will explore different ways to extract informative features from time.
-
-## POSIX time feature {.smaller}
-- Let's start with a simplest encoding. 
-- A common way that dates are stored on computers is using POSIX time, which is the number of seconds since January 1970 00:00:00 (this is beginning of Unix time). 
-
-- Let's start with encoding feature as a single integer representing this POSIX time. 
-
-```{python}
-#| echo: true
-# convert to POSIX time by dividing by 10**9
-X = (
-    citibike.index.astype("int64").values.reshape(-1, 1) // 10**9
-)  # convert to POSIX time by dividing by 10**9
-y = citibike.values
-X[:10]
-```
-
-## RF on posix features {.smaller}
-
-```{python}
-regressor = RandomForestRegressor(n_estimators=100, random_state=0)
-eval_on_features(X, y, regressor,  xtick_labels, feat_names="POSIX time")
-```
-- The predictions on the training data and training score are pretty good 
-- But for the test data, a constant line is predicted ...
-- What's going on?
-
-## Trees cannot extrapolate! 
-- Tree-based models only make predictions within the range of values they've seen during training.
-- Trees partition the feature space into fixed regions and predictions inside each region are averages of training labels.
-- If your future timestamps are larger than the ones in the training set trees cannot "see beyond" the training range and they will flatline or behave unpredictably.
-
-This is exactly what happens with POSIX time encoded as a single numeric feature! 
-
-## Extracting date and time information
-
-- Note that our index is of this special type: [`DateTimeIndex`](https://pandas.pydata.org/docs/reference/api/pandas.DatetimeIndex.html). We can extract all kinds of interesting information from it.   
-
-```{python}
-#| echo: true
-print(citibike.index[0])
-print(citibike.index[0].month_name())
-print(citibike.index[0].dayofweek)
-print(citibike.index[0].hour)
-```
-
-## Hour of day 
-- We noted before that the hour of day and day of week seem quite important. 
-- Let's start with hour of day. 
-
-```{python}
-#| echo: true
-X_hour = citibike.index.hour.values.reshape(-1, 1)
-X_hour[:10]
-```
-
-## RF with hour of day
-
-```{python}
-#| echo: true
-regressor = RandomForestRegressor(n_estimators=100, random_state=0)
-eval_on_features(X_hour, y, regressor,  xtick_labels, feat_names="Hour of the day")
-```
-
-The scores are better when we add hour of day feature! 
-
-## hour of day + day of week 
-
-Now let's add day of week along with hour of day. 
-```{python}
-#| echo: true
-X_hour_week = np.hstack(
-    [
-        citibike.index.dayofweek.values.reshape(-1, 1),
-        citibike.index.hour.values.reshape(-1, 1),
-    ]
-)
-X_hour_week
-```
-## RF with hour of day + day of week 
-```{python}
-#| echo: true
-eval_on_features(X_hour_week, y, regressor,  xtick_labels, feat_names = "hour of day + day of week")
-```
-
-The time of the day and day of the week features are clearly helping. 
-
-## Ridge with Hour of day + Day of week 
-
-```{python}
-lr = Ridge();
-eval_on_features(X_hour_week, y, lr,  xtick_labels, feat_names = "hour of day + day of week")
-
-```
-
-Why is `Ridge` performing poorly on the training data as well as test data?
-
-## Encoding hour and day with OHE 
-
-```{python}
-#| echo: true
-enc = OneHotEncoder()
-X_hour_week_onehot = enc.fit_transform(X_hour_week).toarray()
-hour = ["%02d:00" % i for i in range(0, 24, 3)]
-day = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
-features = day + hour
-pd.DataFrame(X_hour_week_onehot, columns=features).head(6)
-```
-
-## Ridge with hour of day OHE + day of week OHE
-
-:::: {.columns}
-
-:::{.column width="70%"}
-```{python}
-eval_on_features(X_hour_week_onehot, y, Ridge(),  xtick_labels, feat_names="hour of day OHE + day of week OHE")
-```
-:::
-
-:::{.column width="30%"}
-- The scores are a bit better! 
-- Can we improve them further? 
-:::
-::::
-
-## Add interaction features 
-```{python }
-from sklearn.preprocessing import PolynomialFeatures
-
-poly_transformer = PolynomialFeatures(
-    interaction_only=True, include_bias=False
-)
-X_hour_week_onehot_poly = poly_transformer.fit_transform(X_hour_week_onehot)
-hour = ["%02d:00" % i for i in range(0, 24, 3)]
-day = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
-features = day + hour
-features_poly = poly_transformer.get_feature_names_out(features)
-df_hour_week_ohe_poly = pd.DataFrame(X_hour_week_onehot_poly, columns = features_poly)
-df_hour_week_ohe_poly.iloc[:, [0, 1, 2, 3, 4, 5, 34, 35, 36, 37, 40]].head(6)
-```
-
-## Ridge with hour of day OHE + day of week OHE + interaction features
-
-```{python}
-eval_on_features(X_hour_week_onehot_poly, y, lr,  xtick_labels, feat_names = "hour of day OHE + day of week OHE + interaction feats")
-```
-The scores are much better now!! 
-
-## Interpretation {.scrollable .smaller}
-
-Since we are using a linear model, we can examine the coefficients learned by `Ridge`. 
+## Monthly subscriber churn rates for various streaming services
 
 :::: {.columns}
 :::{.column width="50%"}
-
-```{python}
-features_nonzero = np.array(features_poly)[lr.coef_ != 0]
-coef_nonzero = lr.coef_[lr.coef_ != 0]
-pd.DataFrame(coef_nonzero, index=features_nonzero, columns=["Coefficient"]).sort_values(
-    "Coefficient", ascending=False
-)
-```
-:::
+![](img/subscriber-churn.png)
+[Source](https://sherwood.news/tech/could-mergers-help-streaming-sites-turn-the-churning-tides/)
+::: 
 
 :::{.column width="50%"}
 
-**Do these coefficients make sense?**
+**Question:** Is a smaller or a larger churn rate more desirable for a subscription-based company?
+
+- A smaller churn rate is better (means fewer customers leaving)
+- Lower churn = higher customer retention = more stable revenue
 
 :::
 ::::
 
-## iClicker 19.2 
+## The challenge: Predicting *when*, not just *whether*
 
-**Select all of the following statements which are TRUE.**
+Imagine you work for a subscription-based telecom company.
 
-- (A) One-hot encoding the hour of day allows linear models to treat each hour as a separate category and capture cyclic patterns effectively.
-- (B) Success in time-series modeling often depends more on choosing the right features and right encoding for the given model. 
-- (C) Tree-based models are good at predicting values beyond the range of the training set because they can extrapolate trends.
+- Your team wants to predict **when a customer will churn**, not just whether they churn.
+- This helps the company:
+  - Target retention strategies at the right time
+  - Allocate resources efficiently to high-risk customers
+  - Understand which factors accelerate or delay churn
+- Our goal: **model time to churn** while accounting for customers who haven't churned yet.
 
+## [Customer Churn Dataset](https://www.kaggle.com/blastchar/telco-customer-churn) {.scrollable .smaller}
 
-## Lag-based features {.smaller .scrollable}
+If you wanted to predict whether a customer churns, what kind of model from your ML toolbox would you use?
+
+```{python}
+df = pd.read_csv(DATA_DIR + "WA_Fn-UseC_-Telco-Customer-Churn.csv")
+train_df, test_df = train_test_split(df, random_state=123)
+train_df.head()
+```
+## Churn prediction as binary classification
+
+- When we treat churn as a binary classification problem, we only ask: **Has the customer churned by the time of data collection?**
+
+- Limitations of this approach:
+  - Answers only "Yes/No" and discards **when** churn occurred
+  - Treats a customer who churned after 1 month the same as one who churned after 5 years
+  - Ignores the time dimension entirely
+
+- **Is that what we want?** Not if timing matters for business decisions! 
+
+## Predicting tenure
 
 :::: {.columns}
-
 :::{.column width="40%"}
 ```{python}
-rentals_df = pd.DataFrame(citibike)
-rentals_df = rentals_df.rename(columns={"one":"n_rentals"})
-rentals_df.head(10)
+train_df[["tenure", "Churn"]].head(8)
 ```
 :::
-
-:::{.column width="60%"}
-- In time series data there is temporal dependence; observations close in time tend to be correlated.
-- Currently we're using current time to predict the number of bike rentals in the next three hours.
-- But, what if the number of bike rentals is also related to bike rentals three hours ago or 6 hours ago and so on?
-- Such features are called lagged features.
-:::
-:::: 
-
-
-
-## Creating lag features {.smaller .scrollable}
-
-```{python}
-#| echo: true
-def create_lag_df(df, lag, cols):
-    return df.assign(
-        **{f"{col}-{n}": df[col].shift(n) for n in range(1, lag + 1) for col in cols}
-    )
-rentals_lag5 = create_lag_df(rentals_df, 5, ['n_rentals'] )
-rentals_lag5.head(8)
-```
-
-## Ridge with lag features
-
-```{python}
-X_lag_features = rentals_lag5.drop(columns = ['n_rentals']).to_numpy()
-eval_on_features(X_lag_features, y, lr,  xtick_labels, feat_names="Lag features", impute="yes")
-```
-
-The model is performing poorly. 
-
-
-## Random Forest with lag features
-
-```{python}
-imp = SimpleImputer()
-X_lag_features_imp = imp.fit_transform(X_lag_features)
-eval_on_features(X_lag_features_imp, y, regressor,  xtick_labels, feat_names="Lag features")
-```
-
-Better than the linear model but worse than our best model. 
-
-## Ridge with all features
-```{python}
-X_hour_week_onehot_poly_lag = np.hstack([X_hour_week_onehot_poly, X_lag_features])
-eval_on_features(X_hour_week_onehot_poly_lag, y, lr, xtick_labels, feat_names = "hour of day OHE + day of week OHE + interaction feats + Lag feats")
-```
-
-Good scores. But lag features don't seem to help much in this case. 
-
-
-## RF with all features
-
-```{python}
-X_hour_week_lag = np.hstack([X_hour_week, X_lag_features])
-eval_on_features(X_hour_week_lag, y, regressor,  xtick_labels, feat_names = "hour of day + day of week + Lag feats")
-```
-
-Lag features seem to make things a bit worse in this case.
-
-## Cross-validation with time series
-
-- We can't do regular cross-validation if we don't want to be predicting the past.
-
-- There is [`TimeSeriesSplit`](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.TimeSeriesSplit.html) for time series data. 
-
-```{python}
-from sklearn.model_selection import TimeSeriesSplit
-# Code from sklearn documentation
-X_toy = np.array([[1, 2], [3, 4], [1, 2], [3, 4], [1, 2], [3, 4]])
-y_toy = np.array([1, 2, 3, 4, 5, 6])
-tscv = TimeSeriesSplit(n_splits=3)
-for train, test in tscv.split(X_toy):
-    print("%s %s" % (train, test))
-```
-
-# Forecasting further into the future 
-
-## Problem
-- So far, our lag features let us predict 3 hours ahead. 
-- What if we want to predict 15 hours in the future? 
-
-- Problem: We do not yet know the rental counts for the required lag timestamps:
-    - 2015-09-01 00:00:00
-    - 2015-09-01 03:00:00
-    - 2015-09-01 06:00:00
-    - 2015-09-01 09:00:00
-- Without those values, our lag features break 😢
-
-## Approach 1: Iterative forecasting {.smaller}
-
-Train one model that predicts 3 hours ahead. At prediction time, move forward step by step, using your own predictions as future lag inputs.
-
-**Example:**
-
-- Predict rentals at 00:00 on 2015-09-01.
-- Use that prediction as the lag to predict rentals at 03:00.
-- Use both predictions to predict rentals at 06:00.
-- Continue until you reach 12:00.
-
-This method works, but errors accumulate as we step forward. The longer the horizon, the more uncertainty grows. 
-
-## Approach 2: Direct forecasting (multiple horizons)
-
-- Train separate models for each horizon:
-  - Model 1 $\rightarrow$ predict 3 hours ahead
-  - Model 2 $\rightarrow$ predict 6 hours ahead
-  - Model 3 $\rightarrow$ predict 9 hours ahead
-
-Each model uses lag features that match the required horizon.
-
-
-## (Optional) Approach 3: Multi-output models (joint forecasting)
-
-- Train one model that predicts several future steps at once, e.g.:
-
-  ```y = [rentals_in_3h, rentals_in_6h, rentals_in_9h, ...]```
-
-- These models learn relationships across future time steps.
-- Note: Multi-output forecasting is powerful, but outside the scope of CPSC 330.
-
-# Seasonality and trends 
-
-**Time series often show recognizable patterns over time**, which we want our models to capture.
-
-## Seasonality
-
-**Seasonality** refers to a **repeating pattern** that occurs at regular, predictable intervals.
-
-- **Example 1:** Bike rentals tend to peak at the same hours each day (daily seasonality).  
-- **Example 2:** Retail sales consistently spike before the December holidays (annual seasonality).
-- Recognizing seasonality helps a model **anticipate recurring patterns** rather than mistake them for noise.
-- We can capture seasonality by adding features such as: `rush_hour`, `is_weekend`, and `is_holiday`
-
-
-## Trends {.smaller}
-
-Let's consider another time series dataset, [Retail Sales of Clothing and Clothing Accessory Stores dataset](https://fred.stlouisfed.org/series/MRTSSM448USN). 
-
-```{python}
-retail_df = pd.read_csv("data/MRTSSM448USN.csv", parse_dates=["DATE"])
-retail_df.columns = ["date", "sales"]
-retail_df.plot(x="date", y="sales", figsize=(8, 4));
-```
-It looks like there's a clear trend; retail sales gradually increase over time. A **trend** is a long-term upward or downward movement in a time series.
-
-Question: How might we encode this trend information so our models can use it?
-
-## Days since feature {.scrollable .smaller}
-
-One idea is to create a feature such as "Days_since"
-
-```{python}
-def lag_df(df, lag, cols):
-    return df.assign(
-        **{f"{col}-{n}": df[col].shift(n) for n in range(1, lag + 1) for col in cols}
-    )
-retail_lag_5 = lag_df(retail_df, 5, ["sales"])
-retail_train_5 = retail_lag_5.query("date <= 20160101")
-retail_test_5 = retail_lag_5.query("date >  20160101")
-retail_train_5_date = retail_lag_5.query("date <= 20160101")
-first_day_retail = retail_train_5_date["date"].min()
-
-retail_train_5_date = retail_train_5_date.assign(
-    Days_since=retail_train_5_date["date"].apply(lambda x: (x - first_day_retail).days)
-)
-retail_train_5_date.head(10)
-```
-
-# Types of time series 
-
-## Univariate time series: Bike rentals
-
-A **univariate time series** tracks *one* variable over time. Here, we only measure the number of bike rentals at each timestamp.
-
-| starttime            | rentals |
-|----------------------|---------|
-| 2015-08-26 12:00:00  |   30    |
-| 2015-08-12 09:00:00  |   10    |
-| 2015-08-19 03:00:00  |    2    |
-| 2015-08-07 12:00:00  |   22    |
-| 2015-08-03 09:00:00  |    9    |
-
-
-## Multivariate time series: Bike rentals with weather + traffic {.smaller}
-
-A **multivariate time series** records several variables at each timestamp.  
-Here, we track bike rentals along with weather and local traffic conditions.
-
-| datetime            | rentals | temp_C | humidity | wind_kmh | traffic_level |
-|---------------------|---------|--------|----------|----------|----------------|
-| 2015-08-01 09:00    |   12    |   18   |    65    |    10    |       2        |
-| 2015-08-01 12:00    |   28    |   22   |    55    |     8    |       3        |
-| 2015-08-01 15:00    |   35    |   24   |    50    |    12    |       4        |
-| 2015-08-01 18:00    |   30    |   21    |    60    |    20    |       3        |
-| 2015-08-02 09:00    |   10    |   17   |    70    |    15    |       1        |
-
-## Hierarchical time series: Bike sales across cities and stores {.smaller}
-
-Consists of multiple variables from multiple observations, nested within the larger group categories, recorded sequentially over time (e.g., bike sales from multiple stores over time)
-
-:::: {.columns}
 :::{.column width="60%"}
 
-| city      | store_id | date        | bike_sales |
-|-----------|----------|-------------|------------|
-| Vancouver | S1       | 2024-01-01  |     12     |
-| Vancouver | S1       | 2024-01-02  |     15     |
-| Vancouver | S2       | 2024-01-01  |      9     |
-| Vancouver | S2       | 2024-01-02  |     11     |
-| Victoria | M1       | 2024-01-01  |      7     |
-| Victoria | M1       | 2024-01-02  |      8     |
-| Victoria | M2       | 2024-01-01  |     14     |
-| Victoria | M2       | 2024-01-02  |     13     |
-
-:::
-:::{.column width="40%"}
-
-```
-Company
- ├── Vancouver
- │    ├── S1 time series
- │    └── S2 time series
- └── Victoria
-      ├── M1 time series
-      └── M2 time series
-```
+In our dataset, the tenure column is the number of months the customer has stayed with the company. Can we use the techniques you learned so far (e.g., regression models) to predict the time (tenure in our case)? 
 :::
 ::::
 
-### Demo
+## The problem: Incomplete information
 
-We'll be starting with the [CitiBike dataset](https://ride.citibikenyc.com/system-data) today
-![](img/citibike.png)
+:::: {.columns}
+:::{.column width="40%"}
+```{python}
+train_df[["tenure", "Churn"]].head(8)
+```
+:::
+:::{.column width="60%"}
+- We only have information about tenure **up to the point we collected the data**. 
+- For customers who haven't churned:
+  - We don't know their true "time to churn"
+  - We only know they lasted **at least** this long
+  - Their actual churn time is unknown (incomplete information)
+- This is called **right-censoring** - the event hasn't occurred yet
+:::
+::::
+
+## Types of censoring {.smaller}
+- **Right-censoring**: Event hasn't occurred yet (most common in practice)
+- **Left-censoring**: Event occurred before observation started
+- **Interval-censoring**: Event occurred within a time interval
+
+![](img/censoring.png)
+
+## Time to event and censoring 
+
+:::: {.columns}
+:::{.column width="40%"}
+```{python}
+train_df[["tenure", "Churn"]].head(8)
+```
+:::
+:::{.column width="60%"}
+- Many customers in the dataset are still active (Churn = "No"). 
+- They are **right-censored**: we only know their tenure **so far**, not their final tenure. 
+:::
+::::
+
+
+## Time-to-event problems
+
+Time-to-event problems appear everywhere. Examples include:
+
+- Time until a customer leaves a subscription service
+- Time until a disease causes death
+- Time until equipment fails
+- Duration of unemployment until finding a job
+- Waiting time until a scheduled surgery
+
+These all follow the same pattern: the event happens once, and we care about how long it takes.
+
+
+# Approaches 
+
+## Approach 1: Only use churned customers ⛔️ {.smaller}
+
+Suppose we only consider rows where Churn == "Yes" and throw away all right-censored customers. 
+
+```{python}
+train_df_churn = train_df.query(
+    "Churn == 'Yes'"
+)  # Consider only examples where the customers churned.
+test_df_churn = test_df.query(
+    "Churn == 'Yes'"
+)  # Consider only examples where the customers churned.
+train_df_churn.head(4)
+```
+
+This throws away valuable information from active customers!
+
+## Clicker 
+
+Would only considering rows where Churn == "Yes" and throwing away all right-censored customers overestimate or underestimate the average survival time?
+
+- (A) Overestimate 
+- (B) Underestimate 
+- (C) Cannot tell based on the provided information
+
+
+## Approach 2: Assume everyone churns now ⛔️
+
+Treat all current tenure values as final, even for active customers.
+
+```{python}
+train_df[["tenure", "Churn"]].head()
+```
+
+This assumes active customers (Churn = "No") will churn immediately. 
+
+## Question for you: 
+
+Would assuming everyone churns now underestimate or overestimate tenure?
+
+- (A) Overestimate 
+- (B) Underestimate 
+- (C) Cannot tell based on the provided information
+
+
+## 
+
+- **Key insight**: Ignoring or removing censored cases will bias our estimates:
+
+## Approach 3: Survival analysis ✅
+
+Survival analysis explicitly models time until an event **and properly handles censoring**.
+
+**Common methods:**
+
+- **Kaplan–Meier estimator**: Non-parametric method for estimating survival curves
+- **Cox proportional hazards model**: Semi-parametric regression model for survival data
+- **Survival forests**: Random forest variant adapted for censored data
+
+## Survival analysis {.smaller}
+
+These methods allow estimation of:
+
+**Survival function**: 
+
+- $S(t) = P(T > t)$ (probability of surviving past time $t$)
+- Imagine starting with 100 customers on Day 0. The survival function tells you: What fraction of them are still active (have not churned) at time $t$? 
+- $S(3) = 0.80$ (80% haven't churned by month 3)
+- $S(12) = 0.40$ (40% haven't churned by month 12)
+
+**Hazard function**: $h(t)$ (instantaneous risk of the event at time $t$)
+
+- Imagine a customer who has not churned yet and is still active at month 10.
+- The hazard tells us: How likely are they to churn right now, at month 10?
+- Human mortality: hazard is low at age 20, higher at 80
 
 ## Group Work: Class Demo & Live Coding
 
-For this demo, each student should [click this link](https://github.com/new?template_name=lecture20_demo&template_owner=ubc-cpsc330) to create a new repo in their accounts, then clone that repo locally to follow along with the demo from today.
+For this demo, each student should [click this link](https://github.com/new?template_name=lecture21_demo&template_owner=ubc-cpsc330) to create a new repo in their accounts, then clone that repo locally to follow along with the demo from today.
 
+# Clicker 21.2
 
-## What did we learn today? {.smaller}
+**Select all of the following statements which are TRUE.**
 
-- **Time series** data has an inherent order. 
-- Correct **train/test splitting** must respect time (no shuffling!).
-- **Modeling considerations:**
-  - ML models can handle time series *if we engineer meaningful temporal features*.
-  - **Linear models** struggle with cyclic numeric features unless encoded properly.
-  - **Tree-based models** cannot extrapolate beyond the training range.
-- Forecasting further ahead with iterative forecasting 
-- **Seasonality** = repeating patterns (daily, weekly, annual). 
-- **Trends** = long-term upward/downward movement
-
-**The key to successful time-series modeling: Choose the right features + choose the right model for the temporal structure.**
-
+- (A) Right censoring occurs when the endpoint of event has not been observed for all study subjects by the end of the study period.
+- (B) Right censoring implies that the data is missing completely at random.
+- (C) In the presence of right-censored data, binary classification models can be applied directly without any modifications or special considerations.
+- (D) If we apply the Ridge regression model to predict tenure in right censored data, we are likely to underestimate it because the tenure observed in our data is shorter than what it would be in reality.
