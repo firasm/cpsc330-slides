@@ -1315,7 +1315,7 @@ iClicker cloud join link: **https://join.iclicker.com/YJHS**
 <section id="how-to-handle-multiple-classes" class="slide level2 smaller center">
 <h2>How to handle multiple classes?</h2>
 <p>Consider this dataset with multiple classes.</p>
-<div id="6239769e" class="cell" data-execution_count="2">
+<div id="41a4637e" class="cell" data-execution_count="2">
 <div class="cell-output cell-output-display" data-execution_count="2">
 <div>
 <style scoped>
@@ -1373,7 +1373,7 @@ text-align: right;
 </section>
 <section id="section" class="slide level2 center">
 <h2></h2>
-<div id="8fa9b2b3" class="cell" data-execution_count="3">
+<div id="31519932" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a aria-label="1"></a>hdb_df[<span class="st">&quot;target&quot;</span>].value_counts(normalize<span class="op">=</span><span class="va">True</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="3">
 <pre><code>target
@@ -1601,7 +1601,7 @@ The predicted class <span class="math inline">\(\hat{y}\)</span> is:<br>
 <h2>A graphical view of a linear model</h2>
 <div class="columns">
 <div class="column" style="width:20%;">
-<div id="f0222d9b" class="cell" data-execution_count="4">
+<div id="e9289c69" class="cell" data-execution_count="4">
 <div class="cell-output cell-output-display" data-execution_count="4">
 <div>
 <figure>
@@ -1828,7 +1828,7 @@ Feed the input through the network to calculate the predicted output using the c
 <li>Let’s predict labels with associated probabilities for unseen images</li>
 </ul>
 <div class="scroll-container" style="overflow-y: scroll; height: 400px;">
-<div id="59575632" class="cell" data-execution_count="7">
+<div id="11231091" class="cell" data-execution_count="7">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -1918,7 +1918,7 @@ jaguar, panther, Panthera onca, Felis onca              0.004
 <li>It’s not doing very well here because ImageNet doesn’t have proper classes for these images.</li>
 </ul>
 <div class="scroll-container" style="overflow-y: scroll; height: 400px;">
-<div id="cc82193c" class="cell" data-execution_count="8">
+<div id="3b084775" class="cell" data-execution_count="8">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -2060,7 +2060,7 @@ bannister, banister, balustrade, balusters, handrail              0.039
 </p>
 <p>Let’s look at some sample images in the dataset.</p>
 <div class="scroll-container" style="overflow-y: scroll; height: 400px;">
-<div id="5048f58a" class="cell" data-execution_count="9">
+<div id="c02bf92d" class="cell" data-execution_count="9">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -2076,7 +2076,7 @@ bannister, banister, balustrade, balusters, handrail              0.039
 <p><br>
 </p>
 <p>Here is the stat of our toy dataset.</p>
-<div id="8e2f9c11" class="cell" data-execution_count="10">
+<div id="aa9e7299" class="cell" data-execution_count="10">
 <div class="cell-output cell-output-stdout">
 <pre><code>Classes: [&#39;beet_salad&#39;, &#39;chocolate_cake&#39;, &#39;edamame&#39;, &#39;french_fries&#39;, &#39;pizza&#39;, &#39;spring_rolls&#39;, &#39;sushi&#39;]
 Class count: 40, 38, 40
@@ -2092,7 +2092,7 @@ First sample: (&#39;data/food/train/beet_salad/104294.jpg&#39;, 0)</code></pre>
 <ul>
 <li>Now for each image in our dataset, we’ll extract a feature vector from a pre-trained model called densenet121, which is trained on the ImageNet dataset.</li>
 </ul>
-<div id="da36a185" class="cell" data-execution_count="11">
+<div id="8ac30981" class="cell" data-execution_count="11">
 <div class="cell-output cell-output-stdout">
 <pre><code>Downloading: &quot;https://download.pytorch.org/models/densenet121-a639ec97.pth&quot; to /home/runner/.cache/torch/hub/checkpoints/densenet121-a639ec97.pth</code></pre>
 </div>
@@ -2105,7 +2105,7 @@ First sample: (&#39;data/food/train/beet_salad/104294.jpg&#39;, 0)</code></pre>
 <ul>
 <li>Now we have extracted feature vectors for all examples. What’s the shape of these features?</li>
 </ul>
-<div id="cfd3c15f" class="cell" data-execution_count="12">
+<div id="dc1d8543" class="cell" data-execution_count="12">
 <div class="cell-output cell-output-display" data-execution_count="12">
 <pre><code>torch.Size([283, 1024])</code></pre>
 </div>
@@ -2126,7 +2126,7 @@ First sample: (&#39;data/food/train/beet_salad/104294.jpg&#39;, 0)</code></pre>
 <ul>
 <li>Let’s examine the feature vectors.</li>
 </ul>
-<div id="e5b37fdb" class="cell" data-execution_count="13">
+<div id="2c37afe2" class="cell" data-execution_count="13">
 <div class="cell-output cell-output-display" data-execution_count="13">
 <div>
 <style scoped>
@@ -2184,14 +2184,14 @@ text-align: right;
 <td>...</td>
 <td>0.229935</td>
 <td>1.046363</td>
-<td>2.241249</td>
+<td>2.241251</td>
 <td>0.229644</td>
 <td>0.033676</td>
 <td>0.742794</td>
-<td>1.338704</td>
-<td>2.130868</td>
-<td>0.625471</td>
-<td>0.463094</td>
+<td>1.338701</td>
+<td>2.130872</td>
+<td>0.625470</td>
+<td>0.463095</td>
 </tr>
 <tr class="even">
 <th data-quarto-table-cell-role="th">1</th>
@@ -2206,16 +2206,16 @@ text-align: right;
 <td>0.166081</td>
 <td>0.000286</td>
 <td>...</td>
-<td>0.910676</td>
-<td>1.580822</td>
+<td>0.910675</td>
+<td>1.580820</td>
 <td>0.087190</td>
 <td>0.606906</td>
 <td>0.436105</td>
-<td>0.306454</td>
-<td>0.940103</td>
-<td>1.159832</td>
+<td>0.306453</td>
+<td>0.940104</td>
+<td>1.159829</td>
 <td>1.712703</td>
-<td>1.624744</td>
+<td>1.624745</td>
 </tr>
 <tr class="odd">
 <th data-quarto-table-cell-role="th">2</th>
@@ -2224,7 +2224,7 @@ text-align: right;
 <td>0.002887</td>
 <td>0.001299</td>
 <td>0.091715</td>
-<td>0.548536</td>
+<td>0.548535</td>
 <td>0.000491</td>
 <td>0.003587</td>
 <td>0.266537</td>
@@ -2232,11 +2232,11 @@ text-align: right;
 <td>...</td>
 <td>0.465153</td>
 <td>0.678282</td>
-<td>0.946386</td>
-<td>1.194696</td>
-<td>2.537743</td>
-<td>1.642387</td>
-<td>0.701203</td>
+<td>0.946385</td>
+<td>1.194697</td>
+<td>2.537744</td>
+<td>1.642388</td>
+<td>0.701204</td>
 <td>0.115618</td>
 <td>0.186434</td>
 <td>0.166608</td>
@@ -2255,15 +2255,15 @@ text-align: right;
 <td>0.000388</td>
 <td>...</td>
 <td>0.394085</td>
-<td>0.700153</td>
+<td>0.700154</td>
 <td>0.105199</td>
-<td>0.856321</td>
+<td>0.856320</td>
 <td>0.038457</td>
 <td>0.023949</td>
 <td>0.131834</td>
-<td>1.296366</td>
+<td>1.296365</td>
 <td>0.723328</td>
-<td>1.915223</td>
+<td>1.915224</td>
 </tr>
 <tr class="odd">
 <th data-quarto-table-cell-role="th">4</th>
@@ -2271,23 +2271,23 @@ text-align: right;
 <td>0.005520</td>
 <td>0.001906</td>
 <td>0.001599</td>
-<td>0.186034</td>
+<td>0.186035</td>
 <td>0.850148</td>
 <td>0.000835</td>
 <td>0.003025</td>
 <td>0.036309</td>
 <td>0.000142</td>
 <td>...</td>
-<td>3.313760</td>
-<td>0.565742</td>
-<td>0.473562</td>
+<td>3.313759</td>
+<td>0.565744</td>
+<td>0.473563</td>
 <td>0.139444</td>
 <td>0.029284</td>
 <td>1.165937</td>
 <td>0.442323</td>
 <td>0.227594</td>
 <td>0.884270</td>
-<td>1.592694</td>
+<td>1.592693</td>
 </tr>
 </tbody>
 </table>
@@ -2307,12 +2307,12 @@ text-align: right;
 <ul>
 <li>Let’s try out logistic regression on these extracted features.</li>
 </ul>
-<div id="a6b24155" class="cell" data-execution_count="14">
+<div id="e24d0b27" class="cell" data-execution_count="14">
 <div class="cell-output cell-output-stdout">
 <pre><code>Training score:  1.0</code></pre>
 </div>
 </div>
-<div id="552b0f3b" class="cell" data-execution_count="15">
+<div id="43ca3c88" class="cell" data-execution_count="15">
 <div class="cell-output cell-output-stdout">
 <pre><code>Validation score:  0.835820895522388</code></pre>
 </div>
@@ -2327,7 +2327,7 @@ text-align: right;
 </p>
 <p>Let’s examine some sample predictions on the validation set.</p>
 <div class="scroll-container" style="overflow-y: scroll; height: 400px;">
-<div id="fdd190e8" class="cell" data-execution_count="16">
+<div id="c98005e4" class="cell" data-execution_count="16">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -2358,7 +2358,7 @@ text-align: right;
 <p><br>
 </p>
 <p>Let’s try this out using a pre-trained model.</p>
-<div id="b7fb421b" class="cell" data-execution_count="17">
+<div id="2087321f" class="cell" data-execution_count="17">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a aria-label="1"></a><span class="im">from</span> ultralytics <span class="im">import</span> YOLO</span>
 <span id="cb19-2"><a aria-label="2"></a>model <span class="op">=</span> YOLO(<span class="st">&quot;yolov8n.pt&quot;</span>)  <span class="co"># pretrained YOLOv8n model</span></span>
 <span id="cb19-3"><a aria-label="3"></a></span>
@@ -2372,8 +2372,8 @@ text-align: right;
 View Ultralytics Settings with &#39;yolo settings&#39; or at &#39;/home/runner/.config/Ultralytics/settings.json&#39;
 Update Settings with &#39;yolo settings key=value&#39;, i.e. &#39;yolo settings runs_dir=path/to/dir&#39;. For help see https://docs.ultralytics.com/usage/settings
 
-image 1/1 /home/runner/work/cpsc330-slides/cpsc330-slides/website/data/yolo_test/3356700488_183566145b.jpg: 512x640 3 persons, 2 cars, 1 stop sign, 43.2ms
-Speed: 0.9ms preprocess, 43.2ms inference, 1.0ms postprocess per image at shape (1, 3, 512, 640)</code></pre>
+image 1/1 /home/runner/work/cpsc330-slides/cpsc330-slides/website/data/yolo_test/3356700488_183566145b.jpg: 512x640 3 persons, 2 cars, 1 stop sign, 124.7ms
+Speed: 1.5ms preprocess, 124.7ms inference, 1.3ms postprocess per image at shape (1, 3, 512, 640)</code></pre>
 </div>
 <div class="cell-output cell-output-display" data-execution_count="17">
 <pre><code>&#39;data/yolo_result.jpg&#39;</code></pre>
@@ -2385,7 +2385,7 @@ Speed: 0.9ms preprocess, 43.2ms inference, 1.0ms postprocess per image at shape 
 <p><br>
 </p>
 <div class="scroll-container" style="overflow-y: scroll; height: 400px;">
-<div id="b281a04d" class="cell" data-execution_count="18">
+<div id="0bc4b341" class="cell" data-execution_count="18">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
