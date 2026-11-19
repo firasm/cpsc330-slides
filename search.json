@@ -252,25 +252,46 @@
     "text": "Summary\n\nNeural networks combine weighted sums and nonlinear activations to learn features.\nCNNs use local filters shared across image locations.\nPretrained predictions use the original label vocabulary.\nFrozen feature extraction supports new labels with a familiar classifier.\nCompare baselines, inspect errors, and protect the data splits."
   },
   {
+    "objectID": "slides-19.html#about-me-ali-zaidi",
+    "href": "slides-19.html#about-me-ali-zaidi",
+    "title": "Lecture 19: Time series",
+    "section": "About Me: Ali Zaidi",
+    "text": "About Me: Ali Zaidi\n[ali.zaidi@ubc.ca]\n\nPhD in Computer Science from the Max Planck Institute for Biological Cybernetics, Tuebingen (Germany) where I studied neural systems and circuits for developing brain computer interfaces.\nData Scientist in the Kwon Lab at the International Collaboration on Repair Discoveries (ICORD), Faculty of Medicine, UBC / VGH.\nI work on developing sensors and models for optimizing patient management after traumatic brain / spine injuries. Similar to ones you’re familiar with."
+  },
+  {
+    "objectID": "slides-19.html#the-problem",
+    "href": "slides-19.html#the-problem",
+    "title": "Lecture 19: Time series",
+    "section": "The problem",
+    "text": "The problem\nCompression, inflammation and bleeding in neural tissue\n\nAfter a traumatic injury to the brain or spinal cord, there is compression and inflammation in and around the site of injury. This leads to increased pressure in and around the tissue - “pinching” the blood vessels and decreasing blood volume and oxygenation.\nWe address this by increasing the blood pressure (mean arterial pressure: MAP) to increase blood flow and oxygenation at the site of injury. (How? Adrenaline)"
+  },
+  {
+    "objectID": "slides-19.html#the-challenge-false-negatives",
+    "href": "slides-19.html#the-challenge-false-negatives",
+    "title": "Lecture 19: Time series",
+    "section": "The challenge: false negatives",
+    "text": "The challenge: false negatives\nHow does changing MAP change oxygenation? \nExample from an experiment: Raise blood pressure and study effect on oxygenation\n\n\n\nThere is a delayed response\n\n\n\nLinear models don’t really work. With this type of data, they often return false negatives. 😢"
+  },
+  {
+    "objectID": "slides-19.html#the-challenge-false-positives",
+    "href": "slides-19.html#the-challenge-false-positives",
+    "title": "Lecture 19: Time series",
+    "section": "The challenge: false positives",
+    "text": "The challenge: false positives\nRamdom walk: \\[ y(t) = y(t-1) + \\mathcal{U}({-1,1}) \\]\n\n\nGenerate 100 random timeseries, 600s at 100Hz = 60,000 datapoints\nMost of them come out to be significant (p&lt;0.01).\nHow do we solve this? We use differential equations:\n\\[ \\tau \\cdot \\frac{dy}{dt}(t) = k \\cdot x(t) - y(t) \\]\n\n\n\n\n\n\n\nBut that is beyond the scope of CPSC 330. (Happy to talk about it after the lecture)."
+  },
+  {
+    "objectID": "slides-19.html#key-ideas",
+    "href": "slides-19.html#key-ideas",
+    "title": "Lecture 19: Time series",
+    "section": "Key ideas",
+    "text": "Key ideas\n\nTimeseries data is different! - Standard models often do not work for timeseries data! 😯\nCan’t use ML models out-of-the-box. Need to adapt them.\nNeed models that respect time and temporal dependencies in the data.\n\nToday we’ll talk about how timeseries data is different, and how to approach its analysis"
+  },
+  {
     "objectID": "slides-19.html#lecture-learning-objectives",
     "href": "slides-19.html#lecture-learning-objectives",
     "title": "Lecture 19: Time series",
     "section": "Lecture learning objectives 🎯",
     "text": "Lecture learning objectives 🎯\n\nRecognize when a problem is a time series problem and what makes time-ordered data unique.\nApply proper train/test splits for time series.\nEngineer key time-based features\nUnderstand strategies for multi-step forecasting\nDescribe trend and its impact on time series behavior"
-  },
-  {
-    "objectID": "slides-19.html#recap-iclicker-questions",
-    "href": "slides-19.html#recap-iclicker-questions",
-    "title": "Lecture 19: Time series",
-    "section": "Recap: iClicker questions",
-    "text": "Recap: iClicker questions\nSelect all of the following statements which are TRUE.\n\n\nIn multinomial logistic regression, the model learns a separate weight vector and bias for each class.\n\n\nNeural networks are powerful models, so it’s usually a good idea to start with them on any new machine learning problem.\n\n\nThe main reason we add hidden layers is to allow the model to learn increasingly complex representations.\n\n\nConvolutional neural networks (CNNs) use filters that slide over the image to detect local patterns.\n\n\nUsing a pre-trained network as a feature extractor typically requires less data than training a deep network from scratch."
-  },
-  {
-    "objectID": "slides-19.html#recap-what-type-of-model-would-be-appropriate",
-    "href": "slides-19.html#recap-what-type-of-model-would-be-appropriate",
-    "title": "Lecture 19: Time series",
-    "section": "Recap: What type of model would be appropriate?",
-    "text": "Recap: What type of model would be appropriate?\n\n\n\n\n\n\n\nScenario\nModel/Method\n\n\n\n\nYou have user–item ratings (e.g., movie ratings) and want to predict missing ratings.\n?\n\n\nYou have a collection of documents without any labels and want to group them into themes.\n?\n\n\nYou want to classify the emotion of a set of text messages, but you do not have any labeled data.\n?\n\n\nYou have a small dataset with ~500 images containing pictures and names of 20 different Computer Science faculty members from UBC. Your goal is to develop a reasonably accurate multi-class classification model for this task.\n?"
   },
   {
     "objectID": "slides-19.html#motivation",
@@ -284,35 +305,28 @@
     "href": "slides-19.html#loan-default-prediction-tabular-data",
     "title": "Lecture 19: Time series",
     "section": "Loan default prediction (tabular data)",
-    "text": "Loan default prediction (tabular data)\nYou work for a financial institution and have a dataset where each row represents a customer applying for a loan. What type of model would you use?\n\n\n\n\n\n\n\n\n\n\n\n\n\n\ncustomer_id\nincome_k\ncredit_utilization\nlate_payments\nemployment_length\nemployment_type\nhome_ownership\nloan_purpose\ndefault\n\n\n\n\n1\n95\n22\n0\n9\nsalaried\nmortgage\nhome_improvement\n0\n\n\n2\n45\n78\n3\n2\ncontract\nrent\ndebt_consolidation\n1\n\n\n3\n120\n30\n1\n7\nsalaried\nown\ncar\n0\n\n\n4\n60\n65\n2\n3\nself_employed\nrent\ndebt_consolidation\n1\n\n\n5\n85\n40\n0\n10\nsalaried\nmortgage\neducation\n0\n\n\n6\n55\n90\n4\n1\ncontract\nrent\ndebt_consolidation\n1\n\n\n7\n130\n28\n0\n6\nsalaried\nown\ncar\n0\n\n\n8\n40\n82\n2\n1\nself_employed\nrent\ndebt_consolidation\n1\n\n\n\nRows are independent \\(\\rightarrow\\) order does not matter \\(\\rightarrow\\) time does not matter"
+    "text": "Loan default prediction (tabular data)\nYou work for a financial institution and have a dataset where each row represents a customer applying for a loan. What type of model would you use?\n\n\n\n\n\n\n\n\n\n\n\n\n\n\ncustomer_id\nincome_k\ncredit_utilization\nlate_payments\nemployment_length\nemployment_type\nhome_ownership\nloan_purpose\ndefault\n\n\n\n\n1\n95\n22\n0\n9\nsalaried\nmortgage\nhome_improvement\n0\n\n\n2\n45\n78\n3\n2\ncontract\nrent\ndebt_consolidation\n1\n\n\n3\n120\n30\n1\n7\nsalaried\nown\ncar\n0\n\n\n4\n60\n65\n2\n3\nself_employed\nrent\ndebt_consolidation\n1\n\n\n5\n85\n40\n0\n10\nsalaried\nmortgage\neducation\n0\n\n\n6\n55\n90\n4\n1\ncontract\nrent\ndebt_consolidation\n1\n\n\n7\n130\n28\n0\n6\nsalaried\nown\ncar\n0\n\n\n8\n40\n82\n2\n1\nself_employed\nrent\ndebt_consolidation\n1\n\n\n\nThis data is IID - Independent and Identically Distributed.\nRows are independent \\(\\rightarrow\\) order does not matter \\(\\rightarrow\\) time does not matter."
   },
   {
     "objectID": "slides-19.html#predict-demand-for-bike-rentals",
     "href": "slides-19.html#predict-demand-for-bike-rentals",
     "title": "Lecture 19: Time series",
     "section": "Predict demand for bike rentals",
-    "text": "Predict demand for bike rentals\nSuppose you want to predict the bike rental demand for the next three-hour period at a station in New York City.\n\n\n\n\nWhat features might help us make an accurate prediction?"
+    "text": "Predict demand for bike rentals\nSuppose you want to predict the bike rental demand for the next three-hour period at a station in New York City.\n\n\n\n\nHow is this different?"
   },
   {
     "objectID": "slides-19.html#citibike-data",
     "href": "slides-19.html#citibike-data",
     "title": "Lecture 19: Time series",
     "section": "citibike data",
-    "text": "citibike data\n\n\n\n\nstarttime\n2015-08-01 00:00:00     3\n2015-08-01 03:00:00     0\n2015-08-01 06:00:00     9\n2015-08-01 09:00:00    41\n2015-08-01 12:00:00    39\n2015-08-01 15:00:00    27\n2015-08-01 18:00:00    12\n2015-08-01 21:00:00     4\n2015-08-02 00:00:00     3\n2015-08-02 03:00:00     4\n2015-08-02 06:00:00     6\n2015-08-02 09:00:00    30\n2015-08-02 12:00:00    46\n2015-08-02 15:00:00    27\n2015-08-02 18:00:00    28\n2015-08-02 21:00:00     6\n2015-08-03 00:00:00     3\n2015-08-03 03:00:00     2\n2015-08-03 06:00:00    21\n2015-08-03 09:00:00     9\nFreq: 3h, Name: one, dtype: int64\n\n\n\n\nOnly feature: datetime\nThe data is collected at regular intervals (every three hours)\nTarget: rentals in the next 3-hour period\nGoal: Given past rental counts, predict the number of rentals at a specific future time.\n\n\nUsing only the tools in your current toolbox, what model would you choose, and what challenges might you run into?"
+    "text": "citibike data\n\n\n\n\nstarttime\n2015-08-01 00:00:00     3\n2015-08-01 03:00:00     0\n2015-08-01 06:00:00     9\n2015-08-01 09:00:00    41\n2015-08-01 12:00:00    39\n2015-08-01 15:00:00    27\n2015-08-01 18:00:00    12\n2015-08-01 21:00:00     4\n2015-08-02 00:00:00     3\n2015-08-02 03:00:00     4\n2015-08-02 06:00:00     6\n2015-08-02 09:00:00    30\n2015-08-02 12:00:00    46\n2015-08-02 15:00:00    27\n2015-08-02 18:00:00    28\n2015-08-02 21:00:00     6\n2015-08-03 00:00:00     3\n2015-08-03 03:00:00     2\n2015-08-03 06:00:00    21\n2015-08-03 09:00:00     9\nFreq: 3h, Name: one, dtype: int64\n\n\n\n\nOnly feature: datetime\nThe data is collected at regular intervals (every three hours)\nTarget: rentals in the next 3-hour period\nGoal: Given past rental counts, predict the number of rentals at a specific future time.\nWhat features might help us make an accurate prediction?\n\n\nUsing only the tools in your current toolbox, what model would you choose, and what challenges might you run into?"
   },
   {
     "objectID": "slides-19.html#why-different-treatement",
     "href": "slides-19.html#why-different-treatement",
     "title": "Lecture 19: Time series",
     "section": "Why different treatement?",
-    "text": "Why different treatement?\n\n\n\n\nstarttime\n2015-08-01 00:00:00     3\n2015-08-01 03:00:00     0\n2015-08-01 06:00:00     9\n2015-08-01 09:00:00    41\n2015-08-01 12:00:00    39\n2015-08-01 15:00:00    27\n2015-08-01 18:00:00    12\n2015-08-01 21:00:00     4\n2015-08-02 00:00:00     3\n2015-08-02 03:00:00     4\n2015-08-02 06:00:00     6\n2015-08-02 09:00:00    30\n2015-08-02 12:00:00    46\n2015-08-02 15:00:00    27\n2015-08-02 18:00:00    28\n2015-08-02 21:00:00     6\n2015-08-03 00:00:00     3\n2015-08-03 03:00:00     2\n2015-08-03 06:00:00    21\n2015-08-03 09:00:00     9\nFreq: 3h, Name: one, dtype: int64\n\n\n\n\nThis type of data is distinctive because it is inherently sequential.\nThe number of bikes available at a station at one point in time is often related to the number of bikes at earlier times.\nThis is a time-series forecasting problem."
-  },
-  {
-    "objectID": "slides-19.html#todays-lecture",
-    "href": "slides-19.html#todays-lecture",
-    "title": "Lecture 19: Time series",
-    "section": "Today’s lecture",
-    "text": "Today’s lecture\n\nWhat is time series?\nHow do we know a problem is a time series problem?\nWhy do standard ML models struggle with time-dependent data?\nHow can we adapt ML models to handle time series?"
+    "text": "Why different treatement?\n\n\n\n\nstarttime\n2015-08-01 00:00:00     3\n2015-08-01 03:00:00     0\n2015-08-01 06:00:00     9\n2015-08-01 09:00:00    41\n2015-08-01 12:00:00    39\n2015-08-01 15:00:00    27\n2015-08-01 18:00:00    12\n2015-08-01 21:00:00     4\n2015-08-02 00:00:00     3\n2015-08-02 03:00:00     4\n2015-08-02 06:00:00     6\n2015-08-02 09:00:00    30\n2015-08-02 12:00:00    46\n2015-08-02 15:00:00    27\n2015-08-02 18:00:00    28\n2015-08-02 21:00:00     6\n2015-08-03 00:00:00     3\n2015-08-03 03:00:00     2\n2015-08-03 06:00:00    21\n2015-08-03 09:00:00     9\nFreq: 3h, Name: one, dtype: int64\n\n\n\n\nThis type of data is distinctive because it is inherently sequential.\nThe number of bikes available at a station at one point in time is often related to the number of bikes at earlier times.\nThis data is not IID.\nThis is a time-series forecasting problem."
   },
   {
     "objectID": "slides-19.html#models-for-time-series",
@@ -320,6 +334,27 @@
     "title": "Lecture 19: Time series",
     "section": "Models for time series",
     "text": "Models for time series\nThe ML models we’ve used so far do not have a built-in concept of time. There are two broad strategies for modeling time series:\n\nUse models designed for sequential data which explicitly capture temporal dependencies (e.g., Hidden Markov Models, Transformer architectures etc.)\nUse tabular ML models with engineered temporal features (e.g., Linear models, Random Forests, Gradient Boosted Trees)"
+  },
+  {
+    "objectID": "slides-19.html#univariate-time-series-bike-rentals",
+    "href": "slides-19.html#univariate-time-series-bike-rentals",
+    "title": "Lecture 19: Time series",
+    "section": "Univariate time series: Bike rentals",
+    "text": "Univariate time series: Bike rentals\nA univariate time series tracks one variable over time. Here, we only measure the number of bike rentals at each timestamp.\n\n\n\nstarttime\nrentals\n\n\n\n\n2015-08-26 12:00:00\n30\n\n\n2015-08-12 09:00:00\n10\n\n\n2015-08-19 03:00:00\n2\n\n\n2015-08-07 12:00:00\n22\n\n\n2015-08-03 09:00:00\n9"
+  },
+  {
+    "objectID": "slides-19.html#multivariate-time-series-bike-rentals-with-weather-traffic",
+    "href": "slides-19.html#multivariate-time-series-bike-rentals-with-weather-traffic",
+    "title": "Lecture 19: Time series",
+    "section": "Multivariate time series: Bike rentals with weather + traffic",
+    "text": "Multivariate time series: Bike rentals with weather + traffic\nA multivariate time series records several variables at each timestamp.\nHere, we track bike rentals along with weather and local traffic conditions.\n\n\n\n\n\n\n\n\n\n\n\ndatetime\nrentals\ntemp_C\nhumidity\nwind_kmh\ntraffic_level\n\n\n\n\n2015-08-01 09:00\n12\n18\n65\n10\n2\n\n\n2015-08-01 12:00\n28\n22\n55\n8\n3\n\n\n2015-08-01 15:00\n35\n24\n50\n12\n4\n\n\n2015-08-01 18:00\n30\n21\n60\n20\n3\n\n\n2015-08-02 09:00\n10\n17\n70\n15\n1"
+  },
+  {
+    "objectID": "slides-19.html#hierarchical-time-series-bike-sales-across-cities-and-stores",
+    "href": "slides-19.html#hierarchical-time-series-bike-sales-across-cities-and-stores",
+    "title": "Lecture 19: Time series",
+    "section": "Hierarchical time series: Bike sales across cities and stores",
+    "text": "Hierarchical time series: Bike sales across cities and stores\nConsists of multiple variables from multiple observations, nested within the larger group categories, recorded sequentially over time (e.g., bike sales from multiple stores over time)\n\n\n\n\n\ncity\nstore_id\ndate\nbike_sales\n\n\n\n\nVancouver\nS1\n2024-01-01\n12\n\n\nVancouver\nS1\n2024-01-02\n15\n\n\nVancouver\nS2\n2024-01-01\n9\n\n\nVancouver\nS2\n2024-01-02\n11\n\n\nVictoria\nM1\n2024-01-01\n7\n\n\nVictoria\nM1\n2024-01-02\n8\n\n\nVictoria\nM2\n2024-01-01\n14\n\n\nVictoria\nM2\n2024-01-02\n13\n\n\n\n\nCompany\n ├── Vancouver\n │    ├── S1 time series\n │    └── S2 time series\n └── Victoria\n      ├── M1 time series\n      └── M2 time series"
   },
   {
     "objectID": "slides-19.html#citibike-data-visualization",
@@ -347,7 +382,7 @@
     "href": "slides-19.html#motivation-1",
     "title": "Lecture 19: Time series",
     "section": "Motivation",
-    "text": "Motivation\n\nIn this toy data, we just have a single feature: the date time feature.\nNote that ML models do not have a built-in concept of time. We have to give it to them.\nWe will explore different ways to extract informative features from time."
+    "text": "Motivation\n\nIn this toy data, we just have a single feature: the datetime index.\nNote that ML models do not have a built-in concept of time. We have to give it to them.\nWe will explore different ways to extract informative features from time."
   },
   {
     "objectID": "slides-19.html#posix-time-feature",
@@ -368,7 +403,14 @@
     "href": "slides-19.html#trees-cannot-extrapolate",
     "title": "Lecture 19: Time series",
     "section": "Trees cannot extrapolate!",
-    "text": "Trees cannot extrapolate!\n\nTree-based models only make predictions within the range of values they’ve seen during training.\nTrees partition the feature space into fixed regions and predictions inside each region are averages of training labels.\nIf your future timestamps are larger than the ones in the training set trees cannot “see beyond” the training range and they will flatline or behave unpredictably.\n\nThis is exactly what happens with POSIX time encoded as a single numeric feature!"
+    "text": "Trees cannot extrapolate!\n\nTree-based models only make predictions within the range of values they’ve seen during training.\nTrees partition the feature space into fixed regions and predictions inside each region are averages of training labels.\nIf your future timestamps are larger than the ones in the training set trees cannot “see beyond” the training range and they will flatline or behave unpredictably."
+  },
+  {
+    "objectID": "slides-19.html#ridge-on-posix-features",
+    "href": "slides-19.html#ridge-on-posix-features",
+    "title": "Lecture 19: Time series",
+    "section": "Ridge on posix features",
+    "text": "Ridge on posix features\n\n\nTrain-set R^2: 0.00\nTest-set R^2: -0.00\n\n\n\n\n\n\n\n\n\nNo better! Why?"
   },
   {
     "objectID": "slides-19.html#extracting-date-and-time-information",
@@ -424,28 +466,42 @@
     "href": "slides-19.html#ridge-with-hour-of-day-ohe-day-of-week-ohe",
     "title": "Lecture 19: Time series",
     "section": "Ridge with hour of day OHE + day of week OHE",
-    "text": "Ridge with hour of day OHE + day of week OHE\n\n\n\n\nTrain-set R^2: 0.53\nTest-set R^2: 0.62\n\n\n\n\n\n\n\n\n\n\n\nThe scores are a bit better!\nCan we improve them further?"
+    "text": "Ridge with hour of day OHE + day of week OHE\n\n\nTrain-set R^2: 0.53\nTest-set R^2: 0.62\n\n\n\n\n\n\n\n\n\nBetter… Can we improve them further?"
   },
   {
     "objectID": "slides-19.html#add-interaction-features",
     "href": "slides-19.html#add-interaction-features",
     "title": "Lecture 19: Time series",
     "section": "Add interaction features",
-    "text": "Add interaction features\n\n\n\n\n\n\n\n\n\nMon\nTue\nWed\nThu\nFri\nSat\nTue 00:00\nTue 03:00\nTue 06:00\nTue 09:00\nTue 18:00\n\n\n\n\n0\n0.0\n0.0\n0.0\n0.0\n0.0\n1.0\n0.0\n0.0\n0.0\n0.0\n0.0\n\n\n1\n0.0\n0.0\n0.0\n0.0\n0.0\n1.0\n0.0\n0.0\n0.0\n0.0\n0.0\n\n\n2\n0.0\n0.0\n0.0\n0.0\n0.0\n1.0\n0.0\n0.0\n0.0\n0.0\n0.0\n\n\n3\n0.0\n0.0\n0.0\n0.0\n0.0\n1.0\n0.0\n0.0\n0.0\n0.0\n0.0\n\n\n4\n0.0\n0.0\n0.0\n0.0\n0.0\n1.0\n0.0\n0.0\n0.0\n0.0\n0.0\n\n\n5\n0.0\n0.0\n0.0\n0.0\n0.0\n1.0\n0.0\n0.0\n0.0\n0.0\n0.0"
+    "text": "Add interaction features\n\n\n\n\n\n\n\n\n\nMon\nTue\nWed\nThu\nFri\nSat\nTue 00:00\nTue 03:00\nTue 06:00\nTue 09:00\nTue 18:00\n\n\n\n\n0\n0.0\n0.0\n0.0\n0.0\n0.0\n1.0\n0.0\n0.0\n0.0\n0.0\n0.0\n\n\n1\n0.0\n0.0\n0.0\n0.0\n0.0\n1.0\n0.0\n0.0\n0.0\n0.0\n0.0\n\n\n2\n0.0\n0.0\n0.0\n0.0\n0.0\n1.0\n0.0\n0.0\n0.0\n0.0\n0.0\n\n\n3\n0.0\n0.0\n0.0\n0.0\n0.0\n1.0\n0.0\n0.0\n0.0\n0.0\n0.0\n\n\n4\n0.0\n0.0\n0.0\n0.0\n0.0\n1.0\n0.0\n0.0\n0.0\n0.0\n0.0\n\n\n5\n0.0\n0.0\n0.0\n0.0\n0.0\n1.0\n0.0\n0.0\n0.0\n0.0\n0.0\n\n\n\n\n\n\n\nShape = (248, 120)"
   },
   {
     "objectID": "slides-19.html#ridge-with-hour-of-day-ohe-day-of-week-ohe-interaction-features",
     "href": "slides-19.html#ridge-with-hour-of-day-ohe-day-of-week-ohe-interaction-features",
     "title": "Lecture 19: Time series",
     "section": "Ridge with hour of day OHE + day of week OHE + interaction features",
-    "text": "Ridge with hour of day OHE + day of week OHE + interaction features\n\n\nTrain-set R^2: 0.87\nTest-set R^2: 0.85\n\n\n\n\n\n\n\n\n\nThe scores are much better now!!"
+    "text": "Ridge with hour of day OHE + day of week OHE + interaction features\n\n\nTrain-set R^2: 0.87\nTest-set R^2: 0.85\n\n\n\n\n\n\n\n\n\nThe scores are much better now!! But do we need every combination?"
+  },
+  {
+    "objectID": "slides-19.html#day-time-interaction-only",
+    "href": "slides-19.html#day-time-interaction-only",
+    "title": "Lecture 19: Time series",
+    "section": "Day-time Interaction only",
+    "text": "Day-time Interaction only\nThe poly-features OHE set has every combination between each day and time. Many of these will be 0: e.g. “Monday and Sunday”. The most informative features are probably a combination of day and time. We can create a day AND time OHE.\n\n\n\n\n\n\n\n\n\nMon 00:00\nMon 03:00\nMon 06:00\nMon 09:00\nMon 12:00\nMon 15:00\nMon 18:00\nMon 21:00\nTue 00:00\nTue 03:00\n...\nSat 18:00\nSat 21:00\nSun 00:00\nSun 03:00\nSun 06:00\nSun 09:00\nSun 12:00\nSun 15:00\nSun 18:00\nSun 21:00\n\n\n\n\n0\n0.0\n0.0\n0.0\n0.0\n0.0\n0.0\n0.0\n0.0\n0.0\n0.0\n...\n0.0\n0.0\n0.0\n0.0\n0.0\n0.0\n0.0\n0.0\n0.0\n0.0\n\n\n1\n0.0\n0.0\n0.0\n0.0\n0.0\n0.0\n0.0\n0.0\n0.0\n0.0\n...\n0.0\n0.0\n0.0\n0.0\n0.0\n0.0\n0.0\n0.0\n0.0\n0.0\n\n\n2\n0.0\n0.0\n0.0\n0.0\n0.0\n0.0\n0.0\n0.0\n0.0\n0.0\n...\n0.0\n0.0\n0.0\n0.0\n0.0\n0.0\n0.0\n0.0\n0.0\n0.0\n\n\n3\n0.0\n0.0\n0.0\n0.0\n0.0\n0.0\n0.0\n0.0\n0.0\n0.0\n...\n0.0\n0.0\n0.0\n0.0\n0.0\n0.0\n0.0\n0.0\n0.0\n0.0\n\n\n4\n0.0\n0.0\n0.0\n0.0\n0.0\n0.0\n0.0\n0.0\n0.0\n0.0\n...\n0.0\n0.0\n0.0\n0.0\n0.0\n0.0\n0.0\n0.0\n0.0\n0.0\n\n\n\n\n5 rows × 56 columns"
+  },
+  {
+    "objectID": "slides-19.html#test-on-interaction-only",
+    "href": "slides-19.html#test-on-interaction-only",
+    "title": "Lecture 19: Time series",
+    "section": "Test on interaction only",
+    "text": "Test on interaction only\n\n\nTrain-set R^2: 0.84\nTest-set R^2: 0.80\n\n\n\n\n\n\n\n\n\nWe get decent results!"
   },
   {
     "objectID": "slides-19.html#interpretation",
     "href": "slides-19.html#interpretation",
     "title": "Lecture 19: Time series",
     "section": "Interpretation",
-    "text": "Interpretation\nSince we are using a linear model, we can examine the coefficients learned by Ridge.\n\n\n\n\n\n\n\n\n\n\n\nCoefficient\n\n\n\n\nSat 09:00\n15.196739\n\n\nWed 06:00\n15.005809\n\n\nSat 12:00\n13.437684\n\n\nSun 12:00\n13.362009\n\n\nThu 06:00\n10.907595\n\n\n...\n...\n\n\nSat 21:00\n-6.085150\n\n\n00:00\n-11.693898\n\n\n03:00\n-12.111220\n\n\nSat 06:00\n-13.757591\n\n\nSun 06:00\n-18.033267\n\n\n\n\n71 rows × 1 columns\n\n\n\n\nDo these coefficients make sense?"
+    "text": "Interpretation\nSince we are using a linear model, we can examine the coefficients learned by Ridge.\n\n\nIntercept = 16.618\n\n\n\n\nHighest\n\n\n\n\n\n\n\n\n\nCoefficient\n\n\n\n\nWed 06:00\n21.036507\n\n\nSun 12:00\n19.905607\n\n\nSat 12:00\n19.505607\n\n\nThu 06:00\n17.286507\n\n\nSat 09:00\n16.905607\n\n\nSun 15:00\n15.905607\n\n\n\n\n\n\n\n\nLowest\n\n\n\n\n\n\n\n\n\nCoefficient\n\n\n\n\nMon 00:00\n-11.213493\n\n\nFri 03:00\n-11.463493\n\n\nSun 03:00\n-11.694393\n\n\nSat 03:00\n-11.894393\n\n\nWed 00:00\n-11.963493\n\n\nTue 00:00\n-11.963493\n\n\n\n\n\n\n\n\nDo these coefficients make sense?"
   },
   {
     "objectID": "slides-19.html#iclicker-19.2",
@@ -487,14 +543,7 @@
     "href": "slides-19.html#ridge-with-all-features",
     "title": "Lecture 19: Time series",
     "section": "Ridge with all features",
-    "text": "Ridge with all features\n\n\nTrain-set R^2: 0.87\nTest-set R^2: 0.84\n\n\n\n\n\n\n\n\n\nGood scores. But lag features don’t seem to help much in this case."
-  },
-  {
-    "objectID": "slides-19.html#rf-with-all-features",
-    "href": "slides-19.html#rf-with-all-features",
-    "title": "Lecture 19: Time series",
-    "section": "RF with all features",
-    "text": "RF with all features\n\n\nTrain-set R^2: 0.96\nTest-set R^2: 0.78\n\n\n\n\n\n\n\n\n\nLag features seem to make things a bit worse in this case."
+    "text": "Ridge with all features\n\n\nTrain-set R^2: 0.87\nTest-set R^2: 0.84\n\n\n\n\n\n\n\n\n\nGood scores. But lag features don’t seem to help much in this case. Why?"
   },
   {
     "objectID": "slides-19.html#cross-validation-with-time-series",
@@ -553,25 +602,11 @@
     "text": "Days since feature\nOne idea is to create a feature such as “Days_since”\n\n\n\n\n\n\n\n\n\ndate\nsales\nsales-1\nsales-2\nsales-3\nsales-4\nsales-5\nDays_since\n\n\n\n\n0\n1992-01-01\n6938\nNaN\nNaN\nNaN\nNaN\nNaN\n0\n\n\n1\n1992-02-01\n7524\n6938.0\nNaN\nNaN\nNaN\nNaN\n31\n\n\n2\n1992-03-01\n8475\n7524.0\n6938.0\nNaN\nNaN\nNaN\n60\n\n\n3\n1992-04-01\n9401\n8475.0\n7524.0\n6938.0\nNaN\nNaN\n91\n\n\n4\n1992-05-01\n9558\n9401.0\n8475.0\n7524.0\n6938.0\nNaN\n121\n\n\n5\n1992-06-01\n9182\n9558.0\n9401.0\n8475.0\n7524.0\n6938.0\n152\n\n\n6\n1992-07-01\n9103\n9182.0\n9558.0\n9401.0\n8475.0\n7524.0\n182\n\n\n7\n1992-08-01\n10513\n9103.0\n9182.0\n9558.0\n9401.0\n8475.0\n213\n\n\n8\n1992-09-01\n9573\n10513.0\n9103.0\n9182.0\n9558.0\n9401.0\n244\n\n\n9\n1992-10-01\n10254\n9573.0\n10513.0\n9103.0\n9182.0\n9558.0\n274"
   },
   {
-    "objectID": "slides-19.html#univariate-time-series-bike-rentals",
-    "href": "slides-19.html#univariate-time-series-bike-rentals",
+    "objectID": "slides-19.html#what-did-we-learn-today",
+    "href": "slides-19.html#what-did-we-learn-today",
     "title": "Lecture 19: Time series",
-    "section": "Univariate time series: Bike rentals",
-    "text": "Univariate time series: Bike rentals\nA univariate time series tracks one variable over time. Here, we only measure the number of bike rentals at each timestamp.\n\n\n\nstarttime\nrentals\n\n\n\n\n2015-08-26 12:00:00\n30\n\n\n2015-08-12 09:00:00\n10\n\n\n2015-08-19 03:00:00\n2\n\n\n2015-08-07 12:00:00\n22\n\n\n2015-08-03 09:00:00\n9"
-  },
-  {
-    "objectID": "slides-19.html#multivariate-time-series-bike-rentals-with-weather-traffic",
-    "href": "slides-19.html#multivariate-time-series-bike-rentals-with-weather-traffic",
-    "title": "Lecture 19: Time series",
-    "section": "Multivariate time series: Bike rentals with weather + traffic",
-    "text": "Multivariate time series: Bike rentals with weather + traffic\nA multivariate time series records several variables at each timestamp.\nHere, we track bike rentals along with weather and local traffic conditions.\n\n\n\n\n\n\n\n\n\n\n\ndatetime\nrentals\ntemp_C\nhumidity\nwind_kmh\ntraffic_level\n\n\n\n\n2015-08-01 09:00\n12\n18\n65\n10\n2\n\n\n2015-08-01 12:00\n28\n22\n55\n8\n3\n\n\n2015-08-01 15:00\n35\n24\n50\n12\n4\n\n\n2015-08-01 18:00\n30\n21\n60\n20\n3\n\n\n2015-08-02 09:00\n10\n17\n70\n15\n1"
-  },
-  {
-    "objectID": "slides-19.html#hierarchical-time-series-bike-sales-across-cities-and-stores",
-    "href": "slides-19.html#hierarchical-time-series-bike-sales-across-cities-and-stores",
-    "title": "Lecture 19: Time series",
-    "section": "Hierarchical time series: Bike sales across cities and stores",
-    "text": "Hierarchical time series: Bike sales across cities and stores\nConsists of multiple variables from multiple observations, nested within the larger group categories, recorded sequentially over time (e.g., bike sales from multiple stores over time)\n\n\n\n\n\ncity\nstore_id\ndate\nbike_sales\n\n\n\n\nVancouver\nS1\n2024-01-01\n12\n\n\nVancouver\nS1\n2024-01-02\n15\n\n\nVancouver\nS2\n2024-01-01\n9\n\n\nVancouver\nS2\n2024-01-02\n11\n\n\nVictoria\nM1\n2024-01-01\n7\n\n\nVictoria\nM1\n2024-01-02\n8\n\n\nVictoria\nM2\n2024-01-01\n14\n\n\nVictoria\nM2\n2024-01-02\n13\n\n\n\n\nCompany\n ├── Vancouver\n │    ├── S1 time series\n │    └── S2 time series\n └── Victoria\n      ├── M1 time series\n      └── M2 time series\n\nDemo\nWe’ll be starting with the CitiBike dataset today"
+    "section": "What did we learn today?",
+    "text": "What did we learn today?\n\nTime series data has an inherent order.\nCorrect train/test splitting must respect time (no shuffling!).\nModeling considerations:\n\nML models can handle time series if we engineer meaningful temporal features.\nLinear models struggle with cyclic numeric features unless encoded properly.\nTree-based models cannot extrapolate beyond the training range.\n\nForecasting further ahead with iterative forecasting\nSeasonality = repeating patterns (daily, weekly, annual).\nTrends = long-term upward/downward movement\n\nThe key to successful time-series modeling: Choose the right features + choose the right model for the temporal structure."
   },
   {
     "objectID": "slides-19.html#group-work-class-demo-live-coding",
@@ -581,11 +616,11 @@
     "text": "Group Work: Class Demo & Live Coding\nFor this demo, each student should click this link to create a new repo in their accounts, then clone that repo locally to follow along with the demo from today."
   },
   {
-    "objectID": "slides-19.html#what-did-we-learn-today",
-    "href": "slides-19.html#what-did-we-learn-today",
+    "objectID": "slides-19.html#demo",
+    "href": "slides-19.html#demo",
     "title": "Lecture 19: Time series",
-    "section": "What did we learn today?",
-    "text": "What did we learn today?\n\nTime series data has an inherent order.\nCorrect train/test splitting must respect time (no shuffling!).\nModeling considerations:\n\nML models can handle time series if we engineer meaningful temporal features.\nLinear models struggle with cyclic numeric features unless encoded properly.\nTree-based models cannot extrapolate beyond the training range.\n\nForecasting further ahead with iterative forecasting\nSeasonality = repeating patterns (daily, weekly, annual).\nTrends = long-term upward/downward movement\n\nThe key to successful time-series modeling: Choose the right features + choose the right model for the temporal structure."
+    "section": "Demo",
+    "text": "Demo\nWe’ll be starting with the CitiBike dataset today"
   },
   {
     "objectID": "slides-17_old.html#which-metric-in-what-context",
@@ -3161,7 +3196,7 @@
     "href": "slides-18.html#a-feature-vector-given-by-densenet",
     "title": "Lecture 18: Introduction to deep learning and computer vision",
     "section": "A feature vector given by densenet",
-    "text": "A feature vector given by densenet\n \n\nLet’s examine the feature vectors.\n\n\n\n\n\n\n\n\n\n\n0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n...\n1014\n1015\n1016\n1017\n1018\n1019\n1020\n1021\n1022\n1023\n\n\n\n\n0\n0.000290\n0.003821\n0.005015\n0.001307\n0.052690\n0.063403\n0.000626\n0.001850\n0.256254\n0.000223\n...\n0.229935\n1.046363\n2.241251\n0.229644\n0.033676\n0.742794\n1.338701\n2.130872\n0.625470\n0.463095\n\n\n1\n0.000407\n0.005973\n0.003206\n0.001932\n0.090702\n0.438522\n0.001513\n0.003906\n0.166081\n0.000286\n...\n0.910675\n1.580820\n0.087190\n0.606906\n0.436105\n0.306453\n0.940104\n1.159829\n1.712703\n1.624745\n\n\n2\n0.000626\n0.005090\n0.002887\n0.001299\n0.091715\n0.548535\n0.000491\n0.003587\n0.266537\n0.000408\n...\n0.465153\n0.678282\n0.946385\n1.194697\n2.537744\n1.642388\n0.701204\n0.115618\n0.186434\n0.166608\n\n\n3\n0.000169\n0.006087\n0.002489\n0.002167\n0.087537\n0.623212\n0.000427\n0.000226\n0.460680\n0.000388\n...\n0.394085\n0.700154\n0.105199\n0.856320\n0.038457\n0.023949\n0.131834\n1.296365\n0.723328\n1.915224\n\n\n4\n0.000286\n0.005520\n0.001906\n0.001599\n0.186035\n0.850148\n0.000835\n0.003025\n0.036309\n0.000142\n...\n3.313759\n0.565744\n0.473563\n0.139444\n0.029284\n1.165937\n0.442323\n0.227594\n0.884270\n1.592693\n\n\n\n\n5 rows × 1024 columns\n\n\n\n\nThe features are hard to interpret but they have some important information about the images which can be useful for classification."
+    "text": "A feature vector given by densenet\n \n\nLet’s examine the feature vectors.\n\n\n\n\n\n\n\n\n\n\n0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n...\n1014\n1015\n1016\n1017\n1018\n1019\n1020\n1021\n1022\n1023\n\n\n\n\n0\n0.000290\n0.003821\n0.005015\n0.001307\n0.052690\n0.063403\n0.000626\n0.001850\n0.256254\n0.000223\n...\n0.229935\n1.046363\n2.241249\n0.229644\n0.033676\n0.742794\n1.338704\n2.130868\n0.625471\n0.463094\n\n\n1\n0.000407\n0.005973\n0.003206\n0.001932\n0.090702\n0.438522\n0.001513\n0.003906\n0.166081\n0.000286\n...\n0.910676\n1.580822\n0.087190\n0.606906\n0.436105\n0.306454\n0.940103\n1.159832\n1.712703\n1.624744\n\n\n2\n0.000626\n0.005090\n0.002887\n0.001299\n0.091715\n0.548536\n0.000491\n0.003587\n0.266537\n0.000408\n...\n0.465153\n0.678282\n0.946386\n1.194696\n2.537743\n1.642387\n0.701203\n0.115618\n0.186434\n0.166608\n\n\n3\n0.000169\n0.006087\n0.002489\n0.002167\n0.087537\n0.623212\n0.000427\n0.000226\n0.460680\n0.000388\n...\n0.394085\n0.700153\n0.105199\n0.856321\n0.038457\n0.023949\n0.131834\n1.296366\n0.723328\n1.915223\n\n\n4\n0.000286\n0.005520\n0.001906\n0.001599\n0.186034\n0.850148\n0.000835\n0.003025\n0.036309\n0.000142\n...\n3.313760\n0.565742\n0.473562\n0.139444\n0.029284\n1.165937\n0.442323\n0.227594\n0.884270\n1.592694\n\n\n\n\n5 rows × 1024 columns\n\n\n\n\nThe features are hard to interpret but they have some important information about the images which can be useful for classification."
   },
   {
     "objectID": "slides-18.html#logistic-regression-with-the-extracted-features",
@@ -3189,7 +3224,7 @@
     "href": "slides-18.html#object-detection-using-yolo",
     "title": "Lecture 18: Introduction to deep learning and computer vision",
     "section": "Object detection using YOLO",
-    "text": "Object detection using YOLO\n\n\nLet’s try this out using a pre-trained model.\n\nfrom ultralytics import YOLO\nmodel = YOLO(\"yolov8n.pt\")  # pretrained YOLOv8n model\n\nyolo_input = \"data/yolo_test/3356700488_183566145b.jpg\"\nyolo_result = \"data/yolo_result.jpg\"\n# Run batched inference on a list of images\nresult = model(yolo_input)  # return a list of Results objects\nresult[0].save(filename=yolo_result)\n\nCreating new Ultralytics Settings v0.0.8 file ✅ \nView Ultralytics Settings with 'yolo settings' or at '/home/runner/.config/Ultralytics/settings.json'\nUpdate Settings with 'yolo settings key=value', i.e. 'yolo settings runs_dir=path/to/dir'. For help see https://docs.ultralytics.com/usage/settings\n\nimage 1/1 /home/runner/work/cpsc330-slides/cpsc330-slides/website/data/yolo_test/3356700488_183566145b.jpg: 512x640 3 persons, 2 cars, 1 stop sign, 91.4ms\nSpeed: 1.3ms preprocess, 91.4ms inference, 1.1ms postprocess per image at shape (1, 3, 512, 640)\n\n\n'data/yolo_result.jpg'"
+    "text": "Object detection using YOLO\n\n\nLet’s try this out using a pre-trained model.\n\nfrom ultralytics import YOLO\nmodel = YOLO(\"yolov8n.pt\")  # pretrained YOLOv8n model\n\nyolo_input = \"data/yolo_test/3356700488_183566145b.jpg\"\nyolo_result = \"data/yolo_result.jpg\"\n# Run batched inference on a list of images\nresult = model(yolo_input)  # return a list of Results objects\nresult[0].save(filename=yolo_result)\n\nCreating new Ultralytics Settings v0.0.8 file ✅ \nView Ultralytics Settings with 'yolo settings' or at '/home/runner/.config/Ultralytics/settings.json'\nUpdate Settings with 'yolo settings key=value', i.e. 'yolo settings runs_dir=path/to/dir'. For help see https://docs.ultralytics.com/usage/settings\n\nimage 1/1 /home/runner/work/cpsc330-slides/cpsc330-slides/website/data/yolo_test/3356700488_183566145b.jpg: 512x640 3 persons, 2 cars, 1 stop sign, 43.2ms\nSpeed: 0.9ms preprocess, 43.2ms inference, 1.0ms postprocess per image at shape (1, 3, 512, 640)\n\n\n'data/yolo_result.jpg'"
   },
   {
     "objectID": "slides-18.html#object-detection-output",
