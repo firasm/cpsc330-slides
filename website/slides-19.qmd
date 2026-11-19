@@ -1,6 +1,6 @@
 ---
 title: "Lecture 19: Time series"
-author: "Firas Moosvi"
+author: "Firas Moosvi (Guest Lecturer: Ali Zaidi)"
 format: 
     revealjs:
       embed-resources: true
@@ -18,7 +18,7 @@ format:
 ## Announcements
 
 - No new announcements today! 
-- -->
+-->
 
 ```{python}
 import matplotlib.pyplot as plt
@@ -45,6 +45,93 @@ from sklearn.preprocessing import OneHotEncoder, OrdinalEncoder, StandardScaler
 from datetime import datetime
 ```
 
+## About Me: Ali Zaidi {.smaller}
+[ali.zaidi@ubc.ca]
+
+ - PhD in Computer Science from the Max Planck Institute for Biological Cybernetics, 
+Tuebingen (Germany) where I studied neural systems and circuits for developing brain computer interfaces.
+
+ - Data Scientist in the Kwon Lab at the International Collaboration on Repair Discoveries (ICORD), Faculty of Medicine, UBC / VGH.
+
+ - I work on developing sensors and models for optimizing patient management after traumatic brain / spine injuries. Similar to ones you're familiar with.
+
+
+:::: {.columns style="text-align: center;"}
+:::{.column width="60%"}
+![](img/zaidi/ppg.png)
+:::
+::::
+
+
+
+## The problem {.smaller}
+
+**Compression, inflammation and bleeding in neural tissue**
+
+![](img/zaidi/spine.jpg)
+
+After a traumatic injury to the brain or spinal cord, there is  compression and inflammation in and around the site of injury. This leads to increased pressure in and around the tissue - "pinching"  the blood vessels and decreasing blood volume and oxygenation.
+
+We address this by increasing the blood pressure (mean arterial pressure: MAP) to increase blood flow and oxygenation at the site of injury. (How? Adrenaline)
+
+
+
+## The challenge: false negatives {.smaller}
+
+**How does changing MAP change oxygenation? **
+
+Example from an experiment: Raise blood pressure and study effect on oxygenation
+
+:::: {.columns}
+:::{.column width="40%"}
+![](img/zaidi/ts.jpg)
+
+There is a delayed response
+:::
+:::{.column width="60%}
+![](img/zaidi/corr.jpg)
+:::
+::::
+
+Linear models don't really work. With this type of data, they often return false negatives. 😢
+
+## The challenge: false positives {.smaller}
+
+Ramdom walk: $$ y(t) = y(t-1) + \mathcal{U}({-1,1}) $$
+
+:::: {.columns}
+:::{.column width="40%"}
+
+Generate 100 random timeseries, 600s at 100Hz = 60,000 datapoints
+
+
+Most of them come out to be significant (p<0.01). 
+
+How do we solve this? We use differential equations:
+
+$$ \tau \cdot \frac{dy}{dt}(t) = k \cdot x(t) - y(t) $$
+
+:::
+:::{.column width="40%"}
+![](img/zaidi/noise_matrix.jpg){fig-align="center"}
+:::
+::::
+
+
+But that is beyond the scope of CPSC 330. (Happy to talk about it after the lecture).
+
+
+## Key ideas
+
+- Timeseries data is different! - Standard models often do not work for timeseries data! 😯
+
+- Can't use ML models out-of-the-box. Need to adapt them.
+
+- Need models that respect time and temporal dependencies in the data.
+
+**Today we'll talk about _how_ timeseries data is different, and how to approach its analysis**
+
+
 
 ## Lecture learning objectives 🎯
 
@@ -58,7 +145,7 @@ from datetime import datetime
 
 - Describe trend and its impact on time series behavior
 
-## Recap: iClicker questions {.smaller}
+<!-- ## Recap: iClicker questions {.smaller}
 
 **Select all of the following statements which are TRUE.**
 
@@ -75,7 +162,7 @@ from datetime import datetime
 | You have user–item ratings (e.g., movie ratings) and want to predict missing ratings. | ? |
 | You have a collection of documents without any labels and want to group them into themes. | ? |
 | You want to classify the emotion of a set of text messages, but you do not have any labeled data. | ? |
-| You have a small dataset with ~500 images containing pictures and names of 20 different Computer Science faculty members from UBC. Your goal is to develop a reasonably accurate multi-class classification model for this task.| ? |
+| You have a small dataset with ~500 images containing pictures and names of 20 different Computer Science faculty members from UBC. Your goal is to develop a reasonably accurate multi-class classification model for this task.| ? | -->
 
 ## Motivation
 
@@ -102,7 +189,9 @@ You work for a financial institution and have a dataset where each row represent
 | 7           | 130      | 28                 | 0             | 6                 | salaried        | own            | car                 | 0       |
 | 8           | 40       | 82                 | 2             | 1                 | self_employed   | rent           | debt_consolidation  | 1       |
 
-Rows are independent $\rightarrow$ order does not matter $\rightarrow$ time does not matter
+This data is IID - Independent and Identically Distributed. 
+
+Rows are independent $\rightarrow$ order does not matter $\rightarrow$ time does not matter.
 
 ## Predict demand for bike rentals
 
@@ -112,11 +201,9 @@ Suppose you want to predict the bike rental demand for the next three-hour perio
 :::{.column width="60%"}
 ![](img/citibike.jpg)
 :::
-
-:::{.column width="40%"}
-What features might help us make an accurate prediction?
-:::
 ::::
+
+How is this different?
 
 ## citibike data
 
@@ -136,6 +223,8 @@ citibike.head(20)
 - The data is collected at regular intervals (every three hours) 
 - Target: rentals in the next 3-hour period
 - Goal: Given past rental counts, predict the number of rentals at a specific future time.
+- What features might help us make an accurate prediction?
+
 :::
 ::::
 
@@ -156,16 +245,11 @@ citibike.head(20)
 :::{.column width="60%"}
 - This type of data is distinctive because it is **inherently sequential**. 
 - The number of bikes available at a station at one point in time is often related to the number of bikes at earlier times. 
+- This data is not IID.
 - This is a **time-series forecasting** problem.
 :::
 ::::
 
-## Today's lecture 
-
-- What is time series? 
-- How do we know a problem is a time series problem?
-- Why do standard ML models struggle with time-dependent data?
-- How can we adapt ML models to handle time series?
 
 ## Models for time series
 
@@ -174,6 +258,68 @@ The ML models we've used so far **do not have a built-in concept of time**. Ther
 - Use models designed for sequential data which explicitly capture temporal dependencies (e.g., Hidden Markov Models, Transformer architectures etc.) 
 
 - **Use tabular ML models with engineered temporal features (e.g., Linear models, Random Forests, Gradient Boosted Trees)**    
+
+
+# Types of time series 
+
+## Univariate time series: Bike rentals
+
+A **univariate time series** tracks *one* variable over time. Here, we only measure the number of bike rentals at each timestamp.
+
+| starttime            | rentals |
+|----------------------|---------|
+| 2015-08-26 12:00:00  |   30    |
+| 2015-08-12 09:00:00  |   10    |
+| 2015-08-19 03:00:00  |    2    |
+| 2015-08-07 12:00:00  |   22    |
+| 2015-08-03 09:00:00  |    9    |
+
+
+## Multivariate time series: Bike rentals with weather + traffic {.smaller}
+
+A **multivariate time series** records several variables at each timestamp.  
+Here, we track bike rentals along with weather and local traffic conditions.
+
+| datetime            | rentals | temp_C | humidity | wind_kmh | traffic_level |
+|---------------------|---------|--------|----------|----------|----------------|
+| 2015-08-01 09:00    |   12    |   18   |    65    |    10    |       2        |
+| 2015-08-01 12:00    |   28    |   22   |    55    |     8    |       3        |
+| 2015-08-01 15:00    |   35    |   24   |    50    |    12    |       4        |
+| 2015-08-01 18:00    |   30    |   21   |    60    |    20    |       3        |
+| 2015-08-02 09:00    |   10    |   17   |    70    |    15    |       1        |
+
+## Hierarchical time series: Bike sales across cities and stores {.smaller}
+
+Consists of multiple variables from multiple observations, nested within the larger group categories, recorded sequentially over time (e.g., bike sales from multiple stores over time)
+
+:::: {.columns}
+:::{.column width="60%"}
+
+| city      | store_id | date        | bike_sales |
+|-----------|----------|-------------|------------|
+| Vancouver | S1       | 2024-01-01  |     12     |
+| Vancouver | S1       | 2024-01-02  |     15     |
+| Vancouver | S2       | 2024-01-01  |      9     |
+| Vancouver | S2       | 2024-01-02  |     11     |
+| Victoria | M1       | 2024-01-01  |      7     |
+| Victoria | M1       | 2024-01-02  |      8     |
+| Victoria | M2       | 2024-01-01  |     14     |
+| Victoria | M2       | 2024-01-02  |     13     |
+
+:::
+:::{.column width="40%"}
+
+```
+Company
+ ├── Vancouver
+ │    ├── S1 time series
+ │    └── S2 time series
+ └── Victoria
+      ├── M1 time series
+      └── M2 time series
+```
+:::
+::::
 
 ## citibike data visualization
 
@@ -237,8 +383,8 @@ plt.legend();
 
 ## Motivation 
 
-- In this toy data, we just have a single feature: the date time feature. 
-- Note that ML models do not have a built-in concept of time. We have to give it to them.
+- In this toy data, we just have a single feature: the `datetime` index. 
+- Note that ML models do not have a built-in concept of time. _We_ have to give it to them.
 - We will explore different ways to extract informative features from time.
 
 ## POSIX time feature {.smaller}
@@ -267,12 +413,20 @@ eval_on_features(X, y, regressor,  xtick_labels, feat_names="POSIX time")
 - But for the test data, a constant line is predicted ...
 - What's going on?
 
-## Trees cannot extrapolate! 
+## Trees cannot extrapolate! {.smaller}
 - Tree-based models only make predictions within the range of values they've seen during training.
 - Trees partition the feature space into fixed regions and predictions inside each region are averages of training labels.
 - If your future timestamps are larger than the ones in the training set trees cannot "see beyond" the training range and they will flatline or behave unpredictably.
 
-This is exactly what happens with POSIX time encoded as a single numeric feature! 
+
+## Ridge on posix features {.smaller}
+
+```{python}
+lr = Ridge();
+eval_on_features(X, y, lr,  xtick_labels, feat_names="POSIX time")
+```
+
+No better! **Why?**
 
 ## Extracting date and time information
 
@@ -351,21 +505,14 @@ pd.DataFrame(X_hour_week_onehot, columns=features).head(6)
 
 ## Ridge with hour of day OHE + day of week OHE
 
-:::: {.columns}
-
-:::{.column width="70%"}
 ```{python}
 eval_on_features(X_hour_week_onehot, y, Ridge(),  xtick_labels, feat_names="hour of day OHE + day of week OHE")
 ```
-:::
 
-:::{.column width="30%"}
-- The scores are a bit better! 
-- Can we improve them further? 
-:::
-::::
 
-## Add interaction features 
+Better... Can we improve them further? 
+
+## Add interaction features {.scrollable .smaller}
 ```{python }
 from sklearn.preprocessing import PolynomialFeatures
 
@@ -381,35 +528,81 @@ df_hour_week_ohe_poly = pd.DataFrame(X_hour_week_onehot_poly, columns = features
 df_hour_week_ohe_poly.iloc[:, [0, 1, 2, 3, 4, 5, 34, 35, 36, 37, 40]].head(6)
 ```
 
-## Ridge with hour of day OHE + day of week OHE + interaction features
+Shape = (248, 120)
+
+## Ridge with hour of day OHE + day of week OHE + interaction features {.smaller}
 
 ```{python}
 eval_on_features(X_hour_week_onehot_poly, y, lr,  xtick_labels, feat_names = "hour of day OHE + day of week OHE + interaction feats")
 ```
-The scores are much better now!! 
+The scores are much better now!! But do we need every combination?
+
+## Day-time Interaction only {.scrollable .smaller}
+
+The poly-features OHE set has every combination between each day and time. Many of these will be **0**: e.g. "Monday and Sunday". The most informative features are probably a combination of day and time. We can create a day AND time OHE.
+
+```{python}
+
+days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
+times = ["%02d:00" % i for i in range(0, 24, 3)]
+
+day_time_int=[]
+for day in days:
+    for time in times:
+        day_time_int.append(f"{day} {time}")
+
+df_day_time_int = df_hour_week_ohe_poly[day_time_int]
+
+df_day_time_int.head(5)
+
+
+```
+
+## Test on interaction only {.smaller}
+
+```{python}
+lr = Ridge()
+eval_on_features(df_day_time_int, y, lr, feat_names = "interaction features only", sales_data=True)
+
+```
+We get decent results!
 
 ## Interpretation {.scrollable .smaller}
 
 Since we are using a linear model, we can examine the coefficients learned by `Ridge`. 
 
+```{python}
+print(f"Intercept = {lr.intercept_:0.3f}")
+```
+
 :::: {.columns}
 :::{.column width="50%"}
 
+Highest
+
 ```{python}
-features_nonzero = np.array(features_poly)[lr.coef_ != 0]
+features_nonzero = np.array(day_time_int)[lr.coef_ != 0]
 coef_nonzero = lr.coef_[lr.coef_ != 0]
-pd.DataFrame(coef_nonzero, index=features_nonzero, columns=["Coefficient"]).sort_values(
+coefs = pd.DataFrame(coef_nonzero, index=features_nonzero, columns=["Coefficient"]).sort_values(
     "Coefficient", ascending=False
 )
+
+coefs.head(6)
 ```
 :::
 
 :::{.column width="50%"}
 
-**Do these coefficients make sense?**
+Lowest
 
+```{python}
+coefs.tail(6)
+```
 :::
 ::::
+
+
+**Do these coefficients make sense?**
 
 ## iClicker 19.2 
 
@@ -480,17 +673,9 @@ X_hour_week_onehot_poly_lag = np.hstack([X_hour_week_onehot_poly, X_lag_features
 eval_on_features(X_hour_week_onehot_poly_lag, y, lr, xtick_labels, feat_names = "hour of day OHE + day of week OHE + interaction feats + Lag feats")
 ```
 
-Good scores. But lag features don't seem to help much in this case. 
+Good scores. But lag features don't seem to help much in this case. **Why?**
 
 
-## RF with all features
-
-```{python}
-X_hour_week_lag = np.hstack([X_hour_week, X_lag_features])
-eval_on_features(X_hour_week_lag, y, regressor,  xtick_labels, feat_names = "hour of day + day of week + Lag feats")
-```
-
-Lag features seem to make things a bit worse in this case.
 
 ## Cross-validation with time series
 
@@ -544,7 +729,7 @@ This method works, but errors accumulate as we step forward. The longer the hori
 Each model uses lag features that match the required horizon.
 
 
-## (Optional) Approach 3: Multi-output models (joint forecasting)
+## (Optional) Approach 3: Multi-output models (joint forecasting) {.smaller}
 
 - Train one model that predicts several future steps at once, e.g.:
 
@@ -601,77 +786,6 @@ retail_train_5_date = retail_train_5_date.assign(
 retail_train_5_date.head(10)
 ```
 
-# Types of time series 
-
-## Univariate time series: Bike rentals
-
-A **univariate time series** tracks *one* variable over time. Here, we only measure the number of bike rentals at each timestamp.
-
-| starttime            | rentals |
-|----------------------|---------|
-| 2015-08-26 12:00:00  |   30    |
-| 2015-08-12 09:00:00  |   10    |
-| 2015-08-19 03:00:00  |    2    |
-| 2015-08-07 12:00:00  |   22    |
-| 2015-08-03 09:00:00  |    9    |
-
-
-## Multivariate time series: Bike rentals with weather + traffic {.smaller}
-
-A **multivariate time series** records several variables at each timestamp.  
-Here, we track bike rentals along with weather and local traffic conditions.
-
-| datetime            | rentals | temp_C | humidity | wind_kmh | traffic_level |
-|---------------------|---------|--------|----------|----------|----------------|
-| 2015-08-01 09:00    |   12    |   18   |    65    |    10    |       2        |
-| 2015-08-01 12:00    |   28    |   22   |    55    |     8    |       3        |
-| 2015-08-01 15:00    |   35    |   24   |    50    |    12    |       4        |
-| 2015-08-01 18:00    |   30    |   21    |    60    |    20    |       3        |
-| 2015-08-02 09:00    |   10    |   17   |    70    |    15    |       1        |
-
-## Hierarchical time series: Bike sales across cities and stores {.smaller}
-
-Consists of multiple variables from multiple observations, nested within the larger group categories, recorded sequentially over time (e.g., bike sales from multiple stores over time)
-
-:::: {.columns}
-:::{.column width="60%"}
-
-| city      | store_id | date        | bike_sales |
-|-----------|----------|-------------|------------|
-| Vancouver | S1       | 2024-01-01  |     12     |
-| Vancouver | S1       | 2024-01-02  |     15     |
-| Vancouver | S2       | 2024-01-01  |      9     |
-| Vancouver | S2       | 2024-01-02  |     11     |
-| Victoria | M1       | 2024-01-01  |      7     |
-| Victoria | M1       | 2024-01-02  |      8     |
-| Victoria | M2       | 2024-01-01  |     14     |
-| Victoria | M2       | 2024-01-02  |     13     |
-
-:::
-:::{.column width="40%"}
-
-```
-Company
- ├── Vancouver
- │    ├── S1 time series
- │    └── S2 time series
- └── Victoria
-      ├── M1 time series
-      └── M2 time series
-```
-:::
-::::
-
-### Demo
-
-We'll be starting with the [CitiBike dataset](https://ride.citibikenyc.com/system-data) today
-![](img/citibike.png)
-
-## Group Work: Class Demo & Live Coding
-
-For this demo, each student should [click this link](https://github.com/new?template_name=lecture20_demo&template_owner=ubc-cpsc330) to create a new repo in their accounts, then clone that repo locally to follow along with the demo from today.
-
-
 ## What did we learn today? {.smaller}
 
 - **Time series** data has an inherent order. 
@@ -686,3 +800,11 @@ For this demo, each student should [click this link](https://github.com/new?temp
 
 **The key to successful time-series modeling: Choose the right features + choose the right model for the temporal structure.**
 
+## Group Work: Class Demo & Live Coding
+
+For this demo, each student should [click this link](https://github.com/new?template_name=lecture20_demo&template_owner=ubc-cpsc330) to create a new repo in their accounts, then clone that repo locally to follow along with the demo from today.
+
+## Demo
+
+We'll be starting with the [CitiBike dataset](https://ride.citibikenyc.com/system-data) today
+![](img/citibike.png)
