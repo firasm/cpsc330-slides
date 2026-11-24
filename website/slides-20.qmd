@@ -55,19 +55,16 @@ DATA_DIR = os.path.join(os.path.abspath("."), "data/")
 
 ## Announcements
 
-- Test 3 update
-  - One of the MCQ was mistakenly set to 4 marks instead of 1, need to fix that
-  - Resolution will mean everyone's score will increase 
-  - Scores will be released after
-- HW9 has been released!
-- Practice Workspace question for the final exam will be posted on PrairieLearn this weekend to help you prepare
+- Midterm 2 scores are released 
+- Remember to book a session in ORCA to view a midterm
+- Practice questions for the final exam will be posted on PrairieLearn in a week or so to help you prepare
 
 ## Announcements (cont'd)
 
-- We are in the home stretch now! Monday will be the last class
+- We are in the home stretch now!
 - Tutorials are ON Tues/Wed
 - NO tutorials on Thurs/Fri
-- Office hours as usual next week
+- Office hours as usual
 
 ## Wrap-up Time Series from last class
 
