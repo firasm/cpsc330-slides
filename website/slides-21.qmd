@@ -1,5 +1,5 @@
 ---
-title: "Lecture 21: Communication and Conclusion"
+title: "Lecture 21: Communication"
 author: "Firas Moosvi"
 format: 
     revealjs:
@@ -118,7 +118,7 @@ Pick one scenario: Discuss 2 negative consequences and 1 thing you'd do to preve
 5. You hide uncertainty and overpromise deployment success.
 
 
-# Principles of good communicaiton 
+# Principles of good communication 
 
 
 ## Grid search activity 
@@ -488,8 +488,6 @@ Some examples from [Calling BS visualization videos](https://www.youtube.com/wat
 
 ![](img/eva-seeyou.png)
 
- -->
-
 
 ## ❓❓ Questions for you
 
@@ -593,8 +591,11 @@ For each of the scenarios below
 | EvoCarShare app   | Calculate number of car rentals in four increments at a particular Evo parking spot |
 | Pharma app| Understand the effect of a new drug on patient survival time |
 
+
+<!-- 
 ## Conclusion & farewell
 
 That’s all, folks. We made it! Good luck on your final exam! When you get a chance, please let me know what worked for you and what didn’t work for you in this course.
+ -->
 
 ![](img/eva-congrats.png)
